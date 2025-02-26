@@ -13,7 +13,7 @@ func _ready() -> void:
 	var instance3 = _add_room(room2scene, instance2, "DoorPosL", "DoorPosD", 0.5*PI)
 	var instance4 = _add_room(room3scene, instance3, "DoorPosU", "DoorPosL", PI)
 	var instance5 = _add_room(room4scene, instance4, "DoorPosD", "DoorPosR", -0.5*PI)
-	#var instance5 = _add_room(room5scene, instance4, "DoorPosU", "DoorPosD", 0)
+	var _instance6 = _add_room(room5scene, instance5, "DoorPosU", "DoorPosL", 0)
 
 
 func _add_room(room_scene, prev_room, prev_door_pos, new_door_pos, room_rotation, isFirstRoom=false):
