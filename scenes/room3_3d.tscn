@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://nx3cu52sp4hs"]
+
+[ext_resource type="Texture2D" uid="uid://bk38yclnuxb55" path="res://assets/room3new.png" id="1_x0wey"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cgmqh"]
+
+[node name="room3_3d" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+axis = 1
+shaded = true
+texture = ExtResource("1_x0wey")
+
+[node name="Floor" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_cgmqh")
+
+[node name="Wall1" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
+
+[node name="WallDoor2" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -11, 0, -11, 17, 4, 17, 4, 0)
+
+[node name="Wall3" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 3, 0, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
+
+[node name="WallDoor4" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -11, 0, -11, 16, 4, 16, 4, 0)
+
+[node name="DoorPosL" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -0.385369)
+
+[node name="DoorPosD" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.376159, 0, 3)

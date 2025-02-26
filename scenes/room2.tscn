@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0xrvj76ovhsq"]
+
+[ext_resource type="Texture2D" uid="uid://dp2nblupqcafs" path="res://assets/room2.png" id="1_82y2i"]
+
+[node name="room2" type="StaticBody2D"]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6.10352e-05, 6.10352e-05)
+texture = ExtResource("1_82y2i")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(26.6667, -56.6666)
+scale = Vector2(0.371324, 0.639358)
+polygon = PackedVector2Array(-206.469, 599.56, -646.337, 599.56, -646.337, -422.299, -206.469, -422.299, -206.469, -427.512, -664.29, -427.512, -664.29, 604.773, -206.469, 604.773)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(26.6667, -56.6666)
+scale = Vector2(0.371324, 0.639358)
+polygon = PackedVector2Array(502.706, -422.299, 502.706, 599.56, -26.9307, 599.56, -26.9307, 604.773, 520.66, 604.773, 520.66, -427.512, 8.97684, -427.512, 8.97684, -422.299)
+
+[node name="DoorPos1" type="Node2D" parent="."]
+position = Vector2(-17, 329)
+
+[node name="DoorPos2" type="Node2D" parent="."]
+position = Vector2(-11, -329)

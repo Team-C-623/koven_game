@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://btemwc2enq7ok"]
+
+[ext_resource type="PackedScene" uid="uid://b0q3l47enq358" path="res://scenes/player.tscn" id="1_150u4"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_wbw7f"]
+[ext_resource type="PackedScene" uid="uid://cm73dek5k2i0l" path="res://scenes/room1.tscn" id="2_yuipj"]
+[ext_resource type="PackedScene" uid="uid://b0xrvj76ovhsq" path="res://scenes/room2.tscn" id="3_jw1ku"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_wbw7f")
+
+[node name="Player" parent="." instance=ExtResource("1_150u4")]
+position = Vector2(1053, 552)
+
+[node name="room1" parent="." instance=ExtResource("2_yuipj")]
+z_index = -1
+position = Vector2(551, 302)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 181)
+
+[node name="room2" parent="." instance=ExtResource("3_jw1ku")]
+position = Vector2(151, 339)
