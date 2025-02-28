@@ -49,30 +49,14 @@ shape = SubResource("WorldBoundaryShape3D_vcy58")
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
-[node name="wallmesh1" type="CSGBox3D" parent="WallDoor1"]
-transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
-
-[node name="doorway1" type="CSGBox3D" parent="WallDoor1/wallmesh1"]
-transform = Transform3D(0.25, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
-operation = 2
-
 [node name="Wall2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
-
-[node name="wallmesh2" type="CSGBox3D" parent="Wall2"]
-transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
 
 [node name="Wall3" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 3, 0, 0)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
-[node name="wallmesh3" type="CSGBox3D" parent="Wall3"]
-transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
-
 [node name="Wall4" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
-
-[node name="wallmesh4" type="CSGBox3D" parent="Wall4"]
-transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
