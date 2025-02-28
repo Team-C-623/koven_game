@@ -12,7 +12,7 @@ script = ExtResource("1_tbt52")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.28811, 0)
 
 [node name="PlayerCam" type="Camera3D" parent="Player"]
-transform = Transform3D(4, 0, 0, 0, 2.51598, 3.10964, 0, -3.10964, 2.51598, -0.270266, 8.62773, 6.85938)
+transform = Transform3D(4, 0, 0, 0, 3.87077, 1.00855, 0, -1.00855, 3.87077, -0.123059, 4.28526, 9.45298)
 current = true
 
 [node name="TopDownCam" type="Camera3D" parent="Player"]
