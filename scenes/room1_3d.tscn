@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://na8sbq0ipt4w"]
+[gd_scene load_steps=4 format=3 uid="uid://na8sbq0ipt4w"]
 
 [ext_resource type="Texture2D" uid="uid://3ci5ay7k73qr" path="res://assets/room1new.png" id="1_opx2e"]
+[ext_resource type="Script" path="res://scripts/room1.gd" id="1_whfxc"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
 
 [node name="room1_3d" type="StaticBody3D"]
+script = ExtResource("1_whfxc")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -35,7 +37,7 @@ axis = 1
 shaded = true
 texture = ExtResource("1_opx2e")
 
-[node name="DoorPos" type="Node3D" parent="."]
+[node name="DoorPosU" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039656, 0, -3)
 
 [node name="Floor" type="CollisionShape3D" parent="."]

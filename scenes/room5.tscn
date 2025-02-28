@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cieu5rfqhyfnd"]
+[gd_scene load_steps=4 format=3 uid="uid://cieu5rfqhyfnd"]
 
+[ext_resource type="Script" path="res://scripts/room5.gd" id="1_gn8j5"]
 [ext_resource type="Texture2D" uid="uid://s3vuw5s6phpj" path="res://assets/room5.png" id="1_qubmv"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g50og"]
 
 [node name="room5" type="StaticBody3D"]
+script = ExtResource("1_gn8j5")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 axis = 1

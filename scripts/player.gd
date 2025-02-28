@@ -1,15 +1,18 @@
-extends CharacterBody2D
+extends CharacterBody3D
 
-@export var speed = 200
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+const SPEED = 6.0
 
-func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
 
-func _physics_process(_delta):
-	get_input()
+func _physics_process(_delta: float) -> void:
+	# Get the input direction and handle the movement/deceleration.
+	var input_dir := Input.get_vector("left", "right", "up", "down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
 	move_and_slide()

@@ -1,32 +1,62 @@
-extends Node2D
+extends Node3D
+
+var room2scene = preload("res://scenes/room2_3d.tscn")
+var room3scene = preload("res://scenes/room3_3d.tscn")
+var room4scene = preload("res://scenes/room4.tscn")
+var room5scene = preload("res://scenes/room5.tscn")
+	
+var room_options = [room2scene, room3scene, room4scene, room5scene]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# preload room scenes
-	var room2scene = preload("res://scenes/room2.tscn")
-	var room3scene = preload("res://scenes/room3.tscn")
+	generate()
 	
-	# add rooms to the tree
-	var instance1 = _add_room(room2scene, null, null, 0, true)
-	var instance2 = _add_room(room3scene, instance1, "DoorPos2", 0)
-	var instance3 = _add_room(room2scene, instance2, "DoorPos2", -0.5*PI)
-	var instance4 = _add_room(room3scene, instance3, "DoorPos2", -0.5*PI)
-	var _instance5 = _add_room(room3scene, instance4, "DoorPos2", PI)
+	#var instance1 = get_node("Map")._add_room(room2scene)
+	#get_node("Map")._set_room_position(instance1, get_node("Map/room1_3d"), "DoorPosU", "DoorPosD")
+	#var instance2 = get_node("Map")._add_room(room3scene)
+	#get_node("Map")._set_room_position(instance2, instance1, "DoorPosU", "DoorPosD")
+	
+	#var instance1 = get_node("Map")._add_room_and_set(room5scene, get_node("Map/room1_3d"), "DoorPosU", "DoorPosL")
+	#var instance3 = get_node("Map")._add_room_and_set(room2scene, instance2, "DoorPosL", "DoorPosD")
+	#var instance4 = get_node("Map")._add_room_and_set(room3scene, instance3, "DoorPosU", "DoorPosL")
+	#var instance5 = get_node("Map")._add_room_and_set(room4scene, instance4, "DoorPosD", "DoorPosR")
+	#var instance6 = get_node("Map")._add_room_and_set(room5scene, instance5, "DoorPosU", "DoorPosL")
+	#var instance7 = get_node("Map")._add_room_and_set(room4scene, instance6, "DoorPosR", "DoorPosR")
+	#var _instance8 = get_node("Map")._add_room_and_set(room3scene, instance7, "DoorPosD", "DoorPosL")
 
+# generates a set of rooms
+func generate():
+	var prev_room = null
+	
+	for i in range(10):
+		# if at 0, make the previous room the starting room
+		if i == 0:
+			prev_room = get_node("Map/room1_3d")
+		# pick a random room packed scene from the list of preloaded rooms
+		var room_choice = room_options.pick_random()
+		
+		# add the new room to the tree
+		var new_room = get_node("Map")._add_room(room_choice)
+		
+		# get random door choices from the dictionary for the previous and new rooms
+		var prev_door_choice = prev_room.door_dict.keys()[randi() % prev_room.door_dict.size()]
+		# check to make sure randomly chosen door is not already in use
+		while prev_room.door_dict[prev_door_choice] != 0:
+			prev_door_choice = prev_room.door_dict.keys()[randi() % prev_room.door_dict.size()]
+		var new_door_choice = new_room.door_dict.keys()[randi() % new_room.door_dict.size()]
+		# set used doors to 1 in the room's door dictionary
+		prev_room.door_dict[prev_door_choice] = 1
+		new_room.door_dict[new_door_choice] = 1
+		
+		# set the position of the room based on the chosen doors
+		get_node("Map")._set_room_position(new_room, prev_room, prev_door_choice, new_door_choice)
+		# set the previous room to the newly created room to reiterate
+		prev_room = new_room
 
-# adds a room to the tree
-func _add_room(room_scene, prev_room, door_pos, room_rotation, isFirstRoom=false):
-	# creates a new instance of the given room
-	var new_instance = room_scene.instantiate()
-	# sets the rotation of the new room to the provided rotation
-	new_instance.rotation = room_rotation
-	if isFirstRoom:
-		# if this is the first room generated, get the position of the starting room's door and set the new room's position
-		new_instance.global_position = get_node("room1/DoorPos1").global_position - new_instance.get_node("DoorPos1").global_position
+# switch cameras
+func switch_cam():
+	# current attribute defines if that camera is the one currently in use
+	if get_node("Player/PlayerCam").current:
+		get_node("Player/PlayerCam").current = false
 	else:
-		# otherwise, get the position of the requested door from the previous room and set the new room's position
-		new_instance.global_position = prev_room.get_node(door_pos).global_position - new_instance.get_node("DoorPos1").global_position
-	# add the new room to the tree
-	add_child(new_instance)
-	# return the room so that it can be used in subsequent room creations
-	return new_instance
+		get_node("Player/TopDownCam").current = false
