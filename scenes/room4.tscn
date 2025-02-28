@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbg6frkka47sn"]
 
-[ext_resource type="Texture2D" uid="uid://t3ic2ljvk0w8" path="res://assets/room4.png" id="1_06ser"]
 [ext_resource type="Script" path="res://scripts/room4.gd" id="1_n08vc"]
+[ext_resource type="Texture2D" uid="uid://ee8n3fake6as" path="res://assets/room4newer.PNG" id="2_k0rwq"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_42x5r"]
 
@@ -11,7 +11,7 @@ script = ExtResource("1_n08vc")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 axis = 1
 shaded = true
-texture = ExtResource("1_06ser")
+texture = ExtResource("2_k0rwq")
 
 [node name="Floor" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -19,7 +19,7 @@ shape = SubResource("WorldBoundaryShape3D_42x5r")
 
 [node name="WallDoor1" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -6, 0, -6, 16, 9, 16, 9, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
 [node name="Wall2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
@@ -27,17 +27,17 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
 [node name="WallDoor3" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 3, 0, 0)
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -6, 0, -6, 16, 9, 16, 9, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
 [node name="WallDoor4" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -7, 0, -7, 16, 8, 16, 8, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
 [node name="DoorPosU" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125188, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="DoorPosD" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00839865, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="DoorPosR" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0.129039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)

@@ -1,22 +1,28 @@
 extends Node3D
 
-var room2scene = preload("res://scenes/room2_3d.tscn")
-var room3scene = preload("res://scenes/room3_3d.tscn")
+# imports rooms as packed scenes
+var room2scene = preload("res://scenes/room2.tscn")
+var room3scene = preload("res://scenes/room3.tscn")
 var room4scene = preload("res://scenes/room4.tscn")
 var room5scene = preload("res://scenes/room5.tscn")
-	
+
+# creates a list of the options for rooms to choose from when generating
+# probably a better way to do this? idk
 var room_options = [room2scene, room3scene, room4scene, room5scene]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	generate()
 	
+	# create a non-random room, adds it to the tree and then sets its position
 	#var instance1 = get_node("Map")._add_room(room2scene)
-	#get_node("Map")._set_room_position(instance1, get_node("Map/room1_3d"), "DoorPosU", "DoorPosD")
+	#get_node("Map")._set_room_position(instance1, get_node("Map/room1"), "DoorPosU", "DoorPosD")
 	#var instance2 = get_node("Map")._add_room(room3scene)
 	#get_node("Map")._set_room_position(instance2, instance1, "DoorPosU", "DoorPosD")
 	
-	#var instance1 = get_node("Map")._add_room_and_set(room5scene, get_node("Map/room1_3d"), "DoorPosU", "DoorPosL")
+	# old method to create a room, adds to tree and sets position in the same method
+	# basically more control is better
+	#var instance1 = get_node("Map")._add_room_and_set(room5scene, get_node("Map/room1"), "DoorPosU", "DoorPosL")
 	#var instance3 = get_node("Map")._add_room_and_set(room2scene, instance2, "DoorPosL", "DoorPosD")
 	#var instance4 = get_node("Map")._add_room_and_set(room3scene, instance3, "DoorPosU", "DoorPosL")
 	#var instance5 = get_node("Map")._add_room_and_set(room4scene, instance4, "DoorPosD", "DoorPosR")
@@ -31,7 +37,7 @@ func generate():
 	for i in range(10):
 		# if at 0, make the previous room the starting room
 		if i == 0:
-			prev_room = get_node("Map/room1_3d")
+			prev_room = get_node("Map/room1")
 		# pick a random room packed scene from the list of preloaded rooms
 		var room_choice = room_options.pick_random()
 		

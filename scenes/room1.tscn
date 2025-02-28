@@ -1,14 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://na8sbq0ipt4w"]
 
-[ext_resource type="Texture2D" uid="uid://3ci5ay7k73qr" path="res://assets/room1new.png" id="1_opx2e"]
 [ext_resource type="Script" path="res://scripts/room1.gd" id="1_whfxc"]
+[ext_resource type="Texture2D" uid="uid://tlq13q1g62t2" path="res://assets/room1newer.PNG" id="2_8i6pc"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
 
-[node name="room1_3d" type="StaticBody3D"]
+[node name="room1" type="StaticBody3D"]
 script = ExtResource("1_whfxc")
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+axis = 1
+shaded = true
+texture = ExtResource("2_8i6pc")
+
 [node name="Area3D" type="Area3D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -18,7 +24,7 @@ shape = SubResource("WorldBoundaryShape3D_vcy58")
 
 [node name="WallDoor1" type="CollisionPolygon3D" parent="Area3D"]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 7, 16, 7, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
 [node name="Wall2" type="CollisionPolygon3D" parent="Area3D"]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
@@ -32,13 +38,8 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-axis = 1
-shaded = true
-texture = ExtResource("1_opx2e")
-
 [node name="DoorPosU" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039656, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="Floor" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -46,7 +47,7 @@ shape = SubResource("WorldBoundaryShape3D_vcy58")
 
 [node name="WallDoor1" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 7, 16, 7, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
 [node name="Wall2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)

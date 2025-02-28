@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ci5ay7k73qr"
-path.s3tc="res://.godot/imported/room1new.png-2d65301b258b0f5d9ce920e8aadf9969.s3tc.ctex"
+uid="uid://ee8n3fake6as"
+path.s3tc="res://.godot/imported/room4newer.PNG-bc9322b36690a440da9f4fcb70e623a7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/room1new.png"
-dest_files=["res://.godot/imported/room1new.png-2d65301b258b0f5d9ce920e8aadf9969.s3tc.ctex"]
+source_file="res://assets/room4newer.PNG"
+dest_files=["res://.godot/imported/room4newer.PNG-bc9322b36690a440da9f4fcb70e623a7.s3tc.ctex"]
 
 [params]
 
