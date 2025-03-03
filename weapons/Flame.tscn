@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct0hvhycg5d23"]
+
+[ext_resource type="Script" path="res://weapons/flame.gd" id="1_bn3o8"]
+[ext_resource type="Texture2D" uid="uid://d0co7b3vuhxu6" path="res://weapons/trident.png" id="1_e6hls"]
+
+[node name="Flame" type="Node3D"]
+script = ExtResource("1_bn3o8")
+
+[node name="flameicon" type="Sprite3D" parent="."]
+texture = ExtResource("1_e6hls")
