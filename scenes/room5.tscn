@@ -21,17 +21,45 @@ shape = SubResource("WorldBoundaryShape3D_g50og")
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
+[node name="wallmesh1" type="CSGBox3D" parent="WallDoor1"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
+
+[node name="doorway1" type="CSGBox3D" parent="WallDoor1/wallmesh1"]
+transform = Transform3D(0.25, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
+operation = 2
+
 [node name="WallDoor2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
+
+[node name="wallmesh2" type="CSGBox3D" parent="WallDoor2"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
+
+[node name="doorway2" type="CSGBox3D" parent="WallDoor2/wallmesh2"]
+transform = Transform3D(0.25, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
+operation = 2
 
 [node name="WallDoor3" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 3, 0, 0)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
+[node name="wallmesh3" type="CSGBox3D" parent="WallDoor3"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
+
+[node name="doorway3" type="CSGBox3D" parent="WallDoor3/wallmesh3"]
+transform = Transform3D(0.25, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
+operation = 2
+
 [node name="WallDoor4" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
+
+[node name="wallmesh4" type="CSGBox3D" parent="WallDoor4"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
+
+[node name="doorway4" type="CSGBox3D" parent="WallDoor4/wallmesh4"]
+transform = Transform3D(0.25, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
+operation = 2
 
 [node name="DoorPosL" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)

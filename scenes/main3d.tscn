@@ -11,19 +11,18 @@ script = ExtResource("1_tbt52")
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
 transform = Transform3D(0.25, 0, 0, 0, 0.204788, 0.143394, 0, -0.143394, 0.204788, 0, 0.28811, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Player"]
-transform = Transform3D(4, 0, 0, 0, 2.29431, 3.27661, 0, -3.27661, 2.29431, 0, 10.4626, 7.32601)
-visible = false
-light_energy = 1.972
-spot_angle = 30.0
-spot_angle_attenuation = 0.7
+[node name="PlayerCam" type="Camera3D" parent="Player"]
+transform = Transform3D(4, 0, 0, 0, 3.99514, -0.197212, 0, 0.197212, 3.99514, 0, 0.364657, 11.8587)
+fov = 60.0
 
 [node name="TopDownCam" type="Camera3D" parent="Player"]
 transform = Transform3D(4, 0, 0, 0, 2.29431, 3.27661, 0, -3.27661, 2.29431, 0, 147.447, 103.244)
 
-[node name="PlayerCam" type="Camera3D" parent="Player"]
-transform = Transform3D(4, 0, 0, 0, 3.99514, -0.197212, 0, 0.197212, 3.99514, 0, 0.364657, 11.8587)
-fov = 60.0
+[node name="SpotLight3D" type="SpotLight3D" parent="Player"]
+transform = Transform3D(4, 0, 0, 0, 2.29431, 3.27661, 0, -3.27661, 2.29431, 0, 10.4626, 7.32601)
+light_energy = 1.972
+spot_angle = 30.0
+spot_angle_attenuation = 0.7
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.913828, 0.232817, -0.332739, 0.122754, 0.62266, 0.772804, 0.387105, -0.747055, 0.540425, 0, 0, 5)

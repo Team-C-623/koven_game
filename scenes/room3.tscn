@@ -1,12 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://nx3cu52sp4hs"]
+[gd_scene load_steps=4 format=3 uid="uid://nx3cu52sp4hs"]
 
 [ext_resource type="Script" path="res://scripts/room3.gd" id="1_olwfr"]
 [ext_resource type="Texture2D" uid="uid://dbldsd0l0sgr0" path="res://assets/room3newer.PNG" id="2_uijkg"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cgmqh"]
-
-[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_ouwcb"]
-size = Vector3(1, 1, 0.001)
 
 [node name="room3" type="StaticBody3D"]
 script = ExtResource("1_olwfr")
@@ -27,10 +24,6 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 [node name="wallmesh1" type="CSGBox3D" parent="Wall1"]
 transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall1/wallmesh1"]
-transform = Transform3D(1, 0, 1.42109e-14, 0, 1.9, 0, -1.02318e-12, 0, 19, 0.00671529, -0.485483, 0)
-occluder = SubResource("BoxOccluder3D_ouwcb")
-
 [node name="WallDoor2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 17, 8, 17, 8, 0)
@@ -48,10 +41,6 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
 [node name="wallmesh3" type="CSGBox3D" parent="Wall3"]
 transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall3/wallmesh3"]
-transform = Transform3D(1, 0, 1.42109e-14, 0, 1.9, 0, -1.02318e-12, 0, 19, 0.00671529, -0.485483, 0)
-occluder = SubResource("BoxOccluder3D_ouwcb")
 
 [node name="WallDoor4" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
