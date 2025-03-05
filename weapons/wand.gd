@@ -1,12 +1,19 @@
 extends Node3D
 
-@onready var player_cam: Camera3D = $Player/PlayerCam
-@onready var player: CharacterBody3D = $"."
+@onready var player_cam: Camera3D = $root/Main/Player/PlayerCam
+@onready var player: CharacterBody3D = $".."
 const FLAME = preload("res://weapons/Flame.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# NEED THIS CODE FOR DEBUGGING THE PLAYER_CAM
+	player_cam = get_node_or_null("/root/Main/Player/PlayerCam")
+
+	if player_cam == null:
+		print("❌ PlayerCam still not found!")
+	else:
+		print("✅ PlayerCam found:", player_cam)
+
 
 # Getting the cursors position in the 3D space
 func get_cursor_world_position():
@@ -22,19 +29,21 @@ func get_cursor_world_position():
 	if result: 
 		return result.position
 	else:
-		to
+		return to
 		
+# Shooting function
 func shoot():
 	if FLAME:
 		# initialize the flame icon
 		var flame_instance = FLAME.instantiate()
-		get_parent().add_child(flame_instance)
+		get_tree().get_root().add_child(flame_instance)
 		
-		# position of player
+		# position of player and flame stay consistent
 		flame_instance.global_transform.origin = player.global_transform.origin
 		var target_position = get_cursor_world_position()
 		var direction = (target_position - flame_instance.global_transform.origin).normalized()
 		
+		flame_instance.direction = direction 
 		flame_instance.velocity = direction * 20
 		
 func _input(event):

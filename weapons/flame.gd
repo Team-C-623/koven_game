@@ -1,9 +1,10 @@
-extends Node3D
+extends CharacterBody3D
 
-const SPEED: int = 100
-var direction: Vector3 = Vector3.FORWARD
+@export var speed: float = 20.0
+@export var direction: Vector3 = Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
-	global_transform.origin += direction * SPEED * delta
+	velocity = direction * speed # Move Forward
+	move_and_slide()
 	
