@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://na8sbq0ipt4w"]
+[gd_scene load_steps=5 format=3 uid="uid://na8sbq0ipt4w"]
 
 [ext_resource type="Script" path="res://scripts/room1.gd" id="1_whfxc"]
 [ext_resource type="Texture2D" uid="uid://tlq13q1g62t2" path="res://assets/room1newer.PNG" id="2_8i6pc"]
+[ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_peqko"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
 
@@ -60,3 +61,17 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 [node name="Wall4" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 1.75, 3)
+texture = ExtResource("3_peqko")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 3, 1.75, 0)
+axis = 0
+texture = ExtResource("3_peqko")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -3, 1.75, 0)
+axis = 0
+texture = ExtResource("3_peqko")

@@ -9,10 +9,10 @@
 script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.28811, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.28811, 0)
 
 [node name="PlayerCam" type="Camera3D" parent="Player"]
-transform = Transform3D(4, 0, 0, 0, 2.51598, 3.10964, 0, -3.10964, 2.51598, -0.270266, 8.62773, 6.85938)
+transform = Transform3D(10, 0, 0, 0, 8.62619, 5.05853, 0, -5.05853, 8.62619, -0.270266, 5.53677, 8.90629)
 current = true
 
 [node name="TopDownCam" type="Camera3D" parent="Player"]
@@ -40,5 +40,6 @@ text = "Switch Camera"
 script = ExtResource("4_scj2c")
 
 [node name="room1" parent="Map" instance=ExtResource("1_cfuyy")]
+visible = false
 
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
