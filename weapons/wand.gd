@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var wand: Node3D = $"."
 @onready var player_cam: Camera3D = $root/Main/Player/PlayerCam
 @onready var player: CharacterBody3D = $".."
 const FLAME = preload("res://weapons/Flame.tscn")
@@ -8,11 +9,6 @@ const FLAME = preload("res://weapons/Flame.tscn")
 func _ready() -> void:
 	# NEED THIS CODE FOR DEBUGGING THE PLAYER_CAM
 	player_cam = get_node_or_null("/root/Main/Player/PlayerCam")
-
-	if player_cam == null:
-		print("❌ PlayerCam still not found!")
-	else:
-		print("✅ PlayerCam found:", player_cam)
 
 
 # Getting the cursors position in the 3D space
@@ -39,7 +35,7 @@ func shoot():
 		get_tree().get_root().add_child(flame_instance)
 		
 		# position of player and flame stay consistent
-		flame_instance.global_transform.origin = player.global_transform.origin
+		flame_instance.global_transform.origin = wand.global_transform.origin
 		var target_position = get_cursor_world_position()
 		var direction = (target_position - flame_instance.global_transform.origin).normalized()
 		

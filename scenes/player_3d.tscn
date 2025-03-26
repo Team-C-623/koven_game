@@ -18,3 +18,4 @@ shape = SubResource("ConvexPolygonShape3D_lyeip")
 texture = ExtResource("2_c7a2a")
 
 [node name="Wand" parent="." instance=ExtResource("3_re0oj")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.41474, 0.254657, 0)

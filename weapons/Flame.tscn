@@ -8,6 +8,7 @@ radius = 0.244238
 height = 1.01365
 
 [node name="Flame" type="CharacterBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.0024923, 0.29999, 0, -0.29999, 0.0024923, 0, 0, 0)
 script = ExtResource("1_bn3o8")
 
 [node name="flameicon" type="Sprite3D" parent="."]
