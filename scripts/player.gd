@@ -1,8 +1,6 @@
 extends CharacterBody3D
 
 
-const SPEED = 6.0
-
 
 func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

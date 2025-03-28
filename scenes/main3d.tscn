@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=6 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="PackedScene" uid="uid://na8sbq0ipt4w" path="res://scenes/room1.tscn" id="1_cfuyy"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player_3d.tscn" id="2_mjsmv"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="4_scj2c"]
+[ext_resource type="PackedScene" uid="uid://c5gq4mv4mn0wv" path="res://scenes/currency/currencyUI.tscn" id="5_f56qx"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
@@ -34,6 +35,7 @@ offset_left = 14.0
 offset_top = 11.0
 offset_right = 94.0
 offset_bottom = 42.0
+scale = Vector2(1.00001, 1.00435)
 text = "Switch Camera"
 
 [node name="Map" type="Node3D" parent="."]
@@ -41,5 +43,12 @@ script = ExtResource("4_scj2c")
 
 [node name="room1" parent="Map" instance=ExtResource("1_cfuyy")]
 visible = false
+
+[node name="CurrencyUi" parent="." instance=ExtResource("5_f56qx")]
+offset_left = 1650.0
+offset_top = 10.0
+offset_right = 1650.75
+offset_bottom = 10.0
+scale = Vector2(1, 0.962)
 
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]

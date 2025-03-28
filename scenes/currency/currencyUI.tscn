@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5gq4mv4mn0wv"]
+
+[ext_resource type="Script" path="res://scripts/currency/currencyUI.gd" id="1_s7gus"]
+[ext_resource type="Texture2D" uid="uid://bc67qqxu7es8f" path="res://assets/coin.jpg" id="2_vgu7t"]
+
+[node name="CurrencyUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s7gus")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 360.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vgu7t")
+
+[node name="label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 262.0
+offset_bottom = 163.0
+scale = Vector2(1.2621, 1.04444)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Coins"
