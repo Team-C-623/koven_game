@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://na8sbq0ipt4w"]
 
-[ext_resource type="Script" path="res://scripts/room1.gd" id="1_whfxc"]
-[ext_resource type="Texture2D" uid="uid://tlq13q1g62t2" path="res://assets/room1newer.PNG" id="2_8i6pc"]
+[ext_resource type="Script" path="res://scripts/Rooms/room1.gd" id="1_whfxc"]
+[ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/floor.PNG" id="2_u41qk"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_peqko"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
@@ -10,9 +10,9 @@
 script = ExtResource("1_whfxc")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0)
 axis = 1
-shaded = true
-texture = ExtResource("2_8i6pc")
+texture = ExtResource("2_u41qk")
 
 [node name="Area3D" type="Area3D" parent="."]
 visible = false
@@ -39,7 +39,7 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
-[node name="DoorPosU" type="Node3D" parent="."]
+[node name="DoorPosU" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="Floor" type="CollisionShape3D" parent="."]

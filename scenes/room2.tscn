@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7fg5epxjkipk"]
 
-[ext_resource type="Script" path="res://scripts/room2.gd" id="1_qnv86"]
+[ext_resource type="Script" path="res://scripts/Rooms/room2.gd" id="1_qnv86"]
 [ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/room2newer.png" id="2_8ivkf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1yg7t"]
@@ -33,8 +33,8 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(15, 0, 15, 19, -15, 19, -15, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
-[node name="DoorPosU" type="Node3D" parent="."]
+[node name="DoorPosU" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="DoorPosD" type="Node3D" parent="."]
+[node name="DoorPosD" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)

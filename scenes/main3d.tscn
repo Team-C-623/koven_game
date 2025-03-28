@@ -9,10 +9,10 @@
 script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.28811, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.28811, 0)
 
 [node name="PlayerCam" type="Camera3D" parent="Player"]
-transform = Transform3D(10, 0, 0, 0, 8.62619, 5.05853, 0, -5.05853, 8.62619, -0.270266, 5.53677, 8.90629)
+transform = Transform3D(1.66667, 0, 0, 0, 1.66482, -0.0784813, 0, 0.0784813, 1.66482, -0.270266, 0.638675, 0.0901761)
 current = true
 
 [node name="TopDownCam" type="Camera3D" parent="Player"]
