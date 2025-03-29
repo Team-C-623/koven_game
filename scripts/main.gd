@@ -1,10 +1,10 @@
 extends Node3D
 
 # imports rooms as packed scenes
-var room2scene = preload("res://scenes/room2.tscn")
-var room3scene = preload("res://scenes/room3.tscn")
-var room4scene = preload("res://scenes/room4.tscn")
-var room5scene = preload("res://scenes/room5.tscn")
+var room2scene = preload("res://scenes/Rooms/room2.tscn")
+var room3scene = preload("res://scenes/Rooms/room3.tscn")
+var room4scene = preload("res://scenes/Rooms/room4.tscn")
+var room5scene = preload("res://scenes/Rooms/room5.tscn")
 
 # creates a list of the options for rooms to choose from when generating
 # probably a better way to do this? idk

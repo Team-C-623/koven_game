@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://na8sbq0ipt4w"]
 
-[ext_resource type="Script" path="res://scripts/Rooms/room1.gd" id="1_whfxc"]
+[ext_resource type="Script" path="res://scripts/Room.gd" id="1_plm6k"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/floor.PNG" id="2_u41qk"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_peqko"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
 
 [node name="room1" type="StaticBody3D"]
-script = ExtResource("1_whfxc")
+script = ExtResource("1_plm6k")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0)
