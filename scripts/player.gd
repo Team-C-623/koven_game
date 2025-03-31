@@ -6,6 +6,8 @@ const SPEED = 5.0
 @onready var cam_mount = $CamMount
 @onready var camera = $CamMount/PlayerCam
 
+@export var journal: Journal
+
 func _unhandled_input(event: InputEvent) -> void:
 	# allows mouse lock and unlock
 	if event is InputEventMouseButton:

@@ -3,6 +3,7 @@ extends Node3D
 # adds a room to the tree
 func _add_room(room_scene):
 	var new_instance = room_scene.instantiate()
+	
 	# add the new room to the tree
 	add_child(new_instance)
 	# return the room so that it can be used in subsequent room creations
