@@ -69,7 +69,7 @@ func new_generate(base_path_length):
 	print(prev_room_space)
 	add_child(prev_room)
 	
-	for i in range(5):
+	for i in range(base_path_length - 1):
 		var all_doors_blocked = true
 		while all_doors_blocked:
 			var room_choice = room_options.keys()[randi() % room_options.size()]
@@ -227,6 +227,9 @@ func _clear_rooms():
 	var room_list = self.get_children()
 	for node in room_list:
 		node.queue_free()
+
+func _get_adj_room():
+	pass
 
 # returns a vector based on the given door position
 func _get_door_pos_vector(door_pos):

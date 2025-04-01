@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopData" load_steps=5 format=3 uid="uid://dpw4nxiqe3nex"]
+
+[ext_resource type="Script" path="res://scripts/Shop/ItemData.gd" id="1_crgx4"]
+[ext_resource type="Resource" uid="uid://dqyk0qc66k3nk" path="res://resources/card1.tres" id="2_s3jxe"]
+[ext_resource type="Script" path="res://scripts/Shop/ShopData.gd" id="2_yg6ed"]
+[ext_resource type="Resource" uid="uid://cy7mnq1xtgrnw" path="res://resources/card2.tres" id="3_ocf25"]
+
+[resource]
+script = ExtResource("2_yg6ed")
+ShopItems = Array[ExtResource("1_crgx4")]([ExtResource("2_s3jxe"), ExtResource("2_s3jxe"), ExtResource("3_ocf25"), ExtResource("3_ocf25"), ExtResource("2_s3jxe"), ExtResource("3_ocf25")])

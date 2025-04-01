@@ -1,11 +1,12 @@
 extends Node3D
 
 @onready var map = $Map
+var room1scene = preload("res://scenes/Rooms/room1.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# adds a set of rooms to the map
-	map.new_generate(10)
+	map._add_first_room(room1scene)
 
 # switch cameras
 func switch_cam():
