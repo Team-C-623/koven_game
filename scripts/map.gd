@@ -4,10 +4,19 @@ extends Node3D
 func _add_room(room_scene):
 	var new_instance = room_scene.instantiate()
 	
+	
 	# add the new room to the tree
 	add_child(new_instance)
 	# return the room so that it can be used in subsequent room creations
+	
+	_spawn_keys_in_room(new_instance) #spawns key
 	return new_instance
+
+#spawns keys
+func _spawn_keys_in_room(room):
+	var spawners = room.find_children("*", "KeySpawner", true)
+	for spawner in spawners:
+		spawner.try_spawn_key()
 	
 # sets the location of a provided room
 func _set_room_position(new_instance, prev_room, prev_door_pos, new_door_pos):

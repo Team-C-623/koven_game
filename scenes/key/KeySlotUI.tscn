@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5bwgdvcxehe7"]
+
+[ext_resource type="Script" path="res://scripts/key/key_slot_UI.gd" id="1_3d74m"]
+[ext_resource type="Texture2D" uid="uid://wt7n4stc2y22" path="res://assets/inventory-slot.png" id="1_lwdkr"]
+
+[node name="KeySlotUI" type="Panel"]
+offset_left = 1724.0
+offset_top = 890.0
+offset_right = 1724.0
+offset_bottom = 890.0
+script = ExtResource("1_3d74m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(10.3125, 10.1875)
+texture = ExtResource("1_lwdkr")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 162.0
+offset_bottom = 163.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Counter" type="Label" parent="CenterContainer/Panel"]
+z_index = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 69.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(-3, 0)
+scale = Vector2(0.85, 0.85)

@@ -2,10 +2,7 @@ extends Panel
 
 signal entry_selected(entry: JournalEntry)
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/ItemDisplay
-
 var current_entry: JournalEntry = null
-
-	
 
 
 func update(item: JournalEntry):

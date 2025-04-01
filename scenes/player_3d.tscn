@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjjcwfil4vt7w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_r5t1a"]
-[ext_resource type="Resource" uid="uid://b1ql3mcqoqk5a" path="res://resources/journal.tres" id="2_vb78k"]
+[ext_resource type="Resource" uid="uid://b1ql3mcqoqk5a" path="res://resources/journal/journal.tres" id="2_vb78k"]
 [ext_resource type="Texture2D" uid="uid://c4thpb1jqtjk7" path="res://assets/character.png" id="2_vept1"]
-[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/journal_ui.tscn" id="4_anngu"]
+[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l1fuj"]
 

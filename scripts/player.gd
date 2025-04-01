@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name Player
 const SENS = 0.4
 const SPEED = 5.0
 

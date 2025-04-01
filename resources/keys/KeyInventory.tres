@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryKeys" load_steps=3 format=3 uid="uid://c0b6sfrb764x3"]
+
+[ext_resource type="Script" path="res://scripts/key/key_item.gd" id="1_hxxq5"]
+[ext_resource type="Script" path="res://scripts/key/key_inventory.gd" id="1_o8s0v"]
+
+[resource]
+script = ExtResource("1_o8s0v")
+max_keys = 3
+keys = Array[ExtResource("1_hxxq5")]([null, null, null])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/journal/journal_ui.gd" id="1_bmtbh"]
 [ext_resource type="Texture2D" uid="uid://cpdtli0wn851d" path="res://assets/inventory-background.png" id="2_g76vo"]
-[ext_resource type="PackedScene" uid="uid://bg5rixxbj1u33" path="res://scenes/journal/journal_slot.tscn" id="3_tqq02"]
+[ext_resource type="PackedScene" uid="uid://bg5rixxbj1u33" path="res://scenes/journal/JournalSlot.tscn" id="3_tqq02"]
 [ext_resource type="Script" path="res://scripts/journal/entry_display.gd" id="4_ssytr"]
 
 [node name="Journal_UI" type="Control"]

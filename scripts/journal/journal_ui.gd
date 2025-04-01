@@ -1,6 +1,6 @@
 extends Control
 
-@onready var journal: Journal = preload("res://resources/journal.tres")
+@onready var journal: Journal = preload("res://resources/journal/journal.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @onready var entry_display = $EntryDisplay 
 var is_open = false
