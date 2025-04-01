@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7fg5epxjkipk"]
 
-[ext_resource type="Script" path="res://scripts/room2.gd" id="1_qnv86"]
+[ext_resource type="Script" path="res://scripts/Room.gd" id="1_wpryu"]
 [ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/room2newer.png" id="2_8ivkf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1yg7t"]
 
 [node name="room2" type="StaticBody3D"]
-script = ExtResource("1_qnv86")
+script = ExtResource("1_wpryu")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 axis = 1
@@ -20,13 +20,6 @@ shape = SubResource("WorldBoundaryShape3D_1yg7t")
 [node name="WallDoor1" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
 polygon = PackedVector2Array(15, 0, 15, 19, -15, 19, -15, 0, -8, 0, -8, 16, 8, 16, 8, 0)
-
-[node name="wallmesh1" type="CSGBox3D" parent="WallDoor1"]
-transform = Transform3D(30, 0, -6.82121e-14, 0, 20, 0, 1.02318e-12, 0, 2, -0.402918, 9.70966, 0)
-
-[node name="doorway1" type="CSGBox3D" parent="WallDoor1/wallmesh1"]
-transform = Transform3D(0.5, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
-operation = 2
 
 [node name="Wall2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -1.5, 0, 0)
@@ -46,15 +39,8 @@ transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(15, 0, 15, 19, -15, 19, -15, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
-[node name="wallmesh4" type="CSGBox3D" parent="WallDoor4"]
-transform = Transform3D(30, 0, -6.82121e-14, 0, 20, 0, 1.02318e-12, 0, 2, -0.402918, 9.70966, 0)
-
-[node name="doorway4" type="CSGBox3D" parent="WallDoor4/wallmesh4"]
-transform = Transform3D(0.5, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
-operation = 2
-
-[node name="DoorPosU" type="Node3D" parent="."]
+[node name="DoorPosU" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="DoorPosD" type="Node3D" parent="."]
+[node name="DoorPosD" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
