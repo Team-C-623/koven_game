@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://na8sbq0ipt4w"]
 
-[ext_resource type="Script" path="res://scripts/Room.gd" id="1_plm6k"]
-[ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/floor.PNG" id="2_u41qk"]
-[ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_peqko"]
+[ext_resource type="Script" path="res://scripts/room1.gd" id="1_whfxc"]
+[ext_resource type="Texture2D" uid="uid://tlq13q1g62t2" path="res://assets/room1newer.PNG" id="2_8i6pc"]
+[ext_resource type="PackedScene" uid="uid://b1w44dngjjo0t" path="res://scenes/enemy_spawner.tscn" id="3_4oymk"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
 
 [node name="room1" type="StaticBody3D"]
-script = ExtResource("1_plm6k")
+script = ExtResource("1_whfxc")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0)
 axis = 1
-texture = ExtResource("2_u41qk")
+shaded = true
+texture = ExtResource("2_8i6pc")
 
 [node name="Area3D" type="Area3D" parent="."]
 visible = false
@@ -39,7 +39,7 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
-[node name="DoorPosU" type="Marker3D" parent="."]
+[node name="DoorPosU" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="Floor" type="CollisionShape3D" parent="."]
@@ -50,28 +50,33 @@ shape = SubResource("WorldBoundaryShape3D_vcy58")
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
+[node name="wallmesh1" type="CSGBox3D" parent="WallDoor1"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
+
+[node name="doorway1" type="CSGBox3D" parent="WallDoor1/wallmesh1"]
+transform = Transform3D(0.25, 0, 0, 0, 0.9, 0, 0, 0, 1.5, 0, -0.0627693, -0.00473022)
+operation = 2
+
 [node name="Wall2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
+
+[node name="wallmesh2" type="CSGBox3D" parent="Wall2"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
 
 [node name="Wall3" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 3, 0, 0)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
+[node name="wallmesh3" type="CSGBox3D" parent="Wall3"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
+
 [node name="Wall4" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 1.75, 3)
-texture = ExtResource("3_peqko")
+[node name="wallmesh4" type="CSGBox3D" parent="Wall4"]
+transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 3, 1.75, 0)
-axis = 0
-texture = ExtResource("3_peqko")
-
-[node name="Sprite3D4" type="Sprite3D" parent="."]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -3, 1.75, 0)
-axis = 0
-texture = ExtResource("3_peqko")
+[node name="EnemySpawner" parent="." instance=ExtResource("3_4oymk")]
+transform = Transform3D(59.4818, 0, 0, 0, 65.7462, 0, 0, 0, 59.4818, 1.1535, 0.44086, 0.93739)

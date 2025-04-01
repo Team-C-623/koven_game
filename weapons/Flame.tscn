@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d0co7b3vuhxu6" path="res://weapons/trident.png" id="1_e6hls"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mjw5f"]
-radius = 0.244238
-height = 1.01365
+radius = 0.0862873
+height = 0.747651
 
 [node name="Flame" type="CharacterBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.0024923, 0.29999, 0, -0.29999, 0.0024923, 0, 0, 0)
