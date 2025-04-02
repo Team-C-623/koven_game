@@ -95,7 +95,7 @@ func new_generate(base_path_length):
 				prev_room.door_dict[prev_door_choice] = 1
 				new_room.door_dict[new_door_choice] = 1
 				
-				#new_pos = old_pos + 1 rotated by old_door_pos
+				# new_pos = old_pos + 1 rotated by old_door_pos
 				for door in new_room.door_dict:
 					var converted_space = _door_pos_to_grid_vect(door)
 					var prev_door_vect = _get_door_pos_vector(prev_door_choice)
@@ -124,7 +124,7 @@ func new_generate(base_path_length):
 				var sin_rr = sin(new_room.room_rotation)
 				new_room.pos = prev_room.get_node(prev_door_choice).global_position
 				new_room.pos -= Vector3(cos_rr * x_coord + sin_rr * z_coord, 0, cos_rr * z_coord - sin_rr * x_coord)
-				var door_vect = _get_door_pos_vector(prev_door_choice)
+				var _door_vect = _get_door_pos_vector(prev_door_choice)
 				var converted_new = _door_pos_to_grid_vect(prev_door_choice)
 				var next_room_space = prev_room_space + converted_new.rotated(prev_room.room_rotation)
 				room_grid[next_room_space[0]][next_room_space[1]] = new_room

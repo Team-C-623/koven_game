@@ -6,13 +6,10 @@ const SPEED = 5.0
 @onready var cam_mount = $CamMount
 @onready var camera = $CamMount/PlayerCam
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func _unhandled_input(event: InputEvent) -> void:
-	# allows mouse lock and unlock
-	if event is InputEventMouseButton:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	# "ui_cancel" is escape by default
-	elif event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			# weird bug occurs if you try to rotate camera using mouse x and y movement

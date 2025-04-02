@@ -199,10 +199,10 @@ anchor_left = 0.083
 anchor_top = 0.083
 anchor_right = 0.917
 anchor_bottom = 0.917
-offset_left = 19.64
-offset_top = 19.36
-offset_right = -1541.64
-offset_bottom = -858.36
+offset_left = 30.64
+offset_top = 25.36
+offset_right = -1454.64
+offset_bottom = -808.36
 theme_override_font_sizes/font_size = 48
 text = "Shop"
 

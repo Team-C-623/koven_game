@@ -14,6 +14,7 @@ func clear_shop():
 		c.queue_free()
 		
 func update_shop():
+	clear_shop()
 	for item in data.ShopItems:
 		var new_item = SHOP_ITEM.instantiate()
 		add_child(new_item)

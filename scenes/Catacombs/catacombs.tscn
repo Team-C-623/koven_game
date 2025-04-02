@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbpb3od0y5emi"]
+
+[ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
+[ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/floor.PNG" id="2_i0wwx"]
+[ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_wbkkx"]
+
+[node name="Catacombs" type="StaticBody3D"]
+script = ExtResource("1_bi88v")
+
+[node name="Floor" type="Sprite3D" parent="."]
+transform = Transform3D(3.333, 0, 0, 0, 3.333, 0, 0, 0, 3.333, 0, 0, 0)
+axis = 1
+texture = ExtResource("2_i0wwx")
+
+[node name="Wall1" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -12, 0, 0)
+polygon = PackedVector2Array(120, 0, 120, 46, -120, 46, -120, 0)
+
+[node name="Wall2" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 12)
+polygon = PackedVector2Array(120, 0, 120, 46, -120, 46, -120, 0)
+
+[node name="Wall3" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -12)
+polygon = PackedVector2Array(120, 0, 120, 46, -120, 46, -120, 0)
+
+[node name="Wall4" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 12, 0, 0)
+polygon = PackedVector2Array(120, 0, 120, 46, -120, 46, -120, 0)
+
+[node name="WallSprite1" type="Sprite3D" parent="."]
+transform = Transform3D(0.717, 0, 0, 0, 0.717, 0, 0, 0, 0.717, 0, 7.09, 12)
+texture = ExtResource("3_wbkkx")
+
+[node name="WallSprite2" type="Sprite3D" parent="."]
+transform = Transform3D(0.717, 0, 0, 0, 0.717, 0, 0, 0, 0.717, 0, 7.09, -12)
+texture = ExtResource("3_wbkkx")
+
+[node name="WallSprite3" type="Sprite3D" parent="."]
+transform = Transform3D(-3.13411e-08, 0, 0.717, 0, 0.717, 0, -0.717, 0, -3.13411e-08, 12, 7.09, 0)
+texture = ExtResource("3_wbkkx")
+
+[node name="WallSprite4" type="Sprite3D" parent="."]
+transform = Transform3D(-3.13411e-08, 0, 0.717, 0, 0.717, 0, -0.717, 0, -3.13411e-08, -11.9984, 7.09, 0.0453262)
+texture = ExtResource("3_wbkkx")

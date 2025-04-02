@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://duqt05t3ju1qh"]
 
-[ext_resource type="Texture2D" uid="uid://dbremiyfv5tey" path="res://assets/card.png" id="1_bk7u2"]
 [ext_resource type="Script" path="res://scripts/Shop/shop_item_ui.gd" id="1_n5fh6"]
 [ext_resource type="Texture2D" uid="uid://dg5n8hupgbss2" path="res://assets/coin.png" id="2_104vf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1obhm"]
 
 [node name="ShopItemButton" type="Button"]
 custom_minimum_size = Vector2(900, 150)
@@ -36,7 +37,7 @@ offset_top = 8.0
 offset_right = 231.0
 offset_bottom = 340.0
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_bk7u2")
+texture = SubResource("PlaceholderTexture2D_1obhm")
 
 [node name="Currency" type="TextureRect" parent="."]
 layout_mode = 0
