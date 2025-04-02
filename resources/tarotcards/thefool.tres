@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TarotCardData" load_steps=3 format=3 uid="uid://dg8rolomtgsq1"]
+
+[ext_resource type="Script" path="res://scripts/tarotcards/tarotcard_data.gd" id="1_jgv01"]
+[ext_resource type="Texture2D" uid="uid://dbql3utwvpwgx" path="res://assets/tarotcards/thefool.png" id="2_8qt86"]
+
+[resource]
+script = ExtResource("1_jgv01")
+name = "The Fool"
+description = "silly guy i think"
+stackable = true
+texture = ExtResource("2_8qt86")

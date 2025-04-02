@@ -1,31 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=14 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="PackedScene" uid="uid://na8sbq0ipt4w" path="res://scenes/Rooms/room1.tscn" id="1_cfuyy"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player_3d.tscn" id="2_mjsmv"]
+[ext_resource type="Resource" uid="uid://8n3f5nhj37n4" path="res://resources/inventory/test_inv.tres" id="3_uiq1v"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="4_scj2c"]
+[ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://scenes/inventory/inventory.tscn" id="5_nd3my"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_interface.gd" id="6_lmuoi"]
+[ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="8_wfuic"]
+[ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
+[ext_resource type="PackedScene" uid="uid://pmivhbt6ityu" path="res://scenes/interactable/pick_up.tscn" id="10_pgkyd"]
+[ext_resource type="Script" path="res://scripts/inventory/slot_data.gd" id="11_7837g"]
+[ext_resource type="Resource" uid="uid://dg8rolomtgsq1" path="res://resources/tarotcards/thefool.tres" id="12_68mrc"]
+
+[sub_resource type="Resource" id="Resource_v5uce"]
+script = ExtResource("11_7837g")
+tarotcard_data = ExtResource("12_68mrc")
+quantity = 1
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.513106, 0)
+inventory_data = ExtResource("3_uiq1v")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.913828, 0.232817, -0.332739, 0.122754, 0.62266, 0.772804, 0.387105, -0.747055, 0.540425, 0, 0, 5)
 light_energy = 0.8
 
 [node name="SwitchCamButton" type="Button" parent="."]
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 94.0
-offset_bottom = 42.0
+offset_right = 123.0
+offset_bottom = 31.0
 text = "Switch Camera"
 
 [node name="Map" type="Node3D" parent="."]
 script = ExtResource("4_scj2c")
 
 [node name="room1" parent="Map" instance=ExtResource("1_cfuyy")]
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.67436, 0)
@@ -34,4 +46,49 @@ light_energy = 1.972
 spot_angle = 30.0
 spot_angle_attenuation = 0.7
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_lmuoi")
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("5_nd3my")]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 144.0
+offset_right = 182.0
+offset_bottom = 184.0
+
+[node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("5_nd3my")]
+visible = false
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 335.0
+offset_right = 1204.0
+offset_bottom = 375.0
+
+[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("8_wfuic")]
+visible = false
+modulate = Color(1, 1, 1, 0.470588)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="Chest" parent="." instance=ExtResource("9_6odt0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
+
+[node name="PickUp" parent="." instance=ExtResource("10_pgkyd")]
+transform = Transform3D(0.195484, 0, 0.980707, 0, 1, 0, -0.980707, 0, 0.195484, -1.5435, 0.919047, 0.935164)
+slot_data = SubResource("Resource_v5uce")
+
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
+[connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
+[connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
+[connection signal="visibility_changed" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_visibility_changed"]

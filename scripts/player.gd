@@ -1,17 +1,22 @@
 extends CharacterBody3D
 
+@export var inventory_data: InventoryData
+
+signal toggle_inventory()
+
 const SENS = 0.4
 const SPEED = 5.0
 
 @onready var cam_mount = $CamMount
 @onready var camera = $CamMount/PlayerCam
+@onready var interact_ray: RayCast3D = $InteractRay
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event: InputEvent) -> void:
-	# allows mouse lock and unlock
-	if event is InputEventMouseButton:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# "ui_cancel" is escape by default
-	elif event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
@@ -20,6 +25,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			cam_mount.rotate_y(-event.relative.x * SENS * 0.005)
 			# rotates camera node's y angle by mouse y movement
 			camera.rotate_x(-event.relative.y * SENS * 0.005)
+	if Input.is_action_just_pressed("inventory"):
+		toggle_inventory.emit()
+	
+	if Input.is_action_just_pressed("interact"):
+		interact()
 
 func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -33,3 +43,11 @@ func _physics_process(_delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func interact() -> void:
+	if interact_ray.is_colliding():
+		interact_ray.get_collider().player_interact()
+
+func get_drop_position() -> Vector3:
+	var direction = -camera.global_transform.basis.z
+	return camera.global_position + direction

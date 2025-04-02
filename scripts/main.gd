@@ -1,5 +1,10 @@
 extends Node3D
 
+const PickUp = preload("res://scenes/interactable/pick_up.tscn")
+
+@onready var player: CharacterBody3D = $Player
+@onready var inventory_interface: Control = $UI/InventoryInterface
+
 # imports rooms as packed scenes
 var room2scene = preload("res://scenes/Rooms/room2.tscn")
 var room3scene = preload("res://scenes/Rooms/room3.tscn")
@@ -12,6 +17,11 @@ var room_options = [room2scene, room3scene, room4scene, room5scene]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player.toggle_inventory.connect(toggle_inventory_interface)
+	inventory_interface.set_player_inventory_data(player.inventory_data)
+	
+	for node in get_tree().get_nodes_in_group("external_inventory"):
+		node.toggle_inventory.connect(toggle_inventory_interface)
 	generate()
 	
 	# create a non-random room, adds it to the tree and then sets its position
@@ -66,3 +76,23 @@ func switch_cam():
 		get_node("Player/CamMount/PlayerCam").current = false
 	else:
 		get_node("Player/TopDownCam").current = false
+
+func toggle_inventory_interface(external_inventory_owner = null) -> void:
+	inventory_interface.visible = not inventory_interface.visible
+	
+	if inventory_interface.visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	if external_inventory_owner and inventory_interface.visible:
+		inventory_interface.set_external_inventory(external_inventory_owner)
+	else:
+		inventory_interface.clear_external_inventory()
+
+
+func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
+	var pick_up = PickUp.instantiate()
+	pick_up.slot_data = slot_data
+	pick_up.position = player.get_drop_position() # Vector3.UP # change to player.get_drop_position() when camera fixed
+	add_child(pick_up)
