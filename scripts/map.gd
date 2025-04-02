@@ -9,14 +9,14 @@ func _add_room(room_scene):
 	add_child(new_instance)
 	# return the room so that it can be used in subsequent room creations
 	
-	_spawn_keys_in_room(new_instance) #spawns key
+	_spawn_journals_in_room(new_instance) #spawns journal
 	return new_instance
 
 #spawns keys
-func _spawn_keys_in_room(room):
-	var spawners = room.find_children("*", "KeySpawner", true)
+func _spawn_journals_in_room(room):
+	var spawners = room.find_children("*", "JournalSpawner", true)
 	for spawner in spawners:
-		spawner.try_spawn_key()
+		spawner.try_spawn_journal()
 	
 # sets the location of a provided room
 func _set_room_position(new_instance, prev_room, prev_door_pos, new_door_pos):

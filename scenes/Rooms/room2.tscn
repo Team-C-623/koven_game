@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7fg5epxjkipk"]
+[gd_scene load_steps=6 format=3 uid="uid://c7fg5epxjkipk"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_wpryu"]
 [ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/room2newer.png" id="2_8ivkf"]
-[ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/key/key_spawner.tscn" id="2_gd6it"]
+[ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="2_gd6it"]
+[ext_resource type="PackedScene" uid="uid://r62r764q3j4h" path="res://scenes/journal/journal.tscn" id="3_2yi52"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1yg7t"]
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_wpryu")
 
-[node name="KeySpawner" parent="." instance=ExtResource("2_gd6it")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00533497, 1.63448)
+[node name="JournalSpawner" parent="." instance=ExtResource("2_gd6it")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0571361, 0, 0.255204)
+journal_scene = ExtResource("3_2yi52")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 axis = 1

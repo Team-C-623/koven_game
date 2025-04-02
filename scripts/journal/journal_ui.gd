@@ -1,10 +1,14 @@
 extends Control
-
+class_name JournalUI
 @onready var journal: Journal = preload("res://resources/journal/journal.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @onready var entry_display = $EntryDisplay 
 var is_open = false
 
+static var instance: JournalUI
+
+func _init():
+	instance = self  
 
 func _ready():
 	update_slots()

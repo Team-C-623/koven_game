@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Currency="*res://scripts/currency/Currency.gd"
-KeySlot="*res://scenes/key/KeySlotUI.tscn"
 CurrencyUI="*res://scenes/currency/CurrencyUI.tscn"
 
 [display]

@@ -1,15 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cep0suh26v1cl"]
+[gd_scene load_steps=3 format=3 uid="uid://cep0suh26v1cl"]
 
-[ext_resource type="Script" path="res://scripts/key/key_spawner.gd" id="1_fbgcw"]
-[ext_resource type="PackedScene" uid="uid://bfilvslad5s8m" path="res://scenes/key/Key.tscn" id="2_n2x6v"]
+[ext_resource type="Script" path="res://scripts/journal/journal_spawner.gd" id="1_f2an2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4lf6i"]
 size = Vector3(2.51746, 0.797852, 1.9071)
 
 [node name="KeySpawner" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418059, 0, 0.0438628)
-script = ExtResource("1_fbgcw")
-key_scene = ExtResource("2_n2x6v")
+script = ExtResource("1_f2an2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758728, 0.101074, 0.453552)

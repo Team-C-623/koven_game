@@ -5,6 +5,7 @@ signal entry_selected(entry: JournalEntry)
 var current_entry: JournalEntry = null
 
 
+
 func update(item: JournalEntry):
 	current_entry = item
 	if !item:

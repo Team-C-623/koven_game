@@ -1,13 +1,13 @@
 extends Node3D
-class_name KeySpawner
+class_name JournalSpawner
 
-@export var key_scene : PackedScene
+@export var journal_scene : PackedScene
 @export var spawn_chance : float = 0.5  # 50% chance to spawn
 @export var spawn_height : float = 0.5  # Height above ground
 
-func try_spawn_key():
+func try_spawn_journal():
 	if randf() <= spawn_chance:
-		var key = key_scene.instantiate()
+		var journal = journal_scene.instantiate()
 		
 		# Position randomly within spawner area
 		var spawn_extents = $CollisionShape3D.shape.extents
@@ -17,7 +17,7 @@ func try_spawn_key():
 			randf_range(-spawn_extents.z, spawn_extents.z)
 		)
 		
-		key.position = random_pos
-		add_child(key)
-		return key
+		journal.position = random_pos
+		add_child(journal)
+		return journal
 	return null

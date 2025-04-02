@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_j22dw")
-entry_id = 1
+entry_id = 0
 texture = ExtResource("2_mrfh4")
-content = "Hello World, Journal entry no. 1. Lots of content here. skajdfaslkdjflasdjflksadjf"
+content = "Hello World, Journal entry no. 0. Lots of content here. test entry"

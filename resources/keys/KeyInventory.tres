@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="InventoryKeys" load_steps=3 format=3 uid="uid://c0b6sfrb764x3"]
+[gd_resource type="Resource" script_class="InventoryKeys" load_steps=4 format=3 uid="uid://c0b6sfrb764x3"]
 
 [ext_resource type="Script" path="res://scripts/key/key_item.gd" id="1_hxxq5"]
 [ext_resource type="Script" path="res://scripts/key/key_inventory.gd" id="1_o8s0v"]
+[ext_resource type="Resource" uid="uid://jj2rg51tff4f" path="res://resources/keys/test_key.tres" id="2_3f5fr"]
 
 [resource]
 script = ExtResource("1_o8s0v")
 max_keys = 3
-keys = Array[ExtResource("1_hxxq5")]([null, null, null])
+keys = Array[ExtResource("1_hxxq5")]([ExtResource("2_3f5fr"), null, null])
