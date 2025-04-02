@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Key" load_steps=3 format=3 uid="uid://jj2rg51tff4f"]
-
-[ext_resource type="Script" path="res://scripts/key/key_item.gd" id="1_8pfu3"]
-[ext_resource type="Texture2D" uid="uid://1lvd0pix4pg8" path="res://icon.svg" id="2_ygbxl"]
-
-[resource]
-script = ExtResource("1_8pfu3")
-texture = ExtResource("2_ygbxl")
