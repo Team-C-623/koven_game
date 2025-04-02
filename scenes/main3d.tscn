@@ -43,4 +43,8 @@ text = "Switch Camera"
 [node name="Enemy" parent="." instance=ExtResource("5_gubt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59015, 0.312828, 0)
 
+[node name="Generate" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
