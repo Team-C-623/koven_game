@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://na8sbq0ipt4w"]
+[gd_scene load_steps=6 format=3 uid="uid://na8sbq0ipt4w"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_plm6k"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/floor.PNG" id="2_u41qk"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_peqko"]
+[ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy_spawner.tscn" id="4_m2qvf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
 
@@ -75,3 +76,6 @@ texture = ExtResource("3_peqko")
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -3, 1.75, 0)
 axis = 0
 texture = ExtResource("3_peqko")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_m2qvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59502, 1.12687, 1.21946)
