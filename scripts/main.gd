@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var map = $Map
+#var room1scene = preload("res://scenes/Rooms/room1.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

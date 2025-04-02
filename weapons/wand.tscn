@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://chbcgqj40iuj"]
+
+[ext_resource type="Script" path="res://weapons/wand.gd" id="1_76yrt"]
+[ext_resource type="Texture2D" uid="uid://d0co7b3vuhxu6" path="res://weapons/trident.png" id="2_jube2"]
+
+[node name="Wand" type="Node3D"]
+script = ExtResource("1_76yrt")
+
+[node name="Weaponmodel" type="Sprite3D" parent="."]
+texture = ExtResource("2_jube2")

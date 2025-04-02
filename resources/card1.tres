@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dqyk0qc66k3nk"]
+
+[ext_resource type="Script" path="res://scripts/Shop/ItemData.gd" id="1_bq3hh"]
+[ext_resource type="Texture2D" uid="uid://dbremiyfv5tey" path="res://assets/card.png" id="2_mkovf"]
+
+[resource]
+script = ExtResource("1_bq3hh")
+name = "The Moon"
+description = "it's the moon"
+cost = 10
+texture = ExtResource("2_mkovf")
