@@ -11,6 +11,11 @@ extends CharacterBody3D
 @onready var ray_cast: RayCast3D = $Sprite3D/RayCast3D
 @onready var timer = $Timer
 
+# Health Bar
+@onready var progress = $"../CanvasLayer/ProgressBar"
+@onready var health_timer = $"health_timer"
+
+
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
@@ -27,8 +32,8 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	# Debugging
 	if player_3d == null:
-		print("Player is not assigned!")
 		return  # Exit if no player is assigned
 		
 	direction = (player_3d.position-position).normalized()
@@ -53,4 +58,16 @@ func _physics_process(delta: float) -> void:
 
 	# Always face the player
 	look_at(player_3d.position)
-	
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player Groups"):
+		print("Player entered attack range")
+		health_timer.start()
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body.is_in_group("Player Groups"):
+		print("Player exited attack range")
+		health_timer.stop()
+		
+func _on_health_timer_timeout() -> void:
+	progress.value -= 10

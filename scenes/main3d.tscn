@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=7 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player_3d.tscn" id="2_mjsmv"]
 [ext_resource type="Script" path="res://scripts/RoomSpawner.gd" id="4_scj2c"]
 [ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy_spawner.tscn" id="4_txkxr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwoa"]
+bg_color = Color(0.822962, 0.16089, 3.85046e-07, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlo3i"]
+bg_color = Color(0.867295, 0.279213, 1, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
@@ -32,6 +47,18 @@ text = "Generate"
 script = ExtResource("4_scj2c")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_txkxr")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 93.0
+offset_right = 511.0
+offset_bottom = 120.0
+theme_override_styles/background = SubResource("StyleBoxFlat_yiwoa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
+value = 100.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
 [connection signal="pressed" from="Generate" to="." method="generate_new"]
