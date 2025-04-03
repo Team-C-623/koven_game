@@ -1,35 +1,20 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=10 format=3 uid="uid://8n3f5nhj37n4"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://8n3f5nhj37n4"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventory_data.gd" id="1_341tg"]
 [ext_resource type="Script" path="res://scripts/inventory/slot_data.gd" id="2_2wawh"]
-[ext_resource type="Resource" uid="uid://dg8rolomtgsq1" path="res://resources/tarotcards/thefool.tres" id="3_x4saj"]
-[ext_resource type="Resource" uid="uid://to617ci1gdht" path="res://resources/tarotcards/themoon.tres" id="4_xthp4"]
+[ext_resource type="Resource" uid="uid://h36mqur0p34w" path="res://resources/tarotcards/judgement.tres" id="3_ncqar"]
+[ext_resource type="Resource" uid="uid://csb2venf3k1qq" path="res://resources/tarotcards/wheeloffortune.tres" id="4_22wud"]
 
-[sub_resource type="Resource" id="Resource_iislu"]
+[sub_resource type="Resource" id="Resource_id7f5"]
 script = ExtResource("2_2wawh")
-tarotcard_data = ExtResource("3_x4saj")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_syfme"]
-script = ExtResource("2_2wawh")
-tarotcard_data = ExtResource("3_x4saj")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_0s63r"]
-script = ExtResource("2_2wawh")
-tarotcard_data = ExtResource("3_x4saj")
+item_data = ExtResource("3_ncqar")
 quantity = 2
 
-[sub_resource type="Resource" id="Resource_hqx7a"]
+[sub_resource type="Resource" id="Resource_lmot7"]
 script = ExtResource("2_2wawh")
-tarotcard_data = ExtResource("4_xthp4")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_i80lt"]
-script = ExtResource("2_2wawh")
-tarotcard_data = ExtResource("4_xthp4")
+item_data = ExtResource("4_22wud")
 quantity = 1
 
 [resource]
 script = ExtResource("1_341tg")
-slot_datas = Array[ExtResource("2_2wawh")]([SubResource("Resource_iislu"), SubResource("Resource_syfme"), SubResource("Resource_0s63r"), SubResource("Resource_hqx7a"), SubResource("Resource_i80lt"), null, null, null, null, null])
+slot_datas = Array[ExtResource("2_2wawh")]([SubResource("Resource_id7f5"), SubResource("Resource_lmot7"), null, null, null, null, null, null, null, null])

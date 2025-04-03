@@ -3,15 +3,15 @@ class_name SlotData
 
 const MAX_STACK_SIZE: int = 3
 
-@export var tarotcard_data: TarotCardData
+@export var item_data: ItemData
 @export_range(1, MAX_STACK_SIZE) var quantity: int = 1
 
 func can_merge_with(other_slot_data: SlotData) -> bool:
-	return tarotcard_data == other_slot_data.tarotcard_data \
+	return item_data == other_slot_data.item_data \
 			and quantity < MAX_STACK_SIZE
 
 func can_fully_merge_with(other_slot_data: SlotData) -> bool:
-	return tarotcard_data == other_slot_data.tarotcard_data \
+	return item_data == other_slot_data.item_data \
 			and quantity + other_slot_data.quantity <= MAX_STACK_SIZE
 
 func create_single_slot_data() -> SlotData:
