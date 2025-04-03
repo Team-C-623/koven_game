@@ -1,11 +1,14 @@
 extends Node3D
 
 @onready var map = $Map
+@onready var player = $Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# adds a set of rooms to the map
-	map.new_generate(10)
+	randomize()
+	map.new_new_generate(10)
+	player.global_position = Vector3(60, 0, 60)
 
 # switch cameras
 func switch_cam():
@@ -17,4 +20,4 @@ func switch_cam():
 
 func generate_new():
 	map._clear_rooms()
-	map.new_generate(10)
+	map.new_new_generate(10)
