@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://pmivhbt6ityu"]
 
 [ext_resource type="Script" path="res://scripts/interactable/pick_up.gd" id="1_ppmoa"]
-[ext_resource type="Texture2D" uid="uid://diwok7n8lrq0v" path="res://assets/tarotcards/judgement.png" id="2_tjqwx"]
+[ext_resource type="Texture2D" uid="uid://ccrx3igv00040" path="res://assets/tarotcards/judgement.png" id="2_i76yy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rah7u"]
 radius = 0.490343
@@ -14,7 +14,7 @@ script = ExtResource("1_ppmoa")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.0159436, 0, 0, 0, 0.0159436, 0, 0, 0, 0.0159436, 0, 0, 0)
 texture_filter = 1
-texture = ExtResource("2_tjqwx")
+texture = ExtResource("2_i76yy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.360779, 0, 0, 0)
