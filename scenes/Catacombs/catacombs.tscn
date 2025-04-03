@@ -1,14 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=6 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/floor.PNG" id="2_i0wwx"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_wbkkx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgady"]
+shading_mode = 0
+albedo_texture = ExtResource("2_i0wwx")
+uv1_scale = Vector3(12, 12, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dwee4"]
+material = SubResource("StandardMaterial3D_cgady")
+size = Vector2(24, 24)
 
 [node name="Catacombs" type="StaticBody3D"]
 script = ExtResource("1_bi88v")
 
 [node name="Floor" type="Sprite3D" parent="."]
 transform = Transform3D(3.333, 0, 0, 0, 3.333, 0, 0, 0, 3.333, 0, 0, 0)
+visible = false
 axis = 1
 texture = ExtResource("2_i0wwx")
 
@@ -43,3 +53,6 @@ texture = ExtResource("3_wbkkx")
 [node name="WallSprite4" type="Sprite3D" parent="."]
 transform = Transform3D(-3.13411e-08, 0, 0.717, 0, 0.717, 0, -0.717, 0, -3.13411e-08, -11.9984, 7.09, 0.0453262)
 texture = ExtResource("3_wbkkx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_dwee4")

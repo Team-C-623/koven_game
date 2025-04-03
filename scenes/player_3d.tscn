@@ -25,5 +25,5 @@ shape = SubResource("ConvexPolygonShape3D_lyeip")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="PlayerCam" type="Camera3D" parent="CamMount"]
-transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941775, 0, 0.0941775, 1.99778, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941777, 0, 0.0941777, 1.99778, 0, 0.148957, 0)
 current = true
