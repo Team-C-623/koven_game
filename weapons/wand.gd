@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var wand: Node3D = $"."
 @onready var player_cam: Camera3D = $root/Main/Player/PlayerCam
-@onready var player: CharacterBody3D = $".."
+#@onready var player: CharacterBody3D = $".."
 const FLAME = preload("res://weapons/Flame.tscn")
 
 # Called when the node enters the scene tree for the first time.

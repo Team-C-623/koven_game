@@ -12,12 +12,6 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_r5t1a")
 
-[node name="Wand" parent="." instance=ExtResource("2_ivwlt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402755, 0.430794, -0.453625)
-
-[node name="pos" type="Node3D" parent="Wand"]
-transform = Transform3D(-1.10926, 0, 0.46195, 0, 1.106, 0, -2.67838, 0, -0.191318, 0, 0.266409, 0)
-
 [node name="TopDownCam" type="Camera3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.7423e-08, 2, 0, -2, -8.7423e-08, 0, 100, 0)
 
@@ -28,9 +22,12 @@ mesh = SubResource("CapsuleMesh_l1fuj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_lyeip")
 
-[node name="CamMount" type="Node3D" parent="."]
+[node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
-[node name="PlayerCam" type="Camera3D" parent="CamMount"]
+[node name="PlayerCam" type="Camera3D" parent="head"]
 transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941775, 0, 0.0941775, 1.99778, 0, 0, 0)
 current = true
+
+[node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.499445, 0.0235444, 0, -0.0235444, 0.499445, 0.201377, -0.195079, -0.217868)
