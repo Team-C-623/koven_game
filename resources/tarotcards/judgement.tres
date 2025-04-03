@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://h36mqur0p34w"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data_consumable.gd" id="1_lyufx"]
+[ext_resource type="Texture2D" uid="uid://ccrx3igv00040" path="res://assets/tarotcards/judgement.png" id="2_36nw7"]
+
+[resource]
+script = ExtResource("1_lyufx")
+heal_value = 0
+name = "Judgement"
+description = "I'm judging you "
+texture = ExtResource("2_36nw7")
