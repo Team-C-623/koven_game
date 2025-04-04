@@ -1,4 +1,7 @@
 extends Area3D
+@onready var sprite_3d: Sprite3D = $Sprite3D
+func _physics_process(delta: float) -> void:
+	sprite_3d.rotate_y(delta)
 
 
 func _on_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
