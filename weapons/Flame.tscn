@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct0hvhycg5d23"]
+
+[ext_resource type="Script" path="res://weapons/flame.gd" id="1_bn3o8"]
+[ext_resource type="Texture2D" uid="uid://d0co7b3vuhxu6" path="res://weapons/trident.png" id="1_e6hls"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_baskv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wha55"]
+albedo_color = Color(1, 0.52549, 0.207843, 1)
+emission_enabled = true
+emission = Color(0.902268, 0.184881, 0.213211, 1)
+emission_energy_multiplier = 4.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjij7"]
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+radial_velocity_min = 2.99998
+radial_velocity_max = 4.99998
+
+[sub_resource type="BoxMesh" id="BoxMesh_yjbcq"]
+lightmap_size_hint = Vector2i(190, 0)
+size = Vector3(0.02, 0.02, 0.02)
+
+[node name="Flame" type="Node3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.0024923, 0.29999, 0, -0.29999, 0.0024923, 0, 0, 0)
+script = ExtResource("1_bn3o8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0290005, 0, 0, 0, 7.5949e-09, 0.0183544, 0, -0.173751, 8.02297e-10, 0, 0, 0)
+mesh = SubResource("BoxMesh_baskv")
+
+[node name="flameicon" type="Sprite3D" parent="."]
+visible = false
+texture = ExtResource("1_e6hls")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.139502, 0, 0, -1.04774e-09, 0.356618, 0.00674554, -0.00248107, 0.0735658)
+target_position = Vector3(0, 0, -1)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000715981, 0.0861803)
+material_override = SubResource("StandardMaterial3D_wha55")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_vjij7")
+draw_pass_1 = SubResource("BoxMesh_yjbcq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
