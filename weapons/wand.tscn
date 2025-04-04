@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://chbcgqj40iuj"]
 
 [ext_resource type="Script" path="res://weapons/wand.gd" id="1_76yrt"]
-[ext_resource type="Texture2D" uid="uid://d0co7b3vuhxu6" path="res://weapons/trident.png" id="2_jube2"]
+[ext_resource type="Texture2D" uid="uid://5acfphutde4o" path="res://assets/Right hand (wand) rough.png" id="2_ux4k4"]
 
 [sub_resource type="Animation" id="Animation_3ac5i"]
 length = 0.001
@@ -45,7 +45,8 @@ _data = {
 script = ExtResource("1_76yrt")
 
 [node name="Weaponmodel" type="Sprite3D" parent="."]
-texture = ExtResource("2_jube2")
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+texture = ExtResource("2_ux4k4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -53,5 +54,5 @@ libraries = {
 }
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.136045, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0825844, 0.182099, -0.0490052)
 target_position = Vector3(0, 0, -1)
