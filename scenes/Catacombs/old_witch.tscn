@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://buyyb2qfjxu64"]
 
-[ext_resource type="Texture2D" uid="uid://do1vi3m0eshew" path="res://assets/environment/old_witch.png" id="1_0pdkn"]
+[ext_resource type="Texture2D" uid="uid://bo2vy2gth6bhy" path="res://assets/environment/old_witch2.png" id="1_jmjy6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbebf"]
 
 [node name="OldWitch" type="StaticBody3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.5, 0)
-texture = ExtResource("1_0pdkn")
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.525, 0)
+billboard = 2
+texture = ExtResource("1_jmjy6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.2, 0.1)

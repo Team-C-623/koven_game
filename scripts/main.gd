@@ -46,8 +46,8 @@ func _spawn_journals_in_room(room):
 # switch cameras
 func switch_cam():
 	# current attribute defines if that camera is the one currently in use
-	if get_node("Player/CamMount/PlayerCam").current:
-		get_node("Player/CamMount/PlayerCam").current = false
+	if get_node("Player/head/PlayerCam").current:
+		get_node("Player/head/PlayerCam").current = false
 	else:
 		get_node("Player/TopDownCam").current = false
 

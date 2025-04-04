@@ -7,7 +7,7 @@ class_name Player
 signal toggle_inventory()
 
 const SENS = 0.4
-const SPEED = 5.0
+const SPEED = 3.0
 
 @onready var interact_ray: RayCast3D = $InteractRay
 
