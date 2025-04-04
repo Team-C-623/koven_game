@@ -10,23 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="8_wfuic"]
 [ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
 [ext_resource type="PackedScene" uid="uid://bwrk1ig0jmclj" path="res://scenes/inventory/hot_bar_inventory.tscn" id="9_wbp2t"]
-[ext_resource type="Script" path="res://scripts/RoomSpawner.gd" id="4_scj2c"]
-[ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy_spawner.tscn" id="4_txkxr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwoa"]
-bg_color = Color(0.822962, 0.16089, 3.85046e-07, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-expand_margin_left = 3.0
-expand_margin_top = 3.0
-expand_margin_right = 3.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlo3i"]
-bg_color = Color(0.867295, 0.279213, 1, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
@@ -109,19 +92,6 @@ offset_bottom = 1000.0
 
 [node name="Chest" parent="." instance=ExtResource("9_6odt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
-[node name="EnemySpawner" parent="." instance=ExtResource("4_txkxr")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 25.0
-offset_top = 93.0
-offset_right = 511.0
-offset_bottom = 120.0
-theme_override_styles/background = SubResource("StyleBoxFlat_yiwoa")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
-value = 100.0
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
 [connection signal="pressed" from="Generate" to="." method="generate_new"]
