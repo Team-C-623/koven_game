@@ -62,4 +62,3 @@ mesh = SubResource("PlaneMesh_dwee4")
 [node name="JournalSpawner" parent="." instance=ExtResource("4_b3sk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87002, 1.19209e-07, 4.51956)
 journal_scene = ExtResource("5_xnyrv")
-spawn_chance = 0.75

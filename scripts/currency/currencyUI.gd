@@ -19,3 +19,9 @@ func _on_currency_changed(new_amount:int) -> void:
 
 func update_display() -> void:
 	label.text = str(Currency.currency)
+	
+func hide_display():
+	CurrencyUI.visible = false
+
+func show_display():
+	CurrencyUI.visible = true

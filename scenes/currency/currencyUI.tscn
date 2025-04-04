@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/currency/CurrencyUI.gd" id="1_s7gus"]
 [ext_resource type="Texture2D" uid="uid://cj6l5qojhuucu" path="res://assets/coin.png" id="2_04p3e"]
 
-[node name="CurrencyUi" type="Control"]
+[node name="CurrencyUI" type="Control"]
 self_modulate = Color(0.04, 0.04, 0.04, 0.0745098)
 layout_mode = 3
 anchors_preset = 0
