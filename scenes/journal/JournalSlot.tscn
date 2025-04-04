@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg5rixxbj1u33"]
+
+[ext_resource type="Texture2D" uid="uid://wt7n4stc2y22" path="res://assets/inventory-slot.png" id="1_4tggk"]
+[ext_resource type="Script" path="res://scripts/journal/journal_slot_ui.gd" id="1_8bavc"]
+
+[node name="journal_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(160, 160)
+offset_right = 191.0
+offset_bottom = 189.0
+script = ExtResource("1_8bavc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(12, 12)
+texture = ExtResource("1_4tggk")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 192.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(-7, -10)

@@ -7,6 +7,8 @@ signal toggle_inventory()
 const SENS = 0.4
 const SPEED = 5.0
 
+class_name = Player
+
 @onready var cam_mount = $CamMount
 @onready var camera = $CamMount/PlayerCam
 @onready var interact_ray: RayCast3D = $InteractRay
@@ -16,6 +18,8 @@ var health: int = 100
 func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+@export var journal: Journal
 
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is escape by default

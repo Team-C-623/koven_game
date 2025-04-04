@@ -1,6 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjjcwfil4vt7w"]
+[gd_scene load_steps=7 format=3 uid="uid://cjjcwfil4vt7w"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_r5t1a"]
+
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_r5t1a"]
+[ext_resource type="Resource" uid="uid://b1ql3mcqoqk5a" path="res://resources/journal/journal.tres" id="2_vb78k"]
+[ext_resource type="Texture2D" uid="uid://c4thpb1jqtjk7" path="res://assets/character.png" id="2_vept1"]
+[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l1fuj"]
 
@@ -12,6 +18,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 collision_layer = 3
 collision_mask = 9
 script = ExtResource("1_r5t1a")
+journal = ExtResource("2_vb78k")
 
 [node name="TopDownCam" type="Camera3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.7423e-08, 2, 0, -2, -8.7423e-08, 0, 100, 0)
@@ -47,3 +54,4 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+[node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
