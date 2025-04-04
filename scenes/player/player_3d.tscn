@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_3nbws"]
 [ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
+[ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l1fuj"]
 
@@ -50,3 +51,9 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
+[node name="PlayerCam" type="Camera3D" parent="head"]
+transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941775, 0, 0.0941775, 1.99778, 0, 0, 0)
+current = true
+
+[node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.499445, 0.0235444, 0, -0.0235444, 0.499445, 0.122612, -0.0816861, -0.217216)

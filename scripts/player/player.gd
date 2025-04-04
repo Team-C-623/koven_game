@@ -63,3 +63,8 @@ func get_drop_position() -> Vector3:
 
 func heal(heal_value: int) -> void: # just a stupid proof of concept function
 	health += heal_value
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
