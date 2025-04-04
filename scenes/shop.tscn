@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnalom3wua8rb"]
+[gd_scene load_steps=8 format=3 uid="uid://cnalom3wua8rb"]
 
 [ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://scenes/UI/shop_item_button.tscn" id="1_itdih"]
 [ext_resource type="Script" path="res://scripts/Shop/Shop.gd" id="1_rixrv"]
 [ext_resource type="Script" path="res://scripts/Shop/shop_ui.gd" id="2_axnif"]
 [ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://resources/shop/testshop.tres" id="3_q23bk"]
-[ext_resource type="Texture2D" uid="uid://ck8ttmlt7blku" path="res://assets/ui/redonecurrency.png" id="5_6usou"]
+[ext_resource type="Texture2D" uid="uid://dy36kragf5kyh" path="res://assets/ui/redonecurrency.png" id="5_6usou"]
+[ext_resource type="Script" path="res://scripts/currency/label.gd" id="6_wouhp"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_deyfl"]
 
@@ -188,6 +189,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 40
 text = "100"
+script = ExtResource("6_wouhp")
 
 [node name="Control" type="Control" parent="Control/CurrencyPanel/HBoxContainer"]
 custom_minimum_size = Vector2(10, 0)

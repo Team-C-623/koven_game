@@ -23,6 +23,8 @@ var room_options = [room2scene, room3scene, room4scene, room5scene]
 func _ready() -> void:
 	var new_instance = cata_scene.instantiate()
 	add_child(new_instance)
+	await get_tree().process_frame
+	_spawn_journals_in_room(new_instance) #spawns journal
 	
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
@@ -32,6 +34,15 @@ func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
 	# generate()
+	
+
+
+#spawns journals
+func _spawn_journals_in_room(room):
+	var spawners = room.find_children("*", "JournalSpawner", true)
+	print(spawners)
+	for spawner in spawners:
+		spawner.try_spawn_journal()
 
 # generates a set of rooms
 func generate():

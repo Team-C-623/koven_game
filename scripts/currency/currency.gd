@@ -1,7 +1,5 @@
 extends Node
 
-
-
 var currency: int = 0
 
 signal currency_changed(new_amount)

@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://scripts/journal/journal_manager.gd" id="1_u6u08"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1tkwx"]
-radius = 7.87924
+radius = 3.76374
 
 [node name="Journal" type="Area3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 script = ExtResource("1_u6u08")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]

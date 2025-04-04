@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/redonecurrency.png.import
-uid="uid://ck8ttmlt7blku"
+uid="uid://dy36kragf5kyh"
 path="res://.godot/imported/redonecurrency.png-d2d07ffaa303102155aa83d401b0cc4a.ctex"
-========
-uid="uid://6w6u1ftldmxo"
-path="res://.godot/imported/coin.png-f04b9cd408b88aba3ab0966b4da32df0.ctex"
->>>>>>>> Harrison_test_v1:assets/coin.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/redonecurrency.png.import
 source_file="res://assets/ui/redonecurrency.png"
 dest_files=["res://.godot/imported/redonecurrency.png-d2d07ffaa303102155aa83d401b0cc4a.ctex"]
-========
-source_file="res://assets/coin.png"
-dest_files=["res://.godot/imported/coin.png-f04b9cd408b88aba3ab0966b4da32df0.ctex"]
->>>>>>>> Harrison_test_v1:assets/coin.png.import
 
 [params]
 

@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 @export var inventory_data: InventoryData
 
 signal toggle_inventory()
@@ -7,7 +9,7 @@ signal toggle_inventory()
 const SENS = 0.4
 const SPEED = 5.0
 
-class_name = Player
+
 
 @onready var cam_mount = $CamMount
 @onready var camera = $CamMount/PlayerCam

@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scripts/journal/journal_spawner.gd" id="1_f2an2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4lf6i"]
-size = Vector3(2.51746, 0.797852, 1.9071)
+size = Vector3(0.818818, 0.754639, 0.809141)
 
 [node name="KeySpawner" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418059, 0, 0.0438628)
 script = ExtResource("1_f2an2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758728, 0.101074, 0.453552)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624015, 0.226872, 0.875501)
 shape = SubResource("BoxShape3D_4lf6i")
