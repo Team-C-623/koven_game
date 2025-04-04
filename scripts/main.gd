@@ -7,7 +7,7 @@ extends Node3D
 func _ready() -> void:
 	# adds a set of rooms to the map
 	randomize()
-	map.new_new_generate(10)
+	map.generate(10)
 	player.global_position = Vector3(60, 0, 60)
 
 # switch cameras
@@ -19,5 +19,4 @@ func switch_cam():
 		get_node("Player/TopDownCam").current = false
 
 func generate_new():
-	map._clear_rooms()
-	map.new_new_generate(10)
+	map.generate(10)
