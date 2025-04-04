@@ -1,17 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbg6frkka47sn"]
+[gd_scene load_steps=9 format=3 uid="uid://bbg6frkka47sn"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_2oa0h"]
-[ext_resource type="Texture2D" uid="uid://ee8n3fake6as" path="res://assets/environment/room4newer.PNG" id="2_k0rwq"]
+[ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_k0x5u"]
+[ext_resource type="Texture2D" uid="uid://xy68wdth2v00" path="res://assets/environment/wall_door_2.png" id="3_6qbah"]
+[ext_resource type="Texture2D" uid="uid://cuvcbnkg5vmn4" path="res://assets/environment/ROOMCOLOR2.png" id="4_mbj61"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_42x5r"]
+
+[sub_resource type="Gradient" id="Gradient_dllct"]
+colors = PackedColorArray(0, 0, 0, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5qwyu"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mn3i4"]
+width = 200
+height = 200
+color_ramp = SubResource("Gradient_dllct")
+noise = SubResource("FastNoiseLite_5qwyu")
 
 [node name="room4" type="StaticBody3D"]
 script = ExtResource("1_2oa0h")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0)
 axis = 1
-shaded = true
-texture = ExtResource("2_k0rwq")
+texture = ExtResource("2_k0x5u")
 
 [node name="Floor" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -41,3 +54,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="DoorPosR" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 3, 2.25, 0)
+axis = 0
+texture = ExtResource("3_6qbah")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 2.25, 3)
+texture = ExtResource("3_6qbah")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 2.25, -3)
+texture = ExtResource("3_6qbah")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, -3, 1.611, 0)
+axis = 0
+texture = ExtResource("4_mbj61")
+
+[node name="Ceiling" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.5, 0)
+axis = 1
+texture = SubResource("NoiseTexture2D_mn3i4")

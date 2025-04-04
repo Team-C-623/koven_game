@@ -1,10 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://na8sbq0ipt4w"]
+[gd_scene load_steps=9 format=3 uid="uid://na8sbq0ipt4w"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_plm6k"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_u41qk"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/environment/wall2.jpg" id="3_peqko"]
+[ext_resource type="Texture2D" uid="uid://b4pmo0pgkqpp4" path="res://assets/environment/room2_5.png" id="4_agpbm"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vcy58"]
+
+[sub_resource type="Gradient" id="Gradient_ytu3a"]
+colors = PackedColorArray(0, 0, 0, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_scmwn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_soy5b"]
+width = 200
+height = 200
+color_ramp = SubResource("Gradient_ytu3a")
+noise = SubResource("FastNoiseLite_scmwn")
 
 [node name="room1" type="StaticBody3D"]
 script = ExtResource("1_plm6k")
@@ -48,7 +60,7 @@ shape = SubResource("WorldBoundaryShape3D_vcy58")
 
 [node name="WallDoor1" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 16, 8, 16, 8, 0)
+polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -6, 0, -6, 18, 7, 18, 7, 0)
 
 [node name="Wall2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -3, 0, 0)
@@ -75,3 +87,12 @@ texture = ExtResource("3_peqko")
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -3, 1.75, 0)
 axis = 0
 texture = ExtResource("3_peqko")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 2.25, -3)
+texture = ExtResource("4_agpbm")
+
+[node name="Ceiling" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.5, 0)
+axis = 1
+texture = SubResource("NoiseTexture2D_soy5b")

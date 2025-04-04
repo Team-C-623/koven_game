@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=14 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_i0wwx"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/environment/wall2.jpg" id="3_wbkkx"]
 [ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="4_b3sk6"]
+[ext_resource type="Script" path="res://scripts/Catacombs/entrance.gd" id="5_gce5p"]
+[ext_resource type="Texture2D" uid="uid://cb5q14wda7ynt" path="res://assets/entrance.png" id="6_q326m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgady"]
 shading_mode = 0
@@ -13,6 +15,22 @@ uv1_scale = Vector3(12, 12, 12)
 [sub_resource type="PlaneMesh" id="PlaneMesh_dwee4"]
 material = SubResource("StandardMaterial3D_cgady")
 size = Vector2(24, 24)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_34a8u"]
+
+[sub_resource type="Gradient" id="Gradient_twbgh"]
+colors = PackedColorArray(0, 0, 0, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n5shs"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6kiw4"]
+width = 200
+height = 200
+color_ramp = SubResource("Gradient_twbgh")
+noise = SubResource("FastNoiseLite_n5shs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uic56"]
+size = Vector3(1.61572, 1, 1)
 
 [node name="Catacombs" type="StaticBody3D"]
 script = ExtResource("1_bi88v")
@@ -61,3 +79,29 @@ mesh = SubResource("PlaneMesh_dwee4")
 [node name="JournalSpawner" parent="." instance=ExtResource("4_b3sk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87002, 1.19209e-07, 4.51956)
 spawn_height = 0.4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_34a8u")
+
+[node name="Ceiling" type="Sprite3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 14.18, 0)
+axis = 1
+texture = SubResource("NoiseTexture2D_6kiw4")
+
+[node name="Entrance" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.5)
+visible = false
+
+[node name="Area3D" type="Area3D" parent="Entrance"]
+script = ExtResource("5_gce5p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entrance/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.5, 0.5)
+shape = SubResource("BoxShape3D_uic56")
+
+[node name="Sprite3D" type="Sprite3D" parent="Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+texture = ExtResource("6_q326m")
+
+[connection signal="body_entered" from="Entrance/Area3D" to="Entrance/Area3D" method="_on_body_entered"]

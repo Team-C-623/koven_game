@@ -1,9 +1,10 @@
 extends Node3D
 
-@onready var map = $Map
 var room1scene = preload("res://scenes/Rooms/room1.tscn")
 var cata_scene = preload("res://scenes/Catacombs/catacombs.tscn")
 const PickUp = preload("res://scenes/interactable/pick_up.tscn")
+
+signal entered
 
 @onready var player: CharacterBody3D = $Player
 @onready var map = $Map
@@ -34,9 +35,6 @@ func _ready() -> void:
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
-	#generate()
-	
-
 
 #spawns journals
 func _spawn_journals_in_room(room):
@@ -78,3 +76,7 @@ func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 	pick_up.slot_data = slot_data
 	pick_up.position = player.get_drop_position() # Vector3.UP # change to player.get_drop_position() when camera fixed
 	add_child(pick_up)
+
+
+func _on_entered() -> void:
+	map.generate(10)

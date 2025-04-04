@@ -1,10 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://nx3cu52sp4hs"]
+[gd_scene load_steps=9 format=3 uid="uid://nx3cu52sp4hs"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_wphvx"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_la3qx"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/environment/wall2.jpg" id="3_7p0rd"]
+[ext_resource type="Texture2D" uid="uid://bdpdyjy7bmk0f" path="res://assets/environment/wall_door_3.png" id="4_14dfe"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cgmqh"]
+
+[sub_resource type="Gradient" id="Gradient_ypoxu"]
+colors = PackedColorArray(0, 0, 0, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g2wbg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_47ps8"]
+width = 200
+height = 200
+color_ramp = SubResource("Gradient_ypoxu")
+noise = SubResource("FastNoiseLite_g2wbg")
 
 [node name="room3" type="StaticBody3D"]
 script = ExtResource("1_wphvx")
@@ -48,3 +60,17 @@ texture = ExtResource("3_7p0rd")
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 3, 1.75, 0)
 axis = 0
 texture = ExtResource("3_7p0rd")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, -3, 2.25, 0)
+axis = 0
+texture = ExtResource("4_14dfe")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 2.25, 3)
+texture = ExtResource("4_14dfe")
+
+[node name="Ceiling" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.5, 0)
+axis = 1
+texture = SubResource("NoiseTexture2D_47ps8")

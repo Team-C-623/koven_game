@@ -37,5 +37,6 @@ offset_bottom = 975.0
 scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
-position = Vector2(212, 128)
+position = Vector2(264, 176)
+scale = Vector2(0.824, 0.824)
 texture = ExtResource("2_sjxc2")

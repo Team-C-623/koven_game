@@ -1,20 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7fg5epxjkipk"]
+[gd_scene load_steps=10 format=3 uid="uid://c7fg5epxjkipk"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_wpryu"]
-[ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/room2newer.png" id="2_8ivkf"]
+[ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/environment/room2newer.png" id="2_8ivkf"]
 [ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="2_gd6it"]
-[ext_resource type="PackedScene" uid="uid://r62r764q3j4h" path="res://scenes/journal/journal.tscn" id="3_2yi52"]
+[ext_resource type="Texture2D" uid="uid://cpcf2e4kq2tra" path="res://assets/environment/wall2.png" id="4_r78l0"]
+[ext_resource type="Texture2D" uid="uid://ye6k7iiacg48" path="res://assets/floor_tile.PNG" id="5_6ayrn"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1yg7t"]
+
+[sub_resource type="Gradient" id="Gradient_vcif7"]
+colors = PackedColorArray(0, 0, 0, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ygs7l"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fo6rr"]
+width = 100
+height = 200
+color_ramp = SubResource("Gradient_vcif7")
+noise = SubResource("FastNoiseLite_ygs7l")
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_wpryu")
 
 [node name="JournalSpawner" parent="." instance=ExtResource("2_gd6it")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0571361, 0, 0.255204)
-journal_scene = ExtResource("3_2yi52")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
 axis = 1
 shaded = true
 texture = ExtResource("2_8ivkf")
@@ -29,6 +41,7 @@ polygon = PackedVector2Array(15, 0, 15, 19, -15, 19, -15, 0, -8, 0, -8, 16, 8, 1
 
 [node name="Wall2" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -1.5, 0, 0)
+visible = false
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
 [node name="wallmesh2" type="CSGBox3D" parent="Wall2"]
@@ -36,6 +49,7 @@ transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402
 
 [node name="Wall3" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 1.5, 0, 0)
+visible = false
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 
 [node name="wallmesh3" type="CSGBox3D" parent="Wall3"]
@@ -50,3 +64,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="DoorPosD" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.469, 0, 0, 0, 0.469, 0, 0, 0, 0.469, 1.5, 1.688, 0)
+axis = 0
+texture = ExtResource("4_r78l0")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.469, 0, 0, 0, 0.469, 0, 0, 0, 0.469, -1.5, 1.688, 0)
+axis = 0
+texture = ExtResource("4_r78l0")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-2.05006e-08, 0, 0.469, 0, 0.469, 0, -0.469, 0, -2.05006e-08, 0, 0, 0)
+axis = 1
+texture = ExtResource("5_6ayrn")
+
+[node name="Ceiling" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.35, 0)
+axis = 1
+texture = SubResource("NoiseTexture2D_fo6rr")

@@ -189,7 +189,7 @@ func _add_room_from_data(room: RoomData):
 	new_instance.room_rotation = room.room_rotation
 	new_instance.door_dict = room.door_dict
 	new_instance.room_type = room.room_type
-	new_instance.pos = Vector3(6 * room.pos[1], 0, 6 * room.pos[0])
+	new_instance.pos = Vector3(6.0001 * room.pos[1], 0, 6.0001 * room.pos[0])
 	new_instance.global_position = new_instance.pos
 	new_instance.rotate_y(new_instance.room_rotation)
 	return new_instance
