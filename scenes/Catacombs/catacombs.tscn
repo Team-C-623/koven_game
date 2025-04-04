@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=7 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_i0wwx"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/environment/wall2.jpg" id="3_wbkkx"]
 [ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="4_b3sk6"]
-[ext_resource type="PackedScene" uid="uid://r62r764q3j4h" path="res://scenes/journal/journal.tscn" id="5_xnyrv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgady"]
 shading_mode = 0
@@ -61,4 +60,4 @@ mesh = SubResource("PlaneMesh_dwee4")
 
 [node name="JournalSpawner" parent="." instance=ExtResource("4_b3sk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87002, 1.19209e-07, 4.51956)
-journal_scene = ExtResource("5_xnyrv")
+spawn_height = 0.4

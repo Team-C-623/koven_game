@@ -26,3 +26,4 @@ layout_mode = 2
 
 [node name="ItemDisplay" type="Sprite2D" parent="CenterContainer/Panel"]
 position = Vector2(-7, -10)
+scale = Vector2(0.25, 0.25)

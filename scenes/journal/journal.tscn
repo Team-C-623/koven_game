@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://r62r764q3j4h"]
 
-[ext_resource type="Texture2D" uid="uid://cr7xxnwgsb4as" path="res://assets/journal.jpg" id="1_6q3wv"]
 [ext_resource type="Script" path="res://scripts/journal/journal_manager.gd" id="1_u6u08"]
+[ext_resource type="Texture2D" uid="uid://djg44alswpqt7" path="res://assets/ui/redonejournal.png" id="2_mg4jh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_itoj4"]
 radius = 13.2735
@@ -16,6 +16,6 @@ shape = SubResource("SphereShape3D_itoj4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17914, -1.34605, -2.68792)
-texture = ExtResource("1_6q3wv")
+texture = ExtResource("2_mg4jh")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

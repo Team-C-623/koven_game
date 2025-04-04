@@ -8,12 +8,9 @@ class_name Journal
 
 signal journal_updated
 
-var texture = preload("res://icon.svg")
+var texture = preload("res://assets/ui/redonejournal.png")
 static var instance: Journal
 static var counter: int = 1
-
-
-
 
 func _init():
 	instance = self  
@@ -45,6 +42,8 @@ func add_journal(new_journal: JournalEntry) -> bool:
 	Journal.counter += 1 
 	new_journal.content = ""
 	new_journal.texture = texture
+	#new_journal.texture.scale.x = 0.2
+	#new_journal.texture.scale.y = 0.2
 	journal.append(new_journal)
 	emit_signal("journal_updated")
 	print("Journal added to journal.tres")
