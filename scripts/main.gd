@@ -23,7 +23,6 @@ var room_options = [room2scene, room3scene, room4scene, room5scene]
 func _ready() -> void:
 	var new_instance = cata_scene.instantiate()
 	add_child(new_instance)
-	await get_tree().process_frame
 	_spawn_journals_in_room(new_instance) #spawns journal
 	
 	player.toggle_inventory.connect(toggle_inventory_interface)
@@ -33,7 +32,7 @@ func _ready() -> void:
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
-	# generate()
+	#generate()
 	
 
 
@@ -57,6 +56,7 @@ func generate():
 		
 		# add the new room to the tree
 		var new_room = get_node("Map")._add_room(room_choice)
+		
 		
 		# get random door choices from the dictionary for the previous and new rooms
 		var prev_door_choice = prev_room.door_dict.keys()[randi() % prev_room.door_dict.size()]

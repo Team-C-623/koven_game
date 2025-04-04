@@ -5,9 +5,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_4lf6i"]
 size = Vector3(0.818818, 0.754639, 0.809141)
 
-[node name="KeySpawner" type="Node3D"]
+[node name="JournalSpawner" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0418059, 0, 0.0438628)
 script = ExtResource("1_f2an2")
+spawn_chance = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624015, 0.226872, 0.875501)

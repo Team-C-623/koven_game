@@ -3,19 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://cr7xxnwgsb4as" path="res://assets/journal.jpg" id="1_6q3wv"]
 [ext_resource type="Script" path="res://scripts/journal/journal_manager.gd" id="1_u6u08"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_1tkwx"]
-radius = 3.76374
+[sub_resource type="SphereShape3D" id="SphereShape3D_itoj4"]
+radius = 13.2735
 
 [node name="Journal" type="Area3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 2.33661, 0, 1.40955)
 script = ExtResource("1_u6u08")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59285, -1.18851, -1.47157)
-shape = SubResource("SphereShape3D_1tkwx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62439, -0.849578, -0.738343)
+shape = SubResource("SphereShape3D_itoj4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.17914, -1.34605, -2.68792)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17914, -1.34605, -2.68792)
 texture = ExtResource("1_6q3wv")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

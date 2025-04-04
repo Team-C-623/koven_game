@@ -1,6 +1,5 @@
 extends Node3D
 class_name JournalSpawner
-
 @export var journal_scene : PackedScene
 @export var spawn_chance : float = 0.5  # 50% chance to spawn
 @export var spawn_height : float = 0.5  # Height above ground

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=11 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="PackedScene" uid="uid://na8sbq0ipt4w" path="res://scenes/Rooms/room1.tscn" id="1_cfuyy"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
@@ -10,8 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="8_wfuic"]
 [ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
 [ext_resource type="PackedScene" uid="uid://bwrk1ig0jmclj" path="res://scenes/inventory/hot_bar_inventory.tscn" id="9_wbp2t"]
-[ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="11_hj2js"]
-[ext_resource type="PackedScene" uid="uid://r62r764q3j4h" path="res://scenes/journal/journal.tscn" id="12_uacb8"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
@@ -94,11 +92,6 @@ offset_bottom = 1000.0
 
 [node name="Chest" parent="." instance=ExtResource("9_6odt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
-
-[node name="JournalSpawner" parent="." instance=ExtResource("11_hj2js")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50633, 0.0856353, -2.22205)
-journal_scene = ExtResource("12_uacb8")
-spawn_chance = 0.9
 
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
 [connection signal="pressed" from="Generate" to="." method="generate_new"]
