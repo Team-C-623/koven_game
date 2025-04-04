@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ItemDataShoppable" load_steps=2 format=3 uid="uid://007o66bws6ug"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data_shoppable.gd" id="1_imw56"]
+
+[resource]
+script = ExtResource("1_imw56")
+cost = 1

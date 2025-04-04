@@ -3,13 +3,6 @@ extends Node3D
 @onready var map = $Map
 var room1scene = preload("res://scenes/Rooms/room1.tscn")
 var cata_scene = preload("res://scenes/Catacombs/catacombs.tscn")
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# adds a set of rooms to the map
-	#map._add_first_room(cata_scene)
-	var new_instance = cata_scene.instantiate()
-	add_child(new_instance)
 const PickUp = preload("res://scenes/interactable/pick_up.tscn")
 
 @onready var player: CharacterBody3D = $Player
@@ -28,6 +21,8 @@ var room_options = [room2scene, room3scene, room4scene, room5scene]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var new_instance = cata_scene.instantiate()
+	add_child(new_instance)
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
@@ -36,22 +31,6 @@ func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
 	generate()
-	
-	# create a non-random room, adds it to the tree and then sets its position
-	#var instance1 = get_node("Map")._add_room(room2scene)
-	#get_node("Map")._set_room_position(instance1, get_node("Map/room1"), "DoorPosU", "DoorPosD")
-	#var instance2 = get_node("Map")._add_room(room3scene)
-	#get_node("Map")._set_room_position(instance2, instance1, "DoorPosU", "DoorPosD")
-	
-	# old method to create a room, adds to tree and sets position in the same method
-	# basically more control is better
-	#var instance1 = get_node("Map")._add_room_and_set(room5scene, get_node("Map/room1"), "DoorPosU", "DoorPosL")
-	#var instance3 = get_node("Map")._add_room_and_set(room2scene, instance2, "DoorPosL", "DoorPosD")
-	#var instance4 = get_node("Map")._add_room_and_set(room3scene, instance3, "DoorPosU", "DoorPosL")
-	#var instance5 = get_node("Map")._add_room_and_set(room4scene, instance4, "DoorPosD", "DoorPosR")
-	#var instance6 = get_node("Map")._add_room_and_set(room5scene, instance5, "DoorPosU", "DoorPosL")
-	#var instance7 = get_node("Map")._add_room_and_set(room4scene, instance6, "DoorPosR", "DoorPosR")
-	#var _instance8 = get_node("Map")._add_room_and_set(room3scene, instance7, "DoorPosD", "DoorPosL")
 
 # generates a set of rooms
 func generate():
@@ -93,6 +72,7 @@ func switch_cam():
 func generate_new():
 	map._clear_rooms()
 	map.new_generate(10)
+	
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	inventory_interface.visible = not inventory_interface.visible
 	

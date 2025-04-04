@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ShopData" load_steps=5 format=3 uid="uid://1w4eefo5doq8"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data_shoppable.gd" id="1_drtuc"]
+[ext_resource type="Script" path="res://scripts/Shop/ShopData.gd" id="2_82few"]
+
+[sub_resource type="Resource" id="Resource_da11l"]
+script = ExtResource("1_drtuc")
+cost = 0
+
+[sub_resource type="Resource" id="Resource_42shl"]
+script = ExtResource("1_drtuc")
+cost = 2
+
+[resource]
+script = ExtResource("2_82few")
+ShopItems = Array[ExtResource("1_drtuc")]([SubResource("Resource_da11l"), SubResource("Resource_42shl")])

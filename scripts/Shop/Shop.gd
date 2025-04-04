@@ -20,7 +20,7 @@ func _on_close_button_pressed() -> void:
 	visible = false
 	hide.emit()
 
-func update_item_description(item: ItemData):
+func update_item_description(item: ItemDataShoppable):
 	item_image.texture = item.texture
 	item_name.text = item.name
 	item_description.text = item.description

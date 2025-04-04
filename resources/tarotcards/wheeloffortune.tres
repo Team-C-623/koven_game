@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://csb2venf3k1qq"]
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=2 format=3 uid="uid://csb2venf3k1qq"]
 
 [ext_resource type="Script" path="res://scripts/item/item_data_consumable.gd" id="1_k150f"]
-[ext_resource type="Texture2D" uid="uid://46jyi4p8qa0n" path="res://assets/tarotcards/wheeloffortune.png" id="2_wtbxc"]
 
 [resource]
 script = ExtResource("1_k150f")
 heal_value = 0
-name = "Wheel of Fortune"
-description = "spin the wheel"
-texture = ExtResource("2_wtbxc")

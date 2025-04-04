@@ -1,3 +1,3 @@
 class_name ShopData extends Resource
 
-@export var ShopItems: Array[ItemData]
+@export var ShopItems: Array[ItemDataShoppable]

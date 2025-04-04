@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Shop/Shop.gd" id="1_rixrv"]
 [ext_resource type="Texture2D" uid="uid://dg5n8hupgbss2" path="res://assets/coin.png" id="2_0oo1c"]
 [ext_resource type="Script" path="res://scripts/Shop/shop_ui.gd" id="2_axnif"]
-[ext_resource type="Resource" uid="uid://dpw4nxiqe3nex" path="res://resources/shop_inventory.tres" id="3_ehq41"]
+[ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://resources/shop/testshop.tres" id="3_q23bk"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_deyfl"]
 
@@ -65,7 +65,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 6
 script = ExtResource("2_axnif")
-data = ExtResource("3_ehq41")
+data = ExtResource("3_q23bk")
 
 [node name="ShopItemButton" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("1_itdih")]
 layout_mode = 2

@@ -17,9 +17,6 @@ func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is escape by default
 	if event.is_action_pressed("ui_cancel"):
