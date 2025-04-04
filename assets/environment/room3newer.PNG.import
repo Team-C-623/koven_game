@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do1vi3m0eshew"
-path.s3tc="res://.godot/imported/old_witch.png-04727e10c24225aae3521deed225dc04.s3tc.ctex"
+uid="uid://dbldsd0l0sgr0"
+path.s3tc="res://.godot/imported/room3newer.PNG-708019ea42150c831cb36349a9a53171.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/old_witch.png"
-dest_files=["res://.godot/imported/old_witch.png-04727e10c24225aae3521deed225dc04.s3tc.ctex"]
+source_file="res://assets/environment/room3newer.PNG"
+dest_files=["res://.godot/imported/room3newer.PNG-708019ea42150c831cb36349a9a53171.s3tc.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
-[ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/floor.PNG" id="2_i0wwx"]
-[ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/wall2.jpg" id="3_wbkkx"]
+[ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_i0wwx"]
+[ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/environment/wall2.jpg" id="3_wbkkx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgady"]
 shading_mode = 0

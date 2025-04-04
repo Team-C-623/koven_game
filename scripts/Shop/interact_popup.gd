@@ -15,7 +15,9 @@ func hide_popup():
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		can_interact = true
+		print("youre in range")
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		can_interact = false
+		print("youre gone")

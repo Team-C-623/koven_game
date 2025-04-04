@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="ItemDataShoppable" load_steps=2 format=3 uid="uid://007o66bws6ug"]
+[gd_resource type="Resource" script_class="ItemDataShoppable" load_steps=3 format=3 uid="uid://007o66bws6ug"]
 
-[ext_resource type="Script" path="res://scripts/item/item_data_shoppable.gd" id="1_imw56"]
+[ext_resource type="Script" path="res://scripts/Shop/item_data_shoppable.gd" id="1_x760r"]
+[ext_resource type="Texture2D" uid="uid://ccrx3igv00040" path="res://assets/tarotcards/judgement.png" id="2_2rale"]
 
 [resource]
-script = ExtResource("1_imw56")
+script = ExtResource("1_x760r")
 cost = 1
+name = "Judgement"
+description = "Test description 1"
+texture = ExtResource("2_2rale")

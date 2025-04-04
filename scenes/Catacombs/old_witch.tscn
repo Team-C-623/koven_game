@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://buyyb2qfjxu64"]
 
-[ext_resource type="Texture2D" uid="uid://do1vi3m0eshew" path="res://assets/old_witch.png" id="1_0pdkn"]
+[ext_resource type="Texture2D" uid="uid://do1vi3m0eshew" path="res://assets/environment/old_witch.png" id="1_0pdkn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbebf"]
 

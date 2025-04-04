@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbremiyfv5tey"
-path="res://.godot/imported/card.png-c12f80167372a8ea75cae1cb137b9cb2.ctex"
+uid="uid://ck8ttmlt7blku"
+path="res://.godot/imported/redonecurrency.png-d2d07ffaa303102155aa83d401b0cc4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card.png"
-dest_files=["res://.godot/imported/card.png-c12f80167372a8ea75cae1cb137b9cb2.ctex"]
+source_file="res://assets/ui/redonecurrency.png"
+dest_files=["res://.godot/imported/redonecurrency.png-d2d07ffaa303102155aa83d401b0cc4a.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@ signal hide
 @onready var item_name: Label = %ItemName
 @onready var item_description: Label = %ItemDescription
 @onready var item_cost: Label = %ItemCost
-
+@onready var hot_bar_inventory: PanelContainer = get_tree().current_scene.get_node("UI/HotBarInventory")
 @onready var item_container = %ShopItemsContainer
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +18,7 @@ func _ready() -> void:
 func _on_close_button_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	visible = false
+	hot_bar_inventory.show()
 	hide.emit()
 
 func update_item_description(item: ItemDataShoppable):
@@ -29,4 +30,5 @@ func update_item_description(item: ItemDataShoppable):
 func open():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	visible = true
+	hot_bar_inventory.hide()
 	show.emit()

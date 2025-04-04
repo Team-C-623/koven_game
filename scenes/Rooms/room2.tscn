@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7fg5epxjkipk"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_wpryu"]
-[ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/room2newer.png" id="2_8ivkf"]
+[ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/environment/room2newer.png" id="2_8ivkf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1yg7t"]
 

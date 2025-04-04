@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3t5fi4bysoq"
-path.s3tc="res://.godot/imported/room2newer.png-81faab17de7c79eec54b7444d8079076.s3tc.ctex"
+uid="uid://c7skryfxhol2l"
+path.s3tc="res://.godot/imported/shop_witch.png-5fc655cf92f468184bd1a2153ce2bf0a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/room2newer.png"
-dest_files=["res://.godot/imported/room2newer.png-81faab17de7c79eec54b7444d8079076.s3tc.ctex"]
+source_file="res://assets/environment/shop_witch.png"
+dest_files=["res://.godot/imported/shop_witch.png-5fc655cf92f468184bd1a2153ce2bf0a.s3tc.ctex"]
 
 [params]
 

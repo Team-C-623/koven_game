@@ -23,6 +23,7 @@ var room_options = [room2scene, room3scene, room4scene, room5scene]
 func _ready() -> void:
 	var new_instance = cata_scene.instantiate()
 	add_child(new_instance)
+	
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
@@ -30,7 +31,7 @@ func _ready() -> void:
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
-	generate()
+	# generate()
 
 # generates a set of rooms
 func generate():

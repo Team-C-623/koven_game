@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Catacombs/shop_witch.gd" id="1_1stjm"]
 [ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://scenes/UI/interact_popup.tscn" id="2_wlx2c"]
-[ext_resource type="Texture2D" uid="uid://c7skryfxhol2l" path="res://assets/shop_witch.png" id="3_52ifm"]
+[ext_resource type="Texture2D" uid="uid://c7skryfxhol2l" path="res://assets/environment/shop_witch.png" id="3_52ifm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_87k82"]
 
@@ -10,6 +10,7 @@
 script = ExtResource("1_1stjm")
 
 [node name="InteractPopup" parent="." instance=ExtResource("2_wlx2c")]
+collision_layer = 8
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0.3, 0)
