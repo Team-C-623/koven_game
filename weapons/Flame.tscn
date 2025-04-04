@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct0hvhycg5d23"]
+[gd_scene load_steps=6 format=3 uid="uid://ct0hvhycg5d23"]
 
 [ext_resource type="Script" path="res://weapons/flame.gd" id="1_bn3o8"]
-[ext_resource type="Texture2D" uid="uid://d0co7b3vuhxu6" path="res://weapons/trident.png" id="1_e6hls"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_baskv"]
 
@@ -28,10 +27,6 @@ script = ExtResource("1_bn3o8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.0290005, 0, 0, 0, 7.5949e-09, 0.0183544, 0, -0.173751, 8.02297e-10, 0, 0, 0)
 mesh = SubResource("BoxMesh_baskv")
-
-[node name="flameicon" type="Sprite3D" parent="."]
-visible = false
-texture = ExtResource("1_e6hls")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.139502, 0, 0, -1.04774e-09, 0.356618, 0.00674554, -0.00248107, 0.0735658)

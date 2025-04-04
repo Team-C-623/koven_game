@@ -25,7 +25,7 @@ func update_slots():
 	for i in range(min(journal.journal.size(),slots.size())):
 		slots[i].update(journal.journal[i])
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("journal"):
 		if is_open:
 			close()

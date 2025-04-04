@@ -18,7 +18,7 @@ var room_grid = []
 # generates a set of rooms
 func generate(base_path_length):
 	_clear_rooms()
-	var base_path = generate_base_path(base_path_length)
+	var _base_path = generate_base_path(base_path_length)
 	_add_all_rooms()
 
 # generates the starting set of rooms

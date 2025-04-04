@@ -5,5 +5,5 @@ class_name ItemData
 @export_multiline var description: String = ""
 @export var texture: Texture
 
-func use(target) -> void:
+func use(_target) -> void:
 	pass
