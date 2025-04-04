@@ -1,6 +1,6 @@
 extends Node3D
 
-const ENEMY = preload("res://scenes/enemy.tscn")
+const ENEMY = preload("res://scenes/enemy/enemy.tscn")
 
 var current_enemy: CharacterBody3D = null  # Store reference to the spawned enemy
 

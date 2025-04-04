@@ -12,6 +12,7 @@ const SPEED = 5.0
 @onready var interact_ray: RayCast3D = $InteractRay
 
 var health: int = 100
+var gravity: float = 9.8
 
 @export var journal: Journal
 #bob variable
@@ -54,6 +55,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		interact()
 
 func _physics_process(_delta: float) -> void:
+	if !is_on_floor():
+		velocity.y -= gravity * _delta
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction = (cam_mount.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -93,6 +96,7 @@ func get_drop_position() -> Vector3:
 
 func heal(heal_value: int) -> void: # just a stupid proof of concept function
 	health += heal_value
+	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP

@@ -1,5 +1,6 @@
 extends Area3D
 @onready var sprite_3d: Sprite3D = $Sprite3D
+
 func _physics_process(delta: float) -> void:
 	sprite_3d.rotate_y(delta)
 

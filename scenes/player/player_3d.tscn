@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjjcwfil4vt7w"]
+[gd_scene load_steps=6 format=3 uid="uid://cjjcwfil4vt7w"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_3nbws"]
-[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
+[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l1fuj"]
 
@@ -28,6 +28,13 @@ shape = SubResource("ConvexPolygonShape3D_lyeip")
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
+[node name="PlayerCam" type="Camera3D" parent="head"]
+transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941775, 0, 0.0941775, 1.99778, 0, 0, 0)
+current = true
+
+[node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.499445, 0.0235444, 0, -0.0235444, 0.499445, 0.122612, -0.0816861, -0.217216)
+
 [node name="InteractRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2.5)
 collision_mask = 4
@@ -47,9 +54,3 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
-[node name="PlayerCam" type="Camera3D" parent="head"]
-transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941775, 0, 0.0941775, 1.99778, 0, 0, 0)
-current = true
-
-[node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
-transform = Transform3D(0.5, 0, 0, 0, 0.499445, 0.0235444, 0, -0.0235444, 0.499445, 0.122612, -0.0816861, -0.217216)

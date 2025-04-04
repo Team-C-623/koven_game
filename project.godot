@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ShopMenu="*res://scenes/shop.tscn"
+ShopMenu="*res://scenes/Catacombs/shop.tscn"
 PlayerManager="*res://scripts/player/player_manager.gd"
 Currency="*res://scripts/currency/Currency.gd"
 CurrencyUI="*res://scenes/currency/CurrencyUI.tscn"
@@ -78,8 +78,6 @@ shoot={
 3d_physics/layer_2="player"
 2d_physics/layer_4="shop"
 3d_physics/layer_4="shop"
-
-
 
 [rendering]
 
