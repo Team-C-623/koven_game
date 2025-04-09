@@ -1,14 +1,14 @@
 extends Node3D
 
-@onready var wand: Node3D = $"."
-@onready var player_cam: Camera3D = $root/Main/Player/PlayerCam
-#@onready var player: CharacterBody3D = $".."
-const FLAME = preload("res://weapons/Flame.tscn")
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# NEED THIS CODE FOR DEBUGGING THE PLAYER_CAM
-	player_cam = get_node_or_null("/root/Main/Player/PlayerCam")
+#@onready var wand: Node3D = $"."
+#@onready var player_cam: Camera3D = $root/Main/Player/PlayerCam
+##@onready var player: CharacterBody3D = $".."
+#const FLAME = preload("res://weapons/Flame.tscn")
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	## NEED THIS CODE FOR DEBUGGING THE PLAYER_CAM
+	#player_cam = get_node_or_null("/root/Main/Player/PlayerCam")
 
 
 # Getting the cursors position in the 3D space

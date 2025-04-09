@@ -25,6 +25,8 @@ script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
 
+[node name="EnemySpawner" parent="." instance=ExtResource("4_txkxr")]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.913828, 0.232817, -0.332739, 0.122754, 0.62266, 0.772804, 0.387105, -0.747055, 0.540425, 0, 0, 5)
 light_energy = 0.8
@@ -45,8 +47,6 @@ text = "Generate"
 
 [node name="Map" type="Node3D" parent="."]
 script = ExtResource("4_scj2c")
-
-[node name="EnemySpawner" parent="." instance=ExtResource("4_txkxr")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
