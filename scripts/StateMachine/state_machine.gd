@@ -6,7 +6,6 @@ class_name StateMachine
 var current_state: State = null
 var states: Dictionary = {}
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in get_children():
@@ -24,7 +23,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if current_state:
-		current_state._physics_process(delta)
+		current_state.physics_process(delta)
 	
 func on_child_transitioned(state, new_state_name):
 	if state != current_state:
@@ -36,3 +35,4 @@ func on_child_transitioned(state, new_state_name):
 		current_state.exit()
 		
 	new_state.enter()
+	current_state = new_state

@@ -47,7 +47,7 @@ wait_time = 0.1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
 script = ExtResource("3_3cxlk")
-InitialState = NodePath("EnemyChase")
+InitialState = NodePath("EnemyWander")
 
 [node name="EnemyWander" type="Node" parent="StateMachine"]
 script = ExtResource("4_w2i60")

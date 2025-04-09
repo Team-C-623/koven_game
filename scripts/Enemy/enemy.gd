@@ -4,11 +4,10 @@ extends CharacterBody3D
 @export var SPEED: float = 1.0
 @export var CHASE_SPEED: float = 2.0
 @export var ACCELERATION: float = 2.0
-@export var CHASE_DISTANCE: float = 20.0  # Distance at which the enemy starts chasing
+@export var CHASE_DISTANCE: float = 10.0  # Distance at which the enemy starts chasing
 
 @onready var sprite: Sprite3D = $Sprite3D
-@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3D
-#@onready var timer = $Timer
+@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
 
 # Health Bar
 @onready var progress = $"../CanvasLayer/ProgressBar"
@@ -20,7 +19,6 @@ var left_bounds: Vector3
 
 func _ready():
 	pass
-
 
 func _physics_process(delta: float) -> void:
 	# Debugging
