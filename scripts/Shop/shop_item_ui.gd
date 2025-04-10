@@ -1,6 +1,6 @@
 class_name ShopItemUI extends Button
 
-var item_data: ItemDataShoppable : set = set_item_data
+var item_data: ItemData : set = set_item_data
 
 @onready var label: Label = $Label
 @onready var price_label: Label = $PriceLabel

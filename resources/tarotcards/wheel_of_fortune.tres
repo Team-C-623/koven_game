@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cp20q7n2qwblb"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_6h1fj"]
+[ext_resource type="Texture2D" uid="uid://46jyi4p8qa0n" path="res://assets/tarotcards/wheeloffortune.PNG" id="2_1viao"]
+
+[resource]
+script = ExtResource("1_6h1fj")
+name = "Wheel of Fortune"
+description = "The Wheel of Fortune is constantly revolving -- sometimes you will be
+at the top, and sometimes you will be at the bottom. This Tarot card reminds you that nothing is permanent, and, good or bad, you must cherish the lessons that this moment is bringing you."
+texture = ExtResource("2_1viao")
+cost = 100
