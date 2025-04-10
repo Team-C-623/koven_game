@@ -2,7 +2,9 @@ extends Control
 class_name JournalUI
 @onready var journal: Journal = preload("res://resources/journal/journal.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
-@onready var entry_display = $EntryDisplay 
+@onready var entry_display = $EntryDisplay
+@onready var inventory_interface: Control = get_tree().current_scene.get_node("UI/InventoryInterface")
+
 var is_open = false
 
 static var instance: JournalUI
@@ -26,7 +28,7 @@ func update_slots():
 		slots[i].update(journal.journal[i])
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("journal"):
+	if Input.is_action_just_pressed("journal") and !inventory_interface.visible and !ShopMenu.visible:
 		if is_open:
 			close()
 		else:

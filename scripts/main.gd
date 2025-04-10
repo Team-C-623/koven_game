@@ -58,7 +58,7 @@ func generate_new():
 	player.global_position = Vector3(60, 0, 60)
 	
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
-	if ShopMenu.visible:
+	if ShopMenu.visible or JournalMenu.visible:
 		return
 		
 	inventory_interface.visible = not inventory_interface.visible
