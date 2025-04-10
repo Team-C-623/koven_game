@@ -23,7 +23,7 @@ func _on_close_button_pressed() -> void:
 	currency_ui.show_display()
 	hide.emit()
 
-func update_item_description(item: ItemDataShoppable):
+func update_item_description(item: ItemData):
 	item_image.texture = item.texture
 	item_name.text = item.name
 	item_description.text = item.description

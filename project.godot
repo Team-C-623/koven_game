@@ -21,6 +21,8 @@ ShopMenu="*res://scenes/Catacombs/shop.tscn"
 PlayerManager="*res://scripts/player/player_manager.gd"
 Currency="*res://scripts/currency/Currency.gd"
 CurrencyUI="*res://scenes/currency/CurrencyUI.tscn"
+JournalMenu="*res://scenes/journal/JournalUI.tscn"
+InventoryMenu="*res://scenes/inventory/inventory.tscn"
 
 [display]
 

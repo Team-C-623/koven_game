@@ -20,6 +20,7 @@ var room5scene = preload("res://scenes/Rooms/room5.tscn")
 # creates a list of the options for rooms to choose from when generating
 # probably a better way to do this? idk
 var room_options = [room2scene, room3scene, room4scene, room5scene]
+var shop_instance: CanvasLayer = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,6 +36,7 @@ func _ready() -> void:
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
+	
 
 #spawns journals
 func _spawn_journals_in_room(room):
@@ -56,8 +58,11 @@ func generate_new():
 	player.global_position = Vector3(60, 0, 60)
 	
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
+	if ShopMenu.visible or JournalMenu.visible:
+		return
+		
 	inventory_interface.visible = not inventory_interface.visible
-	
+		
 	if inventory_interface.visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		hot_bar_inventory.hide()
@@ -70,13 +75,12 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	else:
 		inventory_interface.clear_external_inventory()
 
-
 func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 	var pick_up = PickUp.instantiate()
 	pick_up.slot_data = slot_data
 	pick_up.position = player.get_drop_position() # Vector3.UP # change to player.get_drop_position() when camera fixed
 	add_child(pick_up)
 
-
 func _on_entered() -> void:
 	map.generate(10)
+	

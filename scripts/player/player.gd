@@ -3,6 +3,7 @@ extends CharacterBody3D
 class_name Player
 
 @export var inventory_data: InventoryData
+@onready var inventory_interface: Control = $"../UI/InventoryInterface"
 
 signal toggle_inventory()
 
@@ -76,7 +77,7 @@ func _physics_process(_delta: float) -> void:
 	camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
 	
 	#Shooting 
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !JournalMenu.visible:
 		if !wand_anim.is_playing():
 			wand_anim.play("cast")
 			instance = flame.instantiate()
@@ -93,9 +94,6 @@ func interact() -> void:
 func get_drop_position() -> Vector3:
 	var direction = -camera.global_transform.basis.z
 	return camera.global_position + direction
-
-func heal(heal_value: int) -> void: # just a stupid proof of concept function
-	health += heal_value
 	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

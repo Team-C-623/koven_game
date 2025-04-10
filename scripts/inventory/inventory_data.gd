@@ -50,7 +50,7 @@ func use_slot_data(index: int) -> void:
 	if not slot_data:
 		return
 	
-	if slot_data.item_data is ItemDataConsumable:
+	if slot_data.item_data is ItemData:
 		slot_data.quantity -= 1
 		if slot_data.quantity < 1:
 			slot_datas[index] = null
