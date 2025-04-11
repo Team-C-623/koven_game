@@ -6,23 +6,23 @@ var room2scene = preload("res://scenes/Rooms/room2.tscn")
 var room3scene = preload("res://scenes/Rooms/room3.tscn")
 var room4scene = preload("res://scenes/Rooms/room4.tscn")
 var room5scene = preload("res://scenes/Rooms/room5.tscn")
+var door_scene = preload("res://scenes/Rooms/door.tscn")
  
 const ROOMS_LIST = preload("res://resources/rooms_list.tres")
-
-# list of rooms to choose from
-var room_options: Array[String] = ["room2", "room3", "room4", "room5"]
 
 # creates a grid to store room positions
 var room_grid = []
 
 # generates a set of rooms
 func generate(base_path_length):
+	# list of rooms to choose from
+	var room_options: Array[String] = ["room2", "room3", "room4", "room5"]
 	_clear_rooms()
-	var _base_path = generate_base_path(base_path_length)
+	var _base_path = generate_base_path(base_path_length, room_options)
 	_add_all_rooms()
 
 # generates the starting set of rooms
-func generate_base_path(base_path_length):
+func generate_base_path(base_path_length, room_options):
 	# assign the starting grid space to the center of the room grid
 	var prev_gridspace = Vector2(base_path_length, base_path_length)
 	
@@ -30,12 +30,7 @@ func generate_base_path(base_path_length):
 	var base_path_list = []
 	
 	# create empty room grid
-	room_grid = []
-	for i in range(2 * base_path_length + 1):
-		var new_row = []
-		for j in range(2 * base_path_length + 1):
-			new_row.append(null)
-		room_grid.append(new_row)
+	_initialize_room_grid(base_path_length)
 	
 	# add first room
 	var new_room = _create_room_data("room1")
@@ -148,7 +143,15 @@ func _add_all_rooms():
 	for row in room_grid:
 		for col in row:
 			if col != null:
-				_add_room_from_data(col)
+				var new_room = _add_room_from_data(col)
+				for door_pos in new_room.door_dict.keys():
+					if new_room.door_dict[door_pos] == 0:
+						var new_door = door_scene.instantiate()
+						add_child(new_door)
+						var door_position = new_room.get_node(door_pos).global_position.snapped(Vector3(1, 1, 1))
+						var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
+						new_door.global_position = door_position
+						new_door.rotate_y(door_rotation)
 
 # gets the validity of a room by its doors (a room with any doors available will return false)
 func _get_door_validity(room: RoomData, prev_room: RoomData, prev_door_choice, new_door_choice):
@@ -203,6 +206,7 @@ func _clear_rooms():
 	var room_list = self.get_children()
 	for node in room_list:
 		node.queue_free()
+	room_grid = []
 
 # returns a vector based on the given door position (but better)
 func _get_door_pos_vector(door_pos):
@@ -214,6 +218,22 @@ func _get_door_pos_vector(door_pos):
 		return Vector2(0, -1)
 	else:
 		return Vector2(1, 0)
+
+# returns an angle based on the given door position
+func _get_door_rotation(door_pos):
+	if door_pos == "U" or door_pos == "D":
+		return 0
+	else:
+		return PI/2
+
+# creates the room grid based on the given path size
+func _initialize_room_grid(base_path_length):
+	room_grid = []
+	for i in range(2 * base_path_length + 1):
+		var new_row = []
+		for j in range(2 * base_path_length + 1):
+			new_row.append(null)
+		room_grid.append(new_row)
 
 # prints the room grid in a readable format
 func _print_room_grid():

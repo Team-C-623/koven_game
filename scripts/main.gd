@@ -77,6 +77,9 @@ func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 	pick_up.position = player.get_drop_position() # Vector3.UP # change to player.get_drop_position() when camera fixed
 	add_child(pick_up)
 
-
 func _on_entered() -> void:
 	map.generate(10)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("generate"):
+		generate_new()

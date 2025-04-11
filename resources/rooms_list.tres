@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="RoomsList" load_steps=8 format=3 uid="uid://ba7ktgl8qmajg"]
 
-[ext_resource type="Script" path="res://scripts/RoomTypeData.gd" id="1_wbfmy"]
+[ext_resource type="Script" path="res://scripts/rooms/RoomTypeData.gd" id="1_wbfmy"]
 [ext_resource type="Resource" uid="uid://ck7lyyc7kx6j8" path="res://resources/rooms/room1.tres" id="2_m75px"]
-[ext_resource type="Script" path="res://scripts/RoomsList.gd" id="2_u3l1l"]
+[ext_resource type="Script" path="res://scripts/rooms/RoomsList.gd" id="2_u3l1l"]
 [ext_resource type="Resource" uid="uid://ctvck0wv3p0e3" path="res://resources/rooms/room2.tres" id="3_hvfae"]
 [ext_resource type="Resource" uid="uid://bb6qoxcubbhx4" path="res://resources/rooms/room3.tres" id="4_cr1b6"]
 [ext_resource type="Resource" uid="uid://cm5b07bntg5f4" path="res://resources/rooms/room4.tres" id="5_5126f"]
