@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwnppb0i13jui"]
+[gd_scene load_steps=11 format=3 uid="uid://cwnppb0i13jui"]
 
 [ext_resource type="Script" path="res://scripts/Enemy/enemy.gd" id="1_qk4p4"]
 [ext_resource type="Texture2D" uid="uid://dspqlw5k5oycv" path="res://assets/nun.png" id="2_0nqt1"]
 [ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_3cxlk"]
 [ext_resource type="Script" path="res://scripts/Enemy/enemy_wanderer.gd" id="4_w2i60"]
 [ext_resource type="Script" path="res://scripts/Enemy/enemy_chase.gd" id="5_3qmdi"]
+[ext_resource type="Script" path="res://scenes/health_component.gd" id="6_4pajb"]
+[ext_resource type="Script" path="res://scenes/hitbox_component.gd" id="7_jnae2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3uryv"]
 
@@ -54,6 +56,13 @@ script = ExtResource("4_w2i60")
 
 [node name="EnemyChase" type="Node" parent="StateMachine"]
 script = ExtResource("5_3qmdi")
+
+[node name="HealthComponent" type="Node3D" parent="."]
+script = ExtResource("6_4pajb")
+
+[node name="HitboxComponent" type="Area3D" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("7_jnae2")
+health_component = NodePath("../HealthComponent")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

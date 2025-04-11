@@ -7,9 +7,9 @@ extends CharacterBody3D
 @export var CHASE_DISTANCE: float = 10.0  # Distance at which the enemy starts chasing
 
 @onready var sprite: Sprite3D = $Sprite3D
-@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
+#@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
 
-# Health Bar
+# Player Health Bar
 @onready var progress = $"../CanvasLayer/ProgressBar"
 @onready var health_timer = $"health_timer"
 
@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 
 	# Always face the player
 	look_at(player_3d.position)
-
+	
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player Groups"):
 		print("Player entered attack range")

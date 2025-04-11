@@ -6,7 +6,6 @@ const SPEED = 40.0
 @onready var ray = $RayCast3D
 @onready var particles = $GPUParticles3D
 
-
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
 	position += transform.basis * Vector3(0,0, -SPEED) * delta
