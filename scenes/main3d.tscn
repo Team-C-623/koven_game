@@ -124,5 +124,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="entered" from="." to="." method="_on_entered"]
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
 [connection signal="pressed" from="Generate" to="." method="generate_new"]
+[connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
 [connection signal="visibility_changed" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_visibility_changed"]

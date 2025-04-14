@@ -85,11 +85,13 @@ func on_slot_clicked(index: int, button: int) -> void:
 func add_item(item_data: ItemData) -> bool: 
 	var new_slot = SlotData.new()
 	new_slot.item_data = item_data
-	#new_slot.quantity =1 
-	#print(pick_up_slot_data(new_slot))
-	pick_up_slot_data(new_slot)
-	inventory_updated.emit(self)
-	return true
+	if pick_up_slot_data(new_slot):
+		inventory_updated.emit(self)
+		return true
+	else:
+		print("item not added")
+		return false
+
 		
 		
 	
