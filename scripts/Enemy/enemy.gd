@@ -10,12 +10,13 @@ extends CharacterBody3D
 #@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
 
 # Player Health Bar
-@onready var progress = $"../CanvasLayer/ProgressBar"
+@onready var progress = $"../Player/HealthBar"
 @onready var health_timer = $"health_timer"
 
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
+var attack_damage:= 10.0
 
 func _ready():
 	pass
@@ -32,13 +33,21 @@ func _physics_process(delta: float) -> void:
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player Groups"):
-		print("Player entered attack range")
+		#print("Player entered attack range")
 		health_timer.start()
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Player Groups"):
-		print("Player exited attack range")
+		#print("Player exited attack range")
 		health_timer.stop()
 		
 func _on_health_timer_timeout() -> void:
 	progress.value -= 10
+	#
+func _on_hitbox_component_area_entered(area: Area3D) -> void:
+	if area is HitboxComponent:
+		print("Enemy hitbox entered")
+		var hitbox : HitboxComponent = area
+		var attack = Attack.new()
+		attack.attack_damage = attack_damage
+		hitbox.damage(attack)
