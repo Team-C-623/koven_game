@@ -2,10 +2,6 @@ extends Node
 
 @export var player: Player
 
-
-func _ready() -> void:
-	pass
-
 func use_slot_data(slot_data: SlotData) -> void:
 	slot_data.item_data.use(player)
 
