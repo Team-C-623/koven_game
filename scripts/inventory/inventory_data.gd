@@ -3,8 +3,14 @@ class_name InventoryData
 
 signal inventory_updated(inventory_data: InventoryData)
 signal inventory_interact(inventory_data: InventoryData, index: int, button: int)
+var judgement_texture = preload("res://assets/tarotcards/judgement.png")
+var wheel_texture = preload("res://assets/tarotcards/wheeloffortune.PNG")
+var slot_datas: Array[SlotData]
 
-@export var slot_datas: Array[SlotData]
+func _init() -> void:
+	slot_datas.resize(10)
+	for i in slot_datas.size():
+		slot_datas[i] = SlotData.new()
 
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = slot_datas[index]
@@ -77,3 +83,25 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 
 func on_slot_clicked(index: int, button: int) -> void:
 	inventory_interact.emit(self, index, button)
+	
+func add_item(item_data: ItemData, quantity: int = 1) -> bool:
+	PlayerManager.player.inventory_data
+	if item_data.name == "judgement":
+		
+	elif item_data.name == "wheeloffortune":
+		pass
+		
+	#var new_slot = SlotData.new()
+	#new_slot.item_data = item_data
+	#new_slot.quantity = quantity
+	#print(pick_up_slot_data(new_slot))
+	#if pick_up_slot_data(new_slot):
+		#spawn_item_visuals(new_slot)  # Visual feedback
+		
+#		inventory_updated.emit(self)
+#		return true
+#	else:
+#		return false
+		
+	
+		
