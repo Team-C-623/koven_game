@@ -1,11 +1,13 @@
 extends CharacterBody3D
 
+# For enemy 2
 @onready var player_3d=$"../Player"
 @export var SPEED: float = 1.0
 @export var CHASE_SPEED: float = 2.0
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 10.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
+@export var is_ranged: bool = false
 
 @onready var sprite: Sprite3D = $Sprite3D
 #@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds

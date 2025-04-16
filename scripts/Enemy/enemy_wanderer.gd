@@ -9,7 +9,6 @@ var player: CharacterBody3D = null
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
-	pass
 
 func randomize_variables():
 	wander_time = randf_range(1.5, 4)
@@ -29,6 +28,10 @@ func process(delta: float):
 	
 	if enemy.global_position.distance_to(player.global_position) < enemy.CHASE_DISTANCE:
 		Transitioned.emit(self, "EnemyChase")
+		#if enemy.is_ranged:
+			#Transitioned.emit(self, "EnemyShoot")
+		#else:
+			#Transitioned.emit(self, "EnemyChase")
 
 func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.SPEED

@@ -61,7 +61,7 @@ func _physics_process(_delta: float) -> void:
 	var target_fov = BASE_FOV + FOV_CHANGE
 	camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
 	
-	##Shooting 
+	#Shooting 
 	if Input.is_action_just_pressed("shoot"):
 		#wand.shoot()
 		if !wand_anim.is_playing():

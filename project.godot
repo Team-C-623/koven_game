@@ -59,6 +59,7 @@ shoot={
 3d_physics/layer_3="enemy"
 3d_physics/layer_4="shop"
 3d_physics/layer_5="flame"
+3d_physics/layer_6="knife"
 
 [rendering]
 
