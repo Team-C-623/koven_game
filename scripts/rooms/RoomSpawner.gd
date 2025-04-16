@@ -149,6 +149,14 @@ func _add_all_rooms():
 						var new_door = door_scene.instantiate()
 						add_child(new_door)
 						var door_position = new_room.get_node(door_pos).global_position.snapped(Vector3(1, 1, 1))
+						var relative_door_position = new_room.get_node(door_pos).position.snapped(Vector3(1, 1, 1))
+						print(relative_door_position)
+						var x_coord = relative_door_position[0]
+						var z_coord = relative_door_position[2]
+						var cos_rr = cos(new_room.room_rotation)
+						var sin_rr = sin(new_room.room_rotation)
+						var new_rel_position = Vector3(cos_rr * x_coord + sin_rr * z_coord, 0, cos_rr * z_coord - sin_rr * x_coord)
+						print(new_rel_position)
 						var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
 						new_door.global_position = door_position
 						new_door.rotate_y(door_rotation)
@@ -208,7 +216,7 @@ func _clear_rooms():
 		node.queue_free()
 	room_grid = []
 
-# returns a vector based on the given door position (but better)
+# returns a grid vector based on the given door position
 func _get_door_pos_vector(door_pos):
 	if door_pos == "R":
 		return Vector2(0, 1)
@@ -218,6 +226,17 @@ func _get_door_pos_vector(door_pos):
 		return Vector2(0, -1)
 	else:
 		return Vector2(1, 0)
+
+# returns a vector based on the door position in 3D space
+func _get_3d_door_vector(door_pos):
+	if door_pos == "R":
+		return Vector2(1, 0)
+	elif door_pos == "U":
+		return Vector2(0, 1)
+	elif door_pos == "L":
+		return Vector2(-1, 0)
+	else:
+		return Vector2(0, -1)
 
 # returns an angle based on the given door position
 func _get_door_rotation(door_pos):

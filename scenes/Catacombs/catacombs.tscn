@@ -30,7 +30,7 @@ color_ramp = SubResource("Gradient_twbgh")
 noise = SubResource("FastNoiseLite_n5shs")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uic56"]
-size = Vector3(1.61572, 1, 1)
+size = Vector3(1.61572, 1.02747, 1.2677)
 
 [node name="Catacombs" type="StaticBody3D"]
 script = ExtResource("1_bi88v")
@@ -91,17 +91,17 @@ texture = SubResource("NoiseTexture2D_6kiw4")
 
 [node name="Entrance" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.5)
-visible = false
 
-[node name="Area3D" type="Area3D" parent="Entrance"]
+[node name="EntranceArea" type="Area3D" parent="Entrance"]
+unique_name_in_owner = true
 script = ExtResource("5_gce5p")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Entrance/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.5, 0.5)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entrance/EntranceArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.513733, 0.63385)
 shape = SubResource("BoxShape3D_uic56")
 
 [node name="Sprite3D" type="Sprite3D" parent="Entrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 texture = ExtResource("6_q326m")
 
-[connection signal="body_entered" from="Entrance/Area3D" to="Entrance/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Entrance/EntranceArea" to="Entrance/EntranceArea" method="_on_body_entered"]
