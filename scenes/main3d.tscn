@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player/player_3d.tscn" id="2_mjsmv"]
-[ext_resource type="Script" path="res://scripts/RoomSpawner.gd" id="4_scj2c"]
+[ext_resource type="Script" path="res://scripts/rooms/RoomSpawner.gd" id="4_scj2c"]
 [ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="4_txkxr"]
 [ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://scenes/inventory/inventory.tscn" id="5_nd3my"]
 [ext_resource type="Script" path="res://scripts/inventory/inventory_interface.gd" id="6_lmuoi"]
