@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://cwnppb0i13jui"]
 
-[ext_resource type="Script" path="res://scripts/Enemy/enemy.gd" id="1_qk4p4"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_qk4p4"]
 [ext_resource type="Texture2D" uid="uid://68amwbvi6bff" path="res://assets/monk.png" id="2_qilxf"]
 [ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_3cxlk"]
-[ext_resource type="Script" path="res://scripts/Enemy/enemy_wanderer.gd" id="4_w2i60"]
-[ext_resource type="Script" path="res://scripts/Enemy/enemy_chase.gd" id="5_3qmdi"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_wanderer.gd" id="4_w2i60"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_chase.gd" id="5_3qmdi"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_1oriw"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_8ehfe"]
 

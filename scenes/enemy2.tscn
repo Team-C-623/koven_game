@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/enemy_2.gd" id="1_wctv1"]
 [ext_resource type="Texture2D" uid="uid://dspqlw5k5oycv" path="res://assets/nun.png" id="2_yaaac"]
 [ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_865no"]
-[ext_resource type="Script" path="res://scripts/Enemy/enemy_wanderer.gd" id="4_50asg"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_wanderer.gd" id="4_50asg"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_yv2qe"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_tod8s"]
 
