@@ -20,7 +20,10 @@ radial_velocity_max = 4.99998
 lightmap_size_hint = Vector2i(190, 0)
 size = Vector3(0.02, 0.02, 0.02)
 
-[node name="Flame" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_euux0"]
+size = Vector3(0.0177002, 0.0193634, 0.17038)
+
+[node name="Flame" type="Node3D" groups=["flame group"]]
 transform = Transform3D(0.3, 0, 0, 0, 0.0024923, 0.29999, 0, -0.29999, 0.0024923, 0, 0, 0)
 script = ExtResource("1_bn3o8")
 
@@ -46,4 +49,13 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="FlameHitBox" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 4
+
+[node name="FlameCollision" type="CollisionShape3D" parent="FlameHitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00360107, -0.000846854, -4.56934e-05)
+shape = SubResource("BoxShape3D_euux0")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="FlameHitBox" to="." method="_on_flame_hit_box_area_entered"]

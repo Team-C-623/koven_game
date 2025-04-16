@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct15t20t50gkp"]
+
+[ext_resource type="Script" path="res://weapons/knife.gd" id="1_k0fjv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_baskv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_euux0"]
+size = Vector3(0.0177002, 0.0193634, 0.17038)
+
+[node name="Knife" type="Node3D" groups=["flame group"]]
+transform = Transform3D(0.3, 0, 0, 0, 0.0024923, 0.29999, 0, -0.29999, 0.0024923, 0, 0, 0)
+script = ExtResource("1_k0fjv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0290005, 0, 0, 0, 7.5949e-09, 0.0183544, 0, -0.173751, 8.02297e-10, 0, 0, 0)
+mesh = SubResource("BoxMesh_baskv")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.139502, 0, 0, -1.04774e-09, 0.356618, 0.00674554, -0.00248107, 0.0735658)
+target_position = Vector3(0, 0, -1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="KnifeHitBox" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="KnifeCollision" type="CollisionShape3D" parent="KnifeHitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00360107, -0.000846854, -4.56934e-05)
+shape = SubResource("BoxShape3D_euux0")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="KnifeHitBox" to="." method="_on_flame_hit_box_area_entered"]

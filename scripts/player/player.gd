@@ -1,6 +1,14 @@
 extends CharacterBody3D
 
 class_name Player
+@onready var wand = $head/PlayerCam/Wand
+
+#attack settings
+var attack_damage := 10.0
+
+#camera settings
+const SENS = 0.4
+const SPEED = 5.0
 
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = $"../UI/InventoryInterface"
@@ -24,7 +32,7 @@ var t_bob = 0.0
 const BASE_FOV = 90.0
 const FOV_CHANGE = 1.5
 
-# Flame
+#Flame
 var flame = load("res://weapons/Flame.tscn")
 var instance
 
@@ -81,7 +89,9 @@ func _physics_process(_delta: float) -> void:
 	
 	#Shooting 
 	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !JournalMenu.visible:
+		#wand.shoot()
 		if !wand_anim.is_playing():
+			# Animation for shooting
 			wand_anim.play("cast")
 			instance = flame.instantiate()
 			instance.position = wand_tip.global_position

@@ -1,31 +1,30 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwnppb0i13jui"]
+[gd_scene load_steps=11 format=3 uid="uid://m0j8m41dr240"]
 
-[ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_qk4p4"]
-[ext_resource type="Texture2D" uid="uid://dspqlw5k5oycv" path="res://assets/nun.png" id="2_0nqt1"]
-[ext_resource type="Texture2D" uid="uid://68amwbvi6bff" path="res://assets/monk.png" id="2_qilxf"]
-[ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_3cxlk"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_wanderer.gd" id="4_w2i60"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_chase.gd" id="5_3qmdi"]
-[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_1oriw"]
-[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_8ehfe"]
+[ext_resource type="Script" path="res://scenes/enemy_2.gd" id="1_wctv1"]
+[ext_resource type="Texture2D" uid="uid://dspqlw5k5oycv" path="res://assets/nun.png" id="2_yaaac"]
+[ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_865no"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_wanderer.gd" id="4_50asg"]
+[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_yv2qe"]
+[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_tod8s"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3uryv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v48x5"]
-radius = 0.26628
+radius = 0.192983
 height = 1.17235
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nq48v"]
-radius = 0.263096
+radius = 0.248016
 height = 1.16586
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qrg2k"]
-radius = 0.263275
+radius = 0.207636
 height = 1.16057
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy2" type="CharacterBody3D"]
 transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
-script = ExtResource("1_qk4p4")
+script = ExtResource("1_wctv1")
+is_ranged = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.581984, 0, 0, 0, 0.618633, 0, 0, 0, 0.135296, 0, 0.0269417, 0)
@@ -37,10 +36,8 @@ transform = Transform3D(0.0921099, 0, -0.995749, 0, 1, 0, 0.995749, 0, 0.0921099
 shape = SubResource("CapsuleShape3D_v48x5")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0, 0, 0)
-texture = ExtResource("2_qilxf")
-
-[node name="RayCast3D" type="RayCast3D" parent="Sprite3D"]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+texture = ExtResource("2_yaaac")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 aabb = AABB(-0.570377, -0.556137, -0.565157, 1.14075, 1.11227, 1.13031)
@@ -54,23 +51,24 @@ shape = SubResource("CapsuleShape3D_nq48v")
 wait_time = 0.1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
-script = ExtResource("3_3cxlk")
+script = ExtResource("3_865no")
 InitialState = NodePath("EnemyWander")
 
 [node name="EnemyWander" type="Node" parent="StateMachine"]
-script = ExtResource("4_w2i60")
+script = ExtResource("4_50asg")
 
-[node name="EnemyChase" type="Node" parent="StateMachine"]
-script = ExtResource("5_3qmdi")
+[node name="HealthComponent" parent="." instance=ExtResource("6_yv2qe")]
 
-[node name="HealthComponent" parent="." instance=ExtResource("6_1oriw")]
-
-[node name="HitboxComponent" parent="." instance=ExtResource("7_8ehfe")]
+[node name="HitboxComponent" parent="." instance=ExtResource("7_tod8s")]
 collision_layer = 4
 collision_mask = 2
 
 [node name="Hitbox" type="CollisionShape3D" parent="HitboxComponent"]
 shape = SubResource("CapsuleShape3D_qrg2k")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273301, 0)
+target_position = Vector3(0, 0, 1)
 
 [connection signal="body_entered" from="TriggerForPlayerHealth" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="TriggerForPlayerHealth" to="." method="_on_area_3d_body_exited"]

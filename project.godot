@@ -86,6 +86,15 @@ generate={
 2d_physics/layer_4="shop"
 3d_physics/layer_4="shop"
 
+[layer_names]
+
+3d_physics/layer_1="environment"
+3d_physics/layer_2="player"
+3d_physics/layer_3="enemy"
+3d_physics/layer_4="shop"
+3d_physics/layer_5="flame"
+3d_physics/layer_6="knife"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=2
