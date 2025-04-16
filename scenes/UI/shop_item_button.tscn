@@ -47,3 +47,5 @@ offset_right = 1056.0
 offset_bottom = 1000.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_8nlui")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

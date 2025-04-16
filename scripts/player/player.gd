@@ -4,7 +4,6 @@ class_name Player
 
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = $"../UI/InventoryInterface"
-
 signal toggle_inventory()
 
 const SENS = 0.4
@@ -37,6 +36,10 @@ var instance
 func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	inventory_data = InventoryData.new()
+	
+	
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is escape by default

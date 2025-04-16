@@ -3,8 +3,11 @@ class_name InventoryData
 
 signal inventory_updated(inventory_data: InventoryData)
 signal inventory_interact(inventory_data: InventoryData, index: int, button: int)
+var slot_datas: Array[SlotData]
 
-@export var slot_datas: Array[SlotData]
+func _init() -> void:
+	slot_datas.resize(10)
+
 
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = slot_datas[index]
@@ -72,8 +75,24 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 			slot_datas[index] = slot_data
 			inventory_updated.emit(self)
 			return true
+				
 			
 	return false
 
 func on_slot_clicked(index: int, button: int) -> void:
 	inventory_interact.emit(self, index, button)
+	
+func add_item(item_data: ItemData) -> bool: 
+	var new_slot = SlotData.new()
+	new_slot.item_data = item_data
+	if pick_up_slot_data(new_slot):
+		inventory_updated.emit(self)
+		return true
+	else:
+		print("item not added")
+		return false
+
+		
+		
+	
+		
