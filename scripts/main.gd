@@ -83,4 +83,7 @@ func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 
 func _on_entered() -> void:
 	map.generate(10)
-	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("generate"):
+		generate_new()

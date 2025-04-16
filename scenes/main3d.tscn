@@ -25,6 +25,13 @@ expand_margin_bottom = 3.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlo3i"]
 bg_color = Color(0.867295, 0.279213, 1, 1)
 
+[sub_resource type="Environment" id="Environment_uwxbf"]
+ssao_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.5
+volumetric_fog_albedo = Color(0.144063, 0.144063, 0.144063, 1)
+volumetric_fog_emission_energy = 2.0
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
 
@@ -120,6 +127,9 @@ theme_override_styles/background = SubResource("StyleBoxFlat_yiwoa")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
 value = 100.0
 metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uwxbf")
 
 [connection signal="entered" from="." to="." method="_on_entered"]
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]

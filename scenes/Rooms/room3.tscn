@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://nx3cu52sp4hs"]
 
-[ext_resource type="Script" path="res://scripts/Room.gd" id="1_wphvx"]
+[ext_resource type="Script" path="res://scripts/rooms/Room.gd" id="1_wphvx"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_la3qx"]
 [ext_resource type="Texture2D" uid="uid://p5as2s81k4op" path="res://assets/environment/wall2.jpg" id="3_7p0rd"]
 [ext_resource type="Texture2D" uid="uid://bdpdyjy7bmk0f" path="res://assets/environment/wall_door_3.png" id="4_14dfe"]
@@ -46,12 +46,6 @@ polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0, -8, 0, -8, 17, 8, 17, 8, 0)
 
-[node name="DoorPosL" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
-
-[node name="DoorPosD" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 1.75, -3)
 texture = ExtResource("3_7p0rd")
@@ -74,3 +68,9 @@ texture = ExtResource("4_14dfe")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.5, 0)
 axis = 1
 texture = SubResource("NoiseTexture2D_47ps8")
+
+[node name="L" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)

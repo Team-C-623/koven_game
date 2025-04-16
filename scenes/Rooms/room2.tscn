@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7fg5epxjkipk"]
+[gd_scene load_steps=16 format=3 uid="uid://c7fg5epxjkipk"]
 
-[ext_resource type="Script" path="res://scripts/Room.gd" id="1_wpryu"]
+[ext_resource type="Script" path="res://scripts/rooms/Room.gd" id="1_wpryu"]
 [ext_resource type="Texture2D" uid="uid://cy3t5fi4bysoq" path="res://assets/environment/room2newer.png" id="2_8ivkf"]
 [ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="2_gd6it"]
 [ext_resource type="Texture2D" uid="uid://cpcf2e4kq2tra" path="res://assets/environment/wall2.png" id="4_r78l0"]
@@ -18,6 +18,29 @@ width = 100
 height = 200
 color_ramp = SubResource("Gradient_vcif7")
 noise = SubResource("FastNoiseLite_ygs7l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmrc0"]
+shading_mode = 0
+albedo_texture = ExtResource("4_r78l0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2nf5f"]
+material = SubResource("StandardMaterial3D_mmrc0")
+size = Vector2(6, 3.5)
+orientation = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b20or"]
+points = PackedVector3Array(0, -1.75, -3, 0, 1.75, -3, 0, -1.75, 3, 0, 1.75, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4r65y"]
+points = PackedVector3Array(0, -1.75, -3, 0, 1.75, -3, 0, -1.75, 3, 0, 1.75, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngb28"]
+shading_mode = 0
+albedo_texture = SubResource("NoiseTexture2D_fo6rr")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ga8ei"]
+material = SubResource("StandardMaterial3D_ngb28")
+size = Vector2(3, 6)
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_wpryu")
@@ -39,39 +62,19 @@ shape = SubResource("WorldBoundaryShape3D_1yg7t")
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, -3)
 polygon = PackedVector2Array(15, 0, 15, 19, -15, 19, -15, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
-[node name="Wall2" type="CollisionPolygon3D" parent="."]
-transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -1.5, 0, 0)
-visible = false
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
-
-[node name="wallmesh2" type="CSGBox3D" parent="Wall2"]
-transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
-
-[node name="Wall3" type="CollisionPolygon3D" parent="."]
-transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 1.5, 0, 0)
-visible = false
-polygon = PackedVector2Array(30, 0, 30, 19, -30, 19, -30, 0)
-
-[node name="wallmesh3" type="CSGBox3D" parent="Wall3"]
-transform = Transform3D(60, 0, -5.68434e-14, 0, 20, 0, 2.04636e-12, 0, 2, -0.402918, 9.70966, 0)
-
 [node name="WallDoor4" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 3)
 polygon = PackedVector2Array(15, 0, 15, 19, -15, 19, -15, 0, -8, 0, -8, 16, 8, 16, 8, 0)
 
-[node name="DoorPosU" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-
-[node name="DoorPosD" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(0.469, 0, 0, 0, 0.469, 0, 0, 0, 0.469, 1.5, 1.688, 0)
+visible = false
 axis = 0
 texture = ExtResource("4_r78l0")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
 transform = Transform3D(0.469, 0, 0, 0, 0.469, 0, 0, 0, 0.469, -1.5, 1.688, 0)
+visible = false
 axis = 0
 texture = ExtResource("4_r78l0")
 
@@ -81,6 +84,33 @@ axis = 1
 texture = ExtResource("5_6ayrn")
 
 [node name="Ceiling" type="Sprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.35, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.5, 0)
+visible = false
 axis = 1
 texture = SubResource("NoiseTexture2D_fo6rr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.75, 0)
+mesh = SubResource("PlaneMesh_2nf5f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.75, 0)
+shape = SubResource("ConvexPolygonShape3D_b20or")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 1.75, 0)
+mesh = SubResource("PlaneMesh_2nf5f")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 1.75, 0)
+shape = SubResource("ConvexPolygonShape3D_4r65y")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 3.5, 0)
+mesh = SubResource("PlaneMesh_ga8ei")
+
+[node name="U" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
