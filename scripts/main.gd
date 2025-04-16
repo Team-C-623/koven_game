@@ -11,24 +11,16 @@ signal entered
 @onready var inventory_interface: Control = $UI/InventoryInterface
 @onready var hot_bar_inventory: PanelContainer = $UI/HotBarInventory
 
-# imports rooms as packed scenes
-var room2scene = preload("res://scenes/Rooms/room2.tscn")
-var room3scene = preload("res://scenes/Rooms/room3.tscn")
-var room4scene = preload("res://scenes/Rooms/room4.tscn")
-var room5scene = preload("res://scenes/Rooms/room5.tscn")
-
-# creates a list of the options for rooms to choose from when generating
-# probably a better way to do this? idk
-var room_options = [room2scene, room3scene, room4scene, room5scene]
 var shop_instance: CanvasLayer = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
-	var new_instance = cata_scene.instantiate()
-	add_child(new_instance)
-	_spawn_journals_in_room(new_instance) #spawns journal
+	var new_catacombs = cata_scene.instantiate()
+	add_child(new_catacombs)
+	_spawn_journals_in_room(new_catacombs) #spawns journal
 	
+	entered.connect(generate_new)
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
