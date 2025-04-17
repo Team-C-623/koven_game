@@ -29,6 +29,15 @@ func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
 	
+	#not sure what the first two lines are exactly. 
+	#Gibbons uses these in his example project
+	#third one loads the bank. The name of the bank (MUSIC) was named Will
+	#fourth line plays the sound effect
+	#there are nodes that can be used instead of code? but i had luck using them
+	Wwise.register_game_obj(self, self.name)
+	Wwise.register_listener(self)
+	Wwise.load_bank_id(AK.BANKS.MUSIC)
+	Wwise.post_event_id(AK.EVENTS.MAP_LOAD, self)
 
 #spawns journals
 func _spawn_journals_in_room(room):

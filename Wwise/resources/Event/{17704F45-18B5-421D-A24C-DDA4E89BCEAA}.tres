@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://og47m24giaqs"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "map_load"
+id = 780953876
+guid = "{17704F45-18B5-421D-A24C-DDA4E89BCEAA}"
+dummy = true

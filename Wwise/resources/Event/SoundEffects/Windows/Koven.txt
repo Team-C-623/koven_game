@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+	2536509721	PageTurn			\Default Work Unit\PageTurn	
+	3260304612	CardBurn			\Default Work Unit\CardBurn	
+	3742375894	DeathSound			\Default Work Unit\DeathSound	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	90307	Footsteps_5	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\F9\{F9D12ECF-17B2-25F9-4CB3-21446098E060}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps_5		154448
+	215197752	CardBurning	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\B4\{B4DCFBCD-09BA-B0BD-165A-74530C979B75}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Menu UI\CardBurning		705696
+	340572892	PageFlipping-MenuSwitching	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\BD\{BD1C08F5-4A08-175F-E2FB-6F474D5B61FC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Menu UI\PageFlipping-MenuSwitching		141924
+	498080179	PaperTearDeath	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\54\{54AD2974-66D8-EA23-53B4-75BD4F60B4B2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Menu UI\PaperTearDeath		959776
+	615815778	Footsteps_4	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\DF\{DF8851FA-0EC4-E247-02D2-28B0EE0A9D2A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps_4		132396
+	806822013	Footsteps_2	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\78\{78C9A427-1E76-4675-950C-3F0070AF59C8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps_2		132396
+	825944191	Footsteps_3	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\C8\{C8D60860-655D-E70A-97BD-7C9C5EA8FF75}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps_3		132396
+	998639676	Footsteps_1	C:\Users\chayt\OneDrive\Documents\WwiseProjects\WorkingKovenFile\.cache\09\{094C344C-8A19-0C5B-4DD3-C9BA370EF1A7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps_1		44196
+
