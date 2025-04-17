@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7jj1a7xswf00"]
+
+[ext_resource type="Script" path="res://scenes/CharacterNodes/health_bar.gd" id="1_3yl40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwoa"]
+bg_color = Color(0.822962, 0.16089, 3.85046e-07, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlo3i"]
+bg_color = Color(0.867295, 0.279213, 1, 1)
+
+[node name="HealthBar" type="ProgressBar"]
+offset_left = 25.0
+offset_top = 93.0
+offset_right = 511.0
+offset_bottom = 120.0
+theme_override_styles/background = SubResource("StyleBoxFlat_yiwoa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
+value = 100.0
+script = ExtResource("1_3yl40")
+metadata/_edit_use_anchors_ = true
