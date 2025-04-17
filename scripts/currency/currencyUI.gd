@@ -1,6 +1,8 @@
 extends Node
 
 @onready var label := $label as Label 
+@onready var texture: TextureRect = $TextureRect
+@onready var sprite: Sprite2D = $TextureRect/Sprite2D
 
 func _ready() -> void:
 	Currency.currency_changed.connect(_on_currency_changed)
@@ -21,7 +23,11 @@ func update_display() -> void:
 	label.text = str(Currency.currency)
 	
 func hide_display():
-	CurrencyUI.visible = false
+	label.visible = false
+	texture.visible = false
+	sprite.visible = false
 
 func show_display():
-	CurrencyUI.visible = true
+	label.visible = true
+	texture.visible = true
+	sprite.visible = true

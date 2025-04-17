@@ -9,7 +9,7 @@ signal hide
 @onready var item_cost: Label = %ItemCost
 @onready var hot_bar_inventory: PanelContainer = get_tree().current_scene.get_node("UI/HotBarInventory")
 @onready var item_container = %ShopItemsContainer
-@onready var currency_ui: Control = get_tree().current_scene.get_node("/root/CurrencyUI")
+@onready var currency_ui: Control = get_tree().current_scene.get_node("/root/Main/UI/CurrencyUI")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
