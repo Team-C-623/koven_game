@@ -8,14 +8,11 @@ var attack_damage := 10.0
 
 #camera settings
 const SENS = 0.4
-const SPEED = 5.0
+const SPEED = 3.0
 
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = $"../UI/InventoryInterface"
 signal toggle_inventory()
-
-const SENS = 0.4
-const SPEED = 3.0
 
 @onready var interact_ray: RayCast3D = $InteractRay
 
@@ -46,9 +43,6 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	inventory_data = InventoryData.new()
 	
-	
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is escape by default
 	if event.is_action_pressed("ui_cancel"):

@@ -1,11 +1,8 @@
 extends Node3D
 
-<<<<<<<< HEAD:scripts/enemy/enemy_spawner.gd
-const ENEMY = preload("res://scenes/enemy/enemy.tscn")
-========
-const ENEMY = preload("res://scenes/enemy.tscn")
-const ENEMY2 = preload("res://scenes/enemy2.tscn")
->>>>>>>> vidur_enemy_spawner:scripts/Enemy/enemy_spawner.gd
+const ENEMY = preload("res://scenes/enemy/monk.tscn")
+const ENEMY2 = preload("res://scenes/enemy/nun.tscn")
+
 
 var current_enemy: CharacterBody3D = null  # Store reference to the spawned enemy
 

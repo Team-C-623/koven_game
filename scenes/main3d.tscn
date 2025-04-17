@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=11 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player/player_3d.tscn" id="2_mjsmv"]
@@ -9,21 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="8_wfuic"]
 [ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
 [ext_resource type="PackedScene" uid="uid://bwrk1ig0jmclj" path="res://scenes/inventory/hot_bar_inventory.tscn" id="9_wbp2t"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwoa"]
-bg_color = Color(0.822962, 0.16089, 3.85046e-07, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-expand_margin_left = 3.0
-expand_margin_top = 3.0
-expand_margin_right = 3.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlo3i"]
-bg_color = Color(0.867295, 0.279213, 1, 1)
 
 [sub_resource type="Environment" id="Environment_uwxbf"]
 ssao_enabled = true
@@ -112,23 +97,6 @@ offset_bottom = 1000.0
 
 [node name="Chest" parent="." instance=ExtResource("9_6odt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
-
-[node name="EnemySpawner" parent="." instance=ExtResource("4_txkxr")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = -0.0317708
-anchor_right = -0.0317708
-offset_left = 258.0
-offset_top = 70.0
-offset_right = 744.0
-offset_bottom = 99.0
-theme_override_styles/background = SubResource("StyleBoxFlat_yiwoa")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
-value = 100.0
-metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uwxbf")

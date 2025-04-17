@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_3nbws"]
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
-[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 [ext_resource type="PackedScene" uid="uid://c7jj1a7xswf00" path="res://scenes/CharacterNodes/health_bar.tscn" id="2_rpfbq"]
-[ext_resource type="Script" path="res://scenes/CharacterNodes/health_bar.gd" id="3_ydlk6"]
+[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="4_qib34"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="5_q2tud"]
 
@@ -40,7 +39,6 @@ script = ExtResource("1_3nbws")
 offset_bottom = 122.0
 theme_override_styles/background = SubResource("StyleBoxFlat_yiwoa")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
-script = ExtResource("3_ydlk6")
 
 [node name="TopDownCam" type="Camera3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.7423e-08, 2, 0, -2, -8.7423e-08, 0, 100, 0)
@@ -81,6 +79,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
+
 [node name="HealthComponent" parent="." instance=ExtResource("4_qib34")]
 MAX_HEALTH = 100.0
 
