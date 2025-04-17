@@ -10,6 +10,8 @@ var door_scene = preload("res://scenes/Rooms/door.tscn")
  
 const ROOMS_LIST = preload("res://resources/rooms_list.tres")
 
+var room_types: Array[String] = ["room2", "room3", "room4", "room5"]
+
 # creates a grid to store room positions
 var room_grid = []
 
@@ -146,20 +148,7 @@ func _add_all_rooms():
 				var new_room = _add_room_from_data(col)
 				for door_pos in new_room.door_dict.keys():
 					if new_room.door_dict[door_pos] == 0:
-						var new_door = door_scene.instantiate()
-						add_child(new_door)
-						var door_position = new_room.get_node(door_pos).global_position.snapped(Vector3(1, 1, 1))
-						var relative_door_position = new_room.get_node(door_pos).position.snapped(Vector3(1, 1, 1))
-						print(relative_door_position)
-						var x_coord = relative_door_position[0]
-						var z_coord = relative_door_position[2]
-						var cos_rr = cos(new_room.room_rotation)
-						var sin_rr = sin(new_room.room_rotation)
-						var new_rel_position = Vector3(cos_rr * x_coord + sin_rr * z_coord, 0, cos_rr * z_coord - sin_rr * x_coord)
-						print(new_rel_position)
-						var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
-						new_door.global_position = door_position
-						new_door.rotate_y(door_rotation)
+						_create_new_door(new_room, door_pos)
 
 # gets the validity of a room by its doors (a room with any doors available will return false)
 func _get_door_validity(room: RoomData, prev_room: RoomData, prev_door_choice, new_door_choice):
@@ -177,6 +166,19 @@ func _get_door_validity(room: RoomData, prev_room: RoomData, prev_door_choice, n
 		if room.room_name == "room1" or room_grid[door_to_check[0]][door_to_check[1]] == null and door != new_door_choice:
 			no_valid_doors = false
 	return no_valid_doors
+
+# adds a new door to the map
+func _create_new_door(new_room, door_pos):
+	var new_door = door_scene.instantiate()
+	add_child(new_door)
+	var door_position = new_room.get_node(door_pos).global_position.snapped(Vector3(1, 1, 1))
+	var relative_door_position = new_room.get_node(door_pos).position.snapped(Vector3(1, 1, 1))
+	var rel_pos_2d = Vector2(relative_door_position[0], relative_door_position[2]).snapped(Vector2(1, 1))
+	var new_rel_pos = rel_pos_2d.rotated(new_room.room_rotation).snapped(Vector2(1, 1))
+	var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
+	print(door_pos, "\t", rel_pos_2d, "\t", new_rel_pos)
+	new_door.global_position = door_position + Vector3(0.01 * new_rel_pos[0], 0, 0.01 * new_rel_pos[1])
+	new_door.rotate_y(door_rotation)
 
 # creates a new RoomData object based on the name string provided
 func _create_room_data(new_room_name):
