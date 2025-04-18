@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_1v2h4")
 name = "Judgement"
-description = " Judgement is a card where your past and your future come together. You are being called on to review your decisions and your actions until now, to ensure they are in-line with where you ultimately want to go. The Judgement card reminds you that your
-future's not set in stone, and that it's never too late to make a change for the better."
+description = " Judgement is a card where your past and your future come together. You are being called on to review your decisions and your actions until now, to ensure they are in-line with where you ultimately want to go. The Judgement card reminds you that your future's not set in stone, and that it's never too late to make a change for the better."
 texture = ExtResource("2_s3rv3")
 cost = 100
