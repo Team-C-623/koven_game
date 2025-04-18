@@ -48,6 +48,8 @@ text = "Generate"
 [node name="Map" type="Node3D" parent="."]
 script = ExtResource("4_scj2c")
 
+[node name="Enemies" type="Node3D" parent="."]
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InventoryInterface" type="Control" parent="UI"]
