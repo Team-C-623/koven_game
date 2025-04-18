@@ -1,6 +1,5 @@
 extends Node3D
 
-var room1scene = preload("res://scenes/Rooms/room1.tscn")
 var cata_scene = preload("res://scenes/Catacombs/catacombs.tscn")
 const PickUp = preload("res://scenes/interactable/pick_up.tscn")
 
