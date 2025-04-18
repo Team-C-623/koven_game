@@ -16,6 +16,7 @@ func damage(attack: Attack):
 	
 	if health <= 0:
 		print("dying")
+		SoundManager.play_death_sound()
 		get_parent().queue_free()
 
 		

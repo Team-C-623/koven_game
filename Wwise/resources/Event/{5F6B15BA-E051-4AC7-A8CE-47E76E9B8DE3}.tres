@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://ckjk6vge7xs8g"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "CardBurn"
+id = 3260304612
+guid = "{5F6B15BA-E051-4AC7-A8CE-47E76E9B8DE3}"
+dummy = true

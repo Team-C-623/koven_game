@@ -1,0 +1,29 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "WorkingKovenFile",
+   "GUID": "{2C85A099-2C2C-4904-B3D7-4B8684CC599D}",
+   "Generator": "2024.1.1.8691"
+  },
+  "CacheRoot": "../.cache",
+  "Platforms": [
+   {
+    "Name": "Windows",
+    "GUID": "{B8CEE368-F101-471C-835D-046F7DB444C3}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{3C449B91-9148-4F05-AC38-90E15127B9AB}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{20F15525-EEAC-C402-70DE-9AC3A702EDDD}"
+ }
+}

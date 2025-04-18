@@ -29,7 +29,6 @@ func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
 	
-
 #spawns journals
 func _spawn_journals_in_room(room):
 	var spawners = room.find_children("*", "JournalSpawner", true)

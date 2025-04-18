@@ -1,0 +1,157 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "827096310",
+    "Type": "User",
+    "GUID": "{7BD68EE5-A518-48C7-8FB1-9E55E9D5AB04}",
+    "Language": "SFX",
+    "Hash": "{4FD8D875-148B-E6F2-7157-34677FEB7F1C}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Koven",
+    "ShortName": "Koven",
+    "Path": "Koven.bnk",
+    "Media": [
+     {
+      "Id": "90307",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_5.wav",
+      "CachePath": "F9/{F9D12ECF-17B2-25F9-4CB3-21446098E060}.wem"
+     },
+     {
+      "Id": "215197752",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Menu UI\\CardBurning.wav",
+      "CachePath": "B4/{B4DCFBCD-09BA-B0BD-165A-74530C979B75}.wem"
+     },
+     {
+      "Id": "340572892",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Menu UI\\PageFlipping-MenuSwitching.wav",
+      "CachePath": "BD/{BD1C08F5-4A08-175F-E2FB-6F474D5B61FC}.wem"
+     },
+     {
+      "Id": "498080179",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Menu UI\\PaperTearDeath.wav",
+      "CachePath": "54/{54AD2974-66D8-EA23-53B4-75BD4F60B4B2}.wem"
+     },
+     {
+      "Id": "615815778",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_4.wav",
+      "CachePath": "DF/{DF8851FA-0EC4-E247-02D2-28B0EE0A9D2A}.wem"
+     },
+     {
+      "Id": "806822013",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_2.wav",
+      "CachePath": "78/{78C9A427-1E76-4675-950C-3F0070AF59C8}.wem"
+     },
+     {
+      "Id": "825944191",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_3.wav",
+      "CachePath": "C8/{C8D60860-655D-E70A-97BD-7C9C5EA8FF75}.wem"
+     },
+     {
+      "Id": "998639676",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_1.wav",
+      "CachePath": "09/{094C344C-8A19-0C5B-4DD3-C9BA370EF1A7}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3260304612",
+      "Name": "CardBurn",
+      "ObjectPath": "\\Events\\Default Work Unit\\CardBurn",
+      "GUID": "{5F6B15BA-E051-4AC7-A8CE-47E76E9B8DE3}",
+      "DurationType": "OneShot",
+      "DurationMin": "4",
+      "DurationMax": "4",
+      "MediaRefs": [
+       {
+        "Id": "215197752"
+       }
+      ]
+     },
+     {
+      "Id": "3742375894",
+      "Name": "DeathSound",
+      "ObjectPath": "\\Events\\Default Work Unit\\DeathSound",
+      "GUID": "{2717A68D-3D7F-4937-8F1F-0A9ECC54F393}",
+      "DurationType": "OneShot",
+      "DurationMin": "5.440363",
+      "DurationMax": "5.440363",
+      "MediaRefs": [
+       {
+        "Id": "498080179"
+       }
+      ]
+     },
+     {
+      "Id": "2385628198",
+      "Name": "Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\Footsteps",
+      "GUID": "{084A66E5-751C-49A4-979C-19CA4C46EED2}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.25",
+      "DurationMax": "0.8750113",
+      "MediaRefs": [
+       {
+        "Id": "90307"
+       },
+       {
+        "Id": "615815778"
+       },
+       {
+        "Id": "806822013"
+       },
+       {
+        "Id": "825944191"
+       },
+       {
+        "Id": "998639676"
+       }
+      ]
+     },
+     {
+      "Id": "2536509721",
+      "Name": "PageTurn",
+      "ObjectPath": "\\Events\\Default Work Unit\\PageTurn",
+      "GUID": "{FE49BE69-ECC7-44C2-BEA7-78176510EBD7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8040136",
+      "DurationMax": "0.8040136",
+      "MediaRefs": [
+       {
+        "Id": "340572892"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{71618AA8-0012-2729-D4A9-A2C1B808A310}"
+ }
+}

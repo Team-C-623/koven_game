@@ -1,0 +1,232 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3991942870",
+    "Type": "User",
+    "GUID": "{564FA88C-F2F7-4907-B737-8F11A3FA7E78}",
+    "Language": "SFX",
+    "Hash": "{03F3573F-CA30-394D-D192-F355E631D272}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Music",
+    "ShortName": "Music",
+    "Path": "3991942870.bnk",
+    "Media": [
+     {
+      "Id": "11360564",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Contrabass3_90bpm12-8-L8M-P0.wav",
+      "CachePath": "CB/{CB164F02-5417-6A5B-449D-475A2D6DC836}.wem"
+     },
+     {
+      "Id": "42163698",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Choir-A1_90bpm12-8-L8M-P0.wav",
+      "CachePath": "97/{976BA825-E58A-6327-E899-BB85FB583D75}.wem"
+     },
+     {
+      "Id": "345211169",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Choir-T1_90bpm12-8-L8M-P0.wav",
+      "CachePath": "E2/{E2AB6335-2800-8691-B8E2-25F47B449E6D}.wem"
+     },
+     {
+      "Id": "347551769",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Viola_90bpm12-8-L8M-P0.wav",
+      "CachePath": "48/{48B959FA-B380-70BC-6E97-B5AF157B3B2C}.wem"
+     },
+     {
+      "Id": "483114294",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Contrabass4_90bpm12-8-L8M-P0.wav",
+      "CachePath": "11/{111C6C80-4ED7-738C-59CA-7938F7AB5583}.wem"
+     },
+     {
+      "Id": "523321979",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Cello1_90bpm12-8-L8M-P0.wav",
+      "CachePath": "3E/{3E96CA74-6B39-09A1-B2A3-EEEFF4B2FCB5}.wem"
+     },
+     {
+      "Id": "550407309",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Choir-B1_90bpm12-8-L8M-P0.wav",
+      "CachePath": "B2/{B2A85CF8-A684-2973-8E68-5711F31A269E}.wem"
+     },
+     {
+      "Id": "681552006",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Contrabass2_90bpm12-8-L8M-P0.wav",
+      "CachePath": "EA/{EAADFB99-F4BE-7459-1FA4-DD80BB004B73}.wem"
+     },
+     {
+      "Id": "699806239",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Choir-S2_90bpm12-8-L8M-P0.wav",
+      "CachePath": "40/{4067C376-583F-522A-68E7-EBE8A9A64CE5}.wem"
+     },
+     {
+      "Id": "726918535",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-HarpsichordLowPitchy_90bpm12-8-L8M-P0.wav",
+      "CachePath": "07/{0797FDFE-E363-5773-D962-D045D3098523}.wem"
+     },
+     {
+      "Id": "760752877",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Cello2_90bpm12-8-L8M-P0.wav",
+      "CachePath": "1B/{1BBCDE9F-7AE0-0D60-903A-C927A2A47A98}.wem"
+     },
+     {
+      "Id": "835538420",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Choir-B2_90bpm12-8-L8M-P0.wav",
+      "CachePath": "B8/{B87A0E10-1C9B-41BB-3B89-25ECF1CE3406}.wem"
+     },
+     {
+      "Id": "861896283",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Cello3_90bpm12-8-L8M-P0.wav",
+      "CachePath": "12/{122DC471-E615-703F-8139-8A15D6C8F247}.wem"
+     },
+     {
+      "Id": "861960065",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-HarpsichordLow_90bpm12-8-L8M-P0.wav",
+      "CachePath": "61/{618EAED6-66DE-D3E3-1989-8DBBD3995D34}.wem"
+     },
+     {
+      "Id": "894003494",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Choir-S1_90bpm12-8-L8M-P0.wav",
+      "CachePath": "63/{630C718B-EEB3-32DE-00BD-6C8BC6B52B3C}.wem"
+     },
+     {
+      "Id": "939233696",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Contrabass1_90bpm12-8-L8M-P0.wav",
+      "CachePath": "D2/{D25D4DAF-B974-F00C-2BC3-8A4586B9AE00}.wem"
+     },
+     {
+      "Id": "951046170",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-HarpsichordHiPitchy_90bpm12-8-L8M-P0.wav",
+      "CachePath": "56/{5677F4D4-76F4-42FA-A513-85EE76FEC3F7}.wem"
+     },
+     {
+      "Id": "1022635777",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-HarpsichordHigh_90bpm12-8-L8M-P0.wav",
+      "CachePath": "29/{296C78F5-9F57-960D-27A4-59C29809FDAA}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "780953876",
+      "Name": "map_load",
+      "ObjectPath": "\\Events\\Music\\map_load",
+      "GUID": "{17704F45-18B5-421D-A24C-DDA4E89BCEAA}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "11360564"
+       },
+       {
+        "Id": "42163698"
+       },
+       {
+        "Id": "345211169"
+       },
+       {
+        "Id": "347551769"
+       },
+       {
+        "Id": "483114294"
+       },
+       {
+        "Id": "523321979"
+       },
+       {
+        "Id": "550407309"
+       },
+       {
+        "Id": "681552006"
+       },
+       {
+        "Id": "699806239"
+       },
+       {
+        "Id": "726918535"
+       },
+       {
+        "Id": "760752877"
+       },
+       {
+        "Id": "835538420"
+       },
+       {
+        "Id": "861896283"
+       },
+       {
+        "Id": "861960065"
+       },
+       {
+        "Id": "894003494"
+       },
+       {
+        "Id": "939233696"
+       },
+       {
+        "Id": "951046170"
+       },
+       {
+        "Id": "1022635777"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{93E5A236-5135-BD21-E115-6E5637F26071}"
+ }
+}

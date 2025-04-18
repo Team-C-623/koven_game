@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3742375894",
+    "Type": "Event",
+    "GUID": "{2717A68D-3D7F-4937-8F1F-0A9ECC54F393}",
+    "Language": "SFX",
+    "Hash": "{5D0495F9-0B95-A4EB-481F-3A9A66DCF1E9}",
+    "ObjectPath": "DeathSound",
+    "ShortName": "DeathSound",
+    "Path": "Event/3742375894.bnk",
+    "Media": [
+     {
+      "Id": "498080179",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX\\Menu UI\\PaperTearDeath.wav",
+      "Path": "Media/498080179.wem",
+      "CachePath": "54/{54AD2974-66D8-EA23-53B4-75BD4F60B4B2}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3742375894",
+      "Name": "DeathSound",
+      "ObjectPath": "\\Events\\SFX Events\\DeathSound",
+      "GUID": "{2717A68D-3D7F-4937-8F1F-0A9ECC54F393}",
+      "DurationType": "OneShot",
+      "DurationMin": "5.440363",
+      "DurationMax": "5.440363",
+      "MediaRefs": [
+       {
+        "Id": "498080179"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6BD269F2-7DA3-2ADC-6288-0284C413EF0A}"
+ }
+}

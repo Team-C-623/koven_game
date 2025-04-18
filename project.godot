@@ -22,6 +22,8 @@ PlayerManager="*res://scripts/player/player_manager.gd"
 Currency="*res://scripts/currency/Currency.gd"
 JournalMenu="*res://scenes/journal/JournalUI.tscn"
 InventoryMenu="*res://scenes/inventory/inventory.tscn"
+WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+SoundManager="*res://scenes/music_and_sound/sound_manager.tscn"
 
 [display]
 
@@ -92,3 +94,10 @@ generate={
 
 textures/canvas_textures/default_texture_filter=2
 2d/snap/snap_2d_transforms_to_pixel=true
+
+[wwise]
+
+common_user_settings/root_output_path="res://GeneratedSoundBanks"
+project_settings/use_soundbank_names=false
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
+project_settings/mac_platform_info="res://Wwise/resources/Mac.tres"
