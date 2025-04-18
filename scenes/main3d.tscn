@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=11 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player/player_3d.tscn" id="2_mjsmv"]
@@ -87,6 +87,7 @@ offset_right = 1278.0
 offset_bottom = 1000.0
 
 [node name="CurrencyUI" parent="UI" instance=ExtResource("9_dg3fn")]
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -153.0

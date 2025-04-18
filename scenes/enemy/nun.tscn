@@ -11,13 +11,13 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3uryv"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v48x5"]
-radius = 0.192983
-height = 1.17235
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqxgs"]
+radius = 0.244186
+height = 1.17406
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qrg2k"]
-radius = 0.207636
-height = 1.16057
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f4ck6"]
+radius = 0.247158
+height = 1.17665
 
 [node name="Nun" type="CharacterBody3D"]
 transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
@@ -30,8 +30,8 @@ visible = false
 mesh = SubResource("CapsuleMesh_3uryv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.0921099, 0, -0.995749, 0, 1, 0, 0.995749, 0, 0.0921099, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_v48x5")
+transform = Transform3D(-0.00151851, 4.45302e-08, -1.00002, 1.65333e-06, 1.00002, 4.20022e-08, 1.00002, -1.65326e-06, -0.00151851, 0.0133279, 4.19748e-08, 1.48866e-05)
+shape = SubResource("CapsuleShape3D_jqxgs")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
@@ -63,7 +63,8 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="Hitbox" type="CollisionShape3D" parent="HitboxComponent"]
-shape = SubResource("CapsuleShape3D_qrg2k")
+transform = Transform3D(1.00002, 0, 0, 0, 1.00002, 0, 0, 0, 1.00002, 0.0150761, 0, -0.00219482)
+shape = SubResource("CapsuleShape3D_f4ck6")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273301, 0)
