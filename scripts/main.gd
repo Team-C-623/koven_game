@@ -11,6 +11,8 @@ signal entered
 @onready var inventory_interface: Control = $UI/InventoryInterface
 @onready var hot_bar_inventory: PanelContainer = $UI/HotBarInventory
 
+var shop_instance: CanvasLayer = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
@@ -26,6 +28,7 @@ func _ready() -> void:
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
+	
 
 #spawns journals
 func _spawn_journals_in_room(room):
@@ -47,8 +50,11 @@ func generate_new():
 	player.global_position = Vector3(60, 0, 60)
 	
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
+	if ShopMenu.visible or JournalMenu.visible:
+		return
+		
 	inventory_interface.visible = not inventory_interface.visible
-	
+		
 	if inventory_interface.visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		hot_bar_inventory.hide()
@@ -60,7 +66,6 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		inventory_interface.set_external_inventory(external_inventory_owner)
 	else:
 		inventory_interface.clear_external_inventory()
-
 
 func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 	var pick_up = PickUp.instantiate()

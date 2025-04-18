@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://m0j8m41dr240"]
+
+[ext_resource type="Script" path="res://scripts/enemy/nun.gd" id="1_44yvt"]
+[ext_resource type="Texture2D" uid="uid://dspqlw5k5oycv" path="res://assets/nun.png" id="2_45okd"]
+[ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_72md4"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_wanderer.gd" id="4_w5gn1"]
+[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="5_hb7i3"]
+[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="6_6nqag"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3uryv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v48x5"]
+radius = 0.192983
+height = 1.17235
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nq48v"]
+radius = 0.248016
+height = 1.16586
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qrg2k"]
+radius = 0.207636
+height = 1.16057
+
+[node name="Nun" type="CharacterBody3D"]
+transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
+script = ExtResource("1_44yvt")
+is_ranged = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.581984, 0, 0, 0, 0.618633, 0, 0, 0, 0.135296, 0, 0.0269417, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_3uryv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.0921099, 0, -0.995749, 0, 1, 0, 0.995749, 0, 0.0921099, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_v48x5")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+texture = ExtResource("2_45okd")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.570377, -0.556137, -0.565157, 1.14075, 1.11227, 1.13031)
+
+[node name="TriggerForPlayerHealth" type="Area3D" parent="."]
+
+[node name="HitboxTowardsPlayer" type="CollisionShape3D" parent="TriggerForPlayerHealth"]
+shape = SubResource("CapsuleShape3D_nq48v")
+
+[node name="health_timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
+script = ExtResource("3_72md4")
+InitialState = NodePath("EnemyWander")
+
+[node name="EnemyWander" type="Node" parent="StateMachine"]
+script = ExtResource("4_w5gn1")
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_hb7i3")]
+
+[node name="HitboxComponent" parent="." instance=ExtResource("6_6nqag")]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Hitbox" type="CollisionShape3D" parent="HitboxComponent"]
+shape = SubResource("CapsuleShape3D_qrg2k")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273301, 0)
+target_position = Vector3(0, 0, 1)
+
+[connection signal="body_entered" from="TriggerForPlayerHealth" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="TriggerForPlayerHealth" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

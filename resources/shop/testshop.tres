@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ShopData" load_steps=5 format=3 uid="uid://1w4eefo5doq8"]
 
-[ext_resource type="Script" path="res://scripts/Shop/item_data_shoppable.gd" id="1_r0x8r"]
-[ext_resource type="Script" path="res://scripts/Shop/ShopData.gd" id="2_82few"]
-[ext_resource type="Resource" uid="uid://007o66bws6ug" path="res://resources/shop/judgement_shop.tres" id="2_vpdmn"]
-[ext_resource type="Resource" uid="uid://ce160isc5ylf1" path="res://resources/shop/wof_shop.tres" id="3_r51qd"]
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_kkqev"]
+[ext_resource type="Script" path="res://scripts/Shop/shop_data.gd" id="2_82few"]
+[ext_resource type="Resource" uid="uid://clrrab2ce1dtj" path="res://resources/tarotcards/judgement.tres" id="2_vocka"]
+[ext_resource type="Resource" uid="uid://cp20q7n2qwblb" path="res://resources/tarotcards/wheel_of_fortune.tres" id="3_ur0jk"]
 
 [resource]
 script = ExtResource("2_82few")
-ShopItems = Array[ExtResource("1_r0x8r")]([ExtResource("2_vpdmn"), ExtResource("2_vpdmn"), ExtResource("3_r51qd"), ExtResource("3_r51qd")])
+ShopItems = Array[ExtResource("1_kkqev")]([ExtResource("2_vocka"), ExtResource("2_vocka"), ExtResource("3_ur0jk")])

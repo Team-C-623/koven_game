@@ -1,13 +1,18 @@
 extends CharacterBody3D
 
 class_name Player
+@onready var wand = $head/PlayerCam/Wand
 
-@export var inventory_data: InventoryData
+#attack settings
+var attack_damage := 10.0
 
-signal toggle_inventory()
-
+#camera settings
 const SENS = 0.4
 const SPEED = 3.0
+
+@export var inventory_data: InventoryData
+@onready var inventory_interface: Control = $"../UI/InventoryInterface"
+signal toggle_inventory()
 
 @onready var interact_ray: RayCast3D = $InteractRay
 
@@ -24,7 +29,7 @@ var t_bob = 0.0
 const BASE_FOV = 90.0
 const FOV_CHANGE = 1.5
 
-# Flame
+#Flame
 var flame = load("res://weapons/Flame.tscn")
 var instance
 
@@ -36,7 +41,8 @@ var instance
 func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	inventory_data = InventoryData.new()
+	
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is escape by default
 	if event.is_action_pressed("ui_cancel"):
@@ -76,8 +82,10 @@ func _physics_process(_delta: float) -> void:
 	camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
 	
 	#Shooting 
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !JournalMenu.visible:
+		#wand.shoot()
 		if !wand_anim.is_playing():
+			# Animation for shooting
 			wand_anim.play("cast")
 			instance = flame.instantiate()
 			instance.position = wand_tip.global_position
@@ -93,9 +101,6 @@ func interact() -> void:
 func get_drop_position() -> Vector3:
 	var direction = -camera.global_transform.basis.z
 	return camera.global_position + direction
-
-func heal(heal_value: int) -> void: # just a stupid proof of concept function
-	health += heal_value
 	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
