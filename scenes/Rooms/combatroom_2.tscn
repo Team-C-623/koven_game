@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dpi1gofwgtr2c"]
+[gd_scene load_steps=19 format=3 uid="uid://dpi1gofwgtr2c"]
 
 [ext_resource type="Script" path="res://scripts/rooms/Room.gd" id="1_i2ney"]
 [ext_resource type="Texture2D" uid="uid://dvf2aabp8o2fj" path="res://assets/environment/lvl1wall1combat2.png" id="2_mbjre"]
 [ext_resource type="Texture2D" uid="uid://nfwlumvbq5r3" path="res://assets/environment/lvl1wall2combat2.png" id="3_fdmoy"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_v8dsc"]
+[ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="5_s8fok"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10yua"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
@@ -113,3 +114,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4)
 
 [node name="D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("5_s8fok")]
