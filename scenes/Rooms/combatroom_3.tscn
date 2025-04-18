@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://whbil7xojfmr"]
+[gd_scene load_steps=20 format=3 uid="uid://whbil7xojfmr"]
 
 [ext_resource type="Script" path="res://scripts/rooms/Room.gd" id="1_02eyr"]
 [ext_resource type="Texture2D" uid="uid://c6e07778mjfx1" path="res://assets/environment/lvl1wall1combat1.png" id="2_b31nw"]
 [ext_resource type="Texture2D" uid="uid://bk78k18txcqxs" path="res://assets/environment/lvl1wall2combat1.png" id="3_p24rb"]
 [ext_resource type="Texture2D" uid="uid://bey33kcn1gdsu" path="res://assets/environment/lvl1floorcombat1.png" id="4_mknv1"]
 [ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="5_ejee6"]
+[ext_resource type="Texture2D" uid="uid://b1kgm5cir22qn" path="res://assets/environment/torch.png" id="6_8ixbl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
 shading_mode = 0
@@ -114,3 +115,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_ejee6")]
+
+[node name="Torch" type="Node3D" parent="."]
+transform = Transform3D(0.936506, 0.350648, 9.5873e-09, -0.350648, 0.936506, 5.29464e-08, 9.587e-09, -5.29464e-08, 0.999999, -6.26363, 3.5186, -2.17563)
+
+[node name="Sprite3D" type="Sprite3D" parent="Torch"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+texture = ExtResource("6_8ixbl")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Torch"]
+transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
+texture = ExtResource("6_8ixbl")
+
+[node name="Torch2" type="Node3D" parent="."]
+transform = Transform3D(0.936506, 0.350648, 9.58731e-09, -0.350648, 0.936506, 5.29463e-08, 9.58697e-09, -5.29464e-08, 0.999999, -6.26363, 3.51859, 2.35849)
+
+[node name="Sprite3D" type="Sprite3D" parent="Torch2"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+texture = ExtResource("6_8ixbl")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Torch2"]
+transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
+texture = ExtResource("6_8ixbl")
+
+[node name="Torch3" type="Node3D" parent="."]
+transform = Transform3D(-4.09432e-08, -1.5308e-08, 0.999999, -0.350207, 0.936671, 0, -0.936671, -0.350207, -4.37113e-08, -2.182, 3.519, 6.264)
+
+[node name="Sprite3D" type="Sprite3D" parent="Torch3"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+texture = ExtResource("6_8ixbl")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Torch3"]
+transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
+texture = ExtResource("6_8ixbl")
+
+[node name="Torch4" type="Node3D" parent="."]
+transform = Transform3D(-4.09432e-08, -1.5308e-08, 0.999999, -0.350207, 0.936671, 0, -0.936671, -0.350207, -4.37113e-08, 2.182, 3.519, 6.264)
+
+[node name="Sprite3D" type="Sprite3D" parent="Torch4"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+texture = ExtResource("6_8ixbl")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Torch4"]
+transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
+texture = ExtResource("6_8ixbl")

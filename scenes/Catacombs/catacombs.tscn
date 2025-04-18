@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=19 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="Texture2D" uid="uid://dwdv74717n8qc" path="res://assets/environment/lvl1emptyroomwall3.png" id="2_d5gov"]
@@ -116,7 +116,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 texture = ExtResource("6_q326m")
 
 [node name="DIALGOEUE" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9.5)
 
 [node name="DialogueArea" type="Area3D" parent="DIALGOEUE"]
 script = ExtResource("7_8nvqu")
