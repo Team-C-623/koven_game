@@ -1,0 +1,112 @@
+[gd_scene load_steps=19 format=3 uid="uid://ncsilgl4iyaf"]
+
+[ext_resource type="Script" path="res://scripts/rooms/Room.gd" id="1_t5xup"]
+[ext_resource type="Texture2D" uid="uid://bdvsm1cv4ktcu" path="res://assets/environment/lvl1emptyroomwall2.png" id="2_ear0v"]
+[ext_resource type="Texture2D" uid="uid://dwdv74717n8qc" path="res://assets/environment/lvl1emptyroomwall3.png" id="3_kyabw"]
+[ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_r2rgj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq6d4"]
+albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
+shading_mode = 0
+albedo_texture = ExtResource("3_kyabw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pmdxk"]
+material = SubResource("StandardMaterial3D_3yrjd")
+size = Vector2(12.8, 7.2)
+orientation = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fq7in"]
+points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hbqa0"]
+points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n5i0k"]
+points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yq07t"]
+shading_mode = 0
+albedo_texture = ExtResource("4_r2rgj")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ar2j6"]
+material = SubResource("StandardMaterial3D_yq07t")
+size = Vector2(12.8, 12.8)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4ups5"]
+
+[sub_resource type="Gradient" id="Gradient_twbgh"]
+colors = PackedColorArray(0, 0, 0, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hmg5w"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hl4b5"]
+color_ramp = SubResource("Gradient_twbgh")
+noise = SubResource("FastNoiseLite_hmg5w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl0t8"]
+shading_mode = 0
+albedo_texture = SubResource("NoiseTexture2D_hl4b5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a4nd0"]
+material = SubResource("StandardMaterial3D_cl0t8")
+size = Vector2(12.8, 12.8)
+
+[node name="EmptyRoom1" type="StaticBody3D"]
+transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
+script = ExtResource("1_t5xup")
+
+[node name="WallDoor1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.01, 1.50996e-09, 0, -1.50996e-09, -0.01, 0, 0, 0, 0.01, 0, 3.6, 6.4)
+use_collision = true
+polygon = PackedVector2Array(-640, 360, -80.2, 360, -76.5, 345, -80, 323, -86, 312.3, -108.1, 304, -115, 296.1, -115, 291.7, -109, 284.7, -98.9804, 281.633, -91.5, 277, -85.4348, 270.738, -82, 258.4, -91, 245.4, -110.9, 232.2, -109, 213.7, -114, 204.9, -123.1, 200.1, -124, -63, -115.5, -68, -113, -80, -118.7, -84.5, -115, -107.1, -87.3, -129, -79.6, -144, -78, -163.3, -87, -163.5, -102.4, -165, -98, -186.2, -95, -191.3, -58, -234.1, -39, -251, -11, -271.6, 4, -278, 19, -282, 33.3, -277, 45.3, -270, 89.1, -235, 110.8, -211, 122.5, -189, 125.3, -177.2, 121.1, -175.5, 99, -176, 99, -169, 103.39, -148.558, 111, -138.2, 127, -118, 131.2, -108, 132, -96.9, 127.641, -92.0225, 123, -91, 123, -78.8, 131.9, -74.3, 131, 188.7, 119.6, 194, 112, 219.4, 93.168, 224.159, 78.6877, 233.732, 74.6, 242, 77.3751, 252.456, 88, 262.8, 103.9, 272, 106.9, 277.4, 101, 284.2, 86.7, 291, 78.2, 296, 70.5, 319, 69, 337.2, 74, 360, 640, 360, 640, -360, -640, -360)
+depth = 20.0
+material = SubResource("StandardMaterial3D_gq6d4")
+
+[node name="Sprite3D" type="Sprite3D" parent="WallDoor1"]
+transform = Transform3D(-100, -1.50996e-05, 0, 1.50996e-05, -100, 0, 0, 0, 100, 0, 0, -20.1)
+flip_h = true
+texture = ExtResource("2_ear0v")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 3.6, 0)
+mesh = SubResource("PlaneMesh_pmdxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fq7in")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.6, -6.35)
+mesh = SubResource("PlaneMesh_pmdxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hbqa0")
+
+[node name="Wall4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.35, 3.6, 0)
+mesh = SubResource("PlaneMesh_pmdxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_n5i0k")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ar2j6")
+
+[node name="FloorCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_4ups5")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
+mesh = SubResource("PlaneMesh_a4nd0")
+
+[node name="U" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4)
