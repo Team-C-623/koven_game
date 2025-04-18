@@ -23,6 +23,7 @@ Currency="*res://scripts/currency/Currency.gd"
 JournalMenu="*res://scenes/journal/JournalUI.tscn"
 InventoryMenu="*res://scenes/inventory/inventory.tscn"
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+SoundManager="*res://scenes/music_and_sound/sound_manager.tscn"
 
 [display]
 

@@ -13,7 +13,12 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CARDBURN = 3260304612U;
+        static const AkUniqueID DEATHSOUND = 3742375894U;
+        static const AkUniqueID FOOTSTEPS = 2385628198U;
         static const AkUniqueID MAP_LOAD = 780953876U;
+        static const AkUniqueID PAGETURN = 2536509721U;
+        static const AkUniqueID POST_EVENT_FOOTSTEPS = 2403218018U;
     } // namespace EVENTS
 
     namespace STATES
@@ -76,6 +81,7 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SOUNDEFFECTS = 3898083304U;
     } // namespace BANKS
 
     namespace BUSSES

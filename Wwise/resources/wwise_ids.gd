@@ -3,6 +3,10 @@ class_name AK
 class EVENTS:
 
 	const MAP_LOAD : int = 780953876
+	const CARDBURN : int = 3260304612
+	const DEATHSOUND : int = 3742375894
+	const FOOTSTEPS : int = 2385628198
+	const PAGETURN : int = 2536509721
 
 class STATES:
 

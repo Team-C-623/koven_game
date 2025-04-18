@@ -2,13 +2,11 @@ extends CharacterBody3D
 
 class_name Player
 @onready var wand = $head/PlayerCam/Wand
-
 #attack settings
 var attack_damage := 10.0
-
 #camera settings
 const SENS = 0.4
-const SPEED = 3.0
+const SPEED = 3.0 #3.0
 
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = $"../UI/InventoryInterface"
@@ -21,8 +19,8 @@ var gravity: float = 9.8
 
 @export var journal: Journal
 #bob variable
-const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
+const BOB_FREQ = 2.0 #2.0
+const BOB_AMP = 0.08 #0.08
 var t_bob = 0.0
 
 #FOV variable
@@ -37,11 +35,14 @@ var instance
 @onready var camera = $head/PlayerCam
 @onready var wand_anim = $head/PlayerCam/Wand/AnimationPlayer
 @onready var wand_tip = $head/PlayerCam/Wand/RayCast3D
+var was_rising := false  # Tracks previous frame's motion direction
+var footstep_cooldown := 0.0  # Prevents double-triggering
 
 func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	inventory_data = InventoryData.new()
+
 	
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is escape by default
@@ -75,11 +76,24 @@ func _physics_process(_delta: float) -> void:
 		
 	# Head bob
 	t_bob += _delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
+	var new_head_pos = _headbob(t_bob)
+	# Detect downward motion
+	var is_rising = new_head_pos.y > camera.transform.origin.y
+
 	
-	# FOV
+	# Play sound at peak descent (when switching from falling to rising)
+	if was_rising and not is_rising and footstep_cooldown <= 0:
+		SoundManager.play_footsteps()
+		footstep_cooldown = 0.05  # Small cooldown to prevent double sounds
+	
+	# Update tracking variable
+	was_rising = is_rising
+	camera.transform.origin = new_head_pos
+	footstep_cooldown = max(0, footstep_cooldown - _delta)
+	#FOV
 	var target_fov = BASE_FOV + FOV_CHANGE
 	camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
+		
 	
 	#Shooting 
 	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !JournalMenu.visible:

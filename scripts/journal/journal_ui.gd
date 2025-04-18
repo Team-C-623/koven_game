@@ -30,8 +30,10 @@ func update_slots():
 func _process(_delta):
 	if Input.is_action_just_pressed("journal") and !inventory_interface.visible and !ShopMenu.visible:
 		if is_open:
+			SoundManager.play_page_turn()
 			close()
 		else:
+			SoundManager.play_page_turn()
 			open()
 func open():
 	visible = true

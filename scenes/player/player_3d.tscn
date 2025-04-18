@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjjcwfil4vt7w"]
+[gd_scene load_steps=13 format=3 uid="uid://cjjcwfil4vt7w"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_3nbws"]
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="4_qib34"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="5_q2tud"]
+[ext_resource type="WwiseEvent" uid="uid://cjaq8lcyyl7h5" path="res://Wwise/resources/Event/{084A66E5-751C-49A4-979C-19CA4C46EED2}.tres" id="7_u22ds"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwoa"]
 bg_color = Color(0.822962, 0.16089, 3.85046e-07, 1)
@@ -93,3 +94,10 @@ shape = SubResource("CapsuleShape3D_mj0hv")
 
 [node name="health_timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="AkListener3D" type="AkListener3D" parent="."]
+
+[node name="AkEvent3D" type="AkEvent3D" parent="."]
+event = ExtResource("7_u22ds")
+trigger_on = 1
+stop_on = 3

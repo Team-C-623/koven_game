@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\SFX Events\Footsteps	
+
