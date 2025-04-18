@@ -2,6 +2,7 @@ extends Node3D
 
 # imports rooms as packed scenes
 var room1scene = preload("res://scenes/Rooms/room1.tscn")
+var room1newscene = preload("res://scenes/Rooms/room1newnew.tscn")
 var room2scene = preload("res://scenes/Rooms/room2.tscn")
 var room3scene = preload("res://scenes/Rooms/room3.tscn")
 var room4scene = preload("res://scenes/Rooms/room4.tscn")
@@ -177,7 +178,7 @@ func _create_new_door(new_room, door_pos):
 	var new_rel_pos = rel_pos_2d.rotated(new_room.room_rotation).snapped(Vector2(1, 1))
 	var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
 	print(door_pos, "\t", rel_pos_2d, "\t", new_rel_pos)
-	new_door.global_position = door_position + Vector3(0.01 * new_rel_pos[0], 0, 0.01 * new_rel_pos[1])
+	new_door.global_position = door_position #+ Vector3(0.01 * new_rel_pos[0], 0, 0.01 * new_rel_pos[1])
 	new_door.rotate_y(door_rotation)
 
 # creates a new RoomData object based on the name string provided
