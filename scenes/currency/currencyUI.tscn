@@ -6,6 +6,7 @@
 [node name="CurrencyUI" type="Control"]
 self_modulate = Color(0.04, 0.04, 0.04, 0.0745098)
 layout_mode = 3
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s7gus")
