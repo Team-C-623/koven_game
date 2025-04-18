@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player/player_3d.tscn" id="2_mjsmv"]
 [ext_resource type="Script" path="res://scripts/rooms/RoomSpawner.gd" id="4_scj2c"]
-[ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="4_txkxr"]
 [ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://scenes/inventory/inventory.tscn" id="5_nd3my"]
 [ext_resource type="Script" path="res://scripts/inventory/inventory_interface.gd" id="6_lmuoi"]
 [ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="8_wfuic"]
@@ -23,8 +22,6 @@ script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.513106, 0)
-
-[node name="EnemySpawner" parent="." instance=ExtResource("4_txkxr")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.913828, 0.232817, -0.332739, 0.122754, 0.62266, 0.772804, 0.387105, -0.747055, 0.540425, 0, 0, 5)
