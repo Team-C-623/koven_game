@@ -63,11 +63,11 @@ shape = SubResource("ConvexPolygonShape3D_lyeip")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="PlayerCam" type="Camera3D" parent="head"]
-transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941775, 0, 0.0941775, 1.99778, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941776, 0, 0.0941776, 1.99778, 0.0243361, 0.0280199, 0)
 current = true
 
 [node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
-transform = Transform3D(0.499156, 0.000308356, 0.0290294, -0.000694537, 0.499955, 0.00663181, -0.0290228, -0.00666095, 0.499112, 0.122612, -0.0806588, -0.195426)
+transform = Transform3D(0.498808, 0.000701803, 0.0344932, 0.000149481, 0.499848, -0.0123316, -0.0345001, 0.0123125, 0.498656, 0.139205, -0.0643818, -0.194059)
 
 [node name="InteractRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2.5)
