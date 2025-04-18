@@ -1,26 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjjcwfil4vt7w"]
+[gd_scene load_steps=13 format=3 uid="uid://cjjcwfil4vt7w"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_3nbws"]
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
 [ext_resource type="PackedScene" uid="uid://c7jj1a7xswf00" path="res://scenes/CharacterNodes/health_bar.tscn" id="2_rpfbq"]
+[ext_resource type="Texture2D" uid="uid://djkefbtfpebke" path="res://assets/ui/Final health bar.png" id="3_2in4s"]
 [ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_anngu"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="4_qib34"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="5_q2tud"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwoa"]
-bg_color = Color(0.822962, 0.16089, 3.85046e-07, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-expand_margin_left = 3.0
-expand_margin_top = 3.0
-expand_margin_right = 3.0
-expand_margin_bottom = 3.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65n5d"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlo3i"]
-bg_color = Color(0.867295, 0.279213, 1, 1)
+bg_color = Color(0.816744, 0, 0.257432, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l1fuj"]
 
@@ -36,9 +28,26 @@ collision_mask = 9
 script = ExtResource("1_3nbws")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_rpfbq")]
-offset_bottom = 122.0
-theme_override_styles/background = SubResource("StyleBoxFlat_yiwoa")
+anchors_preset = -1
+anchor_left = 0.0140625
+anchor_top = -0.000925926
+anchor_right = 0.0140625
+anchor_bottom = 0.00277778
+offset_left = 154.0
+offset_top = 167.0
+offset_right = 640.0
+offset_bottom = 196.0
+scale = Vector2(0.8, 0.6)
+theme_override_styles/background = SubResource("StyleBoxFlat_65n5d")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
+position = Vector2(214.125, 15)
+scale = Vector2(0.302782, 0.333333)
+texture = ExtResource("3_2in4s")
 
 [node name="TopDownCam" type="Camera3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.7423e-08, 2, 0, -2, -8.7423e-08, 0, 100, 0)
@@ -58,7 +67,7 @@ transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941775, 0, 0.0941775, 1.99778, 
 current = true
 
 [node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
-transform = Transform3D(0.5, 0, 0, 0, 0.499445, 0.0235444, 0, -0.0235444, 0.499445, 0.122612, -0.0816861, -0.217216)
+transform = Transform3D(0.499156, 0.000308356, 0.0290294, -0.000694537, 0.499955, 0.00663181, -0.0290228, -0.00666095, 0.499112, 0.122612, -0.0806588, -0.195426)
 
 [node name="InteractRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2.5)
@@ -81,7 +90,7 @@ mouse_filter = 2
 [node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qib34")]
-MAX_HEALTH = 100.0
+MAX_HEALTH = 20.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_q2tud")]
 collision_layer = 2
