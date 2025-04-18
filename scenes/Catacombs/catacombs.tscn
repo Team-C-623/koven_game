@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=16 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="Texture2D" uid="uid://b27ac8hu18orm" path="res://assets/environment/floor.PNG" id="2_i0wwx"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="4_b3sk6"]
 [ext_resource type="Script" path="res://scripts/Catacombs/entrance.gd" id="5_gce5p"]
 [ext_resource type="Texture2D" uid="uid://cb5q14wda7ynt" path="res://assets/entrance.png" id="6_q326m"]
+[ext_resource type="Script" path="res://scenes/Catacombs/dialogue_area.gd" id="7_8nvqu"]
+[ext_resource type="Texture2D" uid="uid://on0t5aofexgg" path="res://assets/trial.png" id="8_q2ncy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgady"]
 shading_mode = 0
@@ -104,4 +106,19 @@ shape = SubResource("BoxShape3D_uic56")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 texture = ExtResource("6_q326m")
 
+[node name="DIALGOEUE" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -11.5)
+
+[node name="DialogueArea" type="Area3D" parent="DIALGOEUE"]
+script = ExtResource("7_8nvqu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DIALGOEUE/DialogueArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.513733, 0.63385)
+shape = SubResource("BoxShape3D_uic56")
+
+[node name="Sprite3D" type="Sprite3D" parent="DIALGOEUE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+texture = ExtResource("8_q2ncy")
+
 [connection signal="body_entered" from="Entrance/EntranceArea" to="Entrance/EntranceArea" method="_on_body_entered"]
+[connection signal="body_entered" from="DIALGOEUE/DialogueArea" to="DIALGOEUE/DialogueArea" method="_on_body_entered"]
