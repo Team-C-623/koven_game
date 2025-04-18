@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=21 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://scripts/Catacombs/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="Texture2D" uid="uid://dwdv74717n8qc" path="res://assets/environment/lvl1emptyroomwall3.png" id="2_d5gov"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://scenes/journal/journal_spawner.tscn" id="4_b3sk6"]
 [ext_resource type="Script" path="res://scripts/Catacombs/entrance.gd" id="5_gce5p"]
 [ext_resource type="Texture2D" uid="uid://cb5q14wda7ynt" path="res://assets/entrance.png" id="6_q326m"]
-[ext_resource type="Script" path="res://scenes/Catacombs/dialogue_area.gd" id="7_8nvqu"]
-[ext_resource type="Texture2D" uid="uid://on0t5aofexgg" path="res://assets/trial.png" id="8_q2ncy"]
+[ext_resource type="Texture2D" uid="uid://cls1cw11xcbeq" path="res://assets/environment/gateway.png" id="7_a0rw7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv5cw"]
 shading_mode = 0
@@ -44,7 +43,18 @@ noise = SubResource("FastNoiseLite_n5shs")
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_34a8u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uic56"]
-size = Vector3(1.61572, 1.02747, 1.2677)
+size = Vector3(2.7301, 5.05923, 0.507584)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgi7o"]
+albedo_color = Color(0.18359, 0.18359, 0.18359, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fxvia"]
+material = SubResource("StandardMaterial3D_hgi7o")
+size = Vector2(3, 6)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcvby"]
+albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
 [node name="Catacombs" type="StaticBody3D"]
 script = ExtResource("1_bi88v")
@@ -108,26 +118,27 @@ unique_name_in_owner = true
 script = ExtResource("5_gce5p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entrance/EntranceArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.513733, 0.63385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0832362, 2.5065, -0.111743)
 shape = SubResource("BoxShape3D_uic56")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Entrance/EntranceArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133033, 3, -0.263615)
+mesh = SubResource("PlaneMesh_fxvia")
 
 [node name="Sprite3D" type="Sprite3D" parent="Entrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
 texture = ExtResource("6_q326m")
 
-[node name="DIALGOEUE" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9.5)
+[node name="Entrance2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0.01, 8.74228e-10, -8.74228e-10, 8.74228e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.3, -10)
+polygon = PackedVector2Array(7.36554, -345.657, -23.5, -340, -52.7, -329, -102.8, -299, -130.1, -275, -158.4, -241, -173.9, -214, -183, -187.4, -208.4, -187, -206, -165.7, -192.022, -142.787, -179.611, -136.646, -177, -107.6, -184.32, -99.0576, -183.322, -90.3604, -176.1, -85.9, -177, 165.1, -188.913, 171.243, -195.8, 196.6, -212.699, 200.835, -229.351, 212.115, -229.696, 229.955, -205.8, 245, -199, 252.8, -232.25, 272.059, -237.4, 297, -238, 307.4, -238, 312.1, -229, 323, -202, 336.9, -105, 338, -81.3, 326, -75, 306.3, -75, 304.5, -83.1548, 277.827, -105.7, 268, -112.1, 260.8, -106.2, 248.9, -90.5, 242, -85.8, 242, -81, 226.5, -81, 224, -93, 208, -108.1, 199, -107, 175.2, -121.1, 167.6, -122.495, -87.1022, -112.556, -90.7192, -114.14, -101.642, -119.427, -105.896, -117.494, -121.393, -111.812, -129.665, -101.158, -137.325, -87.9, -147, -79.9, -161, -77, -175.9, -81.2112, -180.551, -102.838, -182.056, -94.6618, -206.745, -54.3306, -253.291, -27.631, -276.272, -12, -286.2, 10.9418, -296.495, 29.5698, -289.293, 49.2735, -277.77, 82.5, -250, 106.169, -222.937, 119.473, -193.083, 93.0733, -193.401, 94.0966, -176.809, 104.222, -153.739, 120.375, -137.88, 122.7, -126, 123.9, -117.2, 116.829, -111.133, 115.262, -103.742, 117.378, -98.628, 123.9, -94.7, 123, 156.2, 115.2, 161, 110.6, 161, 105, 186.8, 104.2, 186, 84.7756, 192.784, 69.3579, 205.792, 68.7083, 214.249, 84.8613, 231.965, 96.5, 237, 100.444, 242.948, 89, 252.7, 72.4961, 260.047, 59.8, 294, 59, 308.3, 59, 313.5, 68, 320.4, 88, 328.2, 126, 332.7, 205.1, 331, 218.653, 320.508, 223, 287.2, 215.397, 265.769, 195.5, 258, 187.371, 251.023, 190.834, 242.132, 212.893, 232.062, 221, 217.7, 221, 212, 214.877, 202.064, 192.4, 189, 192, 171.6, 190.786, 164.175, 178.9, 157.6, 178, -93.4, 186.995, -98.2765, 189, -111.4, 182.817, -116.04, 189.342, -144.35, 199.6, -147, 218.5, -170, 224, -184.6, 221.736, -190.128, 204.7, -193.7, 204, -202.3, 204, -205.7, 191, -230.9, 169, -261.2, 110, -311.5, 56, -336.9)
+depth = 40.0
+material = SubResource("StandardMaterial3D_qcvby")
 
-[node name="DialogueArea" type="Area3D" parent="DIALGOEUE"]
-script = ExtResource("7_8nvqu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DIALGOEUE/DialogueArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.513733, 0.63385)
-shape = SubResource("BoxShape3D_uic56")
-
-[node name="Sprite3D" type="Sprite3D" parent="DIALGOEUE"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-texture = ExtResource("8_q2ncy")
+[node name="Sprite3D" type="Sprite3D" parent="Entrance2"]
+transform = Transform3D(-100, -8.74228e-06, 0, 8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -40.1)
+flip_h = true
+texture = ExtResource("7_a0rw7")
 
 [connection signal="body_entered" from="Entrance/EntranceArea" to="Entrance/EntranceArea" method="_on_body_entered"]
-[connection signal="body_entered" from="DIALGOEUE/DialogueArea" to="DIALGOEUE/DialogueArea" method="_on_body_entered"]

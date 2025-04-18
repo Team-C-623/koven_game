@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RoomTypeData" load_steps=3 format=3 uid="uid://dv0m6mmssu6qx"]
+
+[ext_resource type="PackedScene" uid="uid://qd0j71gxoatt" path="res://scenes/Rooms/trialroom.tscn" id="1_yfrjq"]
+[ext_resource type="Script" path="res://scripts/rooms/RoomTypeData.gd" id="2_uqhav"]
+
+[resource]
+script = ExtResource("2_uqhav")
+name = "room_t"
+doors = Array[String](["U"])
+room_type = "trial"
+room_scene = ExtResource("1_yfrjq")

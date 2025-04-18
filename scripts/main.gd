@@ -44,8 +44,8 @@ func switch_cam():
 		get_node("Player/TopDownCam").current = false
 
 func generate_new():
-	map.generate(10)
-	player.global_position = Vector3(60, 0, 60)
+	var size = map.generate()
+	player.global_position = Vector3(6 * size, 0, 6 * size)
 	
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	if ShopMenu.visible or JournalMenu.visible:
@@ -72,7 +72,7 @@ func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 	add_child(pick_up)
 
 func _on_entered() -> void:
-	map.generate(10)
+	generate_new()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("generate"):

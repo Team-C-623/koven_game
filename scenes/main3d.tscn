@@ -31,6 +31,7 @@ light_energy = 0.4
 environment = SubResource("Environment_uwxbf")
 
 [node name="SwitchCamButton" type="Button" parent="."]
+visible = false
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 94.0
@@ -39,6 +40,7 @@ scale = Vector2(1.00001, 1.00435)
 text = "Switch Camera"
 
 [node name="Generate" type="Button" parent="."]
+visible = false
 offset_left = 14.0
 offset_top = 52.0
 offset_right = 94.0
