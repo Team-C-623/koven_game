@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://pstvbetvw8t4"
+path="res://.godot/imported/trial1.dialogue-8d77fe5325d1da07c673dba2e87bf576.tres"
+
+[deps]
+
+source_file="res://trialroom/dialogue/trial1.dialogue"
+dest_files=["res://.godot/imported/trial1.dialogue-8d77fe5325d1da07c673dba2e87bf576.tres"]
+
+[params]
+
+defaults=true

@@ -90,6 +90,7 @@ offset_right = 1278.0
 offset_bottom = 1000.0
 
 [node name="CurrencyUI" parent="UI" instance=ExtResource("9_dg3fn")]
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -153.0
