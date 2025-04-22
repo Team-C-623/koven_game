@@ -7,8 +7,6 @@ var wander_time: float = 0.0
 @onready var enemy: CharacterBody3D = get_parent().get_parent()
 var player: CharacterBody3D = null
 
-
-
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
 
@@ -32,8 +30,8 @@ func process(delta: float):
 		if enemy is Monk:
 			Transitioned.emit(self, "EnemyChase")
 		elif enemy is Nun:
-			#Transitioned.emit(self, "EnemyShoot")
-			Transitioned.emit(self, "EnemyChase")
+			print("Entered NUN range")
+			Transitioned.emit(self, "EnemyShoot")
 
 func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.SPEED
