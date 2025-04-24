@@ -23,8 +23,8 @@ Currency="*res://scripts/currency/Currency.gd"
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
 SoundManager="*res://scenes/music_and_sound/sound_manager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-UIManager="*res://UI/ui_manager.tscn"
 TarotManager="*res://tarotcards/scripts/tarot_manager.gd"
+UIManager="*res://UI/ui_manager.tscn"
 
 [dialogue_manager]
 
