@@ -4,17 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ddvyecflt5ri7" path="res://UI/INVENTORYFULLSPREADEXPANDED.png" id="2_c2i2o"]
 
 [node name="Inventory" type="PanelContainer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = -256.5
-offset_right = 540.0
-offset_bottom = 256.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1080.0
+offset_bottom = 513.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 script = ExtResource("1_v88x4")
@@ -26,16 +17,23 @@ expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="BackgroundFrame"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.155556
+anchor_top = 0.325536
+anchor_right = 0.786111
+anchor_bottom = 0.859649
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemGrid" type="GridContainer" parent="BackgroundFrame/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 columns = 5
