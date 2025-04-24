@@ -5,14 +5,19 @@ class_name HealthComponent
 var health : float
 @export var damage_modifier: float = 1.0
 signal health_changed(current_health: float, max_health: float)
-#signal damage_modifier_changed(new_value)
+@export var is_player := false
 
 func _ready():
 	health = MAX_HEALTH
 
 func damage(attack: Attack):
 	health -= (attack.attack_damage * damage_modifier)
+	if is_player == false:
+		SoundManager.play_enemy_damage_sound()
 	
+		
+		#play damag sound
+	##dont play damage sound if the player is getting hit
 	emit_signal("health_changed", health, MAX_HEALTH)
 	
 	if health <= 0:

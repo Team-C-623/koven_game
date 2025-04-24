@@ -92,6 +92,7 @@ mouse_filter = 2
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qib34")]
 MAX_HEALTH = 20.0
+is_player = true
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_q2tud")]
 collision_layer = 2

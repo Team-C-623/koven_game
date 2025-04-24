@@ -4,7 +4,6 @@ extends CanvasLayer
 @onready var currency_ui: Control = $CurrencyUI
 @onready var journal_ui: JournalUI = $Journal_UI
 
-@export var inventory_data: InventoryData
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

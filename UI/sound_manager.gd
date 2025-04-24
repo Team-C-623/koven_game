@@ -20,6 +20,9 @@ func play_page_turn():
 func play_death_sound():
 	#Wwise.post_event_id(AK.EVENTS.DEATHSOUND,self)
 	pass
+
+func play_enemy_damage_sound():
+	Wwise.post_event_id(AK.EVENTS.ENEMYDAMAGE,self)
 	
 func play_start_music():
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)

@@ -87,15 +87,3 @@ func _on_visibility_changed() -> void:
 		drop_slot_data.emit(grabbed_slot_data)
 		grabbed_slot_data = null
 		update_grabbed_slot()
-
-func _on_background_gui_input(event):
-	if event is InputEventMouseButton and event.pressed and grabbed_slot_data:
-			match event.button_index:
-				MOUSE_BUTTON_LEFT:
-					drop_slot_data.emit(grabbed_slot_data)
-					grabbed_slot_data = null
-				MOUSE_BUTTON_RIGHT:
-					drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
-					if grabbed_slot_data.quantity < 1:
-						grabbed_slot_data = null
-	update_grabbed_slot()
