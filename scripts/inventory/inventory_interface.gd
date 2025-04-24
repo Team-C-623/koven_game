@@ -7,15 +7,10 @@ var grabbed_slot_data: SlotData
 var external_inventory_owner
 
 @onready var player_inventory: Control = get_node("/root/UIManager/InventoryInterface/PlayerInventory")
-@onready var grabbed_slot: Control = get_node("/root/UIManager/InventoryInterface/GrabbedSlot")
+@onready var grabbed_slot: Control = get_node("/root/UIManager/InventoryInterface/PlayerInventory/GrabbedSlot")
 @onready var external_inventory: Control = get_node("/root/UIManager/InventoryInterface/ExternalInventory")
 @onready var background: Panel = $Background
 
-func _ready() -> void:
-	background.mouse_filter = Control.MOUSE_FILTER_STOP
-	grabbed_slot.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	for slot in grabbed_slot.get_children():
-		slot.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:

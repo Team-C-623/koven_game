@@ -2,9 +2,25 @@ extends PanelContainer
 
 const Slot = preload("res://scenes/inventory/slot.tscn")
 
-@onready var item_grid: GridContainer = $MarginContainer/ItemGrid
+@onready var background_frame: TextureRect = $BackgroundFrame
+@onready var margin_container: MarginContainer = $BackgroundFrame/MarginContainer
+@onready var item_grid: GridContainer = $BackgroundFrame/MarginContainer/ItemGrid
 
 
+
+func _ready():
+	# Configure frame texture and scaling
+	background_frame.texture = load("res://UI/INVENTORYFULLSPREADEXPANDED.png")
+	background_frame.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	background_frame.stretch_mode = TextureRect.STRETCH_SCALE
+	
+	margin_container.add_theme_constant_override("margin_left", 10)
+	margin_container.add_theme_constant_override("margin_right", 10)
+	margin_container.add_theme_constant_override("margin_top", 10)
+	margin_container.add_theme_constant_override("margin_bottom", 10)
+	
+	background_frame.z_index = 5  # Draw behind slots
+	#item_grid.z_index = 1  # Draw above frame
 	
 func set_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_updated.connect(populate_item_grid)
