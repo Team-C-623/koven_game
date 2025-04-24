@@ -1,23 +1,36 @@
 Event	ID	Name			Wwise Object Path	Notes
+	238752707	not_combat			\Music\not_combat	
 	780953876	map_load			\Music\map_load	
+	1543475711	trial_room			\Music\trial_room	
+	2005704188	main_menu			\Music\main_menu	
+	2116791127	in_combat			\Music\in_combat	
+	2253511090	boss4			\Music\boss4	
+	2253511092	boss2			\Music\boss2	
+	2253511093	boss3			\Music\boss3	
+	2253511095	boss1			\Music\boss1	
+	2716678721	Victory			\Music\Victory	
+	2791675679	defeated			\Music\defeated	
+	2966204926	catacombs			\Music\catacombs	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	11360564	Contrabass	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\CB\{CB164F02-5417-6A5B-449D-475A2D6DC836}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		6556192
-	42163698	Choir Alto	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\97\{976BA825-E58A-6327-E899-BB85FB583D75}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Alto		6556192
-	345211169	Choir Tenor	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\E2\{E2AB6335-2800-8691-B8E2-25F47B449E6D}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Tenor		6818336
-	347551769	Viola	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\48\{48B959FA-B380-70BC-6E97-B5AF157B3B2C}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Viola		6294048
-	483114294	Contrabass	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\11\{111C6C80-4ED7-738C-59CA-7938F7AB5583}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		6556192
-	523321979	Cello Constant	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\3E\{3E96CA74-6B39-09A1-B2A3-EEEFF4B2FCB5}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Cello Constant		6425120
-	550407309	Choir Bass	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\B2\{B2A85CF8-A684-2973-8E68-5711F31A269E}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Bass		6687264
-	681552006	Contrabass	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\EA\{EAADFB99-F4BE-7459-1FA4-DD80BB004B73}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		6556192
-	699806239	Choir Soprano	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\40\{4067C376-583F-522A-68E7-EBE8A9A64CE5}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Soprano		6687264
-	726918535	Harpsichord	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\07\{0797FDFE-E363-5773-D962-D045D3098523}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		6425120
-	760752877	Cello	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\1B\{1BBCDE9F-7AE0-0D60-903A-C927A2A47A98}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Cello		6556192
-	835538420	Choir Bass	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\B8\{B87A0E10-1C9B-41BB-3B89-25ECF1CE3406}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Bass		6556192
-	861896283	Cello	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\12\{122DC471-E615-703F-8139-8A15D6C8F247}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Cello		6556192
-	861960065	Harpsichord	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\61\{618EAED6-66DE-D3E3-1989-8DBBD3995D34}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		6425120
-	894003494	Choir Soprano	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\63\{630C718B-EEB3-32DE-00BD-6C8BC6B52B3C}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Soprano		6556192
-	939233696	Contrabass	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\D2\{D25D4DAF-B974-F00C-2BC3-8A4586B9AE00}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		6556192
-	951046170	Harpsichord	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\56\{5677F4D4-76F4-42FA-A513-85EE76FEC3F7}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		6425120
-	1022635777	Harpsichord	Y:\Desktop\Kristuff\Koven Files\Koven DEMO\.cache\29\{296C78F5-9F57-960D-27A4-59C29809FDAA}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		6425120
+	28224643	Harpsichord	Y:\Documents\School\eecs_623\koven_wwise\.cache\56\{563CF503-7C6C-2303-E4F3-3C710550F605}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		7866912
+	59438838	Contrabass	Y:\Documents\School\eecs_623\koven_wwise\.cache\5A\{5A02B191-C37F-977F-2F55-B6D6C219C4B4}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		8129056
+	98809174	Viola	Y:\Documents\School\eecs_623\koven_wwise\.cache\67\{679DBD8D-03D7-A20F-D33B-272370A31416}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Viola		7997984
+	114347651	Harpsichord	Y:\Documents\School\eecs_623\koven_wwise\.cache\A0\{A0B922B8-E2DA-36D4-F321-0E12ACA91127}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		7866912
+	171904470	Contrabass	Y:\Documents\School\eecs_623\koven_wwise\.cache\AF\{AFA61FB9-D4E3-7443-BAA6-55C7DF070161}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		8129056
+	182008106	Choir Soprano	Y:\Documents\School\eecs_623\koven_wwise\.cache\E6\{E6599DB1-1A98-B10D-C7A1-BB4311C7D77F}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Soprano		8129056
+	248062816	Choir Bass	Y:\Documents\School\eecs_623\koven_wwise\.cache\0B\{0BED3CD6-156D-D596-DCFB-CC6076DB831E}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Bass		8129056
+	276078009	Choir Tenor	Y:\Documents\School\eecs_623\koven_wwise\.cache\05\{054ADF07-3212-4229-4F9F-6BBCD13DF148}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Tenor		8260128
+	436202978	Cello	Y:\Documents\School\eecs_623\koven_wwise\.cache\32\{32FB1C2E-C4DA-A587-07B1-F28A0600E5A6}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Cello		7997984
+	457501056	Contrabass	Y:\Documents\School\eecs_623\koven_wwise\.cache\0F\{0FE38C15-5666-128F-F396-3990AB64BF3D}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		8129056
+	492746838	Choir Alto	Y:\Documents\School\eecs_623\koven_wwise\.cache\C6\{C6AFB833-6D97-1ED5-DA04-D041CC3CA998}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Alto		8129056
+	536725549	Cello Constant	Y:\Documents\School\eecs_623\koven_wwise\.cache\05\{052DBC60-E014-EB4E-C26F-E4E59E240EBC}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Cello Constant		7866912
+	553112083	Cello	Y:\Documents\School\eecs_623\koven_wwise\.cache\18\{18C2ECD6-DDB3-4379-38C1-005CAA1578E9}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Cello		7997984
+	620689948	Choir Soprano	Y:\Documents\School\eecs_623\koven_wwise\.cache\A9\{A9FE5F03-6D60-8571-14C0-8DB38A6DD438}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Soprano		8129056
+	823001451	Harpsichord	Y:\Documents\School\eecs_623\koven_wwise\.cache\51\{516D2612-BFC6-C704-79B0-D7AC182C1293}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		7866912
+	880180625	Percussion BD	Y:\Documents\School\eecs_623\koven_wwise\.cache\8B\{8B83E63C-9D8D-727A-B6B4-F5A344A8F378}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Percussion BD		7997984
+	995217355	Choir Bass	Y:\Documents\School\eecs_623\koven_wwise\.cache\4C\{4C193EEB-5850-E99C-C5D1-CAC91EFB1E60}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Choir Bass		8129056
+	1020011605	Harpsichord	Y:\Documents\School\eecs_623\koven_wwise\.cache\24\{2434B48E-1767-2017-BC5A-EAB4FA9A8F7D}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Harpsichord		7997984
+	1023302217	Percussion Cym	Y:\Documents\School\eecs_623\koven_wwise\.cache\6E\{6E18892D-8FAF-CD54-B610-730DAF678501}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Percussion Cym		8915488
+	1059078624	Contrabass	Y:\Documents\School\eecs_623\koven_wwise\.cache\F7\{F72CA547-A7EF-0FEB-92A5-73D9587030F5}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Floor Uncleared\Default Room\In Combat\Combat A\Contrabass		7997984
 

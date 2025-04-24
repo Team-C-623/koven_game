@@ -2,11 +2,25 @@ class_name AK
 
 class EVENTS:
 
+	const VICTORY : int = 2716678721
+	const BOSS1 : int = 2253511095
+	const BOSS2 : int = 2253511092
+	const BOSS3 : int = 2253511093
+	const BOSS4 : int = 2253511090
+	const CATACOMBS : int = 2966204926
+	const DEFEATED : int = 2791675679
+	const IN_COMBAT : int = 2116791127
+	const MAIN_MENU : int = 2005704188
 	const MAP_LOAD : int = 780953876
-	const CARDBURN : int = 3260304612
-	const DEATHSOUND : int = 3742375894
+	const NOT_COMBAT : int = 238752707
+	const TRIAL_ROOM : int = 1543475711
+	const ENEMYDAMAGE : int = 1879435608
 	const FOOTSTEPS : int = 2385628198
-	const PAGETURN : int = 2536509721
+	const JOURNALPAGETURN : int = 1639161750
+	const MENUOPEN : int = 48824776
+	const TAROTBURN : int = 2451853040
+	const TAROTPICKUP : int = 1908595231
+	const WANDSHOTS : int = 3734252994
 
 class STATES:
 
@@ -14,8 +28,11 @@ class STATES:
 		const GROUP : int = 3826569560
 	
 		class STATE:
-			const NEW_STATE : int = 2021425847
 			const NONE : int = 748895195
+			const BOSS1 : int = 2253511095
+			const BOSS2 : int = 2253511092
+			const BOSS3 : int = 2253511093
+			const BOSS4 : int = 2253511090
 
 	class PLAYER_LIFE:
 		const GROUP : int = 3762137787
@@ -55,6 +72,7 @@ class TRIGGERS:
 class BANKS:
 
 	const MUSIC : int = 3991942870
+	const SOUNDEFFECTS : int = 3898083304
 
 class AUX_BUSSES:
 	pass
@@ -75,3 +93,4 @@ class ACOUSTIC_TEXTURES:
 	const WOOD : int = 2058049674
 	const WOOD_BRIGHT : int = 4262522749
 	const WOOD_DEEP : int = 1755085759
+

@@ -10,157 +10,250 @@
     "Type": "User",
     "GUID": "{564FA88C-F2F7-4907-B737-8F11A3FA7E78}",
     "Language": "SFX",
-    "Hash": "{03F3573F-CA30-394D-D192-F355E631D272}",
+    "Hash": "{C6F9DE26-BC8C-5EB8-1780-13B3ACA513FE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Music",
     "ShortName": "Music",
     "Path": "3991942870.bnk",
     "Media": [
      {
-      "Id": "11360564",
+      "Id": "28224643",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Contrabass3_90bpm12-8-L8M-P0.wav",
-      "CachePath": "CB/{CB164F02-5417-6A5B-449D-475A2D6DC836}.wem"
+      "ShortName": "Combat-A-HarpsichordHiPitchy_72bpm12-8-L8M-P0.wav",
+      "CachePath": "56/{563CF503-7C6C-2303-E4F3-3C710550F605}.wem"
      },
      {
-      "Id": "42163698",
+      "Id": "59438838",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Choir-A1_90bpm12-8-L8M-P0.wav",
-      "CachePath": "97/{976BA825-E58A-6327-E899-BB85FB583D75}.wem"
+      "ShortName": "Combat-A-Contrabass3_72bpm12-8-L8M-P0.wav",
+      "CachePath": "5A/{5A02B191-C37F-977F-2F55-B6D6C219C4B4}.wem"
      },
      {
-      "Id": "345211169",
+      "Id": "98809174",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Choir-T1_90bpm12-8-L8M-P0.wav",
-      "CachePath": "E2/{E2AB6335-2800-8691-B8E2-25F47B449E6D}.wem"
+      "ShortName": "Combat-A-Viola_72bpm12-8-L8M-P0.wav",
+      "CachePath": "67/{679DBD8D-03D7-A20F-D33B-272370A31416}.wem"
      },
      {
-      "Id": "347551769",
+      "Id": "114347651",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Viola_90bpm12-8-L8M-P0.wav",
-      "CachePath": "48/{48B959FA-B380-70BC-6E97-B5AF157B3B2C}.wem"
+      "ShortName": "Combat-A-HarpsichordHigh_72bpm12-8-L8M-P0.wav",
+      "CachePath": "A0/{A0B922B8-E2DA-36D4-F321-0E12ACA91127}.wem"
      },
      {
-      "Id": "483114294",
+      "Id": "171904470",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Contrabass4_90bpm12-8-L8M-P0.wav",
-      "CachePath": "11/{111C6C80-4ED7-738C-59CA-7938F7AB5583}.wem"
+      "ShortName": "Combat-A-Contrabass2_72bpm12-8-L8M-P0.wav",
+      "CachePath": "AF/{AFA61FB9-D4E3-7443-BAA6-55C7DF070161}.wem"
      },
      {
-      "Id": "523321979",
+      "Id": "182008106",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Cello1_90bpm12-8-L8M-P0.wav",
-      "CachePath": "3E/{3E96CA74-6B39-09A1-B2A3-EEEFF4B2FCB5}.wem"
+      "ShortName": "Combat-A-Choir-S1_72bpm12-8-L8M-P0.wav",
+      "CachePath": "E6/{E6599DB1-1A98-B10D-C7A1-BB4311C7D77F}.wem"
      },
      {
-      "Id": "550407309",
+      "Id": "248062816",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Choir-B1_90bpm12-8-L8M-P0.wav",
-      "CachePath": "B2/{B2A85CF8-A684-2973-8E68-5711F31A269E}.wem"
+      "ShortName": "Combat-A-Choir-B2_72bpm12-8-L8M-P0.wav",
+      "CachePath": "0B/{0BED3CD6-156D-D596-DCFB-CC6076DB831E}.wem"
      },
      {
-      "Id": "681552006",
+      "Id": "276078009",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Contrabass2_90bpm12-8-L8M-P0.wav",
-      "CachePath": "EA/{EAADFB99-F4BE-7459-1FA4-DD80BB004B73}.wem"
+      "ShortName": "Combat-A-Choir-T1_72bpm12-8-L8M-P0.wav",
+      "CachePath": "05/{054ADF07-3212-4229-4F9F-6BBCD13DF148}.wem"
      },
      {
-      "Id": "699806239",
+      "Id": "436202978",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Choir-S2_90bpm12-8-L8M-P0.wav",
-      "CachePath": "40/{4067C376-583F-522A-68E7-EBE8A9A64CE5}.wem"
+      "ShortName": "Combat-A-Cello3_72bpm12-8-L8M-P0.wav",
+      "CachePath": "32/{32FB1C2E-C4DA-A587-07B1-F28A0600E5A6}.wem"
      },
      {
-      "Id": "726918535",
+      "Id": "457501056",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-HarpsichordLowPitchy_90bpm12-8-L8M-P0.wav",
-      "CachePath": "07/{0797FDFE-E363-5773-D962-D045D3098523}.wem"
+      "ShortName": "Combat-A-Contrabass1_72bpm12-8-L8M-P0.wav",
+      "CachePath": "0F/{0FE38C15-5666-128F-F396-3990AB64BF3D}.wem"
      },
      {
-      "Id": "760752877",
+      "Id": "492746838",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Cello2_90bpm12-8-L8M-P0.wav",
-      "CachePath": "1B/{1BBCDE9F-7AE0-0D60-903A-C927A2A47A98}.wem"
+      "ShortName": "Combat-A-Choir-A1_72bpm12-8-L8M-P0.wav",
+      "CachePath": "C6/{C6AFB833-6D97-1ED5-DA04-D041CC3CA998}.wem"
      },
      {
-      "Id": "835538420",
+      "Id": "536725549",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Choir-B2_90bpm12-8-L8M-P0.wav",
-      "CachePath": "B8/{B87A0E10-1C9B-41BB-3B89-25ECF1CE3406}.wem"
+      "ShortName": "Combat-A-Cello1_72bpm12-8-L8M-P0.wav",
+      "CachePath": "05/{052DBC60-E014-EB4E-C26F-E4E59E240EBC}.wem"
      },
      {
-      "Id": "861896283",
+      "Id": "553112083",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Cello3_90bpm12-8-L8M-P0.wav",
-      "CachePath": "12/{122DC471-E615-703F-8139-8A15D6C8F247}.wem"
+      "ShortName": "Combat-A-Cello2_72bpm12-8-L8M-P0.wav",
+      "CachePath": "18/{18C2ECD6-DDB3-4379-38C1-005CAA1578E9}.wem"
      },
      {
-      "Id": "861960065",
+      "Id": "620689948",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-HarpsichordLow_90bpm12-8-L8M-P0.wav",
-      "CachePath": "61/{618EAED6-66DE-D3E3-1989-8DBBD3995D34}.wem"
+      "ShortName": "Combat-A-Choir-S2_72bpm12-8-L8M-P0.wav",
+      "CachePath": "A9/{A9FE5F03-6D60-8571-14C0-8DB38A6DD438}.wem"
      },
      {
-      "Id": "894003494",
+      "Id": "823001451",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Choir-S1_90bpm12-8-L8M-P0.wav",
-      "CachePath": "63/{630C718B-EEB3-32DE-00BD-6C8BC6B52B3C}.wem"
+      "ShortName": "Combat-A-HarpsichordLow_72bpm12-8-L8M-P0.wav",
+      "CachePath": "51/{516D2612-BFC6-C704-79B0-D7AC182C1293}.wem"
      },
      {
-      "Id": "939233696",
+      "Id": "880180625",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-Contrabass1_90bpm12-8-L8M-P0.wav",
-      "CachePath": "D2/{D25D4DAF-B974-F00C-2BC3-8A4586B9AE00}.wem"
+      "ShortName": "Combat-A-Perc1_72bpm12-8-L8M-P0.wav",
+      "CachePath": "8B/{8B83E63C-9D8D-727A-B6B4-F5A344A8F378}.wem"
      },
      {
-      "Id": "951046170",
+      "Id": "995217355",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-HarpsichordHiPitchy_90bpm12-8-L8M-P0.wav",
-      "CachePath": "56/{5677F4D4-76F4-42FA-A513-85EE76FEC3F7}.wem"
+      "ShortName": "Combat-A-Choir-B1_72bpm12-8-L8M-P0.wav",
+      "CachePath": "4C/{4C193EEB-5850-E99C-C5D1-CAC91EFB1E60}.wem"
      },
      {
-      "Id": "1022635777",
+      "Id": "1020011605",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Combat-A-HarpsichordHigh_90bpm12-8-L8M-P0.wav",
-      "CachePath": "29/{296C78F5-9F57-960D-27A4-59C29809FDAA}.wem"
+      "ShortName": "Combat-A-HarpsichordLowPitchy_72bpm12-8-L8M-P0.wav",
+      "CachePath": "24/{2434B48E-1767-2017-BC5A-EAB4FA9A8F7D}.wem"
+     },
+     {
+      "Id": "1023302217",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Perc3_72bpm12-8-L8M-P0.wav",
+      "CachePath": "6E/{6E18892D-8FAF-CD54-B610-730DAF678501}.wem"
+     },
+     {
+      "Id": "1059078624",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Combat-A-Contrabass4_72bpm12-8-L8M-P0.wav",
+      "CachePath": "F7/{F72CA547-A7EF-0FEB-92A5-73D9587030F5}.wem"
      }
     ],
     "Events": [
+     {
+      "Id": "2253511095",
+      "Name": "boss1",
+      "ObjectPath": "\\Events\\Music\\boss1",
+      "GUID": "{1D8B1159-4334-440A-986D-C9440602F0D7}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2253511092",
+      "Name": "boss2",
+      "ObjectPath": "\\Events\\Music\\boss2",
+      "GUID": "{92090A16-757C-4A69-9437-B7820CD8C05B}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1"
+     },
+     {
+      "Id": "2253511093",
+      "Name": "boss3",
+      "ObjectPath": "\\Events\\Music\\boss3",
+      "GUID": "{45C29E27-D6F1-4B10-B1FD-70994143F10B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2253511090",
+      "Name": "boss4",
+      "ObjectPath": "\\Events\\Music\\boss4",
+      "GUID": "{A4036345-B303-49A4-B106-3EA40C71B4BD}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2966204926",
+      "Name": "catacombs",
+      "ObjectPath": "\\Events\\Music\\catacombs",
+      "GUID": "{6BD79D35-0C9A-4866-B47A-826840CCDADD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2791675679",
+      "Name": "defeated",
+      "ObjectPath": "\\Events\\Music\\defeated",
+      "GUID": "{4B3934DE-7794-4CD7-8287-27D47A2D1EA5}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2116791127",
+      "Name": "in_combat",
+      "ObjectPath": "\\Events\\Music\\in_combat",
+      "GUID": "{C8F28D58-A273-4BF2-A72E-BEDFF8B6C5AF}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2005704188",
+      "Name": "main_menu",
+      "ObjectPath": "\\Events\\Music\\main_menu",
+      "GUID": "{D70E0561-C31E-4593-A40D-D2C4A3FB56FA}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
      {
       "Id": "780953876",
       "Name": "map_load",
@@ -169,64 +262,99 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "11360564"
+        "Id": "28224643"
        },
        {
-        "Id": "42163698"
+        "Id": "59438838"
        },
        {
-        "Id": "345211169"
+        "Id": "98809174"
        },
        {
-        "Id": "347551769"
+        "Id": "114347651"
        },
        {
-        "Id": "483114294"
+        "Id": "171904470"
        },
        {
-        "Id": "523321979"
+        "Id": "182008106"
        },
        {
-        "Id": "550407309"
+        "Id": "248062816"
        },
        {
-        "Id": "681552006"
+        "Id": "276078009"
        },
        {
-        "Id": "699806239"
+        "Id": "436202978"
        },
        {
-        "Id": "726918535"
+        "Id": "457501056"
        },
        {
-        "Id": "760752877"
+        "Id": "492746838"
        },
        {
-        "Id": "835538420"
+        "Id": "536725549"
        },
        {
-        "Id": "861896283"
+        "Id": "553112083"
        },
        {
-        "Id": "861960065"
+        "Id": "620689948"
        },
        {
-        "Id": "894003494"
+        "Id": "823001451"
        },
        {
-        "Id": "939233696"
+        "Id": "880180625"
        },
        {
-        "Id": "951046170"
+        "Id": "995217355"
        },
        {
-        "Id": "1022635777"
+        "Id": "1020011605"
+       },
+       {
+        "Id": "1023302217"
+       },
+       {
+        "Id": "1059078624"
        }
       ]
+     },
+     {
+      "Id": "238752707",
+      "Name": "not_combat",
+      "ObjectPath": "\\Events\\Music\\not_combat",
+      "GUID": "{7952802E-6BBF-4013-A4B3-F8BED4F685EE}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1543475711",
+      "Name": "trial_room",
+      "ObjectPath": "\\Events\\Music\\trial_room",
+      "GUID": "{EAF24AA9-CA93-4DDC-BD74-C6C29F54EE2E}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2716678721",
+      "Name": "Victory",
+      "ObjectPath": "\\Events\\Music\\Victory",
+      "GUID": "{9F84C521-512D-4E6B-88EC-7DD269468542}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1"
      }
     ]
    }
   ],
-  "FileHash": "{93E5A236-5135-BD21-E115-6E5637F26071}"
+  "FileHash": "{13FF9591-1461-1912-F439-3E5367B4B24B}"
  }
 }

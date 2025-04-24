@@ -7,8 +7,9 @@ signal entered
 
 @onready var player: CharacterBody3D = $Player
 @onready var map = $Map
-@onready var inventory_interface: Control = $UI/InventoryInterface
-@onready var hot_bar_inventory: PanelContainer = $UI/HotBarInventory
+@onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
+@onready var hot_bar_inventory: PanelContainer = get_node("/root/UIManager/HotBarInventory")
+@onready var journal_ui: Control = get_node("/root/UIManager/Journal_UI")
 
 var shop_instance: CanvasLayer = null
 
@@ -24,6 +25,7 @@ func _ready() -> void:
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
 	inventory_interface.force_close.connect(toggle_inventory_interface)
+
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
@@ -48,7 +50,7 @@ func generate_new():
 	player.global_position = Vector3(6 * size, 0, 6 * size)
 	
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
-	if ShopMenu.visible or JournalMenu.visible:
+	if ShopMenu.visible or journal_ui.visible:
 		return
 		
 	inventory_interface.visible = not inventory_interface.visible

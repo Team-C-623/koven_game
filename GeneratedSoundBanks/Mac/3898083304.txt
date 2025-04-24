@@ -1,0 +1,25 @@
+Event	ID	Name			Wwise Object Path	Notes
+	48824776	MenuOPEN			\sfx events\MenuOPEN	
+	1639161750	JournalPageTurn			\sfx events\JournalPageTurn	
+	1879435608	EnemyDamage			\sfx events\EnemyDamage	
+	1908595231	TarotPickUp			\sfx events\TarotPickUp	
+	2385628198	Footsteps			\sfx events\Footsteps	
+	2451853040	TarotBurn			\sfx events\TarotBurn	
+	3734252994	WandShots			\sfx events\WandShots	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	90307	Footsteps_5	Y:\Documents\School\eecs_623\koven_wwise\.cache\F9\{F9D12ECF-17B2-25F9-4CB3-21446098E060}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\Footsteps\Footsteps_5		154448
+	3715154	PageTurning	Y:\Documents\School\eecs_623\koven_wwise\.cache\77\{779AD419-513C-6F8D-F140-0C1DB672E3BE}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Menu UI\PageTurning		104836
+	144127505	Enemy_Damage_4	Y:\Documents\School\eecs_623\koven_wwise\.cache\68\{6886C660-85B1-95A7-6321-2E796F012C53}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Combat\EnemyTakingDamange\Enemy_Damage_4		194148
+	232034890	Enemy_Damage_2	Y:\Documents\School\eecs_623\koven_wwise\.cache\26\{263F8004-4BE6-A781-D4BB-E0D089DF8549}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Combat\EnemyTakingDamange\Enemy_Damage_2		194148
+	340572892	PageFlipping-MenuSwitching	Y:\Documents\School\eecs_623\koven_wwise\.cache\BD\{BD1C08F5-4A08-175F-E2FB-6F474D5B61FC}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Menu UI\PageFlipping-MenuSwitching		141924
+	615815778	Footsteps_4	Y:\Documents\School\eecs_623\koven_wwise\.cache\DF\{DF8851FA-0EC4-E247-02D2-28B0EE0A9D2A}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\Footsteps\Footsteps_4		132396
+	806822013	Footsteps_2	Y:\Documents\School\eecs_623\koven_wwise\.cache\78\{78C9A427-1E76-4675-950C-3F0070AF59C8}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\Footsteps\Footsteps_2		132396
+	825944191	Footsteps_3	Y:\Documents\School\eecs_623\koven_wwise\.cache\C8\{C8D60860-655D-E70A-97BD-7C9C5EA8FF75}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\Footsteps\Footsteps_3		132396
+	907179680	CardBurning	Y:\Documents\School\eecs_623\koven_wwise\.cache\B4\{B4DCFBCD-09BA-B0BD-165A-74530C979B75}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Tarot Sounds\CardBurning		705696
+	929658767	Enemy_Damage_3	Y:\Documents\School\eecs_623\koven_wwise\.cache\43\{43179629-3FE6-F1D8-B8AE-F21E9F8331C1}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Combat\EnemyTakingDamange\Enemy_Damage_3		145636
+	946576559	Card_PickUp_1	Y:\Documents\School\eecs_623\koven_wwise\.cache\5A\{5A43D2E5-029C-6B3C-F4F9-120FA1BEA582}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Tarot Sounds\Card_PickUp_1		127616
+	989007428	Enemy_Damage_1	Y:\Documents\School\eecs_623\koven_wwise\.cache\A2\{A2432074-F1F6-1262-05D3-30A64096A274}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Combat\EnemyTakingDamange\Enemy_Damage_1		194148
+	998639676	Footsteps_1	Y:\Documents\School\eecs_623\koven_wwise\.cache\09\{094C344C-8A19-0C5B-4DD3-C9BA370EF1A7}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\Footsteps\Footsteps_1		44196
+	1028320474	Large_Enemy_Damage	Y:\Documents\School\eecs_623\koven_wwise\.cache\51\{5157C6D5-D6A9-0A52-387B-A9582EC7B4F9}.wem		\Actor-Mixer Hierarchy\sfx hierarchy\SFX\Combat\EnemyTakingDamange\Large_Enemy_Damage		242660
+

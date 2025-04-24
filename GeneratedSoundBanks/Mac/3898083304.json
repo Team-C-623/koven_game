@@ -1,0 +1,254 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3898083304",
+    "Type": "User",
+    "GUID": "{AA3D1D31-C804-4C9A-93B9-E549FCA5A3FB}",
+    "Language": "SFX",
+    "Hash": "{0C0C2053-9826-5D2E-EC53-38CB15E4EEC3}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundEffects",
+    "ShortName": "SoundEffects",
+    "Path": "3898083304.bnk",
+    "Media": [
+     {
+      "Id": "90307",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_5.wav",
+      "CachePath": "F9/{F9D12ECF-17B2-25F9-4CB3-21446098E060}.wem"
+     },
+     {
+      "Id": "3715154",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Menu UI\\PageTurning.wav",
+      "CachePath": "77/{779AD419-513C-6F8D-F140-0C1DB672E3BE}.wem"
+     },
+     {
+      "Id": "144127505",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Combat\\Enemy_Damage_4.wav",
+      "CachePath": "68/{6886C660-85B1-95A7-6321-2E796F012C53}.wem"
+     },
+     {
+      "Id": "232034890",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Combat\\Enemy_Damage_2.wav",
+      "CachePath": "26/{263F8004-4BE6-A781-D4BB-E0D089DF8549}.wem"
+     },
+     {
+      "Id": "340572892",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Menu UI\\PageFlipping-MenuSwitching.wav",
+      "CachePath": "BD/{BD1C08F5-4A08-175F-E2FB-6F474D5B61FC}.wem"
+     },
+     {
+      "Id": "615815778",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_4.wav",
+      "CachePath": "DF/{DF8851FA-0EC4-E247-02D2-28B0EE0A9D2A}.wem"
+     },
+     {
+      "Id": "806822013",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_2.wav",
+      "CachePath": "78/{78C9A427-1E76-4675-950C-3F0070AF59C8}.wem"
+     },
+     {
+      "Id": "825944191",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_3.wav",
+      "CachePath": "C8/{C8D60860-655D-E70A-97BD-7C9C5EA8FF75}.wem"
+     },
+     {
+      "Id": "907179680",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Tarot Sounds\\CardBurning.wav",
+      "CachePath": "B4/{B4DCFBCD-09BA-B0BD-165A-74530C979B75}.wem"
+     },
+     {
+      "Id": "929658767",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Combat\\Enemy_Damage_3.wav",
+      "CachePath": "43/{43179629-3FE6-F1D8-B8AE-F21E9F8331C1}.wem"
+     },
+     {
+      "Id": "946576559",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Tarot Sounds\\Card_PickUp_1.wav",
+      "CachePath": "5A/{5A43D2E5-029C-6B3C-F4F9-120FA1BEA582}.wem"
+     },
+     {
+      "Id": "989007428",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Combat\\Enemy_Damage_1.wav",
+      "CachePath": "A2/{A2432074-F1F6-1262-05D3-30A64096A274}.wem"
+     },
+     {
+      "Id": "998639676",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_1.wav",
+      "CachePath": "09/{094C344C-8A19-0C5B-4DD3-C9BA370EF1A7}.wem"
+     },
+     {
+      "Id": "1028320474",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Combat\\Large_Enemy_Damage.wav",
+      "CachePath": "51/{5157C6D5-D6A9-0A52-387B-A9582EC7B4F9}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1879435608",
+      "Name": "EnemyDamage",
+      "ObjectPath": "\\Events\\sfx events\\EnemyDamage",
+      "GUID": "{12B406F1-9FC8-4BCE-819B-1D1930AC4447}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8250567",
+      "DurationMax": "1.3750794",
+      "MediaRefs": [
+       {
+        "Id": "144127505"
+       },
+       {
+        "Id": "232034890"
+       },
+       {
+        "Id": "929658767"
+       },
+       {
+        "Id": "989007428"
+       },
+       {
+        "Id": "1028320474"
+       }
+      ]
+     },
+     {
+      "Id": "2385628198",
+      "Name": "Footsteps",
+      "ObjectPath": "\\Events\\sfx events\\Footsteps",
+      "GUID": "{084A66E5-751C-49A4-979C-19CA4C46EED2}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.25",
+      "DurationMax": "0.8750113",
+      "MediaRefs": [
+       {
+        "Id": "90307"
+       },
+       {
+        "Id": "615815778"
+       },
+       {
+        "Id": "806822013"
+       },
+       {
+        "Id": "825944191"
+       },
+       {
+        "Id": "998639676"
+       }
+      ]
+     },
+     {
+      "Id": "1639161750",
+      "Name": "JournalPageTurn",
+      "ObjectPath": "\\Events\\sfx events\\JournalPageTurn",
+      "GUID": "{2BFA115A-FBB0-4A17-8AA0-B9C47D76E1F7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.5937642",
+      "DurationMax": "0.5937642",
+      "MediaRefs": [
+       {
+        "Id": "3715154"
+       }
+      ]
+     },
+     {
+      "Id": "48824776",
+      "Name": "MenuOPEN",
+      "ObjectPath": "\\Events\\sfx events\\MenuOPEN",
+      "GUID": "{C55291F9-BE88-4006-833E-222391780306}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8040136",
+      "DurationMax": "0.8040136",
+      "MediaRefs": [
+       {
+        "Id": "340572892"
+       }
+      ]
+     },
+     {
+      "Id": "2451853040",
+      "Name": "TarotBurn",
+      "ObjectPath": "\\Events\\sfx events\\TarotBurn",
+      "GUID": "{3498733A-A59E-4C71-901A-EF2060EA54F8}",
+      "DurationType": "OneShot",
+      "DurationMin": "4",
+      "DurationMax": "4",
+      "MediaRefs": [
+       {
+        "Id": "907179680"
+       }
+      ]
+     },
+     {
+      "Id": "1908595231",
+      "Name": "TarotPickUp",
+      "ObjectPath": "\\Events\\sfx events\\TarotPickUp",
+      "GUID": "{717B149A-2584-4B7B-A304-2E62B87C696E}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7229025",
+      "DurationMax": "0.7229025",
+      "MediaRefs": [
+       {
+        "Id": "946576559"
+       }
+      ]
+     },
+     {
+      "Id": "3734252994",
+      "Name": "WandShots",
+      "ObjectPath": "\\Events\\sfx events\\WandShots",
+      "GUID": "{16321086-33E5-44DD-813B-C6D860988E9A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C13215FC-81D6-E93C-EC95-D0391D53F275}"
+ }
+}

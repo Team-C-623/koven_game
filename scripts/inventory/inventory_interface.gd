@@ -6,10 +6,13 @@ signal force_close
 var grabbed_slot_data: SlotData
 var external_inventory_owner
 
-@onready var player_inventory: PanelContainer = $PlayerInventory
-@onready var grabbed_slot: PanelContainer = $GrabbedSlot
-@onready var external_inventory: PanelContainer = $ExternalInventory
+@onready var player_inventory: Control = get_node("/root/UIManager/InventoryInterface/PlayerInventory")
+@onready var grabbed_slot: Control = get_node("/root/UIManager/InventoryInterface/GrabbedSlot")
+@onready var external_inventory: Control = get_node("/root/UIManager/InventoryInterface/ExternalInventory")
 
+func _ready() -> void:
+	get_viewport().gui_disable_input = false
+	
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() + Vector2(5, 5)
@@ -52,7 +55,7 @@ func on_inventory_interact(inventory_data: InventoryData,
 		[null, MOUSE_BUTTON_RIGHT]:
 			inventory_data.use_slot_data(index)
 		[_, MOUSE_BUTTON_RIGHT]:
-			grabbed_slot_data = inventory_data.drop_single_slot_data(grabbed_slot_data, index)	
+			grabbed_slot_data = inventory_data.drop_single_slot_data(grabbed_slot_data, index)
 	
 	update_grabbed_slot()
 

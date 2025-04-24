@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjvono7sjvopq"]
 
-[ext_resource type="Script" path="res://scripts/music_and_sound/sound_manager.gd" id="1_fxatd"]
+[ext_resource type="Script" path="res://UI/sound_manager.gd" id="1_fxatd"]
 [ext_resource type="WwiseBank" uid="uid://cibomgsaobcx4" path="res://Wwise/resources/SoundBank/{984B2A5E-E97F-48CC-AC30-2E8A908A4855}.tres" id="2_vxnwv"]
 [ext_resource type="WwiseBank" uid="uid://kjdluqc3c50i" path="res://Wwise/resources/SoundBank/{564FA88C-F2F7-4907-B737-8F11A3FA7E78}.tres" id="3_uboyp"]
 

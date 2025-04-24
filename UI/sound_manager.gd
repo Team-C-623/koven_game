@@ -12,13 +12,14 @@ func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS, self)
 	
 func play_card_burn():
-	Wwise.post_event_id(AK.EVENTS.CARDBURN, self)
+	Wwise.post_event_id(AK.EVENTS.TAROTBURN, self)
 
 func play_page_turn():
-	Wwise.post_event_id(AK.EVENTS.PAGETURN, self)
+	Wwise.post_event_id(AK.EVENTS.JOURNALPAGETURN, self)
 	
 func play_death_sound():
-	Wwise.post_event_id(AK.EVENTS.DEATHSOUND,self)
+	#Wwise.post_event_id(AK.EVENTS.DEATHSOUND,self)
+	pass
 	
 func play_start_music():
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)

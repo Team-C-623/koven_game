@@ -144,9 +144,27 @@
         "GUID": "{2AF23AFE-6493-4A47-99B5-DC75BE1DCFC0}"
        },
        {
-        "Id": "2021425847",
-        "Name": "New_State",
-        "ObjectPath": "\\States\\Default Work Unit\\music_state\\New_State",
+        "Id": "2253511090",
+        "Name": "boss4",
+        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss4",
+        "GUID": "{DCE09BF9-91B7-4B68-AE05-E6DDDD8A75C7}"
+       },
+       {
+        "Id": "2253511092",
+        "Name": "boss2",
+        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss2",
+        "GUID": "{7961056A-988B-48AA-8EB1-6751F94ED5C6}"
+       },
+       {
+        "Id": "2253511093",
+        "Name": "boss3",
+        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss3",
+        "GUID": "{31785A12-0A75-4B0F-8A76-AFD1187B5537}"
+       },
+       {
+        "Id": "2253511095",
+        "Name": "boss1",
+        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss1",
         "GUID": "{A253BDD9-79E9-4CB0-86B9-91DFAF6093A9}"
        }
       ]
@@ -653,6 +671,6 @@
     ]
    }
   ],
-  "FileHash": "{FAF05282-4E7A-1A13-2271-4C96B9C7FC5A}"
+  "FileHash": "{AAC2A86B-856D-DDB7-393A-E2B659DBFFB8}"
  }
 }

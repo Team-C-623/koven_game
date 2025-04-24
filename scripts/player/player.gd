@@ -9,7 +9,7 @@ const SENS = 0.4
 const SPEED = 3.0 #3.0
 
 @export var inventory_data: InventoryData
-@onready var inventory_interface: Control = $"../UI/InventoryInterface"
+@onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
 
 @onready var interact_ray: RayCast3D = $InteractRay
@@ -35,6 +35,7 @@ var instance
 @onready var camera = $head/PlayerCam
 @onready var wand_anim = $head/PlayerCam/Wand/AnimationPlayer
 @onready var wand_tip = $head/PlayerCam/Wand/RayCast3D
+@onready var journal_ui = get_node("/root/UIManager/Journal_UI")
 var was_rising := false  # Tracks previous frame's motion direction
 var footstep_cooldown := 0.0  # Prevents double-triggering
 
@@ -96,7 +97,7 @@ func _physics_process(_delta: float) -> void:
 		
 	
 	#Shooting 
-	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !JournalMenu.visible:
+	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !journal_ui.visible:
 		#wand.shoot()
 		if !wand_anim.is_playing():
 			# Animation for shooting

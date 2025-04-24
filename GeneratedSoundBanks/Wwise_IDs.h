@@ -13,12 +13,25 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID CARDBURN = 3260304612U;
-        static const AkUniqueID DEATHSOUND = 3742375894U;
+        static const AkUniqueID BOSS1 = 2253511095U;
+        static const AkUniqueID BOSS2 = 2253511092U;
+        static const AkUniqueID BOSS3 = 2253511093U;
+        static const AkUniqueID BOSS4 = 2253511090U;
+        static const AkUniqueID CATACOMBS = 2966204926U;
+        static const AkUniqueID DEFEATED = 2791675679U;
+        static const AkUniqueID ENEMYDAMAGE = 1879435608U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
+        static const AkUniqueID IN_COMBAT = 2116791127U;
+        static const AkUniqueID JOURNALPAGETURN = 1639161750U;
+        static const AkUniqueID MAIN_MENU = 2005704188U;
         static const AkUniqueID MAP_LOAD = 780953876U;
-        static const AkUniqueID PAGETURN = 2536509721U;
-        static const AkUniqueID POST_EVENT_FOOTSTEPS = 2403218018U;
+        static const AkUniqueID MENUOPEN = 48824776U;
+        static const AkUniqueID NOT_COMBAT = 238752707U;
+        static const AkUniqueID TAROTBURN = 2451853040U;
+        static const AkUniqueID TAROTPICKUP = 1908595231U;
+        static const AkUniqueID TRIAL_ROOM = 1543475711U;
+        static const AkUniqueID VICTORY = 2716678721U;
+        static const AkUniqueID WANDSHOTS = 3734252994U;
     } // namespace EVENTS
 
     namespace STATES
@@ -29,7 +42,10 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID NEW_STATE = 2021425847U;
+                static const AkUniqueID BOSS1 = 2253511095U;
+                static const AkUniqueID BOSS2 = 2253511092U;
+                static const AkUniqueID BOSS3 = 2253511093U;
+                static const AkUniqueID BOSS4 = 2253511090U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace MUSIC_STATE

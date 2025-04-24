@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://clrif35eha08c"]
+
+[ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="1_5pyms"]
+[ext_resource type="PackedScene" uid="uid://bwrk1ig0jmclj" path="res://scenes/inventory/hot_bar_inventory.tscn" id="1_fuhav"]
+[ext_resource type="Script" path="res://UI/ui_manager.gd" id="1_jsqb4"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_interface.gd" id="2_0pew0"]
+[ext_resource type="PackedScene" uid="uid://c5gq4mv4mn0wv" path="res://scenes/currency/currencyUI.tscn" id="2_cgco0"]
+[ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://scenes/inventory/inventory.tscn" id="3_i57hc"]
+[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_l8js5"]
+
+[node name="UIManager" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_jsqb4")
+
+[node name="InventoryInterface" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = -161.0
+offset_right = 272.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_0pew0")
+
+[node name="GrabbedSlot" parent="InventoryInterface" instance=ExtResource("1_5pyms")]
+visible = false
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="ExternalInventory" parent="InventoryInterface" instance=ExtResource("3_i57hc")]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 298.0
+offset_right = 43.0
+offset_bottom = 338.0
+
+[node name="PlayerInventory" parent="InventoryInterface" instance=ExtResource("3_i57hc")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 41.0
+offset_bottom = 35.0
+
+[node name="HotBarInventory" parent="." instance=ExtResource("1_fuhav")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -253.0
+offset_top = -239.0
+offset_right = 279.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CurrencyUI" parent="." instance=ExtResource("2_cgco0")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 30.0
+offset_right = -160.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="Journal_UI" parent="." instance=ExtResource("4_l8js5")]
+visible = false
