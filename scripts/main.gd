@@ -25,6 +25,11 @@ func _ready() -> void:
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
 	inventory_interface.force_close.connect(toggle_inventory_interface)
+	
+	#inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
+	print("DEBUG: Attempting to connect signal")
+	var connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
+	print("DEBUG: Connection result:", connect_result == OK)
 
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
@@ -58,9 +63,11 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	if inventory_interface.visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		hot_bar_inventory.hide()
+		SoundManager.play_menu_open()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		hot_bar_inventory.show()
+		SoundManager.play_menu_open()
 	
 	if external_inventory_owner and inventory_interface.visible:
 		inventory_interface.set_external_inventory(external_inventory_owner)

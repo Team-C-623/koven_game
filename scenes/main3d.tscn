@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=7 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
+[ext_resource type="PackedScene" uid="uid://clrif35eha08c" path="res://UI/ui_manager.tscn" id="2_8qr3r"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player/player_3d.tscn" id="2_mjsmv"]
 [ext_resource type="Script" path="res://scripts/rooms/RoomSpawner.gd" id="4_scj2c"]
 [ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
@@ -14,6 +15,8 @@ volumetric_fog_emission_energy = 2.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
+
+[node name="UIManager" parent="." instance=ExtResource("2_8qr3r")]
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.513106, 0)
@@ -49,6 +52,7 @@ script = ExtResource("4_scj2c")
 
 [node name="Chest" parent="." instance=ExtResource("9_6odt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
+inventory_data = null
 
 [connection signal="entered" from="." to="." method="_on_entered"]
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]

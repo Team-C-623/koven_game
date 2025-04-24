@@ -2,10 +2,11 @@ extends PanelContainer
 
 const Slot = preload("res://scenes/inventory/slot.tscn")
 
-@onready var background_frame: TextureRect = $BackgroundFrame
-@onready var margin_container: MarginContainer = $BackgroundFrame/MarginContainer
-@onready var item_grid: GridContainer = $BackgroundFrame/MarginContainer/ItemGrid
+@onready var background_frame: TextureRect = $Background/BackgroundFrame
+@onready var margin_container: MarginContainer = $Background/BackgroundFrame/MarginContainer
+@onready var item_grid: GridContainer = $Background/BackgroundFrame/MarginContainer/ItemGrid
 @onready var inventory: PanelContainer = $"."
+@onready var background: ColorRect = $Background
 
 
 
@@ -23,6 +24,18 @@ func _ready():
 	#inventory.modulate.a = 0.5
 	background_frame.z_index = 2  # Draw behind slots
 	item_grid.z_index = 1 # Draw above frame
+	
+	background.color = Color(0,0,0,0)  # Fully transparent
+	background.mouse_filter = Control.MOUSE_FILTER_STOP
+	background.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	background.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	background.mouse_filter = Control.MOUSE_FILTER_STOP
+	background.gui_input.connect(_on_background_gui_input)
+
+func _on_background_gui_input(event: InputEvent):
+	# Forward background clicks to inventory interface
+	if event is InputEventMouseButton and event.pressed:
+		get_parent()._on_inventory_background_click(event)
 	
 func set_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_updated.connect(populate_item_grid)
@@ -43,3 +56,4 @@ func populate_item_grid(inventory_data: InventoryData) -> void:
 		
 		if slot_data:
 			slot.set_slot_data(slot_data)
+			

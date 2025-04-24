@@ -24,6 +24,17 @@ func play_death_sound():
 func play_enemy_damage_sound():
 	Wwise.post_event_id(AK.EVENTS.ENEMYDAMAGE,self)
 	
+func play_wand_sound():
+	Wwise.post_event_id(AK.EVENTS.WANDSHOTS,self)
+	
+
+func play_catacombs_music():
+	print("Playing catacombs music")
+	Wwise.post_event_id(AK.EVENTS.CATACOMBS,self)
+	
+func play_menu_open():
+	Wwise.post_event_id(AK.EVENTS.MENUOPEN,self)
+	
 func play_start_music():
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
 	

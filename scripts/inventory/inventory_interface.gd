@@ -9,8 +9,7 @@ var external_inventory_owner
 @onready var player_inventory: Control = get_node("/root/UIManager/InventoryInterface/PlayerInventory")
 @onready var grabbed_slot: Control = get_node("/root/UIManager/InventoryInterface/PlayerInventory/GrabbedSlot")
 @onready var external_inventory: Control = get_node("/root/UIManager/InventoryInterface/ExternalInventory")
-@onready var background: Panel = $Background
-
+@onready var background = get_node("PlayerInventory/Background")
 	
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:
@@ -65,21 +64,21 @@ func update_grabbed_slot() -> void:
 	else:
 		grabbed_slot.hide()
 
-func _on_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton \
-			and event.is_pressed() \
-			and grabbed_slot_data:
+#func _on_gui_input(event: InputEvent) -> void:
+#	if event is InputEventMouseButton \
+#			and event.is_pressed() \
+#			and grabbed_slot_data:
+#		if not background.get_global_rect().has_point(event.global_position):
+#			match event.button_index:
+#				MOUSE_BUTTON_LEFT:
+#					drop_slot_data.emit(grabbed_slot_data)
+#					grabbed_slot_data = null
+#				MOUSE_BUTTON_RIGHT:
+#					drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
+#					if grabbed_slot_data.quantity < 1:
+#						grabbed_slot_data = null
 		
-		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				drop_slot_data.emit(grabbed_slot_data)
-				grabbed_slot_data = null
-			MOUSE_BUTTON_RIGHT:
-				drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
-				if grabbed_slot_data.quantity < 1:
-					grabbed_slot_data = null
-		
-		update_grabbed_slot()
+#		update_grabbed_slot()
 
 
 func _on_visibility_changed() -> void:
@@ -87,3 +86,30 @@ func _on_visibility_changed() -> void:
 		drop_slot_data.emit(grabbed_slot_data)
 		grabbed_slot_data = null
 		update_grabbed_slot()
+
+func _unhandled_input(event: InputEvent):
+	# Handle clicks outside inventory
+	if grabbed_slot_data and visible and event is InputEventMouseButton and event.pressed:
+		if not player_inventory.get_global_rect().has_point(event.global_position):
+			handle_world_drop(event)
+
+func _on_inventory_background_click(event: InputEvent):
+	# Handle clicks on inventory background
+	if grabbed_slot_data and event.is_pressed():
+		handle_world_drop(event)
+
+
+func handle_world_drop(event: InputEvent):
+	var drop_pos = get_global_mouse_position()
+	match event.button_index:
+		MOUSE_BUTTON_LEFT:
+			drop_slot_data.emit(grabbed_slot_data)	
+			print("DEBUG: Emitting drop_slot_data with:", grabbed_slot_data)
+			grabbed_slot_data = null
+		MOUSE_BUTTON_RIGHT:
+			drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
+			if grabbed_slot_data.quantity < 1:
+				grabbed_slot_data = null
+	update_grabbed_slot()
+		
+	

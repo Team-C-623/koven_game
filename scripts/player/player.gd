@@ -106,6 +106,7 @@ func _physics_process(_delta: float) -> void:
 			instance.position = wand_tip.global_position
 			instance.transform.basis = wand_tip.global_transform.basis
 			get_parent().add_child(instance)
+			SoundManager.play_wand_sound()
 
 	move_and_slide()
 

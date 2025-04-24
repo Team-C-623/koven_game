@@ -51,7 +51,7 @@ func end_judgement():
 					component.damage_modifier = 1.0
 #add damage modifications to new enemies that spawn after use_judegement is called
 func update_judgement():
-	for node in main_node.get_hildren(true):
+	for node in main_node.get_children(true):
 		if node is CharacterBody3D or Player:
 			for component in node.get_children(true):
 				if component is HealthComponent:

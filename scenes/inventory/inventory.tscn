@@ -10,12 +10,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 script = ExtResource("1_v88x4")
 
-[node name="BackgroundFrame" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_c2i2o")
-expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BackgroundFrame"]
+[node name="BackgroundFrame" type="TextureRect" parent="Background"]
+layout_mode = 2
+offset_right = 1080.0
+offset_bottom = 513.0
+texture = ExtResource("2_c2i2o")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/BackgroundFrame"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.155556
@@ -32,7 +37,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemGrid" type="GridContainer" parent="BackgroundFrame/MarginContainer"]
+[node name="ItemGrid" type="GridContainer" parent="Background/BackgroundFrame/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
