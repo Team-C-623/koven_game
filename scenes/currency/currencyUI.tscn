@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5gq4mv4mn0wv"]
 
 [ext_resource type="Script" path="res://scripts/currency/CurrencyUI.gd" id="1_s7gus"]
-[ext_resource type="Texture2D" uid="uid://dy36kragf5kyh" path="res://assets/ui/redonecurrency.png" id="2_sjxc2"]
+[ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="2_4flkh"]
 
 [node name="CurrencyUI" type="Control"]
 self_modulate = Color(0.04, 0.04, 0.04, 0.0745098)
@@ -37,4 +37,4 @@ scale = Vector2(0.25, 0.25)
 [node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
 position = Vector2(264, 176)
 scale = Vector2(0.824, 0.824)
-texture = ExtResource("2_sjxc2")
+texture = ExtResource("2_4flkh")

@@ -3,14 +3,15 @@ class_name HealthComponent
 
 @export var MAX_HEALTH := 50.0
 var health : float
-
+@export var damage_modifier: float = 1.0
 signal health_changed(current_health: float, max_health: float)
+#signal damage_modifier_changed(new_value)
 
 func _ready():
 	health = MAX_HEALTH
 
 func damage(attack: Attack):
-	health -= attack.attack_damage
+	health -= (attack.attack_damage * damage_modifier)
 	
 	emit_signal("health_changed", health, MAX_HEALTH)
 	

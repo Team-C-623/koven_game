@@ -7,8 +7,6 @@ extends CanvasLayer
 @export var inventory_data: InventoryData
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Check layer and visibility
-	print("CanvasLayer layer: ", get_layer())
 	pass
 	
 	

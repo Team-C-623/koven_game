@@ -6,7 +6,7 @@ class_name Player
 var attack_damage := 10.0
 #camera settings
 const SENS = 0.4
-const SPEED = 3.0 #3.0
+@export var speed = 3.0 #3.0
 
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
@@ -69,11 +69,11 @@ func _physics_process(_delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction = (cam_mount.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 		
 	# Head bob
 	t_bob += _delta * velocity.length() * float(is_on_floor())

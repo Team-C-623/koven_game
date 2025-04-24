@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://pmivhbt6ityu"]
 
 [ext_resource type="Script" path="res://scripts/interactable/pick_up.gd" id="1_ppmoa"]
-[ext_resource type="Texture2D" uid="uid://ccrx3igv00040" path="res://assets/tarotcards/judgement.png" id="2_i76yy"]
+[ext_resource type="Texture2D" uid="uid://ccrx3igv00040" path="res://tarotcards/assets/judgement.png" id="2_i76yy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rah7u"]
 radius = 0.490343

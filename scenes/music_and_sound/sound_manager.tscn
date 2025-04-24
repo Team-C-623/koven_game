@@ -9,9 +9,11 @@ script = ExtResource("1_fxatd")
 
 [node name="Music" type="AkBank" parent="."]
 bank = ExtResource("3_uboyp")
+load_on = 2
 
 [node name="SoundEffects" type="AkBank" parent="."]
 bank = ExtResource("2_vxnwv")
+load_on = 2
 
 [node name="AkListener3D" type="AkListener3D" parent="."]
 

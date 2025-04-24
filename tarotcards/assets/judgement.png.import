@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccrx3igv00040"
-path.s3tc="res://.godot/imported/judgement.png-5712d1038e59c28e9c2414d720227aab.s3tc.ctex"
+path.s3tc="res://.godot/imported/judgement.png-380f7c26fcbf8091a18b4f5fe3dfb064.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/tarotcards/judgement.png"
-dest_files=["res://.godot/imported/judgement.png-5712d1038e59c28e9c2414d720227aab.s3tc.ctex"]
+source_file="res://tarotcards/assets/judgement.png"
+dest_files=["res://.godot/imported/judgement.png-380f7c26fcbf8091a18b4f5fe3dfb064.s3tc.ctex"]
 
 [params]
 

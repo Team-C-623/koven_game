@@ -9,9 +9,13 @@ var external_inventory_owner
 @onready var player_inventory: Control = get_node("/root/UIManager/InventoryInterface/PlayerInventory")
 @onready var grabbed_slot: Control = get_node("/root/UIManager/InventoryInterface/GrabbedSlot")
 @onready var external_inventory: Control = get_node("/root/UIManager/InventoryInterface/ExternalInventory")
+@onready var background: Panel = $Background
 
 func _ready() -> void:
-	get_viewport().gui_disable_input = false
+	background.mouse_filter = Control.MOUSE_FILTER_STOP
+	grabbed_slot.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for slot in grabbed_slot.get_children():
+		slot.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:
@@ -88,3 +92,15 @@ func _on_visibility_changed() -> void:
 		drop_slot_data.emit(grabbed_slot_data)
 		grabbed_slot_data = null
 		update_grabbed_slot()
+
+func _on_background_gui_input(event):
+	if event is InputEventMouseButton and event.pressed and grabbed_slot_data:
+			match event.button_index:
+				MOUSE_BUTTON_LEFT:
+					drop_slot_data.emit(grabbed_slot_data)
+					grabbed_slot_data = null
+				MOUSE_BUTTON_RIGHT:
+					drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
+					if grabbed_slot_data.quantity < 1:
+						grabbed_slot_data = null
+	update_grabbed_slot()
