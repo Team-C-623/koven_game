@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b8hd86qofjb72"]
+
+[ext_resource type="Texture2D" uid="uid://cgb85fb6e1y0k" path="res://trialroom/art/merga/merga_frame1.png" id="1_nl0wu"]
+[ext_resource type="Texture2D" uid="uid://7b314p5cgebj" path="res://trialroom/art/merga/merga_frame2.png" id="2_hwmk3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nl0wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hwmk3")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.0
+}]

@@ -1,22 +1,28 @@
 ~ start
 do emit("change_sprite", "Judge Quétif")
+Judge Quétif: Who are you?
+Judge Quétif: Have you come to speak on behalf of Merga Bien?
+Judge Quétif: She is on trial for heresy.
+Judge Quétif: She is practicing witchcraft in this sacred castle, desecrating its ground.
+Judge Quétif: Her punishment is execution at the stake and so shall be yours if found wrongly defending this demonic woman.
 Judge Quétif: Merga has not been in the church as of late. 
 Judge Quétif: When was the last time she came to worship His Holiness? [do emit("change_sprite", "Player")]
-- She came before this castle was overtaken by your Dominican Order.
+- She came before the castle was overtaken by your Order.
 - She has just returned from confessional.
-- Our Bishop has barred my sister from hearing the sermons.
+- Bishop Kramer has barred her from hearing the sermons.
 	do emit("change_sprite", "Judge Quétif")
 	Judge Quétif: Hmmm... that is interesting.
-	Judge Quétif: His holiness has said nothing about this. => second
+	Judge Quétif: His holiness has said nothing about this.
+	Judge Quétif: No matter. => second
 do emit("change_sprite", "Judge Quétif")
 Judge Quétif: Your lies deceive you and our Bishop. Now you will burn with her!
 => lose
 
 ~ second
 Judge Quétif: This witch’s husband claims to have seen her taking part in the Sabbath of Satan. 
-Judge Quétif: What say you? [do emit("change_sprite", "Player")]
+Judge Quétif: How can this be explained? [do emit("change_sprite", "Player")]
 - He must be mistaken in his account.
-- Merga’s husband has been expelled from the church for previous wrongdoings.
+- Merga’s husband is temporarily expelled from the church for wrongdoings.
 	do emit("change_sprite", "Judge Quétif")
 	Judge Quétif: That is true. 
 	Judge Quétif: The word of men who forsake our Lord shall not be considered in this court. => third
@@ -36,19 +42,18 @@ Judge Quétif: What aside from correspondence with the devil explains this pheno
 - Merga recently underwent fertility treatments that significantly increased her chances of pregnancy.
 do emit("change_sprite", "Judge Quétif")
 Judge Quétif: Your claims are baseless and weak!
-Judge Quétif: You conspire against the church! Prepare the stake!
+Judge Quétif: You conspire against the church!
 => lose
 
 ~ lose
+Judge Quétif: I hereby declare Merga Bien guilty of heresy, and YOU as her accomplice!
 Judge Quétif: Seize these witches! They have no place in our Holy fortress!
 => END
 
 ~ win
 The judge bows his head. 
-Judge Quétif: I hereby declare Merga Bien not guilty of witchcraft.
+Judge Quétif: I hereby declare Merga Bien not guilty of heresy.
 Merga’s shackles drop to the floor. The judge and jury leave the trial room, leaving us and Merga. [do emit("change_sprite", "Merga")]
 Merga: Thank you sister for saving me. I shall return to the safety of our catacombs for now.
-Merga: Should you need my help in accessing the darkest corners in these castle walls, come see me.
-do emit("change_sprite", "Soulmother")
-Soulmother appears and takes Merga back with the flash of her wand. 
+Merga: Should you need my help fighting the dangers in this castle, come see me.
 => END

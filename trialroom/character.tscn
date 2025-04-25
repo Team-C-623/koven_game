@@ -1,8 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://2pdk04qgvck1"]
 
-[ext_resource type="Texture2D" uid="uid://vjtx8my4v0x6" path="res://trialroom/art/mainwitch.png" id="1_lage4"]
+[ext_resource type="SpriteFrames" uid="uid://ce26cexwii3vo" path="res://trialroom/animations/mainwitch_sprite.tres" id="1_dcjsf"]
 
 [node name="Character" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lage4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_dcjsf")
+animation = &"talk"
+frame_progress = 0.473006

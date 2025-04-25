@@ -39,4 +39,5 @@ func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.SPEED
 
 	if not enemy.is_on_floor():
+		#hi
 		enemy.velocity += enemy.get_gravity()
