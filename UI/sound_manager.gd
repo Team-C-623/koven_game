@@ -2,6 +2,8 @@ extends Node
 @onready var sound_effects_bank: AkBank = $SoundEffects
 @onready var music_bank: AkBank = $Music
 @onready var ak_event_3d: AkEvent3D = $AkEvent3D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sound_effects_bank.load_bank()
@@ -18,7 +20,7 @@ func play_page_turn():
 	Wwise.post_event_id(AK.EVENTS.JOURNALPAGETURN, self)
 	
 func play_death_sound():
-	#Wwise.post_event_id(AK.EVENTS.DEATHSOUND,self)
+	Wwise.post_event_id(AK.EVENTS.DEFEATED,self)
 	pass
 
 func play_enemy_damage_sound():
