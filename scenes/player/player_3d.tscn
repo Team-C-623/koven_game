@@ -44,8 +44,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
 max_value = 20.0
 value = 20.0
 show_percentage = false
-theme_override_styles/background = SubResource("StyleBoxFlat_65n5d")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
 position = Vector2(214.125, 15)

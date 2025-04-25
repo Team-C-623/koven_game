@@ -1,11 +1,11 @@
 {
  "ProjectInfo": {
   "Project": {
-   "Name": "Koven DEMO",
+   "Name": "Koven",
    "GUID": "{C45A35D4-FADB-4CD3-8AAA-2CB0126816A0}",
    "Generator": "2024.1.1.8691"
   },
-  "CacheRoot": "../../../koven_wwise/.cache",
+  "CacheRoot": "../../../../../WwiseProjects/Koven/.cache",
   "Platforms": [
    {
     "Name": "Mac",
@@ -31,6 +31,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{C1AB4289-F35B-A8BA-EFFC-7B9271D43015}"
+  "FileHash": "{F1311768-FA5C-68EA-E9DE-CF728A026A53}"
  }
 }

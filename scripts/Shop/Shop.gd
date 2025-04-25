@@ -22,6 +22,7 @@ func _on_close_button_pressed() -> void:
 	hot_bar_inventory.show()
 	currency_ui.show_display()
 	hide.emit()
+	SoundManager.play_buy_sound()
 
 func update_item_description(item: ItemData):
 	item_image.texture = item.texture

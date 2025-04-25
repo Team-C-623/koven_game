@@ -13,59 +13,98 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID BOSS1 = 2253511095U;
-        static const AkUniqueID BOSS2 = 2253511092U;
-        static const AkUniqueID BOSS3 = 2253511093U;
-        static const AkUniqueID BOSS4 = 2253511090U;
-        static const AkUniqueID CATACOMBS = 2966204926U;
+        static const AkUniqueID BOSS_1_POPUP = 1977329545U;
         static const AkUniqueID DEFEATED = 2791675679U;
+        static const AkUniqueID ENEMY_AGGRO = 352335356U;
+        static const AkUniqueID ENEMY_SAFE = 3717377857U;
         static const AkUniqueID ENEMYDAMAGE = 1879435608U;
-        static const AkUniqueID FOOTSTEPS = 2385628198U;
-        static const AkUniqueID IN_COMBAT = 2116791127U;
+        static const AkUniqueID ENTER_BOSS_ROOM = 3603472999U;
+        static const AkUniqueID ENTER_CASTLE = 2474813288U;
+        static const AkUniqueID ENTER_CATACOMBS = 2762024869U;
+        static const AkUniqueID ENTER_TRIAL_ROOM = 1844506134U;
+        static const AkUniqueID FINAL_BOSS_PHASE2 = 1150116533U;
+        static const AkUniqueID FLOOR1 = 3162820674U;
+        static const AkUniqueID FLOOR2 = 3162820673U;
+        static const AkUniqueID FLOOR3 = 3162820672U;
+        static const AkUniqueID FOOTSTEPS_01 = 2848855924U;
         static const AkUniqueID JOURNALPAGETURN = 1639161750U;
         static const AkUniqueID MAIN_MENU = 2005704188U;
         static const AkUniqueID MAP_LOAD = 780953876U;
+        static const AkUniqueID MENU_BOOP = 3129090587U;
         static const AkUniqueID MENUOPEN = 48824776U;
-        static const AkUniqueID NOT_COMBAT = 238752707U;
+        static const AkUniqueID QUEUE_CREDITS = 931351601U;
+        static const AkUniqueID RESPAWN = 4279841335U;
+        static const AkUniqueID SHACKLES_OFF = 3057807107U;
+        static const AkUniqueID SHACKLES_ON = 3395044911U;
+        static const AkUniqueID SHOP_BUY = 1495252156U;
         static const AkUniqueID TAROTBURN = 2451853040U;
         static const AkUniqueID TAROTPICKUP = 1908595231U;
-        static const AkUniqueID TRIAL_ROOM = 1543475711U;
+        static const AkUniqueID TEXT_SCROLLING = 371816340U;
+        static const AkUniqueID TRIAL_ROOM_FAILED = 2277544205U;
         static const AkUniqueID VICTORY = 2716678721U;
-        static const AkUniqueID WANDSHOTS = 3734252994U;
+        static const AkUniqueID WAND_BASIC = 2783045536U;
+        static const AkUniqueID WAND_MISFIRE = 80501587U;
+        static const AkUniqueID WITCH_DIALOGUE = 2206927579U;
     } // namespace EVENTS
 
     namespace STATES
     {
-        namespace MUSIC_STATE
+        namespace LOCATION
         {
-            static const AkUniqueID GROUP = 3826569560U;
+            static const AkUniqueID GROUP = 1176052424U;
 
             namespace STATE
             {
-                static const AkUniqueID BOSS1 = 2253511095U;
-                static const AkUniqueID BOSS2 = 2253511092U;
-                static const AkUniqueID BOSS3 = 2253511093U;
-                static const AkUniqueID BOSS4 = 2253511090U;
+                static const AkUniqueID BOSS = 1560169506U;
+                static const AkUniqueID CASTLE = 129146593U;
+                static const AkUniqueID CATACOMBS = 2966204926U;
+                static const AkUniqueID CREDITS = 2201105581U;
+                static const AkUniqueID MAIN_MENU = 2005704188U;
                 static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID TRIAL_ROOM = 1543475711U;
             } // namespace STATE
-        } // namespace MUSIC_STATE
+        } // namespace LOCATION
 
-        namespace PLAYER_LIFE
+        namespace PLAYER_STATE
         {
-            static const AkUniqueID GROUP = 3762137787U;
+            static const AkUniqueID GROUP = 4071417932U;
 
             namespace STATE
             {
                 static const AkUniqueID ALIVE = 655265632U;
                 static const AkUniqueID DEFEATED = 2791675679U;
                 static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID VICTORY = 2716678721U;
             } // namespace STATE
-        } // namespace PLAYER_LIFE
+        } // namespace PLAYER_STATE
 
     } // namespace STATES
 
     namespace SWITCHES
     {
+        namespace FINAL_BOSS
+        {
+            static const AkUniqueID GROUP = 2345047989U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID PHASE1 = 3630028971U;
+                static const AkUniqueID PHASE2 = 3630028968U;
+            } // namespace SWITCH
+        } // namespace FINAL_BOSS
+
+        namespace FLOOR_LEVEL
+        {
+            static const AkUniqueID GROUP = 3257587070U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID FLOOR1 = 3162820674U;
+                static const AkUniqueID FLOOR2 = 3162820673U;
+                static const AkUniqueID FLOOR3 = 3162820672U;
+            } // namespace SWITCH
+        } // namespace FLOOR_LEVEL
+
         namespace GAMEPLAY_SWITCH
         {
             static const AkUniqueID GROUP = 2702523344U;
@@ -77,20 +116,29 @@ namespace AK
             } // namespace SWITCH
         } // namespace GAMEPLAY_SWITCH
 
+        namespace WANDSHOTS
+        {
+            static const AkUniqueID GROUP = 3734252994U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID BASE = 1291433366U;
+                static const AkUniqueID EMPOWERED = 542766697U;
+            } // namespace SWITCH
+        } // namespace WANDSHOTS
+
     } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID SS_AIR_FEAR = 1351367891U;
-        static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
-        static const AkUniqueID SS_AIR_FURY = 1029930033U;
-        static const AkUniqueID SS_AIR_MONTH = 2648548617U;
-        static const AkUniqueID SS_AIR_PRESENCE = 3847924954U;
-        static const AkUniqueID SS_AIR_RPM = 822163944U;
-        static const AkUniqueID SS_AIR_SIZE = 3074696722U;
-        static const AkUniqueID SS_AIR_STORM = 3715662592U;
-        static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
-        static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
+        static const AkUniqueID HEALTH = 3677180323U;
+        static const AkUniqueID MUSIC_BACKUP_SIDECHAIN = 198116658U;
+        static const AkUniqueID MUSIC_VOLUME_SLIDER = 2872980221U;
+        static const AkUniqueID SFX_SIDECHAIN = 2862064063U;
+        static const AkUniqueID SFX_VOLUME_SLIDER = 4274270069U;
+        static const AkUniqueID WITCH1_DISTANCE = 1420124287U;
+        static const AkUniqueID WITCH2_DISTANCE = 561841514U;
+        static const AkUniqueID WITCH3_DISTANCE = 2746992545U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -102,7 +150,10 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID BACKUP_MUSIC_MIXER = 1658436645U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC_MIXER = 2990548740U;
+        static const AkUniqueID SFX_MIXER = 3131440204U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

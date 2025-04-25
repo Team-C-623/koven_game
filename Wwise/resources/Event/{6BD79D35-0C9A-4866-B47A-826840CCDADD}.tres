@@ -2,7 +2,7 @@
 
 [resource]
 is_in_user_defined_sound_bank = true
-name = "catacombs"
-id = 2966204926
+name = "enter_catacombs"
+id = 2762024869
 guid = "{6BD79D35-0C9A-4866-B47A-826840CCDADD}"
 dummy = true

@@ -58,7 +58,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Slot2" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
 layout_mode = 2
-anchor_left = 0.151852
+anchor_left = 0.150926
 anchor_right = 0.150926
 offset_left = 226.0
 offset_top = 208.0

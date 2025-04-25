@@ -10,11 +10,37 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{0BC6BC24-512C-188F-5BA3-821F48D431BC}",
+    "Hash": "{FFDF8616-80CE-2BCA-24AC-1C62945932B6}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "1355168291.bnk",
     "Plugins": {
+     "Custom": [
+      {
+       "Id": "555452421",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\backup_music_mixer\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{617B5AB7-AED2-41B9-A7FB-145F8A8EF723}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "558380631",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\sfx_mixer\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{96BFE6A4-3D4A-4766-AEB0-61328E7E5C48}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "973762372",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\music_mixer\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{D23BD003-7691-477D-A1AF-DB99119C0834}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -36,6 +62,45 @@
     },
     "Busses": [
      {
+      "Id": "1658436645",
+      "Name": "backup_music_mixer",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\backup_music_mixer",
+      "GUID": "{A5038915-C509-44D7-94E9-9A4845E130F5}",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "555452421"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2990548740",
+      "Name": "music_mixer",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\music_mixer",
+      "GUID": "{8EFEEF23-751B-4F8A-A281-FD5C796E90CE}",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "973762372"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3131440204",
+      "Name": "sfx_mixer",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\sfx_mixer",
+      "GUID": "{62B79737-8E13-40D7-8733-0474FFBDDEFC}",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "558380631"
+        }
+       ]
+      }
+     },
+     {
       "Id": "3803692087",
       "Name": "Master Audio Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
@@ -44,150 +109,223 @@
     ],
     "GameParameters": [
      {
-      "Id": "822163944",
-      "Name": "SS_Air_RPM",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_RPM",
-      "GUID": "{A34890AB-B9D5-4526-A64D-5290C43EF2DC}"
+      "Id": "198116658",
+      "Name": "Music_Backup_sidechain",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Backup_sidechain",
+      "GUID": "{048E66D7-D323-4611-A0D1-5B61062EFE56}"
      },
      {
-      "Id": "1029930033",
-      "Name": "SS_Air_Fury",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Fury",
-      "GUID": "{A2AE79DC-CA3A-46BA-9652-9986C322A87B}"
+      "Id": "561841514",
+      "Name": "Witch2_distance",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Witch2_distance",
+      "GUID": "{836C1E39-F84B-4DA6-AF2B-C0FC185785F0}"
      },
      {
-      "Id": "1351367891",
-      "Name": "SS_Air_Fear",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Fear",
-      "GUID": "{F72E0659-4346-4E1C-A1B1-DAB46A05101E}"
+      "Id": "1420124287",
+      "Name": "Witch1_distance",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Witch1_distance",
+      "GUID": "{F0C5ADF5-6785-43C3-92AD-02C8E20321EB}"
      },
      {
-      "Id": "2648548617",
-      "Name": "SS_Air_Month",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Month",
-      "GUID": "{09E2B445-C4A3-447F-B3CA-818A1D925EF7}"
+      "Id": "2746992545",
+      "Name": "Witch3_distance",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Witch3_distance",
+      "GUID": "{016503ED-3211-4BE0-A179-CB389A15DC6F}"
      },
      {
-      "Id": "3002758120",
-      "Name": "SS_Air_Freefall",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Freefall",
-      "GUID": "{2F2DFE37-4F9E-4D94-83D8-53CCA39781AD}"
+      "Id": "2862064063",
+      "Name": "sfx_sidechain",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\sfx_sidechain",
+      "GUID": "{6C5E0F48-07E9-4FA1-8456-A350D798CC03}"
      },
      {
-      "Id": "3074696722",
-      "Name": "SS_Air_Size",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Size",
-      "GUID": "{1329EBEF-A193-472E-A38C-64668B494879}"
+      "Id": "2872980221",
+      "Name": "Music_volume_slider",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_volume_slider",
+      "GUID": "{E0928273-44C6-44F5-974A-065AABC4C389}"
      },
      {
-      "Id": "3203397129",
-      "Name": "SS_Air_TimeOfDay",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_TimeOfDay",
-      "GUID": "{536FA72C-8C7E-4C8B-AE03-EF34FDADC314}"
+      "Id": "3677180323",
+      "Name": "health",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\health",
+      "GUID": "{35CEA8A7-DA9F-48C4-90AB-1D66145863CF}",
+      "Color": "10"
      },
      {
-      "Id": "3715662592",
-      "Name": "SS_Air_Storm",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Storm",
-      "GUID": "{E93F8CDB-06D1-4737-ACAF-7CD44BBED783}"
-     },
-     {
-      "Id": "3847924954",
-      "Name": "SS_Air_Presence",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Presence",
-      "GUID": "{E3B7811A-7B2F-490F-B44F-5FE51B468041}"
-     },
-     {
-      "Id": "4160247818",
-      "Name": "SS_Air_Turbulence",
-      "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Turbulence",
-      "GUID": "{EDA87B19-73AA-40A0-9F19-2073606DB710}"
+      "Id": "4274270069",
+      "Name": "Sfx_volume_slider",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Sfx_volume_slider",
+      "GUID": "{A0A85215-F0E1-4FD3-A910-795FD37382BE}"
      }
     ],
     "StateGroups": [
      {
-      "Id": "3762137787",
-      "Name": "player_life",
-      "ObjectPath": "\\States\\Default Work Unit\\player_life",
-      "GUID": "{6C25EFE8-22FC-4121-AC4A-5EC8BC45D4D5}",
+      "Id": "1176052424",
+      "Name": "Location",
+      "ObjectPath": "\\States\\Music\\Location",
+      "GUID": "{1D83E230-39B4-4DB7-8E7F-02CB96777687}",
       "States": [
        {
-        "Id": "655265632",
-        "Name": "Alive",
-        "ObjectPath": "\\States\\Default Work Unit\\player_life\\Alive",
-        "GUID": "{BAE37A5C-D0F8-41DD-9AC3-85619EFD934A}"
+        "Id": "129146593",
+        "Name": "Castle",
+        "ObjectPath": "\\States\\Music\\Location\\Castle",
+        "GUID": "{1624B59B-D52B-4639-80EB-506291019705}"
        },
        {
         "Id": "748895195",
         "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\player_life\\None",
-        "GUID": "{69E6FE0E-3D54-4EB9-ACF5-922416B6BE26}"
+        "ObjectPath": "\\States\\Music\\Location\\None",
+        "GUID": "{997D4716-0CBE-414A-8CD4-2F22F568334E}"
        },
        {
-        "Id": "2791675679",
-        "Name": "Defeated",
-        "ObjectPath": "\\States\\Default Work Unit\\player_life\\Defeated",
-        "GUID": "{7C638D04-BBFC-437E-B436-BA0D774051ED}"
+        "Id": "1543475711",
+        "Name": "Trial_Room",
+        "ObjectPath": "\\States\\Music\\Location\\Trial_Room",
+        "GUID": "{1B77DCE5-5CC3-447A-AB61-51C9BE9CA165}"
+       },
+       {
+        "Id": "1560169506",
+        "Name": "Boss",
+        "ObjectPath": "\\States\\Music\\Location\\Boss",
+        "GUID": "{EA862B74-604B-4EC0-9EA8-440A2262BAD5}"
+       },
+       {
+        "Id": "2005704188",
+        "Name": "Main_Menu",
+        "ObjectPath": "\\States\\Music\\Location\\Main_Menu",
+        "GUID": "{98919F22-EB5B-4386-A0BB-767AF01AFD3E}"
+       },
+       {
+        "Id": "2201105581",
+        "Name": "credits",
+        "ObjectPath": "\\States\\Music\\Location\\credits",
+        "GUID": "{FE03EEBA-818E-48EC-B284-BAE475BC4F73}"
+       },
+       {
+        "Id": "2966204926",
+        "Name": "Catacombs",
+        "ObjectPath": "\\States\\Music\\Location\\Catacombs",
+        "GUID": "{D9E1BDD9-9DEF-4477-AE95-7C06B9480CA7}"
        }
       ]
      },
      {
-      "Id": "3826569560",
-      "Name": "music_state",
-      "ObjectPath": "\\States\\Default Work Unit\\music_state",
-      "GUID": "{0FDB274E-5DA1-4507-8081-A996EBFE58A9}",
+      "Id": "4071417932",
+      "Name": "Player_state",
+      "ObjectPath": "\\States\\Music\\Player_state",
+      "GUID": "{731E744A-D4D7-47A1-9328-5F25143C5843}",
       "States": [
+       {
+        "Id": "655265632",
+        "Name": "Alive",
+        "ObjectPath": "\\States\\Music\\Player_state\\Alive",
+        "GUID": "{FC577143-ADD5-48D3-8B88-7E92447A78D4}"
+       },
        {
         "Id": "748895195",
         "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\music_state\\None",
-        "GUID": "{2AF23AFE-6493-4A47-99B5-DC75BE1DCFC0}"
+        "ObjectPath": "\\States\\Music\\Player_state\\None",
+        "GUID": "{AA30EF3E-C7E7-4208-8352-3397637EC670}"
        },
        {
-        "Id": "2253511090",
-        "Name": "boss4",
-        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss4",
-        "GUID": "{DCE09BF9-91B7-4B68-AE05-E6DDDD8A75C7}"
+        "Id": "2716678721",
+        "Name": "Victory",
+        "ObjectPath": "\\States\\Music\\Player_state\\Victory",
+        "GUID": "{8CC975D1-E61D-41FF-AF4E-4F6DB8EAA33F}"
        },
        {
-        "Id": "2253511092",
-        "Name": "boss2",
-        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss2",
-        "GUID": "{7961056A-988B-48AA-8EB1-6751F94ED5C6}"
-       },
-       {
-        "Id": "2253511093",
-        "Name": "boss3",
-        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss3",
-        "GUID": "{31785A12-0A75-4B0F-8A76-AFD1187B5537}"
-       },
-       {
-        "Id": "2253511095",
-        "Name": "boss1",
-        "ObjectPath": "\\States\\Default Work Unit\\music_state\\boss1",
-        "GUID": "{A253BDD9-79E9-4CB0-86B9-91DFAF6093A9}"
+        "Id": "2791675679",
+        "Name": "Defeated",
+        "ObjectPath": "\\States\\Music\\Player_state\\Defeated",
+        "GUID": "{0F65A170-BE7F-4455-8DB1-A2001A16518E}"
        }
       ]
      }
     ],
     "SwitchGroups": [
      {
+      "Id": "2345047989",
+      "Name": "Final_Boss",
+      "ObjectPath": "\\Switches\\Music_Switches\\Final_Boss",
+      "GUID": "{DC04F637-1FB1-4295-8C12-635967FE4E24}",
+      "Switches": [
+       {
+        "Id": "3630028968",
+        "Name": "phase2",
+        "ObjectPath": "\\Switches\\Music_Switches\\Final_Boss\\phase2",
+        "GUID": "{0264DFFA-4209-48E6-8B24-C463EA92632C}"
+       },
+       {
+        "Id": "3630028971",
+        "Name": "phase1",
+        "ObjectPath": "\\Switches\\Music_Switches\\Final_Boss\\phase1",
+        "GUID": "{1831C727-7BB8-446F-B851-2E64EA439C07}"
+       }
+      ]
+     },
+     {
       "Id": "2702523344",
       "Name": "Gameplay_Switch",
-      "ObjectPath": "\\Switches\\Music\\Gameplay_Switch",
+      "ObjectPath": "\\Switches\\Music_Switches\\Gameplay_Switch",
       "GUID": "{F26003BD-C3AA-4258-94B9-41FD809B19C2}",
       "Switches": [
        {
         "Id": "579523862",
         "Name": "Explore",
-        "ObjectPath": "\\Switches\\Music\\Gameplay_Switch\\Explore",
+        "ObjectPath": "\\Switches\\Music_Switches\\Gameplay_Switch\\Explore",
         "GUID": "{1289A0F2-DCBC-42CB-9F00-24E7B01A736E}"
        },
        {
         "Id": "2764240573",
         "Name": "Combat",
-        "ObjectPath": "\\Switches\\Music\\Gameplay_Switch\\Combat",
+        "ObjectPath": "\\Switches\\Music_Switches\\Gameplay_Switch\\Combat",
         "GUID": "{C3B107F3-3379-477C-BFFF-20DB9F7C90B6}"
+       }
+      ]
+     },
+     {
+      "Id": "3257587070",
+      "Name": "floor_level",
+      "ObjectPath": "\\Switches\\Music_Switches\\floor_level",
+      "GUID": "{F8FFD40F-728E-4063-A723-76B0C3E42187}",
+      "Switches": [
+       {
+        "Id": "3162820672",
+        "Name": "floor3",
+        "ObjectPath": "\\Switches\\Music_Switches\\floor_level\\floor3",
+        "GUID": "{63103665-6253-4EB2-BE1D-020BEF536C0F}"
+       },
+       {
+        "Id": "3162820673",
+        "Name": "floor2",
+        "ObjectPath": "\\Switches\\Music_Switches\\floor_level\\floor2",
+        "GUID": "{BF74A397-8A73-46E1-85B4-1BC7999B9548}"
+       },
+       {
+        "Id": "3162820674",
+        "Name": "floor1",
+        "ObjectPath": "\\Switches\\Music_Switches\\floor_level\\floor1",
+        "GUID": "{7655FEEE-433A-4DFC-8780-DF3C52FB9BD5}"
+       }
+      ]
+     },
+     {
+      "Id": "3734252994",
+      "Name": "WandShots",
+      "ObjectPath": "\\Switches\\SFX_Switches\\WandShots",
+      "GUID": "{3ACACAAD-8209-442C-AC44-89A66382F93A}",
+      "Switches": [
+       {
+        "Id": "542766697",
+        "Name": "Empowered",
+        "ObjectPath": "\\Switches\\SFX_Switches\\WandShots\\Empowered",
+        "GUID": "{686E01D4-0AE4-4BAA-86E4-ACD2D4E55806}"
+       },
+       {
+        "Id": "1291433366",
+        "Name": "Base",
+        "ObjectPath": "\\Switches\\SFX_Switches\\WandShots\\Base",
+        "GUID": "{946ECF29-4201-46F9-84FB-A48C345C3DF9}"
        }
       ]
      }
@@ -671,6 +809,6 @@
     ]
    }
   ],
-  "FileHash": "{7999F297-08FB-7A0D-360B-0FCE51F50AC3}"
+  "FileHash": "{737B3BDF-A844-B0A6-C2EE-7AE0C81B08AE}"
  }
 }

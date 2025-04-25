@@ -3,7 +3,7 @@ class_name InventoryData
 
 signal inventory_updated(inventory_data: InventoryData)
 signal inventory_interact(inventory_data: InventoryData, index: int, button: int)
-var slot_datas: Array[SlotData]
+@export var slot_datas: Array[SlotData]
 
 func _init() -> void:
 	slot_datas.resize(10)

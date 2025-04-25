@@ -52,4 +52,4 @@ func _on_buy_pressed() -> void:
 		item_image.texture = null
 		self.disabled = true
 		coin_image.texture = null
-		
+		SoundManager.play_buy_sound()

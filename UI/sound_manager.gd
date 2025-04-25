@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func play_footsteps():
-	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS, self)
+	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
 	
 func play_card_burn():
 	Wwise.post_event_id(AK.EVENTS.TAROTBURN, self)
@@ -25,12 +25,14 @@ func play_enemy_damage_sound():
 	Wwise.post_event_id(AK.EVENTS.ENEMYDAMAGE,self)
 	
 func play_wand_sound():
-	Wwise.post_event_id(AK.EVENTS.WANDSHOTS,self)
-	
+	Wwise.post_event_id(AK.EVENTS.WAND_BASIC,self)
+
+func play_buy_sound():
+	Wwise.post_event_id(AK.EVENTS.SHOP_BUY,self)
 
 func play_catacombs_music():
 	print("Playing catacombs music")
-	Wwise.post_event_id(AK.EVENTS.CATACOMBS,self)
+	Wwise.post_event_id(AK.EVENTS.ENTER_CATACOMBS,self)
 	
 func play_menu_open():
 	Wwise.post_event_id(AK.EVENTS.MENUOPEN,self)
@@ -39,7 +41,7 @@ func play_start_music():
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
 	
 func play_trial_room_music():
-	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM,self)
+	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
 	
 func play_tarot_pickup():
 	Wwise.post_event_id(AK.EVENTS.TAROTPICKUP,self)

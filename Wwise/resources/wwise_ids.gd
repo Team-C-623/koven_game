@@ -2,48 +2,71 @@ class_name AK
 
 class EVENTS:
 
-	const VICTORY : int = 2716678721
-	const BOSS1 : int = 2253511095
-	const BOSS2 : int = 2253511092
-	const BOSS3 : int = 2253511093
-	const BOSS4 : int = 2253511090
-	const CATACOMBS : int = 2966204926
 	const DEFEATED : int = 2791675679
-	const IN_COMBAT : int = 2116791127
+	const ENEMY_AGGRO : int = 352335356
+	const ENEMY_SAFE : int = 3717377857
+	const ENTER_BOSS_ROOM : int = 3603472999
+	const ENTER_CASTLE : int = 2474813288
+	const ENTER_CATACOMBS : int = 2762024869
+	const ENTER_TRIAL_ROOM : int = 1844506134
+	const FINAL_BOSS_PHASE2 : int = 1150116533
+	const FLOOR1 : int = 3162820674
+	const FLOOR2 : int = 3162820673
+	const FLOOR3 : int = 3162820672
 	const MAIN_MENU : int = 2005704188
 	const MAP_LOAD : int = 780953876
-	const NOT_COMBAT : int = 238752707
-	const TRIAL_ROOM : int = 1543475711
+	const QUEUE_CREDITS : int = 931351601
+	const RESPAWN : int = 4279841335
+	const VICTORY : int = 2716678721
+	const BOSS_1_POPUP : int = 1977329545
 	const ENEMYDAMAGE : int = 1879435608
-	const FOOTSTEPS : int = 2385628198
+	const FOOTSTEPS_01 : int = 2848855924
 	const JOURNALPAGETURN : int = 1639161750
 	const MENUOPEN : int = 48824776
+	const MENU_BOOP : int = 3129090587
+	const SHACKLES_OFF : int = 3057807107
+	const SHACKLES_ON : int = 3395044911
+	const SHOP_BUY : int = 1495252156
 	const TAROTBURN : int = 2451853040
 	const TAROTPICKUP : int = 1908595231
-	const WANDSHOTS : int = 3734252994
+	const TEXT_SCROLLING : int = 371816340
+	const TRIAL_ROOM_FAILED : int = 2277544205
+	const WAND_BASIC : int = 2783045536
+	const WAND_MISFIRE : int = 80501587
+	const WITCH_DIALOGUE : int = 2206927579
 
 class STATES:
 
-	class MUSIC_STATE:
-		const GROUP : int = 3826569560
+	class LOCATION:
+		const GROUP : int = 1176052424
 	
 		class STATE:
+			const BOSS : int = 1560169506
+			const CASTLE : int = 129146593
+			const CATACOMBS : int = 2966204926
+			const MAIN_MENU : int = 2005704188
 			const NONE : int = 748895195
-			const BOSS1 : int = 2253511095
-			const BOSS2 : int = 2253511092
-			const BOSS3 : int = 2253511093
-			const BOSS4 : int = 2253511090
+			const TRIAL_ROOM : int = 1543475711
+			const CREDITS : int = 2201105581
 
-	class PLAYER_LIFE:
-		const GROUP : int = 3762137787
+	class PLAYER_STATE:
+		const GROUP : int = 4071417932
 	
 		class STATE:
 			const ALIVE : int = 655265632
 			const DEFEATED : int = 2791675679
 			const NONE : int = 748895195
+			const VICTORY : int = 2716678721
 
 
 class SWITCHES:
+
+	class FINAL_BOSS:
+		const GROUP : int = 2345047989
+	
+		class SWITCH:
+			const PHASE1 : int = 3630028971
+			const PHASE2 : int = 3630028968
 
 	class GAMEPLAY_SWITCH:
 		const GROUP : int = 2702523344
@@ -52,19 +75,32 @@ class SWITCHES:
 			const COMBAT : int = 2764240573
 			const EXPLORE : int = 579523862
 
+	class FLOOR_LEVEL:
+		const GROUP : int = 3257587070
+	
+		class SWITCH:
+			const FLOOR1 : int = 3162820674
+			const FLOOR2 : int = 3162820673
+			const FLOOR3 : int = 3162820672
+
+	class WANDSHOTS:
+		const GROUP : int = 3734252994
+	
+		class SWITCH:
+			const BASE : int = 1291433366
+			const EMPOWERED : int = 542766697
+
 
 class GAME_PARAMETERS:
 
-	const SS_AIR_FEAR : int = 1351367891
-	const SS_AIR_FREEFALL : int = 3002758120
-	const SS_AIR_FURY : int = 1029930033
-	const SS_AIR_MONTH : int = 2648548617
-	const SS_AIR_PRESENCE : int = 3847924954
-	const SS_AIR_RPM : int = 822163944
-	const SS_AIR_SIZE : int = 3074696722
-	const SS_AIR_STORM : int = 3715662592
-	const SS_AIR_TIMEOFDAY : int = 3203397129
-	const SS_AIR_TURBULENCE : int = 4160247818
+	const MUSIC_BACKUP_SIDECHAIN : int = 198116658
+	const MUSIC_VOLUME_SLIDER : int = 2872980221
+	const SFX_VOLUME_SLIDER : int = 4274270069
+	const WITCH1_DISTANCE : int = 1420124287
+	const WITCH2_DISTANCE : int = 561841514
+	const WITCH3_DISTANCE : int = 2746992545
+	const HEALTH : int = 3677180323
+	const SFX_SIDECHAIN : int = 2862064063
 
 class TRIGGERS:
 	pass

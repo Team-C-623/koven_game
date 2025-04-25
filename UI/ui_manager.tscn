@@ -36,10 +36,11 @@ script = ExtResource("2_0pew0")
 [node name="ExternalInventory" parent="InventoryInterface" instance=ExtResource("3_i57hc")]
 visible = false
 layout_mode = 0
-offset_left = -339.0
-offset_top = 200.0
-offset_right = -198.0
-offset_bottom = 258.0
+offset_left = 673.0
+offset_top = -149.0
+offset_right = 814.0
+offset_bottom = -91.0
+scale = Vector2(0.5, 0.5)
 
 [node name="PlayerInventory" parent="InventoryInterface" instance=ExtResource("3_i57hc")]
 layout_mode = 1
