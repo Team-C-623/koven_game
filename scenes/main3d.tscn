@@ -5,24 +5,18 @@
 [ext_resource type="Script" path="res://scripts/rooms/RoomSpawner.gd" id="4_scj2c"]
 [ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
 
-[sub_resource type="Environment" id="Environment_uwxbf"]
-ssao_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.5
-volumetric_fog_albedo = Color(0.144063, 0.144063, 0.144063, 1)
-volumetric_fog_emission_energy = 2.0
+[sub_resource type="Environment" id="Environment_5tb5c"]
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.5
+fog_depth_end = 25.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.913828, 0.232817, -0.332739, 0.122754, 0.62266, 0.772804, 0.387105, -0.747055, 0.540425, 0, 0, 5)
-light_energy = 0.4
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_uwxbf")
 
 [node name="SwitchCamButton" type="Button" parent="."]
 visible = false
@@ -52,6 +46,9 @@ inventory_data = null
 
 [node name="PlayerSpawner" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5tb5c")
 
 [connection signal="entered" from="." to="." method="_on_entered"]
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]

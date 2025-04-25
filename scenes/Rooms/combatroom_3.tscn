@@ -5,10 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bk78k18txcqxs" path="res://assets/environment/lvl1wall2combat1.png" id="3_p24rb"]
 [ext_resource type="Texture2D" uid="uid://bey33kcn1gdsu" path="res://assets/environment/lvl1floorcombat1.png" id="4_mknv1"]
 [ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="5_ejee6"]
-[ext_resource type="Texture2D" uid="uid://b1kgm5cir22qn" path="res://assets/environment/torch.png" id="6_8ixbl"]
+[ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://scenes/Rooms/torch.tscn" id="7_j40db"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
-shading_mode = 0
 albedo_texture = ExtResource("2_b31nw")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pmdxk"]
@@ -26,7 +25,6 @@ points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yq07t"]
-shading_mode = 0
 albedo_texture = ExtResource("4_mknv1")
 uv1_scale = Vector3(8, 8, 8)
 
@@ -46,7 +44,6 @@ color_ramp = SubResource("Gradient_twbgh")
 noise = SubResource("FastNoiseLite_hmg5w")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl0t8"]
-shading_mode = 0
 albedo_texture = SubResource("NoiseTexture2D_hl4b5")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a4nd0"]
@@ -84,6 +81,7 @@ material = SubResource("StandardMaterial3D_f7c1m")
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor3"]
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
 flip_h = true
+shaded = true
 texture = ExtResource("3_p24rb")
 
 [node name="WallDoor4" type="CSGPolygon3D" parent="."]
@@ -95,6 +93,7 @@ material = SubResource("StandardMaterial3D_f7c1m")
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor4"]
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
 flip_h = true
+shaded = true
 texture = ExtResource("3_p24rb")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
@@ -116,46 +115,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_ejee6")]
 
-[node name="Torch" type="Node3D" parent="."]
-transform = Transform3D(0.936506, 0.350648, 9.5873e-09, -0.350648, 0.936506, 5.29464e-08, 9.587e-09, -5.29464e-08, 0.999999, -6.26363, 3.5186, -2.17563)
+[node name="Torch" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(0.94147, 0.337095, 4.26326e-14, -0.337095, 0.94147, -1.3888e-15, -2.84217e-14, -7.10543e-15, 0.999999, -6.26363, 3.5186, -2.17563)
 
-[node name="Sprite3D" type="Sprite3D" parent="Torch"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
-texture = ExtResource("6_8ixbl")
+[node name="Torch2" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(0.94147, 0.337095, 7.10543e-14, -0.337095, 0.94147, -1.3888e-15, -4.26326e-14, -1.42109e-14, 0.999999, -6.26363, 3.5186, 2.34392)
 
-[node name="Sprite3D2" type="Sprite3D" parent="Torch"]
-transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
-texture = ExtResource("6_8ixbl")
+[node name="Torch3" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, -2.182, 3.519, 6.264)
 
-[node name="Torch2" type="Node3D" parent="."]
-transform = Transform3D(0.936506, 0.350648, 9.58731e-09, -0.350648, 0.936506, 5.29463e-08, 9.58697e-09, -5.29464e-08, 0.999999, -6.26363, 3.51859, 2.35849)
+[node name="Torch4" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, 2.3539, 3.519, 6.264)
 
-[node name="Sprite3D" type="Sprite3D" parent="Torch2"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
-texture = ExtResource("6_8ixbl")
+[node name="Torch5" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, -2.01613)
 
-[node name="Sprite3D2" type="Sprite3D" parent="Torch2"]
-transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
-texture = ExtResource("6_8ixbl")
+[node name="Torch6" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, 1.82865)
 
-[node name="Torch3" type="Node3D" parent="."]
-transform = Transform3D(-4.09432e-08, -1.5308e-08, 0.999999, -0.350207, 0.936671, 0, -0.936671, -0.350207, -4.37113e-08, -2.182, 3.519, 6.264)
+[node name="Torch7" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, 1.829, 3.519, -6.1)
 
-[node name="Sprite3D" type="Sprite3D" parent="Torch3"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
-texture = ExtResource("6_8ixbl")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Torch3"]
-transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
-texture = ExtResource("6_8ixbl")
-
-[node name="Torch4" type="Node3D" parent="."]
-transform = Transform3D(-4.09432e-08, -1.5308e-08, 0.999999, -0.350207, 0.936671, 0, -0.936671, -0.350207, -4.37113e-08, 2.182, 3.519, 6.264)
-
-[node name="Sprite3D" type="Sprite3D" parent="Torch4"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
-texture = ExtResource("6_8ixbl")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Torch4"]
-transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.11268)
-texture = ExtResource("6_8ixbl")
+[node name="Torch8" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, -2.02432, 3.519, -6.1)

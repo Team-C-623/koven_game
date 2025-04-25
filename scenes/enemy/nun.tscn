@@ -72,6 +72,8 @@ shape = SubResource("CapsuleShape3D_jqxgs")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+sorting_offset = 1.0
+shaded = true
 texture = ExtResource("2_nw232")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
