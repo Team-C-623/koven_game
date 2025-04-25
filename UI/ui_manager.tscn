@@ -18,6 +18,7 @@ metadata/_edit_vertical_guides_ = [734.0]
 metadata/_edit_horizontal_guides_ = [702.0]
 
 [node name="InventoryInterface" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

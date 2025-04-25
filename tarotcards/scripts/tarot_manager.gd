@@ -83,6 +83,7 @@ func use_death():
 				for component in node.get_children(true):
 					if component is HealthComponent:	
 						component.health += component.MAX_HEALTH
+						component.emit_signal("health_changed",component.health,component.MAX_HEALTH)
 
 
 
