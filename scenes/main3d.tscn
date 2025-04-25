@@ -18,6 +18,7 @@ script = ExtResource("5_g3j3x")
 slot_datas = Array[ExtResource("6_uetrn")]([SubResource("Resource_bkxfk")])
 
 [sub_resource type="Environment" id="Environment_5tb5c"]
+background_mode = 1
 sdfgi_use_occlusion = true
 fog_enabled = true
 fog_mode = 1
