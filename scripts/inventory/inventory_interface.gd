@@ -31,7 +31,7 @@ func set_external_inventory(_external_inventory_owner) -> void:
 	external_inventory.set_inventory_data(inventory_data)
 	
 	external_inventory.show()
-
+ 
 func clear_external_inventory() -> void:
 	if external_inventory_owner:
 		var inventory_data = external_inventory_owner.inventory_data
@@ -50,6 +50,7 @@ func on_inventory_interact(inventory_data: InventoryData,
 			grabbed_slot_data = inventory_data.grab_slot_data(index)
 		[_, MOUSE_BUTTON_LEFT]:
 			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index)
+			
 		[null, MOUSE_BUTTON_RIGHT]:
 			inventory_data.use_slot_data(index)
 		[_, MOUSE_BUTTON_RIGHT]:

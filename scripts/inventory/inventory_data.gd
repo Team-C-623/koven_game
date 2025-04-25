@@ -23,6 +23,10 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	var slot_data = slot_datas[index]
 	
 	var return_slot_data: SlotData
+	#var can_merge = slot_data and slot_data.can_fully_merge_with(grabbed_slot_data)
+	#print("Can merge condition: " + str(can_merge))
+	#var can_merge_test = slot_data.can_fully_merge_with(grabbed_slot_data)
+	#print("Can merge slots?: " + str(can_merge_test))
 	if slot_data and slot_data.can_fully_merge_with(grabbed_slot_data):
 		slot_data.fully_merge_with(grabbed_slot_data)
 	else:

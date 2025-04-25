@@ -1,9 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://bigdykn0ht67u"]
+[gd_scene load_steps=14 format=3 uid="uid://bigdykn0ht67u"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_v88x4"]
 [ext_resource type="Texture2D" uid="uid://ddvyecflt5ri7" path="res://UI/INVENTORYFULLSPREADEXPANDED.png" id="2_c2i2o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0cwr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrs8a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fv2aj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_34ut5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2p554"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jh16q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qum3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mv35l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41h5u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gm3p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_la18s"]
 
 [node name="Inventory" type="PanelContainer"]
 offset_right = 1080.0
@@ -18,29 +38,129 @@ layout_mode = 2
 
 [node name="BackgroundFrame" type="TextureRect" parent="Background"]
 layout_mode = 2
-offset_right = 1080.0
+offset_left = -45.0
+offset_right = 1035.0
 offset_bottom = 513.0
 texture = ExtResource("2_c2i2o")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/BackgroundFrame"]
+[node name="Slot1" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.205926
-anchor_top = 0.405797
-anchor_right = 0.211481
-anchor_bottom = 0.394101
-offset_left = 3.59998
-offset_top = -0.174011
-offset_right = 609.6
-offset_bottom = 233.826
+anchor_left = 0.209259
+anchor_top = 0.405458
+anchor_right = 0.289815
+anchor_bottom = 0.619883
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nrs8a")
+metadata/_edit_use_anchors_ = true
 
-[node name="ItemGrid" type="GridContainer" parent="Background/BackgroundFrame/MarginContainer"]
+[node name="Slot2" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
 layout_mode = 2
-columns = 5
+anchor_left = 0.149074
+anchor_right = 0.149074
+offset_left = 226.0
+offset_top = 208.0
+offset_right = 313.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fv2aj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot3" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.447222
+anchor_top = 0.401559
+anchor_right = 0.527778
+anchor_bottom = 0.615984
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_34ut5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot4" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.536111
+anchor_top = 0.405458
+anchor_right = 0.616667
+anchor_bottom = 0.619883
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2p554")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot5" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.688889
+anchor_top = 0.401559
+anchor_right = 0.769444
+anchor_bottom = 0.615984
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jh16q")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot6" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.209259
+anchor_top = 0.635478
+anchor_right = 0.289815
+anchor_bottom = 0.849903
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qum3a")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot7" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.358333
+anchor_top = 0.635478
+anchor_right = 0.438889
+anchor_bottom = 0.849903
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mv35l")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot8" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.448148
+anchor_top = 0.633528
+anchor_right = 0.528704
+anchor_bottom = 0.847953
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_41h5u")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot9" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.537037
+anchor_top = 0.62963
+anchor_right = 0.617593
+anchor_bottom = 0.844055
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4gm3p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot10" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.688889
+anchor_top = 0.633528
+anchor_right = 0.769444
+anchor_bottom = 0.847953
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_la18s")
+metadata/_edit_use_anchors_ = true
