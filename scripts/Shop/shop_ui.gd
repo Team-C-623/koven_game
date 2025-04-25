@@ -8,6 +8,8 @@ func _ready() -> void:
 	ShopMenu.show.connect(update_shop)
 	ShopMenu.hide.connect(clear_shop)
 	clear_shop()
+	data = ShopData.new()
+	data.generate_shop()
 	
 func clear_shop():
 	for c in get_children():
@@ -15,7 +17,7 @@ func clear_shop():
 		
 func update_shop():
 	clear_shop()
-	for item in data.ShopItems:
+	for item in data.shop_items:
 		var new_item = SHOP_ITEM.instantiate()
 		add_child(new_item)
 		new_item.item_data = item

@@ -10,3 +10,4 @@ description = "The Wheel of Fortune is constantly revolving -- sometimes you wil
 texture = ExtResource("2_tre03")
 cost = 100
 duration = 999.0
+rarity = 1

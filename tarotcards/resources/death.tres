@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c3u3hw3n1diij"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_4t14m"]
+[ext_resource type="Texture2D" uid="uid://dphof7s5abju" path="res://tarotcards/assets/DEATHTAROT.png" id="2_8t1ff"]
+
+[resource]
+script = ExtResource("1_4t14m")
+name = "Death"
+description = "Heals player to full as name indicates"
+texture = ExtResource("2_8t1ff")
+cost = 100
+duration = 999.0
+rarity = 0

@@ -77,6 +77,14 @@ func use_wheel_of_fortune(item_data: ItemData):
 	print("WHeel of fortune grants: " + str(random_num))
 	print("0 = +10 damage, 1 = +20 hp and Max hp, 2 = +2.0 speed") 
 
+func use_death():
+	for node in main_node.get_children(true):
+			if node is Player:
+				for component in node.get_children(true):
+					if component is HealthComponent:	
+						component.health += component.MAX_HEALTH
+
+
 
 	
 	
