@@ -7,6 +7,7 @@ class_name Monk
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 5.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
+@onready var health_component: HealthComponent = $HealthComponent
 
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
@@ -37,6 +38,9 @@ func _physics_process(delta: float) -> void:
 
 	# Always face the player
 	look_at(player_3d.position)
+	
+	if health_component.health <= 0:
+		SoundManager.play_death_sound()
 	
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
