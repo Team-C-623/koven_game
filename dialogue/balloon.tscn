@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsjnqaibrsgpo"]
+[gd_scene load_steps=13 format=3 uid="uid://dsjnqaibrsgpo"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -68,15 +68,16 @@ Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4826o"]
 texture = ExtResource("2_smexl")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71k42"]
-texture = ExtResource("2_smexl")
-expand_margin_top = 100.0
-expand_margin_bottom = 100.0
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2l8to"]
+content_margin_bottom = 50.0
 texture = ExtResource("2_smexl")
+texture_margin_top = 10.0
+texture_margin_right = 100.0
+expand_margin_left = 100.0
 expand_margin_top = 100.0
+expand_margin_right = 200.0
 expand_margin_bottom = 100.0
+region_rect = Rect2(0, 0, 2727, 1183)
 
 [node name="DialogueBalloon" type="CanvasLayer"]
 layer = 100
@@ -99,13 +100,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 445.0
-offset_top = -285.0
-offset_right = 405.0
-offset_bottom = -121.0
+offset_left = 560.0
+offset_top = -288.0
+offset_right = 434.0
+offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.54508, 1.62304)
+scale = Vector2(0.433696, 1.80851)
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_4826o")
 
@@ -114,13 +115,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 218.317
-offset_top = 53.6032
-offset_right = 218.317
-offset_bottom = 53.6032
+offset_left = 202.907
+offset_top = 53.0825
+offset_right = 138.907
+offset_bottom = 159.082
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.699539, 0.320607)
+scale = Vector2(0.728201, 0.195743)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
 z_index = 101
@@ -131,7 +132,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 60
 text = "Dialogue..."
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel"]
@@ -139,14 +140,14 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 z_index = 102
 layout_mode = 0
-offset_left = 205.474
-offset_top = 13.5548
-offset_right = 2025.47
-offset_bottom = 84.5548
-scale = Vector2(0.847036, 0.41944)
+offset_left = 202.907
+offset_top = 26.5413
+offset_right = 2022.9
+offset_bottom = 97.5413
+scale = Vector2(0.883255, 0.250613)
 mouse_filter = 1
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(0.917647, 0.894118, 0.835294, 1)
+theme_override_colors/font_shadow_color = Color(0.509804, 0.286275, 0.239216, 1)
 theme_override_fonts/normal_font = ExtResource("4_6oe2k")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
@@ -160,9 +161,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -641.0
-offset_top = -202.0
-offset_bottom = 202.0
+offset_left = -718.0
+offset_top = -320.0
+offset_right = -106.0
+offset_bottom = 204.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -175,13 +177,16 @@ script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.764706, 0.396078, 0.301961, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxTexture_71k42")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxTexture_2l8to")
 theme_override_styles/normal = SubResource("StyleBoxTexture_2l8to")
 text = "Response example"
 alignment = 0
-vertical_icon_alignment = 0
+autowrap_mode = 2
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
