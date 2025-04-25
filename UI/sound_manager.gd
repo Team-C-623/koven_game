@@ -38,6 +38,12 @@ func play_menu_open():
 func play_start_music():
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
 	
+func play_trial_room_music():
+	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM,self)
+	
+func play_tarot_pickup():
+	Wwise.post_event_id(AK.EVENTS.TAROTPICKUP,self)
+	
 func stop_start_music():
 	#why doesnt it stop
 	Wwise.stop_event(AK.EVENTS.MAP_LOAD,0,AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR)

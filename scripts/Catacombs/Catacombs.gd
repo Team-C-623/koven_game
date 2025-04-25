@@ -9,4 +9,5 @@ func _ready() -> void:
 	var new_shop_witch = shop_witch_scene.instantiate()
 	add_child(new_shop_witch)
 	new_shop_witch.position = Vector3(-9.5, 0, 0)
+	await SoundManager.ready
 	SoundManager.play_catacombs_music()
