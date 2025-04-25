@@ -25,6 +25,7 @@ SoundManager="*res://scenes/music_and_sound/sound_manager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TarotManager="*res://tarotcards/scripts/tarot_manager.gd"
 UIManager="*res://UI/ui_manager.tscn"
+Global="*res://scripts/Global.gd"
 
 [dialogue_manager]
 
@@ -38,6 +39,10 @@ window/size/viewport_height=1080
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[global_group]
+
+"Enemies Group"=""
 
 [input]
 

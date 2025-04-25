@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwnppb0i13jui"]
+[gd_scene load_steps=15 format=3 uid="uid://cwnppb0i13jui"]
 
 [ext_resource type="Script" path="res://scripts/enemy/monk.gd" id="1_8h3xo"]
 [ext_resource type="Texture2D" uid="uid://djgocdrtsu4rc" path="res://assets/characters/Final monk level 1.png" id="2_57cty"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/enemy/enemy_chase.gd" id="5_quno4"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_blrfn"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_qtd71"]
+[ext_resource type="Texture2D" uid="uid://oshwtjxciwcs" path="res://assets/characters/Monk level 1 sprite 2.png" id="8_foggx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3uryv"]
 
@@ -18,7 +19,43 @@ height = 0.951147
 radius = 0.260556
 height = 0.865382
 
-[node name="Monk" type="CharacterBody3D"]
+[sub_resource type="Animation" id="Animation_34n4v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_57cty")]
+}
+
+[sub_resource type="Animation" id="Animation_k4lvs"]
+resource_name = "monk_chase"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_57cty"), ExtResource("8_foggx"), ExtResource("2_57cty")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5yn1g"]
+_data = {
+"RESET": SubResource("Animation_34n4v"),
+"monk_chase": SubResource("Animation_k4lvs")
+}
+
+[node name="Monk" type="CharacterBody3D" groups=["Enemies Group"]]
 transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
 script = ExtResource("1_8h3xo")
 
@@ -59,8 +96,15 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="Hitbox" type="CollisionShape3D" parent="HitboxComponent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183107, -0.0032959, -0.00120593)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.00183107, -0.0032959, -0.00120593)
 shape = SubResource("CapsuleShape3D_gb5n1")
 
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="chase_animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5yn1g")
+}
+
 [connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
-[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

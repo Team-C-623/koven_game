@@ -6,6 +6,7 @@ const PickUp = preload("res://scenes/interactable/pick_up.tscn")
 signal entered
 
 @onready var player: CharacterBody3D = $Player
+@onready var player_health = player.get_node("HealthComponent")
 @onready var map = $Map
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 @onready var hot_bar_inventory: PanelContainer = get_node("/root/UIManager/HotBarInventory")
@@ -19,8 +20,10 @@ func _ready() -> void:
 	var new_catacombs = cata_scene.instantiate()
 	add_child(new_catacombs)
 	_spawn_journals_in_room(new_catacombs) #spawns journal
+	new_catacombs.name = "Catacombs"
 	
 	entered.connect(generate_new)
+	
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
@@ -34,6 +37,13 @@ func _ready() -> void:
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
+		
+	# existing setup
+	if player_health:
+		player_health.died.connect(_on_player_died)	
+	else:
+		print("Health component not found")
+
 	
 #spawns journals
 func _spawn_journals_in_room(room):
@@ -53,7 +63,7 @@ func switch_cam():
 func generate_new():
 	var size = map.generate()
 	player.global_position = Vector3(6 * size, 0, 6 * size)
-	
+
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	if ShopMenu.visible or journal_ui.visible:
 		return
@@ -86,3 +96,46 @@ func _on_entered() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("generate"):
 		generate_new()
+
+
+func _on_player_died():
+	print("Respawning player")
+	await get_tree().create_timer(1.0).timeout
+	
+	# Get the current player (without dequeuing)
+	var live_player = get_tree().current_scene.find_child("Player", true, false)
+	
+	if live_player and is_instance_valid(live_player):
+		print("Found live player: ", live_player)
+		# spawn point
+		#var spawn_point = get_node("PlayerSpawner")
+		
+		var catacombs_scene = preload("res://scenes/Catacombs/catacombs.tscn")
+		var catacombs = catacombs_scene.instantiate()
+		get_tree().current_scene.add_child(catacombs)
+		
+		print("Catacombs instantiated:", catacombs)
+		
+		var spawn_point = catacombs.get_node("PlayerSpawn")
+		
+		if spawn_point:
+			live_player.global_position = spawn_point.global_position
+			live_player.velocity = Vector3.ZERO
+			live_player.velocity.y = -0.1  # Apply gravity right away
+			print("Moved player to spawn point: ", live_player.global_position)
+		else:
+			print("Spawn point not found in Catacombs.")
+		
+		# Ensure player health component and connections
+		var player_health = live_player.get_node("HealthComponent")
+		if player_health:
+			player_health.auto_free_on_death = false  # Don't let the HealthComponent destroy the player
+			if not player_health.died.is_connected(_on_player_died):
+				player_health.died.connect(_on_player_died)
+		
+		# Now, generate the map or continue gameplay
+		generate_new()
+		print("Map generation after respawn.")
+	else:
+		print("Player not found or invalid.")
+	

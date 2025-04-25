@@ -7,10 +7,12 @@ var wander_time: float = 0.0
 @onready var enemy: CharacterBody3D = get_parent().get_parent()
 var player: CharacterBody3D = null
 
-
-
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
+	#if Global.player:
+		#player = Global.player
+	#else:
+		#print("Player not found")
 
 func randomize_variables():
 	wander_time = randf_range(1.5, 4)
@@ -28,12 +30,12 @@ func process(delta: float):
 	
 	wander_time -= delta
 	
-	if enemy.global_position.distance_to(player.global_position) < enemy.CHASE_DISTANCE:
+	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) < enemy.CHASE_DISTANCE:
 		if enemy is Monk:
 			Transitioned.emit(self, "EnemyChase")
 		elif enemy is Nun:
-			#Transitioned.emit(self, "EnemyShoot")
-			Transitioned.emit(self, "EnemyChase")
+			print("Entered NUN range")
+			Transitioned.emit(self, "EnemyShoot")
 
 func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.SPEED

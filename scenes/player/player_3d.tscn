@@ -91,12 +91,12 @@ mouse_filter = 2
 [node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qib34")]
-MAX_HEALTH = 20.0
 is_player = true
+MAX_HEALTH = 25.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_q2tud")]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 32
 health_component = NodePath("../HealthComponent")
 
 [node name="HitBox" type="CollisionShape3D" parent="HitboxComponent"]

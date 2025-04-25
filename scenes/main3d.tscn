@@ -16,7 +16,6 @@ volumetric_fog_emission_energy = 2.0
 script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.513106, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.913828, 0.232817, -0.332739, 0.122754, 0.62266, 0.772804, 0.387105, -0.747055, 0.540425, 0, 0, 5)
@@ -50,6 +49,9 @@ script = ExtResource("4_scj2c")
 [node name="Chest" parent="." instance=ExtResource("9_6odt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
 inventory_data = null
+
+[node name="PlayerSpawner" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
 
 [connection signal="entered" from="." to="." method="_on_entered"]
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]

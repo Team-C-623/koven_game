@@ -8,8 +8,5 @@ extends ProgressBar
 func _ready() -> void:
 	health_component.connect("health_changed", Callable(self, "_on_health_changed"))
 	
-	# Initialize bar value
-	#value = health_component.health / health_component.MAX_HEALTH * max_value
-
 func _on_health_changed(current_health: float, max_health: float):
 	value = (current_health / max_health) * max_value
