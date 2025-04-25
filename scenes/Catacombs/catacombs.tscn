@@ -141,4 +141,7 @@ transform = Transform3D(-100, -8.74228e-06, 0, 8.74228e-06, -100, 0, 0, 0, 100, 
 flip_h = true
 texture = ExtResource("7_a0rw7")
 
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.16395)
+
 [connection signal="body_entered" from="Entrance/EntranceArea" to="Entrance/EntranceArea" method="_on_body_entered"]

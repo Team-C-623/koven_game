@@ -4,6 +4,7 @@ class_name EnemyShoot
 @onready var enemy: CharacterBody3D = get_parent().get_parent()
 var player: CharacterBody3D = null
 @onready var ray := $"../../NunKnifeRange"
+@onready var shooting_animation: AnimationPlayer = $"../../ShootingAnimation"
 
 var angle_cone_of_vision := deg_to_rad(30.0)
 var max_view_distance := 5.0
@@ -19,9 +20,13 @@ var knife_active = false
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
+	#if Global.player:
+		#player = Global.player
+	#else:
+		#print("Player not found")
 
 func process(delta: float):
-	if enemy.global_position.distance_to(player.global_position) > enemy.CHASE_DISTANCE:
+	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) > enemy.CHASE_DISTANCE:
 		Transitioned.emit(self, "EnemyWander")
 
 # Needs Work On
@@ -73,5 +78,4 @@ func shoot_knife():
 		
 		var direction = (player.global_position - enemy.global_position).normalized()
 		instance.velocity = direction * 10
-		
-					
+		shooting_animation.play("knife")
