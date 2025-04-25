@@ -7,6 +7,8 @@ extends Node
 func _ready() -> void:
 	Currency.currency_changed.connect(_on_currency_changed)
 	update_display()
+	#var transparent_style = StyleBoxEmpty.new()
+	#add_theme_stylebox_override("CurrencyUI", transparent_style)
 
 func _on_currency_changed(new_amount:int) -> void:
 	label.text = str(new_amount)

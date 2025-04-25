@@ -16,5 +16,6 @@ func use(_target) -> void:
 		TarotManager.use_wheel_of_fortune(self)
 	elif name == "Death":
 		TarotManager.use_death()
+		
 	SoundManager.play_card_burn()
 	

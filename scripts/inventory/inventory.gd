@@ -48,12 +48,29 @@ func populate_item_grid(inventory_data: InventoryData) -> void:
 	for child in item_grid.get_children():
 		child.queue_free()
 	
-	for slot_data in inventory_data.slot_datas:
+
+	#for slot_data in inventory_data.slot_datas:
+	#	var slot = Slot.instantiate()
+	#	item_grid.add_child(slot)
+	#	
+	#	slot.slot_clicked.connect(inventory_data.on_slot_clicked)
+	#	
+	#	if slot_data:
+	#		slot.set_slot_data(slot_data)
+	for i in range(inventory_data.slot_datas.size()):
+		var slot_data = inventory_data.slot_datas[i]
 		var slot = Slot.instantiate()
+	
+	# Set custom position in grid
 		item_grid.add_child(slot)
-		
+		item_grid.move_child(slot, i)  # Control order
+	
+	# Configure grid properties
+		item_grid.columns = 6  # Set your desired column count
+		item_grid.add_theme_constant_override("h_separation", 10)  # Horizontal spacing
+		item_grid.add_theme_constant_override("v_separation", 10)  # Vertical spacing
+	
 		slot.slot_clicked.connect(inventory_data.on_slot_clicked)
-		
 		if slot_data:
 			slot.set_slot_data(slot_data)
-			
+		
