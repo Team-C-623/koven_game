@@ -44,6 +44,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
 max_value = 20.0
 value = 20.0
 show_percentage = false
+theme_override_styles/background = SubResource("StyleBoxFlat_65n5d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vlo3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
 position = Vector2(214.125, 15)
@@ -91,8 +93,8 @@ mouse_filter = 2
 [node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qib34")]
-is_player = true
 MAX_HEALTH = 25.0
+is_player = true
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_q2tud")]
 collision_layer = 2

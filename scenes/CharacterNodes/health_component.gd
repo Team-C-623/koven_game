@@ -10,7 +10,6 @@ signal health_changed(current_health: float, max_health: float)
 @export var is_player := false
 var is_dead := false
 
-signal health_changed(current_health: float, max_health: float)
 signal died
 
 func _ready():
@@ -20,13 +19,14 @@ func damage(attack: Attack):
 	health -= (attack.attack_damage * damage_modifier)
 	if is_player == false:
 		SoundManager.play_enemy_damage_sound()
+		
 	if is_dead:
 		return
 		
 	health -= attack.attack_damage
 	
 		
-		#play damag sound
+	#play damag sound
 	#dont play damage sound if the player is getting hit
 	emit_signal("health_changed", health, MAX_HEALTH)
 	
@@ -37,7 +37,6 @@ func damage(attack: Attack):
 		SoundManager.play_death_sound()
 		if get_parent().is_in_group("Enemies Group"):
 			get_parent().call_deferred("queue_free")
-
 		
 	
 	
