@@ -32,6 +32,12 @@ func _on_timer_ended():
 		end_judgement()
 	print("timer ended")
 
+
+func end_timer_early() -> void:
+	if timer_active:
+		timer_active = false
+		_on_timer_ended()  
+
 func use_judgement(item_data:ItemData):
 	judgement_active = true
 	start_timer(item_data.duration)
@@ -93,6 +99,9 @@ func use_death():
 					if component is HealthComponent:	
 						component.health += component.MAX_HEALTH
 						component.emit_signal("health_changed",component.health,component.MAX_HEALTH)
+						
+
+	
 
 
 
