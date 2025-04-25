@@ -23,7 +23,7 @@ fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.5
-fog_depth_end = 25.0
+fog_depth_end = 24.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")

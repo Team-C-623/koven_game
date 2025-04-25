@@ -24,6 +24,6 @@ light_energy = 0.5
 shadow_enabled = true
 shadow_blur = 2.0
 distance_fade_enabled = true
-distance_fade_begin = 20.0
+distance_fade_begin = 15.0
 distance_fade_shadow = 24.0
 distance_fade_length = 5.0
