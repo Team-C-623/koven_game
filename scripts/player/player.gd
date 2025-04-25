@@ -7,7 +7,6 @@ var attack_damage := 10.0
 #camera settings
 const SENS = 0.4
 @export var speed = 3.0 #3.0
-
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
@@ -105,6 +104,7 @@ func _physics_process(_delta: float) -> void:
 			instance = flame.instantiate()
 			instance.position = wand_tip.global_position
 			instance.transform.basis = wand_tip.global_transform.basis
+			instance.attack_damage = attack_damage
 			get_parent().add_child(instance)
 			SoundManager.play_wand_sound()
 

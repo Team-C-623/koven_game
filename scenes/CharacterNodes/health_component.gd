@@ -17,7 +17,7 @@ func damage(attack: Attack):
 	
 		
 		#play damag sound
-	##dont play damage sound if the player is getting hit
+	#dont play damage sound if the player is getting hit
 	emit_signal("health_changed", health, MAX_HEALTH)
 	
 	if health <= 0:

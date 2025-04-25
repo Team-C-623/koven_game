@@ -61,8 +61,14 @@ func use_wheel_of_fortune(item_data: ItemData):
 	#randomly increase 1 of 3 stats: +10 damage, +20 health, +2.0 speed
 	var random_num = rng.randi_range(0, 2)
 	var health_component
+	for node in main_node.get_children(true):
+			if node is Player:
+				for component in node.get_children(true):
+					if component is HealthComponent:	
+						health_component = component
 	if random_num == 0:
 		PlayerManager.player.attack_damage += 10
+						
 	elif random_num == 1:
 		for node in main_node.get_children(true):
 			if node is Player:
@@ -70,10 +76,13 @@ func use_wheel_of_fortune(item_data: ItemData):
 					if component is HealthComponent:	
 						component.MAX_HEALTH += 20
 						component.health += 20
+		health_component.emit_signal("health_changed",health_component.health,health_component.MAX_HEALTH)
 	elif random_num == 2:
 		for node in main_node.get_children(true):
 			if node is Player:
 				node.speed += 2.0
+			
+				
 	print("WHeel of fortune grants: " + str(random_num))
 	print("0 = +10 damage, 1 = +20 hp and Max hp, 2 = +2.0 speed") 
 
