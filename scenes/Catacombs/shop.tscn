@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Shop/shop_ui.gd" id="2_p2ccr"]
 [ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://resources/shop/testshop.tres" id="3_7qxhm"]
 [ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://scenes/UI/shop_item_button.tscn" id="4_67pe5"]
-[ext_resource type="Texture2D" uid="uid://dy36kragf5kyh" path="res://assets/ui/redonecurrency.png" id="5_2glda"]
+[ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="5_lbyll"]
 [ext_resource type="Script" path="res://scripts/currency/label.gd" id="6_2wvjf"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_deyfl"]
@@ -141,7 +141,6 @@ offset_top = -38.0
 offset_right = 1161.0
 offset_bottom = 962.0
 scale = Vector2(0.2, 0.214)
-texture = ExtResource("5_2glda")
 
 [node name="ItemCost" type="Label" parent="Control/DetailsPanel/Control"]
 unique_name_in_owner = true
@@ -181,7 +180,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="Control/CurrencyPanel/HBoxContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("5_2glda")
+texture = ExtResource("5_lbyll")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/CurrencyPanel/HBoxContainer"]
