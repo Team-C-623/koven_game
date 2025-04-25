@@ -8,12 +8,14 @@ transform = Transform3D(0.941418, 0.337243, 0, -0.337243, 0.941418, 0, 0, 0, 1, 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -0.00167465)
 sorting_offset = 1.0
+visibility_range_end = 20.0
 shaded = true
 texture = ExtResource("1_2u6tx")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.126378)
 sorting_offset = 1.0
+visibility_range_end = 20.0
 shaded = true
 texture = ExtResource("1_2u6tx")
 

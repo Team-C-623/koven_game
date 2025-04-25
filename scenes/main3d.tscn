@@ -32,7 +32,6 @@ script = ExtResource("1_tbt52")
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
 
 [node name="SwitchCamButton" type="Button" parent="."]
-visible = false
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 94.0

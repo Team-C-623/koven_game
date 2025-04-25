@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://m0j8m41dr240"]
+[gd_scene load_steps=14 format=3 uid="uid://m0j8m41dr240"]
 
 [ext_resource type="Script" path="res://scripts/enemy/nun.gd" id="1_44yvt"]
 [ext_resource type="Texture2D" uid="uid://ckewadguma4sp" path="res://assets/characters/final nun level 1 (sprite 1).png" id="2_nw232"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="6_6nqag"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_shoot.gd" id="6_bmqaf"]
 [ext_resource type="Texture2D" uid="uid://dlgqa6pdjt557" path="res://assets/characters/Final nun level 1 (sprite 2).png" id="8_orfb7"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_3uryv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqxgs"]
 radius = 0.244186
@@ -61,11 +59,6 @@ transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
 script = ExtResource("1_44yvt")
 is_ranged = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.581984, 0, 0, 0, 0.618633, 0, 0, 0, 0.135296, 0, 0.0269417, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_3uryv")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.00151851, 4.45302e-08, -1.00002, 1.65333e-06, 1.00002, 4.20022e-08, 1.00002, -1.65326e-06, -0.00151851, 0.0133279, 4.19748e-08, 1.48866e-05)
 shape = SubResource("CapsuleShape3D_jqxgs")
@@ -73,6 +66,7 @@ shape = SubResource("CapsuleShape3D_jqxgs")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 sorting_offset = 1.0
+visibility_range_end = 20.0
 shaded = true
 texture = ExtResource("2_nw232")
 

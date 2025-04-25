@@ -86,6 +86,7 @@ material = SubResource("StandardMaterial3D_yhdqh")
 
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor3"]
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
+visibility_range_end = 20.0
 flip_h = true
 shaded = true
 texture = ExtResource("3_qltpk")
@@ -100,6 +101,7 @@ material = SubResource("StandardMaterial3D_ea8lh")
 
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor4"]
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
+visibility_range_end = 20.0
 flip_h = true
 shaded = true
 texture = ExtResource("3_qltpk")

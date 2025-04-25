@@ -180,6 +180,7 @@ script = ExtResource("5_gce5p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Entrance/EntranceArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.025, -0.26)
+visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_fxvia")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entrance/EntranceArea"]
@@ -188,23 +189,27 @@ shape = SubResource("ConvexPolygonShape3D_p6mbe")
 
 [node name="Column" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.004, 6.03983e-10, -6.03983e-10, 6.03983e-10, -0.004, 0, -6.03983e-10, -9.11989e-17, -0.004, 1.05, 1.075, -5)
+visibility_range_end = 20.0
 polygon = PackedVector2Array(-111.856, -247.363, -103.068, -225.971, -85, -195.2, -71, -183.4, -48.6977, -179.697, -41.7074, -178.323, -37.0583, -162.506, -41.3262, -148.168, -59.1464, -135.011, -72.2366, -118.72, -75.9413, -101.81, -75.0933, -92.474, -68.9048, -84.3594, -62.3095, -79.3156, -51.1, -78, -55, 107, -55, 170.7, -57.7, 182.1, -81.8234, 183.265, -90.1138, 225.047, -58.4674, 268.082, 112.655, 268.054, 114.069, 230.792, 64.8, 176.6, 52, -73.8, 77.211, -82.3567, 87.9268, -107.507, 83, -128.5, 68.9624, -143.402, 50.3727, -150.092, 49.4869, -162.589, 52.934, -174.717, 101.734, -194.946, 130.445, -238.529, 132.791, -249.242, 129.329, -255.747)
 depth = 20.0
 material = SubResource("StandardMaterial3D_s2slq")
 
 [node name="Sprite3D" type="Sprite3D" parent="Column"]
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
+visibility_range_end = 20.0
 flip_h = true
 texture = ExtResource("8_8qr8b")
 
 [node name="Column2" type="CSGPolygon3D" parent="."]
 transform = Transform3D(-0.004, 3.49691e-10, 0, -3.49691e-10, -0.004, 0, 0, 0, 0.004, -1.05, 1.075, -4.9)
+visibility_range_end = 20.0
 polygon = PackedVector2Array(-111.856, -247.363, -103.068, -225.971, -85, -195.2, -71, -183.4, -48.6977, -179.697, -41.7074, -178.323, -37.0583, -162.506, -41.3262, -148.168, -59.1464, -135.011, -72.2366, -118.72, -75.9413, -101.81, -75.0933, -92.474, -68.9048, -84.3594, -62.3095, -79.3156, -51.1, -78, -55, 107, -55, 170.7, -57.7, 182.1, -81.8234, 183.265, -90.1138, 225.047, -58.4674, 268.082, 112.655, 268.054, 114.069, 230.792, 64.8, 176.6, 52, -73.8, 77.211, -82.3567, 87.9268, -107.507, 83, -128.5, 68.9624, -143.402, 50.3727, -150.092, 49.4869, -162.589, 52.934, -174.717, 101.734, -194.946, 130.445, -238.529, 132.791, -249.242, 129.329, -255.747)
 depth = 20.0
 material = SubResource("StandardMaterial3D_4fccl")
 
 [node name="Sprite3D" type="Sprite3D" parent="Column2"]
 transform = Transform3D(-100, 8.74228e-06, -9.09495e-13, -8.74228e-06, -100, 5.42101e-20, -9.09495e-13, 0, 100, 0, 0, 0.1)
+visibility_range_end = 20.0
 flip_h = true
 texture = ExtResource("8_8qr8b")
 
