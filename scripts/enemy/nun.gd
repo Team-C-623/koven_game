@@ -18,7 +18,11 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 3.0
 
+var health_component
 func _ready():
+	for node in self.get_children():
+		if node is HealthComponent:
+			health_component = node
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -35,6 +39,10 @@ func _physics_process(delta: float) -> void:
 
 	# Always face the player
 	look_at(player_3d.position)
+	
+	if health_component.health <= 0:
+		SoundManager.play_death_sound()
+	
 	
 #func _on_hitbox_component_area_entered(area: Area3D) -> void:
 	#if area is HitboxComponent:
