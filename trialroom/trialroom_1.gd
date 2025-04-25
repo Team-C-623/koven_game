@@ -9,9 +9,7 @@ signal change_sprite(speaker_name: String)
 func _ready() -> void:
 	add_child(dialogue_balloon)
 	dialogue_balloon.visible = false
-	
 	start_dialogue()
-
 func start_dialogue():
 	dialogue_balloon.visible = true
 	DialogueManager.mutated.connect(_on_mutation)
