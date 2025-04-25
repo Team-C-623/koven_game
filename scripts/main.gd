@@ -21,6 +21,7 @@ func _ready() -> void:
 	add_child(new_catacombs)
 	_spawn_journals_in_room(new_catacombs) #spawns journal
 	new_catacombs.name = "Catacombs"
+	SoundManager.play_start_music()
 	
 	entered.connect(generate_new)
 	
@@ -30,9 +31,9 @@ func _ready() -> void:
 	inventory_interface.force_close.connect(toggle_inventory_interface)
 	
 	#inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
-	print("DEBUG: Attempting to connect signal")
+	#print("DEBUG: Attempting to connect signal")
 	var connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
-	print("DEBUG: Connection result:", connect_result == OK)
+	#print("DEBUG: Connection result:", connect_result == OK)
 
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):

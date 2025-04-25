@@ -45,6 +45,9 @@ func play_trial_room_music():
 	
 func play_tarot_pickup():
 	Wwise.post_event_id(AK.EVENTS.TAROTPICKUP,self)
+
+func play_music():
+	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
 	
 func stop_start_music():
 	#why doesnt it stop
