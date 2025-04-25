@@ -69,7 +69,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 texture = ExtResource("2_smexl")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2l8to"]
-content_margin_bottom = 50.0
+content_margin_bottom = 40.0
 texture = ExtResource("2_smexl")
 texture_margin_top = 10.0
 texture_margin_right = 100.0
@@ -162,9 +162,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -718.0
-offset_top = -320.0
+offset_top = -340.0
 offset_right = -106.0
-offset_bottom = 204.0
+offset_bottom = 184.0
 grow_horizontal = 0
 grow_vertical = 2
 

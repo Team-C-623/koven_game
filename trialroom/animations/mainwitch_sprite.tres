@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://ce26cexwii3vo"]
+
+[ext_resource type="Texture2D" uid="uid://vjtx8my4v0x6" path="res://trialroom/art/mainwitch/mainwitch_frame1.png" id="1_3jrns"]
+[ext_resource type="Texture2D" uid="uid://tt5and26440w" path="res://trialroom/art/mainwitch/mainwitch_frame2.png" id="2_lghni"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3jrns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lghni")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 3.0
+}]
