@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://duqt05t3ju1qh"]
 
 [ext_resource type="Script" path="res://scripts/Shop/shop_item_ui.gd" id="1_n5fh6"]
-[ext_resource type="Texture2D" uid="uid://dy36kragf5kyh" path="res://assets/ui/redonecurrency.png" id="2_8nlui"]
+[ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="2_gbv2r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1obhm"]
 
@@ -42,10 +42,11 @@ expand_mode = 1
 
 [node name="Currency" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 56.0
-offset_right = 1056.0
-offset_bottom = 1000.0
+offset_left = 82.0
+offset_top = -25.0
+offset_right = 802.0
+offset_bottom = 1255.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_8nlui")
+texture = ExtResource("2_gbv2r")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

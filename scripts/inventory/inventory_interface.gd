@@ -101,7 +101,7 @@ func _on_inventory_background_click(event: InputEvent):
 
 
 func handle_world_drop(event: InputEvent):
-	var drop_pos = get_global_mouse_position()
+	var _drop_pos = get_global_mouse_position()
 	match event.button_index:
 		MOUSE_BUTTON_LEFT:
 			drop_slot_data.emit(grabbed_slot_data)	

@@ -32,7 +32,7 @@ func _ready() -> void:
 	
 	#inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
 	#print("DEBUG: Attempting to connect signal")
-	var connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
+	var _connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
 	#print("DEBUG: Connection result:", connect_result == OK)
 
 	
@@ -128,7 +128,7 @@ func _on_player_died():
 			print("Spawn point not found in Catacombs.")
 		
 		# Ensure player health component and connections
-		var player_health = live_player.get_node("HealthComponent")
+		player_health = live_player.get_node("HealthComponent")
 		if player_health:
 			player_health.auto_free_on_death = false  # Don't let the HealthComponent destroy the player
 			if not player_health.died.is_connected(_on_player_died):

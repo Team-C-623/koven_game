@@ -63,7 +63,7 @@ func update_judgement():
 				if component is HealthComponent:
 					component.damage_modifier = JUDGEMENT_MODIFIER
 					
-func use_wheel_of_fortune(item_data: ItemData):
+func use_wheel_of_fortune(_item_data: ItemData):
 	#randomly increase 1 of 3 stats: +10 damage, +20 health, +2.0 speed
 	var random_num = rng.randi_range(0, 2)
 	var health_component

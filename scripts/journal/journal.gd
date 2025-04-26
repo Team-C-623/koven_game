@@ -17,8 +17,8 @@ func _init():
 	
 func get_number_of_journals():
 	var count = 0
-	for journal in Journal.instance.journal:
-		if journal != null:
+	for journal_item in Journal.instance.journal:
+		if journal_item != null:
 			count += 1
 	return count
 
