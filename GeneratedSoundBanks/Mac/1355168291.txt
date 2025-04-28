@@ -1,13 +1,19 @@
 State Group	ID	Name			Wwise Object Path	Notes
-	3762137787	player_life			\Default Work Unit\player_life	
-	3826569560	music_state			\Default Work Unit\music_state	
+	1176052424	Location			\Music\Location	
+	4071417932	Player_state			\Music\Player_state	
 
 State	ID	Name	State Group			Notes
-	655265632	Alive	player_life			
-	748895195	None	player_life			
-	2791675679	Defeated	player_life			
-	748895195	None	music_state			
-	2021425847	New_State	music_state			
+	129146593	Castle	Location			
+	748895195	None	Location			
+	1543475711	Trial_Room	Location			
+	1560169506	Boss	Location			
+	2005704188	Main_Menu	Location			
+	2201105581	credits	Location			
+	2966204926	Catacombs	Location			
+	655265632	Alive	Player_state			
+	748895195	None	Player_state			
+	2716678721	Victory	Player_state			
+	2791675679	Defeated	Player_state			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
@@ -19,14 +25,26 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2058049674	Wood			\Factory Acoustic Textures\Textures\Wood	
 	2412606308	Carpet			\Factory Acoustic Textures\Textures\Carpet	
 	2637588553	Tile			\Factory Acoustic Textures\Textures\Tile	
+	2862064063	sfx_sidechain			\Default Work Unit\sfx_sidechain	
+	2872980221	Music_volume_slider			\Default Work Unit\Music_volume_slider	
 	2928161104	Curtains			\Factory Acoustic Textures\Textures\Curtains	
 	3195498748	Cork_Tiles			\Factory Acoustic Textures\Textures\Cork_Tiles	
 	3670307564	Drywall			\Factory Acoustic Textures\Textures\Drywall	
+	3677180323	health			\Default Work Unit\health	
 	4168643977	Acoustic_Banner			\Factory Acoustic Textures\Textures\Acoustic_Banner	
 	4262522749	Wood_Bright			\Factory Acoustic Textures\Textures\Wood_Bright	
+	4274270069	Sfx_volume_slider			\Default Work Unit\Sfx_volume_slider	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	1658436645	backup_music_mixer			\Default Work Unit\Master Audio Bus\backup_music_mixer	
+	2990548740	music_mixer			\Default Work Unit\Master Audio Bus\music_mixer	
+	3131440204	sfx_mixer			\Default Work Unit\Master Audio Bus\sfx_mixer	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Effect plug-ins	ID	Name	Type				Notes
+	555452421	Meter (Custom)	Wwise Meter			
+	558380631	Meter (Custom)	Wwise Meter			
+	973762372	Meter (Custom)	Wwise Meter			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

@@ -2,7 +2,7 @@
 
 [resource]
 is_in_user_defined_sound_bank = true
-name = "Footsteps"
-id = 2385628198
+name = "Footsteps_01"
+id = 2848855924
 guid = "{084A66E5-751C-49A4-979C-19CA4C46EED2}"
 dummy = true

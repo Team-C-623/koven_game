@@ -1,0 +1,44 @@
+Event	ID	Name			Wwise Object Path	Notes
+	48824776	MenuOPEN			\SFX_Events\MenuOPEN	
+	80501587	Wand_Misfire			\SFX_Events\Wand_Misfire	
+	371816340	Text_Scrolling			\SFX_Events\Text_Scrolling	
+	1495252156	Shop_Buy			\SFX_Events\Shop_Buy	
+	1639161750	JournalPageTurn			\SFX_Events\JournalPageTurn	
+	1879435608	EnemyDamage			\SFX_Events\EnemyDamage	
+	1908595231	TarotPickUp			\SFX_Events\TarotPickUp	
+	1977329545	Boss_1_PopUp			\SFX_Events\Boss_1_PopUp	
+	2206927579	Witch_Dialogue			\SFX_Events\Witch_Dialogue	
+	2277544205	Trial_Room_Failed			\SFX_Events\Trial_Room_Failed	
+	2451853040	TarotBurn			\SFX_Events\TarotBurn	
+	2783045536	Wand_Basic			\SFX_Events\Wand_Basic	
+	2848855924	Footsteps_01			\SFX_Events\Footsteps_01	
+	3057807107	Shackles_Off			\SFX_Events\Shackles_Off	
+	3129090587	Menu_Boop			\SFX_Events\Menu_Boop	
+	3395044911	Shackles_On			\SFX_Events\Shackles_On	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	90307	Footsteps_5	Y:\Documents\WwiseProjects\Koven\.cache\F9\{F9D12ECF-17B2-25F9-4CB3-21446098E060}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Footsteps\Footsteps_5		154448
+	3715154	PageTurning	Y:\Documents\WwiseProjects\Koven\.cache\77\{779AD419-513C-6F8D-F140-0C1DB672E3BE}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Menu UI\PageTurning		104836
+	105238871	Trial_Room_Failed	Y:\Documents\WwiseProjects\Koven\.cache\A2\{A2E498DF-31E1-C879-460B-5E012573D1BD}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Trial_Room_Failed		15170496
+	126817595	Wand_Basic_Shot	Y:\Documents\WwiseProjects\Koven\.cache\95\{95A9FCBB-4888-47ED-7662-12293079EF5C}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Wand\Wand_Basic_Shot		209660
+	131263441	Shackles_On	Y:\Documents\WwiseProjects\Koven\.cache\6D\{6DE1897D-517D-3A27-D57C-65F90D986F28}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Shackles_On		621236
+	144127505	Enemy_Damage_4	Y:\Documents\WwiseProjects\Koven\.cache\68\{6886C660-85B1-95A7-6321-2E796F012C53}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\EnemyTakingDamange\Enemy_Damage_4		194148
+	232034890	Enemy_Damage_2	Y:\Documents\WwiseProjects\Koven\.cache\26\{263F8004-4BE6-A781-D4BB-E0D089DF8549}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\EnemyTakingDamange\Enemy_Damage_2		194148
+	292569167	Shackles_Off	Y:\Documents\WwiseProjects\Koven\.cache\25\{25B22E21-8CE5-BAF7-ED23-AAB515A2159A}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Shackles_Off		529296
+	340572892	PageFlipping-MenuSwitching	Y:\Documents\WwiseProjects\Koven\.cache\BD\{BD1C08F5-4A08-175F-E2FB-6F474D5B61FC}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Menu UI\PageFlipping-MenuSwitching		141924
+	342904581	Boss_1_PopUp	Y:\Documents\WwiseProjects\Koven\.cache\72\{729DD276-AC4D-372D-1D46-EE691FC2D416}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Boss\Boss_1_PopUp		264696
+	485434196	Wand_Misfire	Y:\Documents\WwiseProjects\Koven\.cache\84\{84B2D91A-7924-D6C6-2A86-32305B8C5243}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Wand\Wand_Misfire		43144
+	495533890	Text_Scrolling	Y:\Documents\WwiseProjects\Koven\.cache\92\{92DD0A5D-6058-0355-2AEC-AA90E255FDD1}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Dialogue\Text_Scrolling		342744
+	598658748	Shop_Buy	Y:\Documents\WwiseProjects\Koven\.cache\D9\{D96FECE9-6D5A-C9E0-1B2C-9AD7BC96F507}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Menu UI\Shop_Buy		44196
+	615815778	Footsteps_4	Y:\Documents\WwiseProjects\Koven\.cache\DF\{DF8851FA-0EC4-E247-02D2-28B0EE0A9D2A}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Footsteps\Footsteps_4		132396
+	806822013	Footsteps_2	Y:\Documents\WwiseProjects\Koven\.cache\78\{78C9A427-1E76-4675-950C-3F0070AF59C8}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Footsteps\Footsteps_2		132396
+	825944191	Footsteps_3	Y:\Documents\WwiseProjects\Koven\.cache\C8\{C8D60860-655D-E70A-97BD-7C9C5EA8FF75}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Footsteps\Footsteps_3		132396
+	871225691	Menu_Boop	Y:\Documents\WwiseProjects\Koven\.cache\D9\{D9AA0894-E4D8-D0C5-95BF-FAE1158762B0}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Menu UI\Menu_Boop		77272
+	873575782	Koven_Dialogue_Example_1	Y:\Documents\WwiseProjects\Koven\.cache\0F\{0FAB5AF9-6563-02EC-290C-B9B963921AB9}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Dialogue\Koven_Dialogue_Example_1		428404
+	907179680	CardBurning	Y:\Documents\WwiseProjects\Koven\.cache\B4\{B4DCFBCD-09BA-B0BD-165A-74530C979B75}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Tarot Sounds\CardBurning		705696
+	929658767	Enemy_Damage_3	Y:\Documents\WwiseProjects\Koven\.cache\43\{43179629-3FE6-F1D8-B8AE-F21E9F8331C1}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\EnemyTakingDamange\Enemy_Damage_3		145636
+	946576559	Card_PickUp_1	Y:\Documents\WwiseProjects\Koven\.cache\5A\{5A43D2E5-029C-6B3C-F4F9-120FA1BEA582}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Tarot Sounds\Card_PickUp_1		127616
+	989007428	Enemy_Damage_1	Y:\Documents\WwiseProjects\Koven\.cache\A2\{A2432074-F1F6-1262-05D3-30A64096A274}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\EnemyTakingDamange\Enemy_Damage_1		194148
+	998639676	Footsteps_1	Y:\Documents\WwiseProjects\Koven\.cache\09\{094C344C-8A19-0C5B-4DD3-C9BA370EF1A7}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Footsteps\Footsteps_1		44196
+	1028320474	Large_Enemy_Damage	Y:\Documents\WwiseProjects\Koven\.cache\51\{5157C6D5-D6A9-0A52-387B-A9582EC7B4F9}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\EnemyTakingDamange\Large_Enemy_Damage		242660
+
