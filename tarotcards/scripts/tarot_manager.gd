@@ -1,47 +1,54 @@
 extends Node
 
-var timer : float = 0.0
-var timer_active := false
 
 const JUDGEMENT_MODIFIER := 2.0
-
+var wof_popup = preload("res://tarotcards/WOF_popup.tscn")
 var judgement_active: bool = false
+var priestess_active: bool = false
 var wheel_of_fortune_active: bool = false
 var rng = RandomNumberGenerator.new()
 @onready var main_node = get_node("/root/Main")
+var active_timers := {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rng.randomize()  # Important for different results each run
 
-func _process(delta: float):
-	if timer_active:
-		timer -= delta
-		if judgement_active:
-			update_judgement()
-		if timer <= 0:
-			_on_timer_ended()
-			timer_active = false
-			
-func start_timer(duration: float):
-	timer = duration
-	timer_active = true
-	
-func _on_timer_ended():
+func _process(delta: float) -> void:
 	if judgement_active:
-		end_judgement()
-	print("timer ended")
+		update_judgement()
+		
+func create_card_timer(card_name: String, duration: float, timeout_func: Callable):
+	# Remove existing timer if it exists
+	if active_timers.has(card_name):
+		active_timers[card_name].queue_free()
+	
+	# Create new timer
+	var timer = Timer.new()
+	timer.name = card_name + "_Timer"
+	timer.wait_time = duration
+	timer.one_shot = true
+	timer.autostart = true
+	timer.timeout.connect(timeout_func)
+	add_child(timer)
+	
+	# Store reference
+	active_timers[card_name] = timer
+			
 
-
-func end_timer_early() -> void:
-	if timer_active:
-		timer_active = false
-		_on_timer_ended()  
 
 func use_judgement(item_data:ItemData):
 	judgement_active = true
-	start_timer(item_data.duration)
+	create_card_timer(
+		"judgement", 
+		item_data.duration, 
+		func(): 
+			end_judgement()
+			active_timers.erase("judgement"))
+
+	apply_judgement_effect()
 	
+func apply_judgement_effect():
 	for node in main_node.get_children(true):
 		if node is CharacterBody3D or Player:
 			for component in node.get_children(true):
@@ -62,8 +69,28 @@ func update_judgement():
 			for component in node.get_children(true):
 				if component is HealthComponent:
 					component.damage_modifier = JUDGEMENT_MODIFIER
-					
+
+func use_high_priestess():
+	priestess_active = true
+	create_card_timer(
+		"high_priestess", 
+		30.0, 
+		func(): 
+			end_high_priestess()
+			active_timers.erase("high_priestess")
+	)
+	for node in main_node.get_children(true):
+		if node is Player:
+			node.speed += 0.75
+			
+func end_high_priestess():
+	for node in main_node.get_children(true):
+		if node is Player:
+			node.speed -= 2.0
+			
+			
 func use_wheel_of_fortune(_item_data: ItemData):
+	var effect_message
 	#randomly increase 1 of 3 stats: +10 damage, +20 health, +2.0 speed
 	var random_num = rng.randi_range(0, 2)
 	var health_component
@@ -74,6 +101,7 @@ func use_wheel_of_fortune(_item_data: ItemData):
 						health_component = component
 	if random_num == 0:
 		PlayerManager.player.attack_damage += 10
+		effect_message = "+10 attack damage"
 						
 	elif random_num == 1:
 		for node in main_node.get_children(true):
@@ -82,30 +110,28 @@ func use_wheel_of_fortune(_item_data: ItemData):
 					if component is HealthComponent:	
 						component.MAX_HEALTH += 20
 						component.health += 20
+		effect_message = "+20 Max Health"
 		health_component.emit_signal("health_changed",health_component.health,health_component.MAX_HEALTH)
 	elif random_num == 2:
+		effect_message = "+2.0 speed"
 		for node in main_node.get_children(true):
 			if node is Player:
 				node.speed += 2.0
 			
 				
-	print("WHeel of fortune grants: " + str(random_num))
-	print("0 = +10 damage, 1 = +20 hp and Max hp, 2 = +2.0 speed") 
+	#print("WHeel of fortune grants: " + str(random_num))
+	#print("0 = +10 damage, 1 = +20 hp and Max hp, 2 = +2.0 speed") 
+	var popup = wof_popup.instantiate()
+	get_tree().root.add_child(popup)
+	popup.show_message(effect_message)
+	await get_tree().create_timer(3.0).timeout
+	popup.queue_free()
 
 func use_death():
 	for node in main_node.get_children(true):
 			if node is Player:
 				for component in node.get_children(true):
 					if component is HealthComponent:	
-						component.health += component.MAX_HEALTH
+						component.health = component.MAX_HEALTH
 						component.emit_signal("health_changed",component.health,component.MAX_HEALTH)
 						
-
-	
-
-
-
-	
-	
-
-	

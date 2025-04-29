@@ -23,7 +23,7 @@ func damage(attack: Attack):
 	if is_dead:
 		return
 		
-	health -= attack.attack_damage
+	#health -= attack.attack_damage
 	
 		
 	#play damag sound

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bvxvtbx4pbfyu"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_ydlck"]
+[ext_resource type="Texture2D" uid="uid://c37u6mhynihxp" path="res://tarotcards/assets/high_priestess.png" id="2_5jqhm"]
+
+[resource]
+script = ExtResource("1_ydlck")
+name = "The High Priestess"
+description = "movement speed increase"
+texture = ExtResource("2_5jqhm")
+cost = 100
+duration = 30.0
+rarity = 0
