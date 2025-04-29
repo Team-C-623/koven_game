@@ -7,9 +7,9 @@ signal hide
 @onready var item_name: Label = %ItemName
 @onready var item_description: Label = %ItemDescription
 @onready var item_cost: Label = %ItemCost
-@onready var hot_bar_inventory: PanelContainer = get_tree().current_scene.get_node("UI/HotBarInventory")
+@onready var hot_bar_inventory: PanelContainer = get_tree().current_scene.get_node("/root/UIManager/HotBarInventory")
 @onready var item_container = %ShopItemsContainer
-@onready var currency_ui: Control = get_tree().current_scene.get_node("/root/Main/UI/CurrencyUI")
+@onready var currency_ui: Control = get_tree().current_scene.get_node("/root/UIManager/CurrencyUI")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +22,7 @@ func _on_close_button_pressed() -> void:
 	hot_bar_inventory.show()
 	currency_ui.show_display()
 	hide.emit()
+	SoundManager.play_buy_sound()
 
 func update_item_description(item: ItemData):
 	item_image.texture = item.texture

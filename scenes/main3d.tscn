@@ -3,35 +3,35 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player/player_3d.tscn" id="2_mjsmv"]
 [ext_resource type="Script" path="res://scripts/rooms/RoomSpawner.gd" id="4_scj2c"]
-[ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://scenes/inventory/inventory.tscn" id="5_nd3my"]
-[ext_resource type="Script" path="res://scripts/inventory/inventory_interface.gd" id="6_lmuoi"]
-[ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="8_wfuic"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_data.gd" id="5_g3j3x"]
+[ext_resource type="Script" path="res://scripts/inventory/slot_data.gd" id="6_uetrn"]
+[ext_resource type="Resource" uid="uid://c3u3hw3n1diij" path="res://tarotcards/resources/death.tres" id="7_g6vc6"]
 [ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
-[ext_resource type="PackedScene" uid="uid://c5gq4mv4mn0wv" path="res://scenes/currency/currencyUI.tscn" id="9_dg3fn"]
-[ext_resource type="PackedScene" uid="uid://bwrk1ig0jmclj" path="res://scenes/inventory/hot_bar_inventory.tscn" id="9_wbp2t"]
 
-[sub_resource type="Environment" id="Environment_uwxbf"]
-ssao_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.5
-volumetric_fog_albedo = Color(0.144063, 0.144063, 0.144063, 1)
-volumetric_fog_emission_energy = 2.0
+[sub_resource type="Resource" id="Resource_bkxfk"]
+script = ExtResource("6_uetrn")
+item_data = ExtResource("7_g6vc6")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_8q48m"]
+script = ExtResource("5_g3j3x")
+slot_datas = Array[ExtResource("6_uetrn")]([SubResource("Resource_bkxfk")])
+
+[sub_resource type="Environment" id="Environment_5tb5c"]
+background_mode = 1
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.5
+fog_depth_end = 24.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_tbt52")
 
 [node name="Player" parent="." instance=ExtResource("2_mjsmv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.513106, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.913828, 0.232817, -0.332739, 0.122754, 0.62266, 0.772804, 0.387105, -0.747055, 0.540425, 0, 0, 5)
-light_energy = 0.4
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_uwxbf")
 
 [node name="SwitchCamButton" type="Button" parent="."]
-visible = false
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 94.0
@@ -52,64 +52,16 @@ script = ExtResource("4_scj2c")
 
 [node name="Enemies" type="Node3D" parent="."]
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="InventoryInterface" type="Control" parent="UI"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("6_lmuoi")
-
-[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("5_nd3my")]
-layout_mode = 0
-offset_left = 142.0
-offset_top = 144.0
-offset_right = 182.0
-offset_bottom = 184.0
-
-[node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("5_nd3my")]
-visible = false
-layout_mode = 0
-offset_left = 1164.0
-offset_top = 335.0
-offset_right = 1204.0
-offset_bottom = 375.0
-
-[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("8_wfuic")]
-visible = false
-modulate = Color(1, 1, 1, 0.470588)
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 100.0
-
-[node name="HotBarInventory" parent="UI" instance=ExtResource("9_wbp2t")]
-offset_left = 746.0
-offset_top = 884.0
-offset_right = 1278.0
-offset_bottom = 1000.0
-
-[node name="CurrencyUI" parent="UI" instance=ExtResource("9_dg3fn")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -153.0
-offset_top = 25.0
-offset_right = -153.0
-offset_bottom = 25.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="Chest" parent="." instance=ExtResource("9_6odt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
+inventory_data = SubResource("Resource_8q48m")
+
+[node name="PlayerSpawner" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5tb5c")
 
 [connection signal="entered" from="." to="." method="_on_entered"]
 [connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
 [connection signal="pressed" from="Generate" to="." method="generate_new"]
-[connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
-[connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
-[connection signal="visibility_changed" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_visibility_changed"]

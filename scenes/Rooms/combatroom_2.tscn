@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dpi1gofwgtr2c"]
+[gd_scene load_steps=22 format=3 uid="uid://dpi1gofwgtr2c"]
 
 [ext_resource type="Script" path="res://scripts/rooms/Room.gd" id="1_i2ney"]
 [ext_resource type="Texture2D" uid="uid://dvf2aabp8o2fj" path="res://assets/environment/lvl1wall1combat2.png" id="2_mbjre"]
@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_v8dsc"]
 [ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="5_s8fok"]
 [ext_resource type="Texture2D" uid="uid://bqubrxmcivi3a" path="res://assets/environment/column.png" id="6_pgh70"]
+[ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://scenes/Rooms/torch.tscn" id="7_a02cc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10yua"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv5cw"]
-shading_mode = 0
 albedo_texture = ExtResource("3_fdmoy")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4tnoq"]
@@ -26,7 +26,6 @@ points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6
 points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yq07t"]
-shading_mode = 0
 albedo_texture = ExtResource("4_v8dsc")
 uv1_scale = Vector3(2, 2, 2)
 
@@ -46,7 +45,6 @@ color_ramp = SubResource("Gradient_twbgh")
 noise = SubResource("FastNoiseLite_hmg5w")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl0t8"]
-shading_mode = 0
 albedo_texture = SubResource("NoiseTexture2D_hl4b5")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a4nd0"]
@@ -62,6 +60,7 @@ script = ExtResource("1_i2ney")
 
 [node name="WallDoor1" type="CSGPolygon3D" parent="."]
 transform = Transform3D(-0.01, 1.50996e-09, 0, -1.50996e-09, -0.01, 0, 0, -2.64698e-23, 0.01, 0, 3.6, 6.4)
+visibility_range_end = 20.0
 use_collision = true
 polygon = PackedVector2Array(-640, -360, -640, 360, -134, 360, -138, 147.6, -138, 38.6, -114, 4.89999, -89, -16.1, -89, -16.8, -45, -38, -10, -45.4, 26.6, -44, 45.6, -40, 63.4, -33, 114.4, 1, 115, 1, 141, 33, 143, 274, 143, 360, 640, 360, 640, -360)
 depth = 20.0
@@ -69,11 +68,14 @@ material = SubResource("StandardMaterial3D_10yua")
 
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor1"]
 transform = Transform3D(-100, -1.50996e-05, 0, 1.50996e-05, -100, 0, 0, 0, 100, 0, 0, -20.1)
+visibility_range_end = 20.0
 flip_h = true
+shaded = true
 texture = ExtResource("2_mbjre")
 
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 3.6, 0)
+visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_4tnoq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall2"]
@@ -83,6 +85,7 @@ shape = SubResource("ConvexPolygonShape3D_rrkvq")
 
 [node name="WallDoor3" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.01, 8.74228e-10, -8.74228e-10, 8.74228e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
+visibility_range_end = 20.0
 use_collision = true
 polygon = PackedVector2Array(-640, -360, -640, 360, -134, 360, -138, 147.6, -138, 38.6, -114, 4.89999, -89, -16.1, -89, -16.8, -45, -38, -10, -45.4, 26.6, -44, 45.6, -40, 63.4, -33, 114.4, 1, 115, 1, 141, 33, 143, 274, 143, 360, 640, 360, 640, -360)
 depth = 20.0
@@ -90,11 +93,14 @@ material = SubResource("StandardMaterial3D_10yua")
 
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor3"]
 transform = Transform3D(-100, -1.50996e-05, 0, 1.50996e-05, -100, 0, 0, 0, 100, 0, 0, -20.1)
+visibility_range_end = 20.0
 flip_h = true
+shaded = true
 texture = ExtResource("2_mbjre")
 
 [node name="Wall4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.35, 3.6, 0)
+visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_4tnoq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall4"]
@@ -103,6 +109,7 @@ mesh = SubResource("PlaneMesh_4tnoq")
 shape = SubResource("ConvexPolygonShape3D_6fq2f")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
@@ -111,6 +118,7 @@ shape = SubResource("WorldBoundaryShape3D_4ups5")
 
 [node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
+visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_a4nd0")
 
 [node name="U" type="Marker3D" parent="."]
@@ -123,22 +131,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
 
 [node name="Column" type="CSGPolygon3D" parent="."]
 transform = Transform3D(-0.00761986, 6.22863e-10, 2.44249e-15, -6.6615e-10, -0.00712472, 0, 1.44329e-15, -6.61744e-23, 0.01, -2.33, 1.903, 6.2)
+visibility_range_end = 20.0
 polygon = PackedVector2Array(-111.856, -247.363, -103.068, -225.971, -85, -195.2, -71, -183.4, -48.6977, -179.697, -41.7074, -178.323, -37.0583, -162.506, -41.3262, -148.168, -59.1464, -135.011, -72.2366, -118.72, -75.9413, -101.81, -75.0933, -92.474, -68.9048, -84.3594, -62.3095, -79.3156, -51.1, -78, -55, 107, -55, 170.7, -57.7, 182.1, -81.8234, 183.265, -90.1138, 225.047, -58.4674, 268.082, 112.655, 268.054, 114.069, 230.792, 64.8, 176.6, 52, -73.8, 77.211, -82.3567, 87.9268, -107.507, 83, -128.5, 68.9624, -143.402, 50.3727, -150.092, 49.4869, -162.589, 52.934, -174.717, 101.734, -194.946, 130.445, -238.529, 132.791, -249.242, 129.329, -255.747)
 depth = 30.0
 material = SubResource("StandardMaterial3D_37nlm")
 
 [node name="Sprite3D" type="Sprite3D" parent="Column"]
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -30.1)
+visibility_range_end = 20.0
 flip_h = true
+shaded = true
 texture = ExtResource("6_pgh70")
 
 [node name="Column2" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.00761986, 6.22863e-10, -8.74228e-10, 6.66149e-10, -0.00712472, 0, -6.66149e-10, -5.44524e-17, -0.01, 2.33, 1.903, 5.9)
+visibility_range_end = 20.0
 polygon = PackedVector2Array(-111.856, -247.363, -103.068, -225.971, -85, -195.2, -71, -183.4, -48.6977, -179.697, -41.7074, -178.323, -37.0583, -162.506, -41.3262, -148.168, -59.1464, -135.011, -72.2366, -118.72, -75.9413, -101.81, -75.0933, -92.474, -68.9048, -84.3594, -62.3095, -79.3156, -51.1, -78, -55, 107, -55, 170.7, -57.7, 182.1, -81.8234, 183.265, -90.1138, 225.047, -58.4674, 268.082, 112.655, 268.054, 114.069, 230.792, 64.8, 176.6, 52, -73.8, 77.211, -82.3567, 87.9268, -107.507, 83, -128.5, 68.9624, -143.402, 50.3727, -150.092, 49.4869, -162.589, 52.934, -174.717, 101.734, -194.946, 130.445, -238.529, 132.791, -249.242, 129.329, -255.747)
 depth = 30.0
 material = SubResource("StandardMaterial3D_37nlm")
 
 [node name="Sprite3D" type="Sprite3D" parent="Column2"]
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, 0.1)
+visibility_range_end = 20.0
 flip_h = true
+shaded = true
 texture = ExtResource("6_pgh70")
+
+[node name="Column3" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0.00761986, 6.22863e-10, -8.74228e-10, 6.66149e-10, -0.00712472, 0, -6.66149e-10, -5.44524e-17, -0.01, 2.33, 1.903, -6.2)
+visibility_range_end = 20.0
+polygon = PackedVector2Array(-111.856, -247.363, -103.068, -225.971, -85, -195.2, -71, -183.4, -48.6977, -179.697, -41.7074, -178.323, -37.0583, -162.506, -41.3262, -148.168, -59.1464, -135.011, -72.2366, -118.72, -75.9413, -101.81, -75.0933, -92.474, -68.9048, -84.3594, -62.3095, -79.3156, -51.1, -78, -55, 107, -55, 170.7, -57.7, 182.1, -81.8234, 183.265, -90.1138, 225.047, -58.4674, 268.082, 112.655, 268.054, 114.069, 230.792, 64.8, 176.6, 52, -73.8, 77.211, -82.3567, 87.9268, -107.507, 83, -128.5, 68.9624, -143.402, 50.3727, -150.092, 49.4869, -162.589, 52.934, -174.717, 101.734, -194.946, 130.445, -238.529, 132.791, -249.242, 129.329, -255.747)
+depth = 30.0
+material = SubResource("StandardMaterial3D_37nlm")
+
+[node name="Sprite3D" type="Sprite3D" parent="Column3"]
+transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -30.1)
+visibility_range_end = 20.0
+flip_h = true
+shaded = true
+texture = ExtResource("6_pgh70")
+
+[node name="Column4" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.00761986, 6.22863e-10, 0, -6.66149e-10, -0.00712472, 0, 0, 0, 0.01, -2.33, 1.903, -5.9)
+visibility_range_end = 20.0
+polygon = PackedVector2Array(-111.856, -247.363, -103.068, -225.971, -85, -195.2, -71, -183.4, -48.6977, -179.697, -41.7074, -178.323, -37.0583, -162.506, -41.3262, -148.168, -59.1464, -135.011, -72.2366, -118.72, -75.9413, -101.81, -75.0933, -92.474, -68.9048, -84.3594, -62.3095, -79.3156, -51.1, -78, -55, 107, -55, 170.7, -57.7, 182.1, -81.8234, 183.265, -90.1138, 225.047, -58.4674, 268.082, 112.655, 268.054, 114.069, 230.792, 64.8, 176.6, 52, -73.8, 77.211, -82.3567, 87.9268, -107.507, 83, -128.5, 68.9624, -143.402, 50.3727, -150.092, 49.4869, -162.589, 52.934, -174.717, 101.734, -194.946, 130.445, -238.529, 132.791, -249.242, 129.329, -255.747)
+depth = 30.0
+material = SubResource("StandardMaterial3D_37nlm")
+
+[node name="Sprite3D" type="Sprite3D" parent="Column4"]
+transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, 0.1)
+visibility_range_end = 20.0
+flip_h = true
+shaded = true
+texture = ExtResource("6_pgh70")
+
+[node name="Torch7" parent="." instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, 2.39273, 3.96759, -5.87716)
+
+[node name="Torch8" parent="." instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.11529e-08, -1.47349e-08, -0.999998, -0.337095, 0.941469, 0, 0.941469, 0.337095, -4.37113e-08, -2.35518, 3.96759, -5.87715)
+
+[node name="Torch9" parent="." instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, -2.35517, 3.96759, 5.85616)
+
+[node name="Torch10" parent="." instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, 2.36979, 3.96759, 5.85616)

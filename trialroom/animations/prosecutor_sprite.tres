@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://darmt5juwxmyi"]
+
+[ext_resource type="Texture2D" uid="uid://b2ewd30q06ogs" path="res://trialroom/art/prosecutor.png" id="1_mblq4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mblq4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

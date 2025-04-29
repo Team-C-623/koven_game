@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://b3rxr22dcuo2p"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "enter_catacombs"
+id = 2762024869
+guid = "{6BD79D35-0C9A-4866-B47A-826840CCDADD}"
+dummy = true

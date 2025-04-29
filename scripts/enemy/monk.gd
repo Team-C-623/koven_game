@@ -7,17 +7,22 @@ class_name Monk
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 5.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
+@onready var health_component: HealthComponent = $HealthComponent
 
 @onready var sprite: Sprite3D = $Sprite3D
-#@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
+@onready var damage_timer: Timer = $DamageTimer
 
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
+var current_hitbox: HitboxComponent = null
 
 func _ready():
-	pass
+	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
+	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
+	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
+
 
 func _physics_process(delta: float) -> void:
 	# Debugging
@@ -34,23 +39,29 @@ func _physics_process(delta: float) -> void:
 	# Always face the player
 	look_at(player_3d.position)
 	
-#func _on_area_3d_body_entered(body: Node3D) -> void:
-	#if body.is_in_group("Player Groups"):
-		##print("Player entered attack range")
-		#health_timer.start()
-#
-#func _on_area_3d_body_exited(body: Node3D) -> void:
-	#if body.is_in_group("Player Groups"):
-		##print("Player exited attack range")
-		#health_timer.stop()
-		#
-#func _on_health_timer_timeout() -> void:
-	#progress.value -= 10
+	if health_component.health <= 0:
+		SoundManager.play_death_sound()
 	
-func _on_hitbox_component_area_entered(area: Area3D) -> void:
+func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
-		print("Enemy hitbox entered")
-		var hitbox : HitboxComponent = area
+		current_hitbox = area
+		damage_timer.start()
+
+func _on_hitbox_area_exited(area: Area3D) -> void:
+	if area == current_hitbox:
+		current_hitbox = null
+		damage_timer.stop()
+
+func _on_DamageTimer_timeout():
+	if current_hitbox:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
-		hitbox.damage(attack)
+		current_hitbox.damage(attack)
+	
+#func _on_hitbox_component_area_entered(area: Area3D) -> void:
+	#if area is HitboxComponent:
+		#print("Enemy hitbox entered")
+		#var hitbox : HitboxComponent = area
+		#var attack = Attack.new()
+		#attack.attack_damage = attack_damage
+		#hitbox.damage(attack)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt57wyksv4617"]
+[gd_scene load_steps=5 format=3 uid="uid://dt57wyksv4617"]
 
-[ext_resource type="Texture2D" uid="uid://b53bw6ojhso36" path="res://trialroom/art/background.png" id="1_5prf3"]
 [ext_resource type="Script" path="res://trialroom/trialroom_1.gd" id="1_8w3ly"]
+[ext_resource type="Texture2D" uid="uid://ck0iraq2e8jy4" path="res://assets/environment/trial_background.PNG" id="2_3tdrg"]
 [ext_resource type="PackedScene" uid="uid://2pdk04qgvck1" path="res://trialroom/character.tscn" id="2_i1rtu"]
+[ext_resource type="Texture2D" uid="uid://b57qpb0yikn7r" path="res://trialroom/art/jury.png" id="3_kghxo"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8w3ly")
@@ -16,7 +17,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5prf3")
+texture = ExtResource("2_3tdrg")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -1080.0
+offset_right = 2523.0
+offset_bottom = 1154.0
+grow_vertical = 0
+scale = Vector2(0.473617, 0.485567)
+texture = ExtResource("3_kghxo")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -34,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Character" parent="CanvasLayer2/Control" instance=ExtResource("2_i1rtu")]
-position = Vector2(0, -300)
+position = Vector2(40, -312)
 scale = Vector2(0.4, 0.4)
 
 [connection signal="change_sprite" from="." to="." method="_on_change_sprite"]

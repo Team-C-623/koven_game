@@ -6,10 +6,9 @@ class_name Player
 var attack_damage := 10.0
 #camera settings
 const SENS = 0.4
-const SPEED = 3.0 #3.0
-
+@export var speed = 3.0 #3.0
 @export var inventory_data: InventoryData
-@onready var inventory_interface: Control = $"../UI/InventoryInterface"
+@onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
 
 @onready var interact_ray: RayCast3D = $InteractRay
@@ -35,6 +34,7 @@ var instance
 @onready var camera = $head/PlayerCam
 @onready var wand_anim = $head/PlayerCam/Wand/AnimationPlayer
 @onready var wand_tip = $head/PlayerCam/Wand/RayCast3D
+@onready var journal_ui = get_node("/root/UIManager/Journal_UI")
 var was_rising := false  # Tracks previous frame's motion direction
 var footstep_cooldown := 0.0  # Prevents double-triggering
 
@@ -68,11 +68,11 @@ func _physics_process(_delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction = (cam_mount.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 		
 	# Head bob
 	t_bob += _delta * velocity.length() * float(is_on_floor())
@@ -96,7 +96,7 @@ func _physics_process(_delta: float) -> void:
 		
 	
 	#Shooting 
-	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !JournalMenu.visible:
+	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !journal_ui.visible:
 		#wand.shoot()
 		if !wand_anim.is_playing():
 			# Animation for shooting
@@ -104,7 +104,9 @@ func _physics_process(_delta: float) -> void:
 			instance = flame.instantiate()
 			instance.position = wand_tip.global_position
 			instance.transform.basis = wand_tip.global_transform.basis
+			instance.attack_damage = attack_damage
 			get_parent().add_child(instance)
+			SoundManager.play_wand_sound()
 
 	move_and_slide()
 

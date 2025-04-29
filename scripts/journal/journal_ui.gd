@@ -3,14 +3,15 @@ class_name JournalUI
 @onready var journal: Journal = preload("res://resources/journal/journal.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @onready var entry_display = $EntryDisplay
-@onready var inventory_interface: Control = get_tree().current_scene.get_node("UI/InventoryInterface")
+@onready var inventory_interface: Control = get_tree().current_scene.get_node("/root/UIManager/InventoryInterface")
 
 var is_open = false
 
-static var instance: JournalUI
+#static var instance: JournalUI
 
 func _init():
-	instance = self  
+	#instance = self  
+	pass
 
 func _ready():
 	update_slots()

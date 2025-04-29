@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7jumfechixnq"]
+
+[ext_resource type="Texture2D" uid="uid://b1kgm5cir22qn" path="res://assets/environment/torch.png" id="1_2u6tx"]
+
+[node name="Torch" type="Node3D"]
+transform = Transform3D(0.941418, 0.337243, 0, -0.337243, 0.941418, 0, 0, 0, 1, 0.0235583, 0.131753, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -0.00167465)
+sorting_offset = 1.0
+visibility_range_end = 20.0
+shaded = true
+texture = ExtResource("1_2u6tx")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.0540788, 0, 0.998535, 0, 0.999998, 0, -0.998535, 0, 0.0540788, 0.111269, 0.0227165, 0.126378)
+sorting_offset = 1.0
+visibility_range_end = 20.0
+shaded = true
+texture = ExtResource("1_2u6tx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 1.34135e-20, 5.80355e-34, -1.34135e-20, 1, -2.2456e-15, -6.10476e-34, 2.2456e-15, 1, 0.150897, 0.387357, 2.38419e-07)
+light_color = Color(0.889797, 0.514964, 0.302267, 1)
+light_energy = 0.5
+shadow_enabled = true
+shadow_blur = 2.0
+distance_fade_enabled = true
+distance_fade_begin = 15.0
+distance_fade_shadow = 24.0
+distance_fade_length = 5.0

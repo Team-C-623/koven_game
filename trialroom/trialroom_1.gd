@@ -2,16 +2,14 @@ extends Node2D
 
 @onready var dialogue_balloon = preload("res://dialogue/balloon.tscn").instantiate()
 @onready var dialogue_manager = DialogueManager
-@onready var character_sprite: Sprite2D = $CanvasLayer2/Control/Character/Sprite2D
+@onready var character_sprite: AnimatedSprite2D = $CanvasLayer2/Control/Character/AnimatedSprite2D
 
 signal change_sprite(speaker_name: String)
 
 func _ready() -> void:
 	add_child(dialogue_balloon)
 	dialogue_balloon.visible = false
-	
 	start_dialogue()
-
 func start_dialogue():
 	dialogue_balloon.visible = true
 	DialogueManager.mutated.connect(_on_mutation)
@@ -23,24 +21,27 @@ func _on_mutation(mutation: Dictionary) -> void:
 		emit_signal("change_sprite", speaker)
 
 func update_character_sprite(speaker: String) -> void:
-	var sprite_path = ""
+	var frames_path = ""
+	var animation_to_play = "default"
 	
 	match speaker:
 		"Judge Quétif":
-			sprite_path = "res://trialroom/art/judge.png"
+			frames_path = "res://trialroom/animations/prosecutor_sprite.tres"
+			animation_to_play = "default"
 		"Merga":
-			sprite_path = "res://trialroom/art/merga.png"
+			frames_path = "res://trialroom/animations/merga_sprite.tres"
+			animation_to_play = "talk"
 		"Player":
-			sprite_path = "res://trialroom/art/mainwitch.png"
-		"Soulmother":
-			sprite_path = "res://trialroom/art/soulmother.png"
-		_:
-			sprite_path = "res://trialroom/art/mainwitch.png"
+			frames_path = "res://trialroom/animations/mainwitch_sprite.tres"
+			animation_to_play = "talk"
+		#"Soulmother":
+			#sprite_path = "res://trialroom/art/soulmother.png"
 	
-	if sprite_path != "":
-		var new_texture = load(sprite_path)
-		if new_texture:
-			character_sprite.texture = new_texture
+	if frames_path != "":
+		var new_frames = load(frames_path)
+		if new_frames:
+			character_sprite.frames = new_frames
+			character_sprite.play(animation_to_play)
 
 
 func _on_change_sprite(speaker_name: String):

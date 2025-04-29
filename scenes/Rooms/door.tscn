@@ -1,30 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://m0eh8erv8dxc"]
+[gd_scene load_steps=3 format=3 uid="uid://m0eh8erv8dxc"]
 
-[ext_resource type="Texture2D" uid="uid://cgmtbit43cdy4" path="res://assets/environment/door2.png" id="1_l3ajj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11nru"]
-cull_mode = 2
-shading_mode = 0
-albedo_color = Color(0.497474, 0.497474, 0.497474, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_dgqh6"]
-material = SubResource("StandardMaterial3D_11nru")
-size = Vector2(2, 3)
+[ext_resource type="Texture2D" uid="uid://1s81n4u8hpol" path="res://assets/environment/new_door.png" id="1_pgwgu"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sf2q6"]
 points = PackedVector3Array(-1, -1.5, 0, 1, -1.5, 0, -1, 1.5, 0, 1, 1.5, 0)
 
 [node name="Door" type="StaticBody3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-visible = false
-mesh = SubResource("QuadMesh_dgqh6")
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("ConvexPolygonShape3D_sf2q6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-0.469, 0, -4.10013e-08, 0, 0.469, 0, 4.10013e-08, 0, -0.469, 0, 1.688, 0)
-texture = ExtResource("1_l3ajj")
+transform = Transform3D(-0.469, 0, -4.10013e-08, 0, 0.469, 0, 4.10013e-08, 0, -0.469, 0, 1.55, 0)
+visibility_range_end = 20.0
+shaded = true
+texture = ExtResource("1_pgwgu")

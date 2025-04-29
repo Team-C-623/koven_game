@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://caw567kgpm0n2"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_m3xg8"]
+[ext_resource type="Texture2D" uid="uid://1lvd0pix4pg8" path="res://icon.svg" id="2_ig6l3"]
+
+[resource]
+script = ExtResource("1_m3xg8")
+name = "SPECIAL"
+description = "special card"
+texture = ExtResource("2_ig6l3")
+cost = 200
+duration = 0.0
+rarity = 2
