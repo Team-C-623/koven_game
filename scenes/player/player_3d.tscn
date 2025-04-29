@@ -68,7 +68,7 @@ transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941776, 0, 0.0941776, 1.99778, 
 current = true
 
 [node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
-transform = Transform3D(0.498808, 0.000701803, 0.0344932, 0.000149481, 0.499848, -0.0123316, -0.0345001, 0.0123125, 0.498656, 0.139205, -0.0643818, -0.194059)
+transform = Transform3D(0.499695, 0.000274089, 0.0174476, 0, 0.499938, -0.00785365, -0.0174497, 0.00784888, 0.499633, 0.139205, -0.0643818, -0.194059)
 
 [node name="InteractRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2.5)
