@@ -54,9 +54,10 @@ func apply_judgement_effect():
 			for component in node.get_children(true):
 				if component is HealthComponent:
 					component.damage_modifier = JUDGEMENT_MODIFIER
-					
+				
 func end_judgement():
 	judgement_active = false
+	active_timers.erase("judgement")
 	for node in main_node.get_children(true):
 		if node is CharacterBody3D or Player:
 			for component in node.get_children(true):
@@ -87,7 +88,10 @@ func end_high_priestess():
 	for node in main_node.get_children(true):
 		if node is Player:
 			node.speed -= 2.0
-
+			
+func end_duration_cards():
+	for timer in active_timers:
+		active_timers.erase(timer)
 func use_the_hanged_man():
 	Currency.modifier = 2.0
 	create_card_timer(

@@ -10,9 +10,11 @@ const SENS = 0.4
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
+@onready var rtpc_node: AkEvent3D = $rtpc
+
 
 @onready var interact_ray: RayCast3D = $InteractRay
-
+@export var rtpc:WwiseRTPC
 var health: int = 100
 var gravity: float = 9.8
 
@@ -25,6 +27,7 @@ var t_bob = 0.0
 #FOV variable
 const BASE_FOV = 90.0
 const FOV_CHANGE = 1.5
+@onready var health_component: HealthComponent = $HealthComponent
 
 #Flame
 var flame = load("res://weapons/Flame.tscn")
@@ -42,6 +45,7 @@ func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	inventory_data = InventoryData.new()
+	#SoundManager.play_music()
 
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -62,6 +66,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		interact()
 
 func _physics_process(_delta: float) -> void:
+	rtpc.set_value(rtpc_node,health_component.health)
+	rtpc_node.post_event()
+	print(rtpc)
 	if !is_on_floor():
 		velocity.y -= gravity * _delta
 	# Get the input direction and handle the movement/deceleration.
