@@ -12,7 +12,7 @@ const Slot = preload("res://scenes/inventory/slot.tscn")
 
 func _ready():
 	# Configure frame texture and scaling
-	background_frame.texture = load("res://UI/INVENTORYFULLSPREADEXPANDED.png")
+	background_frame.texture = load("res://UI/inventory_new.png")
 	background_frame.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	background_frame.stretch_mode = TextureRect.STRETCH_SCALE
 	background_frame.z_index = -1 # Draw behind slots
