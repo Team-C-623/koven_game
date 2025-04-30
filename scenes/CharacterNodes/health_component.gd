@@ -14,6 +14,8 @@ signal died
 
 func _ready():
 	health = MAX_HEALTH
+	
+
 
 func damage(attack: Attack):
 	health -= (attack.attack_damage * damage_modifier)
@@ -36,6 +38,10 @@ func damage(attack: Attack):
 		emit_signal("died")
 		SoundManager.play_death_sound()
 		if get_parent().is_in_group("Enemies Group"):
+			if get_parent() is Monk:
+				Currency.add_currency(5)
+			elif get_parent() is Nun:
+				Currency.add_currency(10)
 			get_parent().call_deferred("queue_free")
 		
 	

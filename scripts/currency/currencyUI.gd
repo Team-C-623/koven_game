@@ -16,7 +16,7 @@ func _on_currency_changed(new_amount:int) -> void:
 	if new_amount > int(label.text):
 		label.modulate = Color.GREEN
 	else:
-		label.modulate = Color.RED
+		label.modulate = Color.GREEN
 		
 	tween.tween_property(label, "modulate", Color.WHITE,0.5)
 		

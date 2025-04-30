@@ -9,7 +9,7 @@ var wheel_of_fortune_active: bool = false
 var rng = RandomNumberGenerator.new()
 @onready var main_node = get_node("/root/Main")
 var active_timers := {}
-
+var hanged_man: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rng.randomize()  # Important for different results each run
@@ -17,6 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if judgement_active:
 		update_judgement()
+	
 		
 func create_card_timer(card_name: String, duration: float, timeout_func: Callable):
 	# Remove existing timer if it exists
@@ -87,8 +88,21 @@ func end_high_priestess():
 	for node in main_node.get_children(true):
 		if node is Player:
 			node.speed -= 2.0
-			
-			
+
+func use_the_hanged_man():
+	Currency.modifier = 2.0
+	create_card_timer(
+		"the_hanged_man",
+		30.0,
+		func():
+			end_the_hanged_man()
+			active_timers.erase("the_hanged_man")
+	)
+	
+
+func end_the_hanged_man():
+	Currency.modifier = 1.0
+	pass
 func use_wheel_of_fortune(_item_data: ItemData):
 	var effect_message
 	#randomly increase 1 of 3 stats: +10 damage, +20 health, +2.0 speed
