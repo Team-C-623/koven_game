@@ -1,7 +1,7 @@
 extends Node3D
 
-const ENEMY = preload("res://scenes/enemy/monk.tscn")
-const ENEMY2 = preload("res://scenes/enemy/nun.tscn")
+const ENEMY = preload("res://enemy/scenes/monk.tscn")
+const ENEMY2 = preload("res://enemy/scenes/nun.tscn")
 
 @onready var spawn_node = get_node("/root/Main/Enemies")
 var player: CharacterBody3D

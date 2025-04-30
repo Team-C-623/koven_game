@@ -1,6 +1,6 @@
 class_name ShopUI extends Control
 
-const SHOP_ITEM = preload("res://scenes/UI/shop_item_button.tscn")
+const SHOP_ITEM = preload("res://UI/scenes/shop_item_button.tscn")
 
 @export var data: ShopData
 

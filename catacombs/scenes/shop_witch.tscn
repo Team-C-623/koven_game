@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://1is68ufjstug"]
 
 [ext_resource type="Script" path="res://catacombs/scripts/shop_witch.gd" id="1_1stjm"]
-[ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://scenes/UI/interact_popup.tscn" id="2_wlx2c"]
+[ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://UI/scenes/interact_popup.tscn" id="2_wlx2c"]
 [ext_resource type="Texture2D" uid="uid://bcjrikl6m3q3n" path="res://assets/characters/shop_witch_final.png" id="3_hc3fb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_87k82"]

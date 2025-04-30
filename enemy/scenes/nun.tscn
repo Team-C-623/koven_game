@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://m0j8m41dr240"]
 
-[ext_resource type="Script" path="res://scripts/enemy/nun.gd" id="1_44yvt"]
+[ext_resource type="Script" path="res://enemy/scripts/nun.gd" id="1_44yvt"]
 [ext_resource type="Texture2D" uid="uid://ckewadguma4sp" path="res://assets/characters/final nun level 1 (sprite 1).png" id="2_nw232"]
-[ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_72md4"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_wanderer.gd" id="4_w5gn1"]
+[ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_72md4"]
+[ext_resource type="Script" path="res://enemy/scripts/enemy_wanderer.gd" id="4_w5gn1"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="5_hb7i3"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="6_6nqag"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_shoot.gd" id="6_bmqaf"]
+[ext_resource type="Script" path="res://enemy/scripts/enemy_shoot.gd" id="6_bmqaf"]
 [ext_resource type="Texture2D" uid="uid://dlgqa6pdjt557" path="res://assets/characters/Final nun level 1 (sprite 2).png" id="8_orfb7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqxgs"]

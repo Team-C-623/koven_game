@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvf2aabp8o2fj" path="res://assets/environment/lvl1wall1combat2.png" id="2_mbjre"]
 [ext_resource type="Texture2D" uid="uid://nfwlumvbq5r3" path="res://assets/environment/lvl1wall2combat2.png" id="3_fdmoy"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_v8dsc"]
-[ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="5_s8fok"]
+[ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://enemy/scenes/enemy_spawner.tscn" id="5_s8fok"]
 [ext_resource type="Texture2D" uid="uid://bqubrxmcivi3a" path="res://assets/environment/column.png" id="6_pgh70"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="7_a02cc"]
 

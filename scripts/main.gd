@@ -1,7 +1,7 @@
 extends Node3D
 
 var cata_scene = preload("res://catacombs/scenes/catacombs.tscn")
-const PickUp = preload("res://scenes/interactable/pick_up.tscn")
+const PickUp = preload("res://interactable/scenes/pick_up.tscn")
 
 signal entered
 
