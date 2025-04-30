@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://duqt05t3ju1qh"]
 
-[ext_resource type="Script" path="res://scripts/Shop/shop_item_ui.gd" id="1_n5fh6"]
+[ext_resource type="Script" path="res://shop/scripts/shop_item_ui.gd" id="1_n5fh6"]
 [ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="2_gbv2r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1obhm"]

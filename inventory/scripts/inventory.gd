@@ -1,6 +1,6 @@
 extends PanelContainer
 
-const Slot = preload("res://scenes/inventory/slot.tscn")
+const Slot = preload("res://inventory/scenes/slot.tscn")
 
 @onready var background_frame: TextureRect = $Background/BackgroundFrame
 #@onready var margin_container: MarginContainer = $Background/BackgroundFrame/MarginContainer

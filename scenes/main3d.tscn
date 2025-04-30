@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tbt52"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://scenes/player/player_3d.tscn" id="2_mjsmv"]
 [ext_resource type="Script" path="res://rooms/scripts/RoomSpawner.gd" id="4_scj2c"]
-[ext_resource type="Script" path="res://scripts/inventory/inventory_data.gd" id="5_g3j3x"]
-[ext_resource type="Script" path="res://scripts/inventory/slot_data.gd" id="6_uetrn"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_data.gd" id="5_g3j3x"]
+[ext_resource type="Script" path="res://inventory/scripts/slot_data.gd" id="6_uetrn"]
 [ext_resource type="Resource" uid="uid://c3u3hw3n1diij" path="res://tarotcards/resources/death.tres" id="7_g6vc6"]
 [ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://scenes/interactable/chest.tscn" id="9_6odt0"]
 

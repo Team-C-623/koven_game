@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxad4ju1nyf7r"]
 
 [ext_resource type="Script" path="res://scripts/interactable/chest.gd" id="1_tkpi1"]
-[ext_resource type="Script" path="res://scripts/inventory/inventory_data.gd" id="2_0itwl"]
-[ext_resource type="Script" path="res://scripts/inventory/slot_data.gd" id="3_xkyap"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_data.gd" id="2_0itwl"]
+[ext_resource type="Script" path="res://inventory/scripts/slot_data.gd" id="3_xkyap"]
 
 [sub_resource type="Resource" id="Resource_qo3r8"]
 script = ExtResource("2_0itwl")

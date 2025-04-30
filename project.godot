@@ -25,7 +25,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TarotManager="*res://tarotcards/scripts/tarot_manager.gd"
 UIManager="*res://UI/ui_manager.tscn"
 Global="*res://scripts/Global.gd"
-Currency="*res://scripts/currency/currency.gd"
+Currency="*res://currency/scripts/currency.gd"
 
 [dialogue_manager]
 

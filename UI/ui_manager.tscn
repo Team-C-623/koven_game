@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://clrif35eha08c"]
 
-[ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://scenes/inventory/slot.tscn" id="1_5pyms"]
-[ext_resource type="PackedScene" uid="uid://bwrk1ig0jmclj" path="res://scenes/inventory/hot_bar_inventory.tscn" id="1_fuhav"]
+[ext_resource type="PackedScene" uid="uid://ew62ipwqt03x" path="res://inventory/scenes/slot.tscn" id="1_5pyms"]
+[ext_resource type="PackedScene" uid="uid://bwrk1ig0jmclj" path="res://inventory/scenes/hot_bar_inventory.tscn" id="1_fuhav"]
 [ext_resource type="Script" path="res://UI/ui_manager.gd" id="1_jsqb4"]
-[ext_resource type="Script" path="res://scripts/inventory/inventory_interface.gd" id="2_0pew0"]
-[ext_resource type="PackedScene" uid="uid://c5gq4mv4mn0wv" path="res://scenes/currency/currencyUI.tscn" id="2_cgco0"]
-[ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://scenes/inventory/inventory.tscn" id="3_i57hc"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_interface.gd" id="2_0pew0"]
+[ext_resource type="PackedScene" uid="uid://c5gq4mv4mn0wv" path="res://currency/scenes/currencyUI.tscn" id="2_cgco0"]
+[ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://inventory/scenes/inventory.tscn" id="3_i57hc"]
 [ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://journal/scenes/JournalUI.tscn" id="4_l8js5"]
 
 [sub_resource type="Theme" id="Theme_k7io1"]

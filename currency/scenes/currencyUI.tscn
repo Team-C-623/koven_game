@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5gq4mv4mn0wv"]
 
-[ext_resource type="Script" path="res://scripts/currency/CurrencyUI.gd" id="1_s7gus"]
+[ext_resource type="Script" path="res://currency/scripts/currencyUI.gd" id="1_y7oyw"]
 [ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="2_4flkh"]
 
 [node name="CurrencyUI" type="Control"]
@@ -10,7 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_s7gus")
+script = ExtResource("1_y7oyw")
 
 [node name="label" type="Label" parent="."]
 layout_mode = 2
