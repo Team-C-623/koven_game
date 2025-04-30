@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://pmivhbt6ityu"]
+
+[ext_resource type="Script" path="res://interactable/scripts/pick_up.gd" id="1_ppmoa"]
+[ext_resource type="Texture2D" uid="uid://ccrx3igv00040" path="res://tarotcards/assets/judgement.png" id="2_i76yy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rah7u"]
+radius = 0.490343
+
+[node name="PickUp" type="RigidBody3D"]
+collision_layer = 0
+lock_rotation = true
+script = ExtResource("1_ppmoa")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0159436, 0, 0, 0, 0.0159436, 0, 0, 0, 0.0159436, 0, 0, 0)
+texture_filter = 1
+texture = ExtResource("2_i76yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.360779, 0, 0, 0)
+shape = SubResource("SphereShape3D_rah7u")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.754719, 0, 0, 0, 0.754719, 0, 0, 0, 0.341642, 0, 0, 0)
+shape = SubResource("SphereShape3D_rah7u")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,219 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnalom3wua8rb"]
+
+[ext_resource type="Script" path="res://shop/scripts/Shop.gd" id="1_ncako"]
+[ext_resource type="Script" path="res://shop/scripts/shop_ui.gd" id="2_p2ccr"]
+[ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://shop/resources/testshop.tres" id="3_7qxhm"]
+[ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://UI/scenes/shop_item_button.tscn" id="4_67pe5"]
+[ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="5_lbyll"]
+[ext_resource type="Texture2D" uid="uid://ccasbsu2ftbu" path="res://assets/shop_newest.png" id="7_3xiko"]
+[ext_resource type="Script" path="res://currency/scripts/label.gd" id="6_2wvjf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_deyfl"]
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_ncako")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 1760.0
+offset_bottom = 990.0
+color = Color(0.340339, 0.340339, 0.340339, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 90.0
+offset_right = -160.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseButton" type="Button" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1438.0
+offset_top = 795.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Close"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 150.0
+offset_right = 948.0
+offset_bottom = 770.0
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ShopItemsContainer" type="VBoxContainer" parent="Control/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+script = ExtResource("2_p2ccr")
+data = ExtResource("3_7qxhm")
+
+[node name="ShopItemButton" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_67pe5")]
+layout_mode = 2
+
+[node name="ShopItemButton2" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_67pe5")]
+layout_mode = 2
+
+[node name="ShopItemButton3" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_67pe5")]
+layout_mode = 2
+
+[node name="ShopItemButton4" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_67pe5")]
+layout_mode = 2
+
+[node name="ShopItemButton5" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_67pe5")]
+layout_mode = 2
+
+[node name="DetailsPanel" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -630.0
+offset_top = 150.0
+offset_right = -30.0
+offset_bottom = 770.0
+grow_horizontal = 0
+
+[node name="Control" type="Control" parent="Control/DetailsPanel"]
+layout_mode = 2
+
+[node name="ItemImage" type="TextureRect" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 243.0
+offset_bottom = 352.0
+scale = Vector2(0.8, 0.8)
+texture = SubResource("PlaceholderTexture2D_deyfl")
+expand_mode = 1
+
+[node name="ItemName" type="Label" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 297.0
+offset_right = 580.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 40
+text = "Select an Item"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ItemDescription" type="Label" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 360.0
+offset_right = 580.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(0.783523, 0.783523, 0.783523, 1)
+theme_override_font_sizes/font_size = 20
+text = "-"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Currency" type="TextureRect" parent="Control/DetailsPanel/Control"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = -38.0
+offset_right = 1161.0
+offset_bottom = 962.0
+scale = Vector2(0.2, 0.214)
+
+[node name="ItemCost" type="Label" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 315.0
+offset_top = 20.0
+offset_right = 583.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 42
+text = "-"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="CurrencyPanel" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -187.0
+offset_top = 35.0
+offset_right = -30.0
+offset_bottom = 125.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CurrencyPanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CurrencyPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="Control/CurrencyPanel/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_lbyll")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/CurrencyPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "100"
+script = ExtResource("6_2wvjf")
+
+[node name="Control" type="Control" parent="Control/CurrencyPanel/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.083
+anchor_right = 0.917
+anchor_bottom = 0.917
+offset_left = 30.64
+offset_top = 25.36
+offset_right = -1454.64
+offset_bottom = -808.36
+theme_override_font_sizes/font_size = 48
+text = "Shop"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 138.0
+offset_top = 94.0
+offset_right = 1872.0
+offset_bottom = 1000.0
+texture = ExtResource("7_3xiko")
+
+[connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]

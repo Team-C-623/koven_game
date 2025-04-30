@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ShopData" load_steps=3 format=3 uid="uid://1w4eefo5doq8"]
-
-[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_kkqev"]
-[ext_resource type="Script" path="res://scripts/Shop/shop_data.gd" id="2_82few"]
-
-[resource]
-script = ExtResource("2_82few")
-shop_items = Array[ExtResource("1_kkqev")]([])
-max_shop_size = 5

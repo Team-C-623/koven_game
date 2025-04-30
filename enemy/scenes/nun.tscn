@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=3 uid="uid://m0j8m41dr240"]
+
+[ext_resource type="Script" path="res://enemy/scripts/nun.gd" id="1_44yvt"]
+[ext_resource type="Texture2D" uid="uid://ckewadguma4sp" path="res://assets/characters/final nun level 1 (sprite 1).png" id="2_nw232"]
+[ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_72md4"]
+[ext_resource type="Script" path="res://enemy/scripts/enemy_wanderer.gd" id="4_w5gn1"]
+[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="5_hb7i3"]
+[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="6_6nqag"]
+[ext_resource type="Script" path="res://enemy/scripts/enemy_shoot.gd" id="6_bmqaf"]
+[ext_resource type="Texture2D" uid="uid://dlgqa6pdjt557" path="res://assets/characters/Final nun level 1 (sprite 2).png" id="8_orfb7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jqxgs"]
+radius = 0.244186
+height = 1.17406
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f4ck6"]
+radius = 0.247158
+height = 1.17665
+
+[sub_resource type="Animation" id="Animation_7pbd6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_nw232")]
+}
+
+[sub_resource type="Animation" id="Animation_rd5b5"]
+resource_name = "knife"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_nw232"), ExtResource("8_orfb7"), ExtResource("2_nw232")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5e4lk"]
+_data = {
+"RESET": SubResource("Animation_7pbd6"),
+"knife": SubResource("Animation_rd5b5")
+}
+
+[node name="Nun" type="CharacterBody3D" groups=["Enemies Group"]]
+transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
+script = ExtResource("1_44yvt")
+is_ranged = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.00151851, 4.45302e-08, -1.00002, 1.65333e-06, 1.00002, 4.20022e-08, 1.00002, -1.65326e-06, -0.00151851, 0.0133279, 4.19748e-08, 1.48866e-05)
+shape = SubResource("CapsuleShape3D_jqxgs")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+sorting_offset = 1.0
+visibility_range_end = 20.0
+shaded = true
+texture = ExtResource("2_nw232")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.570377, -0.556137, -0.565157, 1.14075, 1.11227, 1.13031)
+
+[node name="health_timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
+script = ExtResource("3_72md4")
+InitialState = NodePath("EnemyWander")
+
+[node name="EnemyWander" type="Node" parent="StateMachine"]
+script = ExtResource("4_w5gn1")
+
+[node name="EnemyShoot" type="Node" parent="StateMachine"]
+script = ExtResource("6_bmqaf")
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_hb7i3")]
+
+[node name="HitboxComponent" parent="." instance=ExtResource("6_6nqag")]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Hitbox" type="CollisionShape3D" parent="HitboxComponent"]
+transform = Transform3D(1.00002, 0, 0, 0, 1.00002, 0, 0, 0, 1.00002, 0.0150761, 0, -0.00219482)
+shape = SubResource("CapsuleShape3D_f4ck6")
+
+[node name="NunKnifeRange" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1496, 0, 0.273301, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 2
+
+[node name="ShootingAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5e4lk")
+}
+
+[connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
