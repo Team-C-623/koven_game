@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnalom3wua8rb"]
+[gd_scene load_steps=9 format=3 uid="uid://cnalom3wua8rb"]
 
 [ext_resource type="Script" path="res://shop/scripts/Shop.gd" id="1_ncako"]
 [ext_resource type="Script" path="res://shop/scripts/shop_ui.gd" id="2_p2ccr"]
 [ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://shop/resources/testshop.tres" id="3_7qxhm"]
 [ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://UI/scenes/shop_item_button.tscn" id="4_67pe5"]
 [ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="5_lbyll"]
+[ext_resource type="Texture2D" uid="uid://ccasbsu2ftbu" path="res://assets/shop_newest.png" id="7_3xiko"]
 [ext_resource type="Script" path="res://currency/scripts/label.gd" id="6_2wvjf"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_deyfl"]
@@ -206,5 +207,13 @@ offset_right = -1454.64
 offset_bottom = -808.36
 theme_override_font_sizes/font_size = 48
 text = "Shop"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 138.0
+offset_top = 94.0
+offset_right = 1872.0
+offset_bottom = 1000.0
+texture = ExtResource("7_3xiko")
 
 [connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]

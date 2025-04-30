@@ -1,0 +1,7 @@
+[gd_resource type="WwiseRTPC" format=3 uid="uid://t4nqbdfk4r16"]
+
+[resource]
+name = "health"
+id = 3677180323
+guid = "{35CEA8A7-DA9F-48C4-90AB-1D66145863CF}"
+dummy = true

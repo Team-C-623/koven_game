@@ -1,7 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://bigdykn0ht67u"]
 
+[ext_resource type="Texture2D" uid="uid://df5gttn0hnoal" path="res://UI/inventory_new.png" id="2_5vo5s"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory.gd" id="1_v88x4"]
-[ext_resource type="Texture2D" uid="uid://ddvyecflt5ri7" path="res://UI/INVENTORYFULLSPREADEXPANDED.png" id="2_c2i2o"]
+
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0cwr"]
 
@@ -41,7 +42,7 @@ layout_mode = 2
 offset_left = -45.0
 offset_right = 1035.0
 offset_bottom = 513.0
-texture = ExtResource("2_c2i2o")
+texture = ExtResource("2_5vo5s")
 expand_mode = 1
 
 [node name="Slot1" type="PanelContainer" parent="Background/BackgroundFrame" groups=["inventory_panels"]]
