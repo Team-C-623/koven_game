@@ -2,8 +2,8 @@ extends Node3D
 
 @onready var spawn_timer = $spawnTimer
 
-const MONK = preload("res://scenes/enemy/monk.tscn")
-const NUN = preload("res://scenes/enemy/nun.tscn")
+const MONK = preload("res://enemy/scenes/monk.tscn")
+const NUN = preload("res://enemy/scenes/nun.tscn")
 
 var spawn_index := 0
 var spawn_list = [MONK, NUN]

@@ -35,11 +35,3 @@ func _physics_process(delta: float) -> void:
 
 	# Always face the player
 	look_at(player_3d.position)
-	
-#func _on_hitbox_component_area_entered(area: Area3D) -> void:
-	#if area is HitboxComponent:
-		#print("Enemy hitbox entered")
-		#var hitbox : HitboxComponent = area
-		#var attack = Attack.new()
-		#attack.attack_damage = attack_damage
-		#hitbox.damage(attack)
