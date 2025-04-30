@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://clrrab2ce1dtj"]
 
-[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_1v2h4"]
+[ext_resource type="Script" path="res://tarotcards/scripts/item_data.gd" id="1_1v2h4"]
 [ext_resource type="Texture2D" uid="uid://ccrx3igv00040" path="res://tarotcards/assets/judgement.png" id="2_s3rv3"]
 
 [resource]

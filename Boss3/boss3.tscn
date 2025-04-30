@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://djgocdrtsu4rc" path="res://assets/characters/Final monk level 1.png" id="2_pu4oa"]
 [ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_p73q7"]
 [ext_resource type="Script" path="res://enemy/scripts/enemy_wanderer.gd" id="4_7hlb5"]
-[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_6bf1p"]
-[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_rig6x"]
+[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="6_6bf1p"]
+[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="7_rig6x"]
 [ext_resource type="PackedScene" uid="uid://w8tt64wwe0on" path="res://Boss3/boss3_spawner.tscn" id="8_kiwbi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3uryv"]

@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_m4gc5"]
 [ext_resource type="Script" path="res://enemy/scripts/enemy_wanderer.gd" id="4_1qoha"]
 [ext_resource type="Script" path="res://enemy/scripts/enemy_chase.gd" id="5_quno4"]
-[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_blrfn"]
-[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_qtd71"]
+[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="6_blrfn"]
+[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="7_qtd71"]
 [ext_resource type="Texture2D" uid="uid://oshwtjxciwcs" path="res://assets/characters/Monk level 1 sprite 2.png" id="8_foggx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_meq7y"]

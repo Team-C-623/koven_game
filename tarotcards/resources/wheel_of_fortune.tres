@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cp20q7n2qwblb"]
 
-[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_qbqb5"]
+[ext_resource type="Script" path="res://tarotcards/scripts/item_data.gd" id="1_qbqb5"]
 [ext_resource type="Texture2D" uid="uid://46jyi4p8qa0n" path="res://tarotcards/assets/wheeloffortune.PNG" id="2_tre03"]
 
 [resource]

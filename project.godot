@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Koven"
-run/main_scene="res://scenes/main3d.tscn"
+run/main_scene="res://main/scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,11 +20,10 @@ config/icon="res://icon.svg"
 ShopMenu="*res://catacombs/scenes/shop.tscn"
 PlayerManager="*res://player/scripts/player_manager.gd"
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
-SoundManager="*res://scenes/music_and_sound/sound_manager.tscn"
+SoundManager="*res://sound/sound_manager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TarotManager="*res://tarotcards/scripts/tarot_manager.gd"
 UIManager="*res://UI/scenes/ui_manager.tscn"
-Global="*res://scripts/Global.gd"
 Currency="*res://currency/scripts/currency.gd"
 
 [dialogue_manager]
