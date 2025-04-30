@@ -9,7 +9,6 @@ var wheel_of_fortune_active: bool = false
 var rng = RandomNumberGenerator.new()
 @onready var main_node = get_node("/root/Main")
 var active_timers := {}
-var hanged_man: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rng.randomize()  # Important for different results each run
@@ -102,7 +101,8 @@ func use_the_hanged_man():
 
 func end_the_hanged_man():
 	Currency.modifier = 1.0
-	pass
+	print("hanged man ended")
+	
 func use_wheel_of_fortune(_item_data: ItemData):
 	var effect_message
 	#randomly increase 1 of 3 stats: +10 damage, +20 health, +2.0 speed

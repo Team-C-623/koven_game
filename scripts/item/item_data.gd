@@ -18,6 +18,8 @@ func use(_target) -> void:
 		TarotManager.use_death()
 	elif name == "The High Priestess":
 		TarotManager.use_high_priestess()
+	elif name == "The Hanged Man":
+		TarotManager.use_the_hanged_man()
 		
 	SoundManager.play_card_burn()
 	
