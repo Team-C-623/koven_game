@@ -98,24 +98,22 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("generate"):
 		generate_new()
 
-
 func _on_player_died():
 	print("Respawning player")
 	await get_tree().create_timer(1.0).timeout
 	
-	# Get the current player (without dequeuing)
+	# Despawning all enemies
+	for enemy in get_tree().get_nodes_in_group("Enemies Group"):
+		if is_instance_valid(enemy):
+			print("removing enemies")
+			enemy.queue_free()
+			
+	# Respawning Player
 	var live_player = get_tree().current_scene.find_child("Player", true, false)
 	
 	if live_player and is_instance_valid(live_player):
-		print("Found live player: ", live_player)
-		# spawn point
-		#var spawn_point = get_node("PlayerSpawner")
-		
-		var catacombs_scene = preload("res://catacombs/scenes/catacombs.tscn")
-		var catacombs = catacombs_scene.instantiate()
+		var catacombs = cata_scene.instantiate()
 		get_tree().current_scene.add_child(catacombs)
-		
-		print("Catacombs instantiated:", catacombs)
 		
 		var spawn_point = catacombs.get_node("PlayerSpawn")
 		
@@ -124,8 +122,6 @@ func _on_player_died():
 			live_player.velocity = Vector3.ZERO
 			live_player.velocity.y = -0.1  # Apply gravity right away
 			print("Moved player to spawn point: ", live_player.global_position)
-		else:
-			print("Spawn point not found in Catacombs.")
 		
 		# Ensure player health component and connections
 		player_health = live_player.get_node("HealthComponent")
@@ -133,10 +129,10 @@ func _on_player_died():
 			player_health.auto_free_on_death = false  # Don't let the HealthComponent destroy the player
 			if not player_health.died.is_connected(_on_player_died):
 				player_health.died.connect(_on_player_died)
-		
-		# Now, generate the map or continue gameplay
-		generate_new()
-		print("Map generation after respawn.")
+				
+		# Reset health
+		player_health.reset_health()
+
 	else:
 		print("Player not found or invalid.")
-	
+	#

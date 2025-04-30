@@ -3,7 +3,7 @@ class_name EnemyShoot
 
 @onready var enemy: CharacterBody3D = get_parent().get_parent()
 var player: CharacterBody3D = null
-@onready var ray := $"../../NunKnifeRange"
+@onready var ray := $"../../RayCast3D"
 @onready var shooting_animation: AnimationPlayer = $"../../ShootingAnimation"
 
 var angle_cone_of_vision := deg_to_rad(30.0)

@@ -5,6 +5,7 @@ var wander_direction: Vector3
 var wander_time: float = 0.0
 
 @onready var enemy: CharacterBody3D = get_parent().get_parent()
+@onready var ray_cast_3d: RayCast3D = enemy.get_node("RayCast3D")
 var player: CharacterBody3D = null
 
 func _ready() -> void:
@@ -31,15 +32,15 @@ func process(delta: float):
 	wander_time -= delta
 	
 	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) < enemy.CHASE_DISTANCE:
-		if enemy is Monk:
-			Transitioned.emit(self, "EnemyChase")
-		elif enemy is Nun:
-			print("Entered NUN range")
-			Transitioned.emit(self, "EnemyShoot")
+		#ray_cast_3d.cast_to = player.global_position - enemy.global_position
+		ray_cast_3d.force_raycast_update()
+		if not ray_cast_3d.is_colliding() or ray_cast_3d.get_collider() == player:
+			if enemy is Monk:
+				Transitioned.emit(self, "EnemyChase")
+			elif enemy is Nun:
+				Transitioned.emit(self, "EnemyShoot")
 
 func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.SPEED
-
 	if not enemy.is_on_floor():
-		#hi
 		enemy.velocity += enemy.get_gravity()

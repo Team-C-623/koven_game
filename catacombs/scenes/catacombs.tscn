@@ -198,6 +198,7 @@ material = SubResource("StandardMaterial3D_s2slq")
 transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
 visibility_range_end = 20.0
 flip_h = true
+shaded = true
 texture = ExtResource("8_8qr8b")
 
 [node name="Column2" type="CSGPolygon3D" parent="."]
@@ -211,6 +212,7 @@ material = SubResource("StandardMaterial3D_4fccl")
 transform = Transform3D(-100, 8.74228e-06, -9.09495e-13, -8.74228e-06, -100, 5.42101e-20, -9.09495e-13, 0, 100, 0, 0, 0.1)
 visibility_range_end = 20.0
 flip_h = true
+shaded = true
 texture = ExtResource("8_8qr8b")
 
 [node name="PlayerSpawn" type="Marker3D" parent="."]

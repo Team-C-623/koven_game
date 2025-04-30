@@ -22,11 +22,8 @@ func damage(attack: Attack):
 		
 	if is_dead:
 		return
-		
-	health -= attack.attack_damage
 	
-		
-	#play damag sound
+	#play damage sound
 	#dont play damage sound if the player is getting hit
 	emit_signal("health_changed", health, MAX_HEALTH)
 	
@@ -37,6 +34,8 @@ func damage(attack: Attack):
 		SoundManager.play_death_sound()
 		if get_parent().is_in_group("Enemies Group"):
 			get_parent().call_deferred("queue_free")
-		
-	
-	
+
+func reset_health():
+	health = MAX_HEALTH
+	is_dead = false
+	emit_signal("health_changed", health, MAX_HEALTH) 

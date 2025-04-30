@@ -2,19 +2,22 @@ extends CharacterBody3D
 
 class_name Player
 @onready var wand = $head/PlayerCam/Wand
-#attack settings
-var attack_damage := 10.0
+
 #camera settings
 const SENS = 0.4
 @export var speed = 3.0 #3.0
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
-signal toggle_inventory()
+signal toggle_inventory
 
 @onready var interact_ray: RayCast3D = $InteractRay
 
 var health: int = 100
 var gravity: float = 9.8
+
+# Stun variables
+var is_stunned: bool = false
+var stun_duration: float = 0.0
 
 @export var journal: Journal
 #bob variable
@@ -104,7 +107,6 @@ func _physics_process(_delta: float) -> void:
 			instance = flame.instantiate()
 			instance.position = wand_tip.global_position
 			instance.transform.basis = wand_tip.global_transform.basis
-			instance.attack_damage = attack_damage
 			get_parent().add_child(instance)
 			SoundManager.play_wand_sound()
 
@@ -123,3 +125,16 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func stun(duration: float):
+	if is_stunned:
+		return
+	
+	is_stunned = true
+	stun_duration = duration
+	set_physics_process(false)
+	
+	await get_tree().create_timer(duration).timeout
+	is_stunned = false
+	set_physics_process(true)
+	print("Player recovered from stun")

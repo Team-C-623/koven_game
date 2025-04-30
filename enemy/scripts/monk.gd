@@ -57,11 +57,3 @@ func _on_DamageTimer_timeout():
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
-	
-#func _on_hitbox_component_area_entered(area: Area3D) -> void:
-	#if area is HitboxComponent:
-		#print("Enemy hitbox entered")
-		#var hitbox : HitboxComponent = area
-		#var attack = Attack.new()
-		#attack.attack_damage = attack_damage
-		#hitbox.damage(attack)
