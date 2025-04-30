@@ -1,6 +1,6 @@
 extends Node3D
 
-var cata_scene = preload("res://scenes/Catacombs/catacombs.tscn")
+var cata_scene = preload("res://catacombs/scenes/catacombs.tscn")
 const PickUp = preload("res://scenes/interactable/pick_up.tscn")
 
 signal entered
@@ -111,7 +111,7 @@ func _on_player_died():
 		# spawn point
 		#var spawn_point = get_node("PlayerSpawner")
 		
-		var catacombs_scene = preload("res://scenes/Catacombs/catacombs.tscn")
+		var catacombs_scene = preload("res://catacombs/scenes/catacombs.tscn")
 		var catacombs = catacombs_scene.instantiate()
 		get_tree().current_scene.add_child(catacombs)
 		

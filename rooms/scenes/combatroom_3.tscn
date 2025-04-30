@@ -1,0 +1,148 @@
+[gd_scene load_steps=20 format=3 uid="uid://whbil7xojfmr"]
+
+[ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_02eyr"]
+[ext_resource type="Texture2D" uid="uid://c6e07778mjfx1" path="res://assets/environment/lvl1wall1combat1.png" id="2_b31nw"]
+[ext_resource type="Texture2D" uid="uid://bk78k18txcqxs" path="res://assets/environment/lvl1wall2combat1.png" id="3_p24rb"]
+[ext_resource type="Texture2D" uid="uid://bey33kcn1gdsu" path="res://assets/environment/lvl1floorcombat1.png" id="4_mknv1"]
+[ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://scenes/enemy/enemy_spawner.tscn" id="5_ejee6"]
+[ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="7_j40db"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
+albedo_texture = ExtResource("2_b31nw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pmdxk"]
+material = SubResource("StandardMaterial3D_3yrjd")
+size = Vector2(12.8, 7.2)
+orientation = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hbqa0"]
+points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fq7in"]
+points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7c1m"]
+albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yq07t"]
+albedo_texture = ExtResource("4_mknv1")
+uv1_scale = Vector3(8, 8, 8)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ar2j6"]
+material = SubResource("StandardMaterial3D_yq07t")
+size = Vector2(12.8, 12.8)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4ups5"]
+
+[sub_resource type="Gradient" id="Gradient_twbgh"]
+colors = PackedColorArray(0, 0, 0, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hmg5w"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hl4b5"]
+color_ramp = SubResource("Gradient_twbgh")
+noise = SubResource("FastNoiseLite_hmg5w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl0t8"]
+albedo_texture = SubResource("NoiseTexture2D_hl4b5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a4nd0"]
+material = SubResource("StandardMaterial3D_cl0t8")
+size = Vector2(12.8, 12.8)
+
+[node name="CombatRoom3" type="StaticBody3D"]
+transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
+script = ExtResource("1_02eyr")
+
+[node name="Wall1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.6, 6.35)
+visibility_range_end = 20.0
+mesh = SubResource("PlaneMesh_pmdxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hbqa0")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 3.6, 0)
+visibility_range_end = 20.0
+mesh = SubResource("PlaneMesh_pmdxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fq7in")
+
+[node name="WallDoor3" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0.01, 8.74228e-10, -8.74228e-10, 8.74228e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
+visibility_range_end = 20.0
+polygon = PackedVector2Array(-640, 360, -106.1, 360, -106.1, 324, -133.1, 313.6, -132.481, 36.0768, -127.318, 30.2445, -111.796, 30.2117, -99.1445, 16.742, -86.2, 7.20001, -66, 1, -44.1, -3.79999, -21, -6, 3.34062, -4.84686, 24, -2, 43.3, 1.89999, 58, 7, 78.6831, 17.3889, 93.8682, 31.3967, 106.9, 31.9, 112.1, 36.1, 116.1, 312.3, 91.6043, 324.117, 89.9, 360, 640, 360, 640, -360, -640, -360)
+depth = 20.0
+material = SubResource("StandardMaterial3D_f7c1m")
+
+[node name="Sprite3D" type="Sprite3D" parent="WallDoor3"]
+transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
+visibility_range_end = 20.0
+flip_h = true
+shaded = true
+texture = ExtResource("3_p24rb")
+
+[node name="WallDoor4" type="CSGPolygon3D" parent="."]
+transform = Transform3D(4.37114e-10, -3.82137e-17, 0.01, -8.74228e-10, -0.01, 0, 0.01, -8.74228e-10, -4.37114e-10, 6.4, 3.6, 0)
+visibility_range_end = 20.0
+polygon = PackedVector2Array(-640, 360, -106.1, 360, -106.1, 324, -133.1, 313.6, -132.481, 36.0768, -127.318, 30.2445, -111.796, 30.2117, -99.1445, 16.742, -86.2, 7.20001, -66, 1, -44.1, -3.79999, -21, -6, 3.34062, -4.84686, 24, -2, 43.3, 1.89999, 58, 7, 78.6831, 17.3889, 93.8682, 31.3967, 106.9, 31.9, 112.1, 36.1, 116.1, 312.3, 91.6043, 324.117, 89.9, 360, 640, 360, 640, -360, -640, -360)
+depth = 20.0
+material = SubResource("StandardMaterial3D_f7c1m")
+
+[node name="Sprite3D" type="Sprite3D" parent="WallDoor4"]
+transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
+visibility_range_end = 20.0
+flip_h = true
+shaded = true
+texture = ExtResource("3_p24rb")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+visibility_range_end = 20.0
+mesh = SubResource("PlaneMesh_ar2j6")
+
+[node name="FloorCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_4ups5")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
+visibility_range_end = 20.0
+mesh = SubResource("PlaneMesh_a4nd0")
+
+[node name="L" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
+
+[node name="D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("5_ejee6")]
+
+[node name="Torch" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(0.94147, 0.337095, 4.26326e-14, -0.337095, 0.94147, -1.3888e-15, -2.84217e-14, -7.10543e-15, 0.999999, -6.26363, 3.5186, -2.17563)
+
+[node name="Torch2" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(0.94147, 0.337095, 7.10543e-14, -0.337095, 0.94147, -1.3888e-15, -4.26326e-14, -1.42109e-14, 0.999999, -6.26363, 3.5186, 2.34392)
+
+[node name="Torch3" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, -2.182, 3.519, 6.264)
+
+[node name="Torch4" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, 2.3539, 3.519, 6.264)
+
+[node name="Torch5" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, -2.01613)
+
+[node name="Torch6" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, 1.82865)
+
+[node name="Torch7" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, 1.829, 3.519, -6.1)
+
+[node name="Torch8" parent="." instance=ExtResource("7_j40db")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, -2.02432, 3.519, -6.1)

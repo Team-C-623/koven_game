@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Journal" load_steps=4 format=3 uid="uid://b1ql3mcqoqk5a"]
+
+[ext_resource type="Script" path="res://journal/scripts/journal_entry.gd" id="1_m6f2g"]
+[ext_resource type="Resource" uid="uid://b28seueh2mo0l" path="res://journal/resources/entry1.tres" id="2_d26hs"]
+[ext_resource type="Script" path="res://journal/scripts/journal.gd" id="3_2ijqd"]
+
+[resource]
+script = ExtResource("3_2ijqd")
+journal = Array[ExtResource("1_m6f2g")]([ExtResource("2_d26hs")])
+max_journals = 99

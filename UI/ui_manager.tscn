@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/inventory/inventory_interface.gd" id="2_0pew0"]
 [ext_resource type="PackedScene" uid="uid://c5gq4mv4mn0wv" path="res://scenes/currency/currencyUI.tscn" id="2_cgco0"]
 [ext_resource type="PackedScene" uid="uid://bigdykn0ht67u" path="res://scenes/inventory/inventory.tscn" id="3_i57hc"]
-[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://scenes/journal/JournalUI.tscn" id="4_l8js5"]
+[ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://journal/scenes/JournalUI.tscn" id="4_l8js5"]
 
 [sub_resource type="Theme" id="Theme_k7io1"]
 

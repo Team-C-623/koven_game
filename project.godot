@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ShopMenu="*res://scenes/Catacombs/shop.tscn"
+ShopMenu="*res://catacombs/scenes/shop.tscn"
 PlayerManager="*res://scripts/player/player_manager.gd"
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
 SoundManager="*res://scenes/music_and_sound/sound_manager.tscn"
