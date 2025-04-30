@@ -131,10 +131,7 @@ func use_wheel_of_fortune(_item_data: ItemData):
 		for node in main_node.get_children(true):
 			if node is Player:
 				node.speed += 2.0
-			
-				
-	#print("WHeel of fortune grants: " + str(random_num))
-	#print("0 = +10 damage, 1 = +20 hp and Max hp, 2 = +2.0 speed") 
+		
 	var popup = wof_popup.instantiate()
 	get_tree().root.add_child(popup)
 	popup.show_message(effect_message)
@@ -149,3 +146,13 @@ func use_death():
 						component.health = component.MAX_HEALTH
 						component.emit_signal("health_changed",component.health,component.MAX_HEALTH)
 						
+func use_the_devil():
+	var heal_value
+	for node in main_node.get_children(true):
+			if node is Player:
+				for component in node.get_children(true):
+					if component is HealthComponent:	
+						heal_value = ceil(component.MAX_HEALTH * 0.25)
+						component.health += heal_value
+						print("Devil Healed:" + str(heal_value))
+						component.emit_signal("health_changed",component.health,component.MAX_HEALTH)

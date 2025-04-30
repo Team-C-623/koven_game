@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ditl2p6r0lfau"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_ddsgr"]
+[ext_resource type="Texture2D" uid="uid://1lvd0pix4pg8" path="res://icon.svg" id="2_w3lf5"]
+
+[resource]
+script = ExtResource("1_ddsgr")
+name = "The Devil"
+description = "Heal 25 HP"
+texture = ExtResource("2_w3lf5")
+cost = 100
+duration = 999.0
+rarity = 0

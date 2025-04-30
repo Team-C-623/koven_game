@@ -9,7 +9,7 @@ const CARD_WEIGHTS := {
 static var common_cards: Array[ItemData] = [
 	preload("res://tarotcards/resources/judgement.tres"),
 	preload("res://tarotcards/resources/the_high_priestess.tres"),
-	#preload("res://tarotcards/resources/the_devil.tres")
+	preload("res://tarotcards/resources/the_devil.tres")
 	# ... more common cards
 ]
 
