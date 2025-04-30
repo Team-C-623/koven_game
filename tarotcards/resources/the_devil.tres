@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ditl2p6r0lfau"]
 
-[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_ddsgr"]
+[ext_resource type="Script" path="res://tarotcards/scripts/item_data.gd" id="1_1uobo"]
 [ext_resource type="Texture2D" uid="uid://1lvd0pix4pg8" path="res://icon.svg" id="2_w3lf5"]
 
 [resource]
-script = ExtResource("1_ddsgr")
+script = ExtResource("1_1uobo")
 name = "The Devil"
-description = "Heal 25 HP"
+description = "heals 25% of max health"
 texture = ExtResource("2_w3lf5")
 cost = 100
 duration = 999.0
