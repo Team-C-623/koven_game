@@ -129,13 +129,15 @@ func _process(delta: float) -> void:
 			if player.global_position.distance_to(node.global_position) < 10:  # 300 pixels range
 				combat_engaged = true
 				break  # Exit loop early if we found at least one nearby enemy
-	
+
 	# Set Wwise switch based on combat status
 	if combat_engaged:
 		Wwise.set_switch("GAMEPLAY_SWITCH", "COMBAT", self)
+		SoundManager.play_enemy_aggro()
 	else:
-		Wwise.set_switch("GAMEPLAY_SWwITCH", "EXPLORE", self)
-	
+		Wwise.set_switch("GAMEPLAY_SWITCH", "EXPLORE", self)
+		SoundManager.play_enemy_safe()
+
 
 
 func interact() -> void:

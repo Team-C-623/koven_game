@@ -51,6 +51,9 @@ func play_menu_boop():
 func play_queue_credits(): #not called
 	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
 
+func play_text_scrolling():
+	Wwise.post_event_id(AK.EVENTS.TEXT_SCROLLING,self)
+
 
 
 # MUSIC
