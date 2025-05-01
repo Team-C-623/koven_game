@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 class_name Player
 @onready var wand = $head/PlayerCam/Wand
-
+@export var attack_damage = 0.0
 #camera settings
 const SENS = 0.4
 @export var speed = 3.0 #3.0
@@ -114,6 +114,7 @@ func _physics_process(_delta: float) -> void:
 			instance = flame.instantiate()
 			instance.position = wand_tip.global_position
 			instance.transform.basis = wand_tip.global_transform.basis
+			instance.attack_damage += attack_damage
 			get_parent().add_child(instance)
 			SoundManager.play_wand_sound()
 

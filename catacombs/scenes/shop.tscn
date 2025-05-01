@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://shop/resources/testshop.tres" id="3_7qxhm"]
 [ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://UI/scenes/shop_item_button.tscn" id="4_67pe5"]
 [ext_resource type="Texture2D" uid="uid://dtxhyhxebbfp7" path="res://assets/ui/finalcurrency.png" id="5_lbyll"]
-[ext_resource type="Texture2D" uid="uid://ccasbsu2ftbu" path="res://assets/shop_newest.png" id="7_3xiko"]
 [ext_resource type="Script" path="res://currency/scripts/label.gd" id="6_2wvjf"]
+[ext_resource type="Texture2D" uid="uid://ccasbsu2ftbu" path="res://assets/shop_newest.png" id="7_3xiko"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_deyfl"]
 
