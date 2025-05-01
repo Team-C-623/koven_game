@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnalom3wua8rb"]
+[gd_scene load_steps=18 format=3 uid="uid://cnalom3wua8rb"]
 
 [ext_resource type="Script" path="res://shop/scripts/Shop.gd" id="1_10sum"]
 [ext_resource type="Texture2D" uid="uid://cg2pwyw8wopql" path="res://assets/ui/shop_background.png" id="2_u76mq"]
@@ -15,69 +15,64 @@
 [ext_resource type="FontFile" uid="uid://dq6rymvoicb8l" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="7_l42hb"]
 [ext_resource type="FontFile" uid="uid://y7tht8o6o7xe" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="8_7u1p7"]
 [ext_resource type="FontFile" uid="uid://ccghiwn3hcmui" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="11_sc14r"]
+[ext_resource type="FontFile" uid="uid://ceqeu2f72vy7i" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="14_fy1q5"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_deyfl"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1l63t"]
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_10sum")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 160.0
-offset_top = 90.0
-offset_right = 1760.0
-offset_bottom = 990.0
-color = Color(0.340339, 0.340339, 0.340339, 1)
-
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_top = 7.0
-offset_right = 1920.0
-offset_bottom = 1038.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 491.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_u76mq")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 160.0
-offset_top = 90.0
-offset_right = -160.0
-offset_bottom = -90.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CloseButton" type="TextureButton" parent="Control"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1333.0
-offset_top = 775.0
-offset_right = -27.0
-offset_bottom = -29.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 520.0
+offset_top = 320.0
+offset_right = 760.0
+offset_bottom = 416.0
 texture_normal = ExtResource("3_oajd3")
 texture_pressed = ExtResource("4_30yqp")
 stretch_mode = 0
 
 [node name="BuyButton" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 967.0
-offset_top = 775.0
-offset_right = 1207.0
-offset_bottom = 871.0
+offset_left = 160.0
+offset_top = 320.0
+offset_right = 400.0
+offset_bottom = 416.0
 texture_normal = ExtResource("5_5k6y5")
 texture_pressed = ExtResource("6_bma8a")
 stretch_mode = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 150.0
-offset_right = 948.0
-offset_bottom = 770.0
+offset_left = -785.0
+offset_top = -300.0
+offset_right = 143.0
+offset_bottom = 320.0
 follow_focus = true
 horizontal_scroll_mode = 0
 
@@ -110,15 +105,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="DetailsPanel" type="PanelContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -630.0
-offset_top = 150.0
-offset_right = -30.0
-offset_bottom = 770.0
-grow_horizontal = 0
+layout_mode = 0
+offset_left = 160.0
+offset_top = -300.0
+offset_right = 760.0
+offset_bottom = 320.0
 
 [node name="TextureRect" type="TextureRect" parent="Control/DetailsPanel"]
 layout_mode = 2
@@ -135,7 +126,7 @@ offset_top = 20.0
 offset_right = 243.0
 offset_bottom = 352.0
 scale = Vector2(0.8, 0.8)
-texture = SubResource("PlaceholderTexture2D_deyfl")
+texture = SubResource("PlaceholderTexture2D_1l63t")
 expand_mode = 1
 
 [node name="ItemName" type="Label" parent="Control/DetailsPanel/Control"]
@@ -170,8 +161,8 @@ text_overrun_behavior = 3
 layout_mode = 0
 offset_left = 208.0
 offset_top = 17.0
-offset_right = 728.0
-offset_bottom = 487.0
+offset_right = 708.0
+offset_bottom = 467.0
 scale = Vector2(0.2, 0.214)
 texture = ExtResource("5_y57y7")
 
@@ -179,9 +170,9 @@ texture = ExtResource("5_y57y7")
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 320.0
-offset_top = 20.0
+offset_top = 17.0
 offset_right = 588.0
-offset_bottom = 100.0
+offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("7_l42hb")
 theme_override_font_sizes/font_size = 42
 text = "-"
@@ -191,15 +182,11 @@ clip_text = true
 text_overrun_behavior = 3
 
 [node name="CurrencyPanel" type="PanelContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -190.0
-offset_top = 55.0
-offset_right = -30.0
-offset_bottom = 135.0
-grow_horizontal = 0
+layout_mode = 0
+offset_left = 600.0
+offset_top = -400.0
+offset_right = 760.0
+offset_bottom = -320.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/CurrencyPanel"]
 layout_mode = 2
@@ -220,7 +207,7 @@ expand_mode = 2
 [node name="Label" type="Label" parent="Control/CurrencyPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("11_sc14r")
+theme_override_fonts/font = ExtResource("14_fy1q5")
 theme_override_font_sizes/font_size = 44
 text = "100"
 script = ExtResource("6_e4j6m")
