@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=32 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://catacombs/scripts/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="Texture2D" uid="uid://cjpearj8kf71w" path="res://assets/environment/catacombfinalfloor.png" id="3_h08t0"]
@@ -67,6 +67,9 @@ albedo_texture = SubResource("NoiseTexture2D_q0gnv")
 [sub_resource type="PlaneMesh" id="PlaneMesh_jbfwx"]
 material = SubResource("StandardMaterial3D_cl0t8")
 size = Vector2(10, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7mnyq"]
+points = PackedVector3Array(5, 0, 10, -5, 0, 10, 5, 0, -10, -5, 0, -10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgi7o"]
 albedo_color = Color(0.18359, 0.18359, 0.18359, 1)
@@ -152,6 +155,11 @@ shape = SubResource("WorldBoundaryShape3D_34a8u")
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 2.8, 0)
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_jbfwx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_7mnyq")
 
 [node name="Lighting" type="Node3D" parent="."]
 

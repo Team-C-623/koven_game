@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cv23mte1ng12k"]
+[gd_scene load_steps=21 format=3 uid="uid://cv23mte1ng12k"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_oee63"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_lwvf8"]
@@ -52,6 +52,9 @@ albedo_texture = SubResource("NoiseTexture2D_hl4b5")
 [sub_resource type="PlaneMesh" id="PlaneMesh_a4nd0"]
 material = SubResource("StandardMaterial3D_cl0t8")
 size = Vector2(6.4, 12.8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f7va4"]
+points = PackedVector3Array(3.2, 0, 6.4, -3.2, 0, 6.4, 3.2, 0, -6.4, -3.2, 0, -6.4)
 
 [node name="EmptyRoom2" type="StaticBody3D"]
 transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
@@ -119,6 +122,11 @@ shape = SubResource("WorldBoundaryShape3D_4ups5")
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_a4nd0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_f7va4")
 
 [node name="Lighting" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)

@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_3nbws"]
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
-
-[ext_resource type="WwiseRTPC" uid="uid://t4nqbdfk4r16" path="res://Wwise/resources/Game Parameter/{35CEA8A7-DA9F-48C4-90AB-1D66145863CF}.tres" id="2_tx4mv"]
 [ext_resource type="PackedScene" uid="uid://c7jj1a7xswf00" path="res://char_components/scenes/health_bar.tscn" id="2_rpfbq"]
+[ext_resource type="WwiseRTPC" uid="uid://t4nqbdfk4r16" path="res://Wwise/resources/Game Parameter/{35CEA8A7-DA9F-48C4-90AB-1D66145863CF}.tres" id="2_tx4mv"]
 [ext_resource type="Texture2D" uid="uid://djkefbtfpebke" path="res://assets/ui/Final health bar.png" id="3_2in4s"]
 [ext_resource type="PackedScene" uid="uid://cl1ys84xdtb60" path="res://journal/scenes/JournalUI.tscn" id="4_anngu"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="4_qib34"]
@@ -72,7 +71,7 @@ transform = Transform3D(2, 0, 0, 0, 1.99778, -0.0941776, 0, 0.0941776, 1.99778, 
 current = true
 
 [node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
-transform = Transform3D(0.499315, 0.000411029, 0.0261647, 0, 0.499938, -0.00785365, -0.026168, 0.0078429, 0.499252, 0.139205, -0.0643819, -0.194059)
+transform = Transform3D(0.499597, 0.000210126, 0.0200647, -2.91038e-10, 0.499972, -0.00523587, -0.0200659, 0.00523167, 0.499568, 0.126394, -0.0498056, -0.195507)
 
 [node name="InteractRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2.5)

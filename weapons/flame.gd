@@ -17,17 +17,17 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	position += transform.basis * Vector3(0,0, -SPEED) * delta
-	ray.force_raycast_update()
-	if ray.is_colliding() and (ray.get_collider() is StaticBody3D or ray.get_collider() is CSGPolygon3D):
-		print("Hitting wall")
-		_die()
+	if ray != null:
+		ray.force_raycast_update()
+		if ray.is_colliding() and (ray.get_collider() is StaticBody3D or ray.get_collider() is CSGPolygon3D):
+			print("Hitting wall")
+			_die()
 
 func _die() -> void:
+	ray.queue_free()
 	mesh.visible = false
 	particles.emitting = true
-	print("PARTICLES!")
 	await get_tree().create_timer(1.0).timeout
-	print("DEATH!")
 	queue_free()
 
 func _on_flame_hit_box_area_entered(area):

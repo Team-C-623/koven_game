@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://whbil7xojfmr"]
+[gd_scene load_steps=21 format=3 uid="uid://whbil7xojfmr"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_02eyr"]
 [ext_resource type="Texture2D" uid="uid://c6e07778mjfx1" path="res://assets/environment/lvl1wall1combat1.png" id="2_b31nw"]
@@ -49,6 +49,9 @@ albedo_texture = SubResource("NoiseTexture2D_hl4b5")
 [sub_resource type="PlaneMesh" id="PlaneMesh_a4nd0"]
 material = SubResource("StandardMaterial3D_cl0t8")
 size = Vector2(12.8, 12.8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7fa5w"]
+points = PackedVector3Array(-6.4, 0, -6.4, -6.4, 0, 6.4, 6.4, 0, -6.4, 6.4, 0, 6.4)
 
 [node name="CombatRoom3" type="StaticBody3D"]
 transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
@@ -118,6 +121,11 @@ shape = SubResource("WorldBoundaryShape3D_4ups5")
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_a4nd0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_7fa5w")
 
 [node name="L" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
