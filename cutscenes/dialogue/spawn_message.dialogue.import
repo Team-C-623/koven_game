@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://37gww3gsm3i5"
+path="res://.godot/imported/spawn_message.dialogue-847de97ca824d9ed25d620f731145ff6.tres"
+
+[deps]
+
+source_file="res://cutscenes/dialogue/spawn_message.dialogue"
+dest_files=["res://.godot/imported/spawn_message.dialogue-847de97ca824d9ed25d620f731145ff6.tres"]
+
+[params]
+
+defaults=true
