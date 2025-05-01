@@ -37,13 +37,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -672.0
-offset_top = -136.0
-offset_right = 108.0
-offset_bottom = 105.0
+offset_left = -504.0
+offset_top = -148.0
+offset_right = 276.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.38767, 1.5121)
+scale = Vector2(1.30199, 1.52145)
 
 [node name="DialogueLabel" parent="Balloon/MarginContainer" instance=ExtResource("2_4beb4")]
 unique_name_in_owner = true
