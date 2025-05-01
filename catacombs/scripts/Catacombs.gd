@@ -12,3 +12,4 @@ func _ready() -> void:
 	new_shop_witch.position = Vector3(-2, 0, 4.5)
 	Wwise.set_state("LOCATION", "CATACOMBS")
 	SoundManager.play_start_music()
+	#SoundManager.play_respawn()

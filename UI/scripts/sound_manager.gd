@@ -47,6 +47,9 @@ func play_nun_projectile():
 
 func play_menu_boop():
 	Wwise.post_event_id(AK.EVENTS.MENU_BOOP,self)
+	
+func play_queue_credits(): #not called
+	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
 
 
 

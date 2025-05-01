@@ -10,7 +10,7 @@ const SENS = 0.4
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
 @onready var rtpc_node: AkEvent3D = $rtpc
-
+var enemies = []
 
 @onready var interact_ray: RayCast3D = $InteractRay
 @export var rtpc:WwiseRTPC
@@ -118,6 +118,25 @@ func _physics_process(_delta: float) -> void:
 			SoundManager.play_wand_sound()
 
 	move_and_slide()
+	
+func _process(delta: float) -> void:
+	var player = get_node("/root/Main/Player")  # Adjust path to your player node
+	var combat_engaged = false
+	
+	# Check all enemies in parent node
+	for node in get_parent().get_children():
+		if node is Nun or node is Monk:  # Your enemy types
+			if player.global_position.distance_to(node.global_position) < 10:  # 300 pixels range
+				combat_engaged = true
+				break  # Exit loop early if we found at least one nearby enemy
+	
+	# Set Wwise switch based on combat status
+	if combat_engaged:
+		Wwise.set_switch("GAMEPLAY_SWITCH", "COMBAT", self)
+	else:
+		Wwise.set_switch("GAMEPLAY_SWwITCH", "EXPLORE", self)
+	
+
 
 func interact() -> void:
 	if interact_ray.is_colliding():
