@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsjnqaibrsgpo"]
+[gd_scene load_steps=14 format=3 uid="uid://dsjnqaibrsgpo"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://byvv6mgg3rfe0" path="res://dialogue/art/dialogue bar.PNG" id="2_smexl"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="FontFile" uid="uid://c0wws51fdp5pp" path="res://dialogue/art/Eleanora.ttf" id="4_6oe2k"]
+[ext_resource type="FontFile" uid="uid://k1guuqtwah8n" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="4_s44rf"]
+[ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="5_fdxtd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -112,16 +113,14 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_4826o")
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 202.907
-offset_top = 53.0825
-offset_right = 138.907
-offset_bottom = 159.082
+offset_left = 195.99
+offset_top = 52.5294
+offset_right = 195.99
+offset_bottom = 179.529
 grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.728201, 0.195743)
+scale = Vector2(0.7, 0.174)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
 z_index = 101
@@ -129,10 +128,11 @@ layout_mode = 2
 
 [node name="DialogueLabel" parent="Balloon/Panel/Dialogue/VBoxContainer" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
+clip_contents = false
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 60
+theme_override_fonts/normal_font = ExtResource("4_s44rf")
+theme_override_font_sizes/normal_font_size = 80
 text = "Dialogue..."
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel"]
@@ -146,9 +146,9 @@ offset_right = 2022.9
 offset_bottom = 97.5413
 scale = Vector2(0.883255, 0.250613)
 mouse_filter = 1
-theme_override_colors/default_color = Color(0.917647, 0.894118, 0.835294, 1)
-theme_override_colors/font_shadow_color = Color(0.509804, 0.286275, 0.239216, 1)
-theme_override_fonts/normal_font = ExtResource("4_6oe2k")
+theme_override_colors/default_color = Color(0.560784, 0.278431, 0.215686, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.564706, 0.443137, 1)
+theme_override_fonts/normal_font = ExtResource("5_fdxtd")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "Character"
