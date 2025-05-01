@@ -9,6 +9,7 @@ var wander_time: float = 0.0
 var player: CharacterBody3D = null
 
 func _ready() -> void:
+	Wwise.set_switch("GAMEPLAY_STATE", "EXPLORE", self)
 	player = get_tree().get_first_node_in_group("Player Groups")
 	#if Global.player:
 		#player = Global.player

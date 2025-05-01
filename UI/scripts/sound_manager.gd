@@ -52,7 +52,6 @@ func play_nun_projectile():
 
 # MUSIC
 func play_castle_music(floor_state: String = "floor1"): #called in main.gd (_entered)
-	#var state_result = Wwise.set_state("ambience_floor", floor_state)
 	var switch_result = Wwise.set_switch("FLOOR_LEVEL","FLOOR1", self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
 	

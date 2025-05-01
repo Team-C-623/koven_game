@@ -70,7 +70,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		interact()
 
 func _physics_process(_delta: float) -> void:
-	#rtpc.set_value(rtpc_node,health_component.health)
+	rtpc.set_value(rtpc_node,health_component.health)
 	#rtpc_node.post_event()
 	#print(rtpc)
 	if !is_on_floor():

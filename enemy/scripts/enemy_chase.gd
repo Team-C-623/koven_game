@@ -7,7 +7,7 @@ var player: CharacterBody3D = null
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
-	
+	Wwise.set_switch("GAMEPLAY_SWITCH", "COMBAT",self)
 
 
 func process(_delta: float):
