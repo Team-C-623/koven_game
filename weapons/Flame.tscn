@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct0hvhycg5d23"]
+[gd_scene load_steps=20 format=3 uid="uid://ct0hvhycg5d23"]
 
 [ext_resource type="Script" path="res://weapons/flame.gd" id="1_bn3o8"]
+[ext_resource type="Texture2D" uid="uid://bodysy3otl5u3" path="res://assets/environment/explosion_particle.PNG" id="2_4h3ol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iq3wv"]
 albedo_color = Color(0.947173, 0.315318, 0.12667, 1)
@@ -9,48 +10,110 @@ emission_enabled = true
 emission = Color(0.898039, 0.690196, 0.168627, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_baskv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wha55"]
-albedo_color = Color(1, 0.52549, 0.207843, 1)
-emission_enabled = true
-emission = Color(0.902268, 0.184881, 0.213211, 1)
-emission_energy_multiplier = 4.0
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjij7"]
-angular_velocity_min = -1.60933e-05
-angular_velocity_max = -1.60933e-05
-radial_velocity_min = 2.99998
-radial_velocity_max = 4.99998
-
-[sub_resource type="BoxMesh" id="BoxMesh_yjbcq"]
-lightmap_size_hint = Vector2i(190, 0)
-size = Vector3(0.02, 0.02, 0.02)
+size = Vector3(0.01, 0.05, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_euux0"]
 size = Vector3(0.0177002, 0.0193634, 0.17038)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga6g7"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_4h3ol")
+
+[sub_resource type="Curve" id="Curve_7otvw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_yeaxx"]
+max_value = 3.0
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_1hqqp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_4o3qm"]
+curve_x = SubResource("Curve_7otvw")
+curve_y = SubResource("Curve_yeaxx")
+curve_z = SubResource("Curve_1hqqp")
+
+[sub_resource type="Curve" id="Curve_ll7y0"]
+max_value = 5.0
+_data = [Vector2(0, 3.95604), 0.0, -6.99915, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_db541"]
+width = 4096
+curve = SubResource("Curve_ll7y0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rjm0b"]
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 0.3
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 15.0
+velocity_limit_curve = SubResource("CurveTexture_db541")
+gravity = Vector3(0, -8, 0)
+scale_min = 0.2
+scale_max = 0.5
+scale_curve = SubResource("CurveXYZTexture_4o3qm")
+color = Color(5, 2, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tn6n2"]
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mjmn"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_4h3ol")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_nj7m7"]
+_data = [Vector2(0, 0.307692), 0.0, 0.239445, 0, 0, Vector2(1, 0), -0.0529005, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_n5hb7"]
+curve = SubResource("Curve_nj7m7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6xq8a"]
+gravity = Vector3(0, 0, 0)
+scale_min = 0.7
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_n5hb7")
+color = Color(2, 1, 0.5, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_c1una"]
 
 [node name="Flame" type="Node3D" groups=["flame group"]]
 transform = Transform3D(0.3, 0, 0, 0, 0.0024923, 0.29999, 0, -0.29999, 0.0024923, 0, 0, 0)
 script = ExtResource("1_bn3o8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.01, 0, 0, 0, -7.43094e-09, -0.01, 0, 0.17, -4.37114e-10, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_iq3wv")
 mesh = SubResource("BoxMesh_baskv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 5.58794e-10, 0, -5.58794e-10, 1, 0, 0, 0)
+light_color = Color(0.909731, 0.502349, 0.0094111, 1)
+light_energy = 0.8
+omni_range = 0.7
+omni_attenuation = 1.5
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 9.17958e-09, 0, -9.17958e-09, 1, 0.000542601, -0.000569406, 0.000536471)
 target_position = Vector3(0, 0, -1)
 collision_mask = 5
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000715981, 0.0861803)
-material_override = SubResource("StandardMaterial3D_wha55")
-emitting = false
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_vjij7")
-draw_pass_1 = SubResource("BoxMesh_yjbcq")
 
 [node name="FlameHitBox" type="Area3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 1.86264e-09, 0, -1.86264e-09, 2, 0, 0, 0)
@@ -60,5 +123,28 @@ collision_mask = 5
 [node name="FlameCollision" type="CollisionShape3D" parent="FlameHitBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00360107, -0.000846854, -4.56934e-05)
 shape = SubResource("BoxShape3D_euux0")
+
+[node name="SparksParticles" type="GPUParticles3D" parent="."]
+sorting_offset = 100.0
+material_override = SubResource("StandardMaterial3D_ga6g7")
+emitting = false
+amount = 15
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_rjm0b")
+draw_pass_1 = SubResource("QuadMesh_tn6n2")
+
+[node name="ExplosionParticles" type="GPUParticles3D" parent="."]
+sorting_offset = 100.0
+material_override = SubResource("StandardMaterial3D_8mjmn")
+emitting = false
+amount = 1
+lifetime = 0.15
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_6xq8a")
+draw_pass_1 = SubResource("QuadMesh_c1una")
 
 [connection signal="area_entered" from="FlameHitBox" to="." method="_on_flame_hit_box_area_entered"]
