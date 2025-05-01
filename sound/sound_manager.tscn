@@ -19,4 +19,4 @@ bank = ExtResource("2_vxnwv")
 trigger_on = 2
 stop_on = 3
 
-[node name="AkEvent3D2" type="AkEvent3D" parent="."]
+[node name="enter_castle" type="AkEvent3D" parent="."]

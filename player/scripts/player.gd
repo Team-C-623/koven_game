@@ -48,7 +48,7 @@ func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	inventory_data = InventoryData.new()
-	#SoundManager.play_music()
+
 
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -94,7 +94,7 @@ func _physics_process(_delta: float) -> void:
 	# Play sound at peak descent (when switching from falling to rising)
 	if was_rising and not is_rising and footstep_cooldown <= 0:
 		SoundManager.play_footsteps()
-		footstep_cooldown = 0.05  # Small cooldown to prevent double sounds
+		footstep_cooldown = 0.03  # Small cooldown to prevent double sounds
 	
 	# Update tracking variable
 	was_rising = is_rising

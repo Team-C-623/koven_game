@@ -47,6 +47,7 @@ func damage(attack: Attack):
 				Currency.add_currency(10)
 			get_parent().call_deferred("queue_free")
 
+
 func reset_health():
 	health = MAX_HEALTH
 	is_dead = false

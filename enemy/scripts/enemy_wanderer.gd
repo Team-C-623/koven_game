@@ -14,6 +14,7 @@ func _ready() -> void:
 		#player = Global.player
 	#else:
 		#print("Player not found")
+	
 
 func randomize_variables():
 	wander_time = randf_range(1.5, 4)
