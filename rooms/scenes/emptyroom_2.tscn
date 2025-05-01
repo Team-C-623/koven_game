@@ -1,10 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://cv23mte1ng12k"]
+[gd_scene load_steps=24 format=3 uid="uid://cv23mte1ng12k"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_oee63"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_lwvf8"]
 [ext_resource type="Texture2D" uid="uid://dyyrsow1wqcai" path="res://assets/environment/plainstonewall.png" id="3_no0m4"]
+[ext_resource type="ArrayOccluder3D" uid="uid://wbjrjbv8ayos" path="res://rooms/occluders/emptyroom_2_wall2.occ" id="4_0gy88"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_5y3re"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="5_ticro"]
+[ext_resource type="ArrayOccluder3D" uid="uid://chr5bprs84cb6" path="res://rooms/occluders/emptyroom_2_wall4.occ" id="5_tuth4"]
+[ext_resource type="ArrayOccluder3D" uid="uid://p1ogy5fmng64" path="res://rooms/occluders/emptyroom_2_floor.occ" id="7_qpryj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8scs6"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
@@ -85,6 +88,9 @@ mesh = SubResource("PlaneMesh_4tnoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hrdm6")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
+occluder = ExtResource("4_0gy88")
+
 [node name="WallDoor3" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.01, 8.74227e-10, -8.74228e-10, 8.74227e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
 visibility_range_end = 20.0
@@ -110,9 +116,15 @@ mesh = SubResource("PlaneMesh_4tnoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_g0kpd")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall4"]
+occluder = ExtResource("5_tuth4")
+
 [node name="Floor" type="MeshInstance3D" parent="."]
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
+occluder = ExtResource("7_qpryj")
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
