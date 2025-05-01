@@ -10,4 +10,5 @@ func _ready() -> void:
 	add_child(new_shop_witch)
 	new_shop_witch.position = Vector3(-9.5, 0, 0)
 	new_shop_witch.position = Vector3(-2, 0, 4.5)
+	Wwise.set_state("LOCATION", "CATACOMBS")
 	SoundManager.play_start_music()

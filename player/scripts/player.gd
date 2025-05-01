@@ -48,6 +48,7 @@ func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	inventory_data = InventoryData.new()
+	Wwise.set_state("PLAYER_STATE", "ALIVE")
 
 
 	

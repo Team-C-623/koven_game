@@ -9,6 +9,7 @@ var pending_animation: String = ""
 signal change_sprite(speaker_name: String)
 
 func _ready() -> void:
+	SoundManager.play_trial_room_music()
 	add_child(dialogue_balloon)
 	dialogue_balloon.visible = false
 	character_sprite.animation_finished.connect(_on_animation_finished)

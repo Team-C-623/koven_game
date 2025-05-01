@@ -7,6 +7,7 @@ extends Node
 
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sound_effects_bank.load_bank()
@@ -51,8 +52,8 @@ func play_nun_projectile():
 
 # MUSIC
 func play_castle_music(floor_state: String = "floor1"): #called in main.gd (_entered)
-	var state_result = Wwise.set_state("ambience_floor", floor_state)
-	var switch_result = Wwise.set_switch("floor_level","floor1", self)
+	#var state_result = Wwise.set_state("ambience_floor", floor_state)
+	var switch_result = Wwise.set_switch("FLOOR_LEVEL","FLOOR1", self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
 	
 
@@ -64,7 +65,8 @@ func play_main_menu_music(): #called in start_screen script
 func play_start_music(): #called in catacombs.gd 
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
 
-func play_trial_room_music(): #called in dialogue_area.gd 
+func play_trial_room_music(): #called in trialroom_1.gd 
+	var result = Wwise.set_state("LOCATION","TRIAL_ROOM")
 	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
 	print("PLAYING TRIAL ROOM MUSIC")
 

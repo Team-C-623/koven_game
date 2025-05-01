@@ -46,6 +46,8 @@ func damage(attack: Attack):
 			elif get_parent() is Nun:
 				Currency.add_currency(10)
 			get_parent().call_deferred("queue_free")
+		if get_parent() is Player:
+			Wwise.set_state("PLAYER_STATE", "DEFEATED")
 
 
 func reset_health():

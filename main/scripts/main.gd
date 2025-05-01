@@ -16,6 +16,7 @@ var shop_instance: CanvasLayer = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	randomize()
 	var new_catacombs = cata_scene.instantiate()
 	add_child(new_catacombs)
@@ -92,6 +93,7 @@ func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 
 func _on_entered() -> void:
 	generate_new()
+	Wwise.set_state("LOCATION", "CASTLE")
 	SoundManager.play_castle_music()
 
 func _unhandled_input(event: InputEvent) -> void:
