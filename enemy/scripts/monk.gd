@@ -39,8 +39,7 @@ func _physics_process(delta: float) -> void:
 	# Always face the player
 	look_at(player_3d.position)
 	
-	if health_component.health <= 0:
-		SoundManager.play_death_sound()
+
 	
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:

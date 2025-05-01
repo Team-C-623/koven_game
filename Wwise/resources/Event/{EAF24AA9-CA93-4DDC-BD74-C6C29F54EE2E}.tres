@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://dd4fqf8fefwry"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "enter_trial_room"
+id = 1844506134
+guid = "{EAF24AA9-CA93-4DDC-BD74-C6C29F54EE2E}"
+dummy = true

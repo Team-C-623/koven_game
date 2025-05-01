@@ -7,8 +7,10 @@ class_name HealthComponent
 var health : float
 @export var damage_modifier: float = 1.0
 signal health_changed(current_health: float, max_health: float)
-@export var is_player := false
+
 var is_dead := false
+
+
 
 signal died
 
@@ -18,10 +20,14 @@ func _ready():
 
 
 func damage(attack: Attack):
+	
 	health -= (attack.attack_damage * damage_modifier)
-	if is_player == false:
+
+	
+	if get_parent() is not Player:
 		SoundManager.play_enemy_damage_sound()
-		
+	elif get_parent() is Player:
+		SoundManager.play_player_damage()
 	if is_dead:
 		return
 	
@@ -33,8 +39,8 @@ func damage(attack: Attack):
 		is_dead = true
 		print("dying")
 		emit_signal("died")
-		SoundManager.play_death_sound()
 		if get_parent().is_in_group("Enemies Group"):
+			SoundManager.play_enemy_death()
 			if get_parent() is Monk:
 				Currency.add_currency(5)
 			elif get_parent() is Nun:

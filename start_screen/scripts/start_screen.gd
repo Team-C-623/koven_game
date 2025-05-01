@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	SoundManager.play_main_menu_music()
 
 func _on_start_button_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

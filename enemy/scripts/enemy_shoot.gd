@@ -79,3 +79,4 @@ func shoot_knife():
 		var direction = (player.global_position - enemy.global_position).normalized()
 		instance.velocity = direction * 10
 		shooting_animation.play("knife")
+		SoundManager.play_nun_projectile()

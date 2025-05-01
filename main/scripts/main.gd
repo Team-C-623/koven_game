@@ -21,7 +21,6 @@ func _ready() -> void:
 	add_child(new_catacombs)
 	_spawn_journals_in_room(new_catacombs) #spawns journal
 	new_catacombs.name = "Catacombs"
-	SoundManager.play_start_music()
 	
 	entered.connect(generate_new)
 	

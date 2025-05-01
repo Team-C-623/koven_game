@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjvono7sjvopq"]
+[gd_scene load_steps=4 format=3 uid="uid://bjvono7sjvopq"]
 
 [ext_resource type="Script" path="res://UI/scripts/sound_manager.gd" id="1_fxatd"]
 [ext_resource type="WwiseBank" uid="uid://cibomgsaobcx4" path="res://Wwise/resources/SoundBank/{984B2A5E-E97F-48CC-AC30-2E8A908A4855}.tres" id="2_vxnwv"]
 [ext_resource type="WwiseBank" uid="uid://kjdluqc3c50i" path="res://Wwise/resources/SoundBank/{564FA88C-F2F7-4907-B737-8F11A3FA7E78}.tres" id="3_uboyp"]
-[ext_resource type="WwiseEvent" uid="uid://b3rxr22dcuo2p" path="res://Wwise/resources/Event/{6BD79D35-0C9A-4866-B47A-826840CCDADD}.tres" id="4_5vd4i"]
 
 [node name="SoundManager" type="Node3D"]
 script = ExtResource("1_fxatd")
@@ -17,6 +16,7 @@ bank = ExtResource("2_vxnwv")
 [node name="AkListener3D" type="AkListener3D" parent="."]
 
 [node name="AkEvent3D" type="AkEvent3D" parent="."]
-event = ExtResource("4_5vd4i")
 trigger_on = 2
 stop_on = 3
+
+[node name="AkEvent3D2" type="AkEvent3D" parent="."]

@@ -1,6 +1,8 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	1176052424	Location			\Music\Location	
+	2903394062	ambience_floor			\Music\ambience_floor	
 	4071417932	Player_state			\Music\Player_state	
+	4243432011	Catacomb_Witches			\Music\Catacomb_Witches	
 
 State	ID	Name	State Group			Notes
 	129146593	Castle	Location			
@@ -10,10 +12,19 @@ State	ID	Name	State Group			Notes
 	2005704188	Main_Menu	Location			
 	2201105581	credits	Location			
 	2966204926	Catacombs	Location			
+	748895195	None	ambience_floor			
+	3162820672	floor3	ambience_floor			
+	3162820673	floor2	ambience_floor			
+	3162820674	floor1	ambience_floor			
 	655265632	Alive	Player_state			
 	748895195	None	Player_state			
 	2716678721	Victory	Player_state			
 	2791675679	Defeated	Player_state			
+	748895195	None	Catacomb_Witches			
+	3350869484	witch2	Catacomb_Witches			
+	3350869485	witch3	Catacomb_Witches			
+	3350869486	witch0	Catacomb_Witches			
+	3350869487	witch1	Catacomb_Witches			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
@@ -36,7 +47,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	4274270069	Sfx_volume_slider			\Default Work Unit\Sfx_volume_slider	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	1658436645	backup_music_mixer			\Default Work Unit\Master Audio Bus\backup_music_mixer	
+	1247349911	ambience_mixer			\Default Work Unit\Master Audio Bus\ambience_mixer	
 	2990548740	music_mixer			\Default Work Unit\Master Audio Bus\music_mixer	
 	3131440204	sfx_mixer			\Default Work Unit\Master Audio Bus\sfx_mixer	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

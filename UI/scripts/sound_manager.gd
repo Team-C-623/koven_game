@@ -19,8 +19,8 @@ func play_card_burn():
 func play_page_turn():
 	Wwise.post_event_id(AK.EVENTS.JOURNALPAGETURN, self)
 	
-func play_death_sound():
-	Wwise.post_event_id(AK.EVENTS.DEFEATED,self)
+func play_enemy_death():
+	Wwise.post_event_id(AK.EVENTS.ENEMY_DEATH,self)
 	pass
 
 func play_enemy_damage_sound():
@@ -31,27 +31,36 @@ func play_wand_sound():
 
 func play_buy_sound():
 	Wwise.post_event_id(AK.EVENTS.SHOP_BUY,self)
-
-func play_catacombs_music():
-	print("Playing catacombs music")
-	Wwise.post_event_id(AK.EVENTS.ENTER_CATACOMBS,self)
 	
 func play_menu_open():
 	Wwise.post_event_id(AK.EVENTS.MENUOPEN,self)
 	
-func play_start_music():
-	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
-	
-func play_trial_room_music():
-	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
-	
 func play_tarot_pickup():
 	Wwise.post_event_id(AK.EVENTS.TAROTPICKUP,self)
+	
+func play_player_damage():
+	Wwise.post_event_id(AK.EVENTS.PLAYER_TAKINGDAMAGE,self)
+	
+func play_nun_projectile():
+	Wwise.post_event_id(AK.EVENTS.ENEMY_ITEM_THROWS,self)
 
-func play_music():
+
+
+# MUSIC
+func play_castle_music(): #called in entrance.gd
 	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
 	
-func stop_start_music():
-	#why doesnt it stop
-	Wwise.stop_event(AK.EVENTS.MAP_LOAD,0,AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR)
+
+func play_main_menu_music(): #called in start_screen script
+	Wwise.post_event_id(AK.EVENTS.MAIN_MENU,self)
+	
+func play_start_music(): #called in catacombs.gd
+	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
+
+func play_trial_room_music(): #called in dialogue_area.gd 
+	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
+	print("PLAYING TRIAL ROOM MUSIC")
+
+func play_catacombs_music():
+	Wwise.post_event_id(AK.EVENTS.ENTER_CATACOMBS,self)
 	
