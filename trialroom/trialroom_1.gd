@@ -3,6 +3,7 @@ extends Node2D
 @onready var dialogue_balloon = preload("res://dialogue/balloon.tscn").instantiate()
 @onready var dialogue_manager = DialogueManager
 @onready var character_sprite: AnimatedSprite2D = $CanvasLayer2/Control/Character/AnimatedSprite2D
+@onready var jury_sprite: TextureRect = $CanvasLayer/Control/TextureRect2
 
 signal change_sprite(speaker_name: String)
 
@@ -10,6 +11,7 @@ func _ready() -> void:
 	add_child(dialogue_balloon)
 	dialogue_balloon.visible = false
 	start_dialogue()
+	
 func start_dialogue():
 	dialogue_balloon.visible = true
 	DialogueManager.mutated.connect(_on_mutation)
@@ -28,12 +30,15 @@ func update_character_sprite(speaker: String) -> void:
 		"Judge Quétif":
 			frames_path = "res://trialroom/animations/prosecutor_sprite.tres"
 			animation_to_play = "default"
+			jury_sprite.visible = true
 		"Merga":
 			frames_path = "res://trialroom/animations/merga_sprite.tres"
 			animation_to_play = "talk"
+			jury_sprite.visible = false
 		"Player":
 			frames_path = "res://trialroom/animations/mainwitch_sprite.tres"
 			animation_to_play = "talk"
+			jury_sprite.visible = false
 		#"Soulmother":
 			#sprite_path = "res://trialroom/art/soulmother.png"
 	
