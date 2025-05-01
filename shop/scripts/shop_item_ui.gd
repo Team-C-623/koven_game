@@ -1,4 +1,4 @@
-class_name ShopItemUI extends Button
+class_name ShopItemUI extends TextureButton
 
 var item_data: ItemData : set = set_item_data
 
