@@ -6,6 +6,8 @@ func _ready():
 	SoundManager.play_main_menu_music()
 
 func _on_start_button_pressed():
+	SoundManager.play_menu_boop()
+	await get_tree().create_timer(1.0).timeout
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var quote_scene_path = "res://cutscenes/scenes/quote.tscn"
 	TransitionScreen.transition()
@@ -13,8 +15,11 @@ func _on_start_button_pressed():
 	get_tree().change_scene_to_file(quote_scene_path)
 	
 func _on_exit_button_pressed():
+	SoundManager.play_menu_boop()
+	await get_tree().create_timer(1.0).timeout
 	get_tree().quit()
 
 func _on_guide_button_pressed():
+	SoundManager.play_menu_boop()
 	var guide_scene = preload("res://start_screen/scenes/guide.tscn").instantiate()
 	get_tree().current_scene.add_child(guide_scene)

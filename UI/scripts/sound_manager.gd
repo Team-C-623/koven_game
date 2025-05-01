@@ -5,9 +5,6 @@ extends Node
 @onready var enter_castle_event: AkEvent3D = $enter_castle  # Changed to regular AkEvent if not spatial
 
 
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sound_effects_bank.load_bank()
@@ -48,15 +45,15 @@ func play_player_damage():
 func play_nun_projectile():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_ITEM_THROWS,self)
 
+func play_menu_boop():
+	Wwise.post_event_id(AK.EVENTS.MENU_BOOP,self)
+
 
 
 # MUSIC
 func play_castle_music(floor_state: String = "floor1"): #called in main.gd (_entered)
 	var switch_result = Wwise.set_switch("FLOOR_LEVEL","FLOOR1", self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
-	
-
-
 
 func play_main_menu_music(): #called in start_screen script
 	Wwise.post_event_id(AK.EVENTS.MAIN_MENU,self)
@@ -65,9 +62,12 @@ func play_start_music(): #called in catacombs.gd
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
 
 func play_trial_room_music(): #called in trialroom_1.gd 
+	Wwise.set_state("PLAYER_STATE", "ALIVE")
 	var result = Wwise.set_state("LOCATION","TRIAL_ROOM")
+
+	await get_tree().create_timer(2).timeout
 	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
-	print("PLAYING TRIAL ROOM MUSIC")
+	pass
 
 func play_enemy_aggro():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_AGGRO,self)
@@ -76,6 +76,7 @@ func play_enemy_safe():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_SAFE,self)
 	
 func play_defeated(): #in health_component commented out
+	Wwise.set_state("PLAYER_STATE", "DEFEATED")
 	Wwise.post_event_id(AK.EVENTS.DEFEATED,self)
 
 func play_respawn():

@@ -47,7 +47,7 @@ func damage(attack: Attack):
 				Currency.add_currency(10)
 			get_parent().call_deferred("queue_free")
 		if get_parent() is Player:
-			Wwise.set_state("PLAYER_STATE", "DEFEATED")
+			SoundManager.play_defeated()
 
 
 func reset_health():
