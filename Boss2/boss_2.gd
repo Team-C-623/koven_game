@@ -25,7 +25,7 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	sprite.rotate_y(delta)
+	#sprite.rotate_y(delta)
 
 	# Debugging
 	if player_3d == null:

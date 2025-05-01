@@ -1,12 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://do4m5lfs4b0mn"]
+[gd_scene load_steps=13 format=3 uid="uid://do4m5lfs4b0mn"]
 
 [ext_resource type="Script" path="res://Boss2/boss_2.gd" id="1_fhf8f"]
 [ext_resource type="Texture2D" uid="uid://djgocdrtsu4rc" path="res://assets/characters/Final monk level 1.png" id="2_8phho"]
-[ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_vppa3"]
+[ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_y1vr5"]
 [ext_resource type="Script" path="res://Boss2/boss_grab.gd" id="5_e0db2"]
-[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_2xob4"]
-[ext_resource type="Script" path="res://Boss2/boss_chase.gd" id="6_52igy"]
-[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_8p7ls"]
+[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="6_2xob4"]
+[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="7_8p7ls"]
 [ext_resource type="Texture2D" uid="uid://oshwtjxciwcs" path="res://assets/characters/Monk level 1 sprite 2.png" id="8_xe26x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_meq7y"]
@@ -77,11 +76,8 @@ aabb = AABB(-0.570377, -0.556137, -0.565157, 1.14075, 1.11227, 1.13031)
 wait_time = 0.1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
-script = ExtResource("3_vppa3")
-InitialState = NodePath("BossChase")
-
-[node name="BossChase" type="Node" parent="StateMachine"]
-script = ExtResource("6_52igy")
+script = ExtResource("3_y1vr5")
+InitialState = NodePath("BossGrab")
 
 [node name="BossGrab" type="Node" parent="StateMachine"]
 script = ExtResource("5_e0db2")
@@ -106,7 +102,7 @@ libraries = {
 }
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.34557, 0, 0, 0)
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1.11909, 0, 0, 0)
 target_position = Vector3(0, 0, 1)
 
 [connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
