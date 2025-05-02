@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Boss2/boss_2.gd" id="1_fhf8f"]
 [ext_resource type="Texture2D" uid="uid://djgocdrtsu4rc" path="res://assets/characters/Final monk level 1.png" id="2_8phho"]
 [ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_y1vr5"]
-[ext_resource type="Script" path="res://Boss2/boss_grab.gd" id="5_e0db2"]
+[ext_resource type="Script" path="res://Boss2/boss_chase.gd" id="5_mt3y4"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="6_2xob4"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="7_8p7ls"]
 [ext_resource type="Texture2D" uid="uid://oshwtjxciwcs" path="res://assets/characters/Monk level 1 sprite 2.png" id="8_xe26x"]
@@ -13,8 +13,8 @@ radius = 0.286641
 height = 0.951147
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gb5n1"]
-radius = 0.260556
-height = 0.865382
+radius = 0.207557
+height = 1.05558
 
 [sub_resource type="Animation" id="Animation_34n4v"]
 length = 0.001
@@ -77,12 +77,13 @@ wait_time = 0.1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
 script = ExtResource("3_y1vr5")
-InitialState = NodePath("BossGrab")
+InitialState = NodePath("BossChase")
 
-[node name="BossGrab" type="Node" parent="StateMachine"]
-script = ExtResource("5_e0db2")
+[node name="BossChase" type="Node" parent="StateMachine"]
+script = ExtResource("5_mt3y4")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_2xob4")]
+MAX_HEALTH = 100.0
 
 [node name="HitboxComponent" parent="." instance=ExtResource("7_8p7ls")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)

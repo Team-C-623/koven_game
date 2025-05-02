@@ -4,6 +4,7 @@ class_name Boss2
 @onready var player_3d=$"../Player"
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.5
+@export var GRAB_DISTANCE: float = 2.0
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 20.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
@@ -17,6 +18,7 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
+var dancing := true
 
 func _ready():
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
@@ -25,7 +27,10 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	#sprite.rotate_y(delta)
+	#dancing = true
+	#if dancing:
+		#sprite.rotate_y(delta)
+	sprite.rotate_y(delta)
 
 	# Debugging
 	if player_3d == null:
