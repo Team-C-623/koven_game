@@ -10,9 +10,13 @@ func _ready() -> void:
 	sound_effects_bank.load_bank()
 	music_bank.load_bank()
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
+	
+func _process(delta: float) -> void:
+	Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 
 func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
+	
 	
 func play_card_burn():
 	Wwise.post_event_id(AK.EVENTS.TAROTBURN, self)

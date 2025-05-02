@@ -62,9 +62,6 @@ State	ID	Name	State Group			Notes
 	3350869486	witch0	Catacomb_Witches			
 	3350869487	witch1	Catacomb_Witches			
 
-Game Parameter	ID	Name			Wwise Object Path	Notes
-	3677180323	health			\Default Work Unit\health	
-
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	28224643	Harpsichord	Y:\Documents\WwiseProjects\Koven_5_01_25 2\Koven\.cache\56\{563CF503-7C6C-2303-E4F3-3C710550F605}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Default Room\In Combat\Combat A\Harpsichord		7866912
 	59438838	Contrabass	Y:\Documents\WwiseProjects\Koven_5_01_25 2\Koven\.cache\5A\{5A02B191-C37F-977F-2F55-B6D6C219C4B4}.wem		\Interactive Music Hierarchy\Music\Koven Music\Castle\Default Room\Explore\Explore A\Contrabass		8129056
