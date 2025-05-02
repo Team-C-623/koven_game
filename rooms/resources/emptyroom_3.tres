@@ -7,5 +7,5 @@
 script = ExtResource("2_7or3j")
 name = "room_3e"
 doors = Array[String](["D", "L"])
-room_type = "empty"
+room_type = "E3"
 room_scene = ExtResource("1_cvlhf")

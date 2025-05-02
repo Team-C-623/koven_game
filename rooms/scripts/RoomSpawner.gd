@@ -52,7 +52,7 @@ func generate_base_path(room_options: Array[String]):
 	while rooms_added < grid_size:
 		if rooms_added == grid_size - 1:
 			# replace with boss room eventually
-			new_room = _create_room_data("room_1e")
+			new_room = _create_room_data("room_1b")
 		else:
 			new_room = _create_room_data(room_options.pick_random())
 		
@@ -188,7 +188,7 @@ func _get_door_validity(room: RoomData, prev_room: RoomData, prev_door_choice, n
 		var door_to_check = (next_gridspace + new_door_vect.rotated(new_angle)).snapped(Vector2(1, 1))
 		
 		# if a valid room exists, return false
-		if room.room_name == "room_1e" or room_grid[door_to_check[0]][door_to_check[1]] == null and door != new_door_choice:
+		if room.room_name == "room_1b" or room_grid[door_to_check[0]][door_to_check[1]] == null and door != new_door_choice:
 			no_valid_doors = false
 	return no_valid_doors
 
@@ -234,6 +234,8 @@ func _add_room_from_data(room: RoomData):
 	new_instance.pos = Vector3(6.001 * room.pos[1], 0, 6.001 * room.pos[0])
 	new_instance.global_position = new_instance.pos
 	new_instance.rotate_y(new_instance.room_rotation)
+	new_instance.create_chest()
+	new_instance.create_journal()
 	return new_instance
 
 # gets a random door from a room's door dictionary

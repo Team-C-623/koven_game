@@ -24,7 +24,8 @@ fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.5
-fog_depth_end = 24.0
+fog_depth_begin = 8.0
+fog_depth_end = 20.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_nxmt8")
@@ -32,6 +33,7 @@ script = ExtResource("1_nxmt8")
 [node name="Player" parent="." instance=ExtResource("2_qcoaa")]
 
 [node name="SwitchCamButton" type="Button" parent="."]
+visible = false
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 94.0

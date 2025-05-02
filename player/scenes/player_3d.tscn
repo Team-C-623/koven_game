@@ -74,10 +74,6 @@ current = true
 [node name="Wand" parent="head/PlayerCam" instance=ExtResource("2_ivwlt")]
 transform = Transform3D(0.499597, 0, 0.0200658, 0, 0.499999, 0, -0.0200659, 0, 0.499595, 0.126394, -0.0498056, -0.195507)
 
-[node name="InteractRay" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -2.5)
-collision_mask = 4
-
 [node name="Journal_UI" parent="." instance=ExtResource("4_anngu")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qib34")]

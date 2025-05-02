@@ -65,9 +65,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * SENS * 0.005)
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
-	
-	if Input.is_action_just_pressed("interact"):
-		interact()
 
 func _physics_process(_delta: float) -> void:
 	rtpc.set_value(rtpc_node,health_component.health)
@@ -137,12 +134,6 @@ func _process(delta: float) -> void:
 	else:
 		Wwise.set_switch("GAMEPLAY_SWITCH", "EXPLORE", self)
 		SoundManager.play_enemy_safe()
-
-
-
-func interact() -> void:
-	if interact_ray.is_colliding():
-		interact_ray.get_collider().player_interact()
 
 func get_drop_position() -> Vector3:
 	var direction = -camera.global_transform.basis.z

@@ -1,40 +1,43 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxad4ju1nyf7r"]
+[gd_scene load_steps=8 format=3 uid="uid://bxad4ju1nyf7r"]
 
 [ext_resource type="Script" path="res://interactable/scripts/chest.gd" id="1_tkpi1"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory_data.gd" id="2_0itwl"]
 [ext_resource type="Script" path="res://inventory/scripts/slot_data.gd" id="3_xkyap"]
 [ext_resource type="Texture2D" uid="uid://ce36foicjqij7" path="res://assets/environment/chest.png" id="4_1t61r"]
+[ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://UI/scenes/interact_popup.tscn" id="5_m2isv"]
 
 [sub_resource type="Resource" id="Resource_qo3r8"]
 script = ExtResource("2_0itwl")
-slot_datas = Array[ExtResource("3_xkyap")]([])
+slot_datas = Array[ExtResource("3_xkyap")]([null])
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot33s"]
-albedo_color = Color(0.121569, 1, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_utg7m"]
-material = SubResource("StandardMaterial3D_ot33s")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r5v8a"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f8sf4"]
+points = PackedVector3Array(-0.5, -0.4, -0.5, -0.5, 0.4, -0.5, 0.5, -0.4, -0.5, -0.5, -0.4, 0.5, -0.5, 0.4, 0.5, 0.5, 0.4, -0.5, 0.5, -0.4, 0.5, 0.5, 0.4, 0.5)
 
 [node name="Chest" type="StaticBody3D" groups=["external_inventory"]]
-collision_layer = 5
+collision_layer = 129
 collision_mask = 0
 script = ExtResource("1_tkpi1")
 inventory_data = SubResource("Resource_qo3r8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_utg7m")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("ConvexPolygonShape3D_r5v8a")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("ConvexPolygonShape3D_f8sf4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.4, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.388544, 0)
+visibility_range_end = 20.0
 billboard = 2
 shaded = true
 alpha_cut = 1
 texture = ExtResource("4_1t61r")
+
+[node name="InteractPopup" parent="." instance=ExtResource("5_m2isv")]
+
+[node name="CollisionShape3D" parent="InteractPopup" index="0"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0.4, 0)
+
+[node name="Indicator" parent="InteractPopup" index="1"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0.9, 0)
+text = "[E] Open"
+
+[editable path="InteractPopup"]
