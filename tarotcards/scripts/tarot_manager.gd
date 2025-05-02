@@ -86,7 +86,7 @@ func use_high_priestess():
 	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is Player:
-			node.speed += 0.75
+			node.speed += 1.0
 			
 func end_high_priestess():
 	main_node = get_node("/root/Main")
@@ -124,23 +124,23 @@ func use_wheel_of_fortune(_item_data: ItemData):
 					if component is HealthComponent:	
 						health_component = component
 	if random_num == 0:
-		PlayerManager.player.attack_damage += 10
-		effect_message = "+10 attack damage"
+		PlayerManager.player.attack_damage += 2
+		effect_message = "+2 attack damage"
 						
 	elif random_num == 1:
 		for node in main_node.get_children(true):
 			if node is Player:
 				for component in node.get_children(true):
 					if component is HealthComponent:	
-						component.MAX_HEALTH += 20
-						component.health += 20
-		effect_message = "+20 Max Health"
+						component.MAX_HEALTH += 5
+						component.health += 5
+		effect_message = "+5 Health and Max Health"
 		health_component.emit_signal("health_changed",health_component.health,health_component.MAX_HEALTH)
 	elif random_num == 2:
-		effect_message = "+2.0 speed"
+		effect_message = "0.25 speed"
 		for node in main_node.get_children(true):
 			if node is Player:
-				node.speed += 2.0
+				node.speed += 0.25
 		
 	var popup = wof_popup.instantiate()
 	get_tree().root.add_child(popup)
