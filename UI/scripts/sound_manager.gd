@@ -22,7 +22,7 @@ func play_page_turn():
 	
 func play_enemy_death():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_DEATH,self)
-	pass
+	#pass
 
 func play_enemy_damage_sound():
 	Wwise.post_event_id(AK.EVENTS.ENEMYDAMAGE,self)

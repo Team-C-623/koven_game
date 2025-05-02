@@ -6,11 +6,11 @@
    "Generator": "2024.1.1.8691"
   },
   "RootPaths": {
-   "ProjectRoot": "../../../../../../WwiseProjects/Koven_5_01_25/Koven",
-   "SourceFilesRoot": "../../../../../../WwiseProjects/Koven_5_01_25/Koven/.cache",
+   "ProjectRoot": "../../../../../../WwiseProjects/Koven_5_01_25 2/Koven",
+   "SourceFilesRoot": "../../../../../../WwiseProjects/Koven_5_01_25 2/Koven/.cache",
    "SoundBanksRoot": ".",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "../../../../../../WwiseProjects/Koven_5_01_25/Koven/GeneratedSoundBanks/Windows"
+   "ExternalSourcesOutputRoot": "../../../../../../WwiseProjects/Koven_5_01_25 2/Koven/GeneratedSoundBanks/Windows"
   },
   "DefaultAlign": "16",
   "Settings": {
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{9F26B186-DF64-5A0E-6F0D-FD857E49F797}"
+  "FileHash": "{E9854A54-80BB-4DCB-2C4E-CDEE77A6E474}"
  }
 }
