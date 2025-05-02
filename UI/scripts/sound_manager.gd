@@ -42,7 +42,7 @@ func play_tarot_pickup():
 func play_player_damage():
 	Wwise.post_event_id(AK.EVENTS.PLAYER_TAKINGDAMAGE,self)
 	
-func play_nun_projectile():
+func play_nun_projectile(): #not used, event node attached to nun scene is posting event
 	Wwise.post_event_id(AK.EVENTS.ENEMY_ITEM_THROWS,self)
 
 func play_menu_boop():

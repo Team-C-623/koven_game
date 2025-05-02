@@ -4,7 +4,9 @@ class_name EnemyShoot
 @onready var enemy: CharacterBody3D = get_parent().get_parent()
 var player: CharacterBody3D = null
 @onready var ray := $"../../RayCast3D"
-@onready var shooting_animation: AnimationPlayer = $"../../ShootingAnimation"
+@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+
+
 
 var angle_cone_of_vision := deg_to_rad(30.0)
 var max_view_distance := 5.0
@@ -12,7 +14,10 @@ var angle_between_rays := deg_to_rad(5.0)
 
 var shoot_cooldown := 2.0
 var time_since_last_knife := 0.0 
+@onready var health_component: HealthComponent = $"../../HealthComponent"
 
+
+@onready var ak_event_3d: AkEvent3D = $"../../AkEvent3D"
 #Knife
 var knife = load("res://weapons/knife.tscn")
 var instance
@@ -69,14 +74,16 @@ func physics_process(delta: float):
 				time_since_last_knife = 0.0
 				
 func shoot_knife():
-	if knife and player:
-		instance = knife.instantiate()
-		get_tree().current_scene.add_child(instance)
-		
-		instance.position = ray.global_transform.origin
-		instance.transform.basis = ray.global_transform.basis
-		
-		var direction = (player.global_position - enemy.global_position).normalized()
-		instance.velocity = direction * 10
-		shooting_animation.play("knife")
-		SoundManager.play_nun_projectile()
+	if health_component.health > 0:
+		if knife and player:
+			instance = knife.instantiate()
+			get_tree().current_scene.add_child(instance)
+			
+			instance.position = ray.global_transform.origin
+			instance.transform.basis = ray.global_transform.basis
+				
+			var direction = (player.global_position - enemy.global_position).normalized()
+			instance.velocity = direction * 10
+			animation_player.play("knife")
+			ak_event_3d.post_event()
+			#SoundManager.play_nun_projectile()

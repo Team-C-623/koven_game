@@ -9,10 +9,11 @@ class_name Nun
 @export var CHASE_DISTANCE: float = 5.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
 @export var is_ranged: bool = false
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var sprite: Sprite3D = $Sprite3D
 #@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
-
+signal dying
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
@@ -35,3 +36,12 @@ func _physics_process(delta: float) -> void:
 
 	# Always face the player
 	look_at(player_3d.position)
+
+
+func _on_health_component_nun_die() -> void:
+	animation_player.stop()
+	emit_signal("dying")
+	animation_player.play("death")
+	SoundManager.play_enemy_death()
+	await animation_player.animation_finished
+	queue_free()

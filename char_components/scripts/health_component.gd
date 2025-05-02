@@ -11,7 +11,7 @@ signal health_changed(current_health: float, max_health: float)
 var is_dead := false
 
 
-
+signal nun_die
 signal died
 
 func _ready():
@@ -38,15 +38,19 @@ func damage(attack: Attack):
 	if health <= 0:
 		is_dead = true
 		print("dying")
-		emit_signal("died")
+		#emit_signal("died")
 		if get_parent().is_in_group("Enemies Group"):
-			SoundManager.play_enemy_death()
+			
 			if get_parent() is Monk:
 				Currency.add_currency(5)
+				SoundManager.play_enemy_death()
+				get_parent().call_deferred("queue_free")
 			elif get_parent() is Nun:
+				emit_signal("nun_die")
 				Currency.add_currency(10)
-			get_parent().call_deferred("queue_free")
+			#get_parent().call_deferred("queue_free")
 		if get_parent() is Player:
+			emit_signal("died")
 			SoundManager.play_defeated()
 
 

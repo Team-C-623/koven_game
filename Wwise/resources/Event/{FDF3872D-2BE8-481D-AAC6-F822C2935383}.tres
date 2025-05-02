@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://b4ihtuth4p6p6"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Enemy_Item_Throws"
+id = 2450329037
+guid = "{FDF3872D-2BE8-481D-AAC6-F822C2935383}"
+dummy = true
