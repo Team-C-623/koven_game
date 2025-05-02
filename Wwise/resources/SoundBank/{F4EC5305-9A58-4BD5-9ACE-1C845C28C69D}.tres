@@ -1,0 +1,7 @@
+[gd_resource type="WwiseBank" format=3 uid="uid://bmjftiyjn4hwg"]
+
+[resource]
+name = "SFX_SoundBank"
+id = 2641024368
+guid = "{F4EC5305-9A58-4BD5-9ACE-1C845C28C69D}"
+dummy = true
