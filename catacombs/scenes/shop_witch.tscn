@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://catacombs/scripts/shop_witch.gd" id="1_1stjm"]
 [ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://UI/scenes/interact_popup.tscn" id="2_wlx2c"]
-[ext_resource type="Texture2D" uid="uid://bcjrikl6m3q3n" path="res://assets/characters/shop_witch_final.png" id="3_hc3fb"]
+[ext_resource type="Texture2D" uid="uid://b4k3gxosvmkac" path="res://trialroom/art/merga/merga_frame3.png" id="3_vx1lk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_87k82"]
 size = Vector3(1.26416, 1, 1.39496)
@@ -15,11 +15,11 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 collision_layer = 8
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0, 0.524, 0)
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.62, 0)
 visibility_range_end = 20.0
 billboard = 2
 shaded = true
-texture = ExtResource("3_hc3fb")
+texture = ExtResource("3_vx1lk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353553, 0.03396, 0.25, -0.0101471)
