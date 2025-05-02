@@ -16,7 +16,6 @@ var shop_instance: CanvasLayer = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	randomize()
 	var new_catacombs = cata_scene.instantiate()
 	add_child(new_catacombs)

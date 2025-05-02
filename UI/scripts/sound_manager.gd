@@ -9,7 +9,7 @@ extends Node
 func _ready() -> void:
 	sound_effects_bank.load_bank()
 	music_bank.load_bank()
-	Wwise.set_state("ambience_floor","floor1")
+	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
 
 func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
@@ -54,6 +54,17 @@ func play_queue_credits(): #not called
 func play_text_scrolling():
 	Wwise.post_event_id(AK.EVENTS.TEXT_SCROLLING,self)
 
+func play_jury_whispers():
+	Wwise.post_event_id(AK.EVENTS.JURY_WHISPERS,self)
+	
+func play_shackles_off():
+	Wwise.post_event_id(AK.EVENTS.SHACKLES_OFF,self)
+
+func play_trial_room_failed():
+	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM_FAILED,self)
+	
+func play_gavel():
+	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM_GAVEL,self)
 
 
 # MUSIC

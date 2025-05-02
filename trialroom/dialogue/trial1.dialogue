@@ -1,20 +1,30 @@
 ~ start
 do emit("change_sprite", "Judge Quétif")
+do SoundManager.play_text_scrolling()
 Judge Quétif: Who are you?
+do SoundManager.play_text_scrolling()
 Judge Quétif: Have you come to speak on behalf of Merga Bien?
+do SoundManager.play_text_scrolling()
 Judge Quétif: She is on trial for heresy.
+do SoundManager.play_text_scrolling()
 Judge Quétif: She is practicing witchcraft in this sacred castle, desecrating its ground.
+do SoundManager.play_text_scrolling()
 Judge Quétif: Her punishment is execution at the stake and so shall be yours if found wrongly defending this demonic woman.
+do SoundManager.play_text_scrolling()
 Judge Quétif: Merga has not been in the church as of late. 
+do SoundManager.play_text_scrolling()
 Judge Quétif: When was the last time she came to worship His Holiness? [do emit("change_sprite", "Player")]
+do SoundManager.play_text_scrolling()
 - She came before the castle was overtaken by your Order.
 - She has just returned from confessional.
 - Bishop Kramer has barred her from hearing the sermons.
 	do emit("change_sprite", "Judge Quétif")
+	do SoundManager.play_text_scrolling()
 	Judge Quétif: Hmmm... that is interesting.
 	Judge Quétif: His holiness has said nothing about this.
 	Judge Quétif: No matter. => second
 do emit("change_sprite", "Judge Quétif")
+do SoundManager.play_text_scrolling()
 Judge Quétif: Your lies deceive you and our Bishop. Now you will burn with her!
 => lose
 
@@ -46,6 +56,7 @@ Judge Quétif: You conspire against the church!
 => lose
 
 ~ lose
+do SoundManager.play_trial_room_failed()
 Judge Quétif: I hereby declare Merga Bien guilty of heresy, and YOU as her accomplice!
 Judge Quétif: Seize these witches! They have no place in our Holy fortress!
 => END
@@ -53,6 +64,7 @@ Judge Quétif: Seize these witches! They have no place in our Holy fortress!
 ~ win
 The judge bows his head. 
 Judge Quétif: I hereby declare Merga Bien not guilty of heresy.
+do SoundManager.play_shackles_off()
 do emit("change_sprite", "Merga")
 Merga’s shackles drop to the floor. The judge and jury leave the trial room, leaving us and Merga.
 Merga: Thank you sister for saving me. I shall return to the safety of our catacombs for now.
