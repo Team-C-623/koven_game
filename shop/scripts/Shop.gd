@@ -11,6 +11,8 @@ signal hide
 @onready var item_container = %ShopItemsContainer
 @onready var currency_ui: Control = get_tree().current_scene.get_node("/root/UIManager/CurrencyUI")
 
+var selected_item = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
@@ -25,6 +27,7 @@ func _on_close_button_pressed() -> void:
 	SoundManager.play_buy_sound()
 
 func update_item_description(item: ItemData):
+	selected_item = item
 	item_image.texture = item.texture
 	item_name.text = item.name
 	item_description.text = item.description
@@ -36,3 +39,9 @@ func open():
 	hot_bar_inventory.hide()
 	currency_ui.hide_display()
 	show.emit()
+
+func _on_buy_pressed() -> void:
+	if selected_item != null && Currency.currency >= selected_item.cost:
+		Currency.subtract_currency(selected_item.cost)
+		PlayerManager.player.inventory_data.add_item(selected_item)
+		SoundManager.play_buy_sound()

@@ -23,6 +23,7 @@ texture = ExtResource("1_2u6tx")
 transform = Transform3D(1, 1.34135e-20, 5.80355e-34, -1.34135e-20, 1, -2.2456e-15, -6.10476e-34, 2.2456e-15, 1, 0.150897, 0.387357, 2.38419e-07)
 light_color = Color(0.889797, 0.514964, 0.302267, 1)
 light_energy = 0.5
+light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 2.0
 distance_fade_enabled = true

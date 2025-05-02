@@ -13,7 +13,7 @@ var active_timers := {}
 func _ready() -> void:
 	rng.randomize()  # Important for different results each run
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if judgement_active:
 		update_judgement()
 	

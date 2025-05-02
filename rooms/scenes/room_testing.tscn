@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://2i5m0hv0lprm"]
+[gd_scene load_steps=12 format=3 uid="uid://2i5m0hv0lprm"]
 
 [ext_resource type="Texture2D" uid="uid://bdvsm1cv4ktcu" path="res://assets/environment/lvl1emptyroomwall2.png" id="2_0s4t5"]
 [ext_resource type="Texture2D" uid="uid://dvf2aabp8o2fj" path="res://assets/environment/lvl1wall1combat2.png" id="3_jv7yc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="4_3414y"]
 [ext_resource type="Texture2D" uid="uid://bqubrxmcivi3a" path="res://assets/environment/column.png" id="4_elnnk"]
 [ext_resource type="Texture2D" uid="uid://cls1cw11xcbeq" path="res://assets/environment/gateway.png" id="5_u0r7y"]
+[ext_resource type="Texture2D" uid="uid://1s81n4u8hpol" path="res://assets/environment/new_door.png" id="7_1egwu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhdjd"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
@@ -14,6 +15,9 @@ albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2onnq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lavs7"]
+albedo_color = Color(0.223529, 0.0862745, 0.0313726, 1)
 
 [node name="RoomTesting" type="StaticBody3D"]
 
@@ -101,3 +105,21 @@ material = SubResource("StandardMaterial3D_536x3")
 transform = Transform3D(-100, -8.74228e-06, 0, 8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -40.1)
 flip_h = true
 texture = ExtResource("5_u0r7y")
+
+[node name="Sprite2D" type="Polygon2D" parent="."]
+texture = ExtResource("7_1egwu")
+polygon = PackedVector2Array(-20, -14.5, -20, -12.3, -57.3, -5, -62.2, -5, -82.3, 8, -85.4, 8, -115.4, 32, -118.1, 32, -136.1, 58, -139, 58, -139, 334, 127, 333, 132, 333, 129, 55, 129, 52.3, 88, 13.2, 88, 11.2, 45, -4.79999, 45, -6.5)
+uv = PackedVector2Array(580, 319.5, 580, 321.7, 542.7, 329, 537.8, 329, 517.7, 342, 514.6, 342, 484.6, 366, 481.9, 366, 463.9, 392, 461, 392, 461, 668, 727, 667, 732, 667, 729, 389, 729, 386.3, 688, 347.2, 688, 345.2, 645, 329.2, 645, 327.5)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18)]
+
+[node name="Door" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.01, 8.74228e-10, 0, -8.74228e-10, -0.01, 0, 0, 0, 0.01, -20, 4, 10)
+polygon = PackedVector2Array(-10.455, -11.7215, -51.4921, -6.49982, -81.662, 7.77365, -108.417, 26.8214, -121.151, 37.7997, -136, 58, -136, 333, 127, 333, 127, 55, 109.145, 30.3419, 86.7175, 13.6695, 57.303, 0.597534, 31.37, -8.00504)
+depth = 5.0
+material = SubResource("StandardMaterial3D_lavs7")
+
+[node name="Sprite3D" type="Sprite3D" parent="Door"]
+transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -5.1)
+flip_h = true
+shaded = true
+texture = ExtResource("7_1egwu")

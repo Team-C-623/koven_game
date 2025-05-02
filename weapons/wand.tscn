@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://chbcgqj40iuj"]
 
 [ext_resource type="Script" path="res://weapons/wand.gd" id="1_76yrt"]
-[ext_resource type="Texture2D" uid="uid://y0c0j2mxf6dh" path="res://assets/ui/wand_hand_final.png" id="2_lt5ij"]
-[ext_resource type="Texture2D" uid="uid://blbjg2xygkn7j" path="res://assets/ui/wand_hand_final2.png" id="2_vi186"]
+[ext_resource type="Texture2D" uid="uid://citotcbgvckbn" path="res://assets/ui/wand_hand_final.png" id="2_lt5ij"]
+[ext_resource type="Texture2D" uid="uid://yt436eqjidln" path="res://assets/ui/wand_hand_attack_final.png" id="3_bvjsp"]
 
 [sub_resource type="Animation" id="Animation_3ac5i"]
 length = 0.001
@@ -45,7 +45,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.06),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("2_lt5ij"), ExtResource("2_vi186")]
+"values": [ExtResource("3_bvjsp"), ExtResource("2_lt5ij")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v65tx"]
@@ -59,7 +59,7 @@ script = ExtResource("1_76yrt")
 
 [node name="Weaponmodel" type="Sprite3D" parent="."]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
-texture = ExtResource("2_vi186")
+texture = ExtResource("2_lt5ij")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

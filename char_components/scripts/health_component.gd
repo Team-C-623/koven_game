@@ -1,7 +1,7 @@
 extends Node3D
 class_name HealthComponent
 
-@export var MAX_HEALTH := 50.0
+@export var MAX_HEALTH := 0.0
 @export var auto_free_on_death := true
 
 var health : float
@@ -17,8 +17,6 @@ signal died
 func _ready():
 	health = MAX_HEALTH
 	
-
-
 func damage(attack: Attack):
 	
 	health -= (attack.attack_damage * damage_modifier)

@@ -43,7 +43,10 @@ func _physics_process(delta: float) -> void:
 	
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
+		var attack = Attack.new()
+		attack.attack_damage = attack_damage
 		current_hitbox = area
+		current_hitbox.damage(attack)
 		damage_timer.start()
 
 func _on_hitbox_area_exited(area: Area3D) -> void:

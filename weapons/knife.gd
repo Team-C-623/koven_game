@@ -11,17 +11,14 @@ var velocity: Vector3 = Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
-		
 	position += transform.basis * Vector3(0,0, -SPEED) * delta
-	
-	ray.force_raycast_update()
-	if ray.is_colliding():
-		_die()
-		return
-	
+	if ray != null:
+		ray.force_raycast_update()
+		if ray.is_colliding() and (ray.get_collider() is StaticBody3D or ray.get_collider() is CSGPolygon3D):
+			_die()
+
 func _die() -> void:
 	mesh.visible = false
-	await get_tree().create_timer(1.0).timeout
 	queue_free()
 	
 func _on_knife_hit_box_area_entered(area):

@@ -1,10 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0tmfscakao0"]
+[gd_scene load_steps=24 format=3 uid="uid://c0tmfscakao0"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_ypfdf"]
 [ext_resource type="Texture2D" uid="uid://dyyrsow1wqcai" path="res://assets/environment/plainstonewall.png" id="2_2q4rt"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="3_qltpk"]
+[ext_resource type="ArrayOccluder3D" uid="uid://33fpoeeu8ue" path="res://rooms/occluders/emptyroom_3_wall1.occ" id="3_rx5lt"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b1eqfn0eci72b" path="res://rooms/occluders/emptyroom_3_wall2.occ" id="4_2wfej"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_fx15t"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="5_hfcsk"]
+[ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="7_xbjoj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
 albedo_texture = ExtResource("2_2q4rt")
@@ -52,6 +55,9 @@ albedo_texture = SubResource("NoiseTexture2D_hl4b5")
 material = SubResource("StandardMaterial3D_cl0t8")
 size = Vector2(12.8, 12.8)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dgb47"]
+points = PackedVector3Array(-6.4, 0, -6.4, -6.4, 0, 6.4, 6.4, 0, -6.4, 6.4, 0, 6.4)
+
 [node name="EmptyRoom3" type="StaticBody3D"]
 transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
 script = ExtResource("1_ypfdf")
@@ -66,6 +72,9 @@ mesh = SubResource("PlaneMesh_pmdxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hbqa0")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall1"]
+occluder = ExtResource("3_rx5lt")
+
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 3.6, 0)
 visibility_range_end = 20.0
@@ -75,6 +84,9 @@ mesh = SubResource("PlaneMesh_pmdxk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_fq7in")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
+occluder = ExtResource("4_2wfej")
 
 [node name="WallDoor3" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.01, 8.74227e-10, -8.74228e-10, 8.74227e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
@@ -110,6 +122,9 @@ texture = ExtResource("3_qltpk")
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
+occluder = ExtResource("7_xbjoj")
+
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_4ups5")
@@ -118,6 +133,11 @@ shape = SubResource("WorldBoundaryShape3D_4ups5")
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_a4nd0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_dgb47")
 
 [node name="Lighting" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)

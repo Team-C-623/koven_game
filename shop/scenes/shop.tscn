@@ -1,0 +1,219 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnalom3wua8rb"]
+
+[ext_resource type="Script" path="res://shop/scripts/Shop.gd" id="1_10sum"]
+[ext_resource type="Texture2D" uid="uid://cg2pwyw8wopql" path="res://assets/ui/shop_background.png" id="2_u76mq"]
+[ext_resource type="Script" path="res://shop/scripts/shop_ui.gd" id="2_xgpv6"]
+[ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://shop/resources/testshop.tres" id="3_bfak2"]
+[ext_resource type="Texture2D" uid="uid://c6gqyfp6or7gh" path="res://assets/ui/exit_shop_button.png" id="3_oajd3"]
+[ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://UI/scenes/shop_item_button.tscn" id="4_5kftm"]
+[ext_resource type="Texture2D" uid="uid://byc764bxamqti" path="res://assets/ui/exit_shop_button_dark.png" id="4_30yqp"]
+[ext_resource type="Texture2D" uid="uid://dan86a158w5j5" path="res://assets/ui/buy_button.png" id="5_5k6y5"]
+[ext_resource type="Texture2D" uid="uid://ci8qwi6evljsk" path="res://assets/ui/updatedcurrency.png" id="5_y57y7"]
+[ext_resource type="Texture2D" uid="uid://bscc0ecta1ijr" path="res://assets/ui/details_panel.png" id="6_050d1"]
+[ext_resource type="Texture2D" uid="uid://fnv12tj2irmx" path="res://assets/ui/buy_button_dark.png" id="6_bma8a"]
+[ext_resource type="Script" path="res://currency/scripts/label.gd" id="6_e4j6m"]
+[ext_resource type="FontFile" uid="uid://k1guuqtwah8n" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="7_l42hb"]
+[ext_resource type="FontFile" uid="uid://da6roc43ehb7u" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="8_7u1p7"]
+[ext_resource type="FontFile" uid="uid://dl5x4wg3p34rx" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="14_fy1q5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1l63t"]
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_10sum")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 491.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u76mq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseButton" type="TextureButton" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 520.0
+offset_top = 320.0
+offset_right = 760.0
+offset_bottom = 416.0
+texture_normal = ExtResource("3_oajd3")
+texture_pressed = ExtResource("4_30yqp")
+stretch_mode = 0
+
+[node name="BuyButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 320.0
+offset_right = 400.0
+offset_bottom = 416.0
+texture_normal = ExtResource("5_5k6y5")
+texture_pressed = ExtResource("6_bma8a")
+stretch_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_left = -785.0
+offset_top = -300.0
+offset_right = 143.0
+offset_bottom = 320.0
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ShopItemsContainer" type="VBoxContainer" parent="Control/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+script = ExtResource("2_xgpv6")
+data = ExtResource("3_bfak2")
+
+[node name="ShopItemButton" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_5kftm")]
+layout_mode = 2
+
+[node name="ShopItemButton2" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_5kftm")]
+layout_mode = 2
+
+[node name="ShopItemButton3" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_5kftm")]
+layout_mode = 2
+
+[node name="ShopItemButton4" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_5kftm")]
+layout_mode = 2
+
+[node name="ShopItemButton5" parent="Control/ScrollContainer/MarginContainer/ShopItemsContainer" instance=ExtResource("4_5kftm")]
+layout_mode = 2
+
+[node name="DetailsPanel" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -300.0
+offset_right = 760.0
+offset_bottom = 320.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/DetailsPanel"]
+layout_mode = 2
+texture = ExtResource("6_050d1")
+
+[node name="Control" type="Control" parent="Control/DetailsPanel"]
+layout_mode = 2
+
+[node name="ItemImage" type="TextureRect" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 243.0
+offset_bottom = 352.0
+scale = Vector2(0.8, 0.8)
+texture = SubResource("PlaceholderTexture2D_1l63t")
+expand_mode = 1
+
+[node name="ItemName" type="Label" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 297.0
+offset_right = 580.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("7_l42hb")
+theme_override_font_sizes/font_size = 40
+text = "Select an Item"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ItemDescription" type="Label" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 360.0
+offset_right = 580.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(0.783523, 0.783523, 0.783523, 1)
+theme_override_fonts/font = ExtResource("8_7u1p7")
+theme_override_font_sizes/font_size = 20
+text = "-"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Currency" type="TextureRect" parent="Control/DetailsPanel/Control"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 17.0
+offset_right = 708.0
+offset_bottom = 467.0
+scale = Vector2(0.2, 0.214)
+texture = ExtResource("5_y57y7")
+
+[node name="ItemCost" type="Label" parent="Control/DetailsPanel/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 320.0
+offset_top = 17.0
+offset_right = 588.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("7_l42hb")
+theme_override_font_sizes/font_size = 42
+text = "-"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="CurrencyPanel" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = -400.0
+offset_right = 760.0
+offset_bottom = -320.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CurrencyPanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CurrencyPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="Control/CurrencyPanel/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_y57y7")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/CurrencyPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("14_fy1q5")
+theme_override_font_sizes/font_size = 44
+text = "100"
+script = ExtResource("6_e4j6m")
+
+[node name="Control" type="Control" parent="Control/CurrencyPanel/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Control/BuyButton" to="." method="_on_buy_pressed"]

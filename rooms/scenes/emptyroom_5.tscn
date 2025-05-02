@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bwup16w2a68hn"]
+[gd_scene load_steps=16 format=3 uid="uid://bwup16w2a68hn"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_h0lyt"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_1cj4w"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_2h755"]
+[ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="4_61d2q"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="4_eggsw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6r0ji"]
@@ -33,6 +34,9 @@ albedo_texture = SubResource("NoiseTexture2D_hl4b5")
 [sub_resource type="PlaneMesh" id="PlaneMesh_a4nd0"]
 material = SubResource("StandardMaterial3D_2hudt")
 size = Vector2(12.8, 12.8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ivbkt"]
+points = PackedVector3Array(-6.4, 0, -6.4, -6.4, 0, 6.4, 6.4, 0, -6.4, 6.4, 0, 6.4)
 
 [node name="EmptyRoom5" type="StaticBody3D"]
 transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
@@ -102,6 +106,9 @@ texture = ExtResource("2_1cj4w")
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
+occluder = ExtResource("4_61d2q")
+
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_4ups5")
@@ -110,6 +117,11 @@ shape = SubResource("WorldBoundaryShape3D_4ups5")
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_a4nd0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ivbkt")
 
 [node name="Lighting" type="Node3D" parent="."]
 
