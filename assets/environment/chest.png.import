@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck0iraq2e8jy4"
-path.s3tc="res://.godot/imported/trial_background.PNG-a98a7092a364ccf11748af0ac76372be.s3tc.ctex"
+uid="uid://ce36foicjqij7"
+path.s3tc="res://.godot/imported/chest.png-d3015b7905aa537e08295275affa67d8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/environment/trial_background.PNG"
-dest_files=["res://.godot/imported/trial_background.PNG-a98a7092a364ccf11748af0ac76372be.s3tc.ctex"]
+source_file="res://assets/environment/chest.png"
+dest_files=["res://.godot/imported/chest.png-d3015b7905aa537e08295275affa67d8.s3tc.ctex"]
 
 [params]
 
