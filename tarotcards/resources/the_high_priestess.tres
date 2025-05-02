@@ -10,6 +10,6 @@ description = "The most intuitive, connected card in the whole Tarot deck, The H
 
 Effect: Increase Speed by 1  (30s)"
 texture = ExtResource("2_vrfvb")
-cost = 100
+cost = 50
 duration = 999.0
 rarity = 0

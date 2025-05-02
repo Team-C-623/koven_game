@@ -10,6 +10,6 @@ description = "The Hanged Man tells you that sometimes small sacrifices are requ
 
 Effects: Enemies drop double gold for 30s"
 texture = ExtResource("2_ddpcd")
-cost = 200
+cost = 100
 duration = 30.0
 rarity = 1

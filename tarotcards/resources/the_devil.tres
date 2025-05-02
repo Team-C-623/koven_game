@@ -10,6 +10,6 @@ description = " The Devil card carries themes of restraint and powerlessness. Wh
 
 Effect: Heal for 25% Max Health"
 texture = ExtResource("2_w3lf5")
-cost = 100
+cost = 50
 duration = 999.0
 rarity = 0

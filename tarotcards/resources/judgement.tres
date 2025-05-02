@@ -10,6 +10,6 @@ description = " Judgement is a card where your past and your future come togethe
 
 Effect: Deal 2x Damage, but take 2x Damage for 30s"
 texture = ExtResource("2_s3rv3")
-cost = 100
+cost = 50
 duration = 30.0
 rarity = 0

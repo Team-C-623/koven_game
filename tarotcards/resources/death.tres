@@ -10,6 +10,6 @@ description = "One of the most misunderstood Tarot cards, Death is not a card ab
 
 Effect: Heal to Max Health"
 texture = ExtResource("2_8t1ff")
-cost = 75
+cost = 100
 duration = 999.0
 rarity = 1
