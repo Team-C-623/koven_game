@@ -12,6 +12,7 @@ func _ready() -> void:
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
 	
 func _process(delta: float) -> void:
+	
 	Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 
 func play_footsteps():
