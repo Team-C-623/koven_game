@@ -52,7 +52,8 @@ func play_queue_credits(): #not called
 	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
 
 func play_text_scrolling():
-	Wwise.post_event_id(AK.EVENTS.TEXT_SCROLLING,self)
+	#Wwise.post_event_id(AK.EVENTS.TEXT_SCROLLING,self)
+	pass
 
 func play_jury_whispers():
 	Wwise.post_event_id(AK.EVENTS.JURY_WHISPERS,self)
