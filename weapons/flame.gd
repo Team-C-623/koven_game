@@ -4,6 +4,7 @@ const SPEED = 30.0
 
 @onready var mesh = $MeshInstance3D
 @onready var ray = $RayCast3D
+@onready var hitbox = $FlameHitBox
 @onready var sparks_particles: GPUParticles3D = $SparksParticles
 @onready var explosion_particles: GPUParticles3D = $ExplosionParticles
 @onready var light: OmniLight3D = $OmniLight3D
@@ -25,6 +26,7 @@ func _physics_process(delta: float) -> void:
 			_die()
 
 func _die() -> void:
+	hitbox.queue_free()
 	if ray != null:
 		ray.queue_free()
 	mesh.visible = false

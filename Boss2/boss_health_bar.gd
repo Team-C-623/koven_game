@@ -7,7 +7,7 @@ class_name BossHealthBar
 @onready var player = get_tree().get_first_node_in_group("Player Groups")
 @onready var boss = get_parent()
 
-var show_distance = 20.0
+var show_distance = 3.5
 
 func _ready() -> void:
 	health_component.connect("health_changed", Callable(self, "_on_health_changed"))
