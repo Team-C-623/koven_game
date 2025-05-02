@@ -1,63 +1,51 @@
-[gd_scene load_steps=14 format=3 uid="uid://do4m5lfs4b0mn"]
+[gd_scene load_steps=13 format=3 uid="uid://do4m5lfs4b0mn"]
 
 [ext_resource type="Script" path="res://Boss2/boss_2.gd" id="1_fhf8f"]
-[ext_resource type="Texture2D" uid="uid://djgocdrtsu4rc" path="res://assets/characters/Final monk level 1.png" id="2_8phho"]
-[ext_resource type="Script" path="res://scripts/StateMachine/state_machine.gd" id="3_vppa3"]
-[ext_resource type="Script" path="res://Boss2/boss_grab.gd" id="5_e0db2"]
-[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://scenes/CharacterNodes/health_component.tscn" id="6_2xob4"]
-[ext_resource type="Script" path="res://Boss2/boss_chase.gd" id="6_52igy"]
-[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://scenes/CharacterNodes/hitbox_component.tscn" id="7_8p7ls"]
-[ext_resource type="Texture2D" uid="uid://oshwtjxciwcs" path="res://assets/characters/Monk level 1 sprite 2.png" id="8_xe26x"]
+[ext_resource type="Script" path="res://Boss2/boss_health_bar.gd" id="2_a8bpo"]
+[ext_resource type="Texture2D" uid="uid://ic22ocylq7kj" path="res://assets/characters/Final boss 1 dancing sprite.png" id="2_eld70"]
+[ext_resource type="Texture2D" uid="uid://dv1ind5x1ygh2" path="res://assets/ui/Boss health bar.png" id="2_v5lee"]
+[ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_y1vr5"]
+[ext_resource type="Script" path="res://Boss2/boss_chase.gd" id="5_mt3y4"]
+[ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="6_2xob4"]
+[ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="7_8p7ls"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dlys"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvi28"]
+bg_color = Color(0.667856, 0.0884097, 0.0532087, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_meq7y"]
 radius = 0.286641
 height = 0.951147
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gb5n1"]
-radius = 0.260556
-height = 0.865382
-
-[sub_resource type="Animation" id="Animation_34n4v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_8phho")]
-}
-
-[sub_resource type="Animation" id="Animation_k4lvs"]
-resource_name = "monk_chase"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_8phho"), ExtResource("8_xe26x"), ExtResource("2_8phho")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5yn1g"]
-_data = {
-"RESET": SubResource("Animation_34n4v"),
-"monk_chase": SubResource("Animation_k4lvs")
-}
+radius = 0.394897
+height = 1.05118
 
 [node name="Boss2" type="CharacterBody3D" groups=["Enemies Group"]]
 transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_fhf8f")
+
+[node name="BossHealthBar" type="ProgressBar" parent="."]
+offset_left = 876.0
+offset_top = 98.0
+offset_right = 1637.0
+offset_bottom = 125.0
+scale = Vector2(1.04, 1.24415)
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_6dlys")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dvi28")
+value = 100.0
+show_percentage = false
+script = ExtResource("2_a8bpo")
+
+[node name="Sprite2D" type="Sprite2D" parent="BossHealthBar"]
+position = Vector2(382.691, 13.664)
+scale = Vector2(0.288461, 0.299804)
+texture = ExtResource("2_v5lee")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.000384002, 0, -1.00002, 0, 1.00002, 0, 1.00002, 0, -0.000384002, 0.00424228, -0.00488292, -0.000590781)
@@ -68,7 +56,7 @@ transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0, 0, 0)
 sorting_offset = 1.0
 visibility_range_end = 20.0
 shaded = true
-texture = ExtResource("2_8phho")
+texture = ExtResource("2_eld70")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 aabb = AABB(-0.570377, -0.556137, -0.565157, 1.14075, 1.11227, 1.13031)
@@ -77,16 +65,14 @@ aabb = AABB(-0.570377, -0.556137, -0.565157, 1.14075, 1.11227, 1.13031)
 wait_time = 0.1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
-script = ExtResource("3_vppa3")
+script = ExtResource("3_y1vr5")
 InitialState = NodePath("BossChase")
 
 [node name="BossChase" type="Node" parent="StateMachine"]
-script = ExtResource("6_52igy")
-
-[node name="BossGrab" type="Node" parent="StateMachine"]
-script = ExtResource("5_e0db2")
+script = ExtResource("5_mt3y4")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_2xob4")]
+MAX_HEALTH = 200.0
 
 [node name="HitboxComponent" parent="." instance=ExtResource("7_8p7ls")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
@@ -100,13 +86,8 @@ shape = SubResource("CapsuleShape3D_gb5n1")
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.6
 
-[node name="chase_animation" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_5yn1g")
-}
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.34557, 0, 0, 0)
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1.11909, 0, 0.209989, 0)
 target_position = Vector3(0, 0, 1)
 
 [connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]

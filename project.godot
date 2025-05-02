@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Koven"
-run/main_scene="res://main/scenes/main.tscn"
+run/main_scene="res://start_screen/scenes/start_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TarotManager="*res://tarotcards/scripts/tarot_manager.gd"
 UIManager="*res://UI/scenes/ui_manager.tscn"
 Currency="*res://currency/scripts/currency.gd"
+TransitionScreen="*res://scene_transition/scenes/transition_screen.tscn"
 
 [dialogue_manager]
 
@@ -94,7 +95,7 @@ generate={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://trialroom/dialogue/trial1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://trialroom/dialogue/trial1.dialogue", "res://cutscenes/dialogue/intro_quote.dialogue", "res://cutscenes/dialogue/spawn_message.dialogue")
 
 [layer_names]
 

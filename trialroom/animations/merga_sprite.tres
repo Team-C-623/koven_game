@@ -1,8 +1,9 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b8hd86qofjb72"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b8hd86qofjb72"]
 
 [ext_resource type="Texture2D" uid="uid://behjjpl4f2e8k" path="res://trialroom/art/merga/merga_frame1.png" id="1_nl0wu"]
 [ext_resource type="Texture2D" uid="uid://cgb85fb6e1y0k" path="res://trialroom/art/merga/merga_frame2.png" id="2_hwmk3"]
 [ext_resource type="Texture2D" uid="uid://b4k3gxosvmkac" path="res://trialroom/art/merga/merga_frame3.png" id="3_ldifb"]
+[ext_resource type="Texture2D" uid="uid://1tb4ndkscfaf" path="res://trialroom/art/merga/merga_frame4.png" id="4_1agka"]
 
 [resource]
 animations = [{
@@ -17,6 +18,17 @@ animations = [{
 "texture": ExtResource("3_ldifb")
 }],
 "loop": false,
+"name": &"shackle_drop",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ldifb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1agka")
+}],
+"loop": true,
 "name": &"talk",
 "speed": 1.0
 }]

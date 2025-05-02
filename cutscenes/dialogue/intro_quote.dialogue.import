@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bax4f8v8320ev"
+path="res://.godot/imported/intro_quote.dialogue-f35a659c32665e1aeb511350672c669b.tres"
+
+[deps]
+
+source_file="res://cutscenes/dialogue/intro_quote.dialogue"
+dest_files=["res://.godot/imported/intro_quote.dialogue-f35a659c32665e1aeb511350672c669b.tres"]
+
+[params]
+
+defaults=true

@@ -4,6 +4,7 @@ class_name Boss2
 @onready var player_3d=$"../Player"
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.5
+@export var GRAB_DISTANCE: float = 2.0
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 20.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
@@ -17,12 +18,12 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
+var dancing := true
 
 func _ready():
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
-
 
 func _physics_process(delta: float) -> void:
 	sprite.rotate_y(delta)
@@ -46,7 +47,10 @@ func _physics_process(delta: float) -> void:
 	
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
+		var attack = Attack.new()
+		attack.attack_damage = attack_damage
 		current_hitbox = area
+		current_hitbox.damage(attack)
 		damage_timer.start()
 
 func _on_hitbox_area_exited(area: Area3D) -> void:
@@ -60,10 +64,3 @@ func _on_DamageTimer_timeout():
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
 	
-#func _on_hitbox_component_area_entered(area: Area3D) -> void:
-	#if area is HitboxComponent:
-		#print("Enemy hitbox entered")
-		#var hitbox : HitboxComponent = area
-		#var attack = Attack.new()
-		#attack.attack_damage = attack_damage
-		#hitbox.damage(attack)

@@ -8,7 +8,7 @@ const SPEED = 30.0
 @onready var explosion_particles: GPUParticles3D = $ExplosionParticles
 @onready var light: OmniLight3D = $OmniLight3D
 
-@export var attack_damage:= 10.0
+@export var attack_damage:= 5.0
 
 func _ready():
 	var death_timer = Timer.new()
