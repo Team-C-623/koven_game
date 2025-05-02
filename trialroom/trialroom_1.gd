@@ -13,7 +13,6 @@ func _ready() -> void:
 	dialogue_balloon.visible = false
 	character_sprite.animation_finished.connect(_on_animation_finished)
 	start_dialogue()
-
 	
 func start_dialogue():
 	dialogue_balloon.visible = true

@@ -87,10 +87,10 @@ func play_start_music(): #called in catacombs.gd
 
 func play_trial_room_music(): #called in trialroom_1.gd 
 	Wwise.set_state("PLAYER_STATE", "ALIVE")
-	var result = Wwise.set_state("LOCATION","TRIAL_ROOM")
-
-	await get_tree().create_timer(2).timeout
+	Wwise.set_state("LOCATION","TRIAL_ROOM")
+	await get_tree().process_frame
 	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
+
 	
 
 func play_enemy_aggro():
