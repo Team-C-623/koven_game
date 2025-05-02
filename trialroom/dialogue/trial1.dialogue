@@ -1,4 +1,5 @@
 ~ start
+do SoundManager.play_jury_whispers()
 do emit("change_sprite", "Judge Quétif")
 do SoundManager.play_text_scrolling()
 Judge Quétif: Who are you?

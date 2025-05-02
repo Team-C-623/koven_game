@@ -32,7 +32,7 @@ namespace AK
         static const AkUniqueID JOURNALPAGETURN = 1639161750U;
         static const AkUniqueID JUDGE_DIALOGUE_BY_FIRE = 2109575468U; //
         static const AkUniqueID JUDGE_DIALOGUE_SILENCE = 1862952859U; //
-        static const AkUniqueID JURY_WHISPERS = 4151276193U; //
+        static const AkUniqueID JURY_WHISPERS = 4151276193U;
         static const AkUniqueID LASSO_ATTACH = 1402229995U; //
         static const AkUniqueID LASSO_WINDUP = 1461666693U; //
         static const AkUniqueID MAIN_MENU = 2005704188U;
