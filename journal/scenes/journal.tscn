@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_itoj4"]
 radius = 13.2735
 
-[node name="Journal" type="Area3D" groups=["journal_group"]]
+[node name="Journal" type="Area3D"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 script = ExtResource("1_u6u08")
 
@@ -18,4 +18,4 @@ shape = SubResource("SphereShape3D_itoj4")
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 texture = ExtResource("2_mg4jh")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
