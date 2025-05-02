@@ -44,7 +44,7 @@ script = ExtResource("1_h0lyt")
 
 [node name="WallDoor1" type="CSGPolygon3D" parent="."]
 transform = Transform3D(-0.01, 8.74228e-10, 0, -8.74228e-10, -0.01, 0, 0, -1.32349e-23, 0.01, 0, 3.6, 6.4)
-visibility_range_end = 20.0
+visibility_range_end = 16.0
 use_collision = true
 polygon = PackedVector2Array(-640, 360, -144, 360, -144, 70, -112, 32, -75, 10, -14, -1.978, 19.0259, -0.43631, 46.9548, 8.09595, 94.165, 30.7194, 130.463, 67.8524, 132, 360, 640, 360, 640, -360, -640, -360)
 depth = 20.0
@@ -59,7 +59,7 @@ texture = ExtResource("2_1cj4w")
 
 [node name="WallDoor2" type="CSGPolygon3D" parent="."]
 transform = Transform3D(4.37114e-10, 3.82137e-17, -0.01, 8.74228e-10, -0.01, 0, -0.01, -8.74228e-10, -4.37114e-10, -6.4, 3.6, 0)
-visibility_range_end = 20.0
+visibility_range_end = 16.0
 use_collision = true
 polygon = PackedVector2Array(-640, 360, -144, 360, -144, 70, -112, 32, -75, 10, -14, -1.978, 19.0259, -0.43631, 46.9548, 8.09595, 94.165, 30.7194, 130.463, 67.8524, 132, 360, 640, 360, 640, -360, -640, -360)
 depth = 20.0
@@ -74,7 +74,7 @@ texture = ExtResource("2_1cj4w")
 
 [node name="WallDoor3" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.01, 8.74228e-10, -8.74228e-10, 8.74228e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
-visibility_range_end = 20.0
+visibility_range_end = 16.0
 use_collision = true
 polygon = PackedVector2Array(-640, 360, -144, 360, -144, 70, -112, 32, -75, 10, -14, -1.978, 19.0259, -0.43631, 46.9548, 8.09595, 94.165, 30.7194, 130.463, 67.8524, 132, 360, 640, 360, 640, -360, -640, -360)
 depth = 20.0
@@ -89,7 +89,7 @@ texture = ExtResource("2_1cj4w")
 
 [node name="WallDoor4" type="CSGPolygon3D" parent="."]
 transform = Transform3D(4.37114e-10, -3.82137e-17, 0.01, -8.74228e-10, -0.01, 0, 0.01, -8.74228e-10, -4.37114e-10, 6.4, 3.6, 0)
-visibility_range_end = 20.0
+visibility_range_end = 16.0
 use_collision = true
 polygon = PackedVector2Array(-640, 360, -144, 360, -144, 70, -112, 32, -75, 10, -14, -1.978, 19.0259, -0.43631, 46.9548, 8.09595, 94.165, 30.7194, 130.463, 67.8524, 132, 360, 640, 360, 640, -360, -640, -360)
 depth = 20.0
@@ -103,7 +103,7 @@ shaded = true
 texture = ExtResource("2_1cj4w")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-visibility_range_end = 20.0
+visibility_range_end = 16.0
 mesh = SubResource("PlaneMesh_ar2j6")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
@@ -115,7 +115,7 @@ shape = SubResource("WorldBoundaryShape3D_4ups5")
 
 [node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 7.2, 0)
-visibility_range_end = 20.0
+visibility_range_end = 16.0
 mesh = SubResource("PlaneMesh_a4nd0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
