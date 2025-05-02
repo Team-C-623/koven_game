@@ -15,7 +15,6 @@ do SoundManager.play_text_scrolling()
 Judge Quétif: Merga has not been in the church as of late. 
 do SoundManager.play_text_scrolling()
 Judge Quétif: When was the last time she came to worship His Holiness? [do emit("change_sprite", "Player")]
-do SoundManager.play_text_scrolling()
 - She came before the castle was overtaken by your Order.
 - She has just returned from confessional.
 - Bishop Kramer has barred her from hearing the sermons.
