@@ -25,11 +25,7 @@ func _ready():
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
 
-
 func _physics_process(delta: float) -> void:
-	#dancing = true
-	#if dancing:
-		#sprite.rotate_y(delta)
 	sprite.rotate_y(delta)
 
 	# Debugging
@@ -51,7 +47,10 @@ func _physics_process(delta: float) -> void:
 	
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
+		var attack = Attack.new()
+		attack.attack_damage = attack_damage
 		current_hitbox = area
+		current_hitbox.damage(attack)
 		damage_timer.start()
 
 func _on_hitbox_area_exited(area: Area3D) -> void:
@@ -65,10 +64,3 @@ func _on_DamageTimer_timeout():
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
 	
-#func _on_hitbox_component_area_entered(area: Area3D) -> void:
-	#if area is HitboxComponent:
-		#print("Enemy hitbox entered")
-		#var hitbox : HitboxComponent = area
-		#var attack = Attack.new()
-		#attack.attack_damage = attack_damage
-		#hitbox.damage(attack)
