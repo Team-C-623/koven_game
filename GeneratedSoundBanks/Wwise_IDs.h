@@ -181,8 +181,8 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID MUSIC = 3991942870U;
-        static const AkUniqueID SOUNDEFFECTS = 3898083304U;
+        static const AkUniqueID MUSIC_SOUNDBANK = 3589812408U;
+        static const AkUniqueID SFX_SOUNDBANK = 2641024368U;
     } // namespace BANKS
 
     namespace BUSSES

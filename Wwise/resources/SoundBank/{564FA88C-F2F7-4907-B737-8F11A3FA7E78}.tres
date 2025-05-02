@@ -1,7 +1,7 @@
 [gd_resource type="WwiseBank" format=3 uid="uid://kjdluqc3c50i"]
 
 [resource]
-name = "Music"
-id = 3991942870
+name = "Music_SoundBank"
+id = 3589812408
 guid = "{564FA88C-F2F7-4907-B737-8F11A3FA7E78}"
 dummy = true

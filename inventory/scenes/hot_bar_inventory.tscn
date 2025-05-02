@@ -10,8 +10,8 @@ offset_bottom = 95.0
 script = ExtResource("1_pqext")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(310, -520)
-scale = Vector2(1.55, 1.85)
+position = Vector2(303, -520)
+scale = Vector2(1.6, 1.85)
 texture = ExtResource("2_nncsi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
