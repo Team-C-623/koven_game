@@ -46,15 +46,22 @@ text = "Controls"
 [node name="ControlsDesc" type="RichTextLabel" parent="TextureRect/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_el11k")
+theme_override_fonts/bold_font = ExtResource("2_1grd1")
 theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
 text = "
 
-WASD - Movement
-J - Journal
-Tab - Inventory
-1,2,3,4,5 - Use hotbar slot
-Left MB - Shoot
-whatever
+[b]Movement[/b]: WASD
+[b]Shoo[/b]t: LMB
+[b]Journal[/b]: J
+[b]Inventory[/b]: Tab
+- Use card in hotbar: 1,2,3,4
+- Use card in inventory: RMB
+[b]Trial Room[/b]:
+- Skip dialogue: Space/LMB
+- Option navigation: Arrow keys
+- Select option: Enter
 
 
 "
