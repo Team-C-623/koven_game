@@ -229,3 +229,8 @@ func _should_auto_pause() -> bool:
 		return false
 
 	return parsed_text[visible_characters - 1] in pause_at_characters.split()
+
+
+func _on_spoke(letter: String, letter_index: int, speed: float) -> void:
+	#SoundManager.play_text_scrolling()
+	pass

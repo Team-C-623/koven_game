@@ -91,7 +91,7 @@ func play_trial_room_music(): #called in trialroom_1.gd
 
 	await get_tree().create_timer(2).timeout
 	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
-	pass
+	
 
 func play_enemy_aggro():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_AGGRO,self)
