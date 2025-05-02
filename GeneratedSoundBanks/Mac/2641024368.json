@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F4EC5305-9A58-4BD5-9ACE-1C845C28C69D}",
     "Language": "SFX",
-    "Hash": "{9AB1802E-AE28-484B-04AD-36F017E8258F}",
+    "Hash": "{2E4E3F3A-85E8-D3D7-5377-D6593DB102B2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX_SoundBank",
     "ShortName": "SFX_SoundBank",
     "Path": "2641024368.bnk",
@@ -206,6 +206,14 @@
       "Location": "Memory",
       "ShortName": "Enemy_Item_Throw_2.wav",
       "CachePath": "06/{06CACC25-EFF3-8B59-FBAD-5076FAF57A11}.wem"
+     },
+     {
+      "Id": "694784347",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Text_Scroll_Trimmed.wav",
+      "CachePath": "0C/{0C9863CB-3266-2BC6-5D25-FAD0159254DF}.wem"
      },
      {
       "Id": "788182343",
@@ -603,6 +611,20 @@
       ]
      },
      {
+      "Id": "587584267",
+      "Name": "Text_Scroll_Trimmed",
+      "ObjectPath": "\\Events\\SFX_Events\\Text_Scroll_Trimmed",
+      "GUID": "{56C78474-307C-43F7-B3A4-A94CD7ABADD6}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.12140589",
+      "DurationMax": "0.12140589",
+      "MediaRefs": [
+       {
+        "Id": "694784347"
+       }
+      ]
+     },
+     {
       "Id": "371816340",
       "Name": "Text_Scrolling",
       "ObjectPath": "\\Events\\SFX_Events\\Text_Scrolling",
@@ -689,6 +711,6 @@
     ]
    }
   ],
-  "FileHash": "{86C73962-D40F-32EB-DC41-91F3896AA7DF}"
+  "FileHash": "{26FBEEC6-16F5-EDCF-2212-DF91926E4651}"
  }
 }

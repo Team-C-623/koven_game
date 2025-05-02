@@ -47,6 +47,7 @@ namespace AK
         static const AkUniqueID SHOP_BUY = 1495252156U;
         static const AkUniqueID TAROTBURN = 2451853040U;
         static const AkUniqueID TAROTPICKUP = 1908595231U;
+        static const AkUniqueID TEXT_SCROLL_TRIMMED = 587584267U;
         static const AkUniqueID TEXT_SCROLLING = 371816340U;
         static const AkUniqueID TRIAL_ROOM_FAILED = 2277544205U;
         static const AkUniqueID TRIAL_ROOM_GAVEL = 866175427U;

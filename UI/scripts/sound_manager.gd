@@ -52,7 +52,7 @@ func play_queue_credits(): #not called
 	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
 
 func play_text_scrolling():
-	#Wwise.post_event_id(AK.EVENTS.TEXT_SCROLLING,self)
+	Wwise.post_event_id(AK.EVENTS.TEXT_SCROLL_TRIMMED,self)
 	pass
 
 func play_jury_whispers():
@@ -98,7 +98,7 @@ func play_enemy_aggro():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_AGGRO,self)
 	
 func play_enemy_safe(): 
-	#Wwise.post_event_id(AK.EVENTS.ENEMY_SAFE,self)
+	Wwise.post_event_id(AK.EVENTS.ENEMY_SAFE,self)
 	pass
 	
 func play_defeated(): #in health_component commented out
