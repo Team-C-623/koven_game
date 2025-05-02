@@ -136,8 +136,8 @@ class TRIGGERS:
 
 class BANKS:
 
-	const MUSIC : int = 3991942870
-	const SOUNDEFFECTS : int = 3898083304
+	const MUSIC_SOUNDBANK : int = 3589812408
+	const SFX_SOUNDBANK : int = 2641024368
 
 class AUX_BUSSES:
 	pass

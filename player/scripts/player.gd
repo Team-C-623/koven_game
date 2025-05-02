@@ -92,9 +92,8 @@ func _physics_process(_delta: float) -> void:
 	
 	# Play sound at peak descent (when switching from falling to rising)
 	if was_rising and not is_rising and footstep_cooldown <= 0:
-		if direction:
-			SoundManager.play_footsteps()
-			footstep_cooldown = 0.0  # Small cooldown to prevent double sounds
+		SoundManager.play_footsteps()
+		footstep_cooldown = 0.0  # Small cooldown to prevent double sounds
 	
 	# Update tracking variable
 	was_rising = is_rising
