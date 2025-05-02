@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cnalom3wua8rb"]
+[gd_scene load_steps=17 format=3 uid="uid://cnalom3wua8rb"]
 
 [ext_resource type="Script" path="res://shop/scripts/Shop.gd" id="1_10sum"]
 [ext_resource type="Texture2D" uid="uid://cg2pwyw8wopql" path="res://assets/ui/shop_background.png" id="2_u76mq"]
@@ -12,10 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bscc0ecta1ijr" path="res://assets/ui/details_panel.png" id="6_050d1"]
 [ext_resource type="Texture2D" uid="uid://fnv12tj2irmx" path="res://assets/ui/buy_button_dark.png" id="6_bma8a"]
 [ext_resource type="Script" path="res://currency/scripts/label.gd" id="6_e4j6m"]
-[ext_resource type="FontFile" uid="uid://dq6rymvoicb8l" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="7_l42hb"]
-[ext_resource type="FontFile" uid="uid://y7tht8o6o7xe" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="8_7u1p7"]
-[ext_resource type="FontFile" uid="uid://ccghiwn3hcmui" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="11_sc14r"]
-[ext_resource type="FontFile" uid="uid://ceqeu2f72vy7i" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="14_fy1q5"]
+[ext_resource type="FontFile" uid="uid://k1guuqtwah8n" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="7_l42hb"]
+[ext_resource type="FontFile" uid="uid://da6roc43ehb7u" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="8_7u1p7"]
+[ext_resource type="FontFile" uid="uid://dl5x4wg3p34rx" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="14_fy1q5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1l63t"]
 
@@ -215,21 +214,6 @@ script = ExtResource("6_e4j6m")
 [node name="Control" type="Control" parent="Control/CurrencyPanel/HBoxContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-
-[node name="Label" type="Label" parent="."]
-visible = false
-anchors_preset = -1
-anchor_left = 0.083
-anchor_top = 0.083
-anchor_right = 0.917
-anchor_bottom = 0.917
-offset_left = 30.64
-offset_top = 50.36
-offset_right = -1440.64
-offset_bottom = -771.36
-theme_override_fonts/font = ExtResource("11_sc14r")
-theme_override_font_sizes/font_size = 64
-text = "Shop"
 
 [connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Control/BuyButton" to="." method="_on_buy_pressed"]

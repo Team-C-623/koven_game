@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://j06jiquc78if"]
 
 [ext_resource type="Script" path="res://shop/scripts/interact_popup.gd" id="1_18jdk"]
-[ext_resource type="FontFile" uid="uid://dq6rymvoicb8l" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="3_ty64y"]
+[ext_resource type="FontFile" uid="uid://k1guuqtwah8n" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="3_ty64y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jj72"]
 

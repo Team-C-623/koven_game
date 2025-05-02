@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://shop/scripts/shop_item_ui.gd" id="1_n5fh6"]
 [ext_resource type="Texture2D" uid="uid://jrpye3ghii1o" path="res://assets/ui/button_texture_selected.png" id="2_n6bin"]
 [ext_resource type="Texture2D" uid="uid://ci8qwi6evljsk" path="res://assets/ui/updatedcurrency.png" id="3_cgnpf"]
-[ext_resource type="FontFile" uid="uid://ccghiwn3hcmui" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="4_yk2xi"]
-[ext_resource type="FontFile" uid="uid://ceqeu2f72vy7i" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="5_6stma"]
+[ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="4_yk2xi"]
+[ext_resource type="FontFile" uid="uid://dl5x4wg3p34rx" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="5_6stma"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1obhm"]
 
