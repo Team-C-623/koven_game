@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F4EC5305-9A58-4BD5-9ACE-1C845C28C69D}",
     "Language": "SFX",
-    "Hash": "{8590330C-1B45-4A35-3B94-AD3083E8EFF1}",
+    "Hash": "{39A7B5FD-9C86-CE00-4504-A91AF7DDC5B9}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundEffects",
     "ShortName": "SoundEffects",
     "Path": "3898083304.bnk",
@@ -362,7 +362,7 @@
       "ObjectPath": "\\Events\\SFX_Events\\EnemyDamage",
       "GUID": "{12B406F1-9FC8-4BCE-819B-1D1930AC4447}",
       "DurationType": "OneShot",
-      "DurationMin": "0.6035328",
+      "DurationMin": "0.4930608",
       "DurationMax": "1.3750794",
       "MediaRefs": [
        {
@@ -518,8 +518,8 @@
       "ObjectPath": "\\Events\\SFX_Events\\Player_TakingDamage",
       "GUID": "{8770E87B-6514-49A9-90D6-A8223FA92F6A}",
       "DurationType": "OneShot",
-      "DurationMin": "0.3663261",
-      "DurationMax": "1.2599211",
+      "DurationMin": "0.46154195",
+      "DurationMax": "1",
       "MediaRefs": [
        {
         "Id": "70627039"
@@ -689,6 +689,6 @@
     ]
    }
   ],
-  "FileHash": "{7D1F893F-DBAB-20C3-7B9C-1F9C80BE92AD}"
+  "FileHash": "{A2E9F6B7-49EA-83F5-FBB0-6D4F7FF1934E}"
  }
 }

@@ -13,51 +13,51 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID BOSS_KNIFE_ATTACKS = 2119463198U; //
-        static const AkUniqueID DEFEATED = 2791675679U; //
+        static const AkUniqueID BOSS_KNIFE_ATTACKS = 2119463198U;
+        static const AkUniqueID DEFEATED = 2791675679U;
         static const AkUniqueID ENEMY_AGGRO = 352335356U;
         static const AkUniqueID ENEMY_DEATH = 1205999388U;
         static const AkUniqueID ENEMY_ITEM_THROWS = 2450329037U;
         static const AkUniqueID ENEMY_SAFE = 3717377857U;
         static const AkUniqueID ENEMYDAMAGE = 1879435608U;
-        static const AkUniqueID ENTER_BOSS_ROOM = 3603472999U; //
-        static const AkUniqueID ENTER_CASTLE = 2474813288U; 
+        static const AkUniqueID ENTER_BOSS_ROOM = 3603472999U;
+        static const AkUniqueID ENTER_CASTLE = 2474813288U;
         static const AkUniqueID ENTER_CATACOMBS = 2762024869U;
-        static const AkUniqueID ENTER_TRIAL_ROOM = 1844506134U; //
-        static const AkUniqueID FINAL_BOSS_PHASE2 = 1150116533U; //
+        static const AkUniqueID ENTER_TRIAL_ROOM = 1844506134U;
+        static const AkUniqueID FINAL_BOSS_PHASE2 = 1150116533U;
         static const AkUniqueID FLOOR1 = 3162820674U;
         static const AkUniqueID FLOOR2 = 3162820673U;
         static const AkUniqueID FLOOR3 = 3162820672U;
         static const AkUniqueID FOOTSTEPS_01 = 2848855924U;
         static const AkUniqueID JOURNALPAGETURN = 1639161750U;
-        static const AkUniqueID JUDGE_DIALOGUE_BY_FIRE = 2109575468U; //
-        static const AkUniqueID JUDGE_DIALOGUE_SILENCE = 1862952859U; 
+        static const AkUniqueID JUDGE_DIALOGUE_BY_FIRE = 2109575468U;
+        static const AkUniqueID JUDGE_DIALOGUE_SILENCE = 1862952859U;
         static const AkUniqueID JURY_WHISPERS = 4151276193U;
-        static const AkUniqueID LASSO_ATTACH = 1402229995U; //
-        static const AkUniqueID LASSO_WINDUP = 1461666693U; //
+        static const AkUniqueID LASSO_ATTACH = 1402229995U;
+        static const AkUniqueID LASSO_WINDUP = 1461666693U;
         static const AkUniqueID MAIN_MENU = 2005704188U;
         static const AkUniqueID MAP_LOAD = 780953876U;
         static const AkUniqueID MENU_BOOP = 3129090587U;
         static const AkUniqueID MENUOPEN = 48824776U;
         static const AkUniqueID PLAYER_TAKINGDAMAGE = 3625562942U;
-        static const AkUniqueID QUEUE_CREDITS = 931351601U; //
-        static const AkUniqueID RESPAWN = 4279841335U; 
+        static const AkUniqueID QUEUE_CREDITS = 931351601U;
+        static const AkUniqueID RESPAWN = 4279841335U;
         static const AkUniqueID SHACKLES_OFF = 3057807107U;
-        static const AkUniqueID SHACKLES_ON = 3395044911U; 
+        static const AkUniqueID SHACKLES_ON = 3395044911U;
         static const AkUniqueID SHOP_BUY = 1495252156U;
         static const AkUniqueID TAROTBURN = 2451853040U;
         static const AkUniqueID TAROTPICKUP = 1908595231U;
-        static const AkUniqueID TEXT_SCROLLING = 371816340U; //
+        static const AkUniqueID TEXT_SCROLLING = 371816340U;
         static const AkUniqueID TRIAL_ROOM_FAILED = 2277544205U;
-        static const AkUniqueID TRIAL_ROOM_GAVEL = 866175427U; 
-        static const AkUniqueID VICTORY = 2716678721U; //
-        static const AkUniqueID WAND_BASIC = 2783045536U; 
-        static const AkUniqueID WAND_MISFIRE = 80501587U; //
-        static const AkUniqueID WITCH0 = 3350869486U; //
-        static const AkUniqueID WITCH1 = 3350869487U; //
-        static const AkUniqueID WITCH2 = 3350869484U; //
-        static const AkUniqueID WITCH3 = 3350869485U; //
-        static const AkUniqueID WITCH_DIALOGUE = 2206927579U; //
+        static const AkUniqueID TRIAL_ROOM_GAVEL = 866175427U;
+        static const AkUniqueID VICTORY = 2716678721U;
+        static const AkUniqueID WAND_BASIC = 2783045536U;
+        static const AkUniqueID WAND_MISFIRE = 80501587U;
+        static const AkUniqueID WITCH0 = 3350869486U;
+        static const AkUniqueID WITCH1 = 3350869487U;
+        static const AkUniqueID WITCH2 = 3350869484U;
+        static const AkUniqueID WITCH3 = 3350869485U;
+        static const AkUniqueID WITCH_DIALOGUE = 2206927579U;
     } // namespace EVENTS
 
     namespace STATES
