@@ -17,13 +17,13 @@ shape = SubResource("ConvexPolygonShape3D_sf2q6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-0.469, 0, -4.10013e-08, 0, 0.469, 0, 4.10013e-08, 0, -0.469, 0, 1.55, 0)
-visible = false
 visibility_range_end = 20.0
 shaded = true
 texture = ExtResource("1_pgwgu")
 
 [node name="Door" type="CSGPolygon3D" parent="."]
 transform = Transform3D(-0.005, 7.54979e-10, 0, -7.54979e-10, -0.005, 0, 0, 0, 0.005, 0, 1.66, 0)
+visible = false
 polygon = PackedVector2Array(-10.455, -11.7215, -51.4921, -6.49982, -81.662, 7.77365, -108.417, 26.8214, -121.151, 37.7997, -136, 58, -136, 333, 127, 333, 127, 55, 109.145, 30.3419, 86.7175, 13.6695, 57.303, 0.597534, 31.37, -8.00504)
 depth = 3.0
 material = SubResource("StandardMaterial3D_lw0ld")

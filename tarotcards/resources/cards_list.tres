@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardsList" load_steps=9 format=3 uid="uid://ctwsyretiamm7"]
+
+[ext_resource type="Script" path="res://tarotcards/scripts/item_data.gd" id="1_07kq4"]
+[ext_resource type="Resource" uid="uid://c3u3hw3n1diij" path="res://tarotcards/resources/death.tres" id="2_aij4o"]
+[ext_resource type="Script" path="res://tarotcards/scripts/cards_list.gd" id="2_p6h7u"]
+[ext_resource type="Resource" uid="uid://clrrab2ce1dtj" path="res://tarotcards/resources/judgement.tres" id="3_nwlbw"]
+[ext_resource type="Resource" uid="uid://ditl2p6r0lfau" path="res://tarotcards/resources/the_devil.tres" id="4_10i46"]
+[ext_resource type="Resource" uid="uid://pxw5n6smhbo1" path="res://tarotcards/resources/the_hanged_man.tres" id="5_75emx"]
+[ext_resource type="Resource" uid="uid://bvxvtbx4pbfyu" path="res://tarotcards/resources/the_high_priestess.tres" id="6_itmg1"]
+[ext_resource type="Resource" uid="uid://cp20q7n2qwblb" path="res://tarotcards/resources/wheel_of_fortune.tres" id="7_og6wn"]
+
+[resource]
+script = ExtResource("2_p6h7u")
+Cards = Array[ExtResource("1_07kq4")]([ExtResource("2_aij4o"), ExtResource("3_nwlbw"), ExtResource("4_10i46"), ExtResource("5_75emx"), ExtResource("6_itmg1"), ExtResource("7_og6wn")])

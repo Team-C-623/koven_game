@@ -1,8 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bigdykn0ht67u"]
 
-[ext_resource type="Texture2D" uid="uid://df5gttn0hnoal" path="res://UI/inventory_new.png" id="2_5vo5s"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory.gd" id="1_v88x4"]
-
+[ext_resource type="Texture2D" uid="uid://df5gttn0hnoal" path="res://UI/inventory_new.png" id="2_5vo5s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0cwr"]
 

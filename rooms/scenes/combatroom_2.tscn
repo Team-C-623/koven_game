@@ -166,6 +166,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_s8fok")]
 
+[node name="ChestSpawns" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="ChestSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="ChestSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
+
+[node name="Marker3D3" type="Marker3D" parent="ChestSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+
+[node name="Marker3D4" type="Marker3D" parent="ChestSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Marker3D5" type="Marker3D" parent="ChestSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+
+[node name="Marker3D6" type="Marker3D" parent="ChestSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4)
+
 [node name="Column" type="CSGPolygon3D" parent="."]
 transform = Transform3D(-0.00761986, 6.22863e-10, 2.44249e-15, -6.6615e-10, -0.00712472, 0, 1.44329e-15, -6.61744e-23, 0.01, -2.33, 1.903, 6.2)
 visibility_range_end = 20.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnalom3wua8rb"]
+[gd_scene load_steps=18 format=3 uid="uid://cnalom3wua8rb"]
 
 [ext_resource type="Script" path="res://shop/scripts/Shop.gd" id="1_10sum"]
 [ext_resource type="Texture2D" uid="uid://cg2pwyw8wopql" path="res://assets/ui/shop_background.png" id="2_u76mq"]
@@ -14,9 +14,9 @@
 [ext_resource type="Script" path="res://currency/scripts/label.gd" id="6_e4j6m"]
 [ext_resource type="FontFile" uid="uid://k1guuqtwah8n" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="7_l42hb"]
 [ext_resource type="FontFile" uid="uid://da6roc43ehb7u" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="8_7u1p7"]
+[ext_resource type="Texture2D" uid="uid://tp5r0ngxuerc" path="res://assets/ui/tarot_placeholder.png" id="11_bimte"]
 [ext_resource type="FontFile" uid="uid://dl5x4wg3p34rx" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="14_fy1q5"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1l63t"]
+[ext_resource type="Texture2D" uid="uid://1klmvuq5sxn0" path="res://assets/ui/currency_texture.png" id="14_r8uc0"]
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_10sum")
@@ -125,7 +125,7 @@ offset_top = 20.0
 offset_right = 243.0
 offset_bottom = 352.0
 scale = Vector2(0.8, 0.8)
-texture = SubResource("PlaceholderTexture2D_1l63t")
+texture = ExtResource("11_bimte")
 expand_mode = 1
 
 [node name="ItemName" type="Label" parent="Control/DetailsPanel/Control"]
@@ -186,6 +186,10 @@ offset_left = 600.0
 offset_top = -400.0
 offset_right = 760.0
 offset_bottom = -320.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/CurrencyPanel"]
+layout_mode = 2
+texture = ExtResource("14_r8uc0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/CurrencyPanel"]
 layout_mode = 2

@@ -234,6 +234,7 @@ func _add_room_from_data(room: RoomData):
 	new_instance.pos = Vector3(6.001 * room.pos[1], 0, 6.001 * room.pos[0])
 	new_instance.global_position = new_instance.pos
 	new_instance.rotate_y(new_instance.room_rotation)
+	new_instance.create_chest()
 	return new_instance
 
 # gets a random door from a room's door dictionary

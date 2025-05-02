@@ -8,8 +8,6 @@ const Slot = preload("res://inventory/scenes/slot.tscn")
 @onready var inventory: PanelContainer = $"."
 @onready var background: ColorRect = $Background
 
-
-
 func _ready():
 	# Configure frame texture and scaling
 	background_frame.texture = load("res://UI/inventory_new.png")
