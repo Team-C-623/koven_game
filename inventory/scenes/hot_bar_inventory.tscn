@@ -4,23 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://cv8wuwtls3212" path="res://UI/hotbar.png" id="2_nncsi"]
 
 [node name="HotBarInventory" type="PanelContainer"]
-offset_left = 6.0
-offset_right = 46.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_right = 94.0
+offset_bottom = 95.0
 script = ExtResource("1_pqext")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(355, -516)
-scale = Vector2(1.88672, 1.88472)
+position = Vector2(310, -520)
+scale = Vector2(1.55, 1.85)
 texture = ExtResource("2_nncsi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(95, 95)
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 29
+theme_override_constants/separation = 7

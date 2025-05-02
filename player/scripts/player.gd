@@ -126,7 +126,7 @@ func _process(delta: float) -> void:
 	# Check all enemies in parent node
 	for node in get_parent().get_children():
 		if node is Nun or node is Monk:  # Your enemy types
-			if player.global_position.distance_to(node.global_position) < 10:  # 300 pixels range
+			if player.global_position.distance_to(node.global_position) < 3:  # 300 pixels range
 				combat_engaged = true
 				break  # Exit loop early if we found at least one nearby enemy
 

@@ -77,6 +77,7 @@ func play_shackles_on():
 func play_castle_music(floor_state: String = "floor1"): #called in main.gd (_entered)
 	var switch_result = Wwise.set_switch("FLOOR_LEVEL","FLOOR1", self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
+	pass
 
 func play_main_menu_music(): #called in start_screen script
 	Wwise.post_event_id(AK.EVENTS.MAIN_MENU,self)
