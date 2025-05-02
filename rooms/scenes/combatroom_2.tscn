@@ -1,14 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://dpi1gofwgtr2c"]
+[gd_scene load_steps=27 format=3 uid="uid://dpi1gofwgtr2c"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_i2ney"]
-[ext_resource type="Texture2D" uid="uid://dvf2aabp8o2fj" path="res://assets/environment/lvl1wall1combat2.png" id="2_mbjre"]
+[ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_aitde"]
 [ext_resource type="Texture2D" uid="uid://nfwlumvbq5r3" path="res://assets/environment/lvl1wall2combat2.png" id="3_fdmoy"]
+[ext_resource type="ArrayOccluder3D" uid="uid://twpi0w34vmwe" path="res://rooms/occluders/combatroom_2_wall2.occ" id="4_f2ke6"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_v8dsc"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c4o6gfnfgdgjk" path="res://rooms/occluders/combatroom_2_wall4.occ" id="5_go6cs"]
 [ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://enemy/scenes/enemy_spawner.tscn" id="5_s8fok"]
 [ext_resource type="Texture2D" uid="uid://bqubrxmcivi3a" path="res://assets/environment/column.png" id="6_pgh70"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="7_a02cc"]
+[ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="7_tvscc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10yua"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ymej"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv5cw"]
@@ -21,6 +24,9 @@ orientation = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rrkvq"]
 points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yr7ec"]
+albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6fq2f"]
 points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
@@ -62,20 +68,19 @@ transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.4
 script = ExtResource("1_i2ney")
 
 [node name="WallDoor1" type="CSGPolygon3D" parent="."]
-transform = Transform3D(-0.01, 1.50996e-09, 0, -1.50996e-09, -0.01, 0, 0, -2.64698e-23, 0.01, 0, 3.6, 6.4)
+transform = Transform3D(-0.01, 8.74228e-10, 1.11022e-16, -8.74228e-10, -0.01, 0, 1.11022e-16, -5.29396e-23, 0.01, 0, 3.6, 6.4)
 visibility_range_end = 20.0
 use_collision = true
-collision_mask = 54
-polygon = PackedVector2Array(-640, -360, -640, 360, -134, 360, -138, 147.6, -138, 38.6, -114, 4.89999, -89, -16.1, -89, -16.8, -45, -38, -10, -45.4, 26.6, -44, 45.6, -40, 63.4, -33, 114.4, 1, 115, 1, 141, 33, 143, 274, 143, 360, 640, 360, 640, -360)
+polygon = PackedVector2Array(-640, 360, -144, 360, -144, 70, -112, 32, -75, 10, -14, -1.978, 19.0259, -0.43631, 46.9548, 8.09595, 94.165, 30.7194, 130.463, 67.8524, 132, 360, 640, 360, 640, -360, -640, -360)
 depth = 20.0
-material = SubResource("StandardMaterial3D_10yua")
+material = SubResource("StandardMaterial3D_2ymej")
 
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor1"]
-transform = Transform3D(-100, -1.50996e-05, 0, 1.50996e-05, -100, 0, 0, 0, 100, 0, 0, -20.1)
+transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
 visibility_range_end = 20.0
 flip_h = true
 shaded = true
-texture = ExtResource("2_mbjre")
+texture = ExtResource("2_aitde")
 
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 3.6, 0)
@@ -87,21 +92,23 @@ mesh = SubResource("PlaneMesh_4tnoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rrkvq")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
+occluder = ExtResource("4_f2ke6")
+
 [node name="WallDoor3" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.01, 8.74228e-10, -8.74228e-10, 8.74228e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
 visibility_range_end = 20.0
 use_collision = true
-collision_mask = 54
-polygon = PackedVector2Array(-640, -360, -640, 360, -134, 360, -138, 147.6, -138, 38.6, -114, 4.89999, -89, -16.1, -89, -16.8, -45, -38, -10, -45.4, 26.6, -44, 45.6, -40, 63.4, -33, 114.4, 1, 115, 1, 141, 33, 143, 274, 143, 360, 640, 360, 640, -360)
+polygon = PackedVector2Array(-640, 360, -144, 360, -144, 70, -112, 32, -75, 10, -14, -1.978, 19.0259, -0.43631, 46.9548, 8.09595, 94.165, 30.7194, 130.463, 67.8524, 132, 360, 640, 360, 640, -360, -640, -360)
 depth = 20.0
-material = SubResource("StandardMaterial3D_10yua")
+material = SubResource("StandardMaterial3D_yr7ec")
 
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor3"]
-transform = Transform3D(-100, -1.50996e-05, 0, 1.50996e-05, -100, 0, 0, 0, 100, 0, 0, -20.1)
+transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 0, 0, 0, 100, 0, 0, -20.1)
 visibility_range_end = 20.0
 flip_h = true
 shaded = true
-texture = ExtResource("2_mbjre")
+texture = ExtResource("2_aitde")
 
 [node name="Wall4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.35, 3.6, 0)
@@ -113,9 +120,15 @@ mesh = SubResource("PlaneMesh_4tnoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_6fq2f")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall4"]
+occluder = ExtResource("5_go6cs")
+
 [node name="Floor" type="MeshInstance3D" parent="."]
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
+occluder = ExtResource("7_tvscc")
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
@@ -130,6 +143,20 @@ mesh = SubResource("PlaneMesh_a4nd0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hlwpf")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Torch7" parent="Lighting" instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, 2.39273, 3.96759, -5.87716)
+
+[node name="Torch8" parent="Lighting" instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.11529e-08, -1.47349e-08, -0.999998, -0.337095, 0.941469, 0, 0.941469, 0.337095, -4.37113e-08, -2.35518, 3.96759, -5.87715)
+
+[node name="Torch9" parent="Lighting" instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, -2.35517, 3.96759, 5.85616)
+
+[node name="Torch10" parent="Lighting" instance=ExtResource("7_a02cc")]
+transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, 2.36979, 3.96759, 5.85616)
 
 [node name="U" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4)
@@ -194,15 +221,3 @@ visibility_range_end = 20.0
 flip_h = true
 shaded = true
 texture = ExtResource("6_pgh70")
-
-[node name="Torch7" parent="." instance=ExtResource("7_a02cc")]
-transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, 2.39273, 3.96759, -5.87716)
-
-[node name="Torch8" parent="." instance=ExtResource("7_a02cc")]
-transform = Transform3D(-4.11529e-08, -1.47349e-08, -0.999998, -0.337095, 0.941469, 0, 0.941469, 0.337095, -4.37113e-08, -2.35518, 3.96759, -5.87715)
-
-[node name="Torch9" parent="." instance=ExtResource("7_a02cc")]
-transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, -2.35517, 3.96759, 5.85616)
-
-[node name="Torch10" parent="." instance=ExtResource("7_a02cc")]
-transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, 2.36979, 3.96759, 5.85616)

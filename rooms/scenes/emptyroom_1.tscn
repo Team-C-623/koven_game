@@ -17,6 +17,7 @@ albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 albedo_texture = ExtResource("3_2ydgm")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cm5lc"]
+lightmap_size_hint = Vector2i(66, 38)
 material = SubResource("StandardMaterial3D_cmj32")
 size = Vector2(12.8, 7.2)
 

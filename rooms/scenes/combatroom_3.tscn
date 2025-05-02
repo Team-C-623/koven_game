@@ -1,10 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://whbil7xojfmr"]
+[gd_scene load_steps=24 format=3 uid="uid://whbil7xojfmr"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_02eyr"]
 [ext_resource type="Texture2D" uid="uid://c6e07778mjfx1" path="res://assets/environment/lvl1wall1combat1.png" id="2_b31nw"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cdlkmfr0hpdrt" path="res://rooms/occluders/combatroom_3_wall1.occ" id="3_c670q"]
 [ext_resource type="Texture2D" uid="uid://bk78k18txcqxs" path="res://assets/environment/lvl1wall2combat1.png" id="3_p24rb"]
+[ext_resource type="ArrayOccluder3D" uid="uid://kilqsbp8w4pm" path="res://rooms/occluders/combatroom_3_wall2.occ" id="4_ev5or"]
 [ext_resource type="Texture2D" uid="uid://bey33kcn1gdsu" path="res://assets/environment/lvl1floorcombat1.png" id="4_mknv1"]
 [ext_resource type="PackedScene" uid="uid://ci64337knkfuk" path="res://enemy/scenes/enemy_spawner.tscn" id="5_ejee6"]
+[ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="7_66twx"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="7_j40db"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
@@ -67,6 +70,9 @@ mesh = SubResource("PlaneMesh_pmdxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hbqa0")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall1"]
+occluder = ExtResource("3_c670q")
+
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 3.6, 0)
 visibility_range_end = 20.0
@@ -76,6 +82,9 @@ mesh = SubResource("PlaneMesh_pmdxk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_fq7in")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
+occluder = ExtResource("4_ev5or")
 
 [node name="WallDoor3" type="CSGPolygon3D" parent="."]
 transform = Transform3D(0.01, 8.74228e-10, -8.74228e-10, 8.74228e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
@@ -113,6 +122,9 @@ texture = ExtResource("3_p24rb")
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
+occluder = ExtResource("7_66twx")
+
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_4ups5")
@@ -127,6 +139,33 @@ mesh = SubResource("PlaneMesh_a4nd0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_7fa5w")
 
+[node name="Lighting" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Torch" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(0.94147, 0.337095, 2.84217e-14, -0.337095, 0.94147, -1.3888e-15, -1.42109e-14, -3.55271e-15, 0.999999, -6.26363, 3.5186, -2.17563)
+
+[node name="Torch2" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(0.94147, 0.337095, 5.68434e-14, -0.337095, 0.94147, -1.3888e-15, -2.84217e-14, -1.06581e-14, 0.999999, -6.26363, 3.5186, 2.34392)
+
+[node name="Torch3" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, -2.182, 3.519, 6.264)
+
+[node name="Torch4" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, 2.3539, 3.519, 6.264)
+
+[node name="Torch5" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, -2.01613)
+
+[node name="Torch6" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, 1.82865)
+
+[node name="Torch7" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, 1.829, 3.519, -6.1)
+
+[node name="Torch8" parent="Lighting" instance=ExtResource("7_j40db")]
+transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, -2.02432, 3.519, -6.1)
+
 [node name="L" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
 
@@ -134,27 +173,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_ejee6")]
-
-[node name="Torch" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(0.94147, 0.337095, 4.26326e-14, -0.337095, 0.94147, -1.3888e-15, -2.84217e-14, -7.10543e-15, 0.999999, -6.26363, 3.5186, -2.17563)
-
-[node name="Torch2" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(0.94147, 0.337095, 7.10543e-14, -0.337095, 0.94147, -1.3888e-15, -4.26326e-14, -1.42109e-14, 0.999999, -6.26363, 3.5186, 2.34392)
-
-[node name="Torch3" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, -2.182, 3.519, 6.264)
-
-[node name="Torch4" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(-5.18632e-08, 1.51777e-08, 0.999999, -0.337095, 0.94147, -1.3888e-15, -0.94147, -0.337095, -4.37114e-08, 2.3539, 3.519, 6.264)
-
-[node name="Torch5" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, -2.01613)
-
-[node name="Torch6" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(-0.94147, -0.337095, -8.74227e-08, -0.337095, 0.94147, 0, 8.23059e-08, 2.94698e-08, -0.999999, 6.1, 3.519, 1.82865)
-
-[node name="Torch7" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, 1.829, 3.519, -6.1)
-
-[node name="Torch8" parent="." instance=ExtResource("7_j40db")]
-transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, -2.02432, 3.519, -6.1)

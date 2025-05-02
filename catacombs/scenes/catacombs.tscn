@@ -1,13 +1,18 @@
-[gd_scene load_steps=32 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=37 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://catacombs/scripts/Catacombs.gd" id="1_bi88v"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cv7vx8h3f10ha" path="res://catacombs/occluders/catacombs_wall1.occ" id="3_57801"]
 [ext_resource type="Texture2D" uid="uid://cjpearj8kf71w" path="res://assets/environment/catacombfinalfloor.png" id="3_h08t0"]
 [ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://journal/scenes/journal_spawner.tscn" id="4_b3sk6"]
+[ext_resource type="ArrayOccluder3D" uid="uid://4qyqfxwflfvn" path="res://catacombs/occluders/catacombs_wall2.occ" id="5_bhkr4"]
 [ext_resource type="Script" path="res://catacombs/scripts/entrance.gd" id="5_gce5p"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b5d5kd2rcmjuv" path="res://catacombs/occluders/catacombs_wall3.occ" id="6_io1ko"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cf2tcp15rgck6" path="res://catacombs/occluders/catacombs_wall4.occ" id="7_55g0k"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="7_voxbd"]
 [ext_resource type="Texture2D" uid="uid://bqubrxmcivi3a" path="res://assets/environment/column.png" id="8_8qr8b"]
 [ext_resource type="Texture2D" uid="uid://bdsipp7rvkioe" path="res://assets/environment/plainwood1.png" id="8_kdt8v"]
 [ext_resource type="Texture2D" uid="uid://n7mkgggt80c5" path="res://assets/environment/candleroomwall2wood.png" id="8_rm12w"]
+[ext_resource type="ArrayOccluder3D" uid="uid://df8mpa8xxj4hi" path="res://catacombs/occluders/catacombs_floor.occ" id="9_05smy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv5cw"]
 albedo_texture = ExtResource("8_kdt8v")
@@ -44,11 +49,11 @@ points = PackedVector3Array(2.5, 1.39973, 0, 2.5, -1.4, 0, -2.5, 1.39973, 0, -2.
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgady"]
 albedo_texture = ExtResource("3_h08t0")
-uv1_scale = Vector3(8, 8, 8)
+uv1_scale = Vector3(4, 8, 8)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dwee4"]
 material = SubResource("StandardMaterial3D_cgady")
-size = Vector2(10, 10)
+size = Vector2(5, 10)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_34a8u"]
 
@@ -66,7 +71,7 @@ albedo_texture = SubResource("NoiseTexture2D_q0gnv")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jbfwx"]
 material = SubResource("StandardMaterial3D_cl0t8")
-size = Vector2(10, 20)
+size = Vector2(5, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7mnyq"]
 points = PackedVector3Array(5, 0, 10, -5, 0, 10, 5, 0, -10, -5, 0, -10)
@@ -101,6 +106,9 @@ mesh = SubResource("PlaneMesh_86s45")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_fqmyn")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall1"]
+occluder = ExtResource("3_57801")
+
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 5)
 visibility_range_end = 20.0
@@ -124,6 +132,9 @@ distance_fade_shadow = 24.0
 distance_fade_length = 5.0
 omni_attenuation = 0.0
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
+occluder = ExtResource("5_bhkr4")
+
 [node name="Wall3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 8.74228e-08, -8.74228e-08, 8.74228e-08, -1, 0, -8.74228e-08, -7.64274e-15, -1, -2.5, 1.4, 0)
 visibility_range_end = 20.0
@@ -133,6 +144,9 @@ mesh = SubResource("PlaneMesh_86s45")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_fqmyn")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall3"]
+occluder = ExtResource("6_io1ko")
 
 [node name="Wall4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -5)
@@ -144,9 +158,15 @@ mesh = SubResource("PlaneMesh_psi33")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_0qxcn")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall4"]
+occluder = ExtResource("7_55g0k")
+
 [node name="Floor" type="MeshInstance3D" parent="."]
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_dwee4")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
+occluder = ExtResource("9_05smy")
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("WorldBoundaryShape3D_34a8u")

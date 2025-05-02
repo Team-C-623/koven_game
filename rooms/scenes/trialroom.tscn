@@ -1,11 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://qd0j71gxoatt"]
+[gd_scene load_steps=27 format=3 uid="uid://qd0j71gxoatt"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_bs6wp"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_68aln"]
 [ext_resource type="Texture2D" uid="uid://bdsipp7rvkioe" path="res://assets/environment/plainwood1.png" id="3_hnyy0"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c67rvkhbsaygv" path="res://rooms/occluders/trialroom_wall2.occ" id="4_2hdvl"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_ie3bh"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dn6p7gp67nwn3" path="res://rooms/occluders/trialroom_wall3.occ" id="5_3qm80"]
 [ext_resource type="Script" path="res://catacombs/scripts/dialogue_area.gd" id="5_5qayx"]
 [ext_resource type="Texture2D" uid="uid://on0t5aofexgg" path="res://assets/trial.png" id="6_hwqsd"]
+[ext_resource type="ArrayOccluder3D" uid="uid://3vv0oamm62uw" path="res://rooms/occluders/trialroom_wall4.occ" id="6_qab4c"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bbijkg6wix6hc" path="res://rooms/occluders/trialroom_floor.occ" id="8_mw2h0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qm5m"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
@@ -87,6 +91,9 @@ mesh = SubResource("PlaneMesh_pmdxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_a8kaa")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
+occluder = ExtResource("4_2hdvl")
+
 [node name="Wall3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.6, 0)
 visibility_range_end = 20.0
@@ -96,6 +103,9 @@ mesh = SubResource("PlaneMesh_pmdxk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_lhfoe")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall3"]
+occluder = ExtResource("5_3qm80")
 
 [node name="Wall4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.2, 3.6, 3.2)
@@ -107,10 +117,16 @@ mesh = SubResource("PlaneMesh_pmdxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ctirc")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall4"]
+occluder = ExtResource("6_qab4c")
+
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
+occluder = ExtResource("8_mw2h0")
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
