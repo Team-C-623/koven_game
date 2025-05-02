@@ -19,7 +19,7 @@ func _ready() -> void:
 	randomize()
 	var new_catacombs = cata_scene.instantiate()
 	add_child(new_catacombs)
-	_spawn_journals_in_room(new_catacombs) #spawns journal
+	#_spawn_journals_in_room(new_catacombs) #spawns journal
 	new_catacombs.name = "Catacombs"
 	
 	entered.connect(generate_new)
@@ -46,11 +46,11 @@ func _ready() -> void:
 
 	
 #spawns journals
-func _spawn_journals_in_room(room):
-	var spawners = room.find_children("*", "JournalSpawner", true)
-	print(spawners)
-	for spawner in spawners:
-		spawner.try_spawn_journal()
+#func _spawn_journals_in_room(room):
+	#var spawners = room.find_children("*", "JournalSpawner", true)
+	#print(spawners)
+	#for spawner in spawners:
+		#spawner.try_spawn_journal()
 
 # switch cameras
 func switch_cam():

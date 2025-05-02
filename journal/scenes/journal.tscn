@@ -6,16 +6,16 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_itoj4"]
 radius = 13.2735
 
-[node name="Journal" type="Area3D"]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 2.33661, 0, 1.40955)
+[node name="Journal" type="Area3D" groups=["journal_group"]]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 script = ExtResource("1_u6u08")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62439, -0.849578, -0.738343)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_itoj4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17914, -1.34605, -2.68792)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 texture = ExtResource("2_mg4jh")
 
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

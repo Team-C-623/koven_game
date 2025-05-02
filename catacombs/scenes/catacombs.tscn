@@ -202,7 +202,7 @@ transform = Transform3D(0.470709, 0.168621, 0, -0.168621, 0.470709, 0, 0, 0, 0.5
 transform = Transform3D(-0.470735, -0.168548, -4.37114e-08, -0.168548, 0.470735, 0, 4.1153e-08, 1.47349e-08, -0.5, 2.48, 2.3, 4)
 
 [node name="JournalSpawner" parent="." instance=ExtResource("4_b3sk6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
 spawn_height = 0.4
 
 [node name="Entrance" type="Node3D" parent="."]
