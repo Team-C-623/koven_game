@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwrk1ig0jmclj"]
+[gd_scene load_steps=3 format=3 uid="uid://bwrk1ig0jmclj"]
 
 [ext_resource type="Script" path="res://inventory/scripts/hot_bar_inventory.gd" id="1_pqext"]
+[ext_resource type="Texture2D" uid="uid://cv8wuwtls3212" path="res://UI/hotbar.png" id="2_nncsi"]
 
 [node name="HotBarInventory" type="PanelContainer"]
-offset_right = 40.0
+offset_left = 6.0
+offset_right = 46.0
 offset_bottom = 40.0
 script = ExtResource("1_pqext")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(355, -516)
+scale = Vector2(1.88672, 1.88472)
+texture = ExtResource("2_nncsi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -16,3 +23,4 @@ theme_override_constants/margin_bottom = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 29
