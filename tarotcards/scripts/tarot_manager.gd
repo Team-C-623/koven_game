@@ -92,7 +92,7 @@ func end_high_priestess():
 	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is Player:
-			node.speed -= 2.0
+			node.speed -= 1.0
 			
 func end_duration_cards():
 	for timer in active_timers:

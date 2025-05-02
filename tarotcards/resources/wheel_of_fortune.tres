@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("1_qbqb5")
 name = "Wheel of Fortune"
-description = "The Wheel of Fortune is constantly revolving -- sometimes you will be at the top, and sometimes you will be at the bottom. This Tarot card reminds you that nothing is permanent, and, good or bad, you must cherish the lessons that this moment is bringing you."
+description = "The Wheel of Fortune is constantly revolving -- sometimes you will be at the top, and sometimes you will be at the bottom. This Tarot card reminds you that nothing is permanent, and, good or bad, you must cherish the lessons that this moment is bringing you.
+
+Effect: Randomly +3 Damage, +5 Health and Max Health, or +0.25 Speed"
 texture = ExtResource("2_tre03")
 cost = 100
 duration = 999.0
