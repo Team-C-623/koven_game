@@ -16,7 +16,6 @@ func _ready() -> void:
 
 	
 func start_dialogue():
-	SoundManager.play_trial_room_music()
 	dialogue_balloon.visible = true
 	DialogueManager.mutated.connect(_on_mutation)
 	DialogueManager.show_dialogue_balloon(load("res://trialroom/dialogue/trial1.dialogue"), "start")

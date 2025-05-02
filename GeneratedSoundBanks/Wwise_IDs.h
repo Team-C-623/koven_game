@@ -14,7 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BOSS_KNIFE_ATTACKS = 2119463198U; //
-        static const AkUniqueID DEFEATED = 2791675679U;
+        static const AkUniqueID DEFEATED = 2791675679U; //
         static const AkUniqueID ENEMY_AGGRO = 352335356U;
         static const AkUniqueID ENEMY_DEATH = 1205999388U;
         static const AkUniqueID ENEMY_ITEM_THROWS = 2450329037U;
@@ -31,7 +31,7 @@ namespace AK
         static const AkUniqueID FOOTSTEPS_01 = 2848855924U;
         static const AkUniqueID JOURNALPAGETURN = 1639161750U;
         static const AkUniqueID JUDGE_DIALOGUE_BY_FIRE = 2109575468U; //
-        static const AkUniqueID JUDGE_DIALOGUE_SILENCE = 1862952859U; //
+        static const AkUniqueID JUDGE_DIALOGUE_SILENCE = 1862952859U; 
         static const AkUniqueID JURY_WHISPERS = 4151276193U;
         static const AkUniqueID LASSO_ATTACH = 1402229995U; //
         static const AkUniqueID LASSO_WINDUP = 1461666693U; //
@@ -43,13 +43,13 @@ namespace AK
         static const AkUniqueID QUEUE_CREDITS = 931351601U; //
         static const AkUniqueID RESPAWN = 4279841335U; 
         static const AkUniqueID SHACKLES_OFF = 3057807107U;
-        static const AkUniqueID SHACKLES_ON = 3395044911U; //
+        static const AkUniqueID SHACKLES_ON = 3395044911U; 
         static const AkUniqueID SHOP_BUY = 1495252156U;
         static const AkUniqueID TAROTBURN = 2451853040U;
         static const AkUniqueID TAROTPICKUP = 1908595231U;
         static const AkUniqueID TEXT_SCROLLING = 371816340U; //
         static const AkUniqueID TRIAL_ROOM_FAILED = 2277544205U;
-        static const AkUniqueID TRIAL_ROOM_GAVEL = 866175427U; //
+        static const AkUniqueID TRIAL_ROOM_GAVEL = 866175427U; 
         static const AkUniqueID VICTORY = 2716678721U; //
         static const AkUniqueID WAND_BASIC = 2783045536U; 
         static const AkUniqueID WAND_MISFIRE = 80501587U; //

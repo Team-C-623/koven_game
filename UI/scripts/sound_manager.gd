@@ -65,6 +65,12 @@ func play_trial_room_failed():
 	
 func play_gavel():
 	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM_GAVEL,self)
+	
+func play_mad_judge():
+	Wwise.post_event_id(AK.EVENTS.JUDGE_DIALOGUE_SILENCE,self)
+
+func play_shackles_on():
+	Wwise.post_event_id(AK.EVENTS.SHACKLES_ON,self)
 
 
 # MUSIC
