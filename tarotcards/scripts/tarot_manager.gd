@@ -49,6 +49,7 @@ func use_judgement(item_data:ItemData):
 	apply_judgement_effect()
 	
 func apply_judgement_effect():
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is CharacterBody3D or Player:
 			for component in node.get_children(true):
@@ -58,6 +59,7 @@ func apply_judgement_effect():
 func end_judgement():
 	judgement_active = false
 	active_timers.erase("judgement")
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is CharacterBody3D or Player:
 			for component in node.get_children(true):
@@ -65,6 +67,7 @@ func end_judgement():
 					component.damage_modifier = 1.0
 #add damage modifications to new enemies that spawn after use_judegement is called
 func update_judgement():
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is CharacterBody3D or Player:
 			for component in node.get_children(true):
@@ -80,11 +83,13 @@ func use_high_priestess():
 			end_high_priestess()
 			active_timers.erase("high_priestess")
 	)
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is Player:
 			node.speed += 0.75
 			
 func end_high_priestess():
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is Player:
 			node.speed -= 2.0
@@ -112,6 +117,7 @@ func use_wheel_of_fortune(_item_data: ItemData):
 	#randomly increase 1 of 3 stats: +10 damage, +20 health, +2.0 speed
 	var random_num = rng.randi_range(0, 2)
 	var health_component
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 			if node is Player:
 				for component in node.get_children(true):
@@ -143,6 +149,7 @@ func use_wheel_of_fortune(_item_data: ItemData):
 	popup.queue_free()
 
 func use_death():
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 			if node is Player:
 				for component in node.get_children(true):
@@ -152,6 +159,7 @@ func use_death():
 						
 func use_the_devil():
 	var heal_value
+	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 			if node is Player:
 				for component in node.get_children(true):

@@ -10,26 +10,26 @@
     "Type": "User",
     "GUID": "{F4EC5305-9A58-4BD5-9ACE-1C845C28C69D}",
     "Language": "SFX",
-    "Hash": "{A665F82D-8D3E-91E2-EE95-E9B566D93CEC}",
+    "Hash": "{8590330C-1B45-4A35-3B94-AD3083E8EFF1}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundEffects",
     "ShortName": "SoundEffects",
     "Path": "3898083304.bnk",
     "Media": [
-     {
-      "Id": "90307",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Footsteps_5.wav",
-      "CachePath": "F9/{F9D12ECF-17B2-25F9-4CB3-21446098E060}.wem"
-     },
      {
       "Id": "3715154",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Menu UI\\PageTurning.wav",
-      "CachePath": "77/{779AD419-513C-6F8D-F140-0C1DB672E3BE}.wem"
+      "CachePath": "F3/{F3FCCC21-B8A2-3065-35C6-1BCA4429E119}.wem"
+     },
+     {
+      "Id": "70627039",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player_TakingDamage_TrueFINAL3.wav",
+      "CachePath": "7C/{7C8D26BD-6F94-C6B2-978F-1C9FEF3B2A1A}.wem"
      },
      {
       "Id": "105238871",
@@ -37,7 +37,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "TrialRooms\\Trial_Room_Failed.wav",
-      "CachePath": "A2/{A2E498DF-31E1-C879-460B-5E012573D1BD}.wem"
+      "CachePath": "01/{01A077AB-76EB-5D89-F59D-7F9D7953959D}.wem"
+     },
+     {
+      "Id": "121644684",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Dialogue_Scroll_Judge_Voice.wav",
+      "CachePath": "43/{438ACC89-D088-6BEB-685B-09414145B69B}.wem"
      },
      {
       "Id": "126817595",
@@ -45,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Wand_Basic_Shot.wav",
-      "CachePath": "95/{95A9FCBB-4888-47ED-7662-12293079EF5C}.wem"
+      "CachePath": "9A/{9A0CE0E5-865D-E22E-19CA-869F8CD3F604}.wem"
      },
      {
       "Id": "131263441",
@@ -53,7 +61,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shackles_On.wav",
-      "CachePath": "6D/{6DE1897D-517D-3A27-D57C-65F90D986F28}.wem"
+      "CachePath": "86/{866D771E-BA70-A1F9-7D71-746D680BC1B3}.wem"
      },
      {
       "Id": "144127505",
@@ -61,7 +69,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Enemy_Damage_4.wav",
-      "CachePath": "68/{6886C660-85B1-95A7-6321-2E796F012C53}.wem"
+      "CachePath": "08/{08DC2EE4-A694-3378-1C6C-FEB3155AE8FD}.wem"
+     },
+     {
+      "Id": "148550749",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Boss_Knife_Attack.wav",
+      "CachePath": "CD/{CD2F1C56-32F3-3D6B-1416-A82A775B0BF8}.wem"
      },
      {
       "Id": "232034890",
@@ -69,7 +85,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Enemy_Damage_2.wav",
-      "CachePath": "26/{263F8004-4BE6-A781-D4BB-E0D089DF8549}.wem"
+      "CachePath": "74/{74E48DE6-31DE-9AA8-9386-F3E32B4A18AF}.wem"
      },
      {
       "Id": "292569167",
@@ -77,7 +93,31 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shackles_Off.wav",
-      "CachePath": "25/{25B22E21-8CE5-BAF7-ED23-AAB515A2159A}.wem"
+      "CachePath": "05/{057D2EDD-70FC-D4B3-0A7C-37E46AD21542}.wem"
+     },
+     {
+      "Id": "306102298",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX\\Combat\\Crumble_Death.wav",
+      "CachePath": "96/{963B7CA7-E455-5105-B9E2-F981EF4EBDE2}.wem"
+     },
+     {
+      "Id": "319300892",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Lasso_Attach.wav",
+      "CachePath": "BD/{BD94783F-82F8-7CA5-AEE7-68179A80C59F}.wem"
+     },
+     {
+      "Id": "323941916",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Boss_Knife_Attack_2.wav",
+      "CachePath": "F6/{F64B688C-1D79-7C94-1333-B970789BF819}.wem"
      },
      {
       "Id": "340572892",
@@ -85,15 +125,47 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Menu UI\\PageFlipping-MenuSwitching.wav",
-      "CachePath": "BD/{BD1C08F5-4A08-175F-E2FB-6F474D5B61FC}.wem"
+      "CachePath": "CA/{CAE790C4-4E8D-F5AB-2C71-F1A966873409}.wem"
      },
      {
-      "Id": "342904581",
+      "Id": "418186377",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Boss_1_PopUp.wav",
-      "CachePath": "72/{729DD276-AC4D-372D-1D46-EE691FC2D416}.wem"
+      "ShortName": "Enemy_Item_Throw_3.wav",
+      "CachePath": "DE/{DE3B66C5-98F3-5E3A-8BAF-9087C790B6A2}.wem"
+     },
+     {
+      "Id": "437339270",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_FINAL_3.wav",
+      "CachePath": "93/{939E236D-B584-A19D-56C7-21A9579C6FAF}.wem"
+     },
+     {
+      "Id": "442049551",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Text_Scrolling.wav",
+      "CachePath": "B3/{B3819399-5EF8-E570-F892-5134A4E67569}.wem"
+     },
+     {
+      "Id": "461839438",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player_TakingDamage_TrueFINAL2.wav",
+      "CachePath": "B7/{B7897C61-E2CA-DE56-3AC8-F03FFC6C8B80}.wem"
+     },
+     {
+      "Id": "477823405",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player_TakingDamage_TrueFINAL1.wav",
+      "CachePath": "26/{26C99F18-9205-6EF9-FB3B-C35C3A86A295}.wem"
      },
      {
       "Id": "485434196",
@@ -101,15 +173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Wand_Misfire.wav",
-      "CachePath": "84/{84B2D91A-7924-D6C6-2A86-32305B8C5243}.wem"
-     },
-     {
-      "Id": "495533890",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Text_Scrolling.wav",
-      "CachePath": "92/{92DD0A5D-6058-0355-2AEC-AA90E255FDD1}.wem"
+      "CachePath": "18/{18DD437F-56A4-5D61-B6D0-69E5699B8A58}.wem"
      },
      {
       "Id": "598658748",
@@ -117,31 +181,47 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shop_Buy.wav",
-      "CachePath": "D9/{D96FECE9-6D5A-C9E0-1B2C-9AD7BC96F507}.wem"
+      "CachePath": "89/{890C776A-9161-4CD3-BB25-7223C292F2B7}.wem"
      },
      {
-      "Id": "615815778",
+      "Id": "623659834",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Footsteps_4.wav",
-      "CachePath": "DF/{DF8851FA-0EC4-E247-02D2-28B0EE0A9D2A}.wem"
+      "ShortName": "Lasso.wav",
+      "CachePath": "50/{50BA1541-96D9-B318-C5A3-E984F8A5F112}.wem"
      },
      {
-      "Id": "806822013",
+      "Id": "640454819",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Footsteps_2.wav",
-      "CachePath": "78/{78C9A427-1E76-4675-950C-3F0070AF59C8}.wem"
+      "ShortName": "Enemy_Item_Throw_1.wav",
+      "CachePath": "6C/{6CB85106-99F4-FAEC-A46A-F8C6835FF483}.wem"
      },
      {
-      "Id": "825944191",
+      "Id": "688476327",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Footsteps_3.wav",
-      "CachePath": "C8/{C8D60860-655D-E70A-97BD-7C9C5EA8FF75}.wem"
+      "ShortName": "Enemy_Item_Throw_2.wav",
+      "CachePath": "06/{06CACC25-EFF3-8B59-FBAD-5076FAF57A11}.wem"
+     },
+     {
+      "Id": "788182343",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_FINAL.wav",
+      "CachePath": "12/{12F575CC-9D6A-90CD-7F3D-ADB519FAEC48}.wem"
+     },
+     {
+      "Id": "791562161",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jury_Chatter.wav",
+      "CachePath": "56/{564CFE0F-7079-2636-FA61-67644C926AD7}.wem"
      },
      {
       "Id": "871225691",
@@ -149,7 +229,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Menu_Boop.wav",
-      "CachePath": "D9/{D9AA0894-E4D8-D0C5-95BF-FAE1158762B0}.wem"
+      "CachePath": "C5/{C5360FD5-EC25-38F3-A071-A89396ED8167}.wem"
      },
      {
       "Id": "873575782",
@@ -157,7 +237,23 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Koven_Dialogue_Example_1.wav",
-      "CachePath": "0F/{0FAB5AF9-6563-02EC-290C-B9B963921AB9}.wem"
+      "CachePath": "DF/{DF57D315-3919-FF35-24CF-3A8E6EA3003E}.wem"
+     },
+     {
+      "Id": "877110523",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Footsteps_FINAL_2.wav",
+      "CachePath": "CD/{CD02A0E9-CF73-7355-1A84-96DEDAA9698C}.wem"
+     },
+     {
+      "Id": "902084858",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Gavel.wav",
+      "CachePath": "F1/{F1894A80-4F47-0283-9305-0C154271AB03}.wem"
      },
      {
       "Id": "907179680",
@@ -165,7 +261,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Tarot Sounds\\CardBurning.wav",
-      "CachePath": "B4/{B4DCFBCD-09BA-B0BD-165A-74530C979B75}.wem"
+      "CachePath": "06/{06BFFA83-EB19-6B87-FF1D-7DCCCC25D89C}.wem"
      },
      {
       "Id": "929658767",
@@ -173,7 +269,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Enemy_Damage_3.wav",
-      "CachePath": "43/{43179629-3FE6-F1D8-B8AE-F21E9F8331C1}.wem"
+      "CachePath": "AD/{ADDC8DB5-727A-0B07-B0F8-1D0223770D71}.wem"
      },
      {
       "Id": "946576559",
@@ -181,7 +277,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Tarot Sounds\\Card_PickUp_1.wav",
-      "CachePath": "5A/{5A43D2E5-029C-6B3C-F4F9-120FA1BEA582}.wem"
+      "CachePath": "0D/{0D4C0838-7608-93CE-E6BA-4835563623C7}.wem"
      },
      {
       "Id": "989007428",
@@ -189,15 +285,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Enemy_Damage_1.wav",
-      "CachePath": "A2/{A2432074-F1F6-1262-05D3-30A64096A274}.wem"
+      "CachePath": "B5/{B5AF585C-61ED-150B-0E83-3B9CD3A9D222}.wem"
      },
      {
-      "Id": "998639676",
+      "Id": "1001034237",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Footsteps_1.wav",
-      "CachePath": "09/{094C344C-8A19-0C5B-4DD3-C9BA370EF1A7}.wem"
+      "ShortName": "Dialogue_Scroll_Judge_By_Fire.wav",
+      "CachePath": "13/{13448D89-AE6C-A594-4036-E59271E09806}.wem"
      },
      {
       "Id": "1028320474",
@@ -205,21 +301,58 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Large_Enemy_Damage.wav",
-      "CachePath": "51/{5157C6D5-D6A9-0A52-387B-A9582EC7B4F9}.wem"
+      "CachePath": "BD/{BDC11752-C075-E782-9579-FE8EC2DE8CFF}.wem"
      }
     ],
     "Events": [
      {
-      "Id": "1977329545",
-      "Name": "Boss_1_PopUp",
-      "ObjectPath": "\\Events\\SFX_Events\\Boss_1_PopUp",
-      "GUID": "{2ABE969A-93E3-498A-9FAA-4FE971B05445}",
+      "Id": "2119463198",
+      "Name": "Boss_Knife_Attacks",
+      "ObjectPath": "\\Events\\SFX_Events\\Boss_Knife_Attacks",
+      "GUID": "{3EBA1873-C6B3-454E-B683-262A54DA7AA4}",
       "DurationType": "OneShot",
-      "DurationMin": "1.5",
-      "DurationMax": "1.5",
+      "DurationMin": "2.75",
+      "DurationMax": "4.75",
       "MediaRefs": [
        {
-        "Id": "342904581"
+        "Id": "148550749"
+       },
+       {
+        "Id": "323941916"
+       }
+      ]
+     },
+     {
+      "Id": "1205999388",
+      "Name": "Enemy_Death",
+      "ObjectPath": "\\Events\\SFX_Events\\Enemy_Death",
+      "GUID": "{07703D92-3846-4EFA-944C-185B4E46EA5E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8464147",
+      "DurationMax": "1.8464147",
+      "MediaRefs": [
+       {
+        "Id": "306102298"
+       }
+      ]
+     },
+     {
+      "Id": "2450329037",
+      "Name": "Enemy_Item_Throws",
+      "ObjectPath": "\\Events\\SFX_Events\\Enemy_Item_Throws",
+      "GUID": "{FDF3872D-2BE8-481D-AAC6-F822C2935383}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6992517",
+      "DurationMax": "1.5200226",
+      "MediaRefs": [
+       {
+        "Id": "418186377"
+       },
+       {
+        "Id": "640454819"
+       },
+       {
+        "Id": "688476327"
        }
       ]
      },
@@ -229,7 +362,7 @@
       "ObjectPath": "\\Events\\SFX_Events\\EnemyDamage",
       "GUID": "{12B406F1-9FC8-4BCE-819B-1D1930AC4447}",
       "DurationType": "OneShot",
-      "DurationMin": "0.8250567",
+      "DurationMin": "0.6035328",
       "DurationMax": "1.3750794",
       "MediaRefs": [
        {
@@ -255,23 +388,17 @@
       "ObjectPath": "\\Events\\SFX_Events\\Footsteps_01",
       "GUID": "{084A66E5-751C-49A4-979C-19CA4C46EED2}",
       "DurationType": "OneShot",
-      "DurationMin": "0.25",
-      "DurationMax": "0.8750113",
+      "DurationMin": "0.52312243",
+      "DurationMax": "0.8304051",
       "MediaRefs": [
        {
-        "Id": "90307"
+        "Id": "437339270"
        },
        {
-        "Id": "615815778"
+        "Id": "788182343"
        },
        {
-        "Id": "806822013"
-       },
-       {
-        "Id": "825944191"
-       },
-       {
-        "Id": "998639676"
+        "Id": "877110523"
        }
       ]
      },
@@ -286,6 +413,74 @@
       "MediaRefs": [
        {
         "Id": "3715154"
+       }
+      ]
+     },
+     {
+      "Id": "2109575468",
+      "Name": "Judge_Dialogue_By_Fire",
+      "ObjectPath": "\\Events\\SFX_Events\\Judge_Dialogue_By_Fire",
+      "GUID": "{252C07D7-A32D-4AE8-81F6-208136F7972E}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.670839",
+      "DurationMax": "2.670839",
+      "MediaRefs": [
+       {
+        "Id": "1001034237"
+       }
+      ]
+     },
+     {
+      "Id": "1862952859",
+      "Name": "Judge_Dialogue_Silence",
+      "ObjectPath": "\\Events\\SFX_Events\\Judge_Dialogue_Silence",
+      "GUID": "{68951E43-320B-452C-A35F-C72351831001}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.1852381",
+      "DurationMax": "2.1852381",
+      "MediaRefs": [
+       {
+        "Id": "121644684"
+       }
+      ]
+     },
+     {
+      "Id": "4151276193",
+      "Name": "Jury_Whispers",
+      "ObjectPath": "\\Events\\SFX_Events\\Jury_Whispers",
+      "GUID": "{C65A4AFD-BFA1-47FD-A733-2A91796A478A}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "791562161"
+       }
+      ]
+     },
+     {
+      "Id": "1402229995",
+      "Name": "Lasso_Attach",
+      "ObjectPath": "\\Events\\SFX_Events\\Lasso_Attach",
+      "GUID": "{FD76E216-5B4F-49C9-B743-652FE5B21ED9}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "319300892"
+       }
+      ]
+     },
+     {
+      "Id": "1461666693",
+      "Name": "Lasso_WindUp",
+      "ObjectPath": "\\Events\\SFX_Events\\Lasso_WindUp",
+      "GUID": "{2410D262-C356-46A5-8E3E-D71B2E3F6389}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "MediaRefs": [
+       {
+        "Id": "623659834"
        }
       ]
      },
@@ -314,6 +509,26 @@
       "MediaRefs": [
        {
         "Id": "340572892"
+       }
+      ]
+     },
+     {
+      "Id": "3625562942",
+      "Name": "Player_TakingDamage",
+      "ObjectPath": "\\Events\\SFX_Events\\Player_TakingDamage",
+      "GUID": "{8770E87B-6514-49A9-90D6-A8223FA92F6A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3663261",
+      "DurationMax": "1.2599211",
+      "MediaRefs": [
+       {
+        "Id": "70627039"
+       },
+       {
+        "Id": "461839438"
+       },
+       {
+        "Id": "477823405"
        }
       ]
      },
@@ -397,7 +612,7 @@
       "DurationMax": "1.942449",
       "MediaRefs": [
        {
-        "Id": "495533890"
+        "Id": "442049551"
        }
       ]
      },
@@ -412,6 +627,20 @@
       "MediaRefs": [
        {
         "Id": "105238871"
+       }
+      ]
+     },
+     {
+      "Id": "866175427",
+      "Name": "Trial_Room_Gavel",
+      "ObjectPath": "\\Events\\SFX_Events\\Trial_Room_Gavel",
+      "GUID": "{3D717763-CF30-42BA-B49D-C25FEB1255BC}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.213628",
+      "DurationMax": "3.213628",
+      "MediaRefs": [
+       {
+        "Id": "902084858"
        }
       ]
      },
@@ -460,6 +689,6 @@
     ]
    }
   ],
-  "FileHash": "{467466DD-A397-AEC3-1163-47B6AC6C205B}"
+  "FileHash": "{8F1C1889-6EF5-26BB-FF63-65D36FD6484C}"
  }
 }

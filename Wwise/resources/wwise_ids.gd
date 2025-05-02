@@ -18,12 +18,24 @@ class EVENTS:
 	const QUEUE_CREDITS : int = 931351601
 	const RESPAWN : int = 4279841335
 	const VICTORY : int = 2716678721
-	const BOSS_1_POPUP : int = 1977329545
+	const WITCH0 : int = 3350869486
+	const WITCH1 : int = 3350869487
+	const WITCH2 : int = 3350869484
+	const WITCH3 : int = 3350869485
+	const BOSS_KNIFE_ATTACKS : int = 2119463198
 	const ENEMYDAMAGE : int = 1879435608
+	const ENEMY_DEATH : int = 1205999388
+	const ENEMY_ITEM_THROWS : int = 2450329037
 	const FOOTSTEPS_01 : int = 2848855924
 	const JOURNALPAGETURN : int = 1639161750
+	const JUDGE_DIALOGUE_BY_FIRE : int = 2109575468
+	const JUDGE_DIALOGUE_SILENCE : int = 1862952859
+	const JURY_WHISPERS : int = 4151276193
+	const LASSO_ATTACH : int = 1402229995
+	const LASSO_WINDUP : int = 1461666693
 	const MENUOPEN : int = 48824776
 	const MENU_BOOP : int = 3129090587
+	const PLAYER_TAKINGDAMAGE : int = 3625562942
 	const SHACKLES_OFF : int = 3057807107
 	const SHACKLES_ON : int = 3395044911
 	const SHOP_BUY : int = 1495252156
@@ -31,11 +43,22 @@ class EVENTS:
 	const TAROTPICKUP : int = 1908595231
 	const TEXT_SCROLLING : int = 371816340
 	const TRIAL_ROOM_FAILED : int = 2277544205
+	const TRIAL_ROOM_GAVEL : int = 866175427
 	const WAND_BASIC : int = 2783045536
 	const WAND_MISFIRE : int = 80501587
 	const WITCH_DIALOGUE : int = 2206927579
 
 class STATES:
+
+	class CATACOMB_WITCHES:
+		const GROUP : int = 4243432011
+	
+		class STATE:
+			const NONE : int = 748895195
+			const WITCH0 : int = 3350869486
+			const WITCH1 : int = 3350869487
+			const WITCH2 : int = 3350869484
+			const WITCH3 : int = 3350869485
 
 	class LOCATION:
 		const GROUP : int = 1176052424
@@ -57,6 +80,15 @@ class STATES:
 			const DEFEATED : int = 2791675679
 			const NONE : int = 748895195
 			const VICTORY : int = 2716678721
+
+	class AMBIENCE_FLOOR:
+		const GROUP : int = 2903394062
+	
+		class STATE:
+			const NONE : int = 748895195
+			const FLOOR1 : int = 3162820674
+			const FLOOR2 : int = 3162820673
+			const FLOOR3 : int = 3162820672
 
 
 class SWITCHES:
@@ -96,9 +128,6 @@ class GAME_PARAMETERS:
 	const MUSIC_BACKUP_SIDECHAIN : int = 198116658
 	const MUSIC_VOLUME_SLIDER : int = 2872980221
 	const SFX_VOLUME_SLIDER : int = 4274270069
-	const WITCH1_DISTANCE : int = 1420124287
-	const WITCH2_DISTANCE : int = 561841514
-	const WITCH3_DISTANCE : int = 2746992545
 	const HEALTH : int = 3677180323
 	const SFX_SIDECHAIN : int = 2862064063
 
@@ -114,7 +143,6 @@ class AUX_BUSSES:
 	pass
 
 class ACOUSTIC_TEXTURES:
-	pass
 
 	const ACOUSTIC_BANNER : int = 4168643977
 	const ANECHOIC : int = 1873957695
@@ -130,3 +158,4 @@ class ACOUSTIC_TEXTURES:
 	const WOOD : int = 2058049674
 	const WOOD_BRIGHT : int = 4262522749
 	const WOOD_DEEP : int = 1755085759
+

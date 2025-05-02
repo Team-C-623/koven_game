@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{A73F9A23-FE86-8962-55BD-DC565BBBB7E6}",
+    "Hash": "{90AC8043-2E47-7744-D168-A2883EAD7EA7}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "1355168291.bnk",
@@ -19,7 +19,7 @@
       {
        "Id": "555452421",
        "Name": "Meter (Custom)",
-       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\backup_music_mixer\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ambience_mixer\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
        "GUID": "{617B5AB7-AED2-41B9-A7FB-145F8A8EF723}",
        "LibName": "Wwise Meter",
        "LibId": "8454147"
@@ -62,9 +62,9 @@
     },
     "Busses": [
      {
-      "Id": "1658436645",
-      "Name": "backup_music_mixer",
-      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\backup_music_mixer",
+      "Id": "1247349911",
+      "Name": "ambience_mixer",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ambience_mixer",
       "GUID": "{A5038915-C509-44D7-94E9-9A4845E130F5}",
       "PluginRefs": {
        "Custom": [
@@ -113,24 +113,6 @@
       "Name": "Music_Backup_sidechain",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Backup_sidechain",
       "GUID": "{048E66D7-D323-4611-A0D1-5B61062EFE56}"
-     },
-     {
-      "Id": "561841514",
-      "Name": "Witch2_distance",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Witch2_distance",
-      "GUID": "{836C1E39-F84B-4DA6-AF2B-C0FC185785F0}"
-     },
-     {
-      "Id": "1420124287",
-      "Name": "Witch1_distance",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Witch1_distance",
-      "GUID": "{F0C5ADF5-6785-43C3-92AD-02C8E20321EB}"
-     },
-     {
-      "Id": "2746992545",
-      "Name": "Witch3_distance",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Witch3_distance",
-      "GUID": "{016503ED-3211-4BE0-A179-CB389A15DC6F}"
      },
      {
       "Id": "2862064063",
@@ -210,6 +192,38 @@
       ]
      },
      {
+      "Id": "2903394062",
+      "Name": "ambience_floor",
+      "ObjectPath": "\\States\\Music\\ambience_floor",
+      "GUID": "{834C0585-99EE-45B2-A069-98057D8588C6}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Music\\ambience_floor\\None",
+        "GUID": "{52E9D552-D9FD-41E1-9B6B-0A43BD140BDD}"
+       },
+       {
+        "Id": "3162820672",
+        "Name": "floor3",
+        "ObjectPath": "\\States\\Music\\ambience_floor\\floor3",
+        "GUID": "{EBE6D4F6-8709-41B6-B48C-82D751054622}"
+       },
+       {
+        "Id": "3162820673",
+        "Name": "floor2",
+        "ObjectPath": "\\States\\Music\\ambience_floor\\floor2",
+        "GUID": "{184AB725-4508-4A1D-93FA-DAD1F15E5FDD}"
+       },
+       {
+        "Id": "3162820674",
+        "Name": "floor1",
+        "ObjectPath": "\\States\\Music\\ambience_floor\\floor1",
+        "GUID": "{4F49FEF1-F082-4B2D-BE5A-860983D8D339}"
+       }
+      ]
+     },
+     {
       "Id": "4071417932",
       "Name": "Player_state",
       "ObjectPath": "\\States\\Music\\Player_state",
@@ -238,6 +252,44 @@
         "Name": "Defeated",
         "ObjectPath": "\\States\\Music\\Player_state\\Defeated",
         "GUID": "{0F65A170-BE7F-4455-8DB1-A2001A16518E}"
+       }
+      ]
+     },
+     {
+      "Id": "4243432011",
+      "Name": "Catacomb_Witches",
+      "ObjectPath": "\\States\\Music\\Catacomb_Witches",
+      "GUID": "{22F2F3CC-DDB5-4B2A-A1C2-5463A7748B7F}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Music\\Catacomb_Witches\\None",
+        "GUID": "{DDD26785-9102-4E6A-BFF9-A7D450E8BCD0}"
+       },
+       {
+        "Id": "3350869484",
+        "Name": "witch2",
+        "ObjectPath": "\\States\\Music\\Catacomb_Witches\\witch2",
+        "GUID": "{0C8078C3-B752-4168-87ED-14B0983A8FB0}"
+       },
+       {
+        "Id": "3350869485",
+        "Name": "witch3",
+        "ObjectPath": "\\States\\Music\\Catacomb_Witches\\witch3",
+        "GUID": "{0B8D0FD0-BA72-4F71-A023-2A82660AD463}"
+       },
+       {
+        "Id": "3350869486",
+        "Name": "witch0",
+        "ObjectPath": "\\States\\Music\\Catacomb_Witches\\witch0",
+        "GUID": "{348B927E-8BA2-4E5C-93FE-42DA82152584}"
+       },
+       {
+        "Id": "3350869487",
+        "Name": "witch1",
+        "ObjectPath": "\\States\\Music\\Catacomb_Witches\\witch1",
+        "GUID": "{0EE36F83-AF46-4B69-88B6-11AAC012D38F}"
        }
       ]
      }
@@ -809,6 +861,6 @@
     ]
    }
   ],
-  "FileHash": "{02C9F049-784F-D119-A4C9-1B2F618ED4C5}"
+  "FileHash": "{AF99E845-A280-87E2-CD40-27652E59F92D}"
  }
 }

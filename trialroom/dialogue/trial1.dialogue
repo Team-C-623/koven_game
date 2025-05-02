@@ -1,20 +1,32 @@
 ~ start
+do SoundManager.play_jury_whispers()
 do emit("change_sprite", "Judge Quétif")
+do SoundManager.play_text_scrolling()
 Judge Quétif: Who are you?
+do SoundManager.play_text_scrolling()
 Judge Quétif: Have you come to speak on behalf of Merga Bien?
+do SoundManager.play_text_scrolling()
 Judge Quétif: She is on trial for heresy.
+do SoundManager.play_text_scrolling()
 Judge Quétif: She is practicing witchcraft in this sacred castle, desecrating its ground.
+do SoundManager.play_text_scrolling()
 Judge Quétif: Her punishment is execution at the stake and so shall be yours if found wrongly defending this demonic woman.
+do SoundManager.play_text_scrolling()
 Judge Quétif: Merga has not been in the church as of late. 
+do SoundManager.play_text_scrolling()
 Judge Quétif: When was the last time she came to worship His Holiness? [do emit("change_sprite", "Player")]
+do SoundManager.play_text_scrolling()
 - She came before the castle was overtaken by your Order.
 - She has just returned from confessional.
 - Bishop Kramer has barred her from hearing the sermons.
 	do emit("change_sprite", "Judge Quétif")
+	do SoundManager.play_text_scrolling()
 	Judge Quétif: Hmmm... that is interesting.
 	Judge Quétif: His holiness has said nothing about this.
 	Judge Quétif: No matter. => second
 do emit("change_sprite", "Judge Quétif")
+do SoundManager.play_text_scrolling()
+do SoundManager.play_mad_judge()
 Judge Quétif: Your lies deceive you and our Bishop. Now you will burn with her!
 => lose
 
@@ -28,6 +40,7 @@ Judge Quétif: How can this be explained? [do emit("change_sprite", "Player")]
 	Judge Quétif: The word of men who forsake our Lord shall not be considered in this court. => third
 - The Sabbath of Satan has been disproved as legitimate by his holiness.
 do emit("change_sprite", "Judge Quétif")
+do SoundManager.play_mad_judge()
 Judge Quétif: You would disrespect the good word of this man?
 Judge Quétif: You must be a witch too! 
 => lose
@@ -41,18 +54,23 @@ Judge Quétif: What aside from correspondence with the devil explains this pheno
 - Scripture does not suggest the devil gives the gift of life, rather he takes it away.  
 - Merga recently underwent fertility treatments that significantly increased her chances of pregnancy.
 do emit("change_sprite", "Judge Quétif")
+do SoundManager.play_mad_judge()
 Judge Quétif: Your claims are baseless and weak!
 Judge Quétif: You conspire against the church!
 => lose
 
 ~ lose
+do SoundManager.play_trial_room_failed()
 Judge Quétif: I hereby declare Merga Bien guilty of heresy, and YOU as her accomplice!
+do SoundManager.play_shackles_on()
 Judge Quétif: Seize these witches! They have no place in our Holy fortress!
 => END
 
 ~ win
 The judge bows his head. 
+do SoundManager.play_gavel()
 Judge Quétif: I hereby declare Merga Bien not guilty of heresy.
+do SoundManager.play_shackles_off()
 do emit("change_sprite", "Merga")
 Merga’s shackles drop to the floor. The judge and jury leave the trial room, leaving us and Merga.
 Merga: Thank you sister for saving me. I shall return to the safety of our catacombs for now.

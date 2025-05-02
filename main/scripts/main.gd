@@ -21,7 +21,6 @@ func _ready() -> void:
 	add_child(new_catacombs)
 	_spawn_journals_in_room(new_catacombs) #spawns journal
 	new_catacombs.name = "Catacombs"
-	SoundManager.play_start_music()
 	
 	entered.connect(generate_new)
 	
@@ -93,6 +92,8 @@ func _on_inventory_interface_drop_slot_data(slot_data: SlotData) -> void:
 
 func _on_entered() -> void:
 	generate_new()
+	Wwise.set_state("LOCATION", "CASTLE")
+	SoundManager.play_castle_music()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("generate"):

@@ -1,0 +1,7 @@
+[gd_resource type="WwiseStateGroup" format=3 uid="uid://ddllpd7yhufaq"]
+
+[resource]
+name = "ambience_floor"
+id = 2903394062
+guid = "{834C0585-99EE-45B2-A069-98057D8588C6}"
+dummy = true

@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 class_name Player
 @onready var wand = $head/PlayerCam/Wand
-
+@export var attack_damage = 0.0
 #camera settings
 const SENS = 0.4
 @export var speed = 3.0 #3.0
@@ -10,7 +10,7 @@ const SENS = 0.4
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
 @onready var rtpc_node: AkEvent3D = $rtpc
-
+var enemies = []
 
 @onready var interact_ray: RayCast3D = $InteractRay
 @export var rtpc:WwiseRTPC
@@ -48,7 +48,8 @@ func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	inventory_data = InventoryData.new()
-	#SoundManager.play_music()
+	Wwise.set_state("PLAYER_STATE", "ALIVE")
+
 
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -69,9 +70,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		interact()
 
 func _physics_process(_delta: float) -> void:
-	#rtpc.set_value(rtpc_node,health_component.health)
-	#rtpc_node.post_event()
-	#print(rtpc)
+	rtpc.set_value(rtpc_node,health_component.health)
 	if !is_on_floor():
 		velocity.y -= gravity * _delta
 	# Get the input direction and handle the movement/deceleration.
@@ -94,7 +93,7 @@ func _physics_process(_delta: float) -> void:
 	# Play sound at peak descent (when switching from falling to rising)
 	if was_rising and not is_rising and footstep_cooldown <= 0:
 		SoundManager.play_footsteps()
-		footstep_cooldown = 0.05  # Small cooldown to prevent double sounds
+		footstep_cooldown = 0.03  # Small cooldown to prevent double sounds
 	
 	# Update tracking variable
 	was_rising = is_rising
@@ -114,10 +113,32 @@ func _physics_process(_delta: float) -> void:
 			instance = flame.instantiate()
 			instance.position = wand_tip.global_position
 			instance.transform.basis = wand_tip.global_transform.basis
+			instance.attack_damage += attack_damage
 			get_parent().add_child(instance)
 			SoundManager.play_wand_sound()
 
 	move_and_slide()
+	
+func _process(delta: float) -> void:
+	var player = get_node("/root/Main/Player")  # Adjust path to your player node
+	var combat_engaged = false
+	
+	# Check all enemies in parent node
+	for node in get_parent().get_children():
+		if node is Nun or node is Monk:  # Your enemy types
+			if player.global_position.distance_to(node.global_position) < 10:  # 300 pixels range
+				combat_engaged = true
+				break  # Exit loop early if we found at least one nearby enemy
+
+	# Set Wwise switch based on combat status
+	if combat_engaged:
+		Wwise.set_switch("GAMEPLAY_SWITCH", "COMBAT", self)
+		SoundManager.play_enemy_aggro()
+	else:
+		Wwise.set_switch("GAMEPLAY_SWITCH", "EXPLORE", self)
+		SoundManager.play_enemy_safe()
+
+
 
 func interact() -> void:
 	if interact_ray.is_colliding():
