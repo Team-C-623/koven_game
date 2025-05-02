@@ -98,7 +98,8 @@ func play_enemy_aggro():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_AGGRO,self)
 	
 func play_enemy_safe(): 
-	Wwise.post_event_id(AK.EVENTS.ENEMY_SAFE,self)
+	#Wwise.post_event_id(AK.EVENTS.ENEMY_SAFE,self)
+	pass
 	
 func play_defeated(): #in health_component commented out
 	Wwise.set_state("PLAYER_STATE", "DEFEATED")

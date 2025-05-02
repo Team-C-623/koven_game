@@ -93,6 +93,7 @@ _data = {
 
 [node name="Nun" type="CharacterBody3D" groups=["Enemies Group"]]
 transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
+collision_mask = 65
 script = ExtResource("1_44yvt")
 is_ranged = true
 
