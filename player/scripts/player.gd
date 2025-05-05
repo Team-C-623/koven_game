@@ -12,7 +12,6 @@ signal toggle_inventory()
 @onready var rtpc_node: AkEvent3D = $rtpc
 var enemies = []
 
-@onready var interact_ray: RayCast3D = $InteractRay
 @export var rtpc:WwiseRTPC
 #var health: int = 100
 var gravity: float = 9.8

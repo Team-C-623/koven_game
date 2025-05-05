@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://duqt05t3ju1qh"]
+
+[ext_resource type="Texture2D" uid="uid://bngh2hsbitulv" path="res://assets/ui/button_texture.png" id="1_4pw6x"]
+[ext_resource type="Texture2D" uid="uid://jrpye3ghii1o" path="res://assets/ui/button_texture_selected.png" id="2_0kt68"]
+[ext_resource type="Script" path="res://shop/scripts/shop_item_ui.gd" id="3_gp753"]
+[ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="4_nd160"]
+[ext_resource type="FontFile" uid="uid://dl5x4wg3p34rx" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="5_hasyt"]
+[ext_resource type="Texture2D" uid="uid://ci8qwi6evljsk" path="res://assets/ui/updatedcurrency.png" id="6_wmtl7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1obhm"]
+
+[node name="ShopItemButton" type="TextureButton"]
+custom_minimum_size = Vector2(900, 150)
+offset_right = 900.0
+offset_bottom = 150.0
+texture_normal = ExtResource("1_4pw6x")
+texture_focused = ExtResource("2_0kt68")
+script = ExtResource("3_gp753")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 9.0
+offset_right = 885.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("4_nd160")
+theme_override_font_sizes/font_size = 48
+text = "Card Name Label"
+text_overrun_behavior = 3
+
+[node name="PriceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 82.0
+offset_right = 888.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("5_hasyt")
+theme_override_font_sizes/font_size = 40
+text = "100"
+text_overrun_behavior = 1
+
+[node name="ItemImage" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 231.0
+offset_bottom = 340.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("PlaceholderTexture2D_1obhm")
+expand_mode = 1
+
+[node name="Currency" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 68.0
+offset_right = 549.0
+offset_bottom = 468.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_wmtl7")

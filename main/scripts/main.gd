@@ -10,7 +10,6 @@ signal entered
 @onready var map = $Map
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 @onready var hot_bar_inventory: PanelContainer = get_node("/root/UIManager/HotBarInventory")
-@onready var journal_ui: Control = get_node("/root/UIManager/Journal_UI")
 
 var shop_instance: CanvasLayer = null
 
@@ -62,7 +61,7 @@ func generate_new():
 	player.global_position = Vector3(6 * size, 0, 6 * size)
 
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
-	if ShopMenu.visible or journal_ui.visible:
+	if ShopMenu.visible or Journal.visible:
 		return
 		
 	inventory_interface.visible = not inventory_interface.visible

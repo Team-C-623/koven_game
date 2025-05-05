@@ -1,28 +1,28 @@
-extends Control
+extends CanvasLayer
 class_name JournalUI
 @onready var journal: Array[JournalEntry] = []
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
-@onready var entry_display = $EntryDisplay
+@onready var journal_page = %JournalPage
+@onready var journal_page_container = %ButtonContainer
 @onready var inventory_interface: Control = get_tree().current_scene.get_node("/root/UIManager/InventoryInterface")
 
 @export var max_journals: int = 12
 
+const JOURNAL_BUTTON = preload("res://journal/scenes/journal_ui_button.tscn")
+const EMPTY_JOURNAL = preload("res://assets/journal/journal_empty_cropped.png")
+
 var is_open = false
+var selected_journal = null
 
 func _ready():
 	update_slots()
 	close()
-	for slot in slots:
-		if slot.has_signal("entry_selected"):
-			slot.entry_selected.connect(_on_journal_entry_selected)
 
-func _on_journal_entry_selected(entry: JournalEntry):
-	entry_display.display_entry(entry)
-	entry_display.visible = true
-	
 func update_slots():
-	for i in range(min(journal.size(),slots.size())):
-		slots[i].update(journal[i])
+	clear_journal()
+	for page in journal:
+		var new_page = JOURNAL_BUTTON.instantiate()
+		journal_page_container.add_child(new_page)
+		new_page.journal_data = page
 
 func _process(_delta):
 	if Input.is_action_just_pressed("journal") and !inventory_interface.visible and !ShopMenu.visible:
@@ -33,15 +33,26 @@ func _process(_delta):
 			SoundManager.play_page_turn()
 			open()
 
+func update_journal_description(new_journal: JournalEntry):
+	selected_journal = new_journal
+	journal_page.texture = new_journal.texture
+
 func open():
 	visible = true
 	is_open = true
+	update_slots()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
-	entry_display.visible = false # Hide display when reopening
+
+func clear_journal():
+	selected_journal = null
+	journal_page.texture = EMPTY_JOURNAL
+	for c in journal_page_container.get_children():
+		c.queue_free()
 
 func close():
 	visible = false
 	is_open = false
+	clear_journal()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func get_number_of_journals():
@@ -63,8 +74,6 @@ func add_journal(new_journal: JournalEntry) -> bool:
 		emit_signal("inventory_full")
 		return false
 	
-	#new_journal.texture.scale.x = 0.2
-	#new_journal.texture.scale.y = 0.2
 	journal.append(new_journal)
 	print(journal)
 	update_slots()

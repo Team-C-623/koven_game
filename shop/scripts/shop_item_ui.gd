@@ -7,13 +7,10 @@ var item_data: ItemData : set = set_item_data
 @onready var item_image: TextureRect = $ItemImage
 @onready var coin_image: TextureRect = $Currency
 
-
-
 func _ready() -> void:
 	item_image.texture = null
 	label.text = ""
 	focus_entered.connect(item_focus)
-	
 
 func set_item_data(item):
 	item_data = item
@@ -26,7 +23,6 @@ func set_item_data(item):
 func item_focus():
 	if item_data != null:
 		ShopMenu.update_item_description(item_data)
-
 
 func _on_pressed() -> void:
 	if item_data != null && Currency.currency >= item_data.cost:

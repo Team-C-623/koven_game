@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=38 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://catacombs/scripts/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cv7vx8h3f10ha" path="res://catacombs/occluders/catacombs_wall1.occ" id="3_57801"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bdsipp7rvkioe" path="res://assets/environment/plainwood1.png" id="8_kdt8v"]
 [ext_resource type="Texture2D" uid="uid://n7mkgggt80c5" path="res://assets/environment/candleroomwall2wood.png" id="8_rm12w"]
 [ext_resource type="ArrayOccluder3D" uid="uid://df8mpa8xxj4hi" path="res://catacombs/occluders/catacombs_floor.occ" id="9_05smy"]
+[ext_resource type="PackedScene" uid="uid://r62r764q3j4h" path="res://journal/scenes/journal.tscn" id="14_ubocp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv5cw"]
 albedo_texture = ExtResource("8_kdt8v")
@@ -257,5 +258,11 @@ texture = ExtResource("8_8qr8b")
 
 [node name="PlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.16395)
+
+[node name="Journal" parent="." instance=ExtResource("14_ubocp")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0.255015, 2.98994)
+
+[node name="Journal2" parent="." instance=ExtResource("14_ubocp")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 1.69727, 0.255015, 2.98994)
 
 [connection signal="body_entered" from="Entrance/EntranceArea" to="Entrance/EntranceArea" method="_on_body_entered"]

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="JournalEntry" load_steps=3 format=3 uid="uid://cvim4s8bmxuhy"]
 
 [ext_resource type="Script" path="res://journal/scripts/journal_entry.gd" id="1_00k58"]
-[ext_resource type="Texture2D" uid="uid://djg44alswpqt7" path="res://assets/ui/redonejournal.png" id="2_c37n5"]
+[ext_resource type="Texture2D" uid="uid://c0yas0xqr628p" path="res://assets/journal/Journal 2.png" id="1_m15vk"]
 
 [resource]
 script = ExtResource("1_00k58")
 entry_id = 1
-texture = ExtResource("2_c37n5")
-content = "Goodbye World, journal entry no. 2"
+title = "decree"
+texture = ExtResource("1_m15vk")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ditl2p6r0lfau"]
 
 [ext_resource type="Script" path="res://tarotcards/scripts/item_data.gd" id="1_1uobo"]
-[ext_resource type="Texture2D" uid="uid://1lvd0pix4pg8" path="res://icon.svg" id="2_w3lf5"]
+[ext_resource type="Texture2D" uid="uid://c1ra37u4jr4wc" path="res://tarotcards/assets/THEDEVILTAROTFR.png" id="2_lckav"]
 
 [resource]
 script = ExtResource("1_1uobo")
@@ -9,7 +9,7 @@ name = "The Devil"
 description = " The Devil card carries themes of restraint and powerlessness. When it comes up in your Tarot reading, you are likely feeling stuck. The Devil has convinced you that you have no options, but this couldn't be further from the truth. You hold the keys to your own freedom, but it's up to you to open the lock. 
 
 Effect: Heal for 25% Max Health"
-texture = ExtResource("2_w3lf5")
+texture = ExtResource("2_lckav")
 cost = 50
 duration = 999.0
 rarity = 0

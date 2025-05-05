@@ -11,6 +11,8 @@ signal hide
 @onready var item_container = %ShopItemsContainer
 @onready var currency_ui: Control = get_tree().current_scene.get_node("/root/UIManager/CurrencyUI")
 
+const TAROT_PLACEHOLDER = preload("res://assets/ui/tarot_placeholder.png")
+
 var selected_item = null
 
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +25,11 @@ func _on_close_button_pressed() -> void:
 	visible = false
 	hot_bar_inventory.show()
 	currency_ui.show_display()
+	selected_item = null
+	item_image.texture = TAROT_PLACEHOLDER
+	item_name.text = "Select an Item"
+	item_description.text = "-"
+	item_cost.text = "-"
 	hide.emit()
 	SoundManager.play_buy_sound()
 

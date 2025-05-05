@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://shop/scripts/shop_ui.gd" id="2_xgpv6"]
 [ext_resource type="Resource" uid="uid://1w4eefo5doq8" path="res://shop/resources/testshop.tres" id="3_bfak2"]
 [ext_resource type="Texture2D" uid="uid://c6gqyfp6or7gh" path="res://assets/ui/exit_shop_button.png" id="3_oajd3"]
-[ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://UI/scenes/shop_item_button.tscn" id="4_5kftm"]
+[ext_resource type="PackedScene" uid="uid://duqt05t3ju1qh" path="res://shop/scenes/shop_item_button.tscn" id="4_5kftm"]
 [ext_resource type="Texture2D" uid="uid://byc764bxamqti" path="res://assets/ui/exit_shop_button_dark.png" id="4_30yqp"]
 [ext_resource type="Texture2D" uid="uid://dan86a158w5j5" path="res://assets/ui/buy_button.png" id="5_5k6y5"]
 [ext_resource type="Texture2D" uid="uid://ci8qwi6evljsk" path="res://assets/ui/updatedcurrency.png" id="5_y57y7"]
