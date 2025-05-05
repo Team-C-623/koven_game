@@ -40,8 +40,10 @@ func update_character_sprite(speaker: String) -> void:
 			frames_path = "res://trialroom/animations/mainwitch_sprite.tres"
 			animation_to_play = "talk"
 			jury_sprite.visible = false
-		#"Soulmother":
-			#sprite_path = "res://trialroom/art/soulmother.png"
+		"Soulmother":
+			frames_path = "res://trialroom/animations/soulmother_sprite.tres"
+			animation_to_play = "default"
+			jury_sprite.visible = false
 	
 	if frames_path != "":
 		var new_frames = load(frames_path)
