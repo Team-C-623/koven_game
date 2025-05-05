@@ -1,12 +1,23 @@
 extends Area3D
 
 @onready var main = get_node("/root/Main")
+@onready var jury: Sprite3D = $"../Jury"
+@onready var prosecutor: Sprite3D = $"../Prosecutor"
+
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Player and !PlayerManager.has_won_trial_room:
 		TarotManager.judgement_active = false
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		var trial_scene = preload("res://trialroom/trialroom1.tscn").instantiate()
 		add_child(trial_scene)
 		SoundManager.play_trial_room_music()
+
+func _process(float) -> void:
+	if PlayerManager.has_won_trial_room:
+		jury.visible = false
+		prosecutor.visible = false
+	else:
+		jury.visible = true
+		prosecutor.visible = true

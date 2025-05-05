@@ -62,6 +62,15 @@ func play_text_scrolling():
 
 func play_jury_whispers():
 	Wwise.post_event_id(AK.EVENTS.JURY_WHISPERS,self)
+
+func stop_jury_whispers():
+	Wwise.execute_action_on_event_id(
+		AK.EVENTS.JURY_WHISPERS,
+		0, # 0 = stop (action type)
+		self, # gameobject
+		2000, # fade out time (ms)
+		0 # curve interpolation (0 = linear)
+	)
 	
 func play_shackles_off():
 	Wwise.post_event_id(AK.EVENTS.SHACKLES_OFF,self)

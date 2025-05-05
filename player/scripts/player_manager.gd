@@ -4,6 +4,7 @@ extends Node
 
 # Player states
 var is_in_trial_room = false
+var has_won_trial_room = false
 
 func use_slot_data(slot_data: SlotData) -> void:
 	slot_data.item_data.use(player)

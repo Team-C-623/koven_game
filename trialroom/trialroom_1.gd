@@ -60,7 +60,12 @@ func _on_animation_finished() -> void:
 func _on_dialogue_finished(_result) -> void:
 	match last_block:
 		"win":
-			print("Player wins")
+			TransitionScreen.transition()
+			await TransitionScreen.on_transition_finished
+			PlayerManager.is_in_trial_room = false
+			PlayerManager.has_won_trial_room = true
+			SoundManager.play_castle_music()
+			queue_free()
 		"lose":
 			print("Player loses")
 		_:

@@ -63,6 +63,7 @@ Judge Quétif: I hereby declare Merga Bien not guilty of heresy.
 do SoundManager.play_shackles_off()
 do emit("change_sprite", "Merga")
 Merga’s shackles drop to the floor. The judge and jury leave the trial room, leaving us and Merga.
+do SoundManager.stop_jury_whispers()
 Merga: Thank you sister for saving me. I shall return to the safety of our catacombs for now.
 Merga: Should you need my help fighting the dangers in this castle, come see me.
 => END
