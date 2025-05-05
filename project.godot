@@ -27,10 +27,12 @@ UIManager="*res://UI/scenes/ui_manager.tscn"
 Currency="*res://currency/scripts/currency.gd"
 TransitionScreen="*res://scene_transition/scenes/transition_screen.tscn"
 Journal="*res://journal/scenes/JournalUI.tscn"
+TrialRoom1="*res://trialroom/trialroom_1.gd"
 
 [dialogue_manager]
 
 general/balloon_path="res://dialogue/balloon.tscn"
+general/states=["TrialRoom1"]
 
 [display]
 
