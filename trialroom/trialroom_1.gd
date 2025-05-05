@@ -6,23 +6,22 @@ extends Node2D
 @onready var jury_sprite: TextureRect = $CanvasLayer/Control/TextureRect2
 var pending_animation: String = ""
 
-signal change_sprite(speaker_name: String)
-
 func _ready() -> void:
 	add_child(dialogue_balloon)
 	dialogue_balloon.visible = false
+	TrialManager.change_sprite.connect(_on_change_sprite)
 	character_sprite.animation_finished.connect(_on_animation_finished)
 	start_dialogue()
 	
 func start_dialogue():
 	dialogue_balloon.visible = true
-	DialogueManager.mutated.connect(_on_mutation)
+	DialogueManager.mutated.connect(TrialManager.handle_mutation)
 	DialogueManager.show_dialogue_balloon(load("res://trialroom/dialogue/trial1.dialogue"), "start")
 
-func _on_mutation(mutation: Dictionary) -> void:
-	if mutation.has("change_sprite"):
-		var speaker = mutation["change_sprite"]
-		emit_signal("change_sprite", speaker)
+#func _on_mutation(mutation: Dictionary) -> void:
+	#if mutation.has("change_sprite"):
+		#var speaker = mutation["change_sprite"]
+		#emit_signal("change_sprite", speaker)
 
 func update_character_sprite(speaker: String) -> void:
 	var frames_path = ""

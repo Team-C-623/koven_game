@@ -60,5 +60,3 @@ size_flags_vertical = 8
 [node name="Character" parent="CanvasLayer2/Control" instance=ExtResource("2_i1rtu")]
 position = Vector2(-153, -20.0001)
 scale = Vector2(0.4, 0.4)
-
-[connection signal="change_sprite" from="." to="." method="_on_change_sprite"]
