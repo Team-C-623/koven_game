@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{564FA88C-F2F7-4907-B737-8F11A3FA7E78}",
     "Language": "SFX",
-    "Hash": "{A2A769AA-7FCA-63CD-51FA-3AC30AB7128D}",
+    "Hash": "{624CD83B-CF3B-7865-D984-25A29C34AF78}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Music_SoundBank",
     "ShortName": "Music_SoundBank",
     "Path": "3589812408.bnk",
@@ -1940,6 +1940,15 @@
       ]
      }
     ],
+    "GameParameters": [
+     {
+      "Id": "3677180323",
+      "Name": "health",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\health",
+      "GUID": "{35CEA8A7-DA9F-48C4-90AB-1D66145863CF}",
+      "Color": "10"
+     }
+    ],
     "StateGroups": [
      {
       "Id": "1176052424",
@@ -2164,6 +2173,6 @@
     ]
    }
   ],
-  "FileHash": "{E116C126-3C53-2DEE-D750-F366E1E41348}"
+  "FileHash": "{7DAA9DA1-2306-A68B-36CC-D5113DD6BC6A}"
  }
 }
