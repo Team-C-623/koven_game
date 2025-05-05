@@ -39,10 +39,10 @@ func _die() -> void:
 
 func _on_flame_hit_box_area_entered(area):
 	if area is HitboxComponent:
-		var hitbox : HitboxComponent = area
+		var enemy_hitbox : HitboxComponent = area
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		if hitbox != null:
-			hitbox.damage(attack)
+			enemy_hitbox.damage(attack)
 		if ray != null:
 			_die()

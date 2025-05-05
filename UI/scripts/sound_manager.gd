@@ -11,7 +11,7 @@ func _ready() -> void:
 	music_bank.load_bank()
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if PlayerManager.player != null:
 		Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 
@@ -80,8 +80,8 @@ func play_shackles_on():
 
 
 # MUSIC
-func play_castle_music(floor_state: String = "floor1"): #called in main.gd (_entered)
-	var switch_result = Wwise.set_switch("FLOOR_LEVEL","FLOOR1", self)
+func play_castle_music(_floor_state: String = "floor1"): #called in main.gd (_entered)
+	var _switch_result = Wwise.set_switch("FLOOR_LEVEL","FLOOR1", self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
 	pass
 

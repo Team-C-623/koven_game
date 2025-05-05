@@ -29,9 +29,9 @@ func set_external_inventory(_external_inventory_owner) -> void:
 	
 	inventory_data.inventory_interact.connect(on_inventory_interact)
 	external_inventory.set_inventory_data(inventory_data)
-	print("HELLO")
+	print("inventory set")
 	external_inventory.show()
- 
+
 func clear_external_inventory() -> void:
 	if external_inventory_owner:
 		var inventory_data = external_inventory_owner.inventory_data
@@ -42,15 +42,13 @@ func clear_external_inventory() -> void:
 		external_inventory.hide()
 		external_inventory_owner = null
 
-func on_inventory_interact(inventory_data: InventoryData, 
-		index: int, button: int) -> void:
-	
+func on_inventory_interact(inventory_data: InventoryData, index: int, button: int) -> void:
 	match [grabbed_slot_data, button]:
 		[null, MOUSE_BUTTON_LEFT]:
 			grabbed_slot_data = inventory_data.grab_slot_data(index)
 		[_, MOUSE_BUTTON_LEFT]:
 			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index)
-			
+		
 		[null, MOUSE_BUTTON_RIGHT]:
 			inventory_data.use_slot_data(index)
 		[_, MOUSE_BUTTON_RIGHT]:
@@ -82,7 +80,6 @@ func _on_inventory_background_click(event: InputEvent):
 	if grabbed_slot_data and event.is_pressed():
 		handle_world_drop(event)
 
-
 func handle_world_drop(event: InputEvent):
 	var _drop_pos = get_global_mouse_position()
 	match event.button_index:
@@ -95,5 +92,3 @@ func handle_world_drop(event: InputEvent):
 			if grabbed_slot_data.quantity < 1:
 				grabbed_slot_data = null
 	update_grabbed_slot()
-		
-	

@@ -37,14 +37,13 @@ func _ready() -> void:
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
-		
+	
 	# existing setup
 	if player_health:
-		player_health.died.connect(_on_player_died)	
+		player_health.died.connect(_on_player_died)
 	else:
 		print("Health component not found")
 
-	
 #spawns journals
 #func _spawn_journals_in_room(room):
 	#var spawners = room.find_children("*", "JournalSpawner", true)
@@ -62,6 +61,8 @@ func switch_cam():
 
 func generate_new():
 	var size = map.generate()
+	for node in get_tree().get_nodes_in_group("external_inventory"):
+		node.toggle_inventory.connect(toggle_inventory_interface)
 	player.global_position = Vector3(6 * size, 0, 6 * size)
 
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
@@ -99,18 +100,31 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("generate"):
 		generate_new()
 
-func _on_player_died():
-	print("Respawning player")
-	#await get_tree().create_timer(1.0).timeout
+func _clear_map():
+	# remove all rooms
+	map._clear_rooms()
 	
-	# Despawning all enemies
+	# remove all enemies
 	for enemy in get_tree().get_nodes_in_group("Enemies Group"):
 		if is_instance_valid(enemy):
 			enemy.queue_free()
 	
+	# remove all journals
 	for journal in get_tree().get_nodes_in_group("Journal Group"):
 		if is_instance_valid(journal):
 			journal.queue_free()
+	
+	# remove all chests
+	for chest in get_tree().get_nodes_in_group("external_inventory"):
+		if is_instance_valid(chest):
+			chest.queue_free()
+
+func _on_player_died():
+	print("Respawning player")
+	#await get_tree().create_timer(1.0).timeout
+	
+	# remove all map entities
+	_clear_map()
 	
 	# Respawning Player
 	var live_player = get_tree().current_scene.find_child("Player", true, false)

@@ -112,7 +112,7 @@ omni_attenuation = 1.5
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 9.17958e-09, 0, -9.17958e-09, 1, 0.000542601, -0.000569406, 0.000536471)
-target_position = Vector3(0, 0, -1)
+target_position = Vector3(0, 0, -0.5)
 collision_mask = 69
 
 [node name="FlameHitBox" type="Area3D" parent="."]

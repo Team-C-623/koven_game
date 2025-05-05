@@ -117,7 +117,7 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#rtpc.set_value(rtpc_node,health_component.health)
 	#Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 	var player = get_node("/root/Main/Player")  # Adjust path to your player node

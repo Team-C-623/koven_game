@@ -27,7 +27,6 @@ func create_chest():
 		
 func create_journal():
 	if room_type == "EJ":
-		var location = $Base
 		if randf() <= JOURNAL_CHANCE:
 			var new_journal = JOURNAL.instantiate()
 			get_tree().get_current_scene().add_child(new_journal)
@@ -35,7 +34,7 @@ func create_journal():
 				randf_range(-2, 2),
 				0.5,
 				randf_range(-2, 2)
-			) + location.global_position
+			) + self.global_position
 			new_journal.global_position = random_pos
 
 func _spawn_journals_in_room():

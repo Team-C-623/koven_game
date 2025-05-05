@@ -13,7 +13,7 @@ func _ready() -> void:
 	health_component.connect("health_changed", Callable(self, "_on_health_changed"))
 	visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player and boss:
 		var distance = boss.global_position.distance_to(player.global_position)
 		
