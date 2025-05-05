@@ -7,6 +7,7 @@ extends Node2D
 var pending_animation: String = ""
 
 func _ready() -> void:
+	PlayerManager.is_in_trial_room = true
 	add_child(dialogue_balloon)
 	dialogue_balloon.visible = false
 	TrialManager.change_sprite.connect(_on_change_sprite)
@@ -17,11 +18,6 @@ func start_dialogue():
 	dialogue_balloon.visible = true
 	DialogueManager.mutated.connect(TrialManager.handle_mutation)
 	DialogueManager.show_dialogue_balloon(load("res://trialroom/dialogue/trial1.dialogue"), "start")
-
-#func _on_mutation(mutation: Dictionary) -> void:
-	#if mutation.has("change_sprite"):
-		#var speaker = mutation["change_sprite"]
-		#emit_signal("change_sprite", speaker)
 
 func update_character_sprite(speaker: String) -> void:
 	var frames_path = ""

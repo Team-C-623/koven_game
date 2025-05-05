@@ -42,6 +42,11 @@ var instance
 var was_rising := false  # Tracks previous frame's motion direction
 var footstep_cooldown := 0.0  # Prevents double-triggering
 
+# health bar
+@onready var health_bar: ProgressBar = $HealthBar
+@onready var health_sprite_2d: Sprite2D = $HealthBar/Sprite2D
+
+
 func _ready() -> void:
 	PlayerManager.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -103,7 +108,7 @@ func _physics_process(_delta: float) -> void:
 		
 	
 	#Shooting 
-	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !Journal.visible:
+	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !Journal.visible and !PlayerManager.is_in_trial_room:
 		#wand.shoot()
 		if !wand_anim.is_playing():
 			# Animation for shooting
@@ -137,6 +142,14 @@ func _process(_delta: float) -> void:
 	else:
 		Wwise.set_switch("GAMEPLAY_SWITCH", "EXPLORE", self)
 		SoundManager.play_enemy_safe()
+		
+	# show and hide healthbar for trialroom
+	if PlayerManager.is_in_trial_room:
+		health_bar.visible = false
+		health_sprite_2d.visible = false
+	else:
+		health_bar.visible = true
+		health_sprite_2d.visible = true
 
 func get_drop_position() -> Vector3:
 	var direction = -camera.global_transform.basis.z

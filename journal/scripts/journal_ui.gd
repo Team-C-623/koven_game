@@ -25,7 +25,7 @@ func update_slots():
 		slots[i].update(journal[i])
 
 func _process(_delta):
-	if Input.is_action_just_pressed("journal") and !inventory_interface.visible and !ShopMenu.visible:
+	if Input.is_action_just_pressed("journal") and !inventory_interface.visible and !ShopMenu.visible and !PlayerManager.is_in_trial_room:
 		if is_open:
 			SoundManager.play_page_turn()
 			close()
