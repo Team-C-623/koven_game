@@ -1,6 +1,7 @@
 extends StaticBody3D
-
+class_name Chest
 signal toggle_inventory(external_inventory_owner)
+
 
 @export var inventory_data: InventoryData
 const CARDS_LIST = preload("res://tarotcards/resources/cards_list.tres")

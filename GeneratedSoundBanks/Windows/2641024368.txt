@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	48824776	MenuOPEN			\SFX_Events\MenuOPEN	
 	80501587	Wand_Misfire			\SFX_Events\Wand_Misfire	
 	371816340	Text_Scrolling			\SFX_Events\Text_Scrolling	
+	587584267	Text_Scroll_Trimmed			\SFX_Events\Text_Scroll_Trimmed	
 	866175427	Trial_Room_Gavel			\SFX_Events\Trial_Room_Gavel	
 	1205999388	Enemy_Death			\SFX_Events\Enemy_Death	
 	1402229995	Lasso_Attach			\SFX_Events\Lasso_Attach	
@@ -50,6 +51,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	623659834	Lasso	Y:\Documents\WwiseProjects\Koven_5_01_25\Koven\.cache\50\{50BA1541-96D9-B318-C5A3-E984F8A5F112}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\Lasso		441096
 	640454819	Enemy_Item_Throw_1	Y:\Documents\WwiseProjects\Koven_5_01_25\Koven\.cache\6C\{6CB85106-99F4-FAEC-A46A-F8C6835FF483}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\Enemy_Item_Throws\Enemy_Item_Throw_1		268228
 	688476327	Enemy_Item_Throw_2	Y:\Documents\WwiseProjects\Koven_5_01_25\Koven\.cache\06\{06CACC25-EFF3-8B59-FBAD-5076FAF57A11}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\Enemy_Item_Throws\Enemy_Item_Throw_2		268228
+	694784347	Text_Scroll_Trimmed	Y:\Documents\WwiseProjects\Koven_5_01_25\Koven\.cache\0C\{0C9863CB-3266-2BC6-5D25-FAD0159254DF}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Text_Scroll_Trimmed		21512
 	788182343	Footsteps_FINAL	Y:\Documents\WwiseProjects\Koven_5_01_25\Koven\.cache\12\{12F575CC-9D6A-90CD-7F3D-ADB519FAEC48}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Footsteps\Footsteps_FINAL		116360
 	791562161	Jury_Chatter	Y:\Documents\WwiseProjects\Koven_5_01_25\Koven\.cache\56\{564CFE0F-7079-2636-FA61-67644C926AD7}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Jury_Chatter		9878500
 	871225691	Menu_Boop	Y:\Documents\WwiseProjects\Koven_5_01_25\Koven\.cache\C5\{C5360FD5-EC25-38F3-A071-A89396ED8167}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Menu UI\Menu_Boop		77272

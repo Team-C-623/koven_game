@@ -14,7 +14,7 @@ var enemies = []
 
 @onready var interact_ray: RayCast3D = $InteractRay
 @export var rtpc:WwiseRTPC
-var health: int = 100
+#var health: int = 100
 var gravity: float = 9.8
 
 # Stun variables
@@ -63,9 +63,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * SENS * 0.005)
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
+		
 
+	
 func _physics_process(_delta: float) -> void:
 	rtpc.set_value(rtpc_node,health_component.health)
+
 	if !is_on_floor():
 		velocity.y -= gravity * _delta
 	# Get the input direction and handle the movement/deceleration.
@@ -115,6 +118,8 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func _process(delta: float) -> void:
+	#rtpc.set_value(rtpc_node,health_component.health)
+	#Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 	var player = get_node("/root/Main/Player")  # Adjust path to your player node
 	var combat_engaged = false
 	
