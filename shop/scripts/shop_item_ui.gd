@@ -22,7 +22,7 @@ func set_item_data(item):
 
 func item_focus():
 	if item_data != null:
-		ShopMenu.update_item_description(item_data)
+		ShopMenu.update_item_description(item_data, self)
 
 func _on_pressed() -> void:
 	if item_data != null && Currency.currency >= item_data.cost:

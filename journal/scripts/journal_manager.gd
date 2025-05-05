@@ -20,11 +20,8 @@ func _on_body_shape_entered(_body_rid: RID, body: Node3D, _body_shape_index: int
 					if journal_list[i].entry_id == new_journal_entry.entry_id:
 						journal_list.remove_at(i)
 						break
-				queue_free()
-				print("Journal added")
-			else:
-				print("Journal not added")
-		else:
-			# notification here of some kind?
 			queue_free()
-			print("No journals remaining")
+		else:
+			# this occurs if no journals are left for the player to collect
+			# notification of some kind for the player?
+			queue_free()

@@ -14,11 +14,18 @@ signal hide
 const TAROT_PLACEHOLDER = preload("res://assets/ui/tarot_placeholder.png")
 
 var selected_item = null
+var selected_shop_button = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
 	hide.emit()
+
+func _empty_details():
+	item_image.texture = TAROT_PLACEHOLDER
+	item_name.text = "Select an Item"
+	item_description.text = "-"
+	item_cost.text = "-"
 
 func _on_close_button_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -26,14 +33,13 @@ func _on_close_button_pressed() -> void:
 	hot_bar_inventory.show()
 	currency_ui.show_display()
 	selected_item = null
-	item_image.texture = TAROT_PLACEHOLDER
-	item_name.text = "Select an Item"
-	item_description.text = "-"
-	item_cost.text = "-"
+	selected_shop_button = null
+	_empty_details()
 	hide.emit()
 	SoundManager.play_buy_sound()
 
-func update_item_description(item: ItemData):
+func update_item_description(item: ItemData, selected_button):
+	selected_shop_button = selected_button
 	selected_item = item
 	item_image.texture = item.texture
 	item_name.text = item.name
@@ -52,3 +58,7 @@ func _on_buy_pressed() -> void:
 		Currency.subtract_currency(selected_item.cost)
 		PlayerManager.player.inventory_data.add_item(selected_item)
 		SoundManager.play_buy_sound()
+		selected_shop_button.queue_free()
+		selected_item = null
+		selected_shop_button = null
+		_empty_details()

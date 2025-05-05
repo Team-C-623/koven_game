@@ -75,6 +75,5 @@ func add_journal(new_journal: JournalEntry) -> bool:
 		return false
 	
 	journal.append(new_journal)
-	print(journal)
 	update_slots()
 	return true
