@@ -18,7 +18,6 @@ func _ready():
 
 func create_chest():
 	if room_type == "C":
-		print("creating chest")
 		var chest_spawns = $ChestSpawns
 		var chest_location = chest_spawns.get_children().pick_random()
 		var new_chest = CHEST.instantiate()

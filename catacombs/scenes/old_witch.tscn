@@ -10,6 +10,7 @@
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.536936, 0)
 visibility_range_end = 20.0
 billboard = 2
+shaded = true
 texture = ExtResource("1_q0kw2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

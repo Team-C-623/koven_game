@@ -19,7 +19,6 @@ func try_spawn_journal():
 			spawn_height,
 			randf_range(-spawn_extents.y, spawn_extents.z)
 		)
-		print(real_position)
 		journal.position = random_pos
 		get_tree().get_current_scene().add_child(journal)
 		return journal

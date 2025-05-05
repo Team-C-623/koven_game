@@ -13,4 +13,3 @@ func display_entry(entry: JournalEntry):
 	title_label.text = "Entry #%d" % entry.entry_id
 	content_label.text = entry.content
 	close_button.text = "Close"
-	print(entry.content)

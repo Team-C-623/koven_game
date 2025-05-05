@@ -17,10 +17,8 @@ func _on_body_shape_entered(_body_rid: RID, body: Node3D, _body_shape_index: int
 			var journal_valid = Journal.add_journal(new_journal_entry)
 			if journal_valid:
 				for i in range(journal_list.size()):
-					print(new_journal_entry.entry_id)
 					if journal_list[i].entry_id == new_journal_entry.entry_id:
 						journal_list.remove_at(i)
-						print(journal_list)
 						break
 				queue_free()
 				print("Journal added")
