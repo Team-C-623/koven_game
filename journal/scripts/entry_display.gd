@@ -7,7 +7,6 @@ extends Panel
 func _ready():
 	visible = false
 	close_button.pressed.connect(hide)
-	
 
 func display_entry(entry: JournalEntry):
 	visible = true
@@ -15,4 +14,3 @@ func display_entry(entry: JournalEntry):
 	content_label.text = entry.content
 	close_button.text = "Close"
 	print(entry.content)
-	

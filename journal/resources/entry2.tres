@@ -1,10 +1,10 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cvim4s8bmxuhy"]
+[gd_resource type="Resource" script_class="JournalEntry" load_steps=3 format=3 uid="uid://cvim4s8bmxuhy"]
 
 [ext_resource type="Script" path="res://journal/scripts/journal_entry.gd" id="1_00k58"]
 [ext_resource type="Texture2D" uid="uid://1lvd0pix4pg8" path="res://icon.svg" id="2_o3icj"]
 
 [resource]
 script = ExtResource("1_00k58")
-entry_id = 2
+entry_id = 1
 texture = ExtResource("2_o3icj")
 content = "Goodbye World, journal entry no. 2"

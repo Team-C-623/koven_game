@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="JournalList" load_steps=5 format=3 uid="uid://c2xwgk3sv0vmy"]
+
+[ext_resource type="Script" path="res://journal/scripts/journal_entry.gd" id="1_oy7v6"]
+[ext_resource type="Script" path="res://journal/scripts/journal_list.gd" id="2_f55ya"]
+[ext_resource type="Resource" uid="uid://b28seueh2mo0l" path="res://journal/resources/entry1.tres" id="2_thsq8"]
+[ext_resource type="Resource" uid="uid://cvim4s8bmxuhy" path="res://journal/resources/entry2.tres" id="3_ncl3k"]
+
+[resource]
+script = ExtResource("2_f55ya")
+Journals = Array[ExtResource("1_oy7v6")]([ExtResource("2_thsq8"), ExtResource("3_ncl3k")])

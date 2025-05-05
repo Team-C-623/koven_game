@@ -26,7 +26,7 @@ func create_chest():
 		new_chest.global_position = chest_location.global_position
 		
 func create_journal():
-	if room_type == "E3" or room_type == "E4" or room_type == "E5":
+	if room_type == "EJ":
 		var location = $Base
 		if randf() <= JOURNAL_CHANCE:
 			var new_journal = JOURNAL.instantiate()

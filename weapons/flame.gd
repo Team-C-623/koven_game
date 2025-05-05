@@ -26,7 +26,8 @@ func _physics_process(delta: float) -> void:
 			_die()
 
 func _die() -> void:
-	hitbox.queue_free()
+	if hitbox != null:
+		hitbox.queue_free()
 	if ray != null:
 		ray.queue_free()
 	mesh.visible = false
@@ -41,6 +42,7 @@ func _on_flame_hit_box_area_entered(area):
 		var hitbox : HitboxComponent = area
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
-		hitbox.damage(attack)
+		if hitbox != null:
+			hitbox.damage(attack)
 		if ray != null:
 			_die()

@@ -101,14 +101,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_player_died():
 	print("Respawning player")
-	await get_tree().create_timer(1.0).timeout
+	#await get_tree().create_timer(1.0).timeout
 	
 	# Despawning all enemies
 	for enemy in get_tree().get_nodes_in_group("Enemies Group"):
 		if is_instance_valid(enemy):
-			print("removing enemies")
 			enemy.queue_free()
-			
+	
+	for journal in get_tree().get_nodes_in_group("Journal Group"):
+		if is_instance_valid(journal):
+			journal.queue_free()
+	
 	# Respawning Player
 	var live_player = get_tree().current_scene.find_child("Player", true, false)
 	
@@ -136,4 +139,3 @@ func _on_player_died():
 
 	else:
 		print("Player not found or invalid.")
-	#

@@ -26,6 +26,7 @@ TarotManager="*res://tarotcards/scripts/tarot_manager.gd"
 UIManager="*res://UI/scenes/ui_manager.tscn"
 Currency="*res://currency/scripts/currency.gd"
 TransitionScreen="*res://scene_transition/scenes/transition_screen.tscn"
+Journal="*res://journal/scenes/JournalUI.tscn"
 
 [dialogue_manager]
 

@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_itoj4"]
 radius = 13.2735
 
-[node name="Journal" type="Area3D"]
+[node name="Journal" type="Area3D" groups=["Journal Group"]]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
 script = ExtResource("1_u6u08")
 

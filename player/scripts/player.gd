@@ -21,7 +21,6 @@ var gravity: float = 9.8
 var is_stunned: bool = false
 var stun_duration: float = 0.0
 
-@export var journal: Journal
 #bob variable
 const BOB_FREQ = 2.0 #2.0
 const BOB_AMP = 0.08 #0.08
@@ -40,7 +39,6 @@ var instance
 @onready var camera = $head/PlayerCam
 @onready var wand_anim = $head/PlayerCam/Wand/AnimationPlayer
 @onready var wand_tip = $head/PlayerCam/Wand/RayCast3D
-@onready var journal_ui = get_node("/root/UIManager/Journal_UI")
 var was_rising := false  # Tracks previous frame's motion direction
 var footstep_cooldown := 0.0  # Prevents double-triggering
 
@@ -102,7 +100,7 @@ func _physics_process(_delta: float) -> void:
 		
 	
 	#Shooting 
-	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !journal_ui.visible:
+	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !Journal.visible:
 		#wand.shoot()
 		if !wand_anim.is_playing():
 			# Animation for shooting
