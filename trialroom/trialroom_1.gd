@@ -4,6 +4,8 @@ extends Node2D
 @onready var dialogue_manager = DialogueManager
 @onready var character_sprite: AnimatedSprite2D = $CanvasLayer2/Control/Character/AnimatedSprite2D
 @onready var jury_sprite: TextureRect = $CanvasLayer/Control/TextureRect2
+@onready var death_screen: CanvasLayer = $CanvasLayer3
+
 var pending_animation: String = ""
 var last_block: String = ""
 
