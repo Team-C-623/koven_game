@@ -5,6 +5,7 @@ extends Node2D
 @onready var character_sprite: AnimatedSprite2D = $CanvasLayer2/Control/Character/AnimatedSprite2D
 @onready var jury_sprite: TextureRect = $CanvasLayer/Control/TextureRect2
 var pending_animation: String = ""
+var last_block: String = ""
 
 func _ready() -> void:
 	PlayerManager.is_in_trial_room = true
@@ -17,6 +18,8 @@ func _ready() -> void:
 func start_dialogue():
 	dialogue_balloon.visible = true
 	DialogueManager.mutated.connect(TrialManager.handle_mutation)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
+	DialogueManager.passed_title.connect(_on_block_jump)
 	DialogueManager.show_dialogue_balloon(load("res://trialroom/dialogue/trial1.dialogue"), "start")
 
 func update_character_sprite(speaker: String) -> void:
@@ -46,7 +49,6 @@ func update_character_sprite(speaker: String) -> void:
 			character_sprite.frames = new_frames
 			character_sprite.play(animation_to_play)
 
-
 func _on_change_sprite(speaker_name: String):
 	update_character_sprite(speaker_name)
 
@@ -54,3 +56,15 @@ func _on_animation_finished() -> void:
 	if pending_animation != "":
 		character_sprite.play(pending_animation)
 		pending_animation = ""
+
+func _on_dialogue_finished(_result) -> void:
+	match last_block:
+		"win":
+			print("Player wins")
+		"lose":
+			print("Player loses")
+		_:
+			print("No final block match")
+
+func _on_block_jump(block_name: String) -> void:
+	last_block = block_name

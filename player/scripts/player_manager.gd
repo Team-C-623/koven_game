@@ -1,7 +1,6 @@
 extends Node
 
 @export var player: Player
-@onready var health_component = get_node("/root/Main/Player/HealthComponent")
 
 # Player states
 var is_in_trial_room = false
