@@ -19,23 +19,6 @@ script = ExtResource("1_nxmt8")
 
 [node name="Player" parent="." instance=ExtResource("2_qcoaa")]
 
-[node name="SwitchCamButton" type="Button" parent="."]
-visible = false
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 94.0
-offset_bottom = 42.0
-scale = Vector2(1.00001, 1.00435)
-text = "Switch Camera"
-
-[node name="Generate" type="Button" parent="."]
-visible = false
-offset_left = 14.0
-offset_top = 52.0
-offset_right = 94.0
-offset_bottom = 83.0
-text = "Generate"
-
 [node name="Map" type="Node3D" parent="."]
 script = ExtResource("3_akvhc")
 
@@ -46,7 +29,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5tb5c")
-
-[connection signal="entered" from="." to="." method="_on_entered"]
-[connection signal="pressed" from="SwitchCamButton" to="." method="switch_cam"]
-[connection signal="pressed" from="Generate" to="." method="generate_new"]

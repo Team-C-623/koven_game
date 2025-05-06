@@ -155,11 +155,14 @@ transform = Transform3D(-4.11529e-08, -1.47349e-08, -0.999999, -0.337095, 0.9414
 [node name="Torch4" parent="Lighting" instance=ExtResource("5_ticro")]
 transform = Transform3D(-4.11529e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, -1.8, 3.8, -6.132)
 
-[node name="U" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4)
+[node name="DoorPositions" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
+[node name="U" type="Marker3D" parent="DoorPositions"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 6.4)
+
+[node name="D" type="Marker3D" parent="DoorPositions"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, -6.4)
 
 [node name="Base" type="Marker3D" parent="."]
 unique_name_in_owner = true

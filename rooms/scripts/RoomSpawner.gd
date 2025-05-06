@@ -51,7 +51,7 @@ func generate_base_path(room_options: Array[String]):
 	var rooms_added = 1
 	while rooms_added < grid_size:
 		if rooms_added == grid_size - 1:
-			# replace with boss room eventually
+			# end room is always the boss room
 			new_room = _create_room_data("room_1b")
 		else:
 			new_room = _create_room_data(room_options.pick_random())
@@ -171,6 +171,8 @@ func _add_all_rooms():
 		for col in row:
 			if col != null:
 				var new_room = _add_room_from_data(col)
+				new_room.create_chest()
+				new_room.create_journal()
 				for door_pos in new_room.door_dict.keys():
 					if new_room.door_dict[door_pos] == 0:
 						_create_new_door(new_room, door_pos)
@@ -196,7 +198,7 @@ func _get_door_validity(room: RoomData, prev_room: RoomData, prev_door_choice, n
 func _create_new_door(new_room, door_pos):
 	var new_door = door_scene.instantiate()
 	add_child(new_door)
-	var door_position = new_room.get_node(door_pos).global_position.snapped(Vector3(1, 1, 1))
+	var door_position = new_room.get_door_pos(door_pos).global_position.snapped(Vector3(1, 1, 1))
 	var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
 	
 	#var rel_door_pos = (new_room.global_position - door_position).snapped(Vector3(1, 1, 1))
@@ -234,8 +236,6 @@ func _add_room_from_data(room: RoomData):
 	new_instance.pos = Vector3(6.001 * room.pos[1], 0, 6.001 * room.pos[0])
 	new_instance.global_position = new_instance.pos
 	new_instance.rotate_y(new_instance.room_rotation)
-	new_instance.create_chest()
-	new_instance.create_journal()
 	return new_instance
 
 # gets a random door from a room's door dictionary

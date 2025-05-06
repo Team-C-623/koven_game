@@ -63,7 +63,7 @@ points = PackedVector3Array(-6.4, 0, -6.4, -6.4, 0, 6.4, 6.4, 0, -6.4, 6.4, 0, 6
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37nlm"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
-[node name="EmptyRoom2" type="StaticBody3D"]
+[node name="CombatRoom2" type="StaticBody3D"]
 transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
 script = ExtResource("1_i2ney")
 
@@ -158,11 +158,14 @@ transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.94146
 [node name="Torch10" parent="Lighting" instance=ExtResource("7_a02cc")]
 transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, 2.36979, 3.96759, 5.85616)
 
-[node name="U" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4)
+[node name="DoorPositions" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
+[node name="U" type="Marker3D" parent="DoorPositions"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 6.4)
+
+[node name="D" type="Marker3D" parent="DoorPositions"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, -6.4)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_s8fok")]
 

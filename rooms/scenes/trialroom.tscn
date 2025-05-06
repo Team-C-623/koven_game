@@ -154,8 +154,11 @@ transform = Transform3D(0.941418, 0.337243, -7.10543e-14, -0.337243, 0.941418, 0
 [node name="Torch3" parent="Lighting" instance=ExtResource("11_4dx42")]
 transform = Transform3D(-0.941471, -0.337095, -8.74228e-08, -0.337095, 0.941471, 0, 8.2306e-08, 2.94698e-08, -1, 6.333, 3.675, -2.423)
 
-[node name="U" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4)
+[node name="DoorPositions" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="U" type="Marker3D" parent="DoorPositions"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 6.4)
 
 [node name="Dialogue" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 8.52651e-14, 0, 2, 0, -8.52651e-14, 0, 2, -3.72302e-07, 0, 1.53435)
@@ -178,10 +181,10 @@ transform = Transform3D(0.06, 0, -3.55271e-15, 0, 0.06, 0, 3.55271e-15, 0, 0.06,
 shaded = true
 texture = ExtResource("12_wdqnp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="EnemyBlocker" type="StaticBody3D" parent="."]
 collision_layer = 64
 
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="EnemyBlocker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.3)
 depth = 0.2
 polygon = PackedVector2Array(-2, 0, -2, 4, 2, 4, 2, 0)

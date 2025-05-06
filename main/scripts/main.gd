@@ -12,16 +12,17 @@ signal entered
 @onready var hot_bar_inventory: PanelContainer = get_node("/root/UIManager/HotBarInventory")
 
 var shop_instance: CanvasLayer = null
+var catacombs_instance = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
 	var new_catacombs = cata_scene.instantiate()
 	add_child(new_catacombs)
-	#_spawn_journals_in_room(new_catacombs) #spawns journal
 	new_catacombs.name = "Catacombs"
+	catacombs_instance = new_catacombs
 	
-	entered.connect(generate_new)
+	entered.connect(_on_entered)
 	
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
@@ -30,22 +31,11 @@ func _ready() -> void:
 	
 	var _connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
 	
-	#for node in get_tree().get_nodes_in_group("Chest Group"):
-		#node.toggle_inventory.connect(toggle_inventory_interface)
-	
 	# existing setup
 	if player_health:
 		player_health.died.connect(_on_player_died)
 	else:
 		print("Health component not found")
-
-# switch cameras
-func switch_cam():
-	# current attribute defines if that camera is the one currently in use
-	if get_node("Player/head/PlayerCam").current:
-		get_node("Player/head/PlayerCam").current = false
-	else:
-		get_node("Player/TopDownCam").current = false
 
 func generate_new():
 	var size = map.generate()
@@ -84,10 +74,6 @@ func _on_entered() -> void:
 	Wwise.set_state("LOCATION", "CASTLE")
 	SoundManager.play_castle_music()
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("generate"):
-		generate_new()
-
 func _clear_map():
 	# remove all rooms
 	map._clear_rooms()
@@ -118,10 +104,7 @@ func _on_player_died():
 	var live_player = get_tree().current_scene.find_child("Player", true, false)
 	
 	if live_player and is_instance_valid(live_player):
-		var catacombs = cata_scene.instantiate()
-		get_tree().current_scene.add_child(catacombs)
-		
-		var spawn_point = catacombs.get_node("PlayerSpawn")
+		var spawn_point = catacombs_instance.get_node("PlayerSpawn")
 		
 		if spawn_point:
 			live_player.global_position = spawn_point.global_position
