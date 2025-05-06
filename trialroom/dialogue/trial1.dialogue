@@ -50,10 +50,12 @@ Judge Quétif: You conspire against the church!
 => lose
 
 ~ lose
-do SoundManager.play_trial_room_failed()
 Judge Quétif: I hereby declare Merga Bien guilty of heresy, and YOU as her accomplice!
+do SoundManager.play_gavel()
 do SoundManager.play_shackles_on()
 Judge Quétif: Seize these witches! They have no place in our Holy fortress!
+do SoundManager.play_trial_room_failed() # edit later
+do SoundManager.stop_jury_whispers()
 => END
 
 ~ win
@@ -63,6 +65,10 @@ Judge Quétif: I hereby declare Merga Bien not guilty of heresy.
 do SoundManager.play_shackles_off()
 do emit("change_sprite", "Merga")
 Merga’s shackles drop to the floor. The judge and jury leave the trial room, leaving us and Merga.
+do SoundManager.stop_jury_whispers()
 Merga: Thank you sister for saving me. I shall return to the safety of our catacombs for now.
 Merga: Should you need my help fighting the dangers in this castle, come see me.
+do emit("change_sprite", "Soulmother")
+Soulmother appears and takes Merga back with the flash of her wand.
+do SoundManager.play_wand_sound()
 => END

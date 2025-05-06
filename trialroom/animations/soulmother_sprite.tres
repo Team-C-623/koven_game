@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dr2amiklbgvne"]
+
+[ext_resource type="Texture2D" uid="uid://cfftowpypby21" path="res://trialroom/art/soulmother.png" id="1_bq0wk"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bq0wk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

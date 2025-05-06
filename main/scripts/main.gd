@@ -44,7 +44,7 @@ func generate_new():
 	player.global_position = Vector3(6 * size, 0, 6 * size)
 
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
-	if ShopMenu.visible or Journal.visible:
+	if ShopMenu.visible or journal_ui.visible or PlayerManager.is_in_trial_room:
 		return
 		
 	inventory_interface.visible = not inventory_interface.visible
@@ -94,6 +94,8 @@ func _clear_map():
 			chest.queue_free()
 
 func _on_player_died():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	print("Respawning player")
 	#await get_tree().create_timer(1.0).timeout
 	
@@ -121,6 +123,10 @@ func _on_player_died():
 				
 		# Reset health
 		player_health.reset_health()
-
+		
+		
 	else:
 		print("Player not found or invalid.")
+
+func on_trial_failed():
+	_on_player_died()
