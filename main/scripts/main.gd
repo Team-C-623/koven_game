@@ -30,21 +30,14 @@ func _ready() -> void:
 	
 	var _connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
 	
-	for node in get_tree().get_nodes_in_group("external_inventory"):
-		node.toggle_inventory.connect(toggle_inventory_interface)
+	#for node in get_tree().get_nodes_in_group("Chest Group"):
+		#node.toggle_inventory.connect(toggle_inventory_interface)
 	
 	# existing setup
 	if player_health:
 		player_health.died.connect(_on_player_died)
 	else:
 		print("Health component not found")
-
-#spawns journals
-#func _spawn_journals_in_room(room):
-	#var spawners = room.find_children("*", "JournalSpawner", true)
-	#print(spawners)
-	#for spawner in spawners:
-		#spawner.try_spawn_journal()
 
 # switch cameras
 func switch_cam():
@@ -56,7 +49,7 @@ func switch_cam():
 
 func generate_new():
 	var size = map.generate()
-	for node in get_tree().get_nodes_in_group("external_inventory"):
+	for node in get_tree().get_nodes_in_group("Chest Group"):
 		node.toggle_inventory.connect(toggle_inventory_interface)
 	player.global_position = Vector3(6 * size, 0, 6 * size)
 
@@ -110,7 +103,7 @@ func _clear_map():
 			journal.queue_free()
 	
 	# remove all chests
-	for chest in get_tree().get_nodes_in_group("external_inventory"):
+	for chest in get_tree().get_nodes_in_group("Chest Group"):
 		if is_instance_valid(chest):
 			chest.queue_free()
 

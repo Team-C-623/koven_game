@@ -1,21 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=5 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nxmt8"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://player/scenes/player_3d.tscn" id="2_qcoaa"]
 [ext_resource type="Script" path="res://rooms/scripts/RoomSpawner.gd" id="3_akvhc"]
-[ext_resource type="PackedScene" uid="uid://bxad4ju1nyf7r" path="res://interactable/scenes/chest.tscn" id="4_05aj2"]
-[ext_resource type="Script" path="res://inventory/scripts/inventory_data.gd" id="5_jbdks"]
-[ext_resource type="Script" path="res://inventory/scripts/slot_data.gd" id="6_2dx0w"]
-[ext_resource type="Resource" uid="uid://c3u3hw3n1diij" path="res://tarotcards/resources/death.tres" id="7_nd622"]
-
-[sub_resource type="Resource" id="Resource_bkxfk"]
-script = ExtResource("6_2dx0w")
-item_data = ExtResource("7_nd622")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_8q48m"]
-script = ExtResource("5_jbdks")
-slot_datas = Array[ExtResource("6_2dx0w")]([SubResource("Resource_bkxfk")])
 
 [sub_resource type="Environment" id="Environment_5tb5c"]
 background_mode = 1
@@ -53,10 +40,6 @@ text = "Generate"
 script = ExtResource("3_akvhc")
 
 [node name="Enemies" type="Node3D" parent="."]
-
-[node name="Chest" parent="." instance=ExtResource("4_05aj2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65075, 0, 0)
-inventory_data = SubResource("Resource_8q48m")
 
 [node name="PlayerSpawner" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
