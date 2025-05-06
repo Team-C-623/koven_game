@@ -11,10 +11,14 @@ func _on_body_entered(body: Node3D) -> void:
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		var trial_scene = preload("res://trialroom/trialroom1.tscn").instantiate()
+		
+		if trial_scene.has_signal("trial_failed"):
+			trial_scene.trial_failed.connect(main.on_trial_failed)
+			
 		add_child(trial_scene)
 		SoundManager.play_trial_room_music()
 
-func _process(float) -> void:
+func _process(_float) -> void:
 	if PlayerManager.has_won_trial_room:
 		jury.visible = false
 		prosecutor.visible = false

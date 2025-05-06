@@ -66,10 +66,10 @@ func play_jury_whispers():
 func stop_jury_whispers():
 	Wwise.execute_action_on_event_id(
 		AK.EVENTS.JURY_WHISPERS,
-		0, # 0 = stop (action type)
+		AkUtils.AkActionOnEventType.AK_ACTION_ON_EVENT_STOP, # stop event enum
 		self, # gameobject
 		2000, # fade out time (ms)
-		0 # curve interpolation (0 = linear)
+		AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR # curve interpolation enum
 	)
 	
 func play_shackles_off():
@@ -77,6 +77,15 @@ func play_shackles_off():
 
 func play_trial_room_failed():
 	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM_FAILED,self)
+
+func stop_trial_room_failed():
+	Wwise.execute_action_on_event_id(
+		AK.EVENTS.TRIAL_ROOM_FAILED,
+		AkUtils.AkActionOnEventType.AK_ACTION_ON_EVENT_STOP, # stop event enum
+		self, # gameobject
+		2000, # fade out time (ms)
+		AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR # curve interpolation enum
+	)
 	
 func play_gavel():
 	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM_GAVEL,self)
@@ -105,8 +114,6 @@ func play_trial_room_music(): #called in trialroom_1.gd
 	Wwise.set_state("LOCATION","TRIAL_ROOM")
 	await get_tree().process_frame
 	Wwise.post_event_id(AK.EVENTS.ENTER_TRIAL_ROOM,self)
-
-	
 
 func play_enemy_aggro():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_AGGRO,self)

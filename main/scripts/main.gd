@@ -116,6 +116,8 @@ func _clear_map():
 			chest.queue_free()
 
 func _on_player_died():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	print("Respawning player")
 	#await get_tree().create_timer(1.0).timeout
 	
@@ -146,6 +148,10 @@ func _on_player_died():
 				
 		# Reset health
 		player_health.reset_health()
-
+		
+		
 	else:
 		print("Player not found or invalid.")
+
+func on_trial_failed():
+	_on_player_died()

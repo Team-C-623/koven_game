@@ -5,6 +5,9 @@ extends Node2D
 @onready var character_sprite: AnimatedSprite2D = $CanvasLayer2/Control/Character/AnimatedSprite2D
 @onready var jury_sprite: TextureRect = $CanvasLayer/Control/TextureRect2
 @onready var death_screen: CanvasLayer = $CanvasLayer3
+@onready var animation_player: AnimationPlayer = $CanvasLayer3/AnimationPlayer
+
+signal trial_failed
 
 var pending_animation: String = ""
 var last_block: String = ""
@@ -71,7 +74,15 @@ func _on_dialogue_finished(_result) -> void:
 			SoundManager.play_castle_music()
 			queue_free()
 		"lose":
-			print("Player loses")
+			animation_player.play("fade_in") # adjust animation time based on new sounds
+			await animation_player.animation_finished
+			PlayerManager.is_in_trial_room = false
+			await get_tree().create_timer(10.0).timeout
+			SoundManager.stop_trial_room_failed()
+			trial_failed.emit()
+			animation_player.play("fade_out")
+			await animation_player.animation_finished
+			queue_free()
 		_:
 			print("No final block match")
 

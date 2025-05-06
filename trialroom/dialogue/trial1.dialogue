@@ -50,10 +50,12 @@ Judge Quétif: You conspire against the church!
 => lose
 
 ~ lose
-do SoundManager.play_trial_room_failed()
 Judge Quétif: I hereby declare Merga Bien guilty of heresy, and YOU as her accomplice!
+do SoundManager.play_gavel()
 do SoundManager.play_shackles_on()
 Judge Quétif: Seize these witches! They have no place in our Holy fortress!
+do SoundManager.play_trial_room_failed() # edit later
+do SoundManager.stop_jury_whispers()
 => END
 
 ~ win
