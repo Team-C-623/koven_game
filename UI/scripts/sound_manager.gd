@@ -17,8 +17,7 @@ func _process(_delta: float) -> void:
 
 func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
-	
-	
+
 func play_card_burn():
 	Wwise.post_event_id(AK.EVENTS.TAROTBURN, self)
 
@@ -86,7 +85,23 @@ func stop_trial_room_failed():
 		2000, # fade out time (ms)
 		AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR # curve interpolation enum
 	)
-	
+
+func stop_on_death():
+	Wwise.execute_action_on_event_id(
+		AK.EVENTS.ENEMY_ITEM_THROWS,
+		AkUtils.AkActionOnEventType.AK_ACTION_ON_EVENT_STOP, # stop event enum
+		self, # gameobject
+		1, # fade out time (ms)
+		AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR # curve interpolation enum
+	)
+	Wwise.execute_action_on_event_id(
+		AK.EVENTS.PLAYER_TAKINGDAMAGE,
+		AkUtils.AkActionOnEventType.AK_ACTION_ON_EVENT_STOP, # stop event enum
+		self, # gameobject
+		1, # fade out time (ms)
+		AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR # curve interpolation enum
+	)
+
 func play_gavel():
 	Wwise.post_event_id(AK.EVENTS.TRIAL_ROOM_GAVEL,self)
 	

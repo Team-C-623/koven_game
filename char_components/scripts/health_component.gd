@@ -50,7 +50,8 @@ func damage(attack: Attack):
 		if get_parent() is Player:
 			emit_signal("died")
 			SoundManager.play_defeated()
-
+			SoundManager.stop_on_death()
+			SoundManager.play_enemy_damage_sound()
 
 func reset_health():
 	health = MAX_HEALTH
