@@ -1,17 +1,17 @@
 extends CharacterBody3D
 class_name Boss2
 
-@onready var player_3d = get_node("/root/Main/Player")
-@onready var sprite: Sprite3D = $Sprite3D
-@onready var damage_timer: Timer = $DamageTimer
-@onready var health_component: HealthComponent = $HealthComponent
-
+@onready var player_3d=$"../Player"
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.5
 @export var GRAB_DISTANCE: float = 2.0
 @export var ACCELERATION: float = 2.0
-@export var CHASE_DISTANCE: float = 20.0  # Distance at which the enemy starts chasing
+@export var CHASE_DISTANCE: float = 3.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
+@onready var health_component: HealthComponent = $HealthComponent
+
+@onready var sprite: Sprite3D = $Sprite3D
+@onready var damage_timer: Timer = $DamageTimer
 
 var direction: Vector3
 var right_bounds: Vector3
@@ -24,6 +24,14 @@ func _ready():
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
+	call_deferred("_find_player")
+
+func _find_player():
+	player_3d = get_tree().get_first_node_in_group("Player Groups")
+	if player_3d:
+		print("Player found: ", player_3d.name)
+	else:
+		print("⚠️ Player not found in group 'Player Groups'")
 
 func _physics_process(delta: float) -> void:
 	sprite.rotate_y(delta)
@@ -36,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 	else:
 		velocity.y = 0
-		
+	
 	move_and_slide()
 
 	# Always face the player

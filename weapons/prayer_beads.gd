@@ -6,9 +6,9 @@ extends Node3D
 #var attack_damage:= 0.0
 
 signal bead_hit
-signal bead_missed
+#signal bead_missed
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#ray.force_raycast_update()
 	#if ray.is_colliding():
 		#_die()

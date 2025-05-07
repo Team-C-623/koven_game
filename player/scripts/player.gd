@@ -45,6 +45,8 @@ var footstep_cooldown := 0.0  # Prevents double-triggering
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var health_sprite_2d: Sprite2D = $HealthBar/Sprite2D
 
+var shoot_cooldown: float = 0.0
+const SHOOT_COOLDOWN_TIME: float = 0.2
 
 func _ready() -> void:
 	PlayerManager.player = self
@@ -66,15 +68,18 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
 		
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	rtpc.set_value(rtpc_node,health_component.health)
+	
+	if shoot_cooldown > 0:
+		shoot_cooldown -= delta
 	
 	# shooting and movement preconditions:
 	var ui_blocking: bool = inventory_interface.visible or ShopMenu.visible or Journal.visible
 	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch
 
 	if !is_on_floor():
-		velocity.y -= gravity * _delta
+		velocity.y -= gravity * delta
 	# Get the input direction and handle the movement/deceleration.
 	if !in_restricted_state:
 		var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -87,7 +92,7 @@ func _physics_process(_delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, speed)
 			
 		# Head bob
-		t_bob += _delta * velocity.length() * float(is_on_floor()) 
+		t_bob += delta * velocity.length() * float(is_on_floor()) 
 		var new_head_pos = _headbob(t_bob)
 		# Detect downward motion
 		var is_rising = new_head_pos.y > camera.transform.origin.y
@@ -101,23 +106,24 @@ func _physics_process(_delta: float) -> void:
 		# Update tracking variable
 		was_rising = is_rising
 		camera.transform.origin = new_head_pos
-		footstep_cooldown = max(0, footstep_cooldown - _delta)
+		footstep_cooldown = max(0, footstep_cooldown - delta)
 		#FOV
 		var target_fov = BASE_FOV + FOV_CHANGE
-		camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
+		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 		
 	#Shooting 
 	if Input.is_action_just_pressed("shoot") and !ui_blocking and !in_restricted_state:
-		#wand.shoot()
-		if !wand_anim.is_playing():
-			# Animation for shooting
-			wand_anim.play("cast")
-			instance = flame.instantiate()
-			instance.position = wand_tip.global_position
-			instance.transform.basis = wand_tip.global_transform.basis
-			instance.attack_damage += attack_damage
-			get_parent().add_child(instance)
-			SoundManager.play_wand_sound()
+		if shoot_cooldown <= 0:
+			shoot_cooldown = SHOOT_COOLDOWN_TIME
+			if !wand_anim.is_playing():
+				# Animation for shooting
+				wand_anim.play("cast")
+				instance = flame.instantiate()
+				instance.position = wand_tip.global_position
+				instance.transform.basis = wand_tip.global_transform.basis
+				instance.attack_damage += attack_damage
+				get_parent().add_child(instance)
+				SoundManager.play_wand_sound()
 
 	move_and_slide()
 	

@@ -38,6 +38,9 @@ func damage(attack: Attack):
 			elif get_parent() is Nun:
 				nun_die.emit()
 				Currency.add_currency(10)
+			# for boss
+			else:
+				get_parent().call_deferred("queue_free")
 		# emit death signal when player dies and play sounds
 		if get_parent() is Player:
 			died.emit()
