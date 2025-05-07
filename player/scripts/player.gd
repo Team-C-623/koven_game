@@ -68,48 +68,46 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
 		
-
-	
 func _physics_process(_delta: float) -> void:
 	rtpc.set_value(rtpc_node,health_component.health)
+	
+	# shooting and movement preconditions:
+	var ui_blocking: bool = inventory_interface.visible or ShopMenu.visible or Journal.visible
+	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch
 
 	if !is_on_floor():
 		velocity.y -= gravity * _delta
 	# Get the input direction and handle the movement/deceleration.
-	var input_dir := Input.get_vector("left", "right", "up", "down")
-	var direction = (cam_mount.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
-		
-	# Head bob
-	t_bob += _delta * velocity.length() * float(is_on_floor()) 
-	var new_head_pos = _headbob(t_bob)
-	# Detect downward motion
-	var is_rising = new_head_pos.y > camera.transform.origin.y
+	if !in_restricted_state:
+		var input_dir := Input.get_vector("left", "right", "up", "down")
+		var direction = (cam_mount.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
+			velocity.z = move_toward(velocity.z, 0, speed)
+			
+		# Head bob
+		t_bob += _delta * velocity.length() * float(is_on_floor()) 
+		var new_head_pos = _headbob(t_bob)
+		# Detect downward motion
+		var is_rising = new_head_pos.y > camera.transform.origin.y
 
-	
-	# Play sound at peak descent (when switching from falling to rising)
-	if was_rising and not is_rising and footstep_cooldown <= 0:
-		SoundManager.play_footsteps()
-		footstep_cooldown = 0.0  # Small cooldown to prevent double sounds
-	
-	# Update tracking variable
-	was_rising = is_rising
-	camera.transform.origin = new_head_pos
-	footstep_cooldown = max(0, footstep_cooldown - _delta)
-	#FOV
-	var target_fov = BASE_FOV + FOV_CHANGE
-	camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
 		
-
-	
-	# shooting preconditions:
-	var ui_blocking: bool = inventory_interface.visible or ShopMenu.visible or Journal.visible
-	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch
+		# Play sound at peak descent (when switching from falling to rising)
+		if was_rising and not is_rising and footstep_cooldown <= 0:
+			SoundManager.play_footsteps()
+			footstep_cooldown = 0.0  # Small cooldown to prevent double sounds
+		
+		# Update tracking variable
+		was_rising = is_rising
+		camera.transform.origin = new_head_pos
+		footstep_cooldown = max(0, footstep_cooldown - _delta)
+		#FOV
+		var target_fov = BASE_FOV + FOV_CHANGE
+		camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
+		
 	#Shooting 
 	if Input.is_action_just_pressed("shoot") and !ui_blocking and !in_restricted_state:
 		#wand.shoot()

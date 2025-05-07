@@ -29,6 +29,7 @@ func _ready() -> void:
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
 	inventory_interface.force_close.connect(toggle_inventory_interface)
 	
+	
 	var _connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
 	
 	# existing setup

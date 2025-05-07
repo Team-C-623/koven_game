@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 func start_dialogue():
 	dialogue_balloon.visible = true
-	DialogueManager.mutated.connect(TrialManager.handle_mutation)
+	# DialogueManager.mutated.connect(TrialManager.handle_mutation)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
 	DialogueManager.passed_title.connect(_on_block_jump)
 	DialogueManager.show_dialogue_balloon(load("res://trialroom/dialogue/trial1.dialogue"), "start")
@@ -81,8 +81,8 @@ func _on_dialogue_finished(_result) -> void:
 			SoundManager.stop_trial_room_failed()
 			trial_failed.emit()
 			animation_player.play("fade_out")
-			await animation_player.animation_finished
 			PlayerManager.is_in_trial_room = false
+			await animation_player.animation_finished
 			queue_free()
 		_:
 			print("No final block match")
