@@ -26,5 +26,4 @@ func transition():
 
 func death_transition():
 	color_rect.visible = true
-	#SoundManager.stop_on_death()
 	animation_player.play("cut_to_black")

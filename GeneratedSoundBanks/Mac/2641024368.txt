@@ -29,7 +29,6 @@ Event	ID	Name			Wwise Object Path	Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	3715154	PageTurning	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\F3\{F3FCCC21-B8A2-3065-35C6-1BCA4429E119}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Menu UI\PageTurning		104836
 	70627039	Player_TakingDamage_TrueFINAL3	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\7C\{7C8D26BD-6F94-C6B2-978F-1C9FEF3B2A1A}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\Player_Taking_Damage\Player_TakingDamage_TrueFINAL3		81512
-	105238871	Trial_Room_Failed	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\01\{01A077AB-76EB-5D89-F59D-7F9D7953959D}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Trial_Room_Failed		15170496
 	121644684	Dialogue_Scroll_Judge_Voice	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\43\{438ACC89-D088-6BEB-685B-09414145B69B}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Dialogue_Scroll_Judge_Voice		385572
 	126817595	Wand_Basic_Shot	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\9A\{9A0CE0E5-865D-E22E-19CA-869F8CD3F604}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\Wand\Wand_Basic_Shot		209660
 	131263441	Shackles_On	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\86\{866D771E-BA70-A1F9-7D71-746D680BC1B3}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Shackles_On		621236
@@ -64,4 +63,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	989007428	Enemy_Damage_1	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\B5\{B5AF585C-61ED-150B-0E83-3B9CD3A9D222}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\EnemyTakingDamange\Enemy_Damage_1		194148
 	1001034237	Dialogue_Scroll_Judge_By_Fire	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\13\{13448D89-AE6C-A594-4036-E59271E09806}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Dialogue_Scroll_Judge_By_Fire		471232
 	1028320474	Large_Enemy_Damage	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\BD\{BDC11752-C075-E782-9579-FE8EC2DE8CFF}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\Combat\EnemyTakingDamange\Large_Enemy_Damage		242660
+	1051480240	Trial_Room_Failed_Short	C:\Users\chayt\OneDrive\Desktop\Koven_5_01_25\Koven\.cache\DB\{DB7F2DB1-C99A-15D1-ACCE-75C5B58AD4B3}.wem		\Actor-Mixer Hierarchy\Sounds_Actor_Mixer\sfx_actor-mixer\SFX\TrialRooms\Trial_Room_Failed_Short		6350496
 

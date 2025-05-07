@@ -37,10 +37,9 @@ func _physics_process(delta: float) -> void:
 	# Always face the player
 	look_at(player_3d.position)
 
-
 func _on_health_component_nun_die() -> void:
 	animation_player.stop()
-	emit_signal("dying")
+	dying.emit()
 	animation_player.play("death")
 	SoundManager.play_enemy_death()
 	await animation_player.animation_finished

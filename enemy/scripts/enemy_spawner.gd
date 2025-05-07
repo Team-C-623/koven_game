@@ -3,7 +3,6 @@ extends Node3D
 const ENEMY = preload("res://enemy/scenes/monk.tscn")
 const ENEMY2 = preload("res://enemy/scenes/nun.tscn")
 
-@onready var spawn_node = get_node("/root/Main/Enemies")
 var player: CharacterBody3D
 var spawn_radius: float = 2.0
 var total_enemies: int = 3
@@ -15,7 +14,6 @@ func _start_spawning():
 	player = get_tree().get_first_node_in_group("Player Groups")
 	
 	if player:
-		print("Player found: ", player.name)
 		spawn_enemies()
 	else:
 		print("⚠️ Player not found in group 'Player Groups'")

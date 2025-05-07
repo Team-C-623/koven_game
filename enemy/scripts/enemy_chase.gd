@@ -19,5 +19,3 @@ func physics_process(_delta: float):
 		var direction = (player.global_position - enemy.global_position).normalized()
 		enemy.velocity = direction * enemy.CHASE_SPEED
 		chase_animation.play("monk_chase")
-
-	

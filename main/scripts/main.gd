@@ -99,7 +99,6 @@ func _on_player_died():
 	_clear_map()
 	await TransitionScreen.on_transition_finished
 	print("Respawning player")
-	#await get_tree().create_timer(1.0).timeout
 	
 	# Respawning Player
 	var live_player = get_tree().current_scene.find_child("Player", true, false)

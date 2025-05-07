@@ -113,18 +113,18 @@ func play_shackles_on():
 
 
 # MUSIC
-func play_castle_music(_floor_state: String = "floor1"): #called in main.gd (_entered)
+func play_castle_music(_floor_state: String = "floor1"): # called in main.gd (_entered)
 	var _switch_result = Wwise.set_switch("FLOOR_LEVEL","FLOOR1", self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_CASTLE, self)
 	pass
 
-func play_main_menu_music(): #called in start_screen script
+func play_main_menu_music(): # called in start_screen script
 	Wwise.post_event_id(AK.EVENTS.MAIN_MENU,self)
 	
 func play_start_music(): #called in catacombs.gd 
 	Wwise.post_event_id(AK.EVENTS.MAP_LOAD,self)
 
-func play_trial_room_music(): #called in trialroom_1.gd 
+func play_trial_room_music(): # called in trialroom_1.gd 
 	Wwise.set_state("PLAYER_STATE", "ALIVE")
 	Wwise.set_state("LOCATION","TRIAL_ROOM")
 	await get_tree().process_frame
@@ -137,10 +137,9 @@ func play_enemy_safe():
 	Wwise.post_event_id(AK.EVENTS.ENEMY_SAFE,self)
 	pass
 	
-func play_defeated(): #in health_component commented out
+func play_defeated(): # called in health_component.gd
 	Wwise.set_state("PLAYER_STATE", "DEFEATED")
 	Wwise.post_event_id(AK.EVENTS.DEFEATED,self)
 
 func play_respawn():
 	Wwise.post_event_id(AK.EVENTS.RESPAWN,self)
-	

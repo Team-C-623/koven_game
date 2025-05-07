@@ -9,5 +9,4 @@ func _ready():
 
 func damage(attack: Attack):
 	if health_component:
-		print("Health: ", health_component.health)
 		health_component.damage(attack)
