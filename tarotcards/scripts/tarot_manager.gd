@@ -7,7 +7,7 @@ var judgement_active: bool = false
 var priestess_active: bool = false
 var wheel_of_fortune_active: bool = false
 var rng = RandomNumberGenerator.new()
-@onready var main_node = get_node("/root/Main")
+@onready var main_node
 var active_timers := {}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

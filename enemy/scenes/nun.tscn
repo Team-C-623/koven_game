@@ -148,8 +148,10 @@ libraries = {
 
 [node name="AkEvent3D" type="AkEvent3D" parent="."]
 event = ExtResource("9_pt4vu")
+is_environment_aware = true
 
 [node name="AkListener3D" type="AkListener3D" parent="."]
+is_spatial = true
 
 [connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
 [connection signal="nun_die" from="HealthComponent" to="." method="_on_health_component_nun_die"]

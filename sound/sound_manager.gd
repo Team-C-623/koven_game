@@ -51,9 +51,6 @@ func play_nun_projectile(): #not used, event node attached to nun scene is posti
 
 func play_menu_boop():
 	Wwise.post_event_id(AK.EVENTS.MENU_BOOP,self)
-	
-func play_queue_credits(): #not called
-	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
 
 func play_text_scrolling():
 	Wwise.post_event_id(AK.EVENTS.TEXT_SCROLL_TRIMMED,self)
@@ -111,6 +108,13 @@ func play_mad_judge():
 func play_shackles_on():
 	Wwise.post_event_id(AK.EVENTS.SHACKLES_ON,self)
 
+func play_boss_knife():
+	Wwise.post_event_id(AK.EVENTS.BOSS_KNIFE_ATTACKS,self)
+
+func play_witch_dialogue():
+	Wwise.post_event_id(AK.EVENTS.WITCH_DIALOGUE,self)
+
+
 
 # MUSIC
 func play_castle_music(_floor_state: String = "floor1"): # called in main.gd (_entered)
@@ -143,3 +147,14 @@ func play_defeated(): # called in health_component.gd
 
 func play_respawn():
 	Wwise.post_event_id(AK.EVENTS.RESPAWN,self)
+
+func play_boss_music(): #needs to be added
+	Wwise.set_state("LOCATION", "BOSS")
+	Wwise.post_event_id(AK.EVENTS.ENTER_BOSS_ROOM,self)
+	
+func play_victory(): #needs to be added
+	Wwise.post_event_id(AK.EVENTS.VICTORY,self)
+
+func play_queue_credits(): #not called
+	Wwise.set_state("LOCATION","credits")
+	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
