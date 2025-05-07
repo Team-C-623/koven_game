@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca3hxy6kfs4tj"]
+[gd_scene load_steps=7 format=3 uid="uid://ca3hxy6kfs4tj"]
 
 [ext_resource type="Script" path="res://scene_transition/scripts/transition_screen.gd" id="1_3adoo"]
 
@@ -15,6 +15,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dava2"]
+resource_name = "cut_to_black"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_1rbuf"]
@@ -52,6 +68,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hp27s"]
 _data = {
 "RESET": SubResource("Animation_qu8kx"),
+"cut_to_black": SubResource("Animation_dava2"),
 "fade_to_black": SubResource("Animation_1rbuf"),
 "fade_to_normal": SubResource("Animation_xfgwx")
 }

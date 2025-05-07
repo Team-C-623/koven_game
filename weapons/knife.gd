@@ -23,7 +23,6 @@ func _die() -> void:
 	
 func _on_knife_hit_box_area_entered(area):
 	if area is HitboxComponent:
-		print("Hitting player")
 		var hitbox : HitboxComponent = area
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage

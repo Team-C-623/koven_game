@@ -23,7 +23,6 @@ func _ready():
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
 
-
 func _physics_process(delta: float) -> void:
 	# Debugging
 	if player_3d == null:
@@ -38,9 +37,7 @@ func _physics_process(delta: float) -> void:
 
 	# Always face the player
 	look_at(player_3d.position)
-	
 
-	
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
 		var attack = Attack.new()

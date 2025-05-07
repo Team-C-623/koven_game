@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func set_currency(value:int) -> void:
 	currency = max(0,value)
-	emit_signal("currency_changed",currency)
+	currency_changed.emit(currency)
 
 func add_currency(amount:int) -> void:
 	set_currency(currency+(amount*modifier))

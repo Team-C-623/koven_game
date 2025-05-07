@@ -30,28 +30,7 @@ func process(_delta: float):
 	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) > enemy.CHASE_DISTANCE:
 		Transitioned.emit(self, "EnemyWander")
 
-# Needs Work On
 func physics_process(delta: float):
-	# This is for multi ray cast
-	#var cast_count := int(angle_cone_of_vision / angle_between_rays) + 1
-	#if player:
-		#for index in range(cast_count):
-			#var cast_vector := (
-				#max_view_distance * Vector3.FORWARD.rotated(Vector3.UP, angle_between_rays * (index - cast_count / 2.0))
-			#)
-			#
-			#ray.cast_to = cast_vector
-			#ray.force_raycast_update()
-			#if ray.is_colliding() and ray.get_collider() is CharacterBody3D:
-				#player = ray.get_collider()
-				#break
-		#
-		#var does_see_player := player != null
-		
-	# For the single ray cast
-	#var direction_to_player = (player.global_position - ray.global_position).normalized()
-	#ray.cast_to = direction_to_player * 800  # 800 is an example length, adjust as needed
-	
 	time_since_last_knife += delta
 	
 	if not player or not ray.is_enabled():
@@ -68,7 +47,7 @@ func physics_process(delta: float):
 			if time_since_last_knife >= shoot_cooldown:
 				shoot_knife()
 				time_since_last_knife = 0.0
-				
+
 func shoot_knife():
 	if health_component.health > 0:
 		if knife and player:
@@ -82,4 +61,3 @@ func shoot_knife():
 			instance.velocity = direction * 10
 			animation_player.play("knife")
 			ak_event_3d.post_event()
-			#SoundManager.play_nun_projectile()

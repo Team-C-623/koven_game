@@ -95,13 +95,11 @@ func _clear_map():
 			chest.queue_free()
 
 func _on_player_died():
-	TransitionScreen.transition()
-	await TransitionScreen.on_transition_finished
-	print("Respawning player")
-	#await get_tree().create_timer(1.0).timeout
-	
+	TransitionScreen.death_transition()
 	# remove all map entities
 	_clear_map()
+	await TransitionScreen.on_transition_finished
+	print("Respawning player")
 	
 	# Respawning Player
 	var live_player = get_tree().current_scene.find_child("Player", true, false)
@@ -127,6 +125,8 @@ func _on_player_died():
 		
 		# reset inventory
 		player.inventory_data.clear()
+		
+		SoundManager.play_start_music()
 		
 	else:
 		print("Player not found or invalid.")

@@ -13,9 +13,17 @@ func _on_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
 		on_transition_finished.emit()
 		animation_player.play("fade_to_normal")
+	if anim_name == "cut_to_black":
+		await get_tree().create_timer(1.0).timeout
+		on_transition_finished.emit()
+		animation_player.play("fade_to_normal")
 	elif anim_name == "fade_to_normal":
 		color_rect.visible = false
 
 func transition():
 	color_rect.visible = true
 	animation_player.play("fade_to_black")
+
+func death_transition():
+	color_rect.visible = true
+	animation_player.play("cut_to_black")

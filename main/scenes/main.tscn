@@ -22,8 +22,6 @@ script = ExtResource("1_nxmt8")
 [node name="Map" type="Node3D" parent="."]
 script = ExtResource("3_akvhc")
 
-[node name="Enemies" type="Node3D" parent="."]
-
 [node name="PlayerSpawner" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
 
