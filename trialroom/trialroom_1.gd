@@ -76,12 +76,12 @@ func _on_dialogue_finished(_result) -> void:
 		"lose":
 			animation_player.play("fade_in") # adjust animation time based on new sounds
 			await animation_player.animation_finished
-			PlayerManager.is_in_trial_room = false
 			await get_tree().create_timer(10.0).timeout
 			SoundManager.stop_trial_room_failed()
 			trial_failed.emit()
 			animation_player.play("fade_out")
 			await animation_player.animation_finished
+			PlayerManager.is_in_trial_room = false
 			queue_free()
 		_:
 			print("No final block match")

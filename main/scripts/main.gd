@@ -124,6 +124,8 @@ func _on_player_died():
 		# Reset health
 		player_health.reset_health()
 		
+		# reset inventory
+		player.inventory_data.clear()
 		
 	else:
 		print("Player not found or invalid.")

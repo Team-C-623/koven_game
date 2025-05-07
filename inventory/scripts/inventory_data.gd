@@ -96,6 +96,11 @@ func add_item(item_data: ItemData) -> bool:
 		print("item not added")
 		return false
 
+func clear() -> void:
+	for i in slot_datas.size():
+		slot_datas[i] = null
+	inventory_updated.emit(self)
+
 		
 		
 	
