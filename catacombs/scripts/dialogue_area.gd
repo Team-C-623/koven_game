@@ -3,6 +3,7 @@ extends Area3D
 @onready var main = get_node("/root/Main")
 @onready var jury: Sprite3D = $"../Jury"
 @onready var prosecutor: Sprite3D = $"../Prosecutor"
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 
 func _on_body_entered(body: Node3D) -> void:
@@ -17,6 +18,7 @@ func _on_body_entered(body: Node3D) -> void:
 			
 		add_child(trial_scene)
 		SoundManager.play_trial_room_music()
+		collision_shape_3d.queue_free()
 
 func _process(_float) -> void:
 	if PlayerManager.has_won_trial_room:
