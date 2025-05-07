@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{564FA88C-F2F7-4907-B737-8F11A3FA7E78}",
     "Language": "SFX",
-    "Hash": "{624CD83B-CF3B-7865-D984-25A29C34AF78}",
+    "Hash": "{8EDA76F4-AF49-F3BB-0177-A7DD5C875C01}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Music_SoundBank",
     "ShortName": "Music_SoundBank",
     "Path": "3589812408.bnk",
@@ -272,6 +272,14 @@
       "CachePath": "7B/{7BB56EB3-E9C4-9178-87B7-DB05B04D57E5}.wem"
      },
      {
+      "Id": "814432851",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player_Death.wav",
+      "CachePath": "5E/{5E070A6C-2CA3-72C9-792E-60AC3A8F1240}.wem"
+     },
+     {
       "Id": "816585314",
       "Language": "SFX",
       "Streaming": "false",
@@ -358,10 +366,14 @@
       "Name": "defeated",
       "ObjectPath": "\\Events\\Music\\defeated",
       "GUID": "{4B3934DE-7794-4CD7-8287-27D47A2D1EA5}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "814432851"
+       }
+      ],
       "ActionSetState": [
        {
         "GroupId": "4071417932",
@@ -2173,6 +2185,6 @@
     ]
    }
   ],
-  "FileHash": "{A0BC752B-1092-9EBD-FC74-7097E129D61D}"
+  "FileHash": "{7819869D-A48C-E59D-5149-88B0E834011B}"
  }
 }
