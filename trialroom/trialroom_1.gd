@@ -71,10 +71,11 @@ func _on_dialogue_finished(_result) -> void:
 			await TransitionScreen.on_transition_finished
 			PlayerManager.is_in_trial_room = false
 			PlayerManager.has_won_trial_room = true
+			PlayerManager.has_saved_merga = true
 			SoundManager.play_castle_music()
 			queue_free()
 		"lose":
-			animation_player.play("fade_in") # adjust animation time based on new sounds
+			animation_player.play("fade_in")
 			await animation_player.animation_finished
 			await get_tree().create_timer(10.0).timeout
 			SoundManager.stop_trial_room_failed()

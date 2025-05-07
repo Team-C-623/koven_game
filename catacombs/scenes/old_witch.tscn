@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://buyyb2qfjxu64"]
+[gd_scene load_steps=5 format=3 uid="uid://buyyb2qfjxu64"]
 
+[ext_resource type="Script" path="res://catacombs/scripts/old_witch.gd" id="1_p1bgi"]
 [ext_resource type="Texture2D" uid="uid://bfxovitjbhiqi" path="res://assets/characters/Old witch final.png" id="1_q0kw2"]
+[ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://UI/scenes/interact_popup.tscn" id="2_w6kal"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbebf"]
 
 [node name="OldWitch" type="StaticBody3D"]
+script = ExtResource("1_p1bgi")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.536936, 0)
@@ -16,3 +19,7 @@ texture = ExtResource("1_q0kw2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.2, 0.1)
 shape = SubResource("BoxShape3D_gbebf")
+
+[node name="InteractPopup" parent="." instance=ExtResource("2_w6kal")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+collision_layer = 8

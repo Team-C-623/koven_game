@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c4n5wt6o8jnth"
+path="res://.godot/imported/soulmother.dialogue-a4c1417c9de8d9149924bae59a3aab47.tres"
+
+[deps]
+
+source_file="res://catacombs/dialogue/soulmother.dialogue"
+dest_files=["res://.godot/imported/soulmother.dialogue-a4c1417c9de8d9149924bae59a3aab47.tres"]
+
+[params]
+
+defaults=true

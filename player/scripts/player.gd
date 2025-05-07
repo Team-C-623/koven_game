@@ -105,9 +105,13 @@ func _physics_process(_delta: float) -> void:
 	var target_fov = BASE_FOV + FOV_CHANGE
 	camera.fov = lerp(camera.fov, target_fov, _delta * 8.0)
 		
+
 	
+	# shooting preconditions:
+	var ui_blocking: bool = inventory_interface.visible or ShopMenu.visible or Journal.visible
+	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch
 	#Shooting 
-	if Input.is_action_just_pressed("shoot") and !inventory_interface.visible and !ShopMenu.visible and !Journal.visible and !PlayerManager.is_in_trial_room:
+	if Input.is_action_just_pressed("shoot") and !ui_blocking and !in_restricted_state:
 		#wand.shoot()
 		if !wand_anim.is_playing():
 			# Animation for shooting
