@@ -22,7 +22,9 @@ func spawn_enemies():
 	for i in range(total_enemies):
 		var enemy_scene = choose_random_enemy()
 		var enemy_instance = enemy_scene.instantiate()
-
+		
+		get_tree().get_current_scene().add_child(enemy_instance)
+		
 		var offset = Vector3(
 			randf_range(-spawn_radius, spawn_radius),
 			0,
@@ -31,8 +33,6 @@ func spawn_enemies():
 
 		var spawn_position = global_position + offset
 		enemy_instance.global_position = spawn_position
-
-		get_tree().get_current_scene().add_child(enemy_instance)
 
 func choose_random_enemy() -> PackedScene:
 	# Weighted choice: 3 monks and 2 nuns
