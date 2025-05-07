@@ -14,12 +14,14 @@ func _ready() -> void:
 func _on_item_use(slot_data: SlotData):
 	card.texture = slot_data.item_data.texture
 	card_hand.visible = true
-	animation_player.play("raise_card")
-	await animation_player.animation_finished
-	animation_player.play("use_card")
-	SoundManager.play_card_burn()
-	await animation_player.animation_finished
-	animation_player.play("lower_hand")
+	#animation_player.play("raise_card")
+	#await animation_player.animation_finished
+	#animation_player.play("use_card")
+	#SoundManager.play_card_burn()
+	#await animation_player.animation_finished
+	#animation_player.play("lower_hand")
+	#await animation_player.animation_finished
+	animation_player.play("full_card_use")
 	await animation_player.animation_finished
 	
 	card_hand.visible = false
