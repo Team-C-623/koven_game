@@ -81,7 +81,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_lnknl"]
 resource_name = "full_card_use"
-length = 3.5
+length = 3.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
