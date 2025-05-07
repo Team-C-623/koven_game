@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://chhgpwvclf7v3"]
+
+[ext_resource type="Texture2D" uid="uid://byelv48ghjtsa" path="res://card_hand/assets/Final left hand.png" id="1_jit7d"]
+[ext_resource type="Script" path="res://card_hand/card_hand.gd" id="1_t37bm"]
+[ext_resource type="Texture2D" uid="uid://b0bisfalgctxx" path="res://card_hand/assets/Left thumb.png" id="4_4e37g"]
+
+[sub_resource type="Animation" id="Animation_g7dqm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8dvkn"]
+resource_name = "use_card"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 850), Vector2(0, 700), Vector2(0, 450), Vector2(0, 800)]
+}
+
+[sub_resource type="Animation" id="Animation_wvywh"]
+resource_name = "use_card"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ka05j"]
+resource_name = "lower_hand"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 500), Vector2(0, 700), Vector2(0, 850)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ri5a5"]
+_data = {
+"RESET": SubResource("Animation_g7dqm"),
+"lower_hand": SubResource("Animation_ka05j"),
+"raise_card": SubResource("Animation_8dvkn"),
+"use_card": SubResource("Animation_wvywh")
+}
+
+[node name="CardHand" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -1090.0
+offset_right = 946.0
+offset_bottom = -122.0
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_t37bm")
+
+[node name="Hand" type="Sprite2D" parent="."]
+position = Vector2(959.5, 369.82)
+scale = Vector2(0.379804, 0.329394)
+texture = ExtResource("1_jit7d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ri5a5")
+}
+
+[node name="Card" type="Sprite2D" parent="."]
+position = Vector2(573, 676)
+scale = Vector2(0.2, 0.2)
+
+[node name="Thumb" type="Sprite2D" parent="."]
+position = Vector2(921, 361)
+scale = Vector2(0.33549, 0.338182)
+texture = ExtResource("4_4e37g")

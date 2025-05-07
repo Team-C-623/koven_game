@@ -24,5 +24,5 @@ func use(_target) -> void:
 	elif name == "The Devil":
 		TarotManager.use_the_devil()
 		
-	SoundManager.play_card_burn()
+
 	
