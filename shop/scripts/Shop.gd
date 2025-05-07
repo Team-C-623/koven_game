@@ -43,7 +43,7 @@ func update_item_description(item: ItemData, selected_button):
 	selected_item = item
 	item_image.texture = item.texture
 	item_name.text = item.name
-	item_description.text = item.description
+	item_description.text = item.effect + "\n\n" + item.description
 	item_cost.text = str(item.cost)
 
 func open():

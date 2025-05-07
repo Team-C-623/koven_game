@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_4t14m")
 name = "Death"
-description = "One of the most misunderstood Tarot cards, Death is not a card about physical death. The Death card speaks of cycles and is a reminder that all things must pass. Hanging on to situations from the past will hinder you from allowing new, better things to enter your life. In every ending lies a chance for a new beginning. 
-
-Effect: Heal to Max Health"
+effect = "Heal to full health."
+description = "One of the most misunderstood Tarot cards, Death is not a card about physical death. The Death card speaks of cycles and is a reminder that all things must pass. Hanging on to situations from the past will hinder you from allowing new, better things to enter your life. In every ending lies a chance for a new beginning."
 texture = ExtResource("2_8t1ff")
 cost = 100
 duration = 999.0

@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_1v2h4")
 name = "Judgement"
-description = " Judgement is a card where your past and your future come together. You are being called on to review your decisions and your actions until now, to ensure they are in-line with where you ultimately want to go. The Judgement card reminds you that your future's not set in stone, and that it's never too late to make a change for the better.
-
-Effect: Deal 2x Damage, but take 2x Damage for 30s"
+effect = "Deal 2x damage, but take 2x damage for 30 seconds."
+description = "Judgement is a card where your past and your future come together. You are being called on to review your decisions and your actions until now, to ensure they are in-line with where you ultimately want to go. The Judgement card reminds you that your future's not set in stone, and that it's never too late to make a change for the better."
 texture = ExtResource("2_s3rv3")
 cost = 50
 duration = 30.0

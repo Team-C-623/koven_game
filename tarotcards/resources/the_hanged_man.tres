@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_2sm4e")
 name = "The Hanged Man"
-description = "The Hanged Man tells you that sometimes small sacrifices are required to benefit the bigger picture. When The Hanged Man arises in your reading, you likely want to make a move but don't know where to begin. Lightening your grip on what's no longer working for you, or detaching from the outcome of your situation, can help you release yourself. 
-
-Effects: Enemies drop double gold for 30s"
+effect = "Enemies drop double gold for 30 seconds."
+description = "The Hanged Man tells you that sometimes small sacrifices are required to benefit the bigger picture. When The Hanged Man arises in your reading, you likely want to make a move but don't know where to begin. Lightening your grip on what's no longer working for you, or detaching from the outcome of your situation, can help you release yourself."
 texture = ExtResource("2_ddpcd")
 cost = 100
 duration = 30.0

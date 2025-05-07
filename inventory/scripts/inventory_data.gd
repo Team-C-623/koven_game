@@ -8,7 +8,6 @@ signal inventory_interact(inventory_data: InventoryData, index: int, button: int
 func _init() -> void:
 	slot_datas.resize(10)
 
-
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = slot_datas[index]
 	
@@ -23,10 +22,7 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	var slot_data = slot_datas[index]
 	
 	var return_slot_data: SlotData
-	#var can_merge = slot_data and slot_data.can_fully_merge_with(grabbed_slot_data)
-	#print("Can merge condition: " + str(can_merge))
-	#var can_merge_test = slot_data.can_fully_merge_with(grabbed_slot_data)
-	#print("Can merge slots?: " + str(can_merge_test))
+	
 	if slot_data and slot_data.can_fully_merge_with(grabbed_slot_data):
 		slot_data.fully_merge_with(grabbed_slot_data)
 	else:
@@ -79,8 +75,7 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 			slot_datas[index] = slot_data
 			inventory_updated.emit(self)
 			return true
-				
-			
+	
 	return false
 
 func on_slot_clicked(index: int, button: int) -> void:
@@ -100,8 +95,3 @@ func clear() -> void:
 	for i in slot_datas.size():
 		slot_datas[i] = null
 	inventory_updated.emit(self)
-
-		
-		
-	
-		

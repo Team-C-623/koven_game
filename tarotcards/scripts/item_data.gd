@@ -3,6 +3,7 @@ class_name ItemData
 
 enum Rarity { COMMON, RARE, SPECIAL }
 @export var name: String = ""
+@export_multiline var effect: String = ""
 @export_multiline var description: String = ""
 @export var texture: Texture
 @export var cost: int

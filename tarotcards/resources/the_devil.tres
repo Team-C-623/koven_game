@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_1uobo")
 name = "The Devil"
-description = " The Devil card carries themes of restraint and powerlessness. When it comes up in your Tarot reading, you are likely feeling stuck. The Devil has convinced you that you have no options, but this couldn't be further from the truth. You hold the keys to your own freedom, but it's up to you to open the lock. 
-
-Effect: Heal for 25% Max Health"
+effect = "Heal 25% max health."
+description = "The Devil card carries themes of restraint and powerlessness. When it comes up in your Tarot reading, you are likely feeling stuck. The Devil has convinced you that you have no options, but this couldn't be further from the truth. You hold the keys to your own freedom, but it's up to you to open the lock."
 texture = ExtResource("2_lckav")
 cost = 50
 duration = 999.0

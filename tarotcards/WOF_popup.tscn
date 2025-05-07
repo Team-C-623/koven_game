@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxyeuf3dphsef"]
+[gd_scene load_steps=6 format=3 uid="uid://bxyeuf3dphsef"]
 
 [ext_resource type="Script" path="res://tarotcards/wof_popup.gd" id="1_26ogq"]
+[ext_resource type="FontFile" uid="uid://k1guuqtwah8n" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="2_a7yto"]
 
 [sub_resource type="Animation" id="Animation_p4cul"]
 length = 0.001
@@ -72,6 +73,10 @@ script = ExtResource("1_26ogq")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_a7yto")
+theme_override_font_sizes/font_size = 28
+text = "Wheel of Fortune
+Popup"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
