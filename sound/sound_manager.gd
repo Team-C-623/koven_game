@@ -12,8 +12,10 @@ func _ready() -> void:
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
 	
 func _process(_delta: float) -> void:
-	if PlayerManager.player != null:
+	if PlayerManager.is_in_trial_room == false:
 		Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
+	else:
+		Wwise.set_rtpc_value("Health", 100,self)
 
 func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
@@ -114,7 +116,14 @@ func play_boss_knife():
 func play_witch_dialogue():
 	Wwise.post_event_id(AK.EVENTS.WITCH_DIALOGUE,self)
 
+func play_journal_pickup():
+	Wwise.post_event_id(AK.EVENTS.JOURNAL_PICKUP,self)
 
+func play_journal_open():
+	Wwise.post_event_id(AK.EVENTS.JOURNAL_OPEN,self)
+	
+func play_journal_close():
+	Wwise.post_event_id(AK.EVENTS.JOURNAL_CLOSE,self)
 
 # MUSIC
 func play_castle_music(_floor_state: String = "floor1"): # called in main.gd (_entered)

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F4EC5305-9A58-4BD5-9ACE-1C845C28C69D}",
     "Language": "SFX",
-    "Hash": "{490F4855-60EB-E71D-2903-FC904862C3C6}",
+    "Hash": "{249D7A91-1B6F-D985-1F99-31E7FBC172D9}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX_SoundBank",
     "ShortName": "SFX_SoundBank",
     "Path": "2641024368.bnk",
@@ -30,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "Player_TakingDamage_TrueFINAL3.wav",
       "CachePath": "7C/{7C8D26BD-6F94-C6B2-978F-1C9FEF3B2A1A}.wem"
+     },
+     {
+      "Id": "97011667",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Journal_Close.wav",
+      "CachePath": "B8/{B8F81AE5-AD0D-3371-EDC4-A76E8F470DB2}.wem"
      },
      {
       "Id": "121644684",
@@ -78,6 +86,22 @@
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Enemy_Damage_2.wav",
       "CachePath": "74/{74E48DE6-31DE-9AA8-9386-F3E32B4A18AF}.wem"
+     },
+     {
+      "Id": "271119506",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Trial_Room_Failed_Short_Angry.wav",
+      "CachePath": "98/{98BB208C-5661-A0EA-B4A9-9B436475BB8C}.wem"
+     },
+     {
+      "Id": "271783879",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jury_Chatter_Volume.wav",
+      "CachePath": "0D/{0D6D20D2-465C-FF9D-59E0-A6C3C7FCC515}.wem"
      },
      {
       "Id": "292569167",
@@ -216,12 +240,12 @@
       "CachePath": "12/{12F575CC-9D6A-90CD-7F3D-ADB519FAEC48}.wem"
      },
      {
-      "Id": "791562161",
+      "Id": "852910645",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Jury_Chatter.wav",
-      "CachePath": "56/{564CFE0F-7079-2636-FA61-67644C926AD7}.wem"
+      "ShortName": "Journal_Pick_Up.wav",
+      "CachePath": "CA/{CA626CD5-87A9-BB4C-E049-1602B3CB160B}.wem"
      },
      {
       "Id": "871225691",
@@ -280,6 +304,14 @@
       "CachePath": "0D/{0D4C0838-7608-93CE-E6BA-4835563623C7}.wem"
      },
      {
+      "Id": "948377704",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Journal_Open.wav",
+      "CachePath": "C2/{C2E34FF9-982C-FCD4-5F23-1A77D84B4111}.wem"
+     },
+     {
       "Id": "989007428",
       "Language": "SFX",
       "Streaming": "false",
@@ -302,14 +334,6 @@
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Large_Enemy_Damage.wav",
       "CachePath": "BD/{BDC11752-C075-E782-9579-FE8EC2DE8CFF}.wem"
-     },
-     {
-      "Id": "1051480240",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Trial_Room_Failed_Short.wav",
-      "CachePath": "DB/{DB7F2DB1-C99A-15D1-ACCE-75C5B58AD4B3}.wem"
      }
     ],
     "Events": [
@@ -411,6 +435,48 @@
       ]
      },
      {
+      "Id": "404720619",
+      "Name": "Journal_Close",
+      "ObjectPath": "\\Events\\SFX_Events\\Journal_Close",
+      "GUID": "{2D08CC91-7E3E-42FB-A615-D908FBBD3E26}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.5013379",
+      "DurationMax": "0.5013379",
+      "MediaRefs": [
+       {
+        "Id": "97011667"
+       }
+      ]
+     },
+     {
+      "Id": "2919997485",
+      "Name": "Journal_Open",
+      "ObjectPath": "\\Events\\SFX_Events\\Journal_Open",
+      "GUID": "{8CF6076B-ADB8-4A00-98D1-BDFA83DB9105}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.92800456",
+      "DurationMax": "0.92800456",
+      "MediaRefs": [
+       {
+        "Id": "948377704"
+       }
+      ]
+     },
+     {
+      "Id": "2362228609",
+      "Name": "Journal_PickUp",
+      "ObjectPath": "\\Events\\SFX_Events\\Journal_PickUp",
+      "GUID": "{4224A69B-3199-465E-9D18-8A69E7AC4DCF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9297052",
+      "DurationMax": "0.9297052",
+      "MediaRefs": [
+       {
+        "Id": "852910645"
+       }
+      ]
+     },
+     {
       "Id": "1639161750",
       "Name": "JournalPageTurn",
       "ObjectPath": "\\Events\\SFX_Events\\JournalPageTurn",
@@ -457,10 +523,12 @@
       "Name": "Jury_Whispers",
       "ObjectPath": "\\Events\\SFX_Events\\Jury_Whispers",
       "GUID": "{C65A4AFD-BFA1-47FD-A733-2A91796A478A}",
-      "DurationType": "Infinite",
+      "DurationType": "OneShot",
+      "DurationMin": "56.000023",
+      "DurationMax": "56.000023",
       "MediaRefs": [
        {
-        "Id": "791562161"
+        "Id": "271783879"
        }
       ]
      },
@@ -648,7 +716,7 @@
       "DurationMax": "36",
       "MediaRefs": [
        {
-        "Id": "1051480240"
+        "Id": "271119506"
        }
       ]
      },
@@ -711,6 +779,6 @@
     ]
    }
   ],
-  "FileHash": "{B63A30D3-AA27-2D8D-79A7-1F639372EB98}"
+  "FileHash": "{57DB858B-EBE6-5137-1311-50A23F76CF0B}"
  }
 }

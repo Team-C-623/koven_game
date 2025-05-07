@@ -29,6 +29,9 @@ namespace AK
         static const AkUniqueID FLOOR2 = 3162820673U;
         static const AkUniqueID FLOOR3 = 3162820672U;
         static const AkUniqueID FOOTSTEPS_01 = 2848855924U;
+        static const AkUniqueID JOURNAL_CLOSE = 404720619U;
+        static const AkUniqueID JOURNAL_OPEN = 2919997485U;
+        static const AkUniqueID JOURNAL_PICKUP = 2362228609U;
         static const AkUniqueID JOURNALPAGETURN = 1639161750U;
         static const AkUniqueID JUDGE_DIALOGUE_BY_FIRE = 2109575468U;
         static const AkUniqueID JUDGE_DIALOGUE_SILENCE = 1862952859U;
