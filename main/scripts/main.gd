@@ -2,7 +2,7 @@ extends Node3D
 
 var cata_scene = preload("res://catacombs/scenes/catacombs.tscn")
 const PickUp = preload("res://interactable/scenes/pick_up.tscn")
-
+var journal_open = false
 signal entered
 
 @onready var player: CharacterBody3D = $Player

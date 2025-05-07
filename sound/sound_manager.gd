@@ -114,7 +114,14 @@ func play_boss_knife():
 func play_witch_dialogue():
 	Wwise.post_event_id(AK.EVENTS.WITCH_DIALOGUE,self)
 
+func play_journal_pickup():
+	Wwise.post_event_id(AK.EVENTS.JOURNAL_PICKUP,self)
 
+func play_journal_open():
+	Wwise.post_event_id(AK.EVENTS.JOURNAL_OPEN,self)
+	
+func play_journal_close():
+	Wwise.post_event_id(AK.EVENTS.JOURNAL_CLOSE,self)
 
 # MUSIC
 func play_castle_music(_floor_state: String = "floor1"): # called in main.gd (_entered)

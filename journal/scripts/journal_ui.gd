@@ -27,10 +27,10 @@ func update_slots():
 func _process(_delta):
 	if Input.is_action_just_pressed("journal") and !inventory_interface.visible and !ShopMenu.visible and !PlayerManager.is_in_trial_room:
 		if is_open:
-			SoundManager.play_page_turn()
+			SoundManager.play_journal_close()
 			close()
 		else:
-			SoundManager.play_page_turn()
+			SoundManager.play_journal_open()
 			open()
 
 func update_journal_description(new_journal: JournalEntry):
