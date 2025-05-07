@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Boss2
 
-@onready var player_3d=$"../Player"
+@onready var player_3d = get_node("/root/Main/Player")
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.5
 @export var GRAB_DISTANCE: float = 2.0
