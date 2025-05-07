@@ -1,17 +1,17 @@
 extends CharacterBody3D
 class_name Boss2
 
-@onready var player_3d=$"../Player"
+@onready var player_3d = get_node("/root/Main/Player")
+@onready var sprite: Sprite3D = $Sprite3D
+@onready var damage_timer: Timer = $DamageTimer
+@onready var health_component: HealthComponent = $HealthComponent
+
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.5
 @export var GRAB_DISTANCE: float = 2.0
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 20.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
-@onready var health_component: HealthComponent = $HealthComponent
-
-@onready var sprite: Sprite3D = $Sprite3D
-@onready var damage_timer: Timer = $DamageTimer
 
 var direction: Vector3
 var right_bounds: Vector3

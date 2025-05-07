@@ -82,7 +82,7 @@ func stop_trial_room_failed():
 		AK.EVENTS.TRIAL_ROOM_FAILED,
 		AkUtils.AkActionOnEventType.AK_ACTION_ON_EVENT_STOP, # stop event enum
 		self, # gameobject
-		2000, # fade out time (ms)
+		1, # fade out time (ms)
 		AkUtils.AkCurveInterpolation.AK_CURVE_LINEAR # curve interpolation enum
 	)
 

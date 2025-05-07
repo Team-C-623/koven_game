@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_j22dw")
 entry_id = 0
-title = "letter"
+title = "Jean's Letter to Merga"
 texture = ExtResource("1_x6l1s")

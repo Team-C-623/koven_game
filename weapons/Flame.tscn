@@ -9,8 +9,11 @@ metallic = 0.5
 emission_enabled = true
 emission = Color(0.898039, 0.690196, 0.168627, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_baskv"]
-size = Vector3(0.01, 0.05, 0.01)
+[sub_resource type="SphereMesh" id="SphereMesh_u1y57"]
+radius = 0.007
+height = 0.06
+radial_segments = 12
+rings = 8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_euux0"]
 size = Vector3(0.0177002, 0.0193634, 0.17038)
@@ -101,7 +104,7 @@ script = ExtResource("1_bn3o8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_iq3wv")
-mesh = SubResource("BoxMesh_baskv")
+mesh = SubResource("SphereMesh_u1y57")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 5.58794e-10, 0, -5.58794e-10, 1, 0, 0, 0)

@@ -2,6 +2,9 @@ extends Node
 class_name State
 signal Transitioned(state: State, new_state_name: String)
 
+func _ready():
+	Transitioned.emit(self, "EnemyWander")
+
 func enter():
 	pass
 

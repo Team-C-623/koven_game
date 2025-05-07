@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_00k58")
 entry_id = 1
-title = "decree"
+title = "Holy Order of Physicians Decree"
 texture = ExtResource("1_m15vk")

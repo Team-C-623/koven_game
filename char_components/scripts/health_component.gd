@@ -30,7 +30,6 @@ func damage(attack: Attack):
 			SoundManager.play_enemy_damage_sound()
 	else:
 		is_dead = true
-		print("dying")
 		if get_parent().is_in_group("Enemies Group"):
 			SoundManager.play_enemy_death()
 			if get_parent() is Monk:

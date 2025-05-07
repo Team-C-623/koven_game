@@ -181,11 +181,18 @@ shaded = true
 texture = ExtResource("12_wdqnp")
 
 [node name="EnemyBlocker" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.3)
 collision_layer = 64
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="EnemyBlocker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.3)
 depth = 0.2
 polygon = PackedVector2Array(-2, 0, -2, 4, 2, 4, 2, 0)
+
+[node name="PlayerBlocker" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, -1)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="PlayerBlocker"]
+depth = 0.2
+polygon = PackedVector2Array(-6.4, 0, -6.4, 4, 6.4, 4, 6.4, 0)
 
 [connection signal="body_entered" from="Dialogue/DialogueArea" to="Dialogue/DialogueArea" method="_on_body_entered"]

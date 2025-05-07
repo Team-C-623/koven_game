@@ -77,9 +77,10 @@ func _on_dialogue_finished(_result) -> void:
 		"lose":
 			animation_player.play("fade_in")
 			await animation_player.animation_finished
-			await get_tree().create_timer(10.0).timeout
+			await get_tree().create_timer(4.0).timeout
 			SoundManager.stop_trial_room_failed()
 			trial_failed.emit()
+			await get_tree().create_timer(0.1).timeout
 			animation_player.play("fade_out")
 			PlayerManager.is_in_trial_room = false
 			await animation_player.animation_finished

@@ -96,6 +96,7 @@ func _clear_map():
 
 func _on_player_died():
 	TransitionScreen.death_transition()
+	await get_tree().create_timer(0.1).timeout
 	# remove all map entities
 	_clear_map()
 	await TransitionScreen.on_transition_finished

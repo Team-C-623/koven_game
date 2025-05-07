@@ -11,8 +11,8 @@ func set_currency(value:int) -> void:
 	currency_changed.emit(currency)
 
 func add_currency(amount:int) -> void:
-	set_currency(currency+(amount*modifier))
-	
+	set_currency(currency + int(amount*modifier))
+
 func subtract_currency(amount:int) -> bool:
 	if amount > currency:
 		return false #not enough currency

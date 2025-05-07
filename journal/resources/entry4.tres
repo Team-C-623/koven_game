@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_h80y0")
 entry_id = 3
-title = "diary"
+title = "Merga's Diary"
 texture = ExtResource("2_l4q81")

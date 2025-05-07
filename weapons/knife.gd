@@ -1,8 +1,8 @@
 extends Node3D
 
-const SPEED = 5.0
+const SPEED = 3.5
 
-@onready var mesh = $MeshInstance3D
+@onready var mesh = $Mesh
 @onready var ray = $RayCast3D
 @onready var knife_hit_box = $KnifeHitBox
 

@@ -52,8 +52,6 @@ func _ready() -> void:
 	inventory_data = InventoryData.new()
 	Wwise.set_state("PLAYER_STATE", "ALIVE")
 
-
-	
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is escape by default
 	if event.is_action_pressed("ui_cancel"):

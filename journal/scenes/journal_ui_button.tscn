@@ -19,10 +19,10 @@ script = ExtResource("2_w0uha")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 255.0
-offset_top = 73.0
-offset_right = 980.0
-offset_bottom = 253.0
+offset_left = 244.0
+offset_top = 78.0
+offset_right = 969.0
+offset_bottom = 258.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_hdjjq")
 theme_override_font_sizes/font_size = 72
