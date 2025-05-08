@@ -72,4 +72,7 @@ func _on_DamageTimer_timeout():
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
+
+func play_lasso_windup():
+	SoundManager.play_lasso_windup()
 	

@@ -127,6 +127,12 @@ func play_journal_open():
 	
 func play_journal_close():
 	Wwise.post_event_id(AK.EVENTS.JOURNAL_CLOSE,self)
+	
+func play_lasso_windup():
+	Wwise.post_event_id(AK.EVENTS.LASSO_WINDUP,self)
+	
+func play_lasso_attach():
+	Wwise.post_event_id(AK.EVENTS.LASSO_ATTACH,self)
 
 # MUSIC
 func play_castle_music(_floor_state: String = "floor1"): # called in main.gd (_entered)
@@ -170,3 +176,4 @@ func play_victory(): #needs to be added
 func play_queue_credits(): #not called
 	Wwise.set_state("LOCATION","credits")
 	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
+	

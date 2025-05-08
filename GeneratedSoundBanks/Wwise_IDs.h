@@ -48,6 +48,7 @@ namespace AK
         static const AkUniqueID SHACKLES_OFF = 3057807107U;
         static const AkUniqueID SHACKLES_ON = 3395044911U;
         static const AkUniqueID SHOP_BUY = 1495252156U;
+        static const AkUniqueID SOULMOTHER_DIALOGUE = 3912362598U;
         static const AkUniqueID TAROTBURN = 2451853040U;
         static const AkUniqueID TAROTPICKUP = 1908595231U;
         static const AkUniqueID TEXT_SCROLL_TRIMMED = 587584267U;
