@@ -1,4 +1,5 @@
 ~ start
+do SoundManager.play_soulmother_dialogue()
 Soulmother: I miss the days when our Koven could practice witchcraft in this castle without prosecution.
 Soulmother: But that was before Heinrich Kramer and his Order rose to power, subjecting us to his religious tyranny.
 Soulmother: He has deemed the practice of witchcraft illegal, punishable by death.

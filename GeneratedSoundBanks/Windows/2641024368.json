@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F4EC5305-9A58-4BD5-9ACE-1C845C28C69D}",
     "Language": "SFX",
-    "Hash": "{249D7A91-1B6F-D985-1F99-31E7FBC172D9}",
+    "Hash": "{B91293AA-AD5C-ECCB-7FC9-1B07B5AF5022}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX_SoundBank",
     "ShortName": "SFX_SoundBank",
     "Path": "2641024368.bnk",
@@ -208,6 +208,14 @@
       "CachePath": "50/{50BA1541-96D9-B318-C5A3-E984F8A5F112}.wem"
      },
      {
+      "Id": "632508375",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Old_SoulMother_Dialogue.wav",
+      "CachePath": "B9/{B9710FC5-8514-2DD2-4ED7-99DB4F634396}.wem"
+     },
+     {
       "Id": "640454819",
       "Language": "SFX",
       "Streaming": "false",
@@ -254,14 +262,6 @@
       "Location": "Memory",
       "ShortName": "Menu_Boop.wav",
       "CachePath": "C5/{C5360FD5-EC25-38F3-A071-A89396ED8167}.wem"
-     },
-     {
-      "Id": "873575782",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Koven_Dialogue_Example_1.wav",
-      "CachePath": "DF/{DF57D315-3919-FF35-24CF-3A8E6EA3003E}.wem"
      },
      {
       "Id": "877110523",
@@ -334,6 +334,14 @@
       "Location": "Memory",
       "ShortName": "SFX\\Combat\\Large_Enemy_Damage.wav",
       "CachePath": "BD/{BDC11752-C075-E782-9579-FE8EC2DE8CFF}.wem"
+     },
+     {
+      "Id": "1070463378",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Witch_Dialogue_Chuckle.wav",
+      "CachePath": "02/{02E2947F-590B-8ABF-4C0C-81FBFA2A6EDD}.wem"
      }
     ],
     "Events": [
@@ -651,6 +659,20 @@
       ]
      },
      {
+      "Id": "3912362598",
+      "Name": "SoulMother_Dialogue",
+      "ObjectPath": "\\Events\\SFX_Events\\SoulMother_Dialogue",
+      "GUID": "{E54CAB1E-1BE0-4712-BCE4-C4602FC88A46}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9712245",
+      "DurationMax": "0.9712245",
+      "MediaRefs": [
+       {
+        "Id": "632508375"
+       }
+      ]
+     },
+     {
       "Id": "2451853040",
       "Name": "TarotBurn",
       "ObjectPath": "\\Events\\SFX_Events\\TarotBurn",
@@ -768,17 +790,17 @@
       "ObjectPath": "\\Events\\SFX_Events\\Witch_Dialogue",
       "GUID": "{52429AD2-45F5-4B47-85A9-D28696018670}",
       "DurationType": "OneShot",
-      "DurationMin": "2.4280498",
-      "DurationMax": "2.4280498",
+      "DurationMin": "1.6996372",
+      "DurationMax": "1.6996372",
       "MediaRefs": [
        {
-        "Id": "873575782"
+        "Id": "1070463378"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{57DB858B-EBE6-5137-1311-50A23F76CF0B}"
+  "FileHash": "{758D6B41-9FD2-01C8-E071-09AE39D0B7CA}"
  }
 }
