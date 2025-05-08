@@ -15,8 +15,8 @@ func _on_item_use(slot_data: SlotData):
 	card.texture = slot_data.item_data.texture
 	card_hand.visible = true
 	animation_player.play("full_card_use")
-	await get_tree().create_timer(1.15).timeout
-	SoundManager.play_card_burn()
 	await animation_player.animation_finished
-
 	card_hand.visible = false
+	
+func play_card_burn():
+	SoundManager.play_card_burn()
