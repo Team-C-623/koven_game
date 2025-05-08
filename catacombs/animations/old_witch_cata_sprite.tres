@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://4rgolcqigxsv"]
+
+[ext_resource type="Texture2D" uid="uid://cfftowpypby21" path="res://trialroom/art/soulmother.png" id="1_a0rld"]
+[ext_resource type="Texture2D" uid="uid://crgmmhsrj2x4a" path="res://assets/characters/soulmother_frame2.png" id="2_h5mdl"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a0rld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h5mdl")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.0
+}]

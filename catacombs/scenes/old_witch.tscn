@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://buyyb2qfjxu64"]
 
 [ext_resource type="Script" path="res://catacombs/scripts/old_witch.gd" id="1_p1bgi"]
-[ext_resource type="Texture2D" uid="uid://bfxovitjbhiqi" path="res://assets/characters/Old witch final.png" id="1_q0kw2"]
 [ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://UI/scenes/interact_popup.tscn" id="2_w6kal"]
+[ext_resource type="SpriteFrames" uid="uid://4rgolcqigxsv" path="res://catacombs/animations/old_witch_cata_sprite.tres" id="2_y44h3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbebf"]
 size = Vector3(1.18817, 1, 0.845581)
@@ -10,12 +10,13 @@ size = Vector3(1.18817, 1, 0.845581)
 [node name="OldWitch" type="StaticBody3D"]
 script = ExtResource("1_p1bgi")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.679784, 0)
 visibility_range_end = 20.0
 billboard = 2
 shaded = true
-texture = ExtResource("1_q0kw2")
+sprite_frames = ExtResource("2_y44h3")
+animation = &"talk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0376343, 0.2, 0.0691162)
