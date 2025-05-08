@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1kgm5cir22qn"
 path.s3tc="res://.godot/imported/torch.png-2580fcbb0b7ee5934d6a882982ef0992.s3tc.ctex"
+path.etc2="res://.godot/imported/torch.png-2580fcbb0b7ee5934d6a882982ef0992.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/environment/torch.png"
-dest_files=["res://.godot/imported/torch.png-2580fcbb0b7ee5934d6a882982ef0992.s3tc.ctex"]
+dest_files=["res://.godot/imported/torch.png-2580fcbb0b7ee5934d6a882982ef0992.s3tc.ctex", "res://.godot/imported/torch.png-2580fcbb0b7ee5934d6a882982ef0992.etc2.ctex"]
 
 [params]
 

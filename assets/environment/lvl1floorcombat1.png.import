@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bey33kcn1gdsu"
 path.s3tc="res://.godot/imported/lvl1floorcombat1.png-382b8bd5d3583233c9261d5c31fad20f.s3tc.ctex"
+path.etc2="res://.godot/imported/lvl1floorcombat1.png-382b8bd5d3583233c9261d5c31fad20f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/environment/lvl1floorcombat1.png"
-dest_files=["res://.godot/imported/lvl1floorcombat1.png-382b8bd5d3583233c9261d5c31fad20f.s3tc.ctex"]
+dest_files=["res://.godot/imported/lvl1floorcombat1.png-382b8bd5d3583233c9261d5c31fad20f.s3tc.ctex", "res://.godot/imported/lvl1floorcombat1.png-382b8bd5d3583233c9261d5c31fad20f.etc2.ctex"]
 
 [params]
 

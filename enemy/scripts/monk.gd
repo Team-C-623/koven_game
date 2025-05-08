@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	look_at(player_3d.position)
 
 func _on_hitbox_area_entered(area: Area3D) -> void:
-	if area is HitboxComponent:
+	if area is HitboxComponent and health_component.health > 0:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox = area
@@ -55,7 +55,7 @@ func _on_hitbox_area_exited(area: Area3D) -> void:
 		damage_timer.stop()
 
 func _on_DamageTimer_timeout():
-	if current_hitbox:
+	if current_hitbox and health_component.health > 0:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)

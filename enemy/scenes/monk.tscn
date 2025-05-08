@@ -44,21 +44,6 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
-[sub_resource type="Animation" id="Animation_k4lvs"]
-resource_name = "monk_chase"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_57cty"), ExtResource("8_foggx"), ExtResource("2_57cty")]
-}
-
 [sub_resource type="Animation" id="Animation_jnnlx"]
 resource_name = "death"
 length = 1.25
@@ -81,6 +66,21 @@ tracks/1/path = NodePath("Sprite3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, -0.5, 0)
+
+[sub_resource type="Animation" id="Animation_k4lvs"]
+resource_name = "monk_chase"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_57cty"), ExtResource("8_foggx"), ExtResource("2_57cty")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5yn1g"]
 _data = {

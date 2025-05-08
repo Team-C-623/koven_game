@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfxovitjbhiqi"
 path.s3tc="res://.godot/imported/Old witch final.png-47e5c76d1ef492f6f63a5cfccf57a97a.s3tc.ctex"
+path.etc2="res://.godot/imported/Old witch final.png-47e5c76d1ef492f6f63a5cfccf57a97a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/characters/Old witch final.png"
-dest_files=["res://.godot/imported/Old witch final.png-47e5c76d1ef492f6f63a5cfccf57a97a.s3tc.ctex"]
+dest_files=["res://.godot/imported/Old witch final.png-47e5c76d1ef492f6f63a5cfccf57a97a.s3tc.ctex", "res://.godot/imported/Old witch final.png-47e5c76d1ef492f6f63a5cfccf57a97a.etc2.ctex"]
 
 [params]
 

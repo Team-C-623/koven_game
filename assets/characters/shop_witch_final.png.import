@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcjrikl6m3q3n"
 path.s3tc="res://.godot/imported/shop_witch_final.png-433bb5536faefedbb10f62c2d52292c4.s3tc.ctex"
+path.etc2="res://.godot/imported/shop_witch_final.png-433bb5536faefedbb10f62c2d52292c4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/characters/shop_witch_final.png"
-dest_files=["res://.godot/imported/shop_witch_final.png-433bb5536faefedbb10f62c2d52292c4.s3tc.ctex"]
+dest_files=["res://.godot/imported/shop_witch_final.png-433bb5536faefedbb10f62c2d52292c4.s3tc.ctex", "res://.godot/imported/shop_witch_final.png-433bb5536faefedbb10f62c2d52292c4.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://clw4gshnkj1vi"
 path.s3tc="res://.godot/imported/Final boss 1 lasso sprite 2.png-8512119db94329c35f97bdb9263f4d3b.s3tc.ctex"
+path.etc2="res://.godot/imported/Final boss 1 lasso sprite 2.png-8512119db94329c35f97bdb9263f4d3b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/characters/Final boss 1 lasso sprite 2.png"
-dest_files=["res://.godot/imported/Final boss 1 lasso sprite 2.png-8512119db94329c35f97bdb9263f4d3b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Final boss 1 lasso sprite 2.png-8512119db94329c35f97bdb9263f4d3b.s3tc.ctex", "res://.godot/imported/Final boss 1 lasso sprite 2.png-8512119db94329c35f97bdb9263f4d3b.etc2.ctex"]
 
 [params]
 
