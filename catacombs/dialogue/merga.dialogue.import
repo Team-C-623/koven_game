@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://tlvswnxdjkha"
+path="res://.godot/imported/merga.dialogue-af2b2329f8342a11fad91d2aa815d4c6.tres"
+
+[deps]
+
+source_file="res://catacombs/dialogue/merga.dialogue"
+dest_files=["res://.godot/imported/merga.dialogue-af2b2329f8342a11fad91d2aa815d4c6.tres"]
+
+[params]
+
+defaults=true

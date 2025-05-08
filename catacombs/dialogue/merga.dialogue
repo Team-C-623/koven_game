@@ -1,0 +1,29 @@
+~ start
+do SoundManager.play_witch_dialogue()
+Merga the Magesmith: Hello sister, thank you for saving me from execution.
+Merga the Magesmith: Would you like to purchase tarot cards to help you in your journey?
+- Yes => shop
+- No
+	Merga the Magesmith: Very well.
+	=> END
+- How were you captured? => story
+
+~ shop
+do ShopMenu.open()
+=> END
+
+~ story
+Merga the Magesmith: I was visiting the apothecary, and they reported me to The Order for sinister intentions.
+Merga the Magesmith: They believed I corresponded with the devil for my pregnancy.
+- Does your husband possess the same judgement?
+	Merga the Magesmith: Of course not.
+	Merga the Magesmith: Our matrimony is not based on deceit, like Bishop Kramer so wishes it was.
+	Merga the Magesmith: My husband is one of few left who do not blindly obey his holy orders.
+	- Bishop Kramer is a tyrant.
+		Merga the Magesmith: Yes. But remember he is only flesh and blood. Along with every theologian under his control. No one is a match for your magic.
+		Merga the Magesmith: Bring this castle to justice and free the rest of our Koven.
+		Merga the Magesmith: Blessed be.
+=> END
+
+
+
