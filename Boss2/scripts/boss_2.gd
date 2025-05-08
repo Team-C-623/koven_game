@@ -9,7 +9,7 @@ class_name Boss2
 @export var CHASE_DISTANCE: float = 3.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
 @onready var health_component: HealthComponent = $HealthComponent
-
+@onready var boss_leap: CanvasLayer = $BossLeap
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
 
@@ -18,7 +18,7 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
-var dancing := true
+var is_leaping := false
 
 func _ready():
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
@@ -32,7 +32,8 @@ func _find_player():
 		print("Player found: ", player_3d.name)
 
 func _physics_process(delta: float) -> void:
-	sprite.rotate_y(delta)
+	if not is_leaping:
+		sprite.rotate_y(delta)
 
 	# Debugging
 	if player_3d == null:
@@ -44,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 	
 	move_and_slide()
-
+	
 	# Always face the player
 	look_at(player_3d.position)
 	

@@ -4,15 +4,15 @@ class_name BossGrab
 @onready var enemy: CharacterBody3D = get_parent().get_parent()
 var player: CharacterBody3D = null
 @onready var ray: RayCast3D = $"../../RayCast3D"
-@onready var lasso_animation: AnimationPlayer = $"../../LassoAnimation"
+@onready var leap_effect: TextureRect = $"../../TextureRect"
+@onready var leap_animation: AnimationPlayer = $"../../LeapAnimation"
 
 var max_view_distance := 5.0
 
 # Prayer beads
 var prayer_beads = load("res://weapons/PrayerBeads.tscn")
 var instance
-var beads_active = false
-var has_grabbed := false
+#var is_leaping := false
 var cooldown := 0.0
 
 func _ready() -> void:
@@ -28,6 +28,8 @@ func process(delta: float):
 		var _distance = enemy.global_position.distance_to(player.global_position)
 		cooldown -= delta
 		if cooldown <= 0.0:
+			#enemy.visible = true
+			enemy.is_leaping = false
 			Transitioned.emit(self, "BossChase")
 			reset_cooldown()
 		
@@ -43,11 +45,8 @@ func physics_process(_delta: float):
 	if ray.is_colliding():
 		var collider = ray.get_collider()
 		if collider.is_in_group("Player Groups"):
+			enemy.is_leaping = true
 			enemy.velocity = Vector3.ZERO
-			var to_player = (player.global_position - enemy.global_position).normalized()
-			to_player.y = 0
-			enemy.look_at(enemy.global_position + to_player, Vector3.UP)
-			lasso_animation.play("boss_grab")
 			shoot_beads()
 	
 func shoot_beads():
@@ -57,12 +56,13 @@ func shoot_beads():
 		
 		instance.position = ray.global_transform.origin
 		instance.transform.basis = ray.global_transform.basis
+		do_leap()
 		
-		#var direction = (player.global_position - enemy.global_position).normalized()
-		
-#func do_leap():
-	#var direction = (player.global_position - enemy.global_position).normalized()
-	#enemy.velocity = direction * 15
-	#
-	##if enemy.global_position.distance_to(player.global_position) < 2.0:
-		##if player.has_method()
+func do_leap():
+	#enemy.visible = false
+	leap_animation.play("grab_animation")
+	enemy.rotation = Vector3.ZERO
+	var direction = (player.global_position - enemy.global_position).normalized()
+	enemy.velocity = direction * 15
+
+	

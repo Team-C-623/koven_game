@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://do4m5lfs4b0mn"]
+[gd_scene load_steps=24 format=3 uid="uid://do4m5lfs4b0mn"]
 
 [ext_resource type="Script" path="res://Boss2/scripts/boss_2.gd" id="1_r724d"]
 [ext_resource type="Script" path="res://Boss2/scripts/boss_health_bar.gd" id="2_kva8h"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="9_xmudd"]
 [ext_resource type="Texture2D" uid="uid://ocafwnec4wey" path="res://assets/characters/Final boss 1 lasso sprite 1.png" id="10_diwog"]
 [ext_resource type="Texture2D" uid="uid://clw4gshnkj1vi" path="res://assets/characters/Final boss 1 lasso sprite 2.png" id="11_ejn2j"]
+[ext_resource type="Texture2D" uid="uid://dbt7fw87x2b2e" path="res://assets/characters/Final boss 1 grabbing sprite.png" id="12_tavmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dlys"]
 bg_color = Color(0, 0, 0, 1)
@@ -62,6 +63,107 @@ _data = {
 "boss_grab": SubResource("Animation_luput")
 }
 
+[sub_resource type="Animation" id="Animation_xngw4"]
+resource_name = "leap_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossLeap/TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BossLeap:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_o7dlg"), ExtResource("12_tavmq"), ExtResource("4_o7dlg")]
+}
+
+[sub_resource type="Animation" id="Animation_a17ya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossLeap/TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BossLeap:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_o7dlg")]
+}
+
+[sub_resource type="Animation" id="Animation_li2wj"]
+resource_name = "grab_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_tavmq"), ExtResource("12_tavmq"), ExtResource("12_tavmq")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpmkg"]
+_data = {
+"RESET": SubResource("Animation_a17ya"),
+"grab_animation": SubResource("Animation_li2wj"),
+"leap_animation": SubResource("Animation_xngw4")
+}
+
 [node name="Boss2" type="CharacterBody3D" groups=["Enemies Group"]]
 transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 0)
 collision_layer = 4
@@ -69,10 +171,10 @@ collision_mask = 3
 script = ExtResource("1_r724d")
 
 [node name="BossHealthBar" type="ProgressBar" parent="."]
-offset_left = 876.0
-offset_top = 98.0
-offset_right = 1637.0
-offset_bottom = 125.0
+offset_left = 1126.0
+offset_top = 156.0
+offset_right = 1809.0
+offset_bottom = 179.0
 scale = Vector2(1.04, 1.24415)
 size_flags_horizontal = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_6dlys")
@@ -82,8 +184,8 @@ show_percentage = false
 script = ExtResource("2_kva8h")
 
 [node name="Sprite2D" type="Sprite2D" parent="BossHealthBar"]
-position = Vector2(382.691, 13.664)
-scale = Vector2(0.288461, 0.299804)
+position = Vector2(345.192, 12.0564)
+scale = Vector2(0.255842, 0.262648)
 texture = ExtResource("3_qviqg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -99,9 +201,6 @@ texture = ExtResource("4_o7dlg")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 aabb = AABB(-0.570377, -0.556137, -0.565157, 1.14075, 1.11227, 1.13031)
-
-[node name="health_timer" type="Timer" parent="."]
-wait_time = 0.1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
 script = ExtResource("5_gh6hq")
@@ -138,4 +237,25 @@ libraries = {
 "": SubResource("AnimationLibrary_2l1dx")
 }
 
-[connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
+[node name="LeapAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tpmkg")
+}
+
+[node name="BossLeap" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="BossLeap"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("12_tavmq")
