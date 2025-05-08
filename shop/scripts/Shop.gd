@@ -37,6 +37,7 @@ func _on_close_button_pressed() -> void:
 	_empty_details()
 	hide.emit()
 	SoundManager.play_buy_sound()
+	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")
 
 func update_item_description(item: ItemData, selected_button):
 	selected_shop_button = selected_button
@@ -52,6 +53,7 @@ func open():
 	hot_bar_inventory.hide()
 	currency_ui.hide_display()
 	show.emit()
+	Wwise.set_state("CATACOMB_WITCHES", "WITCH2")
 
 func _on_buy_pressed() -> void:
 	if selected_item != null && Currency.currency >= selected_item.cost:

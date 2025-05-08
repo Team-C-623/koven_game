@@ -13,6 +13,7 @@ func _input(event: InputEvent) -> void:
 		interact()
 
 func interact() -> void:
+	Wwise.set_state("CATACOMB_WITCHES", "WITCH1")
 	dialogue_balloon.visible = true
 	PlayerManager.is_talking_to_old_witch = true
 	
@@ -27,3 +28,4 @@ func _on_dialogue_finished(_result) -> void:
 	dialogue_balloon.visible = false
 	PlayerManager.is_talking_to_old_witch = false
 	DialogueManager.dialogue_ended.disconnect(_on_dialogue_finished)
+	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")

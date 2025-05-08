@@ -3,13 +3,16 @@ extends Node
 @onready var music_bank: AkBank = $Music
 @onready var ak_event_3d: AkEvent3D = $AkEvent3D
 @onready var enter_castle_event: AkEvent3D = $enter_castle  # Changed to regular AkEvent if not spatial
-
+#WITCH1 set for soulmother (old witch.gd)
+#WITCH2 set for shop (shop.gd)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sound_effects_bank.load_bank()
 	music_bank.load_bank()
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
+	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")
+	
 	
 func _process(_delta: float) -> void:
 	if PlayerManager.player:
