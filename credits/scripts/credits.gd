@@ -108,9 +108,9 @@ func _ready():
 			centeredText.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 			
 			# Color and font
-			centeredText.add_theme_color_override("font_color",namesColor)
+			centeredText.add_theme_color_override("font_color",titlesColor)
 			if customFont != null:
-				titles.add_theme_font_override("font", customFont)
+				centeredText.add_theme_font_override("font", customFont)
 			
 			line = line.erase(0,1)
 			line = line.erase(line.length()-1,1)
@@ -129,9 +129,9 @@ func _ready():
 				names.add_theme_color_override("font_color",namesColor)
 				
 				# Set the custom font (if there is one)
-				if customFont != null:
-					titles.add_theme_font_override("font", customFont)
-					names.add_theme_font_override("font", customFont)
+				#if customFont != null:
+					#titles.add_theme_font_override("font", customFont)
+					#names.add_theme_font_override("font", customFont)
 				
 				# Set the margin (the space between left and right panels)
 				@warning_ignore("integer_division")

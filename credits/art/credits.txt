@@ -21,8 +21,14 @@ Chayton McDonald
 [MUSIC]
 Will Meade
 
+[DIALOGUE MANAGER 2]
+Nathan Hoad
+[WWISE INTEGRATION FOR GODOT]
+Alessandro Famà
+Jorge Garcia
+
 [SPECIAL THANKS TO]
+Professor Bendrick
+Professor Cook
 Professor Gibbons
 Professor Miner
-Professor Cook
-Professor Bendrick
