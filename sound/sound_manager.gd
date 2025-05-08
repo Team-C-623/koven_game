@@ -12,10 +12,11 @@ func _ready() -> void:
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
 	
 func _process(_delta: float) -> void:
-	if PlayerManager.is_in_trial_room == false:
-		Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
-	else:
-		Wwise.set_rtpc_value("Health", 100,self)
+	if PlayerManager.player:
+		if PlayerManager.is_in_trial_room == false:
+			Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
+		else:
+			Wwise.set_rtpc_value("Health", 100,self)
 
 func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
