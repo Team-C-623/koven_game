@@ -60,6 +60,12 @@ func _on_buy_pressed() -> void:
 		Currency.subtract_currency(selected_item.cost)
 		PlayerManager.player.inventory_data.add_item(selected_item)
 		SoundManager.play_buy_sound()
+		# remove the selected card from the shop list
+		for i in range(item_container.data.shop_items.size()):
+			if selected_item.name == item_container.data.shop_items[i].name:
+				item_container.data.shop_items.remove_at(i)
+				break
+		# remove the button from the shop UI
 		selected_shop_button.queue_free()
 		selected_item = null
 		selected_shop_button = null

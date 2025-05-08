@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlgqa6pdjt557"
-path.s3tc="res://.godot/imported/Final nun level 1 (sprite 2).png-c6979de4030a36278415fbe479975dcc.s3tc.ctex"
+uid="uid://wlmcracyeilr"
+path.s3tc="res://.godot/imported/angelstatue.png-573d2d975d3d42f0b44bd5f806c08920.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/characters/Final nun level 1 (sprite 2).png"
-dest_files=["res://.godot/imported/Final nun level 1 (sprite 2).png-c6979de4030a36278415fbe479975dcc.s3tc.ctex"]
+source_file="res://assets/ui/angelstatue.png"
+dest_files=["res://.godot/imported/angelstatue.png-573d2d975d3d42f0b44bd5f806c08920.s3tc.ctex"]
 
 [params]
 

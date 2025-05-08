@@ -17,6 +17,7 @@ var catacombs_instance = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
+	# get_viewport().debug_draw = Viewport.DEBUG_DRAW_WIREFRAME
 	var new_catacombs = cata_scene.instantiate()
 	add_child(new_catacombs)
 	new_catacombs.name = "Catacombs"
@@ -28,7 +29,6 @@ func _ready() -> void:
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
 	inventory_interface.force_close.connect(toggle_inventory_interface)
-	
 	
 	var _connect_result = inventory_interface.drop_slot_data.connect(_on_inventory_interface_drop_slot_data)
 	

@@ -92,6 +92,19 @@ mesh = SubResource("PlaneMesh_4tnoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rrkvq")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Wall2"]
+transform = Transform3D(1, 1.34135e-20, 2.66596e-14, -1.34135e-20, 1, -2.2456e-15, -2.66596e-14, 2.2456e-15, 1, 0.0499997, 0.5, 0)
+light_color = Color(0.889797, 0.514964, 0.302267, 1)
+light_energy = 0.5
+light_size = 0.3
+shadow_enabled = true
+shadow_blur = 2.0
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 24.0
+distance_fade_length = 5.0
+omni_attenuation = 0.0
+
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
 occluder = ExtResource("4_f2ke6")
 
@@ -119,6 +132,19 @@ mesh = SubResource("PlaneMesh_4tnoq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_6fq2f")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Wall4"]
+transform = Transform3D(1, 1.34135e-20, -3.01214e-35, -1.34135e-20, 1, -2.2456e-15, 0, 2.2456e-15, 1, 0.0499997, 0.5, 5.68434e-14)
+light_color = Color(0.889797, 0.514964, 0.302267, 1)
+light_energy = 0.5
+light_size = 0.3
+shadow_enabled = true
+shadow_blur = 2.0
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 24.0
+distance_fade_length = 5.0
+omni_attenuation = 0.0
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall4"]
 occluder = ExtResource("5_go6cs")
@@ -159,7 +185,6 @@ transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.94146
 transform = Transform3D(-4.11529e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.941469, -0.337095, -4.37113e-08, 2.36979, 3.96759, 5.85616)
 
 [node name="DoorPositions" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="U" type="Marker3D" parent="DoorPositions"]
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 6.4)
