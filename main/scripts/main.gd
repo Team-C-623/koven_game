@@ -38,7 +38,6 @@ func _ready() -> void:
 	else:
 		print("Health component not found")
 	
-	
 func generate_new():
 	var size = map.generate()
 	for node in get_tree().get_nodes_in_group("Chest Group"):
