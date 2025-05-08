@@ -179,7 +179,5 @@ func play_boss_music(): #needs to be added
 func play_victory(): #needs to be added
 	Wwise.post_event_id(AK.EVENTS.VICTORY,self)
 
-func play_queue_credits(): #not called
-	Wwise.set_state("LOCATION","credits")
-	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
+
 	
