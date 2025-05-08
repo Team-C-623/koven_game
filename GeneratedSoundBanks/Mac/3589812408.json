@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{564FA88C-F2F7-4907-B737-8F11A3FA7E78}",
     "Language": "SFX",
-    "Hash": "{8EDA76F4-AF49-F3BB-0177-A7DD5C875C01}",
+    "Hash": "{75C529D7-D397-C044-DFBD-8BA9D3D1C401}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Music_SoundBank",
     "ShortName": "Music_SoundBank",
     "Path": "3589812408.bnk",
@@ -765,6 +765,15 @@
        {
         "Id": "772988364"
        }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "1176052424",
+        "Id": "2005704188",
+        "Name": "Main_Menu",
+        "ObjectPath": "\\States\\Music\\Location\\Main_Menu",
+        "GUID": "{98919F22-EB5B-4386-A0BB-767AF01AFD3E}"
+       }
       ]
      },
      {
@@ -1281,6 +1290,59 @@
           ]
          }
         ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4071417932",
+         "Id": "0",
+         "GUID": "{731E744A-D4D7-47A1-9328-5F25143C5843}"
+        },
+        "Children": [
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1176052424",
+           "Id": "2005704188",
+           "GUID": "{98919F22-EB5B-4386-A0BB-767AF01AFD3E}"
+          },
+          "Children": [
+           {
+            "SwitchValue": {
+             "GroupType": "Switch",
+             "GroupId": "2702523344",
+             "Id": "0",
+             "GUID": "{F26003BD-C3AA-4258-94B9-41FD809B19C2}"
+            },
+            "Children": [
+             {
+              "SwitchValue": {
+               "GroupType": "Switch",
+               "GroupId": "3257587070",
+               "Id": "0",
+               "GUID": "{F8FFD40F-728E-4063-A723-76B0C3E42187}"
+              },
+              "Children": [
+               {
+                "SwitchValue": {
+                 "GroupType": "Switch",
+                 "GroupId": "2345047989",
+                 "Id": "0",
+                 "GUID": "{DC04F637-1FB1-4295-8C12-635967FE4E24}"
+                },
+                "MediaRefs": [
+                 {
+                  "Id": "772988364"
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
        }
       ],
       "ActionSetState": [
@@ -1314,7 +1376,12 @@
       "GUID": "{82195EDD-CADE-47BD-BCB5-3F3BEF9852A0}",
       "DurationType": "OneShot",
       "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "772988364"
+       }
+      ]
      },
      {
       "Id": "4279841335",
@@ -1830,6 +1897,59 @@
           ]
          }
         ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4071417932",
+         "Id": "0",
+         "GUID": "{731E744A-D4D7-47A1-9328-5F25143C5843}"
+        },
+        "Children": [
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1176052424",
+           "Id": "2005704188",
+           "GUID": "{98919F22-EB5B-4386-A0BB-767AF01AFD3E}"
+          },
+          "Children": [
+           {
+            "SwitchValue": {
+             "GroupType": "Switch",
+             "GroupId": "2702523344",
+             "Id": "0",
+             "GUID": "{F26003BD-C3AA-4258-94B9-41FD809B19C2}"
+            },
+            "Children": [
+             {
+              "SwitchValue": {
+               "GroupType": "Switch",
+               "GroupId": "3257587070",
+               "Id": "0",
+               "GUID": "{F8FFD40F-728E-4063-A723-76B0C3E42187}"
+              },
+              "Children": [
+               {
+                "SwitchValue": {
+                 "GroupType": "Switch",
+                 "GroupId": "2345047989",
+                 "Id": "0",
+                 "GUID": "{DC04F637-1FB1-4295-8C12-635967FE4E24}"
+                },
+                "MediaRefs": [
+                 {
+                  "Id": "772988364"
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
        }
       ],
       "ActionSetState": [
@@ -2185,6 +2305,6 @@
     ]
    }
   ],
-  "FileHash": "{28ECE363-E54F-64E9-1A86-C89D7B41F757}"
+  "FileHash": "{3F1C7EE0-2F01-9A29-C564-3901BE865C6E}"
  }
 }
