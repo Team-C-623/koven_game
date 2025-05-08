@@ -20,7 +20,7 @@ func _ready():
 	
 func damage(attack: Attack):
 	health -= (attack.attack_damage * damage_modifier)
-	emit_signal("damaged")
+	damaged.emit()
 	if is_dead:
 		return
 	

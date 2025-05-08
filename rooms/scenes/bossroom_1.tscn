@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://8ntx26kda01d"]
+[gd_scene load_steps=30 format=3 uid="uid://8ntx26kda01d"]
 
 [ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_pwxp0"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_ae3tg"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="7_4kfwp"]
 [ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="8_af7fu"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="9_ee5up"]
-[ext_resource type="PackedScene" uid="uid://do4m5lfs4b0mn" path="res://Boss2/scenes/boss2.tscn" id="10_21jeh"]
+[ext_resource type="Texture2D" uid="uid://cxxjg71s3fgtc" path="res://assets/characters/Final boss 1 standing sprite.png" id="10_ljhmc"]
+[ext_resource type="Script" path="res://catacombs/scripts/dialogue_area.gd" id="10_ybdi3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8w4p"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
@@ -69,7 +70,10 @@ size = Vector2(12.8, 12.8)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nqdaj"]
 points = PackedVector3Array(-6.4, 0, -6.4, -6.4, 0, 6.4, 6.4, 0, -6.4, 6.4, 0, 6.4)
 
-[node name="EmptyRoom1" type="StaticBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ljdc"]
+size = Vector3(6.2986, 1.02747, 0.836006)
+
+[node name="BossRoom" type="StaticBody3D"]
 transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.469, 0, 0, 0)
 script = ExtResource("1_pwxp0")
 
@@ -101,6 +105,18 @@ shape = SubResource("ConvexPolygonShape3D_g81uc")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
 occluder = SubResource("ArrayOccluder3D_ft0hl")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.33245e-15, 0, 3.33245e-15, 1, 3.3, 0.1, 0)
+light_color = Color(0.889797, 0.514964, 0.302267, 1)
+light_energy = 0.5
+light_size = 0.3
+shadow_blur = 2.0
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 24.0
+distance_fade_length = 5.0
+omni_attenuation = 0.0
+
 [node name="Wall3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.6, -6.35)
 visibility_range_end = 20.0
@@ -116,7 +132,6 @@ transform = Transform3D(1, 1.34135e-20, -3.01214e-35, -1.34135e-20, 1, -2.2456e-
 light_color = Color(0.889797, 0.514964, 0.302267, 1)
 light_energy = 0.5
 light_size = 0.3
-shadow_enabled = true
 shadow_blur = 2.0
 distance_fade_enabled = true
 distance_fade_begin = 20.0
@@ -129,7 +144,6 @@ transform = Transform3D(1, 1.34135e-20, -3.01214e-35, -1.34135e-20, 1, -2.2456e-
 light_color = Color(0.889797, 0.514964, 0.302267, 1)
 light_energy = 0.5
 light_size = 0.3
-shadow_enabled = true
 shadow_blur = 2.0
 distance_fade_enabled = true
 distance_fade_begin = 20.0
@@ -152,6 +166,18 @@ shape = SubResource("ConvexPolygonShape3D_g81uc")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall4"]
 occluder = ExtResource("6_nvfwh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.33244e-15, 0, 3.33244e-15, 1, -3.5, 0.1, 0)
+light_color = Color(0.889797, 0.514964, 0.302267, 1)
+light_energy = 0.5
+light_size = 0.3
+shadow_blur = 2.0
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 24.0
+distance_fade_length = 5.0
+omni_attenuation = 0.0
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 visibility_range_end = 20.0
@@ -188,5 +214,34 @@ transform = Transform3D(-4.11507e-08, -1.47414e-08, 0.999999, -0.337243, 0.94141
 [node name="U" type="Marker3D" parent="DoorPositions"]
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 6.4)
 
-[node name="Boss2" parent="." instance=ExtResource("10_21jeh")]
-transform = Transform3D(3, 0, 2.84217e-14, 0, 3, 0, -2.84217e-14, 0, 3, 0, 1.84927, 0)
+[node name="Dialogue" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 8.52651e-14, 0, 2, 0, -8.52651e-14, 0, 2, -3.72302e-07, 0, 1.53435)
+
+[node name="DialogueArea" type="Area3D" parent="Dialogue"]
+script = ExtResource("10_ybdi3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialogue/DialogueArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00479967, 0.513733, 0.0155523)
+shape = SubResource("BoxShape3D_3ljdc")
+
+[node name="Boss" type="Sprite3D" parent="Dialogue"]
+transform = Transform3D(0.06, 0, -2.66454e-15, 0, 0.06, 0, 2.66454e-15, 0, 0.06, -2.44703e-07, 1.0709, -3.6206)
+shaded = true
+texture = ExtResource("10_ljhmc")
+
+[node name="EnemyBlocker" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.3)
+collision_layer = 64
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="EnemyBlocker"]
+depth = 0.2
+polygon = PackedVector2Array(-2, 0, -2, 4, 2, 4, 2, 0)
+
+[node name="PlayerBlocker" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, -1)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="PlayerBlocker"]
+depth = 0.2
+polygon = PackedVector2Array(-6.4, 0, -6.4, 4, 6.4, 4, 6.4, 0)
+
+[connection signal="body_entered" from="Dialogue/DialogueArea" to="Dialogue/DialogueArea" method="_on_body_entered"]

@@ -21,7 +21,5 @@ func use_slot_data(slot_data: SlotData) -> void:
 	slot_data.item_data.use(player)
 	use_item.emit(slot_data)
 
-	
-
 func get_global_position() -> Vector3:
 	return player.global_position

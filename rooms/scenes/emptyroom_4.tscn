@@ -91,7 +91,6 @@ transform = Transform3D(1, 1.34135e-20, 0, -1.34135e-20, 1, -2.2456e-15, 0, 2.24
 light_color = Color(0.889797, 0.514964, 0.302267, 1)
 light_energy = 0.5
 light_size = 0.3
-shadow_enabled = true
 shadow_blur = 2.0
 distance_fade_enabled = true
 distance_fade_begin = 20.0
@@ -175,7 +174,6 @@ transform = Transform3D(-4.1153e-08, -1.47349e-08, 0.999999, -0.337095, 0.94147,
 transform = Transform3D(-4.1153e-08, -1.47349e-08, 0.999998, -0.337095, 0.941469, 0, -0.94147, -0.337095, -4.37113e-08, -1.8, 3.8, 6.1)
 
 [node name="DoorPositions" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="U" type="Marker3D" parent="DoorPositions"]
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 6.4)
