@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfftowpypby21"
 path.s3tc="res://.godot/imported/soulmother.png-929c92e2e209d6891b413f9bcdbd95ad.s3tc.ctex"
+path.etc2="res://.godot/imported/soulmother.png-929c92e2e209d6891b413f9bcdbd95ad.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://trialroom/art/soulmother.png"
-dest_files=["res://.godot/imported/soulmother.png-929c92e2e209d6891b413f9bcdbd95ad.s3tc.ctex"]
+dest_files=["res://.godot/imported/soulmother.png-929c92e2e209d6891b413f9bcdbd95ad.s3tc.ctex", "res://.godot/imported/soulmother.png-929c92e2e209d6891b413f9bcdbd95ad.etc2.ctex"]
 
 [params]
 

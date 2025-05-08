@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://crgmmhsrj2x4a"
 path.s3tc="res://.godot/imported/soulmother_frame2.png-5864400976462ac8b5a6b50d907f9a39.s3tc.ctex"
+path.etc2="res://.godot/imported/soulmother_frame2.png-5864400976462ac8b5a6b50d907f9a39.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/characters/soulmother_frame2.png"
-dest_files=["res://.godot/imported/soulmother_frame2.png-5864400976462ac8b5a6b50d907f9a39.s3tc.ctex"]
+dest_files=["res://.godot/imported/soulmother_frame2.png-5864400976462ac8b5a6b50d907f9a39.s3tc.ctex", "res://.godot/imported/soulmother_frame2.png-5864400976462ac8b5a6b50d907f9a39.etc2.ctex"]
 
 [params]
 
