@@ -44,7 +44,6 @@ func _on_prayer_beads_hit_box_area_entered(area):
 		#var attack = Attack.new()
 		#attack.attack_damage = attack_damage
 		#hitbox.damage(attack)
-		SoundManager.play_lasso_attach()
 		hitbox.get_parent().stun(0.1)
 		bead_hit.emit()
 		_on_bead_timeout()

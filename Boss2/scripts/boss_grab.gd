@@ -52,7 +52,6 @@ func shoot_beads():
 	if prayer_beads and player:
 		instance = prayer_beads.instantiate()
 		get_tree().current_scene.add_child(instance)
-		
 		instance.position = ray.global_transform.origin
 		instance.transform.basis = ray.global_transform.basis
 		do_leap()
@@ -63,5 +62,3 @@ func do_leap():
 	boss_leap.visible = true
 	var direction = (player.global_position - enemy.global_position).normalized()
 	enemy.velocity = direction * 15
-
-	
