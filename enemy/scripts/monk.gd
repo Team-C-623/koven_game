@@ -7,7 +7,7 @@ class_name Monk
 @export var CHASE_DISTANCE: float = 5.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
 @onready var health_component: HealthComponent = $HealthComponent
-
+@onready var ray: RayCast3D = $RayCast3D
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
 @onready var chase_animation: AnimationPlayer = $chase_animation
@@ -18,10 +18,19 @@ var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
 var can_move = true
+var is_alerted := false
+
 func _ready():
+	ray.enabled = true
+	await get_tree().process_frame
+	await get_tree().process_frame
+	player_3d = get_tree().get_first_node_in_group("Player Groups")
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
+	
+func _process(_delta):
+	ray.force_raycast_update()
 
 func _physics_process(delta: float) -> void:
 	# Debugging

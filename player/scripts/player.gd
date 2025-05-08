@@ -45,7 +45,7 @@ var flame = load("res://weapons/Flame.tscn")
 @onready var health_component: HealthComponent = $HealthComponent
 
 var shoot_cooldown: float = 0.0
-const SHOOT_COOLDOWN_TIME: float = 0.2
+const SHOOT_COOLDOWN_TIME: float = 0.3
 
 func _ready() -> void:
 	PlayerManager.player = self
@@ -54,6 +54,8 @@ func _ready() -> void:
 	Wwise.set_state("PLAYER_STATE", "ALIVE")
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_stunned:
+		return
 	# "ui_cancel" is escape by default
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -183,4 +185,3 @@ func stun(duration: float):
 	await get_tree().create_timer(duration).timeout
 	is_stunned = false
 	set_physics_process(true)
-	print("Player recovered from stun")

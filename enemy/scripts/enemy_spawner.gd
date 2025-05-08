@@ -15,9 +15,7 @@ func _start_spawning():
 	
 	if player:
 		spawn_enemies()
-	else:
-		print("⚠️ Player not found in group 'Player Groups'")
-
+		
 func spawn_enemies():
 	for i in range(total_enemies):
 		var enemy_scene = choose_random_enemy()

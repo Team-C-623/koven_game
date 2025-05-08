@@ -19,6 +19,9 @@ var move_direction := 0.5
 var move_timer := 0.0
 var is_moving := true
 
+var alert_cooldown := 5.0
+var alert_timer := 0.0
+
 #Knife
 var knife = load("res://weapons/knife.tscn")
 var instance
@@ -27,8 +30,16 @@ var knife_active = false
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
 
+func enter():
+	alert_timer = alert_cooldown
+
 func process(_delta: float):
-	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) > enemy.CHASE_DISTANCE:
+	if enemy.is_alerted:
+		alert_timer -= _delta
+		if alert_timer <= 0.0:
+			enemy.is_alerted = false
+	
+	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) > enemy.CHASE_DISTANCE and enemy.is_alerted == false:
 		Transitioned.emit(self, "EnemyWander")
 
 func physics_process(delta: float):

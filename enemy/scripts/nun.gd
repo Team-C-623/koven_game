@@ -9,8 +9,8 @@ class_name Nun
 @export var CHASE_DISTANCE: float = 5.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
 @export var is_ranged: bool = false
-
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var ray: RayCast3D = $RayCast3D
 @onready var sprite: Sprite3D = $Sprite3D
 
 signal dying
@@ -19,6 +19,16 @@ var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 3.0
+var is_alerted := false
+
+func _ready():
+	ray.enabled = true
+	await get_tree().process_frame
+	await get_tree().process_frame
+	player_3d = get_tree().get_first_node_in_group("Player Groups")
+
+func _process(_delta):
+	ray.force_raycast_update()
 
 func _physics_process(delta: float) -> void:
 	# Debugging

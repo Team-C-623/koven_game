@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://w8tt64wwe0on"]
 
-[ext_resource type="Script" path="res://Boss3/boss_3_spawner.gd" id="1_fj3ai"]
+[ext_resource type="Script" path="res://Boss3/scripts/boss_3_spawner.gd" id="1_fj3ai"]
 
 [node name="Boss3Spawner" type="Node3D"]
 script = ExtResource("1_fj3ai")

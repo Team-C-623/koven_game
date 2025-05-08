@@ -9,7 +9,7 @@ class_name Boss2
 @export var CHASE_DISTANCE: float = 3.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
 @onready var health_component: HealthComponent = $HealthComponent
-
+@onready var boss_leap: CanvasLayer = $BossLeap
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
 
@@ -18,9 +18,15 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
-var dancing := true
+var sprite_origin_position: Vector3
+
+#bob variable
+const BOB_FREQ = 2.0 #2.0
+const BOB_AMP = 0.08 #0.08
+var t_bob = 0.0
 
 func _ready():
+	sprite_origin_position = sprite.position
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
@@ -30,12 +36,9 @@ func _find_player():
 	player_3d = get_tree().get_first_node_in_group("Player Groups")
 	if player_3d:
 		print("Player found: ", player_3d.name)
-	else:
-		print("⚠️ Player not found in group 'Player Groups'")
 
 func _physics_process(delta: float) -> void:
-	sprite.rotate_y(delta)
-
+	sprite.rotate_y(delta * 3)
 	# Debugging
 	if player_3d == null:
 		return  # Exit if no player is assigned
@@ -46,9 +49,12 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 	
 	move_and_slide()
-
+	
 	# Always face the player
 	look_at(player_3d.position)
+	t_bob += delta * velocity.length() * float(is_on_floor()) 
+	var new_head_pos = _headbob(t_bob)
+	sprite.position = sprite_origin_position + new_head_pos
 	
 	if health_component.health <= 0:
 		#SoundManager.play_death_sound()
@@ -76,4 +82,10 @@ func _on_DamageTimer_timeout():
 
 func play_lasso_windup():
 	SoundManager.play_lasso_windup()
+
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
 	

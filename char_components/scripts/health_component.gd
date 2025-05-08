@@ -9,6 +9,7 @@ signal health_changed(current_health: float, max_health: float)
 signal nun_die
 signal monk_die
 signal died
+signal damaged
 
 
 var health : float
@@ -19,7 +20,7 @@ func _ready():
 	
 func damage(attack: Attack):
 	health -= (attack.attack_damage * damage_modifier)
-	
+	emit_signal("damaged")
 	if is_dead:
 		return
 	
