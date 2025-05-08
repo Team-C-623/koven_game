@@ -28,5 +28,7 @@ func interact():
 func _on_dialogue_finished(_result) -> void:
 	merga_sprite.stop()
 	dialogue_balloon.visible = false
+	# shooting timer
+	await get_tree().create_timer(0.2).timeout
 	PlayerManager.is_talking_to_merga = false
 	DialogueManager.dialogue_ended.disconnect(_on_dialogue_finished)

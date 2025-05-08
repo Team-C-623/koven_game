@@ -14,21 +14,24 @@ func _input(event: InputEvent) -> void:
 		interact()
 
 func interact() -> void:
-	old_witch_sprite.play("talk")
-	Wwise.set_state("CATACOMB_WITCHES", "WITCH1")
-	dialogue_balloon.visible = true
-	PlayerManager.is_talking_to_old_witch = true
-	
-	# just to make sure in case it was previously connected
-	if DialogueManager.dialogue_ended.is_connected(_on_dialogue_finished):
-		DialogueManager.dialogue_ended.disconnect(_on_dialogue_finished)
+	if not PlayerManager.is_talking_to_old_witch:
+		old_witch_sprite.play("talk")
+		Wwise.set_state("CATACOMB_WITCHES", "WITCH1")
+		dialogue_balloon.visible = true
+		PlayerManager.is_talking_to_old_witch = true
 		
-	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
-	DialogueManager.show_dialogue_balloon(load("res://catacombs/dialogue/soulmother.dialogue"), "start")
+		# just to make sure in case it was previously connected
+		if DialogueManager.dialogue_ended.is_connected(_on_dialogue_finished):
+			DialogueManager.dialogue_ended.disconnect(_on_dialogue_finished)
+			
+		DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
+		DialogueManager.show_dialogue_balloon(load("res://catacombs/dialogue/soulmother.dialogue"), "start")
 
 func _on_dialogue_finished(_result) -> void:
 	old_witch_sprite.stop()
 	dialogue_balloon.visible = false
+	# shooting timer
+	await get_tree().create_timer(0.2).timeout
 	PlayerManager.is_talking_to_old_witch = false
 	DialogueManager.dialogue_ended.disconnect(_on_dialogue_finished)
 	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")

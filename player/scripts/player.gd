@@ -112,6 +112,10 @@ func _physics_process(delta: float) -> void:
 		#FOV
 		var target_fov = BASE_FOV + FOV_CHANGE
 		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
+	# prevent player from moving if in a restricted state
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 	
 	#Shooting 
 	if Input.is_action_just_pressed("shoot") and !ui_blocking and !in_restricted_state:
