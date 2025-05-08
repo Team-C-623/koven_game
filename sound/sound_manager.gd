@@ -128,10 +128,10 @@ func play_journal_open():
 func play_journal_close():
 	Wwise.post_event_id(AK.EVENTS.JOURNAL_CLOSE,self)
 	
-func play_lasso_windup():
+func play_lasso_windup(): #called in lasso animation player in boss2 scene
 	Wwise.post_event_id(AK.EVENTS.LASSO_WINDUP,self)
 	
-func play_lasso_attach():
+func play_lasso_attach(): #prayer_beads.gd
 	Wwise.post_event_id(AK.EVENTS.LASSO_ATTACH,self)
 
 # MUSIC
