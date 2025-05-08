@@ -15,9 +15,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if player and boss:
-		var distance = boss.global_position.distance_to(player.global_position)
+		#var distance = boss.global_position.distance_to(player.global_position)
 		
-		if distance <= show_distance:
+		if PlayerManager.is_in_boss_room:
 			visible = true
 		else:
 			visible = false

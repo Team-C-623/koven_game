@@ -70,7 +70,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotation.x = clamp(camera.rotation.x, -PI / 2 + 0.1, PI / 2 - 0.1)
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
-		
+
 func _physics_process(delta: float) -> void:
 	rtpc.set_value(rtpc_node,health_component.health)
 	
