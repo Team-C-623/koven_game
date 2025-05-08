@@ -65,7 +65,7 @@ var credits
 
 func _ready():
 	viewSize = get_viewport().size
-	scrollingContainer.position.y = viewSize.y*2 # it's multiplied by two as a workaround. Look at _process function
+	scrollingContainer.position.y = 1080 # it's multiplied by two as a workaround. Look at _process function
 	regularSpeed = speed
 	
 	# Set title image if there is one, otherwise delete the useless node
@@ -158,15 +158,7 @@ func _ready():
 				names.text += line+"\n"
 				titles.text += "\n"
 
-
 func _process(delta):
-	# For some reason the position of the container is shifted once displayed.
-	# This workaround fix it
-	if is_first_frame:
-		viewSize = get_viewport().size
-		scrollingContainer.position.y = viewSize.y
-		is_first_frame = false
-	
 	if not done:
 		# If the scroll is not yet ended, keep to scroll it
 		if scrollingContainer.position.y+scrollingContainer.size.y > 0:
@@ -195,12 +187,3 @@ func end():
 	done = true # And a var, to make things even more easy to connect
 	
 	self.queue_free()
-	# If there is a next scene to load, then load it,
-	# otherwise if quitOnEnd is enabled, just quit
-	#if nextScene != null:
-		### warning-ignore:return_value_discarded
-		#get_tree().change_scene_to_file(nextScene.get_path())
-	#elif quitOnEnd:
-		#get_tree().quit()
-	#elif destroyOnEnd:
-		#self.queue_free()
