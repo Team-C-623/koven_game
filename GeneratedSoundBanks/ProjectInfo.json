@@ -5,7 +5,7 @@
    "GUID": "{C45A35D4-FADB-4CD3-8AAA-2CB0126816A0}",
    "Generator": "2024.1.1.8691"
   },
-  "CacheRoot": "../.cache",
+  "CacheRoot": "../../../../../WwiseProjects/Koven_5_07_25_Dialogue_Fixes/Koven/.cache",
   "Platforms": [
    {
     "Name": "Mac",
@@ -31,6 +31,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{D2DAD84F-5DB3-8D20-A288-F219CA283E41}"
+  "FileHash": "{B774C501-6D11-FA7B-15B4-7D5B7E74F84B}"
  }
 }

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://citotcbgvckbn"
 path.s3tc="res://.godot/imported/wand_hand_final.png-9e9b72a1d42090b8d3f09fd1fa0a43e3.s3tc.ctex"
+path.etc2="res://.godot/imported/wand_hand_final.png-9e9b72a1d42090b8d3f09fd1fa0a43e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/ui/wand_hand_final.png"
-dest_files=["res://.godot/imported/wand_hand_final.png-9e9b72a1d42090b8d3f09fd1fa0a43e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/wand_hand_final.png-9e9b72a1d42090b8d3f09fd1fa0a43e3.s3tc.ctex", "res://.godot/imported/wand_hand_final.png-9e9b72a1d42090b8d3f09fd1fa0a43e3.etc2.ctex"]
 
 [params]
 

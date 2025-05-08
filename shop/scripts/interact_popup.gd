@@ -15,7 +15,9 @@ func hide_popup():
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		can_interact = true
+		
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is Player:
 		can_interact = false
+		

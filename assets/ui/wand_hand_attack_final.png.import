@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://yt436eqjidln"
 path.s3tc="res://.godot/imported/wand_hand_attack_final.png-1eb9ca58f9ed8eec7c1015023d9d7a97.s3tc.ctex"
+path.etc2="res://.godot/imported/wand_hand_attack_final.png-1eb9ca58f9ed8eec7c1015023d9d7a97.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/ui/wand_hand_attack_final.png"
-dest_files=["res://.godot/imported/wand_hand_attack_final.png-1eb9ca58f9ed8eec7c1015023d9d7a97.s3tc.ctex"]
+dest_files=["res://.godot/imported/wand_hand_attack_final.png-1eb9ca58f9ed8eec7c1015023d9d7a97.s3tc.ctex", "res://.godot/imported/wand_hand_attack_final.png-1eb9ca58f9ed8eec7c1015023d9d7a97.etc2.ctex"]
 
 [params]
 

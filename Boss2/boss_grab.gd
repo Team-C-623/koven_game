@@ -40,6 +40,9 @@ func physics_process(_delta: float):
 	if not beads_active:
 		beads_active = true
 		shoot_beads()
+	await lasso_animation.animation_finished
+
+
 
 func shoot_beads():
 	if prayer_beads and player:

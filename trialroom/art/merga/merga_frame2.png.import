@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgb85fb6e1y0k"
 path.s3tc="res://.godot/imported/merga_frame2.png-9bc02cb18431c692b1c547198ba2ad78.s3tc.ctex"
+path.etc2="res://.godot/imported/merga_frame2.png-9bc02cb18431c692b1c547198ba2ad78.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://trialroom/art/merga/merga_frame2.png"
-dest_files=["res://.godot/imported/merga_frame2.png-9bc02cb18431c692b1c547198ba2ad78.s3tc.ctex"]
+dest_files=["res://.godot/imported/merga_frame2.png-9bc02cb18431c692b1c547198ba2ad78.s3tc.ctex", "res://.godot/imported/merga_frame2.png-9bc02cb18431c692b1c547198ba2ad78.etc2.ctex"]
 
 [params]
 

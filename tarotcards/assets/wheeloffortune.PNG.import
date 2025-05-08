@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://46jyi4p8qa0n"
 path.s3tc="res://.godot/imported/wheeloffortune.PNG-89f21064822bfe45ef836f0e88e7499b.s3tc.ctex"
+path.etc2="res://.godot/imported/wheeloffortune.PNG-89f21064822bfe45ef836f0e88e7499b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://tarotcards/assets/wheeloffortune.PNG"
-dest_files=["res://.godot/imported/wheeloffortune.PNG-89f21064822bfe45ef836f0e88e7499b.s3tc.ctex"]
+dest_files=["res://.godot/imported/wheeloffortune.PNG-89f21064822bfe45ef836f0e88e7499b.s3tc.ctex", "res://.godot/imported/wheeloffortune.PNG-89f21064822bfe45ef836f0e88e7499b.etc2.ctex"]
 
 [params]
 

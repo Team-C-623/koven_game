@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ic22ocylq7kj"
 path.s3tc="res://.godot/imported/Final boss 1 dancing sprite.png-9d5fc4ed594efd6423b031b68a86bb6f.s3tc.ctex"
+path.etc2="res://.godot/imported/Final boss 1 dancing sprite.png-9d5fc4ed594efd6423b031b68a86bb6f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/characters/Final boss 1 dancing sprite.png"
-dest_files=["res://.godot/imported/Final boss 1 dancing sprite.png-9d5fc4ed594efd6423b031b68a86bb6f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Final boss 1 dancing sprite.png-9d5fc4ed594efd6423b031b68a86bb6f.s3tc.ctex", "res://.godot/imported/Final boss 1 dancing sprite.png-9d5fc4ed594efd6423b031b68a86bb6f.etc2.ctex"]
 
 [params]
 

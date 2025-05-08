@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2ewd30q06ogs"
 path.s3tc="res://.godot/imported/prosecutor.png-4803ae10f6fccce7be8edd0f52b0c5fb.s3tc.ctex"
+path.etc2="res://.godot/imported/prosecutor.png-4803ae10f6fccce7be8edd0f52b0c5fb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://trialroom/art/prosecutor.png"
-dest_files=["res://.godot/imported/prosecutor.png-4803ae10f6fccce7be8edd0f52b0c5fb.s3tc.ctex"]
+dest_files=["res://.godot/imported/prosecutor.png-4803ae10f6fccce7be8edd0f52b0c5fb.s3tc.ctex", "res://.godot/imported/prosecutor.png-4803ae10f6fccce7be8edd0f52b0c5fb.etc2.ctex"]
 
 [params]
 

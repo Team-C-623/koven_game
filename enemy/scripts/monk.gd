@@ -1,6 +1,5 @@
 extends CharacterBody3D
 class_name Monk
-
 @onready var player_3d=$"../Player"
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.0
@@ -11,13 +10,14 @@ class_name Monk
 
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
+@onready var chase_animation: AnimationPlayer = $chase_animation
 
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
-
+var can_move = true
 func _ready():
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
@@ -25,6 +25,9 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	# Debugging
+	if not can_move:
+		return
+		
 	if player_3d == null:
 		return  # Exit if no player is assigned
 	
@@ -39,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	look_at(player_3d.position)
 
 func _on_hitbox_area_entered(area: Area3D) -> void:
-	if area is HitboxComponent:
+	if area is HitboxComponent and health_component.health > 0:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox = area
@@ -52,7 +55,16 @@ func _on_hitbox_area_exited(area: Area3D) -> void:
 		damage_timer.stop()
 
 func _on_DamageTimer_timeout():
-	if current_hitbox:
+	if current_hitbox and health_component.health > 0:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
+
+
+func _on_health_component_monk_die() -> void:
+	can_move = false
+	chase_animation.stop()
+	chase_animation.play("death")
+	SoundManager.play_enemy_death()
+	await chase_animation.animation_finished
+	queue_free()

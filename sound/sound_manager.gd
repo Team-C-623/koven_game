@@ -3,13 +3,16 @@ extends Node
 @onready var music_bank: AkBank = $Music
 @onready var ak_event_3d: AkEvent3D = $AkEvent3D
 @onready var enter_castle_event: AkEvent3D = $enter_castle  # Changed to regular AkEvent if not spatial
-
+#WITCH1 set for soulmother (old witch.gd)
+#WITCH2 set for shop (shop.gd)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sound_effects_bank.load_bank()
 	music_bank.load_bank()
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
+	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")
+	
 	
 func _process(_delta: float) -> void:
 	if PlayerManager.player:
@@ -17,6 +20,8 @@ func _process(_delta: float) -> void:
 			Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 		else:
 			Wwise.set_rtpc_value("Health", 100,self)
+	else:
+		Wwise.set_rtpc_value("Health", 100,self)
 
 func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
@@ -128,6 +133,12 @@ func play_journal_open():
 	
 func play_journal_close():
 	Wwise.post_event_id(AK.EVENTS.JOURNAL_CLOSE,self)
+	
+func play_lasso_windup(): #called in lasso animation player in boss2 scene
+	Wwise.post_event_id(AK.EVENTS.LASSO_WINDUP,self)
+	
+func play_lasso_attach(): #prayer_beads.gd
+	Wwise.post_event_id(AK.EVENTS.LASSO_ATTACH,self)
 
 # MUSIC
 func play_castle_music(_floor_state: String = "floor1"): # called in main.gd (_entered)
@@ -171,3 +182,4 @@ func play_victory(): #needs to be added
 func play_queue_credits(): #not called
 	Wwise.set_state("LOCATION","credits")
 	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
+	

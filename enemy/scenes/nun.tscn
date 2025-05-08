@@ -62,7 +62,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "position_3d"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Sprite3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -82,6 +82,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_nw232"), ExtResource("8_orfb7"), ExtResource("2_nw232")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"knife_effect_sound"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5e4lk"]

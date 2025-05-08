@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b53bw6ojhso36"
 path.s3tc="res://.godot/imported/background.png-348402660fc374d9fca6fb07fbdcd198.s3tc.ctex"
+path.etc2="res://.godot/imported/background.png-348402660fc374d9fca6fb07fbdcd198.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://trialroom/art/background.png"
-dest_files=["res://.godot/imported/background.png-348402660fc374d9fca6fb07fbdcd198.s3tc.ctex"]
+dest_files=["res://.godot/imported/background.png-348402660fc374d9fca6fb07fbdcd198.s3tc.ctex", "res://.godot/imported/background.png-348402660fc374d9fca6fb07fbdcd198.etc2.ctex"]
 
 [params]
 

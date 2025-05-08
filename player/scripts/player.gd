@@ -1,5 +1,4 @@
 extends CharacterBody3D
-
 class_name Player
 @onready var wand = $head/PlayerCam/Wand
 @export var attack_damage = 0.0
@@ -13,6 +12,7 @@ signal toggle_inventory()
 var enemies = []
 
 @export var rtpc:WwiseRTPC
+
 #var health: int = 100
 var gravity: float = 9.8
 

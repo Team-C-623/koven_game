@@ -9,17 +9,14 @@ func _ready() -> void:
 	PlayerManager.use_item.connect(_on_item_use)
 
 
-
-
 func _on_item_use(slot_data: SlotData):
+	if animation_player.is_playing() and animation_player.current_animation == "full_card_use":
+		animation_player.stop()
 	card.texture = slot_data.item_data.texture
 	card_hand.visible = true
-	animation_player.play("raise_card")
+	animation_player.play("full_card_use")
 	await animation_player.animation_finished
-	animation_player.play("use_card")
-	SoundManager.play_card_burn()
-	await animation_player.animation_finished
-	animation_player.play("lower_hand")
-	await animation_player.animation_finished
-	
 	card_hand.visible = false
+	
+func play_card_burn():
+	SoundManager.play_card_burn()

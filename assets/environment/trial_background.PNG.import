@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck0iraq2e8jy4"
 path.s3tc="res://.godot/imported/trial_background.PNG-a98a7092a364ccf11748af0ac76372be.s3tc.ctex"
+path.etc2="res://.godot/imported/trial_background.PNG-a98a7092a364ccf11748af0ac76372be.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/environment/trial_background.PNG"
-dest_files=["res://.godot/imported/trial_background.PNG-a98a7092a364ccf11748af0ac76372be.s3tc.ctex"]
+dest_files=["res://.godot/imported/trial_background.PNG-a98a7092a364ccf11748af0ac76372be.s3tc.ctex", "res://.godot/imported/trial_background.PNG-a98a7092a364ccf11748af0ac76372be.etc2.ctex"]
 
 [params]
 

@@ -37,7 +37,7 @@ func _ready() -> void:
 		player_health.died.connect(_on_player_died)
 	else:
 		print("Health component not found")
-
+	
 func generate_new():
 	var size = map.generate()
 	for node in get_tree().get_nodes_in_group("Chest Group"):
