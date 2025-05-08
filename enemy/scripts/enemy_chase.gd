@@ -29,7 +29,7 @@ func physics_process(_delta: float):
 	ray.target_position = local_direction * max_view_distance
 	ray.force_raycast_update()
 
-	if ray.is_colliding():
+	if ray.is_colliding() and enemy.get_node("HealthComponent").health > 0:
 		var collider = ray.get_collider()
 		if collider.is_in_group("Player Groups"):
 			var direction = (player.global_position - enemy.global_position).normalized()

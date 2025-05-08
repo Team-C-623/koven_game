@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwnppb0i13jui"]
+[gd_scene load_steps=20 format=3 uid="uid://cwnppb0i13jui"]
 
 [ext_resource type="Script" path="res://enemy/scripts/monk.gd" id="1_8h3xo"]
 [ext_resource type="Texture2D" uid="uid://djgocdrtsu4rc" path="res://assets/characters/Final monk level 1.png" id="2_57cty"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="6_blrfn"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="7_qtd71"]
 [ext_resource type="Texture2D" uid="uid://oshwtjxciwcs" path="res://assets/characters/Monk level 1 sprite 2.png" id="8_foggx"]
+[ext_resource type="Texture2D" uid="uid://ceoxnsms6v4af" path="res://enemy/assets/Nun death sprite 1.png" id="9_hfrtq"]
+[ext_resource type="Texture2D" uid="uid://rdjxbq43ffrx" path="res://enemy/assets/Nun death sprite 2.png" id="10_5mxje"]
+[ext_resource type="Texture2D" uid="uid://cni6lq82doq42" path="res://enemy/assets/Nun death sprite 3.png" id="11_ijyfi"]
+[ext_resource type="Texture2D" uid="uid://d3783xk52vih3" path="res://enemy/assets/Nun death sprite 4.png" id="12_w2ecq"]
+[ext_resource type="Texture2D" uid="uid://mmlxeqb423sx" path="res://enemy/assets/Nun death sprite 5.png" id="13_0el40"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_meq7y"]
 radius = 0.286641
@@ -31,6 +36,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_57cty")]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_k4lvs"]
 resource_name = "monk_chase"
@@ -47,9 +59,33 @@ tracks/0/keys = {
 "values": [ExtResource("2_57cty"), ExtResource("8_foggx"), ExtResource("2_57cty")]
 }
 
+[sub_resource type="Animation" id="Animation_jnnlx"]
+resource_name = "death"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_hfrtq"), ExtResource("10_5mxje"), ExtResource("11_ijyfi"), ExtResource("12_w2ecq"), ExtResource("13_0el40")]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, -0.5, 0)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5yn1g"]
 _data = {
 "RESET": SubResource("Animation_34n4v"),
+"death": SubResource("Animation_jnnlx"),
 "monk_chase": SubResource("Animation_k4lvs")
 }
 
@@ -110,3 +146,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.6416, 0, 0.165841, 0)
 target_position = Vector3(0, 0, 1)
 
 [connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
+[connection signal="monk_die" from="HealthComponent" to="." method="_on_health_component_monk_die"]

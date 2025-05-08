@@ -39,8 +39,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_health_component_nun_die() -> void:
 	animation_player.stop()
-	dying.emit()
+	#dying.emit()
 	animation_player.play("death")
 	SoundManager.play_enemy_death()
 	await animation_player.animation_finished
 	queue_free()
+	
+func knife_effect_sound():
+	SoundManager.play_nun_projectile()

@@ -72,4 +72,4 @@ func shoot_knife():
 			var direction = (player.global_position - enemy.global_position).normalized()
 			instance.velocity = direction * 10
 			animation_player.play("knife")
-			ak_event_3d.post_event()
+			
