@@ -14,6 +14,7 @@ func _input(event: InputEvent) -> void:
 		interact()
 
 func interact():
+	Wwise.set_state("CATACOMB_WITCHES", "WITCH2")
 	merga_sprite.play("talk")
 	dialogue_balloon.visible = true
 	PlayerManager.is_talking_to_merga = true
