@@ -18,9 +18,15 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
-var is_leaping := false
+var sprite_origin_position: Vector3
+
+#bob variable
+const BOB_FREQ = 2.0 #2.0
+const BOB_AMP = 0.08 #0.08
+var t_bob = 0.0
 
 func _ready():
+	sprite_origin_position = sprite.position
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
@@ -32,9 +38,7 @@ func _find_player():
 		print("Player found: ", player_3d.name)
 
 func _physics_process(delta: float) -> void:
-	if not is_leaping:
-		sprite.rotate_y(delta)
-
+	sprite.rotate_y(delta * 3)
 	# Debugging
 	if player_3d == null:
 		return  # Exit if no player is assigned
@@ -48,6 +52,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Always face the player
 	look_at(player_3d.position)
+	t_bob += delta * velocity.length() * float(is_on_floor()) 
+	var new_head_pos = _headbob(t_bob)
+	sprite.position = sprite_origin_position + new_head_pos
 	
 	if health_component.health <= 0:
 		#SoundManager.play_death_sound()
@@ -71,4 +78,10 @@ func _on_DamageTimer_timeout():
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
+
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
 	

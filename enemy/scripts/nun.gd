@@ -12,12 +12,13 @@ class_name Nun
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ray: RayCast3D = $RayCast3D
 @onready var sprite: Sprite3D = $Sprite3D
-#@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
+
 signal dying
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 3.0
+var is_alerted := false
 
 func _ready():
 	ray.enabled = true
@@ -25,7 +26,7 @@ func _ready():
 	await get_tree().process_frame
 	player_3d = get_tree().get_first_node_in_group("Player Groups")
 
-func _process(delta):
+func _process(_delta):
 	ray.force_raycast_update()
 
 func _physics_process(delta: float) -> void:

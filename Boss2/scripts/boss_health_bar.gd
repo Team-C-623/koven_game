@@ -2,7 +2,7 @@ extends ProgressBar
 class_name BossHealthBar
 
 # Boss Health Bar
-@onready var health_timer: Timer = $"../health_timer"
+#@onready var health_timer: Timer = $"../health_timer"
 @onready var health_component: HealthComponent = $"../HealthComponent"
 @onready var player = get_tree().get_first_node_in_group("Player Groups")
 @onready var boss = get_parent()

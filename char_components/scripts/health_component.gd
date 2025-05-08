@@ -8,6 +8,7 @@ class_name HealthComponent
 signal health_changed(current_health: float, max_health: float)
 signal nun_die
 signal died
+signal damaged
 
 var health : float
 var is_dead := false
@@ -17,7 +18,7 @@ func _ready():
 	
 func damage(attack: Attack):
 	health -= (attack.attack_damage * damage_modifier)
-	
+	emit_signal("damaged")
 	if is_dead:
 		return
 	

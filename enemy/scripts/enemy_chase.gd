@@ -11,13 +11,23 @@ var angle_cone_of_vision := deg_to_rad(30.0)
 var max_view_distance := 5.0
 var angle_between_rays := deg_to_rad(5.0)
 
+var alert_cooldown := 5.0
+var alert_timer := 0.0
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
 	Wwise.set_switch("GAMEPLAY_SWITCH", "COMBAT",self)
-
-
+	
+func enter():
+	alert_timer = alert_cooldown
+	
 func process(_delta: float):
-	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) > enemy.CHASE_DISTANCE:
+	if enemy.is_alerted:
+		alert_timer -= _delta
+		if alert_timer <= 0.0:
+			enemy.is_alerted = false
+			
+	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) > enemy.CHASE_DISTANCE and enemy.is_alerted == false:
 		Transitioned.emit(self, "EnemyWander")
 		
 func physics_process(_delta: float):

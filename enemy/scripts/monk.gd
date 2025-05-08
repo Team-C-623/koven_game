@@ -17,6 +17,7 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
+var is_alerted := false
 
 func _ready():
 	ray.enabled = true
@@ -27,7 +28,7 @@ func _ready():
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
 	
-func _process(delta):
+func _process(_delta):
 	ray.force_raycast_update()
 
 func _physics_process(delta: float) -> void:

@@ -30,4 +30,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
 environment = SubResource("Environment_5tb5c")
 
 [node name="Boss2" parent="." instance=ExtResource("4_gsnc2")]
-transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0, 2.94622)
+transform = Transform3D(0.998603, 0, 0, 0, 0.998603, 0, 0, 0, 0.998603, 0, 0.566494, 1.96925)

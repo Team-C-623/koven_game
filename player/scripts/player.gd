@@ -5,7 +5,7 @@ class_name Player
 @export var attack_damage = 0.0
 #camera settings
 const SENS = 0.4
-@export var speed = 3.0 #3.0
+@export var speed = 2.0 #3.0
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
@@ -46,7 +46,7 @@ var footstep_cooldown := 0.0  # Prevents double-triggering
 @onready var health_sprite_2d: Sprite2D = $HealthBar/Sprite2D
 
 var shoot_cooldown: float = 0.0
-const SHOOT_COOLDOWN_TIME: float = 0.2
+const SHOOT_COOLDOWN_TIME: float = 0.3
 
 func _ready() -> void:
 	PlayerManager.player = self
@@ -55,6 +55,8 @@ func _ready() -> void:
 	Wwise.set_state("PLAYER_STATE", "ALIVE")
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_stunned:
+		return
 	# "ui_cancel" is escape by default
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
