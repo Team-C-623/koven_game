@@ -10,6 +10,7 @@ enum Rarity { COMMON, RARE, SPECIAL }
 @export var duration: float
 @export var rarity: Rarity
 
+	
 func use(_target) -> void:
 	if name == "Judgement":
 		TarotManager.use_judgement(self)

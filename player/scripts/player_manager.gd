@@ -6,6 +6,7 @@ signal use_item(slot_data)
 var is_in_trial_room = false
 var has_won_trial_room = false
 var is_talking_to_old_witch = false
+@onready var card_hand: Control = $CardHand
 
 signal merga_saved
 var has_saved_merga := false:
@@ -18,6 +19,8 @@ var has_saved_merga := false:
 func use_slot_data(slot_data: SlotData) -> void:
 	slot_data.item_data.use(player)
 	use_item.emit(slot_data)
+
+	
 
 func get_global_position() -> Vector3:
 	return player.global_position
