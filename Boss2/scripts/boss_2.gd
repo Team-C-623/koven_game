@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 	if health_component.health <= 0:
 		#SoundManager.play_death_sound()
 		pass
-	
+
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
 		var attack = Attack.new()
@@ -88,4 +88,3 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
-	

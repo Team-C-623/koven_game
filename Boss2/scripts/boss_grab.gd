@@ -12,7 +12,7 @@ var max_view_distance := 5.0
 # Prayer beads
 var prayer_beads = load("res://weapons/PrayerBeads.tscn")
 var instance
-var cooldown := 0.0
+var cooldown := 5.0
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
@@ -32,7 +32,7 @@ func process(delta: float):
 			#enemy.is_leaping = false
 			Transitioned.emit(self, "BossChase")
 			reset_cooldown()
-		
+
 func physics_process(_delta: float):
 	if not player or not ray.is_enabled():
 		print("ray not enabled")
