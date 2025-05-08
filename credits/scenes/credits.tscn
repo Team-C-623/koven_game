@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct4dek63v5j5j"]
 
 [ext_resource type="Script" path="res://credits/scripts/credits.gd" id="1_3jpn6"]
-[ext_resource type="Texture2D" uid="uid://8151gwepnf8g" path="res://credits/art/exampleTitle.png" id="2_xutvm"]
+[ext_resource type="Texture2D" uid="uid://dwcjq0xle686" path="res://credits/art/koven_logo.png" id="2_gogp6"]
 [ext_resource type="Texture2D" uid="uid://dqccut1okumub" path="res://credits/art/CREDIT.png" id="3_s062h"]
 
 [node name="credits" type="Control"]
@@ -12,8 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3jpn6")
-creditsFile = "res://credits/art/example-CREDITS.txt"
-titleImage = ExtResource("2_xutvm")
+creditsFile = "res://credits/art/credits.txt"
+titleImage = ExtResource("2_gogp6")
+titlesColor = Color(0.717647, 0.121569, 0.25098, 1)
 destroyOnEnd = true
 
 [node name="background" type="TextureRect" parent="."]
@@ -24,14 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_s062h")
-
-[node name="backgroundVideo" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-expand = true
-
-[node name="musicPlayer" type="AudioStreamPlayer" parent="."]
+stretch_mode = 5
 
 [node name="scrollingContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,12 +34,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="titleImg" type="TextureRect" parent="scrollingContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 stretch_mode = 5
-
-[connection signal="finished" from="backgroundVideo" to="." method="_on_backgroundVideo_finished"]
-[connection signal="finished" from="musicPlayer" to="." method="_on_musicPlayer_finished"]

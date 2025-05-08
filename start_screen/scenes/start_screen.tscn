@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4gvohghhgy8k"]
+[gd_scene load_steps=11 format=3 uid="uid://c4gvohghhgy8k"]
 
 [ext_resource type="Script" path="res://start_screen/scripts/start_screen.gd" id="1_y7yta"]
 [ext_resource type="Texture2D" uid="uid://bne05als36j06" path="res://start_screen/art/startsplash.png" id="1_ycl1g"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://oc5b1sxnocq3" path="res://start_screen/art/buttons/startbutton_dark.png" id="5_2g57e"]
 [ext_resource type="Texture2D" uid="uid://qtwk7y3yqgjt" path="res://start_screen/art/buttons/exitbutton.png" id="6_j18iw"]
 [ext_resource type="Texture2D" uid="uid://cm1lein25vpqy" path="res://start_screen/art/buttons/exitbutton_dark.png" id="7_7lh2q"]
+[ext_resource type="Texture2D" uid="uid://0uson13j68dq" path="res://start_screen/art/buttons/creditsbutton.png" id="9_ulotb"]
+[ext_resource type="Texture2D" uid="uid://ct1o5on30nhbw" path="res://start_screen/art/buttons/creditsbutton_dark.png" id="10_mexkj"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -34,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -536.0
-offset_top = -137.0
-offset_right = 244.0
-offset_bottom = -56.9999
+offset_left = -776.0
+offset_top = -144.0
+offset_right = 294.0
+offset_bottom = -63.9998
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.45, 1.45)
@@ -55,6 +57,12 @@ texture_normal = ExtResource("4_lvhc4")
 texture_pressed = ExtResource("5_2g57e")
 texture_hover = ExtResource("5_2g57e")
 
+[node name="CreditsButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_ulotb")
+texture_pressed = ExtResource("10_mexkj")
+texture_hover = ExtResource("10_mexkj")
+
 [node name="ExitButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_j18iw")
@@ -63,4 +71,5 @@ texture_hover = ExtResource("7_7lh2q")
 
 [connection signal="pressed" from="HBoxContainer/GuideButton" to="." method="_on_guide_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

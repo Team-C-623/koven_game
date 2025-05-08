@@ -1,9 +1,14 @@
-[gd_scene format=3 uid="uid://dd38n5dvr28kk"]
+[gd_scene load_steps=3 format=3 uid="uid://dd38n5dvr28kk"]
+
+[ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="1_a3ca6"]
+[ext_resource type="FontFile" uid="uid://da6roc43ehb7u" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="1_ysm48"]
 
 [node name="scrollingText" type="HBoxContainer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_left = 2.0
+offset_right = 2.0
+offset_bottom = 25.0
 grow_horizontal = 2
 size_flags_vertical = 0
 alignment = 1
@@ -17,6 +22,8 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_a3ca6")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 2
 
 [node name="margin2" type="MarginContainer" parent="."]
@@ -28,3 +35,5 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_ysm48")
+theme_override_font_sizes/font_size = 20

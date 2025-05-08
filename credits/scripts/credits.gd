@@ -4,6 +4,8 @@
 ## Credits scroll scene rich of options
 ## (for Godot Game Engine).
 
+## modified by Anakha
+
 extends Control
 
 signal ended
@@ -33,8 +35,7 @@ var credits
 
 ## The color of the background (covered if there is a video)
 @export var backgroundColor: Color = Color.BLACK
-## Video to play in background instead of having just a solid color
-@export var backgroundVideo: VideoStream
+
 ## Do you want the video to be restarted once finished?
 @export var loopVideo = true
 
@@ -47,19 +48,13 @@ var credits
 ## Space between left and right sides
 @export var margin: int = 6
 
-## Playlist of music to play during credits scroll
-@export var musicPlaylist: Array[AudioStream]
-## Do you want the playlist to be restarted once finished?
-@export var loopPlaylist = false
-var playlistIndex = 0
-
 ## Do you want to enable go faster, go slower, pause and reverse controls with ui_actions?
 @export var enableControls = true
 @export var speedUpControl = "ui_up"
 @export var slowDownControl = "ui_down"
 ## Do you want to be able to skip all the credits by pressing ui_accept?
 @export var enableSkip = true
-@export var skipControl = "ui_accept"
+# @export var skipControl = "ui_accept"
 
 ## The next scene to load once the scroll ended
 @export var nextScene: PackedScene
@@ -79,18 +74,6 @@ func _ready():
 	else:
 		titleImg.queue_free()
 	
-	# Set background video if there is one, otherwise delete the useless node
-	if backgroundVideo != null:
-		$backgroundVideo.stream = backgroundVideo
-		$backgroundVideo.play()
-	else:
-		$backgroundVideo.queue_free()
-	
-	# $background.color = backgroundColor
-	
-	# If the playlist has at list one track, play it
-	if musicPlaylist.size() > 0 and musicPlaylist[playlistIndex] != null:
-		playlist_track(playlistIndex)
 	
 	# Verify if a credits file has been provided
 	if creditsFile == null or creditsFile == "":
@@ -191,28 +174,6 @@ func _process(delta):
 		else:
 			end()
 
-# On video end, replay it if it's enable the loop
-func _on_backgroundVideo_finished():
-	if loopVideo:
-		$backgroundVideo.play()
-
-# Function to change playing track of playlist
-func playlist_track(index):
-	if 0 <= index and index < musicPlaylist.size():
-		musicPlaylist[index].loop = false
-		$musicPlayer.stream = musicPlaylist[index]
-		$musicPlayer.play()
-		playlistIndex = index
-
-# On track end, check if there is another track in the playlist after it
-# if not, and the playlist loop is enabled, restart the playlist
-func _on_musicPlayer_finished():
-	if playlistIndex+1 < musicPlaylist.size():
-		playlist_track(playlistIndex+1)
-	elif loopPlaylist:
-			playlistIndex = 0
-			playlist_track(playlistIndex)
-
 func _input(event):
 	if not done:
 		# If there is still text scrolling and controls are enabled,
@@ -224,7 +185,7 @@ func _input(event):
 				speed += 10 * event.get_action_strength(speedUpControl)
 		# If skip is enable, let the gamer skip the credits
 		if enableSkip:
-			if event.is_action_pressed(skipControl):
+			if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
 				end()
 				#speed *= 100
 
@@ -233,12 +194,13 @@ func end():
 	emit_signal("ended") # Emit a signal to make easy for programmers to connect other things to this
 	done = true # And a var, to make things even more easy to connect
 	
+	self.queue_free()
 	# If there is a next scene to load, then load it,
 	# otherwise if quitOnEnd is enabled, just quit
-	if nextScene != null:
-		# warning-ignore:return_value_discarded
-		get_tree().change_scene_to_file(nextScene.get_path())
-	elif quitOnEnd:
-		get_tree().quit()
-	elif destroyOnEnd:
-		self.queue_free()
+	#if nextScene != null:
+		### warning-ignore:return_value_discarded
+		#get_tree().change_scene_to_file(nextScene.get_path())
+	#elif quitOnEnd:
+		#get_tree().quit()
+	#elif destroyOnEnd:
+		#self.queue_free()

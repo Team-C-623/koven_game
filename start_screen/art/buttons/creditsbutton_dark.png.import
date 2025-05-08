@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8151gwepnf8g"
-path="res://.godot/imported/exampleTitle.png-8508f6cc8dc737fed9fa1953064e0b37.ctex"
+uid="uid://ct1o5on30nhbw"
+path="res://.godot/imported/creditsbutton_dark.png-79d73361def7948d9132ae06b082650d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://credits/art/exampleTitle.png"
-dest_files=["res://.godot/imported/exampleTitle.png-8508f6cc8dc737fed9fa1953064e0b37.ctex"]
+source_file="res://start_screen/art/buttons/creditsbutton_dark.png"
+dest_files=["res://.godot/imported/creditsbutton_dark.png-79d73361def7948d9132ae06b082650d.ctex"]
 
 [params]
 
