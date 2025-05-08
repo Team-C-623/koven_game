@@ -3,9 +3,9 @@ extends CharacterBody3D
 class_name Player
 @onready var wand = $head/PlayerCam/Wand
 @export var attack_damage = 0.0
-#camera settings
+
 const SENS = 0.4
-@export var speed = 3.0 #3.0
+@export var speed = 2.0 # 3.0 default
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()
@@ -13,37 +13,37 @@ signal toggle_inventory()
 var enemies = []
 
 @export var rtpc:WwiseRTPC
-#var health: int = 100
+
 var gravity: float = 9.8
 
 # Stun variables
 var is_stunned: bool = false
 var stun_duration: float = 0.0
 
-#bob variable
-const BOB_FREQ = 2.0 #2.0
-const BOB_AMP = 0.08 #0.08
+# bob variables
+const BOB_FREQ = 2.5 #2.0
+const BOB_AMP = 0.07 #0.08
 var t_bob = 0.0
+var was_rising := false  # Tracks previous frame's motion direction
+const FOOTSTEP_COOLDOWN = 0.5
+var footstep_cooldown := FOOTSTEP_COOLDOWN  # Prevents double-triggering
 
-#FOV variable
+# FOV variables
 const BASE_FOV = 90.0
 const FOV_CHANGE = 1.5
-@onready var health_component: HealthComponent = $HealthComponent
 
-#Flame
+# projectile scene
 var flame = load("res://weapons/Flame.tscn")
-var instance
 
 @onready var cam_mount = $head
 @onready var camera = $head/PlayerCam
 @onready var wand_anim = $head/PlayerCam/Wand/AnimationPlayer
 @onready var wand_tip = $head/PlayerCam/Wand/RayCast3D
-var was_rising := false  # Tracks previous frame's motion direction
-var footstep_cooldown := 0.0  # Prevents double-triggering
 
 # health bar
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var health_sprite_2d: Sprite2D = $HealthBar/Sprite2D
+@onready var health_component: HealthComponent = $HealthComponent
 
 var shoot_cooldown: float = 0.0
 const SHOOT_COOLDOWN_TIME: float = 0.2
@@ -65,6 +65,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			cam_mount.rotate_y(-event.relative.x * SENS * 0.005)
 			# rotates camera node's y angle by mouse y movement
 			camera.rotate_x(-event.relative.y * SENS * 0.005)
+			# limits camera angle
+			camera.rotation.x = clamp(camera.rotation.x, -PI / 2 + 0.1, PI / 2 - 0.1)
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
 		
@@ -73,10 +75,12 @@ func _physics_process(delta: float) -> void:
 	
 	if shoot_cooldown > 0:
 		shoot_cooldown -= delta
+	if footstep_cooldown > 0:
+		footstep_cooldown -= delta
 	
 	# shooting and movement preconditions:
 	var ui_blocking: bool = inventory_interface.visible or ShopMenu.visible or Journal.visible
-	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch
+	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch or PlayerManager.is_entering_dungeon
 
 	if !is_on_floor():
 		velocity.y -= gravity * delta
@@ -96,12 +100,11 @@ func _physics_process(delta: float) -> void:
 		var new_head_pos = _headbob(t_bob)
 		# Detect downward motion
 		var is_rising = new_head_pos.y > camera.transform.origin.y
-
 		
 		# Play sound at peak descent (when switching from falling to rising)
 		if was_rising and not is_rising and footstep_cooldown <= 0:
 			SoundManager.play_footsteps()
-			footstep_cooldown = 0.0  # Small cooldown to prevent double sounds
+			footstep_cooldown = FOOTSTEP_COOLDOWN  # Small cooldown to prevent double sounds
 		
 		# Update tracking variable
 		was_rising = is_rising
@@ -110,7 +113,7 @@ func _physics_process(delta: float) -> void:
 		#FOV
 		var target_fov = BASE_FOV + FOV_CHANGE
 		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
-		
+	
 	#Shooting 
 	if Input.is_action_just_pressed("shoot") and !ui_blocking and !in_restricted_state:
 		if shoot_cooldown <= 0:
@@ -118,7 +121,7 @@ func _physics_process(delta: float) -> void:
 			if !wand_anim.is_playing():
 				# Animation for shooting
 				wand_anim.play("cast")
-				instance = flame.instantiate()
+				var instance = flame.instantiate()
 				instance.position = wand_tip.global_position
 				instance.transform.basis = wand_tip.global_transform.basis
 				instance.attack_damage += attack_damage

@@ -167,7 +167,6 @@ transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147
 transform = Transform3D(-4.1153e-08, -1.47349e-08, -0.999999, -0.337095, 0.94147, 0, 0.94147, 0.337095, -4.37113e-08, -2.02432, 3.519, -6.1)
 
 [node name="DoorPositions" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="L" type="Marker3D" parent="DoorPositions"]
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 6.4, 0, 0)
