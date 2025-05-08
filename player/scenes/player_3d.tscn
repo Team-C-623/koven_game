@@ -34,9 +34,8 @@ rtpc = ExtResource("2_tx4mv")
 
 [node name="CardHand" parent="." instance=ExtResource("3_56rrk")]
 visible = false
-offset_top = -670.0
 offset_right = 898.0
-offset_bottom = 210.0
+offset_bottom = -210.0
 
 [node name="HealthBar" parent="." instance=ExtResource("2_rpfbq")]
 anchors_preset = -1

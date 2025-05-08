@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://w8tt64wwe0on"]
+
+[ext_resource type="Script" path="res://Boss3/scripts/boss_3_spawner.gd" id="1_fj3ai"]
+
+[node name="Boss3Spawner" type="Node3D"]
+script = ExtResource("1_fj3ai")
+
+[node name="spawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]

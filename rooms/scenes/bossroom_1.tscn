@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="7_4kfwp"]
 [ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="8_af7fu"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="9_ee5up"]
-[ext_resource type="PackedScene" uid="uid://do4m5lfs4b0mn" path="res://Boss2/boss2.tscn" id="10_21jeh"]
+[ext_resource type="PackedScene" uid="uid://do4m5lfs4b0mn" path="res://Boss2/scenes/boss2.tscn" id="10_21jeh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8w4p"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)

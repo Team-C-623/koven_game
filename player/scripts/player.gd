@@ -177,4 +177,3 @@ func stun(duration: float):
 	await get_tree().create_timer(duration).timeout
 	is_stunned = false
 	set_physics_process(true)
-	print("Player recovered from stun")

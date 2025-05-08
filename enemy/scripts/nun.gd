@@ -10,7 +10,7 @@ class_name Nun
 @export var gravity: float = 9.8
 @export var is_ranged: bool = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var ray: RayCast3D = $RayCast3D
 @onready var sprite: Sprite3D = $Sprite3D
 #@onready var ray_cast: RayCast3D = $Sprite3D/RayCast3Ds
 signal dying
@@ -20,7 +20,13 @@ var left_bounds: Vector3
 var attack_damage:= 3.0
 
 func _ready():
-	pass
+	ray.enabled = true
+	await get_tree().process_frame
+	await get_tree().process_frame
+	player_3d = get_tree().get_first_node_in_group("Player Groups")
+
+func _process(delta):
+	ray.force_raycast_update()
 
 func _physics_process(delta: float) -> void:
 	# Debugging
