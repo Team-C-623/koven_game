@@ -104,7 +104,6 @@ func _on_health_component_boss_2_die() -> void:
 	lasso_animation.play("boss_death")
 	await lasso_animation.animation_finished
 	TransitionScreen.transition()
-
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")
 	self.queue_free()
