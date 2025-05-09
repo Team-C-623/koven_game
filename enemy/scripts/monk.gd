@@ -2,9 +2,9 @@ extends CharacterBody3D
 class_name Monk
 @onready var player_3d=$"../Player"
 @export var SPEED: float = 0.5
-@export var CHASE_SPEED: float = 1.0
+@export var CHASE_SPEED: float = 1.5
 @export var ACCELERATION: float = 2.0
-@export var CHASE_DISTANCE: float = 5.0  # Distance at which the enemy starts chasing
+@export var CHASE_DISTANCE: float = 4.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var ray: RayCast3D = $RayCast3D

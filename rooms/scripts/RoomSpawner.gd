@@ -24,7 +24,7 @@ func generate():
 
 # generates the starting set of rooms
 func generate_base_path(room_options: Array[String]):
-	var grid_size = room_options.size()
+	var grid_size: int = room_options.size()
 	# assign the starting grid space to the center of the room grid
 	var prev_gridspace = Vector2(grid_size, grid_size)
 	
@@ -35,7 +35,7 @@ func generate_base_path(room_options: Array[String]):
 	_initialize_room_grid(grid_size)
 	
 	# add first room
-	var new_room = _create_room_data("room_1e")
+	var new_room: RoomData = _create_room_data("room_1e")
 	new_room.pos = prev_gridspace
 	room_grid[prev_gridspace[0]][prev_gridspace[1]] = new_room
 	base_path_list.append(new_room)
@@ -48,11 +48,17 @@ func generate_base_path(room_options: Array[String]):
 	var prev_prev_door_choice = null
 	var prev_prev_gridspace = Vector2(grid_size, grid_size)
 	
-	var rooms_added = 1
+	var rooms_added: int = 1
 	while rooms_added < grid_size:
 		if rooms_added == grid_size - 1:
 			# end room is always the boss room
 			new_room = _create_room_data("room_1b")
+		elif rooms_added == 1:
+			new_room = _create_room_data(room_types.pick_random())
+		elif rooms_added == 2:
+			new_room = _create_room_data(["room_2c", "room_3c"].pick_random())
+		elif rooms_added == 3:
+			new_room = _create_room_data("room_5e")
 		else:
 			new_room = _create_room_data(room_options.pick_random())
 		
@@ -201,8 +207,7 @@ func _create_new_door(new_room, door_pos):
 	var door_position = new_room.get_door_pos(door_pos).global_position
 	var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
 	
-	var rel_door_pos = (new_room.global_position - door_position)
-	print(rel_door_pos, "\t", door_pos)
+	var rel_door_pos = (new_room.global_position - door_position).snapped(Vector3(1, 1, 1))
 	if rel_door_pos[0] == 0:
 		new_door.global_position = door_position - Vector3(0.02 * rel_door_pos[0], 0, 0.02 * rel_door_pos[1])
 	else:
@@ -211,7 +216,7 @@ func _create_new_door(new_room, door_pos):
 	new_door.rotate_y(door_rotation)
 
 # creates a new RoomData object based on the name string provided
-func _create_room_data(new_room_name):
+func _create_room_data(new_room_name: String) -> RoomData:
 	var new_room = RoomData.new()
 	new_room.room_name = new_room_name
 	var used_room = ROOMS_LIST.Rooms[0]

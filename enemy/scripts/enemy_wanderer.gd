@@ -40,11 +40,12 @@ func process(delta: float):
 	
 	if is_instance_valid(player) and enemy.global_position.distance_to(player.global_position) < enemy.CHASE_DISTANCE:
 		ray_cast_3d.force_raycast_update()
-		if not ray_cast_3d.is_colliding() or ray_cast_3d.get_collider() == player:
-			if enemy is Monk:
-				Transitioned.emit(self, "EnemyChase")
-			elif enemy is Nun:
-				Transitioned.emit(self, "EnemyShoot")
+		# this if caused the stupid enemies, reenable if bugs occur
+		#if not ray_cast_3d.is_colliding() or ray_cast_3d.get_collider() == player:
+		if enemy is Monk:
+			Transitioned.emit(self, "EnemyChase")
+		elif enemy is Nun:
+			Transitioned.emit(self, "EnemyShoot")
 				
 func _on_enemy_damaged():
 	enemy.is_alerted = true

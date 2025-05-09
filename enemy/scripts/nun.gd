@@ -6,14 +6,15 @@ class_name Nun
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.0
 @export var ACCELERATION: float = 2.0
-@export var CHASE_DISTANCE: float = 5.0  # Distance at which the enemy starts chasing
+@export var CHASE_DISTANCE: float = 4.5  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
 @export var is_ranged: bool = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ray: RayCast3D = $RayCast3D
 @onready var sprite: Sprite3D = $Sprite3D
 
-signal dying
+# i dont think this is ever used
+#signal dying
 
 var direction: Vector3
 var right_bounds: Vector3
