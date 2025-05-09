@@ -9,8 +9,6 @@ var room: Room
 var jury: Sprite3D
 var prosecutor: Sprite3D
 
-const BOSSROOM_1_TP = preload("res://rooms/scenes/bossroom_1_tp.tscn")
-
 func _ready() -> void:
 	room = $"../.."
 	await get_tree().create_timer(0.5).timeout
@@ -42,12 +40,9 @@ func _on_body_entered(body: Node3D) -> void:
 		if body is Player:
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
-			PlayerManager.is_in_boss_room = true
-			var boss_room = BOSSROOM_1_TP.instantiate()
-			map.add_child(boss_room)
-			boss_room.global_position = Vector3(0, 60, 0)
-			var boss_room_spawn = boss_room.global_position + Vector3(0, 0, 4)
-			PlayerManager.player.global_position = boss_room_spawn
+			var boss_dialogue_scene = preload("res://Boss2/scenes/boss_dialogue.tscn").instantiate()
+			add_child(boss_dialogue_scene)
+			collision_shape_3d.queue_free()
 
 func check_sprites_shown() -> void:
 	await get_tree().create_timer(0.1).timeout

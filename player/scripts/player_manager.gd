@@ -7,6 +7,7 @@ signal merga_saved
 
 # Player states
 var is_in_boss_room = false
+var is_in_boss_dialogue = false
 var is_in_trial_room = false
 var has_won_trial_room = false
 var is_talking_to_old_witch = false

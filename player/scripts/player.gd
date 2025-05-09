@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	
 	# shooting and movement preconditions:
 	var ui_blocking: bool = inventory_interface.visible or ShopMenu.visible or Journal.visible
-	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch or PlayerManager.is_talking_to_merga or PlayerManager.is_entering_dungeon
+	var in_restricted_state: bool = PlayerManager.is_in_trial_room or PlayerManager.is_talking_to_old_witch or PlayerManager.is_talking_to_merga or PlayerManager.is_entering_dungeon or PlayerManager.is_in_boss_dialogue
 
 	if !is_on_floor():
 		velocity.y -= gravity * delta
