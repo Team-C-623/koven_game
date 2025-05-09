@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	if PlayerManager.player:
-		if PlayerManager.is_in_trial_room == false:
+		if PlayerManager.is_in_trial_room == false and PlayerManager.game_over == false:
 			Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 		else:
 			Wwise.set_rtpc_value("Health", 100,self)

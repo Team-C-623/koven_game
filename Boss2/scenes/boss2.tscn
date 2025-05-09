@@ -47,6 +47,29 @@ tracks/0/keys = {
 "values": [ExtResource("4_o7dlg")]
 }
 
+[sub_resource type="Animation" id="Animation_3tp38"]
+resource_name = "boss_death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_0m8hu"), ExtResource("13_gyd0h"), ExtResource("14_5e6r0"), ExtResource("15_vjxps"), ExtResource("16_gg1jk")]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99, 1, 0, 0, 0, 1, 1, 0, -0.1, 0)
+
 [sub_resource type="Animation" id="Animation_luput"]
 resource_name = "boss_grab"
 length = 1.2
@@ -76,28 +99,6 @@ tracks/1/keys = {
 "method": &"play_lasso_windup"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_3tp38"]
-resource_name = "boss_death"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("12_0m8hu"), ExtResource("13_gyd0h"), ExtResource("14_5e6r0"), ExtResource("15_vjxps"), ExtResource("16_gg1jk")]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite3D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99, 1, 0, 0, 0, 1, 1, 0, -0.1, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2l1dx"]
 _data = {
@@ -263,7 +264,7 @@ script = ExtResource("6_lli8g")
 script = ExtResource("7_5nxkb")
 
 [node name="HealthComponent" parent="." instance=ExtResource("8_mnqap")]
-MAX_HEALTH = 250.0
+MAX_HEALTH = 10.0
 
 [node name="HitboxComponent" parent="." instance=ExtResource("9_xmudd")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)

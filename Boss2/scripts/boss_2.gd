@@ -12,6 +12,7 @@ class_name Boss2
 @onready var boss_leap: CanvasLayer = $BossLeap
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
+@onready var state_machine: StateMachine = $StateMachine
 
 var direction: Vector3
 var right_bounds: Vector3
@@ -60,9 +61,7 @@ func _physics_process(delta: float) -> void:
 	var new_head_pos = _headbob(t_bob)
 	sprite.position = sprite_origin_position + new_head_pos
 	
-	if health_component.health <= 0:
-		#SoundManager.play_death_sound()
-		pass
+
 
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent:
@@ -95,9 +94,11 @@ func _headbob(time) -> Vector3:
 
 
 func _on_health_component_boss_2_die() -> void:
+	PlayerManager.game_over = true
 	lasso_animation.stop()
 	leap_animation.stop()
 	set_physics_process(false)
+	state_machine.set_physics_process(false)
 	lasso_animation.play("boss_death")
 	await lasso_animation.animation_finished
 	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")
