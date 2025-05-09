@@ -6,9 +6,9 @@ extends Node3D
 #var attack_damage:= 0.0
 @export var speed: float = 0.0
 var direction: Vector3 = Vector3.ZERO
+var timer
 
 signal bead_hit
-
 
 func _ready():
 	var player = get_tree().get_first_node_in_group("Player Groups")
@@ -17,7 +17,7 @@ func _ready():
 	
 	prayer_beads_hit_box.position = global_position
 		
-	var timer = Timer.new()
+	timer = Timer.new()
 	timer.wait_time = 0.5
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "_on_bead_timeout"))
@@ -37,13 +37,11 @@ func check_collision():
 func _on_bead_timeout():
 	mesh.visible = false
 	queue_free()
+	
 
 func _on_prayer_beads_hit_box_area_entered(area):
 	if area is HitboxComponent:
 		var hitbox : HitboxComponent = area
-		#var attack = Attack.new()
-		#attack.attack_damage = attack_damage
-		#hitbox.damage(attack)
-		hitbox.get_parent().stun(0.1)
 		bead_hit.emit()
+		hitbox.get_parent().stun(2.0)
 		_on_bead_timeout()

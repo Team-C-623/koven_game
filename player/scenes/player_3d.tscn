@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
 [ext_resource type="PackedScene" uid="uid://c7jj1a7xswf00" path="res://char_components/scenes/health_bar.tscn" id="2_rpfbq"]
 [ext_resource type="WwiseRTPC" uid="uid://t4nqbdfk4r16" path="res://Wwise/resources/Game Parameter/{35CEA8A7-DA9F-48C4-90AB-1D66145863CF}.tres" id="2_tx4mv"]
-[ext_resource type="Texture2D" uid="uid://djkefbtfpebke" path="res://assets/ui/Final health bar.png" id="3_2in4s"]
 [ext_resource type="PackedScene" uid="uid://chhgpwvclf7v3" path="res://card_hand/card_hand.tscn" id="3_56rrk"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="4_qib34"]
+[ext_resource type="Texture2D" uid="uid://3l6bbsxb2tud" path="res://assets/ui/player_health_filled.png" id="5_in1kf"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="5_q2tud"]
 [ext_resource type="WwiseEvent" uid="uid://cjaq8lcyyl7h5" path="res://Wwise/resources/Event/{084A66E5-751C-49A4-979C-19CA4C46EED2}.tres" id="7_u22ds"]
 [ext_resource type="WwiseEvent" uid="uid://b0hi6ksacg8mf" path="res://Wwise/resources/Event/{846235B5-08C0-423B-B387-394F814BE827}.tres" id="10_6ad7p"]
@@ -56,7 +56,7 @@ show_percentage = false
 [node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
 position = Vector2(214.125, 15)
 scale = Vector2(0.302782, 0.333333)
-texture = ExtResource("3_2in4s")
+texture = ExtResource("5_in1kf")
 
 [node name="TopDownCam" type="Camera3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.7423e-08, 2, 0, -2, -8.7423e-08, 0, 100, 0)
