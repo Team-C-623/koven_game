@@ -36,8 +36,6 @@ func _ready():
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
 	call_deferred("_find_player")
-	
-	
 
 func _find_player():
 	player_3d = get_tree().get_first_node_in_group("Player Groups")
@@ -62,20 +60,17 @@ func _physics_process(delta: float) -> void:
 	t_bob += delta * velocity.length() * float(is_on_floor()) 
 	var new_head_pos = _headbob(t_bob)
 	sprite.position = sprite_origin_position + new_head_pos
-	
-
 
 	if health_component.health <= 0:
 		#SoundManager.play_death_sound()
 		pass
-		
-	
+
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
-	
+
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent and health_component.health > 0:
 		var attack = Attack.new()
@@ -116,5 +111,3 @@ func _on_health_component_boss_2_die() -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")
-	#self.queue_free()
-	
