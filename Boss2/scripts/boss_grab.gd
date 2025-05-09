@@ -6,6 +6,7 @@ var player: CharacterBody3D = null
 @onready var ray: RayCast3D = $"../../RayCast3D"
 @onready var boss_leap: CanvasLayer = $"../../BossLeap"
 @onready var lasso_animation: AnimationPlayer = $"../../LassoAnimation"
+@onready var leap_animation: AnimationPlayer = $"../../LeapAnimation"
 
 var max_view_distance := 5.0
 
@@ -41,7 +42,7 @@ func process(delta: float):
 	if is_instance_valid(player):
 		cooldown -= delta
 		if cooldown <= 0.0:
-			set_visibility(false)
+			#set_visibility(false)
 			Transitioned.emit(self, "BossChase")
 			reset_cooldown()
 		
@@ -90,16 +91,17 @@ func shoot_beads():
 func do_leap():
 	#in_stun = true
 	#stun_timer = leap_stun_time
-	set_visibility(true)
+	#set_visibility(true)
+	leap_animation.play("leap_animation")
 	var direction = (player.global_position - enemy.global_position).normalized()
 	enemy.velocity = direction * 25
 	
-func set_visibility(is_leaping: bool):
-	if is_leaping:
-		enemy.visible = false
-		boss_leap.visible = true
-	else:
-		boss_leap.visible = false
-		enemy.visible = true
+#func set_visibility(is_leaping: bool):
+	#if is_leaping:
+		##enemy.visible = false
+		##boss_leap.visible = true
+		#leap_animation.play("leap_animation")
+	#else:
+		#return
 		
 	
