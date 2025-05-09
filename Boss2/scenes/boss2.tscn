@@ -255,7 +255,7 @@ script = ExtResource("6_lli8g")
 script = ExtResource("7_5nxkb")
 
 [node name="HealthComponent" parent="." instance=ExtResource("8_mnqap")]
-MAX_HEALTH = 10.0
+MAX_HEALTH = 20.0
 
 [node name="HitboxComponent" parent="." instance=ExtResource("9_xmudd")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)

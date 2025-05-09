@@ -101,7 +101,7 @@ pause={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://trialroom/dialogue/trial1.dialogue", "res://cutscenes/dialogue/intro_quote.dialogue", "res://cutscenes/dialogue/spawn_message.dialogue", "res://catacombs/dialogue/soulmother.dialogue", "res://catacombs/dialogue/merga.dialogue", "res://Boss2/dialogue/boss2_dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://trialroom/dialogue/trial1.dialogue", "res://cutscenes/dialogue/intro_quote.dialogue", "res://cutscenes/dialogue/spawn_message.dialogue", "res://catacombs/dialogue/soulmother.dialogue", "res://catacombs/dialogue/merga.dialogue", "res://Boss2/dialogue/boss2_dialogue.dialogue", "res://Boss2/dialogue/boss2_death.dialogue")
 
 [layer_names]
 

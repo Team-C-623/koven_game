@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d20brqeuoxml6"
+path="res://.godot/imported/boss2_death.dialogue-33714d088b03c7da409708b7d6708f40.tres"
+
+[deps]
+
+source_file="res://Boss2/dialogue/boss2_death.dialogue"
+dest_files=["res://.godot/imported/boss2_death.dialogue-33714d088b03c7da409708b7d6708f40.tres"]
+
+[params]
+
+defaults=true

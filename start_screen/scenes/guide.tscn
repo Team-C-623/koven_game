@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctshf181pfmbv"]
+[gd_scene load_steps=8 format=3 uid="uid://ctshf181pfmbv"]
 
 [ext_resource type="Script" path="res://start_screen/scripts/guide.gd" id="1_avngt"]
-[ext_resource type="Texture2D" uid="uid://brpdxbk4ldvka" path="res://start_screen/art/guidebackground.png" id="1_bf0k0"]
 [ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="2_1grd1"]
+[ext_resource type="Texture2D" uid="uid://dmoytn77v216t" path="res://assets/environment/candleroom1wood.png" id="2_dugu7"]
 [ext_resource type="FontFile" uid="uid://da6roc43ehb7u" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="3_el11k"]
 [ext_resource type="Texture2D" uid="uid://biaq1hyykb15m" path="res://start_screen/art/buttons/backbutton.png" id="4_yp65i"]
 [ext_resource type="Texture2D" uid="uid://b0wmstoywr5jh" path="res://start_screen/art/buttons/backbutton_dark.png" id="5_ef8n4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32wwh"]
 
 [node name="Guide" type="Control"]
 layout_mode = 3
@@ -23,48 +25,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_bf0k0")
+texture = ExtResource("2_dugu7")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect"]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 51.0
-offset_top = -511.0
-offset_right = 851.0
-offset_bottom = 389.0
+offset_left = -928.0
+offset_top = -140.0
+offset_right = 472.0
+offset_bottom = 476.0
+grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.957489, 1)
+scale = Vector2(1.0562, 1.0576)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_32wwh")
 
-[node name="ControlsTitle" type="RichTextLabel" parent="TextureRect/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/PanelContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_1grd1")
-theme_override_font_sizes/normal_font_size = 100
-text = "Controls"
-
-[node name="ControlsDesc" type="RichTextLabel" parent="TextureRect/MarginContainer"]
-layout_mode = 2
+theme_override_colors/default_color = Color(0.984314, 0.647059, 0.368627, 1)
 theme_override_fonts/normal_font = ExtResource("3_el11k")
 theme_override_fonts/bold_font = ExtResource("2_1grd1")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/bold_font_size = 35
 bbcode_enabled = true
-text = "
-
-[b]Movement[/b]: WASD
-[b]Shoo[/b]t: LMB
+text = "[b]Movement[/b]: WASD
+[b]Shoot[/b]: LMB
+[b]Interact[/b]: E
 [b]Journal[/b]: J
+[b]Pause[/b]: Esc
 [b]Inventory[/b]: Tab
-- Use card in hotbar: 1,2,3,4
+- Use card in hotbar slot: 1-5
 - Use card in inventory: RMB
-[b]Trial Room[/b]:
+[b]Dialogue[/b]:
 - Skip dialogue: Space/LMB
 - Option navigation: Arrow keys
 - Select option: Enter
-
-
-"
+[b]Credits[/b]:
+- Skip credits: Spacebar"
+fit_content = true
+scroll_active = false
 
 [node name="BackButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 1
@@ -73,13 +75,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -338.0
-offset_top = -169.0
-offset_right = 462.0
-offset_bottom = 731.0
+offset_left = -304.0
+offset_top = -160.0
+offset_right = -134.0
+offset_bottom = -80.0001
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.45, 1.45)
+scale = Vector2(1.4, 1.4)
+size_flags_horizontal = 8
+size_flags_vertical = 8
 texture_normal = ExtResource("4_yp65i")
 texture_pressed = ExtResource("5_ef8n4")
 texture_hover = ExtResource("5_ef8n4")

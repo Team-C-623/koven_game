@@ -14,6 +14,7 @@ class_name Boss2
 @onready var damage_timer: Timer = $DamageTimer
 @onready var state_machine: StateMachine = $StateMachine
 @onready var lasso_animation: AnimationPlayer = $LassoAnimation
+@onready var dialogue_balloon = preload("res://dialogue/balloon.tscn").instantiate()
 
 var direction: Vector3
 var right_bounds: Vector3
@@ -34,8 +35,9 @@ func _ready():
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
+	add_child(dialogue_balloon)
+	dialogue_balloon.visible = false
 	call_deferred("_find_player")
-	
 	
 
 func _find_player():
@@ -62,12 +64,9 @@ func _physics_process(delta: float) -> void:
 	var new_head_pos = _headbob(t_bob)
 	sprite.position = sprite_origin_position + new_head_pos
 	
-
-
 	if health_component.health <= 0:
 		#SoundManager.play_death_sound()
 		pass
-		
 	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -98,20 +97,28 @@ func _on_DamageTimer_timeout():
 func play_lasso_windup():
 	SoundManager.play_lasso_windup()
 
-
-func _on_health_component_boss_2_die() -> void:
-	PlayerManager.game_over = true
-	SoundManager.play_main_menu_music()
-	Currency.reset()
-	Journal.reset()
+func start_dialogue():
+	PlayerManager.is_in_boss_dialogue = true
+	dialogue_balloon.visible = true
+	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
+	DialogueManager.show_dialogue_balloon(load("res://Boss2/dialogue/boss2_death.dialogue"), "start")
+ 
+func _on_health_component_boss_2_die():
+	look_at(player_3d.position)
 	lasso_animation.stop()
 	leap_animation.stop()
 	set_physics_process(false)
 	state_machine.set_physics_process(false)
+	start_dialogue()
+
+func _on_dialogue_finished(_result):
 	lasso_animation.play("boss_death")
 	await lasso_animation.animation_finished
+	PlayerManager.is_in_boss_dialogue = false
+	PlayerManager.game_over = true
+	Currency.reset()
+	Journal.reset()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
+	SoundManager.play_main_menu_music()
 	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")
-	#self.queue_free()
-	
