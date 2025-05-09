@@ -229,7 +229,7 @@ shape = SubResource("CapsuleShape3D_gb5n1")
 wait_time = 0.6
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1.11909, 0, 0.209989, 0)
+transform = Transform3D(1.05099, 0, 0, 0, 1.05099, 0, 0, 0, 0.998095, 0, 0.209989, 0)
 target_position = Vector3(0, 0, 1)
 collision_mask = 3
 
