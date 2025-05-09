@@ -2,8 +2,8 @@ extends Control
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	Wwise.set_state("LOCATION", "MAIN_MENU")
-	SoundManager.play_main_menu_music()
+	#Wwise.set_state("LOCATION", "MAIN_MENU")
+	#SoundManager.play_main_menu_music()
 
 func _on_start_button_pressed():
 	SoundManager.play_menu_boop()
@@ -23,7 +23,7 @@ func _on_guide_button_pressed():
 	SoundManager.play_menu_boop()
 	var guide_scene = preload("res://start_screen/scenes/guide.tscn").instantiate()
 	get_tree().current_scene.add_child(guide_scene)
-
+	self.queue_free
 
 func _on_credits_button_pressed() -> void:
 	var credits_scene = preload("res://credits/scenes/credits.tscn").instantiate()

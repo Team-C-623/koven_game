@@ -12,6 +12,8 @@ func _ready() -> void:
 	music_bank.load_bank()
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
 	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")
+	Wwise.set_state("LOCATION", "MAIN_MENU")
+	play_main_menu_music()
 	
 	
 func _process(_delta: float) -> void:
@@ -147,6 +149,7 @@ func play_castle_music(_floor_state: String = "floor1"): # called in main.gd (_e
 	pass
 
 func play_main_menu_music(): # called in start_screen script
+	Wwise.set_state("LOCATION","MAIN_MENU")
 	Wwise.post_event_id(AK.EVENTS.MAIN_MENU,self)
 	
 func play_start_music(): #called in catacombs.gd 
@@ -182,4 +185,3 @@ func play_victory(): #needs to be added
 func play_queue_credits(): #not called
 	Wwise.set_state("LOCATION","credits")
 	Wwise.post_event_id(AK.EVENTS.QUEUE_CREDITS,self)
-	

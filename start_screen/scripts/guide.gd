@@ -10,3 +10,4 @@ func _on_back_button_pressed():
 	SoundManager.play_menu_boop()
 	#get_tree().change_scene_to_file("res://start_screen/scenes/start_screen.tscn")
 	get_tree().current_scene.get_node("Guide").queue_free()
+	
