@@ -144,30 +144,31 @@ func generate_base_path(room_options: Array[String]):
 	return base_path_list
 
 func generate_side_paths(base_path):
+	var valid_door_dict: Dictionary = {}
 	for room: RoomData in base_path:
-		var valid_door_list = []
 		# check if there are valid doors for the current room
 		for door in room.door_dict:
 			var vect_to_check = _get_door_pos_vector(door)
 			var grid_to_check = room.pos + vect_to_check.rotated(room.room_rotation).snapped(Vector2(1, 1))
 			if room.door_dict[door] == 0 and room_grid[grid_to_check[0]][grid_to_check[1]] == null:
-				valid_door_list.append(door)
-		if valid_door_list.size() > 0:
-			# pick a random valid door from the previous room and get the next grid space
-			var door_choice = valid_door_list.pick_random()
-			var door_vect = _get_door_pos_vector(door_choice)
-			var new_vect = _get_door_pos_vector("U")
-			var room_gridspace = room.pos + door_vect.rotated(room.room_rotation).snapped(Vector2(1, 1))
-			var new_room = _create_room_data("room_t")
-			
-			# update room attributes and grid to reflect room addition
-			room.door_dict[door_choice] = 1
-			new_room.door_dict["U"] = 1
-			new_room.room_rotation = room.room_rotation - door_vect.angle_to(new_vect) + PI
-			new_room.pos = room_gridspace
-			room_grid[room_gridspace[0]][room_gridspace[1]] = new_room
-			
-			return true
+				valid_door_dict[room] = door
+	if valid_door_dict.size() > 0:
+		# pick a random valid door from a random valid room and get the next grid space
+		var chosen_room = valid_door_dict.keys()[randi() % valid_door_dict.size()]
+		var door_choice: String = valid_door_dict[chosen_room]
+		var door_vect = _get_door_pos_vector(door_choice)
+		var new_vect = _get_door_pos_vector("U")
+		var room_gridspace = chosen_room.pos + door_vect.rotated(chosen_room.room_rotation).snapped(Vector2(1, 1))
+		var new_room = _create_room_data("room_t")
+		
+		# update room attributes and grid to reflect room addition
+		chosen_room.door_dict[door_choice] = 1
+		new_room.door_dict["U"] = 1
+		new_room.room_rotation = chosen_room.room_rotation - door_vect.angle_to(new_vect) + PI
+		new_room.pos = room_gridspace
+		room_grid[room_gridspace[0]][room_gridspace[1]] = new_room
+		
+		return true
 	# return false if no valid rooms are found
 	return false
 
@@ -232,7 +233,7 @@ func _create_room_data(new_room_name: String) -> RoomData:
 
 # adds a child to the scene tree based on the provided RoomData object
 func _add_room_from_data(room: RoomData):
-	var new_instance = room.room_scene.instantiate()
+	var new_instance: Room = room.room_scene.instantiate()
 	add_child(new_instance)
 	new_instance.room_rotation = room.room_rotation
 	new_instance.door_dict = room.door_dict
@@ -254,7 +255,7 @@ func _clear_rooms():
 	room_grid = []
 
 # returns a grid vector based on the given door position
-func _get_door_pos_vector(door_pos):
+func _get_door_pos_vector(door_pos: String) -> Vector2:
 	if door_pos == "R":
 		return Vector2(0, 1)
 	elif door_pos == "U":
@@ -265,7 +266,7 @@ func _get_door_pos_vector(door_pos):
 		return Vector2(1, 0)
 
 # returns a vector based on the door position in 3D space
-func _get_3d_door_vector(door_pos):
+func _get_3d_door_vector(door_pos: String) -> Vector2:
 	if door_pos == "R":
 		return Vector2(1, 0)
 	elif door_pos == "U":
@@ -276,7 +277,7 @@ func _get_3d_door_vector(door_pos):
 		return Vector2(0, -1)
 
 # returns an angle based on the given door position
-func _get_door_rotation(door_pos):
+func _get_door_rotation(door_pos: String):
 	if door_pos == "U" or door_pos == "D":
 		return 0
 	else:
@@ -290,7 +291,7 @@ func _create_room_list(rooms_dict: Dictionary):
 	return room_list
 
 # creates the room grid based on the given path size
-func _initialize_room_grid(base_path_length):
+func _initialize_room_grid(base_path_length: int):
 	room_grid = []
 	for i in range(2 * base_path_length + 1):
 		var new_row = []

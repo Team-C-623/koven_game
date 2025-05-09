@@ -1,7 +1,7 @@
 class_name Room extends StaticBody3D
 
-@export var room_rotation = 0
-@export var door_dict = {}
+@export var room_rotation: float = 0
+@export var door_dict: Dictionary = {}
 @export var room_type: String
 @export var pos = Vector3(0, 0, 0)
 
