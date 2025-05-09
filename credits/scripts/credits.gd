@@ -186,4 +186,9 @@ func end():
 	emit_signal("ended") # Emit a signal to make easy for programmers to connect other things to this
 	done = true # And a var, to make things even more easy to connect
 	
-	self.queue_free()
+	#self.queue_free()
+
+
+func _on_ended() -> void:
+	await get_tree().process_frame
+	get_tree().change_scene_to_file("res://start_screen/scenes/start_screen.tscn")
