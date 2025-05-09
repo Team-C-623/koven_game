@@ -73,7 +73,7 @@ func _on_bead_hit():
 		
 func do_leap():
 	leap_animation.play("leap_animation")
-	#var direction = (player.global_position - enemy.global_position).normalized()
-	#enemy.velocity = direction * 25
+	var direction = (player.global_position - enemy.global_position).normalized()
+	enemy.velocity = direction * 25
 	
 	

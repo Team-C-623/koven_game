@@ -15,7 +15,7 @@
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlo3i"]
-bg_color = Color(0.816744, 0, 0.257432, 1)
+bg_color = Color(0.643137, 0.105882, 0.0823529, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l1fuj"]
 

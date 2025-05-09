@@ -19,7 +19,7 @@ func process(_delta: float):
 		var distance = enemy.global_position.distance_to(player.global_position)
 		grab_cooldown -= _delta
 		if distance < enemy.GRAB_DISTANCE and grab_cooldown <= 0.0:
-			if randf() < 0.95:
+			if randf() < 0.80:
 				Transitioned.emit(self, "BossGrab")
 			reset_grab_cooldown()
 		

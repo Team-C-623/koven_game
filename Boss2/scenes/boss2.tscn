@@ -22,7 +22,7 @@
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvi28"]
-bg_color = Color(0.667856, 0.0884097, 0.0532087, 1)
+bg_color = Color(0.566174, 0, 0.0020701, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_meq7y"]
 radius = 0.286641

@@ -17,7 +17,7 @@ class_name Boss2
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
-var attack_damage:= 2.0
+var attack_damage:= 3.5
 var current_hitbox: HitboxComponent = null
 var sprite_origin_position: Vector3
 var can_move = true
