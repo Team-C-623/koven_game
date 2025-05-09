@@ -88,7 +88,7 @@ expand_margin_bottom = 120.0
 region_rect = Rect2(0, 0, 2727, 1183)
 
 [node name="DialogueBalloon" type="CanvasLayer"]
-layer = 100
+layer = 99
 script = ExtResource("1_36de5")
 
 [node name="Balloon" type="Control" parent="."]

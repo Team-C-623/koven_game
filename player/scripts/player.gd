@@ -57,8 +57,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_stunned:
 		return
 	# "ui_cancel" is escape by default
-	if event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#if event.is_action_pressed("ui_cancel"):
+		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			# weird bug occurs if you try to rotate camera using mouse x and y movement
