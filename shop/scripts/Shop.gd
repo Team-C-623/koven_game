@@ -53,7 +53,7 @@ func open():
 	hot_bar_inventory.hide()
 	currency_ui.hide_display()
 	show.emit()
-	Wwise.set_state("CATACOMB_WITCHES", "WITCH2")
+
 
 func _on_buy_pressed() -> void:
 	if selected_item != null && Currency.currency >= selected_item.cost:
