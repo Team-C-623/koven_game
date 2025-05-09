@@ -3,9 +3,8 @@ extends Area3D
 
 const JOURNAL_LIST: JournalList = preload("res://journal/resources/journal_list.tres")
 
-var journal_list = JOURNAL_LIST.Journals.duplicate(true)
-func _ready() -> void:
-	Journal.reset_journals.connect(_reset)
+var journal_list = JOURNAL_LIST.Journals
+
 
 func _physics_process(delta: float) -> void:
 	sprite_3d.rotate_y(delta)
@@ -27,8 +26,3 @@ func _on_body_shape_entered(_body_rid: RID, body: Node3D, _body_shape_index: int
 			# this occurs if no journals are left for the player to collect
 			# notification of some kind for the player?
 			queue_free()
-
-func _reset():
-	journal_list = JOURNAL_LIST.Journals.duplicate(true)
-	
-	

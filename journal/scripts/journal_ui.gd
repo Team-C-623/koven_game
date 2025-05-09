@@ -6,14 +6,13 @@ class_name JournalUI
 @onready var inventory_interface: Control = get_tree().current_scene.get_node("/root/UIManager/InventoryInterface")
 
 @export var max_journals: int = 12
-@export var journals_resource: JournalList = preload("res://journal/resources/journal_list.tres")
+
 const JOURNAL_BUTTON = preload("res://journal/scenes/journal_ui_button.tscn")
 const EMPTY_JOURNAL = preload("res://assets/journal/journal_empty_cropped.png")
 
 var is_open = false
 var selected_journal = null
 
-signal reset_journals
 func _ready():
 	update_slots()
 	close()
@@ -81,5 +80,4 @@ func add_journal(new_journal: JournalEntry) -> bool:
 
 func reset():
 	journal.clear()
-	reset_journals.emit()
 	

@@ -15,7 +15,6 @@ func _on_start_button_pressed():
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file(quote_scene_path)
 	
-	
 func _on_exit_button_pressed():
 	SoundManager.play_menu_boop()
 	await get_tree().create_timer(1.0).timeout
