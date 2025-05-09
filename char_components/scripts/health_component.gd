@@ -10,7 +10,7 @@ signal nun_die
 signal monk_die
 signal died
 signal damaged
-
+signal boss2_die
 
 var health : float
 var is_dead := false
@@ -42,6 +42,8 @@ func damage(attack: Attack):
 				nun_die.emit()
 				Currency.add_currency(10)
 			# for boss
+			elif get_parent() is Boss2:
+				boss2_die.emit()
 			else:
 				get_parent().call_deferred("queue_free")
 		# emit death signal when player dies and play sounds

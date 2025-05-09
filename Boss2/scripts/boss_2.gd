@@ -24,6 +24,8 @@ var sprite_origin_position: Vector3
 const BOB_FREQ = 2.0 #2.0
 const BOB_AMP = 0.08 #0.08
 var t_bob = 0.0
+@onready var lasso_animation: AnimationPlayer = $LassoAnimation
+@onready var leap_animation: AnimationPlayer = $LeapAnimation
 
 func _ready():
 	sprite_origin_position = sprite.position
@@ -31,6 +33,8 @@ func _ready():
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
 	call_deferred("_find_player")
+	
+	
 
 func _find_player():
 	player_3d = get_tree().get_first_node_in_group("Player Groups")
@@ -88,3 +92,13 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+
+func _on_health_component_boss_2_die() -> void:
+	lasso_animation.stop()
+	leap_animation.stop()
+	set_physics_process(false)
+	lasso_animation.play("boss_death")
+	await lasso_animation.animation_finished
+	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")
+	self.queue_free()
