@@ -69,7 +69,6 @@ func _on_DamageTimer_timeout():
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
 
-
 func _on_health_component_monk_die() -> void:
 	can_move = false
 	chase_animation.stop()

@@ -8,6 +8,7 @@ class_name HealthComponent
 signal health_changed(current_health: float, max_health: float)
 signal nun_die
 signal monk_die
+#signal boss2_die
 signal died
 signal damaged
 

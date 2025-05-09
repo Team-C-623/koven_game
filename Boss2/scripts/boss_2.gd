@@ -12,6 +12,7 @@ class_name Boss2
 @onready var boss_leap: CanvasLayer = $BossLeap
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
+@onready var lasso_animation: AnimationPlayer = $LassoAnimation
 
 var direction: Vector3
 var right_bounds: Vector3
@@ -19,6 +20,7 @@ var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
 var sprite_origin_position: Vector3
+var can_move = true
 
 #bob variable
 const BOB_FREQ = 2.0 #2.0
@@ -59,9 +61,18 @@ func _physics_process(delta: float) -> void:
 	if health_component.health <= 0:
 		#SoundManager.play_death_sound()
 		pass
-
+		
+func play_lasso_windup():
+	SoundManager.play_lasso_windup()
+	
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
+	
 func _on_hitbox_area_entered(area: Area3D) -> void:
-	if area is HitboxComponent:
+	if area is HitboxComponent and health_component.health > 0:
 		var attack = Attack.new()
 		SoundManager.play_boss_knife()
 		attack.attack_damage = attack_damage
@@ -75,16 +86,15 @@ func _on_hitbox_area_exited(area: Area3D) -> void:
 		damage_timer.stop()
 
 func _on_DamageTimer_timeout():
-	if current_hitbox:
+	if current_hitbox and health_component.health > 0:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
-
-func play_lasso_windup():
-	SoundManager.play_lasso_windup()
-
-func _headbob(time) -> Vector3:
-	var pos = Vector3.ZERO
-	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
-	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
-	return pos
+		
+#func _on_health_component_boss_die() -> void:
+	#can_move = false
+	#lasso_animation.stop()
+	#lasso_animation.play("death")
+	#SoundManager.play_enemy_death()
+	#await lasso_animation.animation_finished
+	#queue_free()

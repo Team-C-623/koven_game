@@ -25,7 +25,6 @@ func process(_delta: float):
 		
 func physics_process(_delta: float):
 	if is_instance_valid(player):
-		#lasso_animation.play("boss_grab")
 		var direction = (player.global_position - enemy.global_position).normalized()
 		enemy.velocity = direction * enemy.CHASE_SPEED
 		
