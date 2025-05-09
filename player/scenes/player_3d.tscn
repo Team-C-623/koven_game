@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cjjcwfil4vt7w"]
+[gd_scene load_steps=16 format=3 uid="uid://cjjcwfil4vt7w"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_3nbws"]
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="5_q2tud"]
 [ext_resource type="WwiseEvent" uid="uid://cjaq8lcyyl7h5" path="res://Wwise/resources/Event/{084A66E5-751C-49A4-979C-19CA4C46EED2}.tres" id="7_u22ds"]
 [ext_resource type="WwiseEvent" uid="uid://b0hi6ksacg8mf" path="res://Wwise/resources/Event/{846235B5-08C0-423B-B387-394F814BE827}.tres" id="10_6ad7p"]
-[ext_resource type="Texture2D" uid="uid://bpmrfm8wiort8" path="res://assets/ui/crosshair.png" id="11_y5jk1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65n5d"]
 bg_color = Color(0, 0, 0, 1)
@@ -104,15 +103,15 @@ stop_on = 3
 event = ExtResource("10_6ad7p")
 trigger_on = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 894.0
-offset_bottom = 707.0
+offset_right = 150.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("11_y5jk1")
