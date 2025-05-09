@@ -52,7 +52,7 @@ text = "[b]Movement[/b]: WASD
 [b]Journal[/b]: J
 [b]Pause[/b]: Esc
 [b]Inventory[/b]: Tab
-- Use card in hotbar slot: 1,2,3,4,5
+- Use card in hotbar slot: 1-5
 - Use card in inventory: RMB
 [b]Dialogue[/b]:
 - Skip dialogue: Space/LMB

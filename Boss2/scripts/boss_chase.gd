@@ -10,6 +10,7 @@ var grab_cooldown := 0.0
 const GRAB_CHANCE := 0.7
 
 func _ready() -> void:
+	await get_tree().create_timer(4).timeout # ensure the player doesnt get hit during scene transition
 	player = get_tree().get_first_node_in_group("Player Groups")
 	reset_grab_cooldown()
 

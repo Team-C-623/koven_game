@@ -42,6 +42,7 @@ func _on_body_entered(body: Node3D) -> void:
 			await TransitionScreen.on_transition_finished
 			var boss_dialogue_scene = preload("res://Boss2/scenes/boss_dialogue.tscn").instantiate()
 			add_child(boss_dialogue_scene)
+			SoundManager.play_boss_music()
 			collision_shape_3d.queue_free()
 
 func check_sprites_shown() -> void:

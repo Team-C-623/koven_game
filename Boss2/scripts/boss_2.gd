@@ -14,6 +14,7 @@ class_name Boss2
 @onready var damage_timer: Timer = $DamageTimer
 @onready var state_machine: StateMachine = $StateMachine
 @onready var lasso_animation: AnimationPlayer = $LassoAnimation
+@onready var dialogue_balloon = preload("res://dialogue/balloon.tscn").instantiate()
 
 var direction: Vector3
 var right_bounds: Vector3
@@ -35,6 +36,8 @@ func _ready():
 	$HitboxComponent.connect("area_entered", Callable(self, "_on_hitbox_area_entered"))
 	$HitboxComponent.connect("area_exited", Callable(self, "_on_hitbox_area_exited"))
 	$DamageTimer.connect("timeout", Callable(self, "_on_DamageTimer_timeout"))
+	add_child(dialogue_balloon)
+	dialogue_balloon.visible = false
 	call_deferred("_find_player")
 
 func _find_player():
@@ -94,20 +97,29 @@ func _on_DamageTimer_timeout():
 func play_lasso_windup():
 	SoundManager.play_lasso_windup()
 
-
-func _on_health_component_boss_2_die() -> void:
-	PlayerManager.game_over = true
-	SoundManager.play_main_menu_music()
-	Currency.reset()
-	Journal.reset()
-	lasso_animation.stop()
-	leap_animation.stop()
-	boss_death.stop()
+func start_dialogue():
+	PlayerManager.is_in_boss_dialogue = true
+	dialogue_balloon.visible = true
+	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
+	DialogueManager.show_dialogue_balloon(load("res://Boss2/dialogue/boss2_death.dialogue"), "start")
+ 
+func _on_health_component_boss_2_die():
+	look_at(player_3d.position)
 	set_physics_process(false)
 	state_machine.set_physics_process(false)
-	boss_death.play("boss_death")
-	await boss_death.animation_finished
-	PlayerManager.in_game = false
+	lasso_animation.stop()
+	leap_animation.stop()
+	start_dialogue()
+
+func _on_dialogue_finished(_result):
+	PlayerManager.is_in_boss_dialogue = false
+	PlayerManager.game_over = true
+	Currency.reset()
+	Journal.reset()
+	lasso_animation.play("boss_death")
+	await lasso_animation.animation_finished
+	sprite.queue_free()
+	SoundManager.play_main_menu_music()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")
