@@ -112,6 +112,7 @@ func _on_health_component_boss_2_die():
 	state_machine.set_physics_process(false)
 	lasso_animation.stop()
 	leap_animation.stop()
+	leap_animation.play("death_reset")
 	start_dialogue()
 
 func _on_dialogue_finished(_result):
