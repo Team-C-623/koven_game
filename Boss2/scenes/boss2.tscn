@@ -108,42 +108,29 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_a17ya"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BossLeap/BossLeap_Img:scale")
+tracks/0/path = NodePath("BossLeap:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BossLeap:visible")
+tracks/1/path = NodePath("Sprite3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite3D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_o7dlg")]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_li2wj"]
@@ -167,38 +154,26 @@ resource_name = "leap_animation"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BossLeap/BossLeap_Img:scale")
+tracks/0/path = NodePath("BossLeap:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+"update": 1,
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BossLeap:visible")
+tracks/1/path = NodePath("Sprite3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite3D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("4_o7dlg"), ExtResource("12_tavmq"), ExtResource("4_o7dlg")]
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpmkg"]
@@ -279,7 +254,7 @@ shape = SubResource("CapsuleShape3D_gb5n1")
 wait_time = 0.6
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1.11909, 0, 0.209989, 0)
+transform = Transform3D(1.05099, 0, 0, 0, 1.05099, 0, 0, 0, 0.998095, 0, 0.209989, 0)
 target_position = Vector3(0, 0, 1)
 collision_mask = 3
 
@@ -295,8 +270,6 @@ libraries = {
 
 [node name="BossLeap" type="CanvasLayer" parent="."]
 visible = false
-scale = Vector2(0.5, 0.5)
-transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="BossLeap_Img" type="TextureRect" parent="BossLeap"]
 anchors_preset = 15
@@ -304,7 +277,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 texture = ExtResource("12_tavmq")
 
 [connection signal="boss2_die" from="HealthComponent" to="." method="_on_health_component_boss_2_die"]

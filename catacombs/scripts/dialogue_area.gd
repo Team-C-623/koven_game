@@ -17,7 +17,6 @@ func _ready() -> void:
 	if room.room_type == "T":
 		jury = $"../Jury"
 		prosecutor = $"../Prosecutor"
-		print(jury)
 	elif room.room_type == "B":
 		boss = $"../Boss"
 	check_sprites_shown()
@@ -51,6 +50,7 @@ func _on_body_entered(body: Node3D) -> void:
 			PlayerManager.player.global_position = boss_room_spawn
 
 func check_sprites_shown() -> void:
+	await get_tree().create_timer(0.1).timeout
 	if room.room_type == "T":
 		if PlayerManager.has_won_trial_room:
 			jury.visible = false
