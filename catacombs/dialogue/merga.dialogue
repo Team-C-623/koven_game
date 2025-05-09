@@ -2,8 +2,8 @@
 do SoundManager.play_witch_dialogue()
 Merga the Magesmith: Hello sister, thank you for saving me from execution.
 Merga the Magesmith: Would you like to purchase tarot cards to help you in your journey?
-- Yes => shop
-- No
+- Yes. => shop
+- No.
 	Merga the Magesmith: Very well.
 	=> END
 - How were you captured? => story

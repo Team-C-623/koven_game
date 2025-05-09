@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn7blvs0my3i4"]
+
+[ext_resource type="Texture2D" uid="uid://b1w0d1xg1a6wn" path="res://assets/environment/bossroomwall1.png" id="1_kc4pn"]
+[ext_resource type="Script" path="res://Boss2/scripts/boss_dialogue.gd" id="1_ugkum"]
+[ext_resource type="Texture2D" uid="uid://cxxjg71s3fgtc" path="res://assets/characters/Final boss 1 standing sprite.png" id="2_ceii3"]
+
+[node name="BossDialogue" type="Node2D"]
+script = ExtResource("1_ugkum")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kc4pn")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -330.0
+offset_right = 20.0
+offset_bottom = -290.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/Control"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ceii3")
