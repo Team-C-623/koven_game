@@ -295,4 +295,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_tavmq")
 
+[node name="BossDeath" type="AnimationPlayer" parent="."]
+
 [connection signal="boss2_die" from="HealthComponent" to="." method="_on_health_component_boss_2_die"]
