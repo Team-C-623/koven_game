@@ -27,7 +27,6 @@ var can_move = true
 const BOB_FREQ = 2.0 #2.0
 const BOB_AMP = 0.08 #0.08
 var t_bob = 0.0
-@onready var lasso_animation: AnimationPlayer = $LassoAnimation
 @onready var leap_animation: AnimationPlayer = $LeapAnimation
 
 func _ready():
@@ -98,12 +97,6 @@ func _on_DamageTimer_timeout():
 
 func play_lasso_windup():
 	SoundManager.play_lasso_windup()
-
-func _headbob(time) -> Vector3:
-	var pos = Vector3.ZERO
-	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
-	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
-	return pos
 
 
 func _on_health_component_boss_2_die() -> void:
