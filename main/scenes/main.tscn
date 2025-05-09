@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cirl17lt8b0qy"]
+[gd_scene load_steps=6 format=3 uid="uid://cirl17lt8b0qy"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nxmt8"]
 [ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://player/scenes/player_3d.tscn" id="2_qcoaa"]
 [ext_resource type="Script" path="res://rooms/scripts/RoomSpawner.gd" id="3_akvhc"]
+[ext_resource type="PackedScene" uid="uid://do4m5lfs4b0mn" path="res://Boss2/scenes/boss2.tscn" id="4_2553r"]
 
 [sub_resource type="Environment" id="Environment_5tb5c"]
 background_mode = 1
@@ -27,3 +28,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26998)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5tb5c")
+
+[node name="Boss2" parent="." instance=ExtResource("4_2553r")]
