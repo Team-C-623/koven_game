@@ -12,16 +12,17 @@ func _ready() -> void:
 	music_bank.load_bank()
 	Wwise.set_state("AMBIENCE_FLOOR","FLOOR1")
 	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")
-	
+	 
 	
 func _process(_delta: float) -> void:
-	if PlayerManager.player and not PlayerManager.boss_defeated and not PlayerManager.is_in_main_menu:
-		if PlayerManager.is_in_trial_room == false:
+	if PlayerManager.player and not PlayerManager.boss_defeated:
+		if PlayerManager.is_in_trial_room == false and not PlayerManager.is_in_main_menu:
 			Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 		else:
 			Wwise.set_rtpc_value("Health", 100,self)
 	else:
 		Wwise.set_rtpc_value("Health", 100,self)
+	
 
 func play_footsteps():
 	Wwise.post_event_id(AK.EVENTS.FOOTSTEPS_01, self)
