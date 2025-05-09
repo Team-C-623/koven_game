@@ -1,5 +1,9 @@
 extends Control
 
+@onready var start_button: TextureButton = $HBoxContainer/StartButton
+@onready var guide_button: TextureButton = $HBoxContainer/GuideButton
+@onready var credits_button: TextureButton = $HBoxContainer/CreditsButton
+
 func _ready():
 	PlayerManager.in_game = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -7,6 +11,7 @@ func _ready():
 	#SoundManager.play_main_menu_music()
 
 func _on_start_button_pressed():
+	start_button.disabled = true
 	SoundManager.play_menu_boop()
 	await get_tree().create_timer(1.0).timeout
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -17,10 +22,11 @@ func _on_start_button_pressed():
 	
 func _on_exit_button_pressed():
 	SoundManager.play_menu_boop()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()
 
 func _on_guide_button_pressed():
+	guide_button.disabled = true
 	SoundManager.play_menu_boop()
 	var guide_scene = "res://start_screen/scenes/guide.tscn"
 	get_tree().change_scene_to_file(guide_scene)

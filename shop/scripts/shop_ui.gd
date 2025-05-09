@@ -4,8 +4,6 @@ const SHOP_ITEM = preload("res://shop/scenes/shop_item_button.tscn")
 
 @export var data: ShopData
 
-@onready var main = get_node("/root/Main")
-
 func _ready() -> void:
 	ShopMenu.show.connect(update_shop)
 	ShopMenu.hide.connect(clear_shop)

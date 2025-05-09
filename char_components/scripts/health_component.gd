@@ -35,13 +35,14 @@ func damage(attack: Attack):
 	else:
 		is_dead = true
 		if get_parent().is_in_group("Enemies Group"):
-			SoundManager.play_enemy_death()
 			if get_parent() is Monk:
 				monk_die.emit()
 				Currency.add_currency(5)
+				SoundManager.play_enemy_death()
 			elif get_parent() is Nun:
 				nun_die.emit()
 				Currency.add_currency(10)
+				SoundManager.play_enemy_death()
 			# for boss
 			elif get_parent() is Boss2:
 				boss2_die.emit()

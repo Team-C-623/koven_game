@@ -23,7 +23,7 @@ func _ready() -> void:
 	new_catacombs.name = "Catacombs"
 	catacombs_instance = new_catacombs
 	
-	PlayerManager.in_game = true
+	PlayerManager.reset_states()
 	
 	entered.connect(_on_entered)
 	

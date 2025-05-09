@@ -96,6 +96,9 @@ func _on_DamageTimer_timeout():
 
 func play_lasso_windup():
 	SoundManager.play_lasso_windup()
+	
+func play_death_sound():
+	SoundManager.play_enemy_death()
 
 func start_dialogue():
 	PlayerManager.is_in_boss_dialogue = true
@@ -116,8 +119,8 @@ func _on_dialogue_finished(_result):
 	PlayerManager.game_over = true
 	Currency.reset()
 	Journal.reset()
-	lasso_animation.play("boss_death")
-	await lasso_animation.animation_finished
+	boss_death.play("boss_death")
+	await boss_death.animation_finished
 	sprite.queue_free()
 	SoundManager.play_main_menu_music()
 	TransitionScreen.transition()
