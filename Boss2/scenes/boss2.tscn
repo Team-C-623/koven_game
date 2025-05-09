@@ -45,6 +45,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("4_o7dlg")]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_rx3qi"]
 resource_name = "boss_death"
@@ -67,7 +74,7 @@ tracks/1/enabled = false
 tracks/1/path = NodePath("Sprite3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99, 1, 0, 0, 0, 1, 1, 0, 800, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 300, 0, 0.25, 1, 0, 500, 0, 0.5, 1, 0, 1000, 0, 0.75, 1, 0, 1500, 0, 1, 1, 0, 2000, 0)
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
