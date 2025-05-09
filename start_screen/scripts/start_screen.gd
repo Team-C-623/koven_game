@@ -21,9 +21,8 @@ func _on_exit_button_pressed():
 
 func _on_guide_button_pressed():
 	SoundManager.play_menu_boop()
-	var guide_scene = preload("res://start_screen/scenes/guide.tscn").instantiate()
-	get_tree().current_scene.add_child(guide_scene)
-	self.queue_free
+	var guide_scene = "res://start_screen/scenes/guide.tscn"
+	get_tree().change_scene_to_file(guide_scene)
 
 func _on_credits_button_pressed() -> void:
 	var credits_scene = preload("res://credits/scenes/credits.tscn").instantiate()
