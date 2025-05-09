@@ -225,7 +225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00479967, 0.513733, 0.01555
 shape = SubResource("BoxShape3D_3ljdc")
 
 [node name="Boss" type="Sprite3D" parent="Dialogue"]
-transform = Transform3D(0.06, 0, -2.66454e-15, 0, 0.06, 0, 2.66454e-15, 0, 0.06, -2.44703e-07, 1.0709, -3.6206)
+transform = Transform3D(0.06, 0, -3.55271e-15, 0, 0.06, 0, 3.55271e-15, 0, 0.06, 0, 1.071, -3.5)
 shaded = true
 texture = ExtResource("10_ljhmc")
 

@@ -198,17 +198,16 @@ func _get_door_validity(room: RoomData, prev_room: RoomData, prev_door_choice, n
 func _create_new_door(new_room, door_pos):
 	var new_door = door_scene.instantiate()
 	add_child(new_door)
-	var door_position = new_room.get_door_pos(door_pos).global_position.snapped(Vector3(1, 1, 1))
+	var door_position = new_room.get_door_pos(door_pos).global_position
 	var door_rotation = new_room.room_rotation + _get_door_rotation(door_pos)
 	
-	#var rel_door_pos = (new_room.global_position - door_position).snapped(Vector3(1, 1, 1))
-	#print(rel_door_pos, "\t", door_pos)
-	#if rel_door_pos[0] == 0:
-		#new_door.global_position = door_position - Vector3(0.01 * rel_door_pos[0], 0, 0.01 * rel_door_pos[1])
-	#else:
-		#new_door.global_position = door_position + Vector3(0.01 * rel_door_pos[0], 0, 0.01 * rel_door_pos[1])
+	var rel_door_pos = (new_room.global_position - door_position)
+	print(rel_door_pos, "\t", door_pos)
+	if rel_door_pos[0] == 0:
+		new_door.global_position = door_position - Vector3(0.02 * rel_door_pos[0], 0, 0.02 * rel_door_pos[1])
+	else:
+		new_door.global_position = door_position + Vector3(0.02 * rel_door_pos[0], 0, 0.02 * rel_door_pos[1])
 	
-	new_door.global_position = door_position
 	new_door.rotate_y(door_rotation)
 
 # creates a new RoomData object based on the name string provided

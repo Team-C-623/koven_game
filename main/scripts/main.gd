@@ -23,6 +23,8 @@ func _ready() -> void:
 	new_catacombs.name = "Catacombs"
 	catacombs_instance = new_catacombs
 	
+	PlayerManager.in_game = true
+	
 	entered.connect(_on_entered)
 	
 	player.toggle_inventory.connect(toggle_inventory_interface)

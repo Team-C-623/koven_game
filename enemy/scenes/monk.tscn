@@ -100,7 +100,7 @@ shape = SubResource("CapsuleShape3D_meq7y")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0, 0, 0)
-sorting_offset = 1.0
+sorting_offset = 50.0
 visibility_range_end = 20.0
 shaded = true
 texture = ExtResource("2_57cty")

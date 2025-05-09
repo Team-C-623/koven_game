@@ -25,6 +25,7 @@ shape = SubResource("ConvexPolygonShape3D_f8sf4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.388544, 0)
+sorting_offset = 45.0
 visibility_range_end = 20.0
 billboard = 2
 shaded = true
