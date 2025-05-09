@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://do4m5lfs4b0mn"]
+[gd_scene load_steps=33 format=3 uid="uid://do4m5lfs4b0mn"]
 
 [ext_resource type="Script" path="res://Boss2/scripts/boss_2.gd" id="1_r724d"]
 [ext_resource type="Script" path="res://Boss2/scripts/boss_health_bar.gd" id="2_kva8h"]
@@ -47,29 +47,6 @@ tracks/0/keys = {
 "values": [ExtResource("4_o7dlg")]
 }
 
-[sub_resource type="Animation" id="Animation_3tp38"]
-resource_name = "boss_death"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("12_7t0oj"), ExtResource("13_147al"), ExtResource("14_15kcd"), ExtResource("15_wb8fu"), ExtResource("16_lwrjo")]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite3D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99, 1, 0, 0, 0, 1, 1, 0, -0.1, 0)
-
 [sub_resource type="Animation" id="Animation_luput"]
 resource_name = "boss_grab"
 length = 1.2
@@ -80,10 +57,10 @@ tracks/0/path = NodePath("Sprite3D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_o7dlg"), ExtResource("11_ejn2j"), ExtResource("10_diwog"), ExtResource("11_ejn2j"), ExtResource("10_diwog"), ExtResource("11_ejn2j")]
+"values": [ExtResource("4_o7dlg"), ExtResource("11_ejn2j"), ExtResource("10_diwog"), ExtResource("11_ejn2j"), ExtResource("10_diwog"), ExtResource("11_ejn2j"), ExtResource("10_diwog")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -118,7 +95,6 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2l1dx"]
 _data = {
 "RESET": SubResource("Animation_7djr0"),
-"boss_death": SubResource("Animation_3tp38"),
 "boss_grab": SubResource("Animation_luput"),
 "death": SubResource("Animation_0spk1")
 }
@@ -189,7 +165,19 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("BossLeap:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpmkg"]
@@ -197,6 +185,62 @@ _data = {
 "RESET": SubResource("Animation_a17ya"),
 "grab_animation": SubResource("Animation_li2wj"),
 "leap_animation": SubResource("Animation_xngw4")
+}
+
+[sub_resource type="Animation" id="Animation_a7kt4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aktue"]
+resource_name = "boss_death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_7t0oj"), ExtResource("13_147al"), ExtResource("14_15kcd"), ExtResource("15_wb8fu"), ExtResource("16_lwrjo")]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99, 1, 0, 0, 0, 1, 1, 0, -0.1, 0)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jtfix"]
+_data = {
+"RESET": SubResource("Animation_a7kt4"),
+"boss_death": SubResource("Animation_aktue")
 }
 
 [node name="Boss2" type="CharacterBody3D" groups=["Enemies Group"]]
@@ -294,5 +338,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_tavmq")
+
+[node name="BossDeath" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jtfix")
+}
 
 [connection signal="boss2_die" from="HealthComponent" to="." method="_on_health_component_boss_2_die"]
