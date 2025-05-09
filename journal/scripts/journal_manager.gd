@@ -5,6 +5,9 @@ const JOURNAL_LIST: JournalList = preload("res://journal/resources/journal_list.
 
 var journal_list = JOURNAL_LIST.Journals
 
+func _ready() -> void:
+	Journal.reset_journal_list.connect(reset)
+	
 func _physics_process(delta: float) -> void:
 	sprite_3d.rotate_y(delta)
 
@@ -25,3 +28,8 @@ func _on_body_shape_entered(_body_rid: RID, body: Node3D, _body_shape_index: int
 			# this occurs if no journals are left for the player to collect
 			# notification of some kind for the player?
 			queue_free()
+			
+		
+func reset():
+	var new_journal_list = preload("res://journal/resources/journal_list.tres")
+	journal_list = new_journal_list.Journals
