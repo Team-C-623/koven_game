@@ -1,9 +1,8 @@
-[gd_scene load_steps=48 format=3 uid="uid://cbpb3od0y5emi"]
+[gd_scene load_steps=46 format=3 uid="uid://cbpb3od0y5emi"]
 
 [ext_resource type="Script" path="res://catacombs/scripts/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cv7vx8h3f10ha" path="res://catacombs/occluders/catacombs_wall1.occ" id="3_57801"]
 [ext_resource type="Texture2D" uid="uid://cjpearj8kf71w" path="res://assets/environment/catacombfinalfloor.png" id="3_h08t0"]
-[ext_resource type="PackedScene" uid="uid://cep0suh26v1cl" path="res://journal/scenes/journal_spawner.tscn" id="4_b3sk6"]
 [ext_resource type="ArrayOccluder3D" uid="uid://4qyqfxwflfvn" path="res://catacombs/occluders/catacombs_wall2.occ" id="5_bhkr4"]
 [ext_resource type="Script" path="res://catacombs/scripts/entrance.gd" id="5_gce5p"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b5d5kd2rcmjuv" path="res://catacombs/occluders/catacombs_wall3.occ" id="6_io1ko"]
@@ -14,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://n7mkgggt80c5" path="res://assets/environment/candleroomwall2wood.png" id="8_rm12w"]
 [ext_resource type="ArrayOccluder3D" uid="uid://df8mpa8xxj4hi" path="res://catacombs/occluders/catacombs_floor.occ" id="9_05smy"]
 [ext_resource type="Texture2D" uid="uid://bodysy3otl5u3" path="res://assets/environment/explosion_particle.PNG" id="13_gcn3v"]
-[ext_resource type="PackedScene" uid="uid://r62r764q3j4h" path="res://journal/scenes/journal.tscn" id="14_ubocp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv5cw"]
 albedo_texture = ExtResource("8_kdt8v")
@@ -251,10 +249,6 @@ transform = Transform3D(0.470709, 0.168621, 0, -0.168621, 0.470709, 0, 0, 0, 0.5
 [node name="Torch8" parent="Lighting" instance=ExtResource("7_voxbd")]
 transform = Transform3D(-0.470735, -0.168548, -4.37114e-08, -0.168548, 0.470735, 0, 4.1153e-08, 1.47349e-08, -0.5, 2.48, 2.3, -4)
 
-[node name="JournalSpawner" parent="." instance=ExtResource("4_b3sk6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
-spawn_height = 0.4
-
 [node name="Entrance" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.7)
 
@@ -311,11 +305,5 @@ texture = ExtResource("8_8qr8b")
 
 [node name="PlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.16395)
-
-[node name="Journal" parent="." instance=ExtResource("14_ubocp")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0.255015, 2.98994)
-
-[node name="Journal2" parent="." instance=ExtResource("14_ubocp")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 1.69727, 0.255015, 2.98994)
 
 [connection signal="body_entered" from="Entrance/EntranceArea" to="Entrance/EntranceArea" method="_on_body_entered"]

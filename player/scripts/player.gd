@@ -4,7 +4,7 @@ class_name Player
 @export var attack_damage = 0.0
 
 const SENS = 0.4
-@export var speed = 6.0 # 3.0 default
+@export var speed = 2.0 # 3.0 default
 @export var inventory_data: InventoryData
 @onready var inventory_interface: Control = get_node("/root/UIManager/InventoryInterface")
 signal toggle_inventory()

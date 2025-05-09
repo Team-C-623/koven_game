@@ -7,7 +7,6 @@ class_name BossChase
 var player: CharacterBody3D = null
 var grab_cooldown := 0.0
 
-const GRAB_CHANCE := 0.7
 
 func _ready() -> void:
 	await get_tree().create_timer(4).timeout # ensure the player doesnt get hit during scene transition
@@ -15,15 +14,14 @@ func _ready() -> void:
 	reset_grab_cooldown()
 
 func reset_grab_cooldown():
-	grab_cooldown = randf_range(1.5, 4.0)
+	grab_cooldown = randf_range(3.0, 8.0)
 
 func process(_delta: float):
 	if is_instance_valid(player):
 		var distance = enemy.global_position.distance_to(player.global_position)
 		grab_cooldown -= _delta
 		if distance < enemy.GRAB_DISTANCE and grab_cooldown <= 0.0:
-			if randf() < GRAB_CHANCE:
-				Transitioned.emit(self, "BossGrab")
+			Transitioned.emit(self, "BossGrab")
 			reset_grab_cooldown()
 
 func physics_process(_delta: float):

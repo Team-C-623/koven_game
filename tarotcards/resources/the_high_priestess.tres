@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_6rtcu")
 name = "The High Priestess"
-effect = "Increase Speed by 1 for 30 seconds."
+effect = "Increase Speed by 25% for 20 seconds."
 description = "The most intuitive, connected card in the whole Tarot deck, The High Priestess is a card of awareness. This card urges you to listen to your inner voice and follow your instincts. Your mind knows far more than you think. When this card arises in your Tarot reading, stop looking for answers in the outside world. Turn within for the guidance you seek."
 texture = ExtResource("2_vrfvb")
 cost = 50

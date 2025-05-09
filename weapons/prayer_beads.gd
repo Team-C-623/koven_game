@@ -37,7 +37,6 @@ func check_collision():
 func _on_bead_timeout():
 	mesh.visible = false
 	queue_free()
-	
 
 func _on_prayer_beads_hit_box_area_entered(area):
 	if area is HitboxComponent:

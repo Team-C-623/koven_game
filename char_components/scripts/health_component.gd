@@ -8,7 +8,6 @@ class_name HealthComponent
 signal health_changed(current_health: float, max_health: float)
 signal nun_die
 signal monk_die
-#signal boss2_die
 signal died
 signal damaged
 signal boss2_die
@@ -37,11 +36,11 @@ func damage(attack: Attack):
 		if get_parent().is_in_group("Enemies Group"):
 			if get_parent() is Monk:
 				monk_die.emit()
-				Currency.add_currency(5)
+				Currency.add_currency(10)
 				SoundManager.play_enemy_death()
 			elif get_parent() is Nun:
 				nun_die.emit()
-				Currency.add_currency(10)
+				Currency.add_currency(15)
 				SoundManager.play_enemy_death()
 			# for boss
 			elif get_parent() is Boss2:

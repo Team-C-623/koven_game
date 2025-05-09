@@ -36,7 +36,6 @@ func create_card_timer(card_name: String, duration: float, timeout_func: Callabl
 	active_timers[card_name] = timer
 			
 
-
 func use_judgement(item_data:ItemData):
 	judgement_active = true
 	create_card_timer(
@@ -47,7 +46,7 @@ func use_judgement(item_data:ItemData):
 			active_timers.erase("judgement"))
 
 	apply_judgement_effect()
-	
+
 func apply_judgement_effect():
 	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
@@ -78,7 +77,7 @@ func use_high_priestess():
 	priestess_active = true
 	create_card_timer(
 		"high_priestess", 
-		30.0, 
+		20.0, 
 		func(): 
 			end_high_priestess()
 			active_timers.erase("high_priestess")
@@ -86,19 +85,20 @@ func use_high_priestess():
 	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is Player:
-			node.speed += 1.0
+			node.speed += 0.5
 			
 func end_high_priestess():
 	main_node = get_node("/root/Main")
 	for node in main_node.get_children(true):
 		if node is Player:
-			node.speed -= 1.0
+			node.speed -= 0.5
 			
 func end_duration_cards():
 	for timer in active_timers:
 		active_timers.erase(timer)
+
 func use_the_hanged_man():
-	Currency.modifier = 2.0
+	Currency.modifier = 3.0
 	create_card_timer(
 		"the_hanged_man",
 		30.0,
@@ -106,12 +106,11 @@ func use_the_hanged_man():
 			end_the_hanged_man()
 			active_timers.erase("the_hanged_man")
 	)
-	
 
 func end_the_hanged_man():
 	Currency.modifier = 1.0
 	print("hanged man ended")
-	
+
 func use_wheel_of_fortune(_item_data: ItemData):
 	var effect_message
 	#randomly increase 1 of 3 stats: +10 damage, +20 health, +2.0 speed
@@ -137,10 +136,10 @@ func use_wheel_of_fortune(_item_data: ItemData):
 		effect_message = "+5 Health and Max Health"
 		health_component.emit_signal("health_changed",health_component.health,health_component.MAX_HEALTH)
 	elif random_num == 2:
-		effect_message = "0.25 speed"
+		effect_message = "+10% speed"
 		for node in main_node.get_children(true):
 			if node is Player:
-				node.speed += 0.25
+				node.speed += 0.2
 		
 	var popup = wof_popup.instantiate()
 	get_tree().root.add_child(popup)
