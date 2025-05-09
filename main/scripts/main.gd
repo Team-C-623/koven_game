@@ -16,6 +16,7 @@ var catacombs_instance = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayerManager.is_in_main_menu = false
 	randomize()
 	# get_viewport().debug_draw = Viewport.DEBUG_DRAW_WIREFRAME
 	var new_catacombs = cata_scene.instantiate()

@@ -5,6 +5,7 @@ const JOURNAL_LIST: JournalList = preload("res://journal/resources/journal_list.
 
 var journal_list = JOURNAL_LIST.Journals
 
+
 func _physics_process(delta: float) -> void:
 	sprite_3d.rotate_y(delta)
 

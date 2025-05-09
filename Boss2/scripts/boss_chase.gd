@@ -9,6 +9,7 @@ var grab_cooldown := 0.0
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
+	Wwise.set_switch("GAMEPLAY_SWITCH", "COMBAT",self)
 	reset_grab_cooldown()
 
 func reset_grab_cooldown():

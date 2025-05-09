@@ -21,3 +21,6 @@ func subtract_currency(amount:int) -> bool:
 
 func can_afford(amount:int) -> bool:
 	return currency >= amount
+
+func reset():
+	set_currency(0)

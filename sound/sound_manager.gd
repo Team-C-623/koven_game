@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	
 func _process(_delta: float) -> void:
-	if PlayerManager.player:
+	if PlayerManager.player and not PlayerManager.boss_defeated and not PlayerManager.is_in_main_menu:
 		if PlayerManager.is_in_trial_room == false:
 			Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
 		else:

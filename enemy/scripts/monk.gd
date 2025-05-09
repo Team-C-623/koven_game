@@ -68,12 +68,14 @@ func _on_DamageTimer_timeout():
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
-
+		
+func play_death_sound():
+	SoundManager.play_enemy_death()
 
 func _on_health_component_monk_die() -> void:
 	can_move = false
 	chase_animation.stop()
 	chase_animation.play("death")
-	SoundManager.play_enemy_death()
 	await chase_animation.animation_finished
 	queue_free()
+	

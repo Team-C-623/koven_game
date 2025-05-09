@@ -12,6 +12,7 @@ class_name Boss2
 @onready var boss_leap: CanvasLayer = $BossLeap
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
+@onready var state_machine: StateMachine = $StateMachine
 
 var direction: Vector3
 var right_bounds: Vector3
@@ -19,6 +20,9 @@ var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
 var sprite_origin_position: Vector3
+@onready var lasso_animation: AnimationPlayer = $LassoAnimation
+@onready var leap_animation: AnimationPlayer = $LeapAnimation
+
 
 #bob variable
 const BOB_FREQ = 2.0 #2.0
@@ -56,12 +60,12 @@ func _physics_process(delta: float) -> void:
 	var new_head_pos = _headbob(t_bob)
 	sprite.position = sprite_origin_position + new_head_pos
 	
-	if health_component.health <= 0:
+	#if health_component.health <= 0:
 		#SoundManager.play_death_sound()
-		pass
+	#	pass
 	
 func _on_hitbox_area_entered(area: Area3D) -> void:
-	if area is HitboxComponent:
+	if area is HitboxComponent and health_component.health > 0:
 		var attack = Attack.new()
 		SoundManager.play_boss_knife()
 		attack.attack_damage = attack_damage
@@ -75,7 +79,7 @@ func _on_hitbox_area_exited(area: Area3D) -> void:
 		damage_timer.stop()
 
 func _on_DamageTimer_timeout():
-	if current_hitbox:
+	if current_hitbox and health_component.health > 0:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
@@ -88,4 +92,40 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func play_death_sound():
+	SoundManager.play_enemy_death()
+
+func _on_health_component_boss_2_die() -> void:
+	PlayerManager.boss_defeated = true
+	set_physics_process(false)
+	state_machine.set_physics_process(false)
+	state_machine.set_process(false)
+	lasso_animation.stop()
+	leap_animation.stop()
+	#dying.emit()
+	lasso_animation.play("boss_death")
+	#await lasso_animation.animation_finished #for some reason this line gets stuck and nothing after it will execute
+	await get_tree().create_timer(2.0).timeout
+	TransitionScreen.transition()
+	#var credits = "res://credits/scenes/credits.tscn"
+	var credits_scene = preload("res://credits/scenes/credits.tscn").instantiate()
+	credits_scene.ended.connect(_on_credits_ended)
+	await TransitionScreen.on_transition_finished
+	get_tree().current_scene.add_child(credits_scene)
+	#get_tree().change_scene_to_file(credits)
+	
+func _on_credits_ended():
+	var start_screen = "res://start_screen/scenes/start_screen.tscn"
+	Wwise.set_state("LOCATION", "MAIN_MENU")
+	Currency.reset()
+	Journal.reset()
+	PlayerManager.boss_defeated = false
+	PlayerManager.is_in_main_menu = true
+	get_tree().change_scene_to_file(start_screen)
+	
+	
+	
+
+
 	

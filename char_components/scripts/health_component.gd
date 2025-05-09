@@ -11,6 +11,7 @@ signal monk_die
 signal died
 signal damaged
 
+signal boss2_die
 
 var health : float
 var is_dead := false
@@ -34,7 +35,7 @@ func damage(attack: Attack):
 	else:
 		is_dead = true
 		if get_parent().is_in_group("Enemies Group"):
-			SoundManager.play_enemy_death()
+		
 			if get_parent() is Monk:
 				monk_die.emit()
 				Currency.add_currency(5)
@@ -42,10 +43,13 @@ func damage(attack: Attack):
 				nun_die.emit()
 				Currency.add_currency(10)
 			# for boss
+			elif get_parent() is Boss2:
+				boss2_die.emit()
 			else:
 				get_parent().call_deferred("queue_free")
+				pass
 		# emit death signal when player dies and play sounds
-		if get_parent() is Player:
+		elif get_parent() is Player:
 			died.emit()
 			SoundManager.stop_on_death()
 			SoundManager.play_defeated()
