@@ -177,7 +177,7 @@ func _add_all_rooms():
 	for row in room_grid:
 		for col in row:
 			if col != null:
-				var new_room = _add_room_from_data(col)
+				var new_room: Room = _add_room_from_data(col)
 				new_room.create_chest()
 				new_room.create_journal()
 				for door_pos in new_room.door_dict.keys():

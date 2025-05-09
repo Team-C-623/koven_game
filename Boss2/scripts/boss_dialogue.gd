@@ -23,6 +23,6 @@ func _on_dialogue_finished(_result):
 	var boss_room = preload("res://rooms/scenes/bossroom_1_tp.tscn").instantiate()
 	map.add_child(boss_room)
 	boss_room.global_position = Vector3(0, 60, 0)
-	var boss_room_spawn = boss_room.global_position + Vector3(0, 0, 4)
+	var boss_room_spawn = boss_room.global_position + Vector3(0, 0, -4)
 	PlayerManager.player.global_position = boss_room_spawn
 	queue_free()
