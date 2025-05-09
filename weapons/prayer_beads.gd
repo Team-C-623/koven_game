@@ -18,7 +18,7 @@ func _ready():
 	prayer_beads_hit_box.position = global_position
 		
 	timer = Timer.new()
-	timer.wait_time = 0.5
+	timer.wait_time = 0.1
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "_on_bead_timeout"))
 	add_child(timer)
@@ -43,5 +43,5 @@ func _on_prayer_beads_hit_box_area_entered(area):
 	if area is HitboxComponent:
 		var hitbox : HitboxComponent = area
 		bead_hit.emit()
-		hitbox.get_parent().stun(2.0)
+		hitbox.get_parent().stun(1.0)
 		_on_bead_timeout()

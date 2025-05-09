@@ -3,7 +3,7 @@ class_name Boss2
 
 @onready var player_3d = get_node("/root/Main/Player")
 @export var SPEED: float = 0.5
-@export var CHASE_SPEED: float = 1.5
+@export var CHASE_SPEED: float = 2.0
 @export var GRAB_DISTANCE: float = 2.0
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 3.0  # Distance at which the enemy starts chasing
@@ -13,13 +13,15 @@ class_name Boss2
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
 @onready var state_machine: StateMachine = $StateMachine
+@onready var lasso_animation: AnimationPlayer = $LassoAnimation
 
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
-var attack_damage:= 2.0
+var attack_damage:= 3.5
 var current_hitbox: HitboxComponent = null
 var sprite_origin_position: Vector3
+var can_move = true
 
 #bob variable
 const BOB_FREQ = 2.0 #2.0
@@ -63,8 +65,19 @@ func _physics_process(delta: float) -> void:
 	
 
 
+	if health_component.health <= 0:
+		#SoundManager.play_death_sound()
+		pass
+		
+	
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
+	
 func _on_hitbox_area_entered(area: Area3D) -> void:
-	if area is HitboxComponent:
+	if area is HitboxComponent and health_component.health > 0:
 		var attack = Attack.new()
 		SoundManager.play_boss_knife()
 		attack.attack_damage = attack_damage
@@ -78,7 +91,7 @@ func _on_hitbox_area_exited(area: Area3D) -> void:
 		damage_timer.stop()
 
 func _on_DamageTimer_timeout():
-	if current_hitbox:
+	if current_hitbox and health_component.health > 0:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
 		current_hitbox.damage(attack)
