@@ -18,7 +18,7 @@ class_name Boss2
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
-var attack_damage:= 3.5
+@export var attack_damage:= 3.5 
 var current_hitbox: HitboxComponent = null
 var sprite_origin_position: Vector3
 var can_move = true
@@ -28,6 +28,7 @@ const BOB_FREQ = 2.0 #2.0
 const BOB_AMP = 0.08 #0.08
 var t_bob = 0.0
 @onready var leap_animation: AnimationPlayer = $LeapAnimation
+@onready var boss_death: AnimationPlayer = $BossDeath
 
 func _ready():
 	sprite_origin_position = sprite.position
@@ -106,10 +107,11 @@ func _on_health_component_boss_2_die() -> void:
 	Journal.reset()
 	lasso_animation.stop()
 	leap_animation.stop()
+	boss_death.stop()
 	set_physics_process(false)
 	state_machine.set_physics_process(false)
-	lasso_animation.play("boss_death")
-	await lasso_animation.animation_finished
+	boss_death.play("boss_death")
+	await boss_death.animation_finished
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")
