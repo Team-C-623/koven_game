@@ -29,6 +29,3 @@ func _on_credits_button_pressed() -> void:
 	var credits_scene = preload("res://credits/scenes/credits.tscn").instantiate()
 	#credits_scene.ended.connect(_on_credits_ended)
 	get_tree().current_scene.add_child(credits_scene)
-
-#func _on_credits_ended():
-	#get_tree().change_scene_to_file("res://start_screen/scenes/start_screen.tscn")

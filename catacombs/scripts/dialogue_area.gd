@@ -43,6 +43,7 @@ func _on_body_entered(body: Node3D) -> void:
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
 			PlayerManager.is_in_boss_room = true
+			SoundManager.play_boss_music()
 			var boss_room = BOSSROOM_1_TP.instantiate()
 			map.add_child(boss_room)
 			boss_room.global_position = Vector3(0, 60, 0)

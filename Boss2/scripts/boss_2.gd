@@ -96,7 +96,6 @@ func _headbob(time) -> Vector3:
 func _on_health_component_boss_2_die() -> void:
 	PlayerManager.game_over = true
 	SoundManager.play_main_menu_music()
-	
 	Currency.reset()
 	Journal.reset()
 	lasso_animation.stop()

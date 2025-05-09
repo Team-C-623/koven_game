@@ -177,6 +177,7 @@ func play_respawn():
 
 func play_boss_music(): #needs to be added
 	Wwise.set_state("LOCATION", "BOSS")
+	Wwise.set_switch("FINAL_BOSS","PHASE1",self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_BOSS_ROOM,self)
 	
 func play_victory(): #needs to be added
