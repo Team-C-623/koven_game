@@ -25,7 +25,8 @@ func update_slots():
 		new_page.journal_data = page
 
 func _process(_delta):
-	if Input.is_action_just_pressed("journal") and !inventory_interface.visible and !ShopMenu.visible and !PlayerManager.is_in_trial_room:
+	var restricted_state: bool = inventory_interface.visible or ShopMenu.visible or PlayerManager.is_in_trial_room
+	if Input.is_action_just_pressed("journal") and !restricted_state and PlayerManager.in_game:
 		if is_open:
 			SoundManager.play_journal_close()
 			close()

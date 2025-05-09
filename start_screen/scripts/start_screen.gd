@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	PlayerManager.in_game = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	#Wwise.set_state("LOCATION", "MAIN_MENU")
 	#SoundManager.play_main_menu_music()

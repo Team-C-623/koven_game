@@ -183,11 +183,10 @@ func _input(event):
 
 # Use this function to stop all
 func end():
-	emit_signal("ended") # Emit a signal to make easy for programmers to connect other things to this
+	ended.emit() # Emit a signal to make easy for programmers to connect other things to this
 	done = true # And a var, to make things even more easy to connect
 	
 	#self.queue_free()
-
 
 func _on_ended() -> void:
 	await get_tree().process_frame

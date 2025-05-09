@@ -7,13 +7,14 @@ signal merga_saved
 
 # Player states
 var game_over = false
-var is_in_boss_room = false
-var is_in_boss_dialogue = false
-var is_in_trial_room = false
-var has_won_trial_room = false
-var is_talking_to_old_witch = false
-var is_talking_to_merga = false
-var is_entering_dungeon = false
+var in_game: bool = false
+var is_in_boss_room: bool = false
+var is_in_boss_dialogue: bool = false
+var is_in_trial_room: bool = false
+var has_won_trial_room: bool = false
+var is_talking_to_old_witch: bool = false
+var is_talking_to_merga: bool = false
+var is_entering_dungeon: bool = false
 var has_saved_merga := false:
 	set(value):
 		has_saved_merga = value

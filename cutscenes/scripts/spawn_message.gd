@@ -8,4 +8,5 @@ func _ready():
 func _on_dialogue_finished(_result):
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
+	PlayerManager.in_game = true
 	get_tree().change_scene_to_file("res://main/scenes/main.tscn")
