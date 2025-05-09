@@ -105,20 +105,21 @@ func start_dialogue():
  
 func _on_health_component_boss_2_die():
 	look_at(player_3d.position)
-	lasso_animation.stop()
-	leap_animation.stop()
 	set_physics_process(false)
 	state_machine.set_physics_process(false)
+	lasso_animation.stop()
+	leap_animation.stop()
 	start_dialogue()
 
 func _on_dialogue_finished(_result):
-	lasso_animation.play("boss_death")
-	await lasso_animation.animation_finished
 	PlayerManager.is_in_boss_dialogue = false
 	PlayerManager.game_over = true
 	Currency.reset()
 	Journal.reset()
+	lasso_animation.play("boss_death")
+	await lasso_animation.animation_finished
+	sprite.queue_free()
+	SoundManager.play_main_menu_music()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	SoundManager.play_main_menu_music()
 	get_tree().change_scene_to_file("res://credits/scenes/credits.tscn")

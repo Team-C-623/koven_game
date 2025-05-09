@@ -175,7 +175,7 @@ func play_defeated(): # called in health_component.gd
 func play_respawn():
 	Wwise.post_event_id(AK.EVENTS.RESPAWN,self)
 
-func play_boss_music(): #needs to be added
+func play_boss_music():
 	Wwise.set_state("LOCATION", "BOSS")
 	Wwise.set_switch("FINAL_BOSS","PHASE1",self)
 	Wwise.post_event_id(AK.EVENTS.ENTER_BOSS_ROOM,self)
