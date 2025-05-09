@@ -3,7 +3,7 @@ class_name Boss2
 
 @onready var player_3d = get_node("/root/Main/Player")
 @export var SPEED: float = 0.5
-@export var CHASE_SPEED: float = 1.5
+@export var CHASE_SPEED: float = 2.0
 @export var GRAB_DISTANCE: float = 2.0
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 3.0  # Distance at which the enemy starts chasing
