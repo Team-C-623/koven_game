@@ -14,8 +14,7 @@ func _ready() -> void:
 	Wwise.set_state("CATACOMB_WITCHES", "WITCH0")
 	Wwise.set_state("LOCATION", "MAIN_MENU")
 	play_main_menu_music()
-	
-	
+
 func _process(_delta: float) -> void:
 	if PlayerManager.player:
 		if PlayerManager.is_in_trial_room == false and PlayerManager.game_over == false:

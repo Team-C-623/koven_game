@@ -24,6 +24,8 @@ func _ready() -> void:
 	catacombs_instance = new_catacombs
 	
 	PlayerManager.reset_states()
+	PlayerManager.player = player
+	PlayerManager.player.speed = 2.0
 	
 	entered.connect(_on_entered)
 	

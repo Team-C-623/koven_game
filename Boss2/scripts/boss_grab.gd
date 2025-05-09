@@ -12,8 +12,8 @@ var max_view_distance := 5.0
 # Prayer beads
 var prayer_beads = load("res://weapons/PrayerBeads.tscn")
 var instance
-var cooldown := 5.0
-var shoot_cooldown := 2.0
+var cooldown := 2.0
+var shoot_cooldown := 1.0
 var time_since_last_beads := 0.0 
 
 func _ready() -> void:
