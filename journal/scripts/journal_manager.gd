@@ -1,8 +1,11 @@
 extends Area3D
 @onready var sprite_3d: Sprite3D = $Sprite3D
 
-const JOURNAL_LIST: JournalList = preload("res://journal/resources/journal_list.tres")
-
+var JOURNAL_LIST: JournalList = preload("res://journal/resources/journal_list.tres")
+var journal_one = preload("res://journal/resources/entry1.tres")
+var journal_two = preload("res://journal/resources/entry2.tres")
+var journal_three = preload("res://journal/resources/entry3.tres")
+var journal_four = preload("res://journal/resources/entry4.tres")
 var journal_list = JOURNAL_LIST.Journals
 
 func _ready() -> void:
@@ -30,6 +33,10 @@ func _on_body_shape_entered(_body_rid: RID, body: Node3D, _body_shape_index: int
 			queue_free()
 
 func reset():
-	journal_list.clear() 
-	journal_list = JOURNAL_LIST.Journals
+	journal_list.clear()
+	journal_list.append(journal_one)
+	journal_list.append(journal_two)
+	journal_list.append(journal_three)
+	journal_list.append(journal_four)
 	print("JOURNAL_LIST_SIZE: ", journal_list.size())
+	
