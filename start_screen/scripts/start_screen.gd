@@ -36,4 +36,4 @@ func _on_credits_button_pressed() -> void:
 
 func _on_credits_ended():
 		Wwise.set_state("LOCATION", "MAIN_MENU")
-		get_tree().current_scene.get_node("credits").queue_free()
+		#get_tree().current_scene.get_node("credits").queue_free()
