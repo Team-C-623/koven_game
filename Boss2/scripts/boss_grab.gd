@@ -66,6 +66,7 @@ func shoot_beads():
 		get_tree().current_scene.add_child(instance)
 		instance.position = ray.global_transform.origin
 		instance.transform.basis = ray.global_transform.basis
+		SoundManager.play_lasso_attach()
 		instance.connect("bead_hit", Callable(self, "_on_bead_hit"))
 
 func _on_bead_hit():
