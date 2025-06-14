@@ -91,7 +91,7 @@ mesh = SubResource("ArrayMesh_iuu8t")
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="WallDoor1/StaticBody3D"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, -10)
 depth = 20.0
-polygon = PackedVector2Array(-640, 360, 640, 360, 640, -360, 144, -360, 144, 0, -130, 0, -132, -360, -640, -360)
+polygon = PackedVector2Array(-640, 360, 640, 360, 640, -360, 140, -360, 140, 0, -140, 0, -140, -360, -640, -360)
 
 [node name="Sprite3D" type="Sprite3D" parent="WallDoor1"]
 transform = Transform3D(-100, 8.74228e-06, -9.09495e-13, -8.74228e-06, -100, 0, -9.09495e-13, 0, 100, 0, 0, -20.1)

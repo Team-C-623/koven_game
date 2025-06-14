@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b1kgm5cir22qn" path="res://assets/environment/torch.png" id="1_2u6tx"]
 
 [node name="Torch" type="Node3D"]
-transform = Transform3D(0.941418, 0.337243, 0, -0.337243, 0.941418, 0, 0, 0, 1, 0.0235583, 0.131753, 0)
+transform = Transform3D(0.941418, 0.337243, 0, -0.337243, 0.941418, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -0.00167465)
