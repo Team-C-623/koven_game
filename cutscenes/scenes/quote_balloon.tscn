@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3yqvxfinnudc"]
 
-[ext_resource type="Script" path="res://cutscenes/scripts/quote_balloon.gd" id="1_yrd87"]
+[ext_resource type="Script" uid="uid://c1okek2ei60m2" path="res://cutscenes/scripts/quote_balloon.gd" id="1_yrd87"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_4beb4"]
 [ext_resource type="FontFile" uid="uid://bxsom8ln1crm" path="res://assets/fonts/CormorantInfant-BoldItalic.ttf" id="3_tfrwv"]
 

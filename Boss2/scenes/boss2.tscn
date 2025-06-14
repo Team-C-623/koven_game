@@ -1,12 +1,12 @@
 [gd_scene load_steps=34 format=3 uid="uid://do4m5lfs4b0mn"]
 
-[ext_resource type="Script" path="res://Boss2/scripts/boss_2.gd" id="1_r724d"]
-[ext_resource type="Script" path="res://Boss2/scripts/boss_health_bar.gd" id="2_kva8h"]
+[ext_resource type="Script" uid="uid://byikmc2j4l02s" path="res://Boss2/scripts/boss_2.gd" id="1_r724d"]
+[ext_resource type="Script" uid="uid://imw2bjku368v" path="res://Boss2/scripts/boss_health_bar.gd" id="2_kva8h"]
 [ext_resource type="Texture2D" uid="uid://dv1ind5x1ygh2" path="res://assets/ui/Boss health bar.png" id="3_qviqg"]
 [ext_resource type="Texture2D" uid="uid://ic22ocylq7kj" path="res://assets/characters/Final boss 1 dancing sprite.png" id="4_o7dlg"]
-[ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="5_gh6hq"]
-[ext_resource type="Script" path="res://Boss2/scripts/boss_chase.gd" id="6_lli8g"]
-[ext_resource type="Script" path="res://Boss2/scripts/boss_grab.gd" id="7_5nxkb"]
+[ext_resource type="Script" uid="uid://5y6mjpk7oykx" path="res://enemy/StateMachine/state_machine.gd" id="5_gh6hq"]
+[ext_resource type="Script" uid="uid://baynlj6mlwtha" path="res://Boss2/scripts/boss_chase.gd" id="6_lli8g"]
+[ext_resource type="Script" uid="uid://dcnxuh2pmco56" path="res://Boss2/scripts/boss_grab.gd" id="7_5nxkb"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="8_mnqap"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="9_xmudd"]
 [ext_resource type="Texture2D" uid="uid://ocafwnec4wey" path="res://assets/characters/Final boss 1 lasso sprite 1.png" id="10_diwog"]
@@ -117,10 +117,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2l1dx"]
 _data = {
-"RESET": SubResource("Animation_7djr0"),
-"boss_death": SubResource("Animation_3tp38"),
-"boss_grab": SubResource("Animation_luput"),
-"death": SubResource("Animation_0spk1")
+&"RESET": SubResource("Animation_7djr0"),
+&"boss_death": SubResource("Animation_3tp38"),
+&"boss_grab": SubResource("Animation_luput"),
+&"death": SubResource("Animation_0spk1")
 }
 
 [sub_resource type="Animation" id="Animation_a17ya"]
@@ -159,6 +159,33 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vyfan"]
+resource_name = "death_reset"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossLeap:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_li2wj"]
@@ -216,39 +243,12 @@ tracks/2/keys = {
 "values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
 }
 
-[sub_resource type="Animation" id="Animation_vyfan"]
-resource_name = "death_reset"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BossLeap:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite3D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpmkg"]
 _data = {
-"RESET": SubResource("Animation_a17ya"),
-"death_reset": SubResource("Animation_vyfan"),
-"grab_animation": SubResource("Animation_li2wj"),
-"leap_animation": SubResource("Animation_xngw4")
+&"RESET": SubResource("Animation_a17ya"),
+&"death_reset": SubResource("Animation_vyfan"),
+&"grab_animation": SubResource("Animation_li2wj"),
+&"leap_animation": SubResource("Animation_xngw4")
 }
 
 [sub_resource type="Animation" id="Animation_3msck"]
@@ -289,7 +289,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dl5dv"]
 _data = {
-"boss_death": SubResource("Animation_3msck")
+&"boss_death": SubResource("Animation_3msck")
 }
 
 [node name="Boss2" type="CharacterBody3D" groups=["Enemies Group"]]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://8ntx26kda01d"]
 
-[ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_pwxp0"]
+[ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_pwxp0"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_ae3tg"]
 [ext_resource type="Texture2D" uid="uid://dyu4h5xpohiyo" path="res://assets/environment/bossroomwwall2.png" id="3_fd5ys"]
 [ext_resource type="Texture2D" uid="uid://b1w0d1xg1a6wn" path="res://assets/environment/bossroomwall1.png" id="4_vq4wj"]
@@ -10,7 +10,7 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="8_af7fu"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="9_ee5up"]
 [ext_resource type="Texture2D" uid="uid://cxxjg71s3fgtc" path="res://assets/characters/Final boss 1 standing sprite.png" id="10_ljhmc"]
-[ext_resource type="Script" path="res://catacombs/scripts/dialogue_area.gd" id="10_ybdi3"]
+[ext_resource type="Script" uid="uid://ctctb5ach4lhe" path="res://catacombs/scripts/dialogue_area.gd" id="10_ybdi3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8w4p"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)

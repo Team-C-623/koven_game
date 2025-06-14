@@ -1,12 +1,12 @@
 [gd_scene load_steps=21 format=3 uid="uid://m0j8m41dr240"]
 
-[ext_resource type="Script" path="res://enemy/scripts/nun.gd" id="1_44yvt"]
+[ext_resource type="Script" uid="uid://kojcxssong8" path="res://enemy/scripts/nun.gd" id="1_44yvt"]
 [ext_resource type="Texture2D" uid="uid://ckewadguma4sp" path="res://assets/characters/final nun level 1 (sprite 1).png" id="2_nw232"]
-[ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_72md4"]
-[ext_resource type="Script" path="res://enemy/scripts/enemy_wanderer.gd" id="4_w5gn1"]
+[ext_resource type="Script" uid="uid://5y6mjpk7oykx" path="res://enemy/StateMachine/state_machine.gd" id="3_72md4"]
+[ext_resource type="Script" uid="uid://c3fqgtgcaig77" path="res://enemy/scripts/enemy_wanderer.gd" id="4_w5gn1"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="5_hb7i3"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="6_6nqag"]
-[ext_resource type="Script" path="res://enemy/scripts/enemy_shoot.gd" id="6_bmqaf"]
+[ext_resource type="Script" uid="uid://c7p40hdlcpwle" path="res://enemy/scripts/enemy_shoot.gd" id="6_bmqaf"]
 [ext_resource type="Texture2D" uid="uid://dlgqa6pdjt557" path="res://assets/characters/Final nun level 1 (sprite 2).png" id="8_orfb7"]
 [ext_resource type="Texture2D" uid="uid://ceoxnsms6v4af" path="res://enemy/assets/Nun death sprite 1.png" id="9_on4n4"]
 [ext_resource type="WwiseEvent" uid="uid://b4ihtuth4p6p6" path="res://Wwise/resources/Event/{FDF3872D-2BE8-481D-AAC6-F822C2935383}.tres" id="9_pt4vu"]
@@ -100,9 +100,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5e4lk"]
 _data = {
-"RESET": SubResource("Animation_7pbd6"),
-"death": SubResource("Animation_h8bdi"),
-"knife": SubResource("Animation_rd5b5")
+&"RESET": SubResource("Animation_7pbd6"),
+&"death": SubResource("Animation_h8bdi"),
+&"knife": SubResource("Animation_rd5b5")
 }
 
 [node name="Nun" type="CharacterBody3D" groups=["Enemies Group"]]

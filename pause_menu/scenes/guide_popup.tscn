@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxsiqd0fwmuru"]
 
-[ext_resource type="Script" path="res://pause_menu/scripts/guide_popup.gd" id="1_phylt"]
+[ext_resource type="Script" uid="uid://dpjvuwob80j6v" path="res://pause_menu/scripts/guide_popup.gd" id="1_phylt"]
 [ext_resource type="Texture2D" uid="uid://clrxcigtoqi16" path="res://pause_menu/art/PAUSEMENU.png" id="1_uubhu"]
 [ext_resource type="FontFile" uid="uid://dnra1ebhm07d3" path="res://assets/fonts/CormorantInfant-Medium.ttf" id="2_hqkms"]
 [ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="3_mikqr"]

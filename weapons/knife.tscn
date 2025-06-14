@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct15t20t50gkp"]
 
-[ext_resource type="Script" path="res://weapons/knife.gd" id="1_k0fjv"]
+[ext_resource type="Script" uid="uid://cey1e7dwgumfy" path="res://weapons/knife.gd" id="1_k0fjv"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6n1p0"]
 top_radius = 0.0

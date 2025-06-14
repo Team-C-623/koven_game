@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bngh2hsbitulv" path="res://assets/ui/button_texture.png" id="1_4pw6x"]
 [ext_resource type="Texture2D" uid="uid://jrpye3ghii1o" path="res://assets/ui/button_texture_selected.png" id="2_0kt68"]
-[ext_resource type="Script" path="res://shop/scripts/shop_item_ui.gd" id="3_gp753"]
+[ext_resource type="Script" uid="uid://dl6a6mjd7gpee" path="res://shop/scripts/shop_item_ui.gd" id="3_gp753"]
 [ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="4_nd160"]
 [ext_resource type="FontFile" uid="uid://dl5x4wg3p34rx" path="res://assets/fonts/CormorantInfant-SemiBoldItalic.ttf" id="5_hasyt"]
 [ext_resource type="Texture2D" uid="uid://ci8qwi6evljsk" path="res://assets/ui/updatedcurrency.png" id="6_wmtl7"]

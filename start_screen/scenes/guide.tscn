@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctshf181pfmbv"]
 
-[ext_resource type="Script" path="res://start_screen/scripts/guide.gd" id="1_avngt"]
+[ext_resource type="Script" uid="uid://cg56fvk8iuvqn" path="res://start_screen/scripts/guide.gd" id="1_avngt"]
 [ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="2_1grd1"]
 [ext_resource type="Texture2D" uid="uid://dmoytn77v216t" path="res://assets/environment/candleroom1wood.png" id="2_dugu7"]
 [ext_resource type="FontFile" uid="uid://da6roc43ehb7u" path="res://assets/fonts/CormorantInfant-Regular.ttf" id="3_el11k"]

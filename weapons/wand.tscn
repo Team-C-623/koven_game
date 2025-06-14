@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://chbcgqj40iuj"]
 
-[ext_resource type="Script" path="res://weapons/wand.gd" id="1_76yrt"]
+[ext_resource type="Script" uid="uid://cuv5rbprork7j" path="res://weapons/wand.gd" id="1_76yrt"]
 [ext_resource type="Texture2D" uid="uid://citotcbgvckbn" path="res://assets/ui/wand_hand_final.png" id="2_lt5ij"]
 [ext_resource type="Texture2D" uid="uid://yt436eqjidln" path="res://assets/ui/wand_hand_attack_final.png" id="3_bvjsp"]
 
@@ -50,8 +50,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v65tx"]
 _data = {
-"RESET": SubResource("Animation_3ac5i"),
-"cast": SubResource("Animation_5je8b")
+&"RESET": SubResource("Animation_3ac5i"),
+&"cast": SubResource("Animation_5je8b")
 }
 
 [node name="Wand" type="Node3D"]

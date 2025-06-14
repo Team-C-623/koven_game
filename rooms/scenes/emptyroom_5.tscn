@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bwup16w2a68hn"]
 
-[ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_h0lyt"]
+[ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_h0lyt"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_1cj4w"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_2h755"]
 [ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="4_61d2q"]

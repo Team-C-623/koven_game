@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://cwnppb0i13jui"]
 
-[ext_resource type="Script" path="res://enemy/scripts/monk.gd" id="1_8h3xo"]
+[ext_resource type="Script" uid="uid://1ertwkuoi5js" path="res://enemy/scripts/monk.gd" id="1_8h3xo"]
 [ext_resource type="Texture2D" uid="uid://djgocdrtsu4rc" path="res://assets/characters/Final monk level 1.png" id="2_57cty"]
-[ext_resource type="Script" path="res://enemy/StateMachine/state_machine.gd" id="3_m4gc5"]
-[ext_resource type="Script" path="res://enemy/scripts/enemy_wanderer.gd" id="4_1qoha"]
-[ext_resource type="Script" path="res://enemy/scripts/enemy_chase.gd" id="5_quno4"]
+[ext_resource type="Script" uid="uid://5y6mjpk7oykx" path="res://enemy/StateMachine/state_machine.gd" id="3_m4gc5"]
+[ext_resource type="Script" uid="uid://c3fqgtgcaig77" path="res://enemy/scripts/enemy_wanderer.gd" id="4_1qoha"]
+[ext_resource type="Script" uid="uid://durbmc05q2v62" path="res://enemy/scripts/enemy_chase.gd" id="5_quno4"]
 [ext_resource type="PackedScene" uid="uid://d0seeddykde1t" path="res://char_components/scenes/health_component.tscn" id="6_blrfn"]
 [ext_resource type="PackedScene" uid="uid://b21q77rjdvxm4" path="res://char_components/scenes/hitbox_component.tscn" id="7_qtd71"]
 [ext_resource type="Texture2D" uid="uid://oshwtjxciwcs" path="res://assets/characters/Monk level 1 sprite 2.png" id="8_foggx"]
@@ -84,9 +84,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5yn1g"]
 _data = {
-"RESET": SubResource("Animation_34n4v"),
-"death": SubResource("Animation_jnnlx"),
-"monk_chase": SubResource("Animation_k4lvs")
+&"RESET": SubResource("Animation_34n4v"),
+&"death": SubResource("Animation_jnnlx"),
+&"monk_chase": SubResource("Animation_k4lvs")
 }
 
 [node name="Monk" type="CharacterBody3D" groups=["Enemies Group"]]

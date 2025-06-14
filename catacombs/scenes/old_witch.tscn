@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://buyyb2qfjxu64"]
 
-[ext_resource type="Script" path="res://catacombs/scripts/old_witch.gd" id="1_p1bgi"]
+[ext_resource type="Script" uid="uid://c6apssm5yn43f" path="res://catacombs/scripts/old_witch.gd" id="1_p1bgi"]
 [ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://UI/scenes/interact_popup.tscn" id="2_w6kal"]
 [ext_resource type="SpriteFrames" uid="uid://4rgolcqigxsv" path="res://catacombs/animations/old_witch_cata_sprite.tres" id="2_y44h3"]
 

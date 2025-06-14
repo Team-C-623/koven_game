@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dt57wyksv4617"]
 
-[ext_resource type="Script" path="res://trialroom/trialroom_1.gd" id="1_8w3ly"]
+[ext_resource type="Script" uid="uid://bq8pj8qxb8aea" path="res://trialroom/trialroom_1.gd" id="1_8w3ly"]
 [ext_resource type="Texture2D" uid="uid://ck0iraq2e8jy4" path="res://assets/environment/trial_background.PNG" id="2_3tdrg"]
 [ext_resource type="PackedScene" uid="uid://2pdk04qgvck1" path="res://trialroom/character.tscn" id="2_i1rtu"]
 [ext_resource type="Texture2D" uid="uid://dsovkyuvvyw5h" path="res://trialroom/art/jury.png" id="3_obtwa"]
@@ -55,9 +55,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tmohj"]
 _data = {
-"RESET": SubResource("Animation_km20p"),
-"fade_in": SubResource("Animation_nintf"),
-"fade_out": SubResource("Animation_753cu")
+&"RESET": SubResource("Animation_km20p"),
+&"fade_in": SubResource("Animation_nintf"),
+&"fade_out": SubResource("Animation_753cu")
 }
 
 [node name="Node2D" type="Node2D"]

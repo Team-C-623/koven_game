@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjwsglpaur568"]
 
-[ext_resource type="Script" path="res://cutscenes/scripts/spawn_message.gd" id="1_6ps5n"]
+[ext_resource type="Script" uid="uid://b20s330ccxc6g" path="res://cutscenes/scripts/spawn_message.gd" id="1_6ps5n"]
 
 [node name="SpawnMessage" type="CanvasLayer"]
 layer = -1

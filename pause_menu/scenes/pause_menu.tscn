@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://ox8diyn8d815"]
 
-[ext_resource type="Shader" path="res://pause_menu/art/pause_menu.gdshader" id="1_7526o"]
+[ext_resource type="Shader" uid="uid://43ljr8ochpln" path="res://pause_menu/art/pause_menu.gdshader" id="1_7526o"]
 [ext_resource type="Texture2D" uid="uid://clrxcigtoqi16" path="res://pause_menu/art/PAUSEMENU.png" id="1_v45gk"]
-[ext_resource type="Script" path="res://pause_menu/scripts/pause_menu.gd" id="1_vc62u"]
+[ext_resource type="Script" uid="uid://2uyltn82vpep" path="res://pause_menu/scripts/pause_menu.gd" id="1_vc62u"]
 [ext_resource type="Texture2D" uid="uid://8ukthm8yb27p" path="res://pause_menu/art/RESUMEBUTTON.png" id="2_i6f32"]
 [ext_resource type="Texture2D" uid="uid://cxg3rwpvrg5j4" path="res://pause_menu/art/RESUMEDARK.png" id="3_ff3gp"]
 [ext_resource type="Texture2D" uid="uid://dw0rbumwmx2n0" path="res://start_screen/art/buttons/guidebutton.png" id="4_rcsib"]
@@ -47,8 +47,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wydus"]
 _data = {
-"RESET": SubResource("Animation_gflbt"),
-"blur": SubResource("Animation_lwfsh")
+&"RESET": SubResource("Animation_gflbt"),
+&"blur": SubResource("Animation_lwfsh")
 }
 
 [node name="PauseMenu" type="Control"]

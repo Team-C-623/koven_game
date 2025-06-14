@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://1is68ufjstug"]
 
-[ext_resource type="Script" path="res://catacombs/scripts/shop_witch.gd" id="1_1stjm"]
+[ext_resource type="Script" uid="uid://dwivk0y5c8f74" path="res://catacombs/scripts/shop_witch.gd" id="1_1stjm"]
 [ext_resource type="PackedScene" uid="uid://j06jiquc78if" path="res://UI/scenes/interact_popup.tscn" id="2_wlx2c"]
 [ext_resource type="SpriteFrames" uid="uid://bu30aaekw5r5m" path="res://catacombs/animations/merga_cata_sprite.tres" id="3_6p2p1"]
 

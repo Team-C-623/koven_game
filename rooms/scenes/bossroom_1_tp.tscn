@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://ps02pr17d4bs"]
 
-[ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_ee76a"]
+[ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_ee76a"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_dv3h2"]
 [ext_resource type="Texture2D" uid="uid://dyu4h5xpohiyo" path="res://assets/environment/bossroomwwall2.png" id="3_bntka"]
 [ext_resource type="Texture2D" uid="uid://b1w0d1xg1a6wn" path="res://assets/environment/bossroomwall1.png" id="4_p7wjf"]

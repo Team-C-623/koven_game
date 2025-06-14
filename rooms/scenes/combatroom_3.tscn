@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://whbil7xojfmr"]
 
-[ext_resource type="Script" path="res://rooms/scripts/Room.gd" id="1_02eyr"]
+[ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_02eyr"]
 [ext_resource type="Texture2D" uid="uid://c6e07778mjfx1" path="res://assets/environment/lvl1wall1combat1.png" id="2_b31nw"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cdlkmfr0hpdrt" path="res://rooms/occluders/combatroom_3_wall1.occ" id="3_c670q"]
 [ext_resource type="ArrayOccluder3D" uid="uid://kilqsbp8w4pm" path="res://rooms/occluders/combatroom_3_wall2.occ" id="4_ev5or"]

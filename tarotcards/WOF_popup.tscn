@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxyeuf3dphsef"]
 
-[ext_resource type="Script" path="res://tarotcards/wof_popup.gd" id="1_26ogq"]
+[ext_resource type="Script" uid="uid://d1738udtwm72w" path="res://tarotcards/wof_popup.gd" id="1_26ogq"]
 [ext_resource type="FontFile" uid="uid://k1guuqtwah8n" path="res://assets/fonts/CormorantInfant-SemiBold.ttf" id="2_a7yto"]
 
 [sub_resource type="Animation" id="Animation_p4cul"]
@@ -60,8 +60,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yb353"]
 _data = {
-"RESET": SubResource("Animation_p4cul"),
-"show_popup": SubResource("Animation_vlp2g")
+&"RESET": SubResource("Animation_p4cul"),
+&"show_popup": SubResource("Animation_vlp2g")
 }
 
 [node name="WofPopup" type="Control"]

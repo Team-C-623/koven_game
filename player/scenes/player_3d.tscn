@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cjjcwfil4vt7w"]
 
-[ext_resource type="Script" path="res://player/scripts/player.gd" id="1_3nbws"]
+[ext_resource type="Script" uid="uid://dm20nc78kggjp" path="res://player/scripts/player.gd" id="1_3nbws"]
 [ext_resource type="PackedScene" uid="uid://chbcgqj40iuj" path="res://weapons/wand.tscn" id="2_ivwlt"]
 [ext_resource type="PackedScene" uid="uid://c7jj1a7xswf00" path="res://char_components/scenes/health_bar.tscn" id="2_rpfbq"]
 [ext_resource type="WwiseRTPC" uid="uid://t4nqbdfk4r16" path="res://Wwise/resources/Game Parameter/{35CEA8A7-DA9F-48C4-90AB-1D66145863CF}.tres" id="2_tx4mv"]

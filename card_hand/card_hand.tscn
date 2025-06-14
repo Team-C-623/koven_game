@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://chhgpwvclf7v3"]
 
 [ext_resource type="Texture2D" uid="uid://byelv48ghjtsa" path="res://card_hand/assets/Final left hand.png" id="1_jit7d"]
-[ext_resource type="Script" path="res://card_hand/card_hand.gd" id="1_t37bm"]
+[ext_resource type="Script" uid="uid://dg5n6nit0ixka" path="res://card_hand/card_hand.gd" id="1_t37bm"]
 [ext_resource type="Texture2D" uid="uid://b0bisfalgctxx" path="res://card_hand/assets/Left thumb.png" id="4_4e37g"]
 
 [sub_resource type="Animation" id="Animation_g7dqm"]
@@ -123,11 +123,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ri5a5"]
 _data = {
-"RESET": SubResource("Animation_g7dqm"),
-"full_card_use": SubResource("Animation_lnknl"),
-"lower_hand": SubResource("Animation_ka05j"),
-"raise_card": SubResource("Animation_8dvkn"),
-"use_card": SubResource("Animation_wvywh")
+&"RESET": SubResource("Animation_g7dqm"),
+&"full_card_use": SubResource("Animation_lnknl"),
+&"lower_hand": SubResource("Animation_ka05j"),
+&"raise_card": SubResource("Animation_8dvkn"),
+&"use_card": SubResource("Animation_wvywh")
 }
 
 [node name="CardHand" type="Control"]

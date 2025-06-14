@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c37wbm5wed34f" path="res://assets/ui/journal_ui_button_1.png" id="1_0wahr"]
 [ext_resource type="FontFile" uid="uid://1wlesmy25wd1" path="res://assets/fonts/CormorantInfant-Bold.ttf" id="1_hdjjq"]
 [ext_resource type="Texture2D" uid="uid://cpp8jmej4qah5" path="res://assets/ui/journal_ui_button_1_selected.png" id="2_n2spc"]
-[ext_resource type="Script" path="res://journal/scripts/journal_ui_button.gd" id="2_w0uha"]
+[ext_resource type="Script" uid="uid://vg60ikor1mvy" path="res://journal/scripts/journal_ui_button.gd" id="2_w0uha"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hncux"]
 blend_mode = 3

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="JournalEntry" load_steps=3 format=3 uid="uid://b28seueh2mo0l"]
 
-[ext_resource type="Script" path="res://journal/scripts/journal_entry.gd" id="1_j22dw"]
+[ext_resource type="Script" uid="uid://bf28gl24ksubh" path="res://journal/scripts/journal_entry.gd" id="1_j22dw"]
 [ext_resource type="Texture2D" uid="uid://cwf4omub2vv6l" path="res://assets/journal/Journal 1.png" id="1_x6l1s"]
 
 [resource]

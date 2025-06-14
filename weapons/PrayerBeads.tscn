@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpnpn0eheymp1"]
 
-[ext_resource type="Script" path="res://weapons/prayer_beads.gd" id="1_rtxet"]
+[ext_resource type="Script" uid="uid://d1360jde0feih" path="res://weapons/prayer_beads.gd" id="1_rtxet"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngbyr"]
 albedo_color = Color(0.459629, 0.237076, 9.62615e-08, 1)

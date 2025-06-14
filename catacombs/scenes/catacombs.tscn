@@ -1,10 +1,10 @@
 [gd_scene load_steps=46 format=3 uid="uid://cbpb3od0y5emi"]
 
-[ext_resource type="Script" path="res://catacombs/scripts/Catacombs.gd" id="1_bi88v"]
+[ext_resource type="Script" uid="uid://phtx2gvw38kx" path="res://catacombs/scripts/Catacombs.gd" id="1_bi88v"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cv7vx8h3f10ha" path="res://catacombs/occluders/catacombs_wall1.occ" id="3_57801"]
 [ext_resource type="Texture2D" uid="uid://cjpearj8kf71w" path="res://assets/environment/catacombfinalfloor.png" id="3_h08t0"]
 [ext_resource type="ArrayOccluder3D" uid="uid://4qyqfxwflfvn" path="res://catacombs/occluders/catacombs_wall2.occ" id="5_bhkr4"]
-[ext_resource type="Script" path="res://catacombs/scripts/entrance.gd" id="5_gce5p"]
+[ext_resource type="Script" uid="uid://bt6w0nxwoqiff" path="res://catacombs/scripts/entrance.gd" id="5_gce5p"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b5d5kd2rcmjuv" path="res://catacombs/occluders/catacombs_wall3.occ" id="6_io1ko"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cf2tcp15rgck6" path="res://catacombs/occluders/catacombs_wall4.occ" id="7_55g0k"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="7_voxbd"]
