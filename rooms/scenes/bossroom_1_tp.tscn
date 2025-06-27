@@ -88,6 +88,7 @@ script = ExtResource("1_ee76a")
 
 [node name="Wall1" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.01, 8.74228e-10, 1.11022e-16, -8.74228e-10, -0.01, 0, 1.11022e-16, -3.97047e-23, 0.01, 0, 3.6, 6.4)
+visibility_range_end = 20.0
 mesh = SubResource("ArrayMesh_je2jr")
 
 [node name="Sprite3D" type="Sprite3D" parent="Wall1"]

@@ -1,0 +1,28 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://d1lii0x8x03qf"
+path.bptc="res://.godot/imported/bossroom_1.exr-47b2827ad26f0662a7911d83f00e1a01.bptc.ctexarray"
+path.astc="res://.godot/imported/bossroom_1.exr-47b2827ad26f0662a7911d83f00e1a01.astc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://rooms/lightmaps/bossroom_1.exr"
+dest_files=["res://.godot/imported/bossroom_1.exr-47b2827ad26f0662a7911d83f00e1a01.bptc.ctexarray", "res://.godot/imported/bossroom_1.exr-47b2827ad26f0662a7911d83f00e1a01.astc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=1

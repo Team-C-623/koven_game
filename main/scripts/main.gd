@@ -17,6 +17,7 @@ var catacombs_instance = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
+	# wireframe debug display for occlusion culling testing
 	# get_viewport().debug_draw = Viewport.DEBUG_DRAW_WIREFRAME
 	var new_catacombs = cata_scene.instantiate()
 	add_child(new_catacombs)
