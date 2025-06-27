@@ -5,12 +5,11 @@ var flame = load("res://weapons/Flame.tscn")
 var instance
 
 @onready var wand_anim = $AnimationPlayer
-#@onready var wand_tip = $root/Main/Player/head
 
 #bob variable
-const BOB_FREQ = 2.0 #2.0
-const BOB_AMP = 0.08 #0.08
-var t_bob = 0.0
+const BOB_FREQ := 2.0 # 2.0 default
+const BOB_AMP := 0.08 # 0.08 default
+var t_bob := 0.0
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

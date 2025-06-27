@@ -369,12 +369,12 @@ collision_mask = 3
 
 [node name="LassoAnimation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_2l1dx")
+&"": SubResource("AnimationLibrary_2l1dx")
 }
 
 [node name="LeapAnimation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tpmkg")
+&"": SubResource("AnimationLibrary_tpmkg")
 }
 
 [node name="BossLeap" type="CanvasLayer" parent="."]
@@ -390,7 +390,7 @@ texture = ExtResource("12_tavmq")
 
 [node name="BossDeath" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_dl5dv")
+&"": SubResource("AnimationLibrary_dl5dv")
 }
 
 [connection signal="boss2_die" from="HealthComponent" to="." method="_on_health_component_boss_2_die"]

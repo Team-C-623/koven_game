@@ -18,7 +18,6 @@ var time_since_last_beads := 0.0
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player Groups")
-	print("Boss Grabbing")
 	reset_cooldown()
 	
 func reset_cooldown():
@@ -75,6 +74,6 @@ func _on_bead_hit():
 func do_leap():
 	leap_animation.play("leap_animation")
 	var direction = (player.global_position - enemy.global_position).normalized()
-	enemy.velocity = direction * 25
+	enemy.velocity = direction * 15
 	
 	

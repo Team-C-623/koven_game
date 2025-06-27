@@ -6,7 +6,7 @@ extends Node3D
 #var attack_damage:= 0.0
 @export var speed: float = 0.0
 var direction: Vector3 = Vector3.ZERO
-var timer
+var timer: Timer
 
 signal bead_hit
 

@@ -12,6 +12,8 @@ class_name Nun
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ray: RayCast3D = $RayCast3D
 @onready var sprite: Sprite3D = $Sprite3D
+@onready var hitbox: CollisionShape3D = $CollisionShape3D
+@onready var hitbox_component: CollisionShape3D = $HitboxComponent/Hitbox
 
 # i dont think this is ever used
 #signal dying
@@ -21,6 +23,7 @@ var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 3.0
 var is_alerted := false
+var can_move := true
 
 func _ready():
 	ray.enabled = true
@@ -32,7 +35,9 @@ func _process(_delta):
 	ray.force_raycast_update()
 
 func _physics_process(delta: float) -> void:
-	# Debugging
+	if not can_move:
+		return
+	
 	if player_3d == null:
 		return  # Exit if no player is assigned
 	
@@ -47,8 +52,10 @@ func _physics_process(delta: float) -> void:
 	look_at(player_3d.position)
 
 func _on_health_component_nun_die() -> void:
+	can_move = false
 	animation_player.stop()
-	#dying.emit()
+	hitbox.queue_free()
+	hitbox_component.queue_free()
 	animation_player.play("death")
 	SoundManager.play_enemy_death()
 	await animation_player.animation_finished

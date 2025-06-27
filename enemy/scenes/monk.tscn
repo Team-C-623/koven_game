@@ -138,7 +138,7 @@ wait_time = 0.6
 
 [node name="chase_animation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_5yn1g")
+&"": SubResource("AnimationLibrary_5yn1g")
 }
 
 [node name="RayCast3D" type="RayCast3D" parent="."]

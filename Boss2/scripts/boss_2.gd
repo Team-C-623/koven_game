@@ -1,13 +1,15 @@
 extends CharacterBody3D
 class_name Boss2
 
-@onready var player_3d = get_node("/root/Main/Player")
 @export var SPEED: float = 0.5
 @export var CHASE_SPEED: float = 1.5
 @export var GRAB_DISTANCE: float = 3.0
 @export var ACCELERATION: float = 2.0
 @export var CHASE_DISTANCE: float = 3.0  # Distance at which the enemy starts chasing
 @export var gravity: float = 9.8
+@export var attack_damage := 3.5 
+
+@onready var player_3d = get_node("/root/Main/Player")
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var boss_leap: CanvasLayer = $BossLeap
 @onready var sprite: Sprite3D = $Sprite3D
@@ -19,15 +21,15 @@ class_name Boss2
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
-@export var attack_damage:= 3.5 
 var current_hitbox: HitboxComponent = null
 var sprite_origin_position: Vector3
 var can_move = true
 
 #bob variable
-const BOB_FREQ = 2.0 #2.0
-const BOB_AMP = 0.08 #0.08
-var t_bob = 0.0
+const BOB_FREQ := 2.0 #2.0
+const BOB_AMP := 0.08 #0.08
+var t_bob := 0.0
+
 @onready var leap_animation: AnimationPlayer = $LeapAnimation
 @onready var boss_death: AnimationPlayer = $BossDeath
 
@@ -64,12 +66,8 @@ func _physics_process(delta: float) -> void:
 	var new_head_pos = _headbob(t_bob)
 	sprite.position = sprite_origin_position + new_head_pos
 
-	if health_component.health <= 0:
-		#SoundManager.play_death_sound()
-		pass
-
 func _headbob(time) -> Vector3:
-	var pos = Vector3.ZERO
+	var pos: Vector3 = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP + 0.18
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos

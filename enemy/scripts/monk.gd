@@ -11,13 +11,15 @@ class_name Monk
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var damage_timer: Timer = $DamageTimer
 @onready var chase_animation: AnimationPlayer = $chase_animation
+@onready var hitbox: CollisionShape3D = $CollisionShape3D
+@onready var hitbox_component: CollisionShape3D = $HitboxComponent/Hitbox
 
 var direction: Vector3
 var right_bounds: Vector3
 var left_bounds: Vector3
 var attack_damage:= 2.0
 var current_hitbox: HitboxComponent = null
-var can_move = true
+var can_move := true
 var is_alerted := false
 
 func _ready():
@@ -33,10 +35,9 @@ func _process(_delta):
 	ray.force_raycast_update()
 
 func _physics_process(delta: float) -> void:
-	# Debugging
 	if not can_move:
 		return
-		
+	
 	if player_3d == null:
 		return  # Exit if no player is assigned
 	
@@ -72,6 +73,8 @@ func _on_DamageTimer_timeout():
 func _on_health_component_monk_die() -> void:
 	can_move = false
 	chase_animation.stop()
+	hitbox.queue_free()
+	hitbox_component.queue_free()
 	chase_animation.play("death")
 	SoundManager.play_enemy_death()
 	await chase_animation.animation_finished

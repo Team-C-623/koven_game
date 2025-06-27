@@ -8,6 +8,7 @@ extends Area3D
 var room: Room
 var jury: Sprite3D
 var prosecutor: Sprite3D
+var boss_entered := false
 
 func _ready() -> void:
 	room = $"../.."
@@ -37,7 +38,8 @@ func _on_body_entered(body: Node3D) -> void:
 			collision_shape_3d.queue_free()
 	# boss room creation
 	elif room.room_type == "B":
-		if body is Player:
+		if body is Player and not boss_entered:
+			boss_entered = true
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
 			var boss_dialogue_scene = preload("res://Boss2/scenes/boss_dialogue.tscn").instantiate()

@@ -24,7 +24,7 @@ func create_card_timer(card_name: String, duration: float, timeout_func: Callabl
 		active_timers[card_name].queue_free()
 	
 	# Create new timer
-	var timer = Timer.new()
+	var timer: Timer = Timer.new()
 	timer.name = card_name + "_Timer"
 	timer.wait_time = duration
 	timer.one_shot = true
