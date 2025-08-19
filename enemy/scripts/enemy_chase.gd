@@ -11,6 +11,8 @@ var angle_cone_of_vision := deg_to_rad(30.0)
 var max_view_distance := 5.0
 var angle_between_rays := deg_to_rad(5.0)
 
+var _frame_counter := 15
+
 var alert_cooldown := 5.0
 var alert_timer := 0.0
 
@@ -34,14 +36,22 @@ func physics_process(_delta: float):
 	if not player or not ray.is_enabled():
 		print("ray not found")
 		return
+	
+	# optimization step to reduce path to player calculations
+	# only updates player location every ~15 ticks rather than every frame
+	# randomness added to prevent spikes
+	if _frame_counter == 0:
+		# calculates ray to path to player
+		var local_direction = ray.to_local(player.global_position).normalized()
+		ray.target_position = local_direction * max_view_distance
+		ray.force_raycast_update()
 
-	var local_direction = ray.to_local(player.global_position).normalized()
-	ray.target_position = local_direction * max_view_distance
-	ray.force_raycast_update()
-
-	if ray.is_colliding() and enemy.get_node("HealthComponent").health > 0:
-		var collider = ray.get_collider()
-		if collider.is_in_group("Player Groups"):
-			var direction = (player.global_position - enemy.global_position).normalized()
-			enemy.velocity = direction * enemy.CHASE_SPEED
-			chase_animation.play("monk_chase")
+		if ray.is_colliding() and enemy.get_node("HealthComponent").health > 0:
+			var collider = ray.get_collider()
+			if collider.is_in_group("Player Groups"):
+				var direction = (player.global_position - enemy.global_position).normalized()
+				enemy.velocity = direction * enemy.CHASE_SPEED
+				chase_animation.play("monk_chase")
+		_frame_counter = randi_range(11, 19)
+	else:
+		_frame_counter -= 1

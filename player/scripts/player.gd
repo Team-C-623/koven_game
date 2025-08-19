@@ -134,13 +134,13 @@ func _physics_process(delta: float) -> void:
 				SoundManager.play_wand_sound()
 
 	move_and_slide()
-	
+
+@onready var player = self  # Adjust path to your player node
 func _process(_delta: float) -> void:
 	#rtpc.set_value(rtpc_node,health_component.health)
 	#Wwise.set_rtpc_value("Health", PlayerManager.player.health_component.health,self)
-	var player = get_node("/root/Main/Player")  # Adjust path to your player node
-	var combat_engaged = false
 	
+	var combat_engaged = false
 	# Check all enemies in parent node
 	for node in get_parent().get_children():
 		if node is Nun or node is Monk:  # Your enemy types

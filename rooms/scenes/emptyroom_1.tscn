@@ -220,7 +220,6 @@ transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 6.
 unique_name_in_owner = true
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
-visible = false
 interior = true
 environment_mode = 0
 light_data = ExtResource("11_iuu8t")

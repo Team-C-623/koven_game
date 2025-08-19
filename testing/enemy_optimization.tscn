@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2tutuxj1yfk0"]
+
+[ext_resource type="Script" uid="uid://bg1k5q6saytbb" path="res://testing/enemy_optimization.gd" id="1_i0c43"]
+[ext_resource type="PackedScene" uid="uid://cjjcwfil4vt7w" path="res://player/scenes/player_3d.tscn" id="1_sygx3"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8jts1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0c43"]
+albedo_color = Color(0.458405, 0.458405, 0.458405, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sygx3"]
+material = SubResource("StandardMaterial3D_i0c43")
+size = Vector2(20, 20)
+
+[node name="EnemyOptimization" type="StaticBody3D"]
+script = ExtResource("1_i0c43")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_8jts1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_sygx3")
+
+[node name="Player" parent="." instance=ExtResource("1_sygx3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.6, 1)
