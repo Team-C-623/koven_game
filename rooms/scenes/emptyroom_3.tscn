@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c0tmfscakao0"]
+[gd_scene load_steps=33 format=4 uid="uid://y4v3375xfg4b"]
 
 [ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_ypfdf"]
 [ext_resource type="Texture2D" uid="uid://dyyrsow1wqcai" path="res://assets/environment/plainstonewall.png" id="2_2q4rt"]
@@ -11,7 +11,6 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://b5hrewk2o0kmy" path="res://rooms/occluders/emptyroom_3_wall4.occ" id="7_3xlmu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="7_xbjoj"]
 [ext_resource type="Texture2D" uid="uid://wlmcracyeilr" path="res://assets/ui/angelstatue.png" id="9_458rj"]
-[ext_resource type="LightmapGIData" uid="uid://b37t6jc5q3ifh" path="res://rooms/lightmaps/emptyroom_3.lmbake" id="10_2eh6g"]
 [ext_resource type="ArrayOccluder3D" uid="uid://2le8757owvnu" path="res://rooms/occluders/emptyroom_1_ceiling.occ" id="10_8sc2i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
@@ -267,9 +266,3 @@ transform = Transform3D(1, -1.06581e-14, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Statue/StaticBody3D"]
 transform = Transform3D(100, -1.45519e-11, 0, 1.45519e-11, 100, 0, 0, 0, 100, 0, 0, -5)
 shape = SubResource("BoxShape3D_wuase")
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-visible = false
-interior = true
-environment_mode = 0
-light_data = ExtResource("10_2eh6g")

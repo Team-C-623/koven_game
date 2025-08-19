@@ -19,6 +19,8 @@ var move_direction := 0.5
 var move_timer := 0.0
 var is_moving := true
 
+var _frame_counter := 15
+
 var alert_cooldown := 5.0
 var alert_timer := 0.0
 
@@ -50,26 +52,33 @@ func physics_process(delta: float):
 		print("ray not enabled")
 		return
 	
-	var local_direction = ray.to_local(player.global_position).normalized()
-	ray.target_position = local_direction * max_view_distance
-	ray.force_raycast_update()
+	# optimization step to reduce path to player calculations
+	# only updates player location every ~15 ticks rather than every frame
+	# randomness added to prevent spikes
+	if _frame_counter == 0:
+		var local_direction = ray.to_local(player.global_position).normalized()
+		ray.target_position = local_direction * max_view_distance
+		ray.force_raycast_update()
 
-	if ray.is_colliding():
-		var collider = ray.get_collider()
-		if collider.is_in_group("Player Groups"):
-			if is_moving:
-				var direction = (player.global_position - enemy.global_position).normalized()
-				enemy.velocity = direction * enemy.SPEED
-				if move_timer >= move_direction:
-					is_moving = false
-			else:
-				enemy.velocity = Vector3.ZERO
-				enemy.move_and_slide()
-				if time_since_last_knife >= shoot_cooldown:
-					shoot_knife()
-					time_since_last_knife = 0.0
-					is_moving = true
-					move_timer = 0.0
+		if ray.is_colliding():
+			var collider = ray.get_collider()
+			if collider.is_in_group("Player Groups"):
+				if is_moving:
+					var direction = (player.global_position - enemy.global_position).normalized()
+					enemy.velocity = direction * enemy.SPEED
+					if move_timer >= move_direction:
+						is_moving = false
+				else:
+					enemy.velocity = Vector3.ZERO
+					enemy.move_and_slide()
+					if time_since_last_knife >= shoot_cooldown:
+						shoot_knife()
+						time_since_last_knife = 0.0
+						is_moving = true
+						move_timer = 0.0
+		_frame_counter = randi_range(6, 14)
+	else:
+		_frame_counter -= 1
 
 func shoot_knife():
 	if health_component.health > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://brylx0g74iat8"]
+[gd_scene load_steps=30 format=4 uid="uid://brylx0g74iat8"]
 
 [ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_ovspa"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_fctvr"]
@@ -11,7 +11,6 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="6_v72ge"]
 [ext_resource type="ArrayOccluder3D" uid="uid://c53u53wvf2jgi" path="res://rooms/occluders/emptyroom_4_wall4.occ" id="7_bc3l1"]
 [ext_resource type="ArrayOccluder3D" uid="uid://2le8757owvnu" path="res://rooms/occluders/emptyroom_1_ceiling.occ" id="10_bc3l1"]
-[ext_resource type="LightmapGIData" uid="uid://ktrydm7vtko2" path="res://rooms/lightmaps/emptyroom_4.lmbake" id="12_3fdns"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gj02"]
 albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
@@ -266,9 +265,3 @@ transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 6.4, 0, 
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, -6.4)
 
 [node name="Base" type="Marker3D" parent="."]
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-visible = false
-interior = true
-environment_mode = 0
-light_data = ExtResource("12_3fdns")
