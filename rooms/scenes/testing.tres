@@ -1,0 +1,25 @@
+[gd_resource type="Shader" format=3 uid="uid://dejewxsyaas3l"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+// 3D Noise with friendly permission by Inigo Quilez
+vec3 hash_noise_range( vec3 p ) {
+	p *= mat3(vec3(127.1, 311.7, -53.7), vec3(269.5, 183.3, 77.1), vec3(-301.7, 27.3, 215.3));
+	return 2.0 * fract(fract(p)*4375.55) -1.;
+}
+
+void vertex() {
+// Input:3
+	vec3 n_out3p0 = VERTEX;
+
+// RandomRange:2
+	float n_in2p1 = 0.00000;
+	float n_in2p2 = 1.00000;
+	float n_out2p0 = mix(n_in2p1, n_in2p2, hash_noise_range(n_out3p0).x);
+
+// Output:0
+	VERTEX = vec3(n_out2p0);
+}
+"

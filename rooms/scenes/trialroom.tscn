@@ -1,24 +1,33 @@
-[gd_scene load_steps=32 format=4 uid="uid://qd0j71gxoatt"]
+[gd_scene load_steps=35 format=4 uid="uid://qd0j71gxoatt"]
 
 [ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_bs6wp"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="2_68aln"]
+[ext_resource type="ArrayOccluder3D" uid="uid://be74u8me7cpdt" path="res://rooms/occluders/door_wall.occ" id="3_3mxrb"]
 [ext_resource type="Texture2D" uid="uid://ck0iraq2e8jy4" path="res://assets/environment/trial_background.PNG" id="3_hrmco"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dihfgpmujldtn" path="res://rooms/occluders/trialroom_wall1.occ" id="3_wgxe5"]
 [ext_resource type="ArrayOccluder3D" uid="uid://c67rvkhbsaygv" path="res://rooms/occluders/trialroom_wall2.occ" id="4_2hdvl"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_ie3bh"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dn6p7gp67nwn3" path="res://rooms/occluders/trialroom_wall3.occ" id="5_3qm80"]
 [ext_resource type="Script" uid="uid://ctctb5ach4lhe" path="res://catacombs/scripts/dialogue_area.gd" id="5_5qayx"]
 [ext_resource type="ArrayOccluder3D" uid="uid://3vv0oamm62uw" path="res://rooms/occluders/trialroom_wall4.occ" id="6_qab4c"]
 [ext_resource type="ArrayOccluder3D" uid="uid://bbijkg6wix6hc" path="res://rooms/occluders/trialroom_floor.occ" id="8_mw2h0"]
+[ext_resource type="ArrayOccluder3D" uid="uid://5eqkgskf7wu3" path="res://rooms/occluders/trialroom_ceiling.occ" id="10_3mxrb"]
 [ext_resource type="Texture2D" uid="uid://dsovkyuvvyw5h" path="res://trialroom/art/jury.png" id="10_w24wj"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="11_4dx42"]
 [ext_resource type="Texture2D" uid="uid://b2ewd30q06ogs" path="res://trialroom/art/prosecutor.png" id="12_wdqnp"]
 [ext_resource type="LightmapGIData" uid="uid://65j0sopx4tu2" path="res://rooms/lightmaps/trialroom.lmbake" id="14_poyw0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qm5m"]
-albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfsvr"]
+transparency = 1
+albedo_texture = ExtResource("2_68aln")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wgxe5"]
+[sub_resource type="QuadMesh" id="QuadMesh_j064f"]
+material = SubResource("StandardMaterial3D_pfsvr")
+size = Vector2(12.8, 7.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0o2w"]
+albedo_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_712pk"]
 lightmap_size_hint = Vector2i(150, 142)
 _surfaces = [{
 "aabb": AABB(-640, -360, -20, 1280, 720, 20),
@@ -26,7 +35,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 156,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgAAwAJAAQACgALAAwADQAOAA8ACwAQAAwAEQASABMAFAAVABYAEQAXABIAGAAZABoACwAbABAAHAAdAB4AHwAgACEAIgAjACQAJQAmACcAKAApACoACwArABsAGgAsABgAHgAtABwAAgAuAAAAJAAvACIAFwAwABIAJwAxACUAMAAyABIAKgAzACgANAA1AAoANgA3AAoANwA0AAoAOAA2AAoACgA5ADgACgAMADkAFgA6ABQADwA7AA0AEwA8AD0AEwAFADwAEwA9AD4APgA/ABMAPwARABMAQABBAEIACABDAAYANABEADUARQBGAEcASABJAEoASwBMAE0ARABOADUAIQBPAB8AQgBQAEAAEwADAAUASgBRAEgARwBSAEUATQBTAEsA"),
-"material": SubResource("StandardMaterial3D_6qm5m"),
+"material": SubResource("StandardMaterial3D_m0o2w"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 84,
@@ -93,26 +102,25 @@ transform = Transform3D(-0.469, 0, 7.0817e-08, 0, 0.469, 0, -7.0817e-08, 0, -0.4
 script = ExtResource("1_bs6wp")
 
 [node name="WallDoor1" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.01, 8.74227e-10, 2.22045e-16, -8.74227e-10, -0.01, 0, 2.22045e-16, -3.97047e-23, 0.01, 1.13687e-13, 3.6, 6.4)
-visibility_range_end = 20.0
-mesh = SubResource("ArrayMesh_wgxe5")
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, -8.47033e-22, 8.74228e-08, 0, -1, 5.68434e-14, 3.6, 6.2)
+mesh = SubResource("QuadMesh_j064f")
+skeleton = NodePath("")
+
+[node name="Thickness" type="MeshInstance3D" parent="WallDoor1"]
+transform = Transform3D(0.01, -8.74228e-10, 8.74228e-10, -8.74228e-10, -0.01, -8.47033e-24, 8.74228e-10, -7.64275e-17, -0.01, 0.000400543, 0, -0.201)
+mesh = SubResource("ArrayMesh_712pk")
+skeleton = NodePath("../..")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="WallDoor1/Thickness"]
+occluder = ExtResource("3_3mxrb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallDoor1"]
+transform = Transform3D(-1, 0, 8.74228e-08, -7.405e-29, 1, -8.47033e-22, -8.74228e-08, 0, -1, 0.000400543, -3.6, -0.201)
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="WallDoor1/StaticBody3D"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, -10)
-depth = 20.0
-polygon = PackedVector2Array(-640, 360, 640, 360, 640, -360, 144, -360, 144, 0, -130, 0, -132, -360, -640, -360)
-
-[node name="Sprite3D" type="Sprite3D" parent="WallDoor1"]
-transform = Transform3D(-100, 8.74228e-06, -9.09495e-13, -8.74228e-06, -100, -1.0842e-19, -9.09495e-13, 0, 100, 0, 0, -20.1)
-visibility_range_end = 20.0
-flip_h = true
-shaded = true
-texture = ExtResource("2_68aln")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="WallDoor1"]
-occluder = ExtResource("3_wgxe5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+depth = 0.2
+polygon = PackedVector2Array(6.4, 0, 6.4, 7.214, -6.4, 7.17, -6.4, 0, -1.35, 0, -1.35, 3.8, 1.35, 3.8, 1.35, 0)
 
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39, 3.6, 0)
@@ -173,6 +181,9 @@ mesh = SubResource("PlaneMesh_a4nd0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_srlva")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Ceiling"]
+occluder = ExtResource("10_3mxrb")
 
 [node name="Lighting" type="Node3D" parent="."]
 

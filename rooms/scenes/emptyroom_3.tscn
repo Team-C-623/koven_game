@@ -1,17 +1,14 @@
-[gd_scene load_steps=33 format=4 uid="uid://y4v3375xfg4b"]
+[gd_scene load_steps=31 format=4 uid="uid://y4v3375xfg4b"]
 
 [ext_resource type="Script" uid="uid://bh83ctld02psx" path="res://rooms/scripts/Room.gd" id="1_ypfdf"]
 [ext_resource type="Texture2D" uid="uid://dyyrsow1wqcai" path="res://assets/environment/plainstonewall.png" id="2_2q4rt"]
+[ext_resource type="ArrayOccluder3D" uid="uid://d0fgvnnjmmroe" path="res://rooms/occluders/mesh_wall.occ" id="3_lmxeh"]
 [ext_resource type="Texture2D" uid="uid://dkoywbevsi8un" path="res://assets/environment/emptydoorwaystonewall.png" id="3_qltpk"]
-[ext_resource type="ArrayOccluder3D" uid="uid://33fpoeeu8ue" path="res://rooms/occluders/emptyroom_3_wall1.occ" id="3_rx5lt"]
-[ext_resource type="ArrayOccluder3D" uid="uid://b1eqfn0eci72b" path="res://rooms/occluders/emptyroom_3_wall2.occ" id="4_2wfej"]
 [ext_resource type="Texture2D" uid="uid://3w1615ixgb8y" path="res://assets/environment/lvl1floorcombat2.png" id="4_fx15t"]
 [ext_resource type="PackedScene" uid="uid://c7jumfechixnq" path="res://rooms/scenes/torch.tscn" id="5_hfcsk"]
-[ext_resource type="ArrayOccluder3D" uid="uid://cv2n5j8mf0etd" path="res://rooms/occluders/emptyroom_3_wall3.occ" id="6_mmudv"]
-[ext_resource type="ArrayOccluder3D" uid="uid://b5hrewk2o0kmy" path="res://rooms/occluders/emptyroom_3_wall4.occ" id="7_3xlmu"]
-[ext_resource type="ArrayOccluder3D" uid="uid://clc8hcuo05xth" path="res://rooms/occluders/emptyroom_1_floor.occ" id="7_xbjoj"]
+[ext_resource type="ArrayOccluder3D" uid="uid://be74u8me7cpdt" path="res://rooms/occluders/door_wall.occ" id="6_nnbma"]
+[ext_resource type="ArrayOccluder3D" uid="uid://djjsnsoq5ceqj" path="res://rooms/occluders/floor.occ" id="7_nnbma"]
 [ext_resource type="Texture2D" uid="uid://wlmcracyeilr" path="res://assets/ui/angelstatue.png" id="9_458rj"]
-[ext_resource type="ArrayOccluder3D" uid="uid://2le8757owvnu" path="res://rooms/occluders/emptyroom_1_ceiling.occ" id="10_8sc2i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yrjd"]
 albedo_texture = ExtResource("2_2q4rt")
@@ -29,8 +26,16 @@ points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fq7in"]
 points = PackedVector3Array(0, -3.6, -6.4, 0, 3.6, -6.4, 0, -3.6, 6.4, 0, 3.6, 6.4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhdqh"]
-albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2eh6g"]
+transparency = 1
+albedo_texture = ExtResource("3_qltpk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mmudv"]
+material = SubResource("StandardMaterial3D_2eh6g")
+size = Vector2(12.8, 7.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0o2w"]
+albedo_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nnbma"]
 lightmap_size_hint = Vector2i(150, 142)
@@ -40,15 +45,12 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 156,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgAAwAJAAQACgALAAwADQAOAA8ACwAQAAwAEQASABMAFAAVABYAEQAXABIAGAAZABoACwAbABAAHAAdAB4AHwAgACEAIgAjACQAJQAmACcAKAApACoACwArABsAGgAsABgAHgAtABwAAgAuAAAAJAAvACIAFwAwABIAJwAxACUAMAAyABIAKgAzACgANAA1AAoANgA3AAoANwA0AAoAOAA2AAoACgA5ADgACgAMADkAFgA6ABQADwA7AA0AEwA8AD0AEwAFADwAEwA9AD4APgA/ABMAPwARABMAQABBAEIACABDAAYANABEADUARQBGAEcASABJAEoASwBMAE0ARABOADUAIQBPAB8AQgBQAEAAEwADAAUASgBRAEgARwBSAEUATQBTAEsA"),
-"material": SubResource("StandardMaterial3D_yhdqh"),
+"material": SubResource("StandardMaterial3D_m0o2w"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 84,
 "vertex_data": PackedByteArray("t9E7QgOJAUEAAAAAt9E7QgOJAUEAAKDBe1S8QlXB9UEAAKDBAAAgxAAAtEMAAAAAAAAQwwAAjEIAAAAAAADgwgAAAEIAAAAAAAAQwwAAtEMAAKDBAAAQwwAAtEMAAAAAAAAgxAAAtEMAAAAAAAAQwwAAtEMAAAAAAAAgxAAAtMMAAKDBAAAgRAAAtMMAAKDBe1S8QlXB9UEAAKDBAAAgRAAAtMMAAAAAAAAgRAAAtMMAAKDBAAAgxAAAtMMAAKDBh3YCQ260h0IAAKDBe1S8QlXB9UEAAAAAAAAgRAAAtMMAAAAAAAAgxAAAtMMAAAAACzWYQQZk374AAKDBCzWYQQZk374AAAAAAABgwRsv/b8AAAAAh3YCQ260h0IAAAAAAAAgRAAAtMMAAKDBAAAgRAAAtMMAAAAAAAAgRAAAtEMAAAAAAAAEQwAAtEMAAKDBCzWYQQZk374AAAAACzWYQQZk374AAKDBt9E7QgOJAUEAAKDBAAAQwwAAjEIAAKDBAAAQwwAAjEIAAAAAAAAQwwAAtEMAAAAAe1S8QlXB9UEAAAAAe1S8QlXB9UEAAKDBh3YCQ260h0IAAKDBh3YCQ260h0IAAAAAh3YCQ260h0IAAKDBAAAEQwAAtEMAAKDBAAAEQwAAtEMAAAAAAAAEQwAAtEMAAKDBAAAgRAAAtEMAAKDBAAAgRAAAtEMAAKDBAAAgRAAAtEMAAKDBt9E7QgOJAUEAAAAAe1S8QlXB9UEAAAAAh3YCQ260h0IAAAAAAAAEQwAAtEMAAAAAAAAEQwAAtEMAAAAAAAAgRAAAtEMAAAAAAAAgRAAAtEMAAAAAAADgwgAAAEIAAKDBAAAgxAAAtEMAAKDBAABgwRsv/b8AAKDBAACWwgAAIEEAAKDBCzWYQQZk374AAKDBt9E7QgOJAUEAAKDBAABgwRsv/b8AAKDBAAAgxAAAtMMAAAAAAACWwgAAIEEAAAAAAABgwRsv/b8AAAAACzWYQQZk374AAAAAt9E7QgOJAUEAAAAAAAAgxAAAtMMAAAAAAAAgxAAAtMMAAKDBAAAgxAAAtEMAAKDBAAAgxAAAtEMAAKDBAAAQwwAAjEIAAKDBAADgwgAAAEIAAAAAAADgwgAAAEIAAKDBAACWwgAAIEEAAKDBAAAQwwAAjEIAAAAAAAAQwwAAjEIAAKDBAADgwgAAAEIAAKDBAACWwgAAIEEAAAAAAACWwgAAIEEAAKDBAABgwRsv/b8AAKDBAAAQwwAAtEMAAKDBAAAQwwAAtEMAAKDBAAAgxAAAtEMAAAAAAADgwgAAAEIAAAAAAACWwgAAIEEAAAAAAABgwRsv/b8AAAAAiFaH1v////+IVofW/////4hWh9b//////3//f////7//f/9/////v/9//3/+//+/AID///////8AgP///////wCA/////////3//f////7//////AAD/v/////8AAP+//////wAA/78AgAAA/////wCAAAD/////AIAAAP//////////AAD/v/9//3/+//+//3//f////7//f/9/////v0p6Sfr/////SnpJ+v////9Kekn6//////9//3/+//+///8AgP///////wCA////////AID//////////wAA/78LYgvi/////wtiC+L/////C2IL4v///////wCA////////AID///////8AgP////9EP0S//////0Q/RL//////RD9Ev/////+qAKqA/////6oAqoD/////qgCqgP////8AgP///////wCA////////AID/////////////AAD/v///AID/////C2IL4v////+IVofW/////0Q/RL///////3//f////7+qAKqA//////9//3////+/AID/////////////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//////wAA/79Kekn6/////wCAAAD//////3//f/7//7//f/9//v//v/9//3/+//+//3//f/7//78AAACA/////wAAAID/////AAAAgP////8AgP////////////8AAP+/ua9E0P////+5r0TQ/////7mvRND/////e8WCuv////97xYK6/////3vFgrr/////AZX86v////8Blfzq/////wGV/Or//////////wAA/7///wCA/////wAAAID/////e8WCuv////+5r0TQ/////wGV/Or/////")
 }]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ea8lh"]
-albedo_color = Color(0.044074, 0.0427533, 0.0421858, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2eh6g"]
 lightmap_size_hint = Vector2i(150, 142)
@@ -58,7 +60,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 156,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgAAwAJAAQACgALAAwADQAOAA8ACwAQAAwAEQASABMAFAAVABYAEQAXABIAGAAZABoACwAbABAAHAAdAB4AHwAgACEAIgAjACQAJQAmACcAKAApACoACwArABsAGgAsABgAHgAtABwAAgAuAAAAJAAvACIAFwAwABIAJwAxACUAMAAyABIAKgAzACgANAA1AAoANgA3AAoANwA0AAoAOAA2AAoACgA5ADgACgAMADkAFgA6ABQADwA7AA0AEwA8AD0AEwAFADwAEwA9AD4APgA/ABMAPwARABMAQABBAEIACABDAAYANABEADUARQBGAEcASABJAEoASwBMAE0ARABOADUAIQBPAB8AQgBQAEAAEwADAAUASgBRAEgARwBSAEUATQBTAEsA"),
-"material": SubResource("StandardMaterial3D_ea8lh"),
+"material": SubResource("StandardMaterial3D_m0o2w"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 84,
@@ -134,7 +136,7 @@ mesh = SubResource("PlaneMesh_pmdxk")
 shape = SubResource("ConvexPolygonShape3D_hbqa0")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall1"]
-occluder = ExtResource("3_rx5lt")
+occluder = ExtResource("3_lmxeh")
 
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35, 3.6, 0)
@@ -147,58 +149,56 @@ mesh = SubResource("PlaneMesh_pmdxk")
 shape = SubResource("ConvexPolygonShape3D_fq7in")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Wall2"]
-occluder = ExtResource("4_2wfej")
+occluder = ExtResource("3_lmxeh")
 
 [node name="WallDoor3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.01, 8.74227e-10, -8.74228e-10, 8.74227e-10, -0.01, 0, -8.74228e-10, -7.64274e-17, -0.01, 0, 3.6, -6.4)
-visibility_range_end = 20.0
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.2, 3.6, 0)
+mesh = SubResource("QuadMesh_mmudv")
+skeleton = NodePath("")
+
+[node name="Thickness" type="MeshInstance3D" parent="WallDoor3"]
+transform = Transform3D(0.01, -8.74228e-10, 8.74228e-10, -8.74228e-10, -0.01, -8.47033e-24, 8.74228e-10, -7.64275e-17, -0.01, 0.000400543, 0, -0.201)
 mesh = SubResource("ArrayMesh_nnbma")
+skeleton = NodePath("../..")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="WallDoor3/Thickness"]
+occluder = ExtResource("6_nnbma")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallDoor3"]
+transform = Transform3D(-1, 0, 8.74228e-08, -7.405e-29, 1, -8.47033e-22, -8.74228e-08, 0, -1, 0.000400543, -3.6, -0.201)
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="WallDoor3/StaticBody3D"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, -10)
-depth = 20.0
-polygon = PackedVector2Array(-640, 360, 640, 360, 640, -360, 144, -360, 144, 0, -130, 0, -132, -360, -640, -360)
-
-[node name="Sprite3D" type="Sprite3D" parent="WallDoor3"]
-transform = Transform3D(-100, 8.74228e-06, 0, -8.74228e-06, -100, 5.42101e-20, 0, -4.12463e-21, 100, 1.45519e-11, 0, -20.1)
-visibility_range_end = 20.0
-flip_h = true
-shaded = true
-texture = ExtResource("3_qltpk")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="WallDoor3"]
-occluder = ExtResource("6_mmudv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+depth = 0.2
+polygon = PackedVector2Array(6.4, 0, 6.4, 7.214, -6.4, 7.17, -6.4, 0, -1.35, 0, -1.35, 3.8, 1.35, 3.8, 1.35, 0)
 
 [node name="WallDoor4" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.37114e-10, -3.82137e-17, 0.01, -8.74227e-10, -0.01, 0, 0.01, -8.74227e-10, -4.37114e-10, 6.4, 3.6, 0)
-visibility_range_end = 20.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, -6.2)
+mesh = SubResource("QuadMesh_mmudv")
+skeleton = NodePath("")
+
+[node name="Thickness" type="MeshInstance3D" parent="WallDoor4"]
+transform = Transform3D(0.01, -8.74228e-10, 8.74228e-10, -8.74228e-10, -0.01, -8.47033e-24, 8.74228e-10, -7.64275e-17, -0.01, 0.000400543, 0, -0.201)
 mesh = SubResource("ArrayMesh_2eh6g")
+skeleton = NodePath("../..")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="WallDoor4/Thickness"]
+occluder = ExtResource("6_nnbma")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallDoor4"]
+transform = Transform3D(-1, 0, 8.74228e-08, -7.405e-29, 1, -8.47033e-22, -8.74228e-08, 0, -1, 0.000400543, -3.6, -0.201)
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="WallDoor4/StaticBody3D"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, -10)
-depth = 20.0
-polygon = PackedVector2Array(-640, 360, 640, 360, 640, -360, 144, -360, 144, 0, -130, 0, -132, -360, -640, -360)
-
-[node name="Sprite3D" type="Sprite3D" parent="WallDoor4"]
-transform = Transform3D(-100, 8.74228e-06, -9.09495e-13, -8.74228e-06, -100, 0, -9.09495e-13, 0, 100, 7.27596e-12, 0, -20.1)
-visibility_range_end = 20.0
-flip_h = true
-shaded = true
-texture = ExtResource("3_qltpk")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="WallDoor4"]
-occluder = ExtResource("7_3xlmu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+depth = 0.2
+polygon = PackedVector2Array(6.4, 0, 6.4, 7.214, -6.4, 7.17, -6.4, 0, -1.35, 0, -1.35, 3.8, 1.35, 3.8, 1.35, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 visibility_range_end = 20.0
 mesh = SubResource("PlaneMesh_ar2j6")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Floor"]
-occluder = ExtResource("7_xbjoj")
+occluder = ExtResource("7_nnbma")
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0)
@@ -215,7 +215,7 @@ mesh = SubResource("PlaneMesh_a4nd0")
 shape = SubResource("ConvexPolygonShape3D_dgb47")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Ceiling"]
-occluder = ExtResource("10_8sc2i")
+occluder = ExtResource("7_nnbma")
 
 [node name="Lighting" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)

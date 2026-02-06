@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://mhyktdpyxrof"]
+
+[ext_resource type="Texture2D" uid="uid://dyyrsow1wqcai" path="res://assets/environment/plainstonewall.png" id="1_55k4i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmj32"]
+albedo_texture = ExtResource("1_55k4i")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_piwdq"]
+lightmap_size_hint = Vector2i(66, 38)
+material = SubResource("StandardMaterial3D_cmj32")
+add_uv2 = true
+size = Vector2(12.8, 7.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g81uc"]
+points = PackedVector3Array(-6.4, 0, -3.6, -6.4, 0, 3.6, 6.4, 0, -3.6, 6.4, 0, 3.6)
+
+[node name="Wall2" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+visibility_range_end = 20.0
+mesh = SubResource("PlaneMesh_piwdq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_g81uc")

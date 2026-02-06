@@ -64,7 +64,7 @@ texture = ExtResource("2_lt5ij")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v65tx")
+&"": SubResource("AnimationLibrary_v65tx")
 }
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
